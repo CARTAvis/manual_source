@@ -7,7 +7,5 @@ Desktop version
 
 
 
-
-
 Server version
 --------------
