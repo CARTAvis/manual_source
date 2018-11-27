@@ -6,8 +6,8 @@ Overview
 --------
 
 
-Contributors
-------------
+About the team and contributors
+-------------------------------
 
 
 
