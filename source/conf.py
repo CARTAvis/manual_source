@@ -26,7 +26,7 @@ author = u'CARTA working group'
 # The short X.Y version
 version = u'1.0'
 # The full version, including alpha/beta/rc tags
-release = u'1.0alpha'
+release = u'1.0-rel'
 
 
 # -- General configuration ---------------------------------------------------
@@ -40,7 +40,7 @@ release = u'1.0alpha'
 # ones.
 extensions = [
     'sphinx.ext.mathjax',
-    'sphinx.ext.githubpages',
+    'sphinx.ext.githubpages'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

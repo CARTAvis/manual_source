@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Graphical user interface &#8212; CARTA 1.0alpha documentation</title>
+    <title>Graphical user interface &#8212; CARTA 1.0-rel documentation</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
@@ -36,7 +36,7 @@
         <li class="right" >
           <a href="installation_and_configuration.html" title="Installation and configuration"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.0alpha documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.0-rel documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -48,9 +48,17 @@
   <ul>
 <li><a class="reference internal" href="#">Graphical user interface</a><ul>
 <li><a class="reference internal" href="#components">Components</a></li>
-<li><a class="reference internal" href="#layouts">Layouts</a></li>
-<li><a class="reference internal" href="#pre-defined-layouts">Pre-defined layouts</a></li>
-<li><a class="reference internal" href="#controls-and-shortcuts">Controls and shortcuts</a></li>
+<li><a class="reference internal" href="#layouts-how-to-configure">Layouts: how to configure?</a><ul>
+<li><a class="reference internal" href="#resizing-a-panel">Resizing a panel</a></li>
+<li><a class="reference internal" href="#relocating-a-tab-as-a-new-panel">Relocating a tab as a new panel</a></li>
+<li><a class="reference internal" href="#relocating-a-tab-to-another-panel">Relocating a tab to another panel</a></li>
+<li><a class="reference internal" href="#maximixing-and-minimizing-a-tab">Maximixing and minimizing a tab</a></li>
+<li><a class="reference internal" href="#detaching-and-attaching-a-tab">Detaching and attaching a tab</a></li>
+<li><a class="reference internal" href="#activating-a-widget-as-a-floating-window-or-as-a-tab">Activating a widget as a floating window or as a tab</a></li>
+<li><a class="reference internal" href="#light-and-dark-theme">Light and dark theme</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#keyboard-shortcuts">Keyboard shortcuts</a></li>
 </ul>
 </li>
 </ul>
@@ -90,17 +98,163 @@
             
   <div class="section" id="graphical-user-interface">
 <h1>Graphical user interface<a class="headerlink" href="#graphical-user-interface" title="Permalink to this headline">¶</a></h1>
+<p>The graphical user interface (GUI) of CARTA is flexible and user friendly to support most of use cases, such as continuum image analysis, or spectral line cube analysis, etc. In this section, we introduce the details of the GUI and provide examples to guide users to get familiar with configuring layouts via mouse interactions.</p>
 <div class="section" id="components">
 <h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<p>The GUI of CARTA is classified into different components:</p>
+<ul class="simple">
+<li>main window</li>
+<li>menu bar</li>
+<li>widget bar</li>
+<li>panel</li>
+<li>tab</li>
+<li>floating window</li>
+</ul>
+<div class="figure" id="id1">
+<a class="reference internal image-reference" href="_images/carta_gui.png"><img alt="carta_gui" src="_images/carta_gui.png" style="width: 796.8px; height: 469.6px;" /></a>
+<p class="caption"><span class="caption-text">Figure: components of the CARTA garphical user interface.</span></p>
 </div>
-<div class="section" id="layouts">
-<h2>Layouts<a class="headerlink" href="#layouts" title="Permalink to this headline">¶</a></h2>
+<p>The main window consists of a set of panels and each panel may hold multiple tabs. For example, in the above figure there are six panels in the main window and there are two tabs in the bottom-right panel. A tab may be detached to become a floating window. The menu bar provides control options, such as image input/output, lanuching widgets, getting helps, etc. The widget bar provides tools to view or analyze images.</p>
 </div>
-<div class="section" id="pre-defined-layouts">
-<h2>Pre-defined layouts<a class="headerlink" href="#pre-defined-layouts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="layouts-how-to-configure">
+<h2>Layouts: how to configure?<a class="headerlink" href="#layouts-how-to-configure" title="Permalink to this headline">¶</a></h2>
+<p>The configuration of the layout is achieved by mouse operations, like single click or drag-and-drop. The drag-and-drop action is guided on the GUI with a semi-transparent rectangle. Below different operations are demostrated.</p>
+<div class="section" id="resizing-a-panel">
+<h3>Resizing a panel<a class="headerlink" href="#resizing-a-panel" title="Permalink to this headline">¶</a></h3>
+<p>By dragging borders, a panel can be resized like the following example. After a panel is resized, nearby panels are resized automatically to fit the new layout. Note that the appearance of the UI elements is adaptive to the size of the panel, like the <strong>render configuration</strong> widget or the <strong>animator</strong> widget in the example.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_gui_resizing_panel.gif"><img alt="carta_gui_resizing_panel" src="_images/carta_gui_resizing_panel.gif" style="width: 640.0px; height: 406.0px;" /></a>
 </div>
-<div class="section" id="controls-and-shortcuts">
-<h2>Controls and shortcuts<a class="headerlink" href="#controls-and-shortcuts" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="relocating-a-tab-as-a-new-panel">
+<h3>Relocating a tab as a new panel<a class="headerlink" href="#relocating-a-tab-as-a-new-panel" title="Permalink to this headline">¶</a></h3>
+<p>A tab can be relocated by dragging its title to a desired new panel. The target location is visualized with a semi-transparent box, like the following example.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_gui_relocating_tab_as_panel.gif"><img alt="carta_gui_relocating_tab_as_panel" src="_images/carta_gui_relocating_tab_as_panel.gif" style="width: 640.0px; height: 406.0px;" /></a>
+</div>
+</div>
+<div class="section" id="relocating-a-tab-to-another-panel">
+<h3>Relocating a tab to another panel<a class="headerlink" href="#relocating-a-tab-to-another-panel" title="Permalink to this headline">¶</a></h3>
+<p>A tab can be moved to other existing panel by dragging its title to the upper boarder of the target panel, like the following example.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_gui_relocating_tab_as_tab.gif"><img alt="carta_gui_relocating_tab_as_tab" src="_images/carta_gui_relocating_tab_as_tab.gif" style="width: 640.0px; height: 406.0px;" /></a>
+</div>
+</div>
+<div class="section" id="maximixing-and-minimizing-a-tab">
+<h3>Maximixing and minimizing a tab<a class="headerlink" href="#maximixing-and-minimizing-a-tab" title="Permalink to this headline">¶</a></h3>
+<p>By clicking the <strong>maximize</strong> icon at the top-right corner of a panel, the activated tab will be maximized to the main window. By clicking the <strong>restore</strong> icon, the tab will be restored to its original panel.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_gui_max_min_tab.gif"><img alt="carta_gui_max_min_tab" src="_images/carta_gui_max_min_tab.gif" style="width: 640.0px; height: 406.0px;" /></a>
+</div>
+</div>
+<div class="section" id="detaching-and-attaching-a-tab">
+<h3>Detaching and attaching a tab<a class="headerlink" href="#detaching-and-attaching-a-tab" title="Permalink to this headline">¶</a></h3>
+<p>By clicking the <strong>detach</strong> icon (like a pin) at the top-right corner of a panel, the activated tab will be detached to become a floating window. By dragging the <strong>attach</strong> icon (like a pin), a floating winodw will be attached to an existing panel or as a new paenl.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_gui_detach_attach_tab.gif"><img alt="carta_gui_detach_attach_tab" src="_images/carta_gui_detach_attach_tab.gif" style="width: 640.0px; height: 406.0px;" /></a>
+</div>
+</div>
+<div class="section" id="activating-a-widget-as-a-floating-window-or-as-a-tab">
+<h3>Activating a widget as a floating window or as a tab<a class="headerlink" href="#activating-a-widget-as-a-floating-window-or-as-a-tab" title="Permalink to this headline">¶</a></h3>
+<p>A widget is activated as a floating window by clicking the icon in the widget bar. A widget can be activated as a tab by dragging the icon in the widget bar to a desired location.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_gui_activating_widget.gif"><img alt="carta_gui_activating_widget" src="_images/carta_gui_activating_widget.gif" style="width: 640.0px; height: 406.0px;" /></a>
+</div>
+</div>
+<div class="section" id="light-and-dark-theme">
+<h3>Light and dark theme<a class="headerlink" href="#light-and-dark-theme" title="Permalink to this headline">¶</a></h3>
+<p>CARTA supports two themes: one is the light theme as default and the other is the dark theme which is accessible by the menu <strong>View</strong> -&gt; <strong>Interface</strong>, or the shortcut <strong>shift</strong> + <strong>D</strong>.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_gui_theme.gif"><img alt="carta_gui_theme" src="_images/carta_gui_theme.gif" style="width: 640.0px; height: 406.0px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="keyboard-shortcuts">
+<h2>Keyboard shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permalink to this headline">¶</a></h2>
+<p>CARTA supports keyboard shortcuts to enable certain controls without using a mouse. A summary is accessible via the menu <strong>Help</strong> -&gt; <strong>Controls and Shortcuts</strong>, or the shortcut <strong>shift</strong> + <strong>?</strong>. The shortcuts are slightly different depending on operating systems, which are summerized in the following table.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="30%" />
+<col width="30%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Control</th>
+<th class="head">macOS</th>
+<th class="head">Linux</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Help</strong></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Controls and shortcuts</td>
+<td>shift + ?</td>
+<td>shift + ?</td>
+</tr>
+<tr class="row-even"><td><strong>Appearance</strong></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Toggle dark/light theme</td>
+<td>cmd + D</td>
+<td>ctrl + D</td>
+</tr>
+<tr class="row-even"><td><strong>Cursor</strong></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Toggle frozen cursor</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="row-even"><td><strong>File</strong></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Open image</td>
+<td>cmd + O</td>
+<td>ctrl + O</td>
+</tr>
+<tr class="row-even"><td>Append image</td>
+<td>cmd + L</td>
+<td>ctrl + L</td>
+</tr>
+<tr class="row-odd"><td>Export image</td>
+<td>cmd + E</td>
+<td>ctrl + E</td>
+</tr>
+<tr class="row-even"><td><strong>Frame</strong></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Next frame</td>
+<td>cmd + ]</td>
+<td>ctrl + ]</td>
+</tr>
+<tr class="row-even"><td>Previous frame</td>
+<td>cmd + [</td>
+<td>ctrl + [</td>
+</tr>
+<tr class="row-odd"><td>Next channel</td>
+<td>cmd + up</td>
+<td>ctrl + up</td>
+</tr>
+<tr class="row-even"><td>Previous channel</td>
+<td>cmd + down</td>
+<td>ctrl + down</td>
+</tr>
+<tr class="row-odd"><td>Next Stokes</td>
+<td>cmd + shift + up</td>
+<td>ctrl + shift + up</td>
+</tr>
+<tr class="row-even"><td>Previous Stokes</td>
+<td>cmd + shift + down</td>
+<td>ctrl + shift + down</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -122,7 +276,7 @@
         <li class="right" >
           <a href="installation_and_configuration.html" title="Installation and configuration"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.0alpha documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.0-rel documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
