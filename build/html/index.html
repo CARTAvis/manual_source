@@ -14,6 +14,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -76,7 +77,9 @@
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#the-mission-of-carta">The mission of CARTA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#server-client-architecture">Server-Client architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#codebase-and-releases">Codebase and releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#contributors">Contributors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#acknowledgements">Acknowledgements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#copyright-and-license">Copyright and License</a></li>
@@ -99,12 +102,31 @@
 <li class="toctree-l3"><a class="reference internal" href="about_gui.html#light-and-dark-theme">Light and dark theme</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="about_gui.html#mouse-interactions-with-images">Mouse interactions with images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="about_gui.html#zooming">Zooming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about_gui.html#panning">Panning</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="about_gui.html#mouse-interactions-with-charts">Mouse interactions with charts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="about_gui.html#id1">Zooming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about_gui.html#id2">Panning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about_gui.html#resetting-range">Resetting range</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="about_gui.html#keyboard-shortcuts">Keyboard shortcuts</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="functionalities_gui.html">Functionalities</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="functionalities_gui.html#file-browser">File browser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functionalities_gui.html#image-viewer">Image viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionalities_gui.html#image-viewer">Image viewer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="functionalities_gui.html#image-resolutions-and-screen-resolutions">Image resolutions and screen resolutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functionalities_gui.html#render-configuration-of-a-raster-image">Render configuration of a raster image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functionalities_gui.html#carta-image-viewing-performance">CARTA image viewing performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functionalities_gui.html#changing-image-view">Changing image view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functionalities_gui.html#cursor-information">Cursor information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functionalities_gui.html#configuring-an-image-plot">Configuring an image plot</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="functionalities_gui.html#animator">Animator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functionalities_gui.html#spatial-profiler">Spatial profiler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functionalities_gui.html#spectral-profiler">Spectral profiler</a></li>
@@ -116,9 +138,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="appendix_b_version_history.html">Appendix B: version history</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="appendix_b_version_history.html#version-1-0alpha">Version 1.0alpha</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendix_b_version_history.html#version-1-0-rel">Version 1.0-rel</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_c_known_issues.html">Appendix C: known issues</a></li>
 </ul>
 </div>
 </div>

@@ -14,6 +14,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -48,7 +49,15 @@
   <ul>
 <li><a class="reference internal" href="#">Functionalities</a><ul>
 <li><a class="reference internal" href="#file-browser">File browser</a></li>
-<li><a class="reference internal" href="#image-viewer">Image viewer</a></li>
+<li><a class="reference internal" href="#image-viewer">Image viewer</a><ul>
+<li><a class="reference internal" href="#image-resolutions-and-screen-resolutions">Image resolutions and screen resolutions</a></li>
+<li><a class="reference internal" href="#render-configuration-of-a-raster-image">Render configuration of a raster image</a></li>
+<li><a class="reference internal" href="#carta-image-viewing-performance">CARTA image viewing performance</a></li>
+<li><a class="reference internal" href="#changing-image-view">Changing image view</a></li>
+<li><a class="reference internal" href="#cursor-information">Cursor information</a></li>
+<li><a class="reference internal" href="#configuring-an-image-plot">Configuring an image plot</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#animator">Animator</a></li>
 <li><a class="reference internal" href="#spatial-profiler">Spatial profiler</a></li>
 <li><a class="reference internal" href="#spectral-profiler">Spectral profiler</a></li>
@@ -91,14 +100,124 @@
             
   <div class="section" id="functionalities">
 <h1>Functionalities<a class="headerlink" href="#functionalities" title="Permalink to this headline">¶</a></h1>
+<p>With this version, CARTA provides basic image viewing capabilities, basic profile viewing capabilities in both spatial and spectral domains, and basic per-frame or per-cube histogram viewing capabilities. Exporting images or charts in png format and charts in plain text format are supported.</p>
 <div class="section" id="file-browser">
 <h2>File browser<a class="headerlink" href="#file-browser" title="Permalink to this headline">¶</a></h2>
+<p>File browser, accessible via the menu <strong>File</strong> -&gt; <strong>Open image</strong> or the menu <strong>File</strong> -&gt; <strong>Append image</strong>, provides information of images supported by CARTA. Currently CARTA supports images in:</p>
+<ul class="simple">
+<li>CASA format</li>
+<li>HDF5-SKA format</li>
+<li>FITS format</li>
+<li>MIRIAD format</li>
+</ul>
+<p>Only these formats will be shown in the file list with image type and file size. When an image is selected, on the right side, a brief summery of image properties is provided. Full header is also available in the second tab. To view an image, click the <strong>Load</strong> button at the bottom-right corner. To view a new image with all the loaded images closed, use <strong>File</strong> -&gt; <strong>Open image</strong> -&gt; <strong>Load</strong>. To view multiple images, use <strong>File</strong> -&gt; <strong>Append image</strong> -&gt; <strong>Append</strong>.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_fn_fileBrowser.png"><img alt="carta_fn_fileBrowser" src="_images/carta_fn_fileBrowser.png" style="width: 720.0px; height: 360.0px;" /></a>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When viewing images in appending mode, alignments in the world coordinate system (WCS) and the frequency/velocity space are not available in this version. This feature is expected in v1.2.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">When the file information of an image cube with <em>per-plane-beam</em> is requested, CARTA will spend significant amount of time to process. Same applies to opening such images. This is a known issue and the developement team will try to solve it as soon as possible.</p>
+</div>
 </div>
 <div class="section" id="image-viewer">
 <h2>Image viewer<a class="headerlink" href="#image-viewer" title="Permalink to this headline">¶</a></h2>
+<p>When an image is loaded via the file browser, it is shown in the image viewer with its per-frame histogram shown in the render configuration widget. Currently CARTA supports raster image only.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Contour rendering will be available in v1.2.</p>
+</div>
+<p>The aspect ratio of the image view is determined by the panel geometry. When the image viewer panel is resized, a tip with a ratio in screen pixel will be displayed.</p>
+<div class="section" id="image-resolutions-and-screen-resolutions">
+<h3>Image resolutions and screen resolutions<a class="headerlink" href="#image-resolutions-and-screen-resolutions" title="Permalink to this headline">¶</a></h3>
+<p>In CARTA, the resolution of an image displayed in the image viewer is <em>dynamically</em> determined by the screen resolution. For example, if an image with 10000 x 10000 pixels is loaded with the image viewer having a screen resolution of 500 x 500 pixels, a down-sampled image with a resolution of 500 x 500 pixels (a down-sample factor of 20) will be generated first, then displayed on screen with GPU accelerations. As users zoom in the images, new down-sample factors will be recomputed at every sampled zoom level. Effectively, users will see that the image becomes sharper and sharper at higher and higher zoom levels. No down-sampling is applied until the image resolution in the view is lower than the screen resolution.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_fn_imageViewer_downsample.gif"><img alt="carta_fn_imageViewer_downsample" src="_images/carta_fn_imageViewer_downsample.gif" style="width: 640.0px; height: 322.0px;" /></a>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">To make remote visualization of large images possible and efficient, CARTA adopts the above mentioned downsampling approach together with an efficient image compression algorithm. At rare circumstance, artifects may be seen on the images. A known issue is viewing an image with all pixels as zeros but one with a very high value. At low or default zoom level, some artifects will be observed around that pixel. At higher zoom levels, the artifects should dispear. CARTA has been tuned to localize the artifects within few screen pixels in order to minimize the impact of scientific analysis on such special cases. Should this become a problem in any kinds of analysis of yours, please contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">carta_helpdesk</a> for help.</p>
+</div>
+</div>
+<div class="section" id="render-configuration-of-a-raster-image">
+<h3>Render configuration of a raster image<a class="headerlink" href="#render-configuration-of-a-raster-image" title="Permalink to this headline">¶</a></h3>
+<p>The render configuration widget controls how a raster image is rendered in the image viewer. On the top, there is a row of buttons with different clip levels plus a custom button. Below there is a plot showing the per-frame histogram (logarithmic scale) with a bin count equals to the geometic mean of the image size (x and y). The two vertical red bars indicate the two boundary values of a colormap. Interaction with a chart, like the histogram, is demostracted in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. On the right, there is a column of options, such as scaling function, color map, boundary values, and control paramter of a scaling function (if applicable). Extra options to configure the histogram plot are hidden in the tool box on the right border. The histogram can be exported as a png image or a text file in tsv format.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_fn_renderConfig_widget.gif"><img alt="carta_fn_renderConfig_widget" src="_images/carta_fn_renderConfig_widget.gif" style="width: 640.0px; height: 227.0px;" /></a>
+</div>
+<p>By default, CARTA determines the boundary values of a colormap on <strong>per-frame</strong> basis. That is, a default “99.9%” clip level is applied to the per-frame histogram to look for the two boundary values. Then apply the values in “linear” scale to the default colormap “inferno” to render a raster image. This helps to inspect an image in detail without suffering from improper image rendering in most of cases. Below is an example of this per-frame rendering approach.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_fn_renderConfig_perFrame.gif"><img alt="carta_fn_renderConfig_perFrame" src="_images/carta_fn_renderConfig_perFrame.gif" style="width: 640.0px; height: 501.0px;" /></a>
+</div>
+<p>However, when comparing images frame by frame, color scales need to be fixed. This can be easily achieved by dragging the two vertical red bars, or typing in the values. When this happends, the “custom” button is enabled automatically and <em>all</em> frames will be rendered with the fixed boundary values. By clicking one of the clip buttons, CARTA switches back to the per-frame rendering mode. Below is an example of custom rendering.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_fn_renderConfig_perCustom.gif"><img alt="carta_fn_renderConfig_perCustom" src="_images/carta_fn_renderConfig_perCustom.gif" style="width: 640.0px; height: 501.0px;" /></a>
+</div>
+<p>CARTA provides a set of scaling functions, such as:</p>
+<ul class="simple">
+<li>linear: <span class="math notranslate nohighlight">\(y = x\)</span></li>
+<li>log: <span class="math notranslate nohighlight">\(y = {\log}_{\alpha}({\alpha}x+1)\)</span></li>
+<li>square root: <span class="math notranslate nohighlight">\(y = {\sqrt{x}}\)</span></li>
+<li>squared: <span class="math notranslate nohighlight">\(y = x^2\)</span></li>
+<li>gamma: <span class="math notranslate nohighlight">\(y = x^{\gamma}\)</span></li>
+<li>power: <span class="math notranslate nohighlight">\(y = ({\alpha}x-1)/{\alpha}\)</span></li>
+</ul>
+<p>A set of colormaps adopted from <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html?highlight=colormap">matplotlib</a> is provided in CARTA.</p>
+</div>
+<div class="section" id="carta-image-viewing-performance">
+<h3>CARTA image viewing performance<a class="headerlink" href="#carta-image-viewing-performance" title="Permalink to this headline">¶</a></h3>
+<p>The per-frame rendering approach helps to improve the performance of loading an image significantly. Traditionally when an image is loaded, the minimum and maximum of the entire image (cube) are looked for. This becomes a serious performance issue if the image (cube) size is extraordinary large (&gt; several GB). In addition, applying the global minimum and maximum to render a raster image usually (if not often) results in a poorly rendered image if the dynamical range is high. Then users need to re-render the image repeatly with refined boundary values. Re-rendering such a large image repeatly further deduces user experiences.</p>
+<p>CARTA hopes to improve the image viewing experience by adopting GPU rendering with web browser technology. In addtion, CARTA only renders an image with just enough image resolution (down-sampling). These combinations results in a high-performance remote image viewer. The total file size is no longer a bottleneck. The determinitve factors are  1) image size in x and y dimensions, and 2) internet bandwidth, instead.</p>
+</div>
+<div class="section" id="changing-image-view">
+<h3>Changing image view<a class="headerlink" href="#changing-image-view" title="Permalink to this headline">¶</a></h3>
+<p>CARTA provides different ways to change the image view. With a mouse, image zoom or pan actions are achieved by scrolling up/down or clicking, respectively, as demostrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-images"><span class="std std-ref">Mouse interactions with images</span></a>. Alternatively, the image view can be changed to fit the image width or the image height, or to fit the screen resolution (i.e., screen resolution equals full image resolution), by using the buttons at the bottom-right corner of the image viewer. To change to different frames, channels, or stokes, please refer to the section <a class="reference internal" href="#animator-intro"><span class="std std-ref">Animator</span></a>.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_fn_imageViewer_changeView.gif"><img alt="carta_fn_imageViewer_changeView" src="_images/carta_fn_imageViewer_changeView.gif" style="width: 640.0px; height: 370.0px;" /></a>
+</div>
+<p>When an image is zoomed in or out, the precison of the coordinate tick values is dynamically adjusted based on the zoom level. This feature allows users to analyze images with very differnet scales (WCS group; v1.2).</p>
+</div>
+<div class="section" id="cursor-information">
+<h3>Cursor information<a class="headerlink" href="#cursor-information" title="Permalink to this headline">¶</a></h3>
+<p>When the cursor is on the image viewer, pixel information at the cursor position is shown at the top side of the image. The information includes:</p>
+<ul class="simple">
+<li>World coordinate of the current coordinate system.</li>
+<li>Image coordinate in pixel.</li>
+<li>Pixel value.</li>
+<li>Down-sample factor (if applicable).</li>
+<li>Frequency, velocity, and reference frame (if applicable).</li>
+</ul>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_fn_imageViewer_cursorInfo.png"><img alt="carta_fn_imageViewer_cursorInfo" src="_images/carta_fn_imageViewer_cursorInfo.png" style="width: 634.18px; height: 369.26px;" /></a>
+</div>
+<p>When the coordinate system is changed (e.g., ICRS to Galactic), the displayed world coordinate will be changed accordingly. The precison is determined dynamically based on the image header.</p>
+<p>The reference image coordinate (0,0) locates at the center of the bottom-left pixel of the image. Regardless the displayed image is down-sampled or not, the image coordinate always refers to full resolution image.</p>
+<p>When cursor is moving, the pixel value adopted from the down-sampled image is displayed. When the cursor stops moving by 200 ms, the pixel value will be updated to the pixel value at full image resolution.</p>
+<p>If image header provides sufficient information in the frequency/velocity domain, the frequency and velocity with the reference frame of the current channel will be shown.</p>
+</div>
+<div class="section" id="configuring-an-image-plot">
+<h3>Configuring an image plot<a class="headerlink" href="#configuring-an-image-plot" title="Permalink to this headline">¶</a></h3>
+<p>CARTA provides flexible options to configure the appearance of an image plot. The overlay settings are accessible via <strong>View</strong> -&gt; <strong>Overlay</strong> -&gt; <strong>Customize</strong>.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_fn_astOptions.gif"><img alt="carta_fn_astOptions_gif" src="_images/carta_fn_astOptions.gif" style="width: 640.0px; height: 480.0px;" /></a>
+</div>
+<p>As an example, below is an image with default overlay settings.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_fn_astOptions_before.png"><img alt="carta_fn_astOptions_before" src="_images/carta_fn_astOptions_before.png" style="width: 633.44px; height: 368.52px;" /></a>
+</div>
+<p>And, this is a customized one. The coordinate system has been switched from FK5 to Galactic. Font type, size, and color are customized, as well as the axis border and grid lines.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_fn_astOptions_after.png"><img alt="carta_fn_astOptions_after" src="_images/carta_fn_astOptions_after.png" style="width: 634.18px; height: 369.26px;" /></a>
+</div>
+<p>The restoring beam is shown at the bottom-left corner, if applicable.</p>
+<p>The image can be exported as a png image by clicking the “Export image” button at the bottom-right corner of the image viewer, or by <strong>File</strong> -&gt; <strong>Export image</strong>.</p>
+</div>
 </div>
 <div class="section" id="animator">
-<h2>Animator<a class="headerlink" href="#animator" title="Permalink to this headline">¶</a></h2>
+<span id="animator-intro"></span><h2>Animator<a class="headerlink" href="#animator" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="spatial-profiler">
 <h2>Spatial profiler<a class="headerlink" href="#spatial-profiler" title="Permalink to this headline">¶</a></h2>

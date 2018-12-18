@@ -91,6 +91,76 @@ CARTA supports two themes: one is the light theme as default and the other is th
    :alt: carta_gui_theme
 
 
+.. _mouse_interaction_with_images:
+
+Mouse interactions with images
+------------------------------
+
+Zooming
+^^^^^^^
+Image is zoomed in by scrolling up and zoomed out by scrolling down.
+
+.. figure:: ./_figures/carta_gui_mouse_images_zoom.gif
+   :scale: 100 %
+   :alt: carta_gui_mouse_images_zoom
+
+Panning
+^^^^^^^
+Image is panned equivalently by single-clicking a position in the image. The image will be re-centered at that posotion in the view.  
+
+.. figure:: ./_figures/carta_gui_mouse_images_pan.gif
+   :scale: 100 %
+   :alt: carta_gui_mouse_images_pan
+
+
+.. _mouse_interaction_with_charts:
+
+Mouse interactions with charts
+------------------------------
+
+Zooming
+^^^^^^^
+A chart (profiles and histograms) is zoom by scrolling.
+
+.. figure:: ./_figures/carta_gui_mouse_charts_zoom1.gif
+   :scale: 100 %
+   :alt: carta_gui_mouse_charts_zoom1
+
+Alternatively, horizontal zoom, vertical zoom, and box zoom are supported.
+
+.. figure:: ./_figures/carta_gui_mouse_charts_zoom2.gif
+   :scale: 100 %
+   :alt: carta_gui_mouse_charts_zoom2
+
+Panning
+^^^^^^^
+Dragging with shift key can pan the chart.
+
+.. figure:: ./_figures/carta_gui_mouse_charts_pan.gif
+   :scale: 100 %
+   :alt: carta_gui_mouse_charts_pan
+
+
+Resetting range
+^^^^^^^^^^^^^^^
+Double-clicking on the chart can reset the plotting range.
+
+.. figure:: ./_figures/carta_gui_mouse_charts_reset.gif
+   :scale: 100 %
+   :alt: carta_gui_mouse_charts_reset
+
+
+
+
+
+
+
+
+
+
+
+
+
 Keyboard shortcuts
 ------------------
 CARTA supports keyboard shortcuts to enable certain controls without using a mouse. A summary is accessible via the menu **Help** -> **Controls and Shortcuts**, or the shortcut **shift** + **?**. The shortcuts are slightly different depending on operating systems, which are summerized in the following table.
