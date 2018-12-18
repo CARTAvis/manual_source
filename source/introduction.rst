@@ -25,7 +25,7 @@ The development of the CARTA project is a joint effort from (in alphabetical ord
 * `National Radio Astronomy Observatory (NRAO) <https://science.nrao.edu>`_
 * `Department of Physics, University of Alberta <https://www.ualberta.ca/physics>`_
 
-.. image:: ./_figures/carta_wg_logo.png
+.. image:: _static/carta_wg_logo.png
    :scale: 50 %
 
 

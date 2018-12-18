@@ -14,7 +14,7 @@ The GUI of CARTA is classified into different components:
 * tab
 * floating window
 
-.. figure:: ./_figures/carta_gui.png
+.. figure:: _static/carta_gui.png
    :scale: 40 %
    :alt: carta_gui
 
@@ -32,63 +32,79 @@ Resizing a panel
 ^^^^^^^^^^^^^^^^
 By dragging borders, a panel can be resized like the following example. After a panel is resized, nearby panels are resized automatically to fit the new layout. Note that the appearance of the UI elements is adaptive to the size of the panel, like the **render configuration** widget or the **animator** widget in the example. 
 
-.. figure:: ./_figures/carta_gui_resizing_panel.gif
-   :scale: 100 %
-   :alt: carta_gui_resizing_panel
+
+.. raw:: html
+
+   <video width="640" controls loop>
+     <source src="_static/carta_gui_resizing_panel.mp4" type="video/mp4">
+   </video>
 
 
 Relocating a tab as a new panel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A tab can be relocated by dragging its title to a desired new panel. The target location is visualized with a semi-transparent box, like the following example.
 
-.. figure:: ./_figures/carta_gui_relocating_tab_as_panel.gif
-   :scale: 100 %
-   :alt: carta_gui_relocating_tab_as_panel
 
+.. raw:: html
+
+   <video width="640" controls loop>
+     <source src="_static/carta_gui_relocating_tab_as_panel.mp4" type="video/mp4">
+   </video>
 
 Relocating a tab to another panel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A tab can be moved to other existing panel by dragging its title to the upper boarder of the target panel, like the following example.
 
-.. figure:: ./_figures/carta_gui_relocating_tab_as_tab.gif
-   :scale: 100 %
-   :alt: carta_gui_relocating_tab_as_tab
+
+.. raw:: html
+
+   <video width="640" controls loop>
+     <source src="_static/carta_gui_relocating_tab_as_tab.mp4" type="video/mp4">
+   </video>
+
+
+
 
 Maximixing and minimizing a tab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 By clicking the **maximize** icon at the top-right corner of a panel, the activated tab will be maximized to the main window. By clicking the **restore** icon, the tab will be restored to its original panel.
 
-.. figure:: ./_figures/carta_gui_max_min_tab.gif
-   :scale: 100 %
-   :alt: carta_gui_max_min_tab
+.. raw:: html
 
+   <video width="640" controls loop>
+     <source src="_static/carta_gui_max_min_tab.mp4" type="video/mp4">
+   </video>
 
 Detaching and attaching a tab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 By clicking the **detach** icon (like a pin) at the top-right corner of a panel, the activated tab will be detached to become a floating window. By dragging the **attach** icon (like a pin), a floating winodw will be attached to an existing panel or as a new paenl.
 
-.. figure:: ./_figures/carta_gui_detach_attach_tab.gif
-   :scale: 100 %
-   :alt: carta_gui_detach_attach_tab
+.. raw:: html
+
+   <video width="640" controls loop>
+     <source src="_static/carta_gui_detach_attach_tab.mp4" type="video/mp4">
+   </video>
 
 
 Activating a widget as a floating window or as a tab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A widget is activated as a floating window by clicking the icon in the widget bar. A widget can be activated as a tab by dragging the icon in the widget bar to a desired location.
 
-.. figure:: ./_figures/carta_gui_activating_widget.gif
-   :scale: 100 %
-   :alt: carta_gui_activating_widget
+.. raw:: html
 
-
+   <video width="640" controls loop>
+     <source src="_static/carta_gui_activating_widget.mp4" type="video/mp4">
+   </video>
 
 Light and dark theme
 ^^^^^^^^^^^^^^^^^^^^
 CARTA supports two themes: one is the light theme as default and the other is the dark theme which is accessible by the menu **View** -> **Interface**, or the shortcut **shift** + **D**. 
 
-.. figure:: ./_figures/carta_gui_theme.gif
-   :scale: 100 %
-   :alt: carta_gui_theme
+.. raw:: html
+
+   <video width="640" controls loop>
+     <source src="_static/carta_gui_theme.mp4" type="video/mp4">
+   </video>
 
 
 .. _mouse_interaction_with_images:
@@ -100,18 +116,22 @@ Zooming
 ^^^^^^^
 Image is zoomed in by scrolling up and zoomed out by scrolling down.
 
-.. figure:: ./_figures/carta_gui_mouse_images_zoom.gif
-   :scale: 100 %
-   :alt: carta_gui_mouse_images_zoom
+.. raw:: html
+
+   <video width="640" controls loop>
+     <source src="_static/carta_gui_mouse_images_zoom.mp4" type="video/mp4">
+   </video>
+
 
 Panning
 ^^^^^^^
 Image is panned equivalently by single-clicking a position in the image. The image will be re-centered at that posotion in the view.  
 
-.. figure:: ./_figures/carta_gui_mouse_images_pan.gif
-   :scale: 100 %
-   :alt: carta_gui_mouse_images_pan
+.. raw:: html
 
+   <video width="640" controls loop>
+     <source src="_static/carta_gui_mouse_images_pan.mp4" type="video/mp4">
+   </video>
 
 .. _mouse_interaction_with_charts:
 
@@ -122,43 +142,41 @@ Zooming
 ^^^^^^^
 A chart (profiles and histograms) is zoom by scrolling.
 
-.. figure:: ./_figures/carta_gui_mouse_charts_zoom1.gif
-   :scale: 100 %
-   :alt: carta_gui_mouse_charts_zoom1
+.. raw:: html
+
+   <video width="640" controls loop>
+     <source src="_static/carta_gui_mouse_charts_zoom1.mp4" type="video/mp4">
+   </video>
+
 
 Alternatively, horizontal zoom, vertical zoom, and box zoom are supported.
 
-.. figure:: ./_figures/carta_gui_mouse_charts_zoom2.gif
-   :scale: 100 %
-   :alt: carta_gui_mouse_charts_zoom2
+.. raw:: html
+
+   <video width="640" controls loop>
+     <source src="_static/carta_gui_mouse_charts_zoom2.mp4" type="video/mp4">
+   </video>
+
 
 Panning
 ^^^^^^^
 Dragging with shift key can pan the chart.
 
-.. figure:: ./_figures/carta_gui_mouse_charts_pan.gif
-   :scale: 100 %
-   :alt: carta_gui_mouse_charts_pan
+.. raw:: html
 
+   <video width="640" controls loop>
+     <source src="_static/carta_gui_mouse_charts_pan.mp4" type="video/mp4">
+   </video>
 
 Resetting range
 ^^^^^^^^^^^^^^^
 Double-clicking on the chart can reset the plotting range.
 
-.. figure:: ./_figures/carta_gui_mouse_charts_reset.gif
-   :scale: 100 %
-   :alt: carta_gui_mouse_charts_reset
+.. raw:: html
 
-
-
-
-
-
-
-
-
-
-
+   <video width="640" controls loop>
+     <source src="_static/carta_gui_mouse_charts_reset.mp4" type="video/mp4">
+   </video>
 
 
 Keyboard shortcuts
