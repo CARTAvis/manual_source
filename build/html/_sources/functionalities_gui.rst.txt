@@ -1,6 +1,6 @@
-Functionalities
-===============
-With this version, CARTA provides basic image viewing capabilities, basic profile viewing capabilities in both spatial and spectral domains, and basic per-frame or per-cube histogram viewing capabilities. Exporting images or charts in png format and charts in plain text format are supported.
+Features
+========
+With version 1.0, CARTA provides basic image viewing capabilities, basic profile viewing capabilities in both spatial and spectral domains, and basic per-frame or per-cube histogram viewing capabilities. Exporting images or charts in png format and charts in plain text format are supported.
 
 File browser
 ------------
@@ -11,7 +11,7 @@ File browser, accessible via the menu **File** -> **Open image** or the menu **F
 * FITS format
 * MIRIAD format 
 
-Only these formats will be shown in the file list with image type and file size. When an image is selected, on the right side, a brief summery of image properties is provided. Full header is also available in the second tab. To view an image, click the **Load** button at the bottom-right corner. To view a new image with all the loaded images closed, use **File** -> **Open image** -> **Load**. To view multiple images, use **File** -> **Append image** -> **Append**.
+Only these formats will be shown in the file list with image type and file size. When an image is selected, a brief summary of image properties is provided on the right side of the dialog. Full header is also available in the second tab. To view an image, click the **Load** button at the bottom-right corner. To view a new image with all the loaded images closed, use **File** -> **Open image** -> **Load**. To view multiple images, use **File** -> **Append image** -> **Append**.
 
 .. figure:: _static/carta_fn_fileBrowser.png
    :scale: 30 %
@@ -22,7 +22,7 @@ Only these formats will be shown in the file list with image type and file size.
    When viewing images in appending mode, alignments in the world coordinate system (WCS) and the frequency/velocity space are not available in this version. This feature is expected in v1.2.
 
 .. warning::
-   When the file information of an image cube with *per-plane-beam* is requested, CARTA will spend significant amount of time to process. Same applies to opening such images. This is a known issue and the developement team will try to solve it as soon as possible.
+   When the file information of an image cube with a *per-plane-beam* is requested, CARTA will spend a significant amount of time to calculate the beam information. This also applies when opening images with a per-plane-beam. This is a known issue and the developement team will try to solve it as soon as possible.
 
 
 Image viewer

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Functionalities &#8212; CARTA 1.0-rel documentation</title>
+    <title>Features &#8212; CARTA 1.0-rel documentation</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
@@ -47,7 +47,7 @@
             </a></p>
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Functionalities</a><ul>
+<li><a class="reference internal" href="#">Features</a><ul>
 <li><a class="reference internal" href="#file-browser">File browser</a></li>
 <li><a class="reference internal" href="#image-viewer">Image viewer</a><ul>
 <li><a class="reference internal" href="#image-resolutions-and-screen-resolutions">Image resolutions and screen resolutions</a></li>
@@ -98,9 +98,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="functionalities">
-<h1>Functionalities<a class="headerlink" href="#functionalities" title="Permalink to this headline">¶</a></h1>
-<p>With this version, CARTA provides basic image viewing capabilities, basic profile viewing capabilities in both spatial and spectral domains, and basic per-frame or per-cube histogram viewing capabilities. Exporting images or charts in png format and charts in plain text format are supported.</p>
+  <div class="section" id="features">
+<h1>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h1>
+<p>With version 1.0, CARTA provides basic image viewing capabilities, basic profile viewing capabilities in both spatial and spectral domains, and basic per-frame or per-cube histogram viewing capabilities. Exporting images or charts in png format and charts in plain text format are supported.</p>
 <div class="section" id="file-browser">
 <h2>File browser<a class="headerlink" href="#file-browser" title="Permalink to this headline">¶</a></h2>
 <p>File browser, accessible via the menu <strong>File</strong> -&gt; <strong>Open image</strong> or the menu <strong>File</strong> -&gt; <strong>Append image</strong>, provides information of images supported by CARTA. Currently CARTA supports images in:</p>
@@ -110,7 +110,7 @@
 <li>FITS format</li>
 <li>MIRIAD format</li>
 </ul>
-<p>Only these formats will be shown in the file list with image type and file size. When an image is selected, on the right side, a brief summery of image properties is provided. Full header is also available in the second tab. To view an image, click the <strong>Load</strong> button at the bottom-right corner. To view a new image with all the loaded images closed, use <strong>File</strong> -&gt; <strong>Open image</strong> -&gt; <strong>Load</strong>. To view multiple images, use <strong>File</strong> -&gt; <strong>Append image</strong> -&gt; <strong>Append</strong>.</p>
+<p>Only these formats will be shown in the file list with image type and file size. When an image is selected, a brief summary of image properties is provided on the right side of the dialog. Full header is also available in the second tab. To view an image, click the <strong>Load</strong> button at the bottom-right corner. To view a new image with all the loaded images closed, use <strong>File</strong> -&gt; <strong>Open image</strong> -&gt; <strong>Load</strong>. To view multiple images, use <strong>File</strong> -&gt; <strong>Append image</strong> -&gt; <strong>Append</strong>.</p>
 <div class="figure">
 <a class="reference internal image-reference" href="_images/carta_fn_fileBrowser.png"><img alt="carta_fn_fileBrowser" src="_images/carta_fn_fileBrowser.png" style="width: 720.0px; height: 360.0px;" /></a>
 </div>
@@ -120,7 +120,7 @@
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">When the file information of an image cube with <em>per-plane-beam</em> is requested, CARTA will spend significant amount of time to process. Same applies to opening such images. This is a known issue and the developement team will try to solve it as soon as possible.</p>
+<p class="last">When the file information of an image cube with a <em>per-plane-beam</em> is requested, CARTA will spend a significant amount of time to calculate the beam information. This also applies when opening images with a per-plane-beam. This is a known issue and the developement team will try to solve it as soon as possible.</p>
 </div>
 </div>
 <div class="section" id="image-viewer">
