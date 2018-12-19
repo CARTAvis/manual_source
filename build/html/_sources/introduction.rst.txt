@@ -33,9 +33,11 @@ Acknowledgements
 ----------------
 ASIAA CASA Development Center (ACDC) acknowledges the grant from the Ministry of Science and Technology of Taiwan for the ALMA-NA collaboration.
 
+The Inter-University Institute for Data Intensive Astronomy is a partnership of three South African universities: the University of Cape Town, the University of the Western Cape and the University of Pretoria.
+
 The National Radio Astronomy Observatory is a facility of the National Science Foundation operated under cooperative agreement by Associated Universities, Inc.
 
-CARTA is built in C++, JavaScript, and TypeScript, and with the following third-party libraries:
+CARTA is mainly built in C++, JavaScript, and TypeScript, and with the following third-party libraries:
 
 * AST: http://starlink.eao.hawaii.edu/starlink/AST
 * Blueprint: https://blueprintjs.com
@@ -48,7 +50,7 @@ CARTA is built in C++, JavaScript, and TypeScript, and with the following third-
 * React: https://reactjs.org
 * TBB: https://www.threadingbuildingblocks.org
 
-The source code of CARTA is hosted in `Github <https://github.com/CARTAvis>`_.
+The source code of CARTA is hosted on `Github <https://github.com/CARTAvis>`_.
 
 
 

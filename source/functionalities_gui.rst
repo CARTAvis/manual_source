@@ -146,7 +146,7 @@ CARTA provides flexible options to configure the appearance of an image plot. Th
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video width="480" controls loop>
      <source src="_static/carta_fn_astOptions.mp4" type="video/mp4">
    </video>
 
@@ -173,13 +173,63 @@ The image can be exported as a png image by clicking the "Export image" button a
 
 Animator
 --------
+The animator widget provides controls of image frames, channels, and stokes. When multiple images are loaded via **File** -> **Append image**, "Frame" slide bar will show up and allows users to switch between different loaded images. If an image file has multiple channels or stokes, "Channel" or "Stokes" slide bars will appear. On the top there is a set of animation control buttons such play, stop, next, etc. The action will be applied to the slide bar with the activated radio button. As an example below, the action will be applied to the *channel* axis of the second stokes axis of the third image file. 
 
+.. figure:: _static/carta_fn_animator_widget.png
+   :scale: 37 %
+   :alt: carta_fn_animator_widget
+
+The frame rate spin box controls the *desired* frame per second (fps). The *actual* frame rate depends on image size and internet condition. The "Req" index will display the requested frame index, while the "Current" index will display the actually displayed index in the image viewer. When the "play" button is triggered, the "Req" index will keep the number of the delayed frames to be comparable to the desired fps, if the image is large and/or the internet condition is poor.
+
+.. raw:: html
+
+   <video width="640" controls loop>
+     <source src="_static/carta_fn_animator_delayedFrame.mp4" type="video/mp4">
+   </video>
+
+.. note::
+   More animator features, such as playback modes (backward, bouncing), playback range and step, etc. will be available in future releases.   
 
 
 Spatial profiler
 ----------------
+Spatial profiler provides the spatial profiles of the current image at the cursor position. When the cursor is moving on the image, instant profiles dervied from the (down-sampled) raster image are displayed. When the cursor stops moving for more than 200 ms, profiles derived from the full resolution image will be displayed instead. This allows users to inspect the image in an efficient way. The "F" key will disable and enable profile update. A marker "+" will be placed on the image to indicate the position of the profiles taken. 
 
+.. raw:: html
+
+   <video width="640" controls loop>
+     <source src="_static/carta_fn_spatialProfiler_demo.mp4" type="video/mp4">
+   </video>
+
+The interactions of the spatial profiler widget are demostracted in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available to the right border. The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
+
+.. figure:: _static/carta_fn_spatialProfiler_widget.png
+   :scale: 37 %
+   :alt: carta_fn_spatialProfiler_widget
+
+.. note::
+   More flexibilities on how mean and rms values are derived will be provided in future releases. Profile fitting capability will be available in future release.   
 
 
 Spectral profiler
 -----------------
+Spectral profiler provides the spectral profile of the current image cube at the cursor position. When the cursor stops moving for more than 200 ms, a spectral profile derived at the cursor position from the full resolution image cube will be displayed. The "F" key will disable and enable profile update. A marker "+" will be placed on the image to indicate the position of the profiles taken. 
+
+
+.. raw:: html
+
+   <video width="640" controls loop>
+     <source src="_static/carta_fn_spectralProfiler_demo.mp4" type="video/mp4">
+   </video>
+
+The interactions of the spectral profiler widget are demostracted in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the channel of the image displayed in the image viewer. The bottom axis shows the spectral coordinate, while optional channel coordinate can be displayed instead. Extra options to configure the profile plot are available to the right border. The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
+
+
+.. figure:: _static/carta_fn_spectralProfiler_widget.png
+   :scale: 37 %
+   :alt: carta_fn_spectralProfiler_widget
+
+
+.. note::
+   Approximated spectral profile while cursor is moving (like spatial profiler) will be provided in future releases. More flexibilities on how mean and rms values are derived will be provided in future releases. Profile fitting capability will be available in future release.
+   

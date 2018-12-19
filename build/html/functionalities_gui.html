@@ -14,6 +14,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -195,7 +196,7 @@
 <div class="section" id="configuring-an-image-plot">
 <h3>Configuring an image plot<a class="headerlink" href="#configuring-an-image-plot" title="Permalink to this headline">¶</a></h3>
 <p>CARTA provides flexible options to configure the appearance of an image plot. The overlay settings are accessible via <strong>View</strong> -&gt; <strong>Overlay</strong> -&gt; <strong>Customize</strong>.</p>
-<video width="640" controls loop>
+<video width="480" controls loop>
   <source src="_static/carta_fn_astOptions.mp4" type="video/mp4">
 </video><p>As an example, below is an image with default overlay settings.</p>
 <div class="figure">
@@ -211,12 +212,45 @@
 </div>
 <div class="section" id="animator">
 <span id="animator-intro"></span><h2>Animator<a class="headerlink" href="#animator" title="Permalink to this headline">¶</a></h2>
+<p>The animator widget provides controls of image frames, channels, and stokes. When multiple images are loaded via <strong>File</strong> -&gt; <strong>Append image</strong>, “Frame” slide bar will show up and allows users to switch between different loaded images. If an image file has multiple channels or stokes, “Channel” or “Stokes” slide bars will appear. On the top there is a set of animation control buttons such play, stop, next, etc. The action will be applied to the slide bar with the activated radio button. As an example below, the action will be applied to the <em>channel</em> axis of the second stokes axis of the third image file.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_fn_animator_widget.png"><img alt="carta_fn_animator_widget" src="_images/carta_fn_animator_widget.png" style="width: 559.44px; height: 171.68px;" /></a>
+</div>
+<p>The frame rate spin box controls the <em>desired</em> frame per second (fps). The <em>actual</em> frame rate depends on image size and internet condition. The “Req” index will display the requested frame index, while the “Current” index will display the actually displayed index in the image viewer. When the “play” button is triggered, the “Req” index will keep the number of the delayed frames to be comparable to the desired fps, if the image is large and/or the internet condition is poor.</p>
+<video width="640" controls loop>
+  <source src="_static/carta_fn_animator_delayedFrame.mp4" type="video/mp4">
+</video><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">More animator features, such as playback modes (backward, bouncing), playback range and step, etc. will be available in future releases.</p>
+</div>
 </div>
 <div class="section" id="spatial-profiler">
 <h2>Spatial profiler<a class="headerlink" href="#spatial-profiler" title="Permalink to this headline">¶</a></h2>
+<p>Spatial profiler provides the spatial profiles of the current image at the cursor position. When the cursor is moving on the image, instant profiles dervied from the (down-sampled) raster image are displayed. When the cursor stops moving for more than 200 ms, profiles derived from the full resolution image will be displayed instead. This allows users to inspect the image in an efficient way. The “F” key will disable and enable profile update. A marker “+” will be placed on the image to indicate the position of the profiles taken.</p>
+<video width="640" controls loop>
+  <source src="_static/carta_fn_spatialProfiler_demo.mp4" type="video/mp4">
+</video><p>The interactions of the spatial profiler widget are demostracted in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available to the right border. The option “Show Mean/RMS” will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_fn_spatialProfiler_widget.png"><img alt="carta_fn_spatialProfiler_widget" src="_images/carta_fn_spatialProfiler_widget.png" style="width: 455.84px; height: 245.68px;" /></a>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">More flexibilities on how mean and rms values are derived will be provided in future releases. Profile fitting capability will be available in future release.</p>
+</div>
 </div>
 <div class="section" id="spectral-profiler">
 <h2>Spectral profiler<a class="headerlink" href="#spectral-profiler" title="Permalink to this headline">¶</a></h2>
+<p>Spectral profiler provides the spectral profile of the current image cube at the cursor position. When the cursor stops moving for more than 200 ms, a spectral profile derived at the cursor position from the full resolution image cube will be displayed. The “F” key will disable and enable profile update. A marker “+” will be placed on the image to indicate the position of the profiles taken.</p>
+<video width="640" controls loop>
+  <source src="_static/carta_fn_spectralProfiler_demo.mp4" type="video/mp4">
+</video><p>The interactions of the spectral profiler widget are demostracted in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. The red vertical bar indicates the channel of the image displayed in the image viewer. The bottom axis shows the spectral coordinate, while optional channel coordinate can be displayed instead. Extra options to configure the profile plot are available to the right border. The option “Show Mean/RMS” will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/carta_fn_spectralProfiler_widget.png"><img alt="carta_fn_spectralProfiler_widget" src="_images/carta_fn_spectralProfiler_widget.png" style="width: 454.36px; height: 244.2px;" /></a>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Approximated spectral profile while cursor is moving (like spatial profiler) will be provided in future releases. More flexibilities on how mean and rms values are derived will be provided in future releases. Profile fitting capability will be available in future release.</p>
+</div>
 </div>
 </div>
 
