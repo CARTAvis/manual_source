@@ -133,6 +133,7 @@ Image is panned equivalently by single-clicking a position in the image. The ima
      <source src="_static/carta_gui_mouse_images_pan.mp4" type="video/mp4">
    </video>
 
+
 .. _mouse_interaction_with_charts:
 
 Mouse interactions with charts

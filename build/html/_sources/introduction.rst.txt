@@ -3,15 +3,32 @@ Introduction
 
 The mission of CARTA
 --------------------
-
+CARTA is the *Cube Analysis and Rendering Tool for Astronomy*, a new image visualization and analysis tool designed for the ALMA, the JVLA, and the radio telescopes of the future such as the SKA. As the image quality improves drastically with modern telecscopes in recent years, classic image viewers are facing performance issues which degrade user experience significantly. The mission of CARTA is to resolve this and provides usability and scalability for the next few decades by involving modern web technology and parallelization.
 
 Server-Client architecture
 --------------------------
+CARTA adopts the server-client architecture which is suitable for visualizing images with large file sizes (GB to TB) easily obtained from ALMA or JVLA observations. It is practically difficult to process such a huge file with personal computer or laptop. Therefore, by adopting the server-client architecture, computation and data storage are handled by remote enterprise-class servers or clusters with high performance storages, while processed products are sent to client side only for visualization with modern web technology like GPU rendering. This architecture also enables users to interact with the ALMA and JVLA science archives by using CARTA as an interface. 
+
+.. image:: _static/carta_intro_serverClient.png
+   :scale: 40 %
 
 
 Codebase and releases
 ---------------------
+CARTA is an open-source project. Its source code is available at https://github.com/CARTAvis. 
 
+CARTA has two distributions: CARTA-server and CARTA-desktop. The former is designed for handling large datasets with remote servers, while the later is suitable for small datasets which can still be handled with personal computer or laptop. Installation guide of these two versions are provided in the section :ref:`installation_configuration`.
+
+The release plans and major goals are the following:
+
+* Version 1.0: current release, including basic image and profile  viewing capability.
+* Version 1.1: basic region of interest (ROI) support and relevant analysis tools (statistics, histogram, and profilers).
+* Version 1.2: WCS group support which allows multiple images to be aligned in spatial and spectral domains.
+* Version 1.3: multiple-panel view
+* Version 1.4: moments image, position-velocity image, and scripting interface
+* Version 1.5: interactive clean
+* Version 1.6: collaborative mode
+* Version 1.7+: misc.
 
 
 
