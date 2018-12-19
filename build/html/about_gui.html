@@ -49,13 +49,13 @@
   <ul>
 <li><a class="reference internal" href="#">Graphical user interface</a><ul>
 <li><a class="reference internal" href="#components">Components</a></li>
-<li><a class="reference internal" href="#layouts-how-to-configure">Layouts: how to configure?</a><ul>
+<li><a class="reference internal" href="#configuring-the-layout">Configuring the layout</a><ul>
 <li><a class="reference internal" href="#resizing-a-panel">Resizing a panel</a></li>
 <li><a class="reference internal" href="#relocating-a-tab-as-a-new-panel">Relocating a tab as a new panel</a></li>
 <li><a class="reference internal" href="#relocating-a-tab-to-another-panel">Relocating a tab to another panel</a></li>
 <li><a class="reference internal" href="#maximixing-and-minimizing-a-tab">Maximixing and minimizing a tab</a></li>
 <li><a class="reference internal" href="#detaching-and-attaching-a-tab">Detaching and attaching a tab</a></li>
-<li><a class="reference internal" href="#activating-a-widget-as-a-floating-window-or-as-a-tab">Activating a widget as a floating window or as a tab</a></li>
+<li><a class="reference internal" href="#creating-a-widget-as-a-floating-window-or-as-a-tab">Creating a widget as a floating window or as a tab</a></li>
 <li><a class="reference internal" href="#light-and-dark-theme">Light and dark theme</a></li>
 </ul>
 </li>
@@ -128,24 +128,24 @@
 </div>
 <p>The main window consists of a set of panels and each panel may hold multiple tabs. For example, in the above figure there are six panels in the main window and there are two tabs in the bottom-right panel. A tab may be detached to become a floating window. The menu bar provides control options, such as image input/output, lanuching widgets, getting helps, etc. The widget bar provides tools to view or analyze images.</p>
 </div>
-<div class="section" id="layouts-how-to-configure">
-<h2>Layouts: how to configure?<a class="headerlink" href="#layouts-how-to-configure" title="Permalink to this headline">¶</a></h2>
-<p>The configuration of the layout is achieved by mouse operations, like single click or drag-and-drop. The drag-and-drop action is guided on the GUI with a semi-transparent rectangle. Below different operations are demostrated.</p>
+<div class="section" id="configuring-the-layout">
+<h2>Configuring the layout<a class="headerlink" href="#configuring-the-layout" title="Permalink to this headline">¶</a></h2>
+<p>The layout configuration can be changed by mouse operations, like single click or drag-and-drop. In the examples below, the drag-and-drop action is guided on the GUI with a semi-transparent rectangle. Various operations are demonstrated below.</p>
 <div class="section" id="resizing-a-panel">
 <h3>Resizing a panel<a class="headerlink" href="#resizing-a-panel" title="Permalink to this headline">¶</a></h3>
-<p>By dragging borders, a panel can be resized like the following example. After a panel is resized, nearby panels are resized automatically to fit the new layout. Note that the appearance of the UI elements is adaptive to the size of the panel, like the <strong>render configuration</strong> widget or the <strong>animator</strong> widget in the example.</p>
+<p>As shown in the example below, a panel can be resized by dragging its borders. After a panel is resized, nearby panels are resized automatically to fit the new layout. Note that the appearance of the UI elements is adaptive to the size of the panel, as seen in the <strong>render configuration</strong> widget or the <strong>animator</strong> widget in the example.</p>
 <video width="640" controls loop>
   <source src="_static/carta_gui_resizing_panel.mp4" type="video/mp4">
 </video></div>
 <div class="section" id="relocating-a-tab-as-a-new-panel">
 <h3>Relocating a tab as a new panel<a class="headerlink" href="#relocating-a-tab-as-a-new-panel" title="Permalink to this headline">¶</a></h3>
-<p>A tab can be relocated by dragging its title to a desired new panel. The target location is visualized with a semi-transparent box, like the following example.</p>
+<p>A tab can be relocated by dragging its title to a desired new panel. The target location is visualized with a semi-transparent box, as shown in the example below.</p>
 <video width="640" controls loop>
   <source src="_static/carta_gui_relocating_tab_as_panel.mp4" type="video/mp4">
 </video></div>
 <div class="section" id="relocating-a-tab-to-another-panel">
 <h3>Relocating a tab to another panel<a class="headerlink" href="#relocating-a-tab-to-another-panel" title="Permalink to this headline">¶</a></h3>
-<p>A tab can be moved to other existing panel by dragging its title to the upper boarder of the target panel, like the following example.</p>
+<p>A tab can be moved to other existing panel by dragging its title to the upper boarder of the target panel, as shown in the example below.</p>
 <video width="640" controls loop>
   <source src="_static/carta_gui_relocating_tab_as_tab.mp4" type="video/mp4">
 </video></div>
@@ -157,19 +157,19 @@
 </video></div>
 <div class="section" id="detaching-and-attaching-a-tab">
 <h3>Detaching and attaching a tab<a class="headerlink" href="#detaching-and-attaching-a-tab" title="Permalink to this headline">¶</a></h3>
-<p>By clicking the <strong>detach</strong> icon (like a pin) at the top-right corner of a panel, the activated tab will be detached to become a floating window. By dragging the <strong>attach</strong> icon (like a pin), a floating winodw will be attached to an existing panel or as a new paenl.</p>
+<p>By clicking the <strong>detach</strong> (unpin) icon at the top-right corner of a panel, the activated tab will be detached to become a floating window. By dragging the <strong>attach</strong> (pin) icon, a floating winodw will be attached to an existing panel or as a new paenl.</p>
 <video width="640" controls loop>
   <source src="_static/carta_gui_detach_attach_tab.mp4" type="video/mp4">
 </video></div>
-<div class="section" id="activating-a-widget-as-a-floating-window-or-as-a-tab">
-<h3>Activating a widget as a floating window or as a tab<a class="headerlink" href="#activating-a-widget-as-a-floating-window-or-as-a-tab" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="creating-a-widget-as-a-floating-window-or-as-a-tab">
+<h3>Creating a widget as a floating window or as a tab<a class="headerlink" href="#creating-a-widget-as-a-floating-window-or-as-a-tab" title="Permalink to this headline">¶</a></h3>
 <p>A widget is activated as a floating window by clicking the icon in the widget bar. A widget can be activated as a tab by dragging the icon in the widget bar to a desired location.</p>
 <video width="640" controls loop>
   <source src="_static/carta_gui_activating_widget.mp4" type="video/mp4">
 </video></div>
 <div class="section" id="light-and-dark-theme">
 <h3>Light and dark theme<a class="headerlink" href="#light-and-dark-theme" title="Permalink to this headline">¶</a></h3>
-<p>CARTA supports two themes: one is the light theme as default and the other is the dark theme which is accessible by the menu <strong>View</strong> -&gt; <strong>Interface</strong>, or the shortcut <strong>shift</strong> + <strong>D</strong>.</p>
+<p>CARTA supports a light (default) and dark theme. The theme can be changed using the <strong>View</strong> -&gt; <strong>Interface</strong> menu item, or the shortcut <strong>shift</strong> + <strong>D</strong>.</p>
 <video width="640" controls loop>
   <source src="_static/carta_gui_theme.mp4" type="video/mp4">
 </video></div>
@@ -178,13 +178,13 @@
 <span id="mouse-interaction-with-images"></span><h2>Mouse interactions with images<a class="headerlink" href="#mouse-interactions-with-images" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="zooming">
 <h3>Zooming<a class="headerlink" href="#zooming" title="Permalink to this headline">¶</a></h3>
-<p>Image is zoomed in by scrolling up and zoomed out by scrolling down.</p>
+<p>The image can be zoomed in by scrolling up and zoomed out by scrolling down.</p>
 <video width="640" controls loop>
   <source src="_static/carta_gui_mouse_images_zoom.mp4" type="video/mp4">
 </video></div>
 <div class="section" id="panning">
 <h3>Panning<a class="headerlink" href="#panning" title="Permalink to this headline">¶</a></h3>
-<p>Image is panned equivalently by single-clicking a position in the image. The image will be re-centered at that posotion in the view.</p>
+<p>The image can be panned equivalently by single-clicking a position in the image. The image will be re-centered at that posotion in the view.</p>
 <video width="640" controls loop>
   <source src="_static/carta_gui_mouse_images_pan.mp4" type="video/mp4">
 </video></div>
@@ -202,20 +202,20 @@
 </video></div>
 <div class="section" id="id2">
 <h3>Panning<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>Dragging with shift key can pan the chart.</p>
+<p>Dragging while holding the shift key pans the chart.</p>
 <video width="640" controls loop>
   <source src="_static/carta_gui_mouse_charts_pan.mp4" type="video/mp4">
 </video></div>
 <div class="section" id="resetting-range">
 <h3>Resetting range<a class="headerlink" href="#resetting-range" title="Permalink to this headline">¶</a></h3>
-<p>Double-clicking on the chart can reset the plotting range.</p>
+<p>Double-clicking on the chart resets the plotting range.</p>
 <video width="640" controls loop>
   <source src="_static/carta_gui_mouse_charts_reset.mp4" type="video/mp4">
 </video></div>
 </div>
 <div class="section" id="keyboard-shortcuts">
 <h2>Keyboard shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permalink to this headline">¶</a></h2>
-<p>CARTA supports keyboard shortcuts to enable certain controls without using a mouse. A summary is accessible via the menu <strong>Help</strong> -&gt; <strong>Controls and Shortcuts</strong>, or the shortcut <strong>shift</strong> + <strong>?</strong>. The shortcuts are slightly different depending on operating systems, which are summerized in the following table.</p>
+<p>CARTA supports keyboard shortcuts to enable certain controls without using a mouse. A summary is accessible via the menu <strong>Help</strong> -&gt; <strong>Controls and Shortcuts</strong>, or the shortcut <strong>shift</strong> + <strong>?</strong>. The shortcuts are slightly different depending on the operating system in use. The shorcuts for each operating system are summarized in the following table.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="39%" />

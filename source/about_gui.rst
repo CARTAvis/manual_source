@@ -24,13 +24,13 @@ The main window consists of a set of panels and each panel may hold multiple tab
 
 
 
-Layouts: how to configure?
---------------------------
-The configuration of the layout is achieved by mouse operations, like single click or drag-and-drop. The drag-and-drop action is guided on the GUI with a semi-transparent rectangle. Below different operations are demostrated.
+Configuring the layout
+----------------------
+The layout configuration can be changed by mouse operations, like single click or drag-and-drop. In the examples below, the drag-and-drop action is guided on the GUI with a semi-transparent rectangle. Various operations are demonstrated below.
 
 Resizing a panel
 ^^^^^^^^^^^^^^^^
-By dragging borders, a panel can be resized like the following example. After a panel is resized, nearby panels are resized automatically to fit the new layout. Note that the appearance of the UI elements is adaptive to the size of the panel, like the **render configuration** widget or the **animator** widget in the example. 
+As shown in the example below, a panel can be resized by dragging its borders. After a panel is resized, nearby panels are resized automatically to fit the new layout. Note that the appearance of the UI elements is adaptive to the size of the panel, as seen in the **render configuration** widget or the **animator** widget in the example. 
 
 
 .. raw:: html
@@ -42,7 +42,7 @@ By dragging borders, a panel can be resized like the following example. After a 
 
 Relocating a tab as a new panel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A tab can be relocated by dragging its title to a desired new panel. The target location is visualized with a semi-transparent box, like the following example.
+A tab can be relocated by dragging its title to a desired new panel. The target location is visualized with a semi-transparent box, as shown in the example below.
 
 
 .. raw:: html
@@ -53,7 +53,7 @@ A tab can be relocated by dragging its title to a desired new panel. The target 
 
 Relocating a tab to another panel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A tab can be moved to other existing panel by dragging its title to the upper boarder of the target panel, like the following example.
+A tab can be moved to other existing panel by dragging its title to the upper boarder of the target panel, as shown in the example below.
 
 
 .. raw:: html
@@ -77,7 +77,7 @@ By clicking the **maximize** icon at the top-right corner of a panel, the activa
 
 Detaching and attaching a tab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-By clicking the **detach** icon (like a pin) at the top-right corner of a panel, the activated tab will be detached to become a floating window. By dragging the **attach** icon (like a pin), a floating winodw will be attached to an existing panel or as a new paenl.
+By clicking the **detach** (unpin) icon at the top-right corner of a panel, the activated tab will be detached to become a floating window. By dragging the **attach** (pin) icon, a floating winodw will be attached to an existing panel or as a new paenl.
 
 .. raw:: html
 
@@ -86,7 +86,7 @@ By clicking the **detach** icon (like a pin) at the top-right corner of a panel,
    </video>
 
 
-Activating a widget as a floating window or as a tab
+Creating a widget as a floating window or as a tab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A widget is activated as a floating window by clicking the icon in the widget bar. A widget can be activated as a tab by dragging the icon in the widget bar to a desired location.
 
@@ -98,7 +98,7 @@ A widget is activated as a floating window by clicking the icon in the widget ba
 
 Light and dark theme
 ^^^^^^^^^^^^^^^^^^^^
-CARTA supports two themes: one is the light theme as default and the other is the dark theme which is accessible by the menu **View** -> **Interface**, or the shortcut **shift** + **D**. 
+CARTA supports a light (default) and dark theme. The theme can be changed using the **View** -> **Interface** menu item, or the shortcut **shift** + **D**.
 
 .. raw:: html
 
@@ -114,7 +114,7 @@ Mouse interactions with images
 
 Zooming
 ^^^^^^^
-Image is zoomed in by scrolling up and zoomed out by scrolling down.
+The image can be zoomed in by scrolling up and zoomed out by scrolling down.
 
 .. raw:: html
 
@@ -125,7 +125,7 @@ Image is zoomed in by scrolling up and zoomed out by scrolling down.
 
 Panning
 ^^^^^^^
-Image is panned equivalently by single-clicking a position in the image. The image will be re-centered at that posotion in the view.  
+The image can be panned equivalently by single-clicking a position in the image. The image will be re-centered at that posotion in the view.  
 
 .. raw:: html
 
@@ -161,7 +161,8 @@ Alternatively, horizontal zoom, vertical zoom, and box zoom are supported.
 
 Panning
 ^^^^^^^
-Dragging with shift key can pan the chart.
+Dragging while holding the shift key pans the chart.
+
 
 .. raw:: html
 
@@ -171,7 +172,7 @@ Dragging with shift key can pan the chart.
 
 Resetting range
 ^^^^^^^^^^^^^^^
-Double-clicking on the chart can reset the plotting range.
+Double-clicking on the chart resets the plotting range.
 
 .. raw:: html
 
@@ -182,7 +183,7 @@ Double-clicking on the chart can reset the plotting range.
 
 Keyboard shortcuts
 ------------------
-CARTA supports keyboard shortcuts to enable certain controls without using a mouse. A summary is accessible via the menu **Help** -> **Controls and Shortcuts**, or the shortcut **shift** + **?**. The shortcuts are slightly different depending on operating systems, which are summerized in the following table.
+CARTA supports keyboard shortcuts to enable certain controls without using a mouse. A summary is accessible via the menu **Help** -> **Controls and Shortcuts**, or the shortcut **shift** + **?**. The shortcuts are slightly different depending on the operating system in use. The shorcuts for each operating system are summarized in the following table.
 
 
 +------------------------------+-----------------------+-----------------------+
