@@ -98,7 +98,7 @@ CARTA image viewing performance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The per-frame rendering approach helps to improve the performance of loading an image significantly. Traditionally when an image is loaded, the minimum and maximum of the entire image (cube) are looked for. This becomes a serious performance issue if the image (cube) size is extraordinary large (> several GB). In addition, applying the global minimum and maximum to render a raster image usually (if not often) results in a poorly rendered image if the dynamical range is high. Then users need to re-render the image repeatly with refined boundary values. Re-rendering such a large image repeatly further deduces user experiences.
 
-CARTA hopes to improve the image viewing experience by adopting GPU rendering with web browser technology. In addtion, CARTA only renders an image with just enough image resolution (down-sampling). These combinations results in a high-performance remote image viewer. The total file size is no longer a bottleneck. The determinitve factors are  1) image size in x and y dimensions, and 2) internet bandwidth, instead.
+CARTA hopes to improve the image viewing experience by adopting GPU rendering with web browser technology. In addtion, CARTA only renders an image with just enough image resolution (down-sampling). This combination results in a high-performance remote image viewer. The total file size is no longer a bottleneck. The determinitve factors are  1) image size in x and y dimensions, and 2) internet bandwidth, instead.
 
 
 Changing image view

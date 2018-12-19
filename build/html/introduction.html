@@ -49,7 +49,7 @@
   <ul>
 <li><a class="reference internal" href="#">Introduction</a><ul>
 <li><a class="reference internal" href="#the-mission-of-carta">The mission of CARTA</a></li>
-<li><a class="reference internal" href="#server-client-architecture">Server-Client architecture</a></li>
+<li><a class="reference internal" href="#client-server-architecture">Client-Server architecture</a></li>
 <li><a class="reference internal" href="#codebase-and-releases">Codebase and releases</a></li>
 <li><a class="reference internal" href="#contributors">Contributors</a></li>
 <li><a class="reference internal" href="#acknowledgements">Acknowledgements</a></li>
@@ -95,18 +95,18 @@
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="the-mission-of-carta">
 <h2>The mission of CARTA<a class="headerlink" href="#the-mission-of-carta" title="Permalink to this headline">¶</a></h2>
-<p>CARTA is the <em>Cube Analysis and Rendering Tool for Astronomy</em>, a new image visualization and analysis tool designed for the ALMA, the JVLA, and the radio telescopes of the future such as the SKA. As the image quality improves drastically with modern telecscopes in recent years, classic image viewers are facing performance issues which degrade user experience significantly. The mission of CARTA is to resolve this and provides usability and scalability for the next few decades by involving modern web technology and parallelization.</p>
+<p>CARTA is the <em>Cube Analysis and Rendering Tool for Astronomy</em>, a new image visualization and analysis tool designed for the ALMA, the JVLA, and the radio telescopes of the future such as the SKA. As the image quality improves drastically with modern telecscopes in recent years, classic image viewers face performance issues which degrade user experience significantly. The mission of CARTA is to resolve this and provide usability and scalability for the next few decades by using modern web technology and parallelization.</p>
 </div>
-<div class="section" id="server-client-architecture">
-<h2>Server-Client architecture<a class="headerlink" href="#server-client-architecture" title="Permalink to this headline">¶</a></h2>
-<p>CARTA adopts the server-client architecture which is suitable for visualizing images with large file sizes (GB to TB) easily obtained from ALMA or JVLA observations. It is practically difficult to process such a huge file with personal computer or laptop. Therefore, by adopting the server-client architecture, computation and data storage are handled by remote enterprise-class servers or clusters with high performance storages, while processed products are sent to client side only for visualization with modern web technology like GPU rendering. This architecture also enables users to interact with the ALMA and JVLA science archives by using CARTA as an interface.</p>
+<div class="section" id="client-server-architecture">
+<h2>Client-Server architecture<a class="headerlink" href="#client-server-architecture" title="Permalink to this headline">¶</a></h2>
+<p>CARTA uses a client-server architecture which is suitable for visualizing images with large file sizes (GB to TB) easily obtained from ALMA or JVLA observations. It is practically difficult to process such a huge file with personal computer or laptop. By using a client-server architecture, computation and data storage are handled by remote enterprise-class servers or clusters with high performance storage, while processed products are sent to clients only for visualization with modern web features, such as GPU-accelerated rendering. This architecture also enables users to interact with the ALMA and JVLA science archives by using CARTA as an interface.</p>
 <a class="reference internal image-reference" href="_images/carta_intro_serverClient.png"><img alt="_images/carta_intro_serverClient.png" src="_images/carta_intro_serverClient.png" style="width: 712.0px; height: 334.4px;" /></a>
 </div>
 <div class="section" id="codebase-and-releases">
 <h2>Codebase and releases<a class="headerlink" href="#codebase-and-releases" title="Permalink to this headline">¶</a></h2>
 <p>CARTA is an open-source project. Its source code is available at <a class="reference external" href="https://github.com/CARTAvis">https://github.com/CARTAvis</a>.</p>
-<p>CARTA has two distributions: CARTA-server and CARTA-desktop. The former is designed for handling large datasets with remote servers, while the later is suitable for small datasets which can still be handled with personal computer or laptop. Installation guide of these two versions are provided in the section <a class="reference internal" href="installation_and_configuration.html#installation-configuration"><span class="std std-ref">Installation and configuration</span></a>.</p>
-<p>The release plans and major goals are the following:</p>
+<p>CARTA has two distributions: CARTA-server and CARTA-desktop. The former is designed for handling large datasets with remote servers, while the later is suitable for smaller datasets which can still be handled with personal computer or laptop. Installation guides for these two versions are provided in the section <a class="reference internal" href="installation_and_configuration.html#installation-configuration"><span class="std std-ref">Installation and configuration</span></a>.</p>
+<p>The release plan and major goals are the following:</p>
 <ul class="simple">
 <li>Version 1.0: current release, including basic image and profile  viewing capability.</li>
 <li>Version 1.1: basic region of interest (ROI) support and relevant analysis tools (statistics, histogram, and profilers).</li>
@@ -134,7 +134,7 @@
 <p>ASIAA CASA Development Center (ACDC) acknowledges the grant from the Ministry of Science and Technology of Taiwan for the ALMA-NA collaboration.</p>
 <p>The Inter-University Institute for Data Intensive Astronomy is a partnership of three South African universities: the University of Cape Town, the University of the Western Cape and the University of Pretoria.</p>
 <p>The National Radio Astronomy Observatory is a facility of the National Science Foundation operated under cooperative agreement by Associated Universities, Inc.</p>
-<p>CARTA is mainly built in C++, JavaScript, and TypeScript, and with the following third-party libraries:</p>
+<p>CARTA is mainly built in C++, TypeScript, and JavaScript, and with the following third-party libraries:</p>
 <ul class="simple">
 <li>AST: <a class="reference external" href="http://starlink.eao.hawaii.edu/starlink/AST">http://starlink.eao.hawaii.edu/starlink/AST</a></li>
 <li>Blueprint: <a class="reference external" href="https://blueprintjs.com">https://blueprintjs.com</a></li>
@@ -142,7 +142,6 @@
 <li>Chart.js: <a class="reference external" href="https://www.chartjs.org">https://www.chartjs.org</a></li>
 <li>Electron: <a class="reference external" href="https://electronjs.org">https://electronjs.org</a></li>
 <li>GoldenLayout: <a class="reference external" href="https://golden-layout.com">https://golden-layout.com</a></li>
-<li>HDF5: <a class="reference external" href="https://www.hdfgroup.org/solutions/hdf5">https://www.hdfgroup.org/solutions/hdf5</a></li>
 <li>MobX: <a class="reference external" href="https://mobx.js.org">https://mobx.js.org</a></li>
 <li>React: <a class="reference external" href="https://reactjs.org">https://reactjs.org</a></li>
 <li>TBB: <a class="reference external" href="https://www.threadingbuildingblocks.org">https://www.threadingbuildingblocks.org</a></li>
