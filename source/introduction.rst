@@ -3,7 +3,7 @@ Introduction
 
 The mission of CARTA
 --------------------
-CARTA is the *Cube Analysis and Rendering Tool for Astronomy*, a new image visualization and analysis tool designed for the ALMA, the JVLA, and the radio telescopes of the future such as the SKA. As the image quality improves drastically with modern telecscopes in recent years, classic image viewers face performance issues which degrade user experience significantly. The mission of CARTA is to resolve this and provide usability and scalability for the next few decades by using modern web technology and parallelization.
+CARTA is the *Cube Analysis and Rendering Tool for Astronomy*, a new image visualization and analysis tool designed for the ALMA, the JVLA, and the radio telescopes of the future such as the SKA. As the image size increases drastically with modern telecscopes in recent years, contemporary image viewers face performance issues which degrade user experience significantly. The mission of CARTA is to resolve this and provide usability and scalability for the future by utilizing modern web technologies and computing parallelization.
 
 Client-Server architecture
 --------------------------
@@ -33,13 +33,17 @@ The release plan and major goals are the following:
 * Version 1.7+: misc.
 
 
+Getting help
+------------
+The CARTA team welcomes any suggestion, feature request, or bug report, to make CARTA better via the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_.
+
 
 
 Contributors
 ------------
 The development of the CARTA project is a joint effort from (in alphabetical order):
 
-* `Academia Sinica, Institute of Astronomy and Astrophysics (ASIAA) <http://www.asiaa.sinica.edu.tw>`_
+* `Academia Sinica, Institute of Astronomy and Astrophysics (ASIAA) <https://www.asiaa.sinica.edu.tw>`_
 * `Inter-university Institute for Data Intensive Astronomy (IDIA) <https://idia.ac.za>`_
 * `National Radio Astronomy Observatory (NRAO) <https://science.nrao.edu>`_
 * `Department of Physics, University of Alberta <https://www.ualberta.ca/physics>`_
@@ -51,8 +55,8 @@ The development of the CARTA project is a joint effort from (in alphabetical ord
         style="width:100%;height:auto;">
 
 
-Acknowledgements
-----------------
+Acknowledgement
+---------------
 ASIAA CASA Development Center (ACDC) acknowledges the grant from the Ministry of Science and Technology of Taiwan for the ALMA-NA collaboration.
 
 The Inter-University Institute for Data Intensive Astronomy is a partnership of three South African universities: the University of Cape Town, the University of the Western Cape and the University of Pretoria.
