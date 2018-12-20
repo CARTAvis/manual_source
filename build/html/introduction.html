@@ -100,12 +100,12 @@
 <div class="section" id="client-server-architecture">
 <h2>Client-Server architecture<a class="headerlink" href="#client-server-architecture" title="Permalink to this headline">¶</a></h2>
 <p>CARTA uses a client-server architecture which is suitable for visualizing images with large file sizes (GB to TB) easily obtained from ALMA or JVLA observations. It is practically difficult to process such a huge file with personal computer or laptop. By using a client-server architecture, computation and data storage are handled by remote enterprise-class servers or clusters with high performance storage, while processed products are sent to clients only for visualization with modern web features, such as GPU-accelerated rendering. This architecture also enables users to interact with the ALMA and JVLA science archives by using CARTA as an interface.</p>
-<a class="reference internal image-reference" href="_images/carta_intro_serverClient.png"><img alt="_images/carta_intro_serverClient.png" src="_images/carta_intro_serverClient.png" style="width: 712.0px; height: 334.4px;" /></a>
-</div>
+<img src="_static/carta_intro_serverClient.png"
+     style="width:100%;height:auto;"></div>
 <div class="section" id="codebase-and-releases">
 <h2>Codebase and releases<a class="headerlink" href="#codebase-and-releases" title="Permalink to this headline">¶</a></h2>
 <p>CARTA is an open-source project. Its source code is available at <a class="reference external" href="https://github.com/CARTAvis">https://github.com/CARTAvis</a>.</p>
-<p>CARTA has two distributions: CARTA-server and CARTA-desktop. The former is designed for handling large datasets with remote servers, while the later is suitable for smaller datasets which can still be handled with personal computer or laptop. Installation guides for these two versions are provided in the section <a class="reference internal" href="installation_and_configuration.html#installation-configuration"><span class="std std-ref">Installation and configuration</span></a>.</p>
+<p>CARTA has two distributions: CARTA-server and CARTA-desktop. The former is designed for handling large datasets with remote servers, while the later is suitable for smaller datasets (a few thousand pixels in the x and y dimensions) which can still be handled with personal computer or laptop. Installation guides for these two versions are provided in the section <a class="reference internal" href="installation_and_configuration.html#installation-configuration"><span class="std std-ref">Installation and configuration</span></a>.</p>
 <p>The release plan and major goals are the following:</p>
 <ul class="simple">
 <li>Version 1.0: current release, including basic image and profile  viewing capability.</li>
@@ -127,8 +127,8 @@
 <li><a class="reference external" href="https://science.nrao.edu">National Radio Astronomy Observatory (NRAO)</a></li>
 <li><a class="reference external" href="https://www.ualberta.ca/physics">Department of Physics, University of Alberta</a></li>
 </ul>
-<a class="reference internal image-reference" href="_images/carta_wg_logo.png"><img alt="_images/carta_wg_logo.png" src="_images/carta_wg_logo.png" style="width: 777.0px; height: 137.0px;" /></a>
-</div>
+<img src="_static/carta_wg_logo.png"
+     style="width:100%;height:auto;"></div>
 <div class="section" id="acknowledgements">
 <h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
 <p>ASIAA CASA Development Center (ACDC) acknowledges the grant from the Ministry of Science and Technology of Taiwan for the ALMA-NA collaboration.</p>

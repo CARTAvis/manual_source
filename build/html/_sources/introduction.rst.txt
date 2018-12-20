@@ -9,15 +9,17 @@ Client-Server architecture
 --------------------------
 CARTA uses a client-server architecture which is suitable for visualizing images with large file sizes (GB to TB) easily obtained from ALMA or JVLA observations. It is practically difficult to process such a huge file with personal computer or laptop. By using a client-server architecture, computation and data storage are handled by remote enterprise-class servers or clusters with high performance storage, while processed products are sent to clients only for visualization with modern web features, such as GPU-accelerated rendering. This architecture also enables users to interact with the ALMA and JVLA science archives by using CARTA as an interface. 
 
-.. image:: _static/carta_intro_serverClient.png
-   :scale: 40 %
 
+.. raw:: html
+
+   <img src="_static/carta_intro_serverClient.png" 
+        style="width:100%;height:auto;">
 
 Codebase and releases
 ---------------------
 CARTA is an open-source project. Its source code is available at https://github.com/CARTAvis. 
 
-CARTA has two distributions: CARTA-server and CARTA-desktop. The former is designed for handling large datasets with remote servers, while the later is suitable for smaller datasets which can still be handled with personal computer or laptop. Installation guides for these two versions are provided in the section :ref:`installation_configuration`.
+CARTA has two distributions: CARTA-server and CARTA-desktop. The former is designed for handling large datasets with remote servers, while the later is suitable for smaller datasets (a few thousand pixels in the x and y dimensions) which can still be handled with personal computer or laptop. Installation guides for these two versions are provided in the section :ref:`installation_configuration`.
 
 The release plan and major goals are the following:
 
@@ -42,8 +44,11 @@ The development of the CARTA project is a joint effort from (in alphabetical ord
 * `National Radio Astronomy Observatory (NRAO) <https://science.nrao.edu>`_
 * `Department of Physics, University of Alberta <https://www.ualberta.ca/physics>`_
 
-.. image:: _static/carta_wg_logo.png
-   :scale: 50 %
+
+.. raw:: html
+
+   <img src="_static/carta_wg_logo.png" 
+        style="width:100%;height:auto;">
 
 
 Acknowledgements

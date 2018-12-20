@@ -1,5 +1,5 @@
-Features
-========
+Functionality
+=============
 With version 1.0, CARTA provides basic image viewing capabilities, basic profile viewing capabilities in both spatial and spectral domains, and basic per-frame or per-cube histogram viewing capabilities. Exporting images or charts in png format and charts in plain text format are supported.
 
 File browser
@@ -7,16 +7,17 @@ File browser
 File browser, accessible via the menu **File** -> **Open image** or the menu **File** -> **Append image**, provides information of images supported by CARTA. Currently CARTA supports images in:  
 
 * CASA format
-* HDF5-SKA format
+* HDF5-IDIA format
 * FITS format
 * MIRIAD format 
 
 Only these formats will be shown in the file list with image type and file size. When an image is selected, a brief summary of image properties is provided on the right side of the dialog. Full header is also available in the second tab. To view an image, click the **Load** button at the bottom-right corner. To view a new image with all the loaded images closed, use **File** -> **Open image** -> **Load**. To view multiple images, use **File** -> **Append image** -> **Append**.
 
-.. figure:: _static/carta_fn_fileBrowser.png
-   :scale: 30 %
-   :alt: carta_fn_fileBrowser
 
+.. raw:: html
+
+   <img src="_static/carta_fn_fileBrowser.png" 
+        style="width:100%;height:auto;">
 
 .. note::
    When viewing images in appending mode, alignments in the world coordinate system (WCS) and the frequency/velocity space are not available in this version. This feature is expected in v1.2.
@@ -42,7 +43,7 @@ In CARTA, the resolution of an image displayed in the image viewer is *dynamical
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_fn_imageViewer_downsample.mp4" type="video/mp4">
    </video>
 
@@ -61,7 +62,7 @@ The render configuration widget controls how a raster image is rendered in the i
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_fn_renderConfig_widget.mp4" type="video/mp4">
    </video>
 
@@ -69,7 +70,7 @@ By default, CARTA determines the boundary values of a colormap on **per-frame** 
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_fn_renderConfig_perFrame.mp4" type="video/mp4">
    </video>
 
@@ -77,7 +78,7 @@ However, when comparing images frame by frame, color scales need to be fixed. Th
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_fn_renderConfig_perCustom.mp4" type="video/mp4">
    </video>
 
@@ -107,7 +108,7 @@ CARTA provides different ways to change the image view. With a mouse, image zoom
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_fn_imageViewer_changeView.mp4" type="video/mp4">
    </video>
 
@@ -124,10 +125,11 @@ When the cursor is on the image viewer, pixel information at the cursor position
 * Down-sample factor (if applicable).
 * Frequency, velocity, and reference frame (if applicable).
 
-.. figure:: _static/carta_fn_imageViewer_cursorInfo.png
-   :scale: 40 %
-   :alt: carta_gui
 
+.. raw:: html
+
+   <img src="_static/carta_fn_imageViewer_cursorInfo.png" 
+        style="width:100%;height:auto;">
 
 When the coordinate system is changed (e.g., ICRS to Galactic), the displayed world coordinate will be changed accordingly. The precison is determined dynamically based on the image header. 
 
@@ -146,21 +148,25 @@ CARTA provides flexible options to configure the appearance of an image plot. Th
 
 .. raw:: html
 
-   <video width="480" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_fn_astOptions.mp4" type="video/mp4">
    </video>
 
 As an example, below is an image with default overlay settings.
 
-.. figure:: _static/carta_fn_astOptions_before.png
-   :scale: 37 %
-   :alt: carta_fn_astOptions_before
+
+.. raw:: html
+
+   <img src="_static/carta_fn_astOptions_before.png" 
+        style="width:100%;height:auto;">
 
 And, this is a customized one. The coordinate system has been switched from FK5 to Galactic. Font type, size, and color are customized, as well as the axis border and grid lines. 
 
-.. figure:: _static/carta_fn_astOptions_after.png
-   :scale: 37 %
-   :alt: carta_fn_astOptions_after
+.. raw:: html
+
+   <img src="_static/carta_fn_astOptions_after.png" 
+        style="width:100%;height:auto;">
+
 
 The restoring beam is shown at the bottom-left corner, if applicable.
 
@@ -175,15 +181,19 @@ Animator
 --------
 The animator widget provides controls of image frames, channels, and stokes. When multiple images are loaded via **File** -> **Append image**, "Frame" slide bar will show up and allows users to switch between different loaded images. If an image file has multiple channels or stokes, "Channel" or "Stokes" slide bars will appear. On the top there is a set of animation control buttons such play, stop, next, etc. The action will be applied to the slide bar with the activated radio button. As an example below, the action will be applied to the *channel* axis of the second stokes axis of the third image file. 
 
-.. figure:: _static/carta_fn_animator_widget.png
-   :scale: 37 %
-   :alt: carta_fn_animator_widget
+
+.. raw:: html
+
+   <img src="_static/carta_fn_animator_widget.png" 
+        style="width:100%;height:auto;">
+
+
 
 The frame rate spin box controls the *desired* frame per second (fps). The *actual* frame rate depends on image size and internet condition. The "Req" index will display the requested frame index, while the "Current" index will display the actually displayed index in the image viewer. When the "play" button is triggered, the "Req" index will keep the number of the delayed frames to be comparable to the desired fps, if the image is large and/or the internet condition is poor.
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_fn_animator_delayedFrame.mp4" type="video/mp4">
    </video>
 
@@ -197,15 +207,18 @@ Spatial profiler provides the spatial profiles of the current image at the curso
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_fn_spatialProfiler_demo.mp4" type="video/mp4">
    </video>
 
 The interactions of the spatial profiler widget are demostracted in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available to the right border. The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
 
-.. figure:: _static/carta_fn_spatialProfiler_widget.png
-   :scale: 37 %
-   :alt: carta_fn_spatialProfiler_widget
+
+.. raw:: html
+
+   <img src="_static/carta_fn_spatialProfiler_widget.png" 
+        style="width:100%;height:auto;">
+
 
 .. note::
    More flexibilities on how mean and rms values are derived will be provided in future releases. Profile fitting capability will be available in future release.   
@@ -218,17 +231,17 @@ Spectral profiler provides the spectral profile of the current image cube at the
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_fn_spectralProfiler_demo.mp4" type="video/mp4">
    </video>
 
 The interactions of the spectral profiler widget are demostracted in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the channel of the image displayed in the image viewer. The bottom axis shows the spectral coordinate, while optional channel coordinate can be displayed instead. Extra options to configure the profile plot are available to the right border. The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
 
 
-.. figure:: _static/carta_fn_spectralProfiler_widget.png
-   :scale: 37 %
-   :alt: carta_fn_spectralProfiler_widget
+.. raw:: html
 
+   <img src="_static/carta_fn_spectralProfiler_widget.png" 
+        style="width:100%;height:auto;">
 
 .. note::
    Approximated spectral profile while cursor is moving (like spatial profiler) will be provided in future releases. More flexibilities on how mean and rms values are derived will be provided in future releases. Profile fitting capability will be available in future release.

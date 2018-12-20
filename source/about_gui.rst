@@ -12,15 +12,18 @@ The GUI of CARTA is classified into different components:
 * widget bar
 * panel 
 * tab
-* floating window
+* floating widget
 
-.. figure:: _static/carta_gui.png
-   :scale: 40 %
-   :alt: carta_gui
 
-   Figure: components of the CARTA garphical user interface.
+.. raw:: html
 
-The main window consists of a set of panels and each panel may hold multiple tabs. For example, in the above figure there are six panels in the main window and there are two tabs in the bottom-right panel. A tab may be detached to become a floating window. The menu bar provides control options, such as image input/output, lanuching widgets, getting helps, etc. The widget bar provides tools to view or analyze images.
+   <img src="_static/carta_gui.png" 
+        style="width:100%;height:auto;">
+   
+
+
+
+The main window consists of a set of panels and each panel may hold multiple tabs. For example, in the above figure there are six panels in the main window and there are two tabs in the bottom-right panel. A tab may be detached to become a floating widget. The menu bar provides control options, such as image input/output, lanuching widgets, getting helps, etc. The widget bar provides tools to view or analyze images.
 
 
 
@@ -35,9 +38,10 @@ As shown in the example below, a panel can be resized by dragging its borders. A
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_resizing_panel.mp4" type="video/mp4">
    </video>
+
 
 
 Relocating a tab as a new panel
@@ -47,7 +51,7 @@ A tab can be relocated by dragging its title to a desired new panel. The target 
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_relocating_tab_as_panel.mp4" type="video/mp4">
    </video>
 
@@ -58,7 +62,7 @@ A tab can be moved to other existing panel by dragging its title to the upper bo
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_relocating_tab_as_tab.mp4" type="video/mp4">
    </video>
 
@@ -71,28 +75,28 @@ By clicking the **maximize** icon at the top-right corner of a panel, the activa
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_max_min_tab.mp4" type="video/mp4">
    </video>
 
 Detaching and attaching a tab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-By clicking the **detach** (unpin) icon at the top-right corner of a panel, the activated tab will be detached to become a floating window. By dragging the **attach** (pin) icon, a floating winodw will be attached to an existing panel or as a new paenl.
+By clicking the **detach** (unpin) icon at the top-right corner of a panel, the activated tab will be detached to become a floating widget. By dragging the **attach** (pin) icon, a floating winodw will be attached to an existing panel or as a new paenl.
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_detach_attach_tab.mp4" type="video/mp4">
    </video>
 
 
-Creating a widget as a floating window or as a tab
+Creating a widget as a floating widget or as a tab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A widget is activated as a floating window by clicking the icon in the widget bar. A widget can be activated as a tab by dragging the icon in the widget bar to a desired location.
+A widget is activated as a floating widget by clicking the icon in the widget bar. A widget can be activated as a tab by dragging the icon in the widget bar to a desired location.
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_activating_widget.mp4" type="video/mp4">
    </video>
 
@@ -102,7 +106,7 @@ CARTA supports a light (default) and dark theme. The theme can be changed using 
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_theme.mp4" type="video/mp4">
    </video>
 
@@ -118,7 +122,7 @@ The image can be zoomed in by scrolling up and zoomed out by scrolling down.
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_mouse_images_zoom.mp4" type="video/mp4">
    </video>
 
@@ -129,7 +133,7 @@ The image can be panned equivalently by single-clicking a position in the image.
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_mouse_images_pan.mp4" type="video/mp4">
    </video>
 
@@ -145,7 +149,7 @@ A chart (profiles and histograms) is zoom by scrolling.
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_mouse_charts_zoom1.mp4" type="video/mp4">
    </video>
 
@@ -154,7 +158,7 @@ Alternatively, horizontal zoom, vertical zoom, and box zoom are supported.
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_mouse_charts_zoom2.mp4" type="video/mp4">
    </video>
 
@@ -166,7 +170,7 @@ Dragging while holding the shift key pans the chart.
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_mouse_charts_pan.mp4" type="video/mp4">
    </video>
 
@@ -176,7 +180,7 @@ Double-clicking on the chart resets the plotting range.
 
 .. raw:: html
 
-   <video width="640" controls loop>
+   <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_mouse_charts_reset.mp4" type="video/mp4">
    </video>
 

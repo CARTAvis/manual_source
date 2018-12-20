@@ -18,7 +18,7 @@
     <script type="text/javascript" src="_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Functionalities" href="functionalities_gui.html" />
+    <link rel="next" title="Features" href="functionalities_gui.html" />
     <link rel="prev" title="Installation and configuration" href="installation_and_configuration.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
@@ -32,7 +32,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="functionalities_gui.html" title="Functionalities"
+          <a href="functionalities_gui.html" title="Features"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="installation_and_configuration.html" title="Installation and configuration"
@@ -55,7 +55,7 @@
 <li><a class="reference internal" href="#relocating-a-tab-to-another-panel">Relocating a tab to another panel</a></li>
 <li><a class="reference internal" href="#maximixing-and-minimizing-a-tab">Maximixing and minimizing a tab</a></li>
 <li><a class="reference internal" href="#detaching-and-attaching-a-tab">Detaching and attaching a tab</a></li>
-<li><a class="reference internal" href="#creating-a-widget-as-a-floating-window-or-as-a-tab">Creating a widget as a floating window or as a tab</a></li>
+<li><a class="reference internal" href="#creating-a-widget-as-a-floating-widget-or-as-a-tab">Creating a widget as a floating widget or as a tab</a></li>
 <li><a class="reference internal" href="#light-and-dark-theme">Light and dark theme</a></li>
 </ul>
 </li>
@@ -80,7 +80,7 @@
                         title="previous chapter">Installation and configuration</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="functionalities_gui.html"
-                        title="next chapter">Functionalities</a></p>
+                        title="next chapter">Features</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -120,13 +120,10 @@
 <li>widget bar</li>
 <li>panel</li>
 <li>tab</li>
-<li>floating window</li>
+<li>floating widget</li>
 </ul>
-<div class="figure" id="id3">
-<a class="reference internal image-reference" href="_images/carta_gui.png"><img alt="carta_gui" src="_images/carta_gui.png" style="width: 796.8px; height: 469.6px;" /></a>
-<p class="caption"><span class="caption-text">Figure: components of the CARTA garphical user interface.</span></p>
-</div>
-<p>The main window consists of a set of panels and each panel may hold multiple tabs. For example, in the above figure there are six panels in the main window and there are two tabs in the bottom-right panel. A tab may be detached to become a floating window. The menu bar provides control options, such as image input/output, lanuching widgets, getting helps, etc. The widget bar provides tools to view or analyze images.</p>
+<img src="_static/carta_gui.png"
+     style="width:100%;height:auto;"><p>The main window consists of a set of panels and each panel may hold multiple tabs. For example, in the above figure there are six panels in the main window and there are two tabs in the bottom-right panel. A tab may be detached to become a floating widget. The menu bar provides control options, such as image input/output, lanuching widgets, getting helps, etc. The widget bar provides tools to view or analyze images.</p>
 </div>
 <div class="section" id="configuring-the-layout">
 <h2>Configuring the layout<a class="headerlink" href="#configuring-the-layout" title="Permalink to this headline">¶</a></h2>
@@ -134,43 +131,43 @@
 <div class="section" id="resizing-a-panel">
 <h3>Resizing a panel<a class="headerlink" href="#resizing-a-panel" title="Permalink to this headline">¶</a></h3>
 <p>As shown in the example below, a panel can be resized by dragging its borders. After a panel is resized, nearby panels are resized automatically to fit the new layout. Note that the appearance of the UI elements is adaptive to the size of the panel, as seen in the <strong>render configuration</strong> widget or the <strong>animator</strong> widget in the example.</p>
-<video width="640" controls loop>
+<video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_resizing_panel.mp4" type="video/mp4">
 </video></div>
 <div class="section" id="relocating-a-tab-as-a-new-panel">
 <h3>Relocating a tab as a new panel<a class="headerlink" href="#relocating-a-tab-as-a-new-panel" title="Permalink to this headline">¶</a></h3>
 <p>A tab can be relocated by dragging its title to a desired new panel. The target location is visualized with a semi-transparent box, as shown in the example below.</p>
-<video width="640" controls loop>
+<video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_relocating_tab_as_panel.mp4" type="video/mp4">
 </video></div>
 <div class="section" id="relocating-a-tab-to-another-panel">
 <h3>Relocating a tab to another panel<a class="headerlink" href="#relocating-a-tab-to-another-panel" title="Permalink to this headline">¶</a></h3>
 <p>A tab can be moved to other existing panel by dragging its title to the upper boarder of the target panel, as shown in the example below.</p>
-<video width="640" controls loop>
+<video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_relocating_tab_as_tab.mp4" type="video/mp4">
 </video></div>
 <div class="section" id="maximixing-and-minimizing-a-tab">
 <h3>Maximixing and minimizing a tab<a class="headerlink" href="#maximixing-and-minimizing-a-tab" title="Permalink to this headline">¶</a></h3>
 <p>By clicking the <strong>maximize</strong> icon at the top-right corner of a panel, the activated tab will be maximized to the main window. By clicking the <strong>restore</strong> icon, the tab will be restored to its original panel.</p>
-<video width="640" controls loop>
+<video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_max_min_tab.mp4" type="video/mp4">
 </video></div>
 <div class="section" id="detaching-and-attaching-a-tab">
 <h3>Detaching and attaching a tab<a class="headerlink" href="#detaching-and-attaching-a-tab" title="Permalink to this headline">¶</a></h3>
-<p>By clicking the <strong>detach</strong> (unpin) icon at the top-right corner of a panel, the activated tab will be detached to become a floating window. By dragging the <strong>attach</strong> (pin) icon, a floating winodw will be attached to an existing panel or as a new paenl.</p>
-<video width="640" controls loop>
+<p>By clicking the <strong>detach</strong> (unpin) icon at the top-right corner of a panel, the activated tab will be detached to become a floating widget. By dragging the <strong>attach</strong> (pin) icon, a floating winodw will be attached to an existing panel or as a new paenl.</p>
+<video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_detach_attach_tab.mp4" type="video/mp4">
 </video></div>
-<div class="section" id="creating-a-widget-as-a-floating-window-or-as-a-tab">
-<h3>Creating a widget as a floating window or as a tab<a class="headerlink" href="#creating-a-widget-as-a-floating-window-or-as-a-tab" title="Permalink to this headline">¶</a></h3>
-<p>A widget is activated as a floating window by clicking the icon in the widget bar. A widget can be activated as a tab by dragging the icon in the widget bar to a desired location.</p>
-<video width="640" controls loop>
+<div class="section" id="creating-a-widget-as-a-floating-widget-or-as-a-tab">
+<h3>Creating a widget as a floating widget or as a tab<a class="headerlink" href="#creating-a-widget-as-a-floating-widget-or-as-a-tab" title="Permalink to this headline">¶</a></h3>
+<p>A widget is activated as a floating widget by clicking the icon in the widget bar. A widget can be activated as a tab by dragging the icon in the widget bar to a desired location.</p>
+<video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_activating_widget.mp4" type="video/mp4">
 </video></div>
 <div class="section" id="light-and-dark-theme">
 <h3>Light and dark theme<a class="headerlink" href="#light-and-dark-theme" title="Permalink to this headline">¶</a></h3>
 <p>CARTA supports a light (default) and dark theme. The theme can be changed using the <strong>View</strong> -&gt; <strong>Interface</strong> menu item, or the shortcut <strong>shift</strong> + <strong>D</strong>.</p>
-<video width="640" controls loop>
+<video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_theme.mp4" type="video/mp4">
 </video></div>
 </div>
@@ -179,13 +176,13 @@
 <div class="section" id="zooming">
 <h3>Zooming<a class="headerlink" href="#zooming" title="Permalink to this headline">¶</a></h3>
 <p>The image can be zoomed in by scrolling up and zoomed out by scrolling down.</p>
-<video width="640" controls loop>
+<video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_mouse_images_zoom.mp4" type="video/mp4">
 </video></div>
 <div class="section" id="panning">
 <h3>Panning<a class="headerlink" href="#panning" title="Permalink to this headline">¶</a></h3>
 <p>The image can be panned equivalently by single-clicking a position in the image. The image will be re-centered at that posotion in the view.</p>
-<video width="640" controls loop>
+<video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_mouse_images_pan.mp4" type="video/mp4">
 </video></div>
 </div>
@@ -194,22 +191,22 @@
 <div class="section" id="id1">
 <h3>Zooming<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>A chart (profiles and histograms) is zoom by scrolling.</p>
-<video width="640" controls loop>
+<video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_mouse_charts_zoom1.mp4" type="video/mp4">
 </video><p>Alternatively, horizontal zoom, vertical zoom, and box zoom are supported.</p>
-<video width="640" controls loop>
+<video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_mouse_charts_zoom2.mp4" type="video/mp4">
 </video></div>
 <div class="section" id="id2">
 <h3>Panning<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Dragging while holding the shift key pans the chart.</p>
-<video width="640" controls loop>
+<video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_mouse_charts_pan.mp4" type="video/mp4">
 </video></div>
 <div class="section" id="resetting-range">
 <h3>Resetting range<a class="headerlink" href="#resetting-range" title="Permalink to this headline">¶</a></h3>
 <p>Double-clicking on the chart resets the plotting range.</p>
-<video width="640" controls loop>
+<video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_mouse_charts_reset.mp4" type="video/mp4">
 </video></div>
 </div>
@@ -315,7 +312,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="functionalities_gui.html" title="Functionalities"
+          <a href="functionalities_gui.html" title="Features"
              >next</a> |</li>
         <li class="right" >
           <a href="installation_and_configuration.html" title="Installation and configuration"
