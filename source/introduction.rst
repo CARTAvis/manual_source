@@ -86,18 +86,21 @@ The source code of CARTA is hosted on `Github <https://github.com/CARTAvis>`_.
 
 Copyright and License
 ---------------------
-It is the policy of Associated Universities, Inc. (AUI), that the copyright and licensing for all software created at the National Radio Astronomy Observatory (NRAO) allows the source code for that software to be freely distributed and modified. This policy is both to support the Observatory's mission in providing software which might be of use in new scientific contexts, and to acknowledge that the Observatory has gained great advantage from open source software and the best way to repay this debt is to contribute to the effort. This policy does not require you to distribute software intended for in-house work, although if it might be of general interest we encourage you to do so. This policy also does not result in any additional support burden: the software is to be made available only on an "as is" basis unless special arrangements are negotiated.
+TBA
 
-As a further policy, due to the familiarity of the Observatory with the Free Software Foundation's GNU `General Public License (GPL) <http://www.gnu.org/copyleft/gpl.html>`_, and with the GNU `Lesser General Public License (LGPL) <http://www.gnu.org/copyleft/lesser.html>`_, these licenses are to be used. In both cases the line: 
+.. It is the policy of Associated Universities, Inc. (AUI), that the copyright and licensing for all software created at the National Radio Astronomy Observatory (NRAO) allows the source code for that software to be freely distributed and modified. This policy is both to support the Observatory's mission in providing software which might be of use in new scientific contexts, and to acknowledge that the Observatory has gained great advantage from open source software and the best way to repay this debt is to contribute to the effort. This policy does not require you to distribute software intended for in-house work, although if it might be of general interest we encourage you to do so. This policy also does not result in any additional support burden: the software is to be made available only on an "as is" basis unless special arrangements are negotiated.
 
-    Copyright (C) 2018-2019 Associated Universities, Inc. Washington DC, USA.
+.. As a further policy, due to the familiarity of the Observatory with the Free Software Foundation's GNU `General Public License (GPL) <http://www.gnu.org/copyleft/gpl.html>`_, and with the GNU `Lesser General Public License (LGPL) <http://www.gnu.org/copyleft/lesser.html>`_, these licenses are to be used. In both cases the line: 
 
-Alternative licensing is possible (for example a BSD style license), but will require individual approval.
+..    Copyright (C) 2018-2019 Associated Universities, Inc. Washington DC, USA.
 
-Exceptions to either policy require a waiver from the Associate Director for Data Management.
+.. Alternative licensing is possible (for example a BSD style license), but will require individual approval.
 
-.. raw:: html
+.. Exceptions to either policy require a waiver from the Associate Director for Data Management.
 
-   <hr>
 
-The newly developed and modified source code by ASIAA CASA team will be licensed with GNU General Purpose License (GPL) or GNU Lesser General Purpose License (LGPL) with Associated Universities, Inc listed as the copyright holder. This license may be modified to another open source license agreement by agreement of NRAO and ASIAA.
+.. .. raw:: html
+
+..   <hr>
+
+.. The newly developed and modified source code by ASIAA CASA team will be licensed with GNU General Purpose License (GPL) or GNU Lesser General Purpose License (LGPL) with Associated Universities, Inc listed as the copyright holder. This license may be modified to another open source license agreement by agreement of NRAO and ASIAA.

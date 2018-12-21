@@ -33,7 +33,7 @@ When an image is loaded via the file browser, it is shown in the image viewer wi
 .. note::
    Contour rendering will be available in v1.2.
 
-The aspect ratio of the image view is determined by the panel geometry. When the image viewer panel is resized, a tip with a ratio in screen pixel will be displayed.
+The aspect ratio of the image view is determined by the panel geometry. When the image viewer panel is resized, a tip with a ratio in screen pixel will be displayed (c.f., :ref:`resizing_a_panel` ).
 
 
 
@@ -58,7 +58,9 @@ In CARTA, the resolution of an image displayed in the image viewer is *dynamical
 
 Render configuration of a raster image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The render configuration widget controls how a raster image is rendered in the image viewer. On the top, there is a row of buttons with different clip levels plus a custom button. Below there is a plot showing the per-frame histogram (logarithmic scale) with a bin count equals to the geometic mean of the image size (x and y). The two vertical red bars indicate the two boundary values of a colormap. Interaction with a chart, like the histogram, is demostracted in the section :ref:`mouse_interaction_with_charts`. On the right, there is a column of options, such as scaling function, color map, boundary values, and control paramter of a scaling function (if applicable). Extra options to configure the histogram plot are hidden in the tool box on the right border. The histogram can be exported as a png image or a text file in tsv format.
+The render configuration widget controls how a raster image is rendered in the image viewer. On the top, there is a row of buttons with different clip levels plus a custom button. Below there is a plot showing the per-channel histogram (logarithmic scale) with a bin count equals to the geometric mean of the image size (x and y). The two vertical red bars indicate the two clip values of a colormap. Interaction with a chart, like the histogram, is demostracted in the section :ref:`mouse_interaction_with_charts`. On the right, there is a column of options, such as histogram type, scaling function, color map, clip values, and control paramter of a scaling function (if applicable). Extra options to configure the histogram plot are hidden in the tool box on the right border. The histogram can be exported as a png image or a text file in tsv format.
+
+By default, CARTA calculates per-channel histogram. When per-cube histogram is requested, a warning message and a progress widget will show up. Calculating a per-cube histogram can be time-consuming for large image cubes. Users may cancel the request at any time by pressing the cancel button in the progress widget. 
 
 .. raw:: html
 
@@ -66,7 +68,7 @@ The render configuration widget controls how a raster image is rendered in the i
      <source src="_static/carta_fn_renderConfig_widget.mp4" type="video/mp4">
    </video>
 
-By default, CARTA determines the boundary values of a colormap on **per-frame** basis. That is, a default "99.9%" clip level is applied to the per-frame histogram to look for the two boundary values. Then apply the values in "linear" scale to the default colormap "inferno" to render a raster image. This helps to inspect an image in detail without suffering from improper image rendering in most of cases. Below is an example of this per-frame rendering approach.
+By default, CARTA determines the boundary values of a colormap on **per-channel** basis. That is, a default "99.9%" clip level is applied to the per-channel histogram to look for the two clicp values. Then apply the values in "linear" scale to the default colormap "inferno" to render a raster image. This helps to inspect an image in detail without suffering from improper image rendering in most of cases. Below is an example of this per-channel rendering approach.
 
 .. raw:: html
 
@@ -74,13 +76,14 @@ By default, CARTA determines the boundary values of a colormap on **per-frame** 
      <source src="_static/carta_fn_renderConfig_perFrame.mp4" type="video/mp4">
    </video>
 
-However, when comparing images frame by frame, color scales need to be fixed. This can be easily achieved by dragging the two vertical red bars, or typing in the values. When this happends, the "custom" button is enabled automatically and *all* frames will be rendered with the fixed boundary values. By clicking one of the clip buttons, CARTA switches back to the per-frame rendering mode. Below is an example of custom rendering. 
+However, when comparing images channel by channel, color scales need to be fixed. This can be easily achieved by dragging the two vertical red bars, or typing in the values. When this happends, the "custom" button is enabled automatically and *all* frames will be rendered with the fixed boundary values. By clicking one of the clip buttons, CARTA switches back to the per-frame rendering mode *if per-channel histogram is requested*. Users may request the per-cube histogram to determine proper clip values. Below is an example of custom rendering with the per-cube histogram. 
 
 .. raw:: html
 
    <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_fn_renderConfig_perCustom.mp4" type="video/mp4">
    </video>
+
 
 CARTA provides a set of scaling functions, such as:
 
@@ -104,7 +107,7 @@ CARTA hopes to improve the image viewing experience by adopting GPU rendering wi
 
 Changing image view
 ^^^^^^^^^^^^^^^^^^^
-CARTA provides different ways to change the image view. With a mouse, image zoom or pan actions are achieved by scrolling up/down or clicking, respectively, as demostrated in the section :ref:`mouse_interaction_with_images`. Alternatively, the image view can be changed to fit the image width or the image height, or to fit the screen resolution (i.e., screen resolution equals full image resolution), by using the buttons at the bottom-right corner of the image viewer. To change to different frames, channels, or stokes, please refer to the section :ref:`animator_intro`.
+CARTA provides different ways to change the image view. With a mouse, image zoom or pan actions are achieved by scrolling up/down or clicking, respectively, as demostrated in the section :ref:`mouse_interaction_with_images`. Alternatively, the image can be changed to fit the image viewer, or to fit the screen resolution (i.e., screen resolution equals full image resolution), by using the buttons at the bottom-right corner of the image viewer. Zoom in and zoom out buttons are provided as well.  To change to different frames, channels, or stokes, please refer to the section :ref:`animator_intro`.
 
 .. raw:: html
 

@@ -31,6 +31,9 @@ Configuring the layout
 ----------------------
 The layout configuration can be changed by mouse operations, like single click or drag-and-drop. In the examples below, the drag-and-drop action is guided on the GUI with a semi-transparent rectangle. Various operations are demonstrated below.
 
+
+.. _resizing_a_panel:
+
 Resizing a panel
 ^^^^^^^^^^^^^^^^
 As shown in the example below, a panel can be resized by dragging its borders. After a panel is resized, nearby panels are resized automatically to fit the new layout. Note that the appearance of the UI elements is adaptive to the size of the panel, as seen in the **render configuration** widget or the **animator** widget in the example. 
