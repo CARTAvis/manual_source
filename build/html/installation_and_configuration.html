@@ -151,10 +151,28 @@
 <p>Please follow the steps:</p>
 <ol class="arabic simple">
 <li><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.0/CARTA-v1.0-RedHat6-headless.tar.gz">Download the package</a></li>
-<li>On your remote server, extract the archive and run the carta executable in your terminal window.</li>
-<li>This will provide a unique URL. Copy and paste this URL in to your local web browser. CARTA should start.</li>
+<li>On your remote server, extract the archive:</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -xvf CARTA-v1.0-RedHat6-headless.tar.gz
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Run the carta executable in your terminal window:</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./CARTA-v1.0-RedHat6-headless/carta
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>This will provide a unique URL. Copy and paste this URL in to your local web browser to access CARTA.</li>
 <li>When finished, close your browser window, and press ‘q’ in the terminal window in order to close CARTA.</li>
 </ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The default search path for images is $HOME, but you may override this by appending a path to a directory of your choice</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>./CARTA-v1.0-RedHat6-headless/carta /path/to/my/images
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>

@@ -65,12 +65,27 @@ Please follow the steps:
 
 1. `Download the package  <https://github.com/CARTAvis/carta-releases/releases/download/v1.0/CARTA-v1.0-RedHat6-headless.tar.gz>`_
 
-2. On your remote server, extract the archive and run the carta executable in your terminal window.
+2. On your remote server, extract the archive:
 
-3. This will provide a unique URL. Copy and paste this URL in to your local web browser. CARTA should start.
+.. code-block:: bash
 
-4. When finished, close your browser window, and press 'q' in the terminal window in order to close CARTA.
+  tar -xvf CARTA-v1.0-RedHat6-headless.tar.gz
 
+3. Run the carta executable in your terminal window:
 
+.. code-block:: bash
+
+  ./CARTA-v1.0-RedHat6-headless/carta
+
+4. This will provide a unique URL. Copy and paste this URL in to your local web browser to access CARTA.
+
+5. When finished, close your browser window, and press 'q' in the terminal window in order to close CARTA.
+
+.. note::
+   The default search path for images is $HOME, but you may override this by appending a path to a directory of your choice 
+   
+   .. code-block:: bash
+   
+     ./CARTA-v1.0-RedHat6-headless/carta /path/to/my/images
 
 
