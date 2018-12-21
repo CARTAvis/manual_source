@@ -69,14 +69,14 @@ A tab can be moved to other existing panel by dragging its title to the upper bo
 
 
 
-Maximixing and minimizing a tab
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-By clicking the **maximize** icon at the top-right corner of a panel, the activated tab will be maximized to the main window. By clicking the **restore** icon, the tab will be restored to its original panel.
+Maximixing and restoring a panel
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+By clicking the **maximize** icon at the top-right corner of a panel, the panel (including all tabs) will be maximized to the main window. By clicking the **restore** icon, the panel will be restored to its original location.
 
 .. raw:: html
 
    <video controls loop style="width:100%;height:auto;">
-     <source src="_static/carta_gui_max_min_tab.mp4" type="video/mp4">
+     <source src="_static/carta_gui_max_min_panel.mp4" type="video/mp4">
    </video>
 
 Detaching and attaching a tab
@@ -92,7 +92,7 @@ By clicking the **detach** (unpin) icon at the top-right corner of a panel, the 
 
 Creating a widget as a floating widget or as a tab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A widget is activated as a floating widget by clicking the icon in the widget bar. A widget can be activated as a tab by dragging the icon in the widget bar to a desired location.
+A widget is activated as a floating widget by clicking the button in the widget bar. A widget can be activated as a tab by dragging the button in the widget bar directly to a desired location.
 
 .. raw:: html
 
@@ -129,7 +129,7 @@ The image can be zoomed in by scrolling up and zoomed out by scrolling down.
 
 Panning
 ^^^^^^^
-The image can be panned equivalently by single-clicking a position in the image. The image will be re-centered at that posotion in the view.  
+The image can be panned equivalently by single-clicking a position in the image. The image will be re-centered at that position in the view.  
 
 .. raw:: html
 
@@ -199,7 +199,7 @@ CARTA supports keyboard shortcuts to enable certain controls without using a mou
 +------------------------------+-----------------------+-----------------------+
 | **Appearance**               |                       |                       |
 +------------------------------+-----------------------+-----------------------+
-| Toggle dark/light theme      | cmd + D               | ctrl + D              |
+| Toggle light/dark theme      | shift + D             | shift + D             |
 +------------------------------+-----------------------+-----------------------+
 | **Cursor**                   |                       |                       |
 +------------------------------+-----------------------+-----------------------+

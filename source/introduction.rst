@@ -3,7 +3,7 @@ Introduction
 
 The mission of CARTA
 --------------------
-CARTA is the *Cube Analysis and Rendering Tool for Astronomy*, a new image visualization and analysis tool designed for the ALMA, the JVLA, and the radio telescopes of the future such as the SKA. As the image size increases drastically with modern telecscopes in recent years, contemporary image viewers face performance issues which degrade user experience significantly. The mission of CARTA is to resolve this and provide usability and scalability for the future by utilizing modern web technologies and computing parallelization.
+CARTA is the *Cube Analysis and Rendering Tool for Astronomy*, a new image visualization and analysis tool designed for the ALMA, the JVLA, and the radio telescopes of the future such as the SKA. As the image size increases drastically with modern telescopes in recent years, contemporary image viewers face performance issues which degrade user experience significantly. The mission of CARTA is to resolve this and provide usability and scalability for the future by utilizing modern web technologies and computing parallelization.
 
 Client-Server architecture
 --------------------------
@@ -19,7 +19,9 @@ Codebase and releases
 ---------------------
 CARTA is an open-source project. Its source code is available at https://github.com/CARTAvis. 
 
-CARTA has two distributions: CARTA-server and CARTA-desktop. The former is designed for handling large datasets with remote servers, while the later is suitable for smaller datasets (a few thousand pixels in the x and y dimensions) which can still be handled with personal computer or laptop. Installation guides for these two versions are provided in the section :ref:`installation_configuration`.
+CARTA ultimately will have two distributions: CARTA-server and CARTA-desktop. The former is designed for handling large datasets with remote servers, while the later is suitable for smaller datasets (a few thousand pixels in the x and y dimensions) which can still be handled with personal computer or laptop. 
+
+With the version 1.0 desktop release, CARTA supports two use cases. For users using a laptop or a desktop with a monitor, please use the "Local" version. For users using a remote server via the ssh protocol, please use the "Remote" version. Installation guides for these two versions are provided in the section :ref:`installation_configuration`.
 
 The release plan and major goals are the following:
 
@@ -84,3 +86,18 @@ The source code of CARTA is hosted on `Github <https://github.com/CARTAvis>`_.
 
 Copyright and License
 ---------------------
+It is the policy of Associated Universities, Inc. (AUI), that the copyright and licensing for all software created at the National Radio Astronomy Observatory (NRAO) allows the source code for that software to be freely distributed and modified. This policy is both to support the Observatory's mission in providing software which might be of use in new scientific contexts, and to acknowledge that the Observatory has gained great advantage from open source software and the best way to repay this debt is to contribute to the effort. This policy does not require you to distribute software intended for in-house work, although if it might be of general interest we encourage you to do so. This policy also does not result in any additional support burden: the software is to be made available only on an "as is" basis unless special arrangements are negotiated.
+
+As a further policy, due to the familiarity of the Observatory with the Free Software Foundation's GNU `General Public License (GPL) <http://www.gnu.org/copyleft/gpl.html>`_, and with the GNU `Lesser General Public License (LGPL) <http://www.gnu.org/copyleft/lesser.html>`_, these licenses are to be used. In both cases the line: 
+
+    Copyright (C) 2018-2019 Associated Universities, Inc. Washington DC, USA.
+
+Alternative licensing is possible (for example a BSD style license), but will require individual approval.
+
+Exceptions to either policy require a waiver from the Associate Director for Data Management.
+
+.. raw:: html
+
+   <hr>
+
+The newly developed and modified source code by ASIAA CASA team will be licensed with GNU General Purpose License (GPL) or GNU Lesser General Purpose License (LGPL) with Associated Universities, Inc listed as the copyright holder. This license may be modified to another open source license agreement by agreement of NRAO and ASIAA.
