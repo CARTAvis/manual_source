@@ -1,4 +1,4 @@
-Appendix B: version history
+Appendix A: version history
 ===========================
 
 

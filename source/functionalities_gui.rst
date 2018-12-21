@@ -22,6 +22,9 @@ Only these formats will be shown in the file list with image type and file size.
 .. note::
    When viewing images in appending mode, alignments in the world coordinate system (WCS) and the frequency/velocity space are not available in this version. This feature is expected in v1.2.
 
+   The support of HDF5-IDIA is conditional. Full support will be available in v1.1
+
+
 .. warning::
    When the file information of an image cube with a *per-plane-beam* is requested, CARTA will spend a significant amount of time to calculate the beam information. This also applies when opening images with a per-plane-beam. This is a known issue and the developement team will try to solve it as soon as possible.
 
