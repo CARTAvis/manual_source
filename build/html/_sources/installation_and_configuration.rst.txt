@@ -16,8 +16,8 @@ Please follow the steps:
 2. Open the dmg file and drag the CARTA-v1.0.app to the /Applications folder. 
 3. To run CARTA-v1.0, click on it in the Launchpad, or double click on it in the Finder.
 
-Redhat 6/7, CentOS 6/7
-^^^^^^^^^^^^^^^^^^^^^^
+Redhat 7, CentOS 7
+^^^^^^^^^^^^^^^^^^
 Please follow the steps:
 
 1. `Download the package (AppImage)  <https://github.com/CARTAvis/carta-releases/releases/download/v1.0/CARTA-v1.0-RedHat7.AppImage>`_ 
