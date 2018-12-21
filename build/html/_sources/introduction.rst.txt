@@ -3,7 +3,7 @@ Introduction
 
 The mission of CARTA
 --------------------
-CARTA is the *Cube Analysis and Rendering Tool for Astronomy*, a new image visualization and analysis tool designed for the ALMA, the VLA, and the SKA pathfinders. As the image size increases drastically with modern telescopes in recent years, classic image viewers face performance issues which degrade user experience significantly. The mission of CARTA is to resolve this and provide usability and scalability for the future by utilizing modern web technologies and computing parallelization.
+CARTA is the *Cube Analysis and Rendering Tool for Astronomy*, a new image visualization and analysis tool designed for the ALMA, the VLA, and the SKA pathfinders. As the image size increases drastically with modern telescopes in recent years, viewing a image with a local image viewer or with a remote image viewer via the ssh protocol becomes less efficient. The mission of CARTA is to provide usability and scalability for the future by utilizing modern web technologies and computing parallelization.
 
 Client-Server architecture
 --------------------------
