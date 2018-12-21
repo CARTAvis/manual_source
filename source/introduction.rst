@@ -86,7 +86,7 @@ The source code of CARTA is hosted on `Github <https://github.com/CARTAvis>`_.
 
 Copyright and License
 ---------------------
-Copyright (C) 2008-2019 ASIAA, IDIA, and NRAO. This program is free software; you can redistribute it and/or modify it under the terms of the `GNU General Public License version 3 <http://www.gnu.org/copyleft/gpl.html>`_ as published by the Free Software Foundation.
+Copyright (C) 2018-2019 ASIAA, IDIA, and NRAO. This program is free software; you can redistribute it and/or modify it under the terms of the `GNU General Public License version 3 <http://www.gnu.org/copyleft/gpl.html>`_ as published by the Free Software Foundation.
 
 .. It is the policy of Associated Universities, Inc. (AUI), that the copyright and licensing for all software created at the National Radio Astronomy Observatory (NRAO) allows the source code for that software to be freely distributed and modified. This policy is both to support the Observatory's mission in providing software which might be of use in new scientific contexts, and to acknowledge that the Observatory has gained great advantage from open source software and the best way to repay this debt is to contribute to the effort. This policy does not require you to distribute software intended for in-house work, although if it might be of general interest we encourage you to do so. This policy also does not result in any additional support burden: the software is to be made available only on an "as is" basis unless special arrangements are negotiated.
 
