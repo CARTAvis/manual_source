@@ -20,8 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = u'CARTA'
-copyright = u'2018, CARTA working group'
-author = u'CARTA working group'
+copyright = u'2018-2019, ASIAA, IDIA, and NRAO'
+author = u'the CARTA team'
 
 # The short X.Y version
 version = u'1.0'
