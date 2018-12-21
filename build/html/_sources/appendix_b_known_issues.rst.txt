@@ -10,12 +10,7 @@ Stability and performace
 
 * memory leak when calculating cube histogram (`GitHub issue <https://github.com/CARTAvis/nrao-carta-backend/issues/42>`_)
 
-File browser
-^^^^^^^^^^^^
-.. raw:: html
 
-   <img src="_static/carta_noBug.png" 
-        style="width:10%;height:auto;">
 
 Image viewer
 ^^^^^^^^^^^^
@@ -30,39 +25,6 @@ Image viewer
 Animator
 ^^^^^^^^
 * no radio button is checked (`GitHub issue <https://github.com/CARTAvis/carta-frontend/issues/108>`_)
-
-
-Render configuration
-^^^^^^^^^^^^^^^^^^^^
-.. raw:: html
-
-   <img src="_static/carta_noBug.png" 
-        style="width:10%;height:auto;">
-
-
-Spectral profiler
-^^^^^^^^^^^^^^^^^
-.. raw:: html
-
-   <img src="_static/carta_noBug.png" 
-        style="width:10%;height:auto;">
-
-
-Spatial profiler
-^^^^^^^^^^^^^^^^
-.. raw:: html
-
-   <img src="_static/carta_noBug.png" 
-        style="width:10%;height:auto;">
-
-
-GUI
-^^^
-.. raw:: html
-
-   <img src="_static/carta_noBug.png" 
-        style="width:10%;height:auto;">
-
 
 
 Misc.
