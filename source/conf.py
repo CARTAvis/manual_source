@@ -99,7 +99,7 @@ html_logo = "./_static/carta_logo_v2.png"
 # 'searchbox.html']``.
 #
 # html_sidebars = {}
-
+html_use_index = False
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
