@@ -14,6 +14,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/bizstyle.js"></script>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Graphical user interface" href="about_gui.html" />
@@ -92,7 +93,9 @@
             
   <div class="section" id="installation-and-configuration">
 <span id="installation-configuration"></span><h1>Installation and configuration<a class="headerlink" href="#installation-and-configuration" title="Permalink to this headline">¶</a></h1>
-<p>CARTA supports two use cases in this desktop v1.0 release. For users using a laptop or a desktop connected with a monitor, please download the “Local” version. For users using a remote server via the ssh protocol, please download the “Remote” version. If there is any problem, please contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a> for help.</p>
+<p>CARTA utilizes discrete or integrated GPU for image rendering. Therefore, the CARTA Desktop ‘local’ version is intended for use on a laptop or desktop computer directly connected to a monitor.</p>
+<p>We also provide a ‘remote’ version for users who wish to run CARTA from a remote RedHat6/CentOS6 or RedHat7/CentOS7 server via the ssh protocol. As the majority of servers do not have onboard GPUs, the remote version runs the CARTA ‘backend’ on the server, while the CARTA ‘frontend’ is accessed through your web browser of choice running on your local machine. This allows your local machine’s GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM instensive tasks.</p>
+<p>If there is any problem, please contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a> for help.</p>
 <div class="section" id="local-version">
 <h2>Local version<a class="headerlink" href="#local-version" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="macos-10-12-10-13-10-14-osx-10-11">
@@ -103,6 +106,18 @@
 <li>Open the dmg file and drag the CARTA-v1.0.app to the /Applications folder.</li>
 <li>To run CARTA-v1.0, click on it in the Launchpad, or double click on it in the Finder.</li>
 </ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>Alternatively, the user may run CARTA from the terminal by adding an alias to their ~/.bashrc file. e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span>/Applications/CARTA-v1.0.app/Contents/MacOS/CARTA-v1.0
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.bashrc
+</pre></div>
+</div>
+<p class="last">Now CARTA can be started by typing carta in the terminal.</p>
+</div>
 </div>
 <div class="section" id="redhat-7-centos-7">
 <h3>Redhat 7, CentOS 7<a class="headerlink" href="#redhat-7-centos-7" title="Permalink to this headline">¶</a></h3>
