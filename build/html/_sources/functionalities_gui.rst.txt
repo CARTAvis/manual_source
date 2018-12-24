@@ -141,7 +141,8 @@ When the coordinate system is changed (e.g., ICRS to Galactic), the displayed wo
 
 The reference image coordinate (0,0) locates at the center of the bottom-left pixel of the image. Regardless the displayed image is down-sampled or not, the image coordinate always refers to full resolution image.
 
-When cursor is moving, the pixel value adopted from the down-sampled image is displayed. When the cursor stops moving by 200 ms, the pixel value will be updated to the pixel value at full image resolution. 
+When cursor is moving, the pixel value adopted from the down-sampled image is displayed. 
+.. When the cursor stops moving by 200 ms, the pixel value will be updated to the pixel value at full image resolution. 
 
 If image header provides sufficient information in the frequency/velocity domain, the frequency and velocity with the reference frame of the current channel will be shown.
 
