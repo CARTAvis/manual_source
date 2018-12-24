@@ -19,20 +19,20 @@ Please follow the steps:
 2. Open the dmg file and drag the CARTA-v1.0.app to the /Applications folder. 
 3. To run CARTA-v1.0, click on it in the Launchpad, or double click on it in the Finder.
 
-.. .. tip::
+.. tip::
    Alternatively, the user may run CARTA from the terminal by adding an alias to their ~/.bashrc file. e.g. 
 
-..   .. code-block:: bash
+   .. code-block:: bash
 
-..      alias carta=/Applications/CARTA-v1.0.app/Contents/MacOS/CARTA-v1.0
+      alias carta=/Applications/CARTA-v1.0.app/Contents/MacOS/CARTA-v1.0
 
-..   and
+   and
 
-..   .. code-block:: bash
+   .. code-block:: bash
 
-..      source ~/.bashrc 
+      source ~/.bashrc 
 
-..   Now CARTA can be started by typing carta in the terminal.
+   Now CARTA can be started by typing carta in the terminal.
        
 
 
