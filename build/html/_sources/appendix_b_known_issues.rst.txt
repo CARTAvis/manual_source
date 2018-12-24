@@ -10,6 +10,7 @@ Stability and performace
 
 * memory leak when calculating cube histogram (`GitHub issue <https://github.com/CARTAvis/nrao-carta-backend/issues/42>`_)
 
+* performance degradation of images with per-plane-beam (`GitHub issue <https://github.com/CARTAvis/nrao-carta-backend/issues/46>`_)
 
 
 Image viewer
