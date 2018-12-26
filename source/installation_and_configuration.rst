@@ -83,19 +83,19 @@ Redhat 6/7, CentOS 6/7
 ^^^^^^^^^^^^^^^^^^^^^^
 Please follow the steps:
 
-1. `Download the package  <https://github.com/CARTAvis/carta-releases/releases/download/v1.0/CARTA-v1.0-RedHat6-headless.tar.gz>`_
+1. `Download the package  <https://github.com/CARTAvis/carta-releases/releases/download/v1.0/CARTA-v1.0-RedHat6-RedHat7-remote.tar.gz>`_
 
 2. On your remote server, extract the archive:
 
 .. code-block:: bash
 
-  tar -xvf CARTA-v1.0-RedHat6-headless.tar.gz
+  tar -xvf CARTA-v1.0-RedHat6-RedHat7-remote.tar.gz
 
 3. Run the carta executable in your terminal window:
 
 .. code-block:: bash
 
-  ./CARTA-v1.0-RedHat6-headless/carta
+  ./CARTA-v1.0-RedHat6-RedHat7-remote/carta
 
 4. This will provide a unique URL. Copy and paste this URL in to your local web browser to access CARTA.
 
@@ -106,6 +106,6 @@ Please follow the steps:
    
    .. code-block:: bash
    
-     ./CARTA-v1.0-RedHat6-headless/carta /path/to/my/images
+     ./CARTA-v1.0-RedHat6-RedHat7-remote/carta /path/to/my/images
 
 
