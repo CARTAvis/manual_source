@@ -23,21 +23,31 @@ CARTA ultimately will have two distributions: CARTA-server and CARTA-desktop. Th
 
 With the version 1.0 desktop release, CARTA supports two use cases. For users using a laptop or a desktop with a monitor, please use the "Local" version. For users using a remote server via the ssh protocol, please use the "Remote" version. Installation guides for these two versions are provided in the section :ref:`installation_configuration`.
 
-The release plan and major goals are the following:
+With the *current* version 1.0.1 desktop patch release, CARTA further provides:
 
-* Version 1.0: current release, including basic image and profile  viewing capability.
-* Version 1.1: basic region of interest (ROI) support and relevant analysis tools (statistics, histogram, and profilers).
-* Version 1.2: WCS group support which allows multiple images to be aligned in spatial and spectral domains.
-* Version 1.3: multiple-panel view
-* Version 1.4: moments image, position-velocity image, and scripting interface
-* Version 1.5: interactive clean
-* Version 1.6: collaborative mode
-* Version 1.7+: misc.
+* enhanced file browser navigation capability.
+* remote server (backend) status icon.
+* improvements of file information and header.
+* displaying data values in the spatial and the spectral profilers.
+
+The release plan and major goals are the following (incorporating bug fixes):
+
+* Version 1.0: basic image and profile viewing capability.
+  
+  * Version 1.0.1: current release, enhanced file browser navigation capability
+
+* Version 1.1: basic region of interest (ROI) support and relevant analysis tools (statistics, histogram, and profilers). HDF5-IDIA image format support for server release.
+* Version 1.2: WCS group support which allows multiple images to be aligned in spatial and spectral domains. Additional server support and performance enhancements.
+* Next: multiple-panel view
+* Next: moments image, position-velocity image, and scripting interface
+* Next: interactive clean
+* Next: collaborative mode
+* Next: misc.
 
 
 Getting help
 ------------
-The CARTA team welcomes any suggestion, feature request, or bug report, to make CARTA better via the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_.
+The CARTA team welcomes any suggestion, feature request, or bug report, to make CARTA better via the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw).
 
 
 

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Functionality &#8212; CARTA 1.0 documentation</title>
+    <title>Functionality &#8212; CARTA 1.0.1 documentation</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
@@ -33,7 +33,7 @@
         <li class="right" >
           <a href="about_gui.html" title="Graphical user interface"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.0.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -44,6 +44,7 @@
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Functionality</a><ul>
+<li><a class="reference internal" href="#server-side-status">Server side status</a></li>
 <li><a class="reference internal" href="#file-browser">File browser</a></li>
 <li><a class="reference internal" href="#image-viewer">Image viewer</a><ul>
 <li><a class="reference internal" href="#image-resolution-and-screen-resolution">Image resolution and screen resolution</a></li>
@@ -97,6 +98,17 @@
   <div class="section" id="functionality">
 <h1>Functionality<a class="headerlink" href="#functionality" title="Permalink to this headline">¶</a></h1>
 <p>With version 1.0, CARTA provides basic image viewing capabilities, basic profile viewing capabilities in both spatial and spectral domains, and basic per-frame or per-cube histogram viewing capabilities. Exporting images or charts in png format and charts in plain text format are supported.</p>
+<p>With version 1.0.1 patch release, CARTA futher provides enhanced file browser navigation capability, remote server (backend) status icon, improvements of file information and header, and displaying data values in the spatial and the spectral profilers.</p>
+<div class="section" id="server-side-status">
+<h2>Server side status<a class="headerlink" href="#server-side-status" title="Permalink to this headline">¶</a></h2>
+<p>(NEW v1.0.1) As CARTA is fundamentally a client-server application, it is important to know the status of the server side at the client side. The server status is now display as a circular icon at the top-right corner of the main window. There are three kinds of status:</p>
+<ul class="simple">
+<li>Green: this means that the server side is initially connected successfully.</li>
+<li>Orange: this means that the initial connection to the server side was broken (e.g., unstable internet) but has been reconnected. Please note that CARTA may behave abnormally in this case.</li>
+<li>Red: this means that the server side is not accessible. CARTA is not functional in this case.</li>
+</ul>
+<img src="_static/carta_gui_server_status.png"
+     style="width:100%;height:auto;"></div>
 <div class="section" id="file-browser">
 <h2>File browser<a class="headerlink" href="#file-browser" title="Permalink to this headline">¶</a></h2>
 <p>File browser, accessible via the menu <strong>File</strong> -&gt; <strong>Open image</strong> or the menu <strong>File</strong> -&gt; <strong>Append image</strong>, provides information of images supported by CARTA. Currently CARTA supports images in:</p>
@@ -107,6 +119,7 @@
 <li>MIRIAD format</li>
 </ul>
 <p>Only these formats will be shown in the file list with image type and file size. When an image is selected, a brief summary of image properties is provided on the right side of the dialog. Full header is also available in the second tab. To view an image, click the <strong>Load</strong> button at the bottom-right corner. To view a new image with all the loaded images closed, use <strong>File</strong> -&gt; <strong>Open image</strong> -&gt; <strong>Load</strong>. To view multiple images, use <strong>File</strong> -&gt; <strong>Append image</strong> -&gt; <strong>Append</strong>.</p>
+<p>(NEW v1.0.1) File browser now remembers the last path where an image was opened within one CARTA session. Therefore, when the file browser is re-opened to load other images, a file list should be displayed at the last path where the previous image was opened. Users can now freely navigate through the file system (up to root or “/”) with the v1.0.1 desktop release.</p>
 <img src="_static/carta_fn_fileBrowser.png"
      style="width:100%;height:auto;"><div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -124,6 +137,10 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Contour rendering will be available in v1.2.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you are running a VNC session from a headless server, CARTA may fail to render images properly (they may appear as a solid colour). This is due to the fact that CARTA renders images using WebGL which uses GPU acceleration. Most headless servers have neither discrete nor dedicated GPUs. In such cases, it is  recommended to use the ‘Remote version’ of CARTA. Or please check <a class="reference internal" href="installation_and_configuration.html#remote-version"><span class="std std-ref">Remote version</span></a> carefully for extra settings.</p>
 </div>
 <p>The aspect ratio of the image view is determined by the panel geometry. When the image viewer panel is resized, a tip with a ratio in screen pixel will be displayed (c.f., <a class="reference internal" href="about_gui.html#resizing-a-panel"><span class="std std-ref">Resizing a panel</span></a> ).</p>
 <div class="section" id="image-resolution-and-screen-resolution">
@@ -216,9 +233,10 @@
 <div class="section" id="spatial-profiler">
 <h2>Spatial profiler<a class="headerlink" href="#spatial-profiler" title="Permalink to this headline">¶</a></h2>
 <p>Spatial profiler provides the spatial profiles of the current image at the cursor position. When the cursor is moving on the image, instant profiles derived from the (down-sampled) raster image are displayed. When the cursor stops moving for more than 200 ms, profiles derived from the full resolution image will be displayed instead. This allows users to inspect the image in an efficient way. The “F” key will disable and enable profile update. A marker “+” will be placed on the image to indicate the position of the profiles taken.</p>
+<p>(NEW v1.0.1) When the cursor is on the image in the image viewer, the pointed  pixel value (pixel index and pixel value) will be displayed at the bottom-left corner of the spatial profiler. When the cursor is on the spatial profiler graph, the pointed profile data will be displayed instead.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_spatialProfiler_demo.mp4" type="video/mp4">
-</video><p>The interactions of the spatial profiler widget are demonstrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available to the right border. The option “Show Mean/RMS” will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.</p>
+</video><p>The interactions of the spatial profiler widget are demonstrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available to the right border. The option “Show Mean/RMS” will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the botton-left corner (NEW v1.0.1). The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.</p>
 <img src="_static/carta_fn_spatialProfiler_widget.png"
      style="width:100%;height:auto;"><div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -228,9 +246,10 @@
 <div class="section" id="spectral-profiler">
 <h2>Spectral profiler<a class="headerlink" href="#spectral-profiler" title="Permalink to this headline">¶</a></h2>
 <p>Spectral profiler provides the spectral profile of the current image cube at the cursor position. When the cursor stops moving for more than 200 ms, a spectral profile derived at the cursor position from the full resolution image cube will be displayed. The “F” key will disable and enable profile update. A marker “+” will be placed on the image to indicate the position of the profiles taken.</p>
+<p>(NEW v1.0.1) When the cursor is on the image in the image viewer, the pointed pixel value (frequency or velocity or channel index, and pixel value) will be displayed at the bottom-left corner of the spectral profiler. When the cursor is on the spectral profiler graph, the pointed profile data will be displayed instead.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_spectralProfiler_demo.mp4" type="video/mp4">
-</video><p>The interactions of the spectral profiler widget are demonstrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. The red vertical bar indicates the channel of the image displayed in the image viewer. The bottom axis shows the spectral coordinate, while optional channel coordinate can be displayed instead. Extra options to configure the profile plot are available to the right border. The option “Show Mean/RMS” will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.</p>
+</video><p>The interactions of the spectral profiler widget are demonstrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. The red vertical bar indicates the channel of the image displayed in the image viewer. The bottom axis shows the spectral coordinate, while optional channel coordinate can be displayed instead. Extra options to configure the profile plot are available to the right border. The option “Show Mean/RMS” will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the botton-left corner (NEW v1.0.1). The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.</p>
 <img src="_static/carta_fn_spectralProfiler_widget.png"
      style="width:100%;height:auto;"><div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -254,7 +273,7 @@
         <li class="right" >
           <a href="about_gui.html" title="Graphical user interface"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.0.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
