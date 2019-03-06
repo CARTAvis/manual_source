@@ -95,9 +95,27 @@
 <span id="installation-configuration"></span><h1>Installation and configuration<a class="headerlink" href="#installation-and-configuration" title="Permalink to this headline">¶</a></h1>
 <p>CARTA utilizes discrete or integrated GPU for image rendering. Therefore, the CARTA Desktop ‘local’ version is intended for use on a laptop or desktop computer directly connected to a monitor.</p>
 <p>We also provide a ‘remote’ version for users who wish to run CARTA from a remote RedHat6/CentOS6 or RedHat7/CentOS7 server via the ssh protocol. As the majority of servers do not have onboard GPUs, the remote version runs the CARTA ‘backend’ on the server, while the CARTA ‘frontend’ is accessed through your web browser of choice running on your local machine. This allows your local machine’s GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM instensive tasks.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">NOTE FOR VNC USERS</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>The following is a tip for VNC users.</p>
+<p>If your VNC connection passes through an intermediate or ‘gate’ machine, e.g.</p>
+<p>&lt;local machine&gt; - &lt;gate machine&gt; - &lt;remote machine&gt;,</p>
+<p>you may need to do an additional port mapping step.</p>
+<p>Assuming you have successfully connected to &lt;remote machine&gt; and have started the CARTA remote server there, you will see the CARTA URL with two unique port numbers
+e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;remote machine&gt;:&lt;1st port number&gt;/?socketUrl<span class="o">=</span>ws://&lt;remote machine&gt;:&lt;2nd port number&gt;
+</pre></div>
+</div>
+<p>On your local machine, open a new terminal and enter the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -L <span class="m">1234</span>:&lt;remote machine&gt;:&lt;1st port number&gt; -L <span class="m">5678</span>:&lt;remote machine&gt;:&lt;2nd port number&gt; &lt;username&gt;@&lt;gate machine&gt;
+</pre></div>
+</div>
+<p>You can now enter</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;remote machine&gt;:1234/?socketUrl<span class="o">=</span>ws://&lt;remote machine&gt;:5678
+</pre></div>
+</div>
+<p>in your local machine’s web browser to connect to CARTA remote server running on the remote machine (1234 and 5678 are given as an example. You may choose different port numbers if you wish).</p>
+<p class="last">&lt;remote machine&gt; can either be the machine’s hostname or IP address.</p>
 </div>
 <p>If there is any problem, please contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a> for help.</p>
 <div class="section" id="local-version">

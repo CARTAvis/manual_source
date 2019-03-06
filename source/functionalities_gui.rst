@@ -55,6 +55,9 @@ When an image is loaded via the file browser, it is shown in the image viewer wi
 .. note::
    Contour rendering will be available in v1.2.
 
+.. warning::
+   If CARTA is launched with VNC and no image is shown along with the per-frame histogram, please check :ref:`installation_configuration` carefully for extra settings. 
+
 The aspect ratio of the image view is determined by the panel geometry. When the image viewer panel is resized, a tip with a ratio in screen pixel will be displayed (c.f., :ref:`resizing_a_panel` ).
 
 
