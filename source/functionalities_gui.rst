@@ -56,7 +56,7 @@ When an image is loaded via the file browser, it is shown in the image viewer wi
    Contour rendering will be available in v1.2.
 
 .. warning::
-    If you are running a VNC session from a headless server, CARTA may fail to render images properly (they may appear as a solid colour). This is due to the fact that CARTA renders images using WebGL which uses GPU acceleration. Most headless servers have neither discrete nor dedicated GPUs. In such cases, it is  recommended to use the 'Remote version' of CARTA. Or please check :ref:`installation_configuration` carefully for extra settings.
+    If you are running a VNC session from a headless server, CARTA may fail to render images properly (they may appear as a solid colour). This is due to the fact that CARTA renders images using WebGL which uses GPU acceleration. Most headless servers have neither discrete nor dedicated GPUs. In such cases, it is  recommended to use the 'Remote version' of CARTA. Or please check :ref:`remote_version` carefully for extra settings.
 
 The aspect ratio of the image view is determined by the panel geometry. When the image viewer panel is resized, a tip with a ratio in screen pixel will be displayed (c.f., :ref:`resizing_a_panel` ).
 
