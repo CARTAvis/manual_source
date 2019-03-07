@@ -2,22 +2,6 @@ Functionality
 =============
 With version 1.0, CARTA provides basic image viewing capabilities, basic profile viewing capabilities in both spatial and spectral domains, and basic per-frame or per-cube histogram viewing capabilities. Exporting images or charts in png format and charts in plain text format are supported.
 
-With version 1.0.1 patch release, CARTA futher provides enhanced file browser navigation capability, remote server (backend) status icon, improvements of file information and header, and displaying data values in the spatial and the spectral profilers. 
-
-
-Server side status
--------------------
-(NEW v1.0.1) As CARTA is fundamentally a client-server application, it is important to know the status of the server side at the client side. The server status is now display as a circular icon at the top-right corner of the main window. There are three kinds of status:
-
-* Green: this means that the server side is initially connected successfully.
-* Orange: this means that the initial connection to the server side was broken (e.g., unstable internet) but has been reconnected. Please note that CARTA may behave abnormally in this case.  
-* Red: this means that the server side is not accessible. CARTA is not functional in this case. 
-
-.. raw:: html
-
-   <img src="_static/carta_gui_server_status.png" 
-        style="width:100%;height:auto;">
-
 File browser
 ------------
 File browser, accessible via the menu **File** -> **Open image** or the menu **File** -> **Append image**, provides information of images supported by CARTA. Currently CARTA supports images in:  
@@ -28,9 +12,6 @@ File browser, accessible via the menu **File** -> **Open image** or the menu **F
 * MIRIAD format 
 
 Only these formats will be shown in the file list with image type and file size. When an image is selected, a brief summary of image properties is provided on the right side of the dialog. Full header is also available in the second tab. To view an image, click the **Load** button at the bottom-right corner. To view a new image with all the loaded images closed, use **File** -> **Open image** -> **Load**. To view multiple images, use **File** -> **Append image** -> **Append**.
-
-(NEW v1.0.1) File browser now remembers the last path where an image was opened within one CARTA session. Therefore, when the file browser is re-opened to load other images, a file list should be displayed at the last path where the previous image was opened. Users can now freely navigate through the file system (up to root or "/") with the v1.0.1 desktop release. 
-
 
 
 .. raw:: html
@@ -54,9 +35,6 @@ When an image is loaded via the file browser, it is shown in the image viewer wi
 
 .. note::
    Contour rendering will be available in v1.2.
-
-.. warning::
-    If you are running a VNC session from a headless server, CARTA may fail to render images properly (they may appear as a solid colour). This is due to the fact that CARTA renders images using WebGL which uses GPU acceleration. Most headless servers have neither discrete nor dedicated GPUs. In such cases, it is  recommended to use the 'Remote version' of CARTA. Or please check :ref:`remote_version` carefully for extra settings.
 
 The aspect ratio of the image view is determined by the panel geometry. When the image viewer panel is resized, a tip with a ratio in screen pixel will be displayed (c.f., :ref:`resizing_a_panel` ).
 
@@ -234,15 +212,13 @@ Spatial profiler
 ----------------
 Spatial profiler provides the spatial profiles of the current image at the cursor position. When the cursor is moving on the image, instant profiles derived from the (down-sampled) raster image are displayed. When the cursor stops moving for more than 200 ms, profiles derived from the full resolution image will be displayed instead. This allows users to inspect the image in an efficient way. The "F" key will disable and enable profile update. A marker "+" will be placed on the image to indicate the position of the profiles taken. 
 
-(NEW v1.0.1) When the cursor is on the image in the image viewer, the pointed  pixel value (pixel index and pixel value) will be displayed at the bottom-left corner of the spatial profiler. When the cursor is on the spatial profiler graph, the pointed profile data will be displayed instead. 
-
 .. raw:: html
 
    <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_fn_spatialProfiler_demo.mp4" type="video/mp4">
    </video>
 
-The interactions of the spatial profiler widget are demonstrated in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available to the right border. The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the botton-left corner (NEW v1.0.1). The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
+The interactions of the spatial profiler widget are demonstrated in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available to the right border. The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
 
 
 .. raw:: html
@@ -259,8 +235,6 @@ Spectral profiler
 -----------------
 Spectral profiler provides the spectral profile of the current image cube at the cursor position. When the cursor stops moving for more than 200 ms, a spectral profile derived at the cursor position from the full resolution image cube will be displayed. The "F" key will disable and enable profile update. A marker "+" will be placed on the image to indicate the position of the profiles taken. 
 
-(NEW v1.0.1) When the cursor is on the image in the image viewer, the pointed pixel value (frequency or velocity or channel index, and pixel value) will be displayed at the bottom-left corner of the spectral profiler. When the cursor is on the spectral profiler graph, the pointed profile data will be displayed instead. 
-
 
 .. raw:: html
 
@@ -268,7 +242,7 @@ Spectral profiler provides the spectral profile of the current image cube at the
      <source src="_static/carta_fn_spectralProfiler_demo.mp4" type="video/mp4">
    </video>
 
-The interactions of the spectral profiler widget are demonstrated in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the channel of the image displayed in the image viewer. The bottom axis shows the spectral coordinate, while optional channel coordinate can be displayed instead. Extra options to configure the profile plot are available to the right border. The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the botton-left corner (NEW v1.0.1). The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
+The interactions of the spectral profiler widget are demonstrated in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the channel of the image displayed in the image viewer. The bottom axis shows the spectral coordinate, while optional channel coordinate can be displayed instead. Extra options to configure the profile plot are available to the right border. The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
 
 
 .. raw:: html
