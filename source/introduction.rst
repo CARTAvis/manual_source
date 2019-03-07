@@ -33,9 +33,7 @@ With the *current* version 1.0.1 desktop patch release, CARTA further provides:
 The release plan and major goals are the following (incorporating bug fixes):
 
 * Version 1.0: basic image and profile viewing capability.
-  
-  * Version 1.0.1: current release, enhanced file browser navigation capability
-
+* Version 1.0.1: current release, enhanced file browser navigation capability
 * Version 1.1: basic region of interest (ROI) support and relevant analysis tools (statistics, histogram, and profilers). HDF5-IDIA image format support for server release.
 * Version 1.2: WCS group support which allows multiple images to be aligned in spatial and spectral domains. Additional server support and performance enhancements.
 * Next: multiple-panel view
