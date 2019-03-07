@@ -1,0 +1,136 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Appendix B: known issues &#8212; CARTA 1.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Appendix A: version history" href="appendix_a_version_history.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="appendix_a_version_history.html" title="Appendix A: version history"
+             accesskey="P">previous</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/carta_logo_v2.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Appendix B: known issues</a><ul>
+<li><a class="reference internal" href="#stability-and-performace">Stability and performace</a></li>
+<li><a class="reference internal" href="#image-viewer">Image viewer</a></li>
+<li><a class="reference internal" href="#animator">Animator</a></li>
+<li><a class="reference internal" href="#misc">Misc.</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="appendix_a_version_history.html"
+                        title="previous chapter">Appendix A: version history</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/appendix_b_known_issues.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="appendix-b-known-issues">
+<h1>Appendix B: known issues<a class="headerlink" href="#appendix-b-known-issues" title="Permalink to this headline">¶</a></h1>
+<p>CARTA has the following known issues for the release v1.0. The CARTA development team will try to fix them in coming releases. The list is updated up to December 21, 2018.</p>
+<div class="section" id="stability-and-performace">
+<h2>Stability and performace<a class="headerlink" href="#stability-and-performace" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>memory leak when stepping through channels (<a class="reference external" href="https://github.com/CARTAvis/nrao-carta-backend/issues/41">GitHub issue</a>)</li>
+<li>memory leak when calculating cube histogram (<a class="reference external" href="https://github.com/CARTAvis/nrao-carta-backend/issues/42">GitHub issue</a>)</li>
+<li>performance degradation of images with per-plane-beam (<a class="reference external" href="https://github.com/CARTAvis/nrao-carta-backend/issues/46">GitHub issue</a>)</li>
+</ul>
+</div>
+<div class="section" id="image-viewer">
+<h2>Image viewer<a class="headerlink" href="#image-viewer" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>backend crashes when multiple sessions access same dataset (<a class="reference external" href="https://github.com/CARTAvis/nrao-carta-backend/issues/17">GitHub issue</a>)</li>
+<li>backend crash when close file but threads are still running (<a class="reference external" href="https://github.com/CARTAvis/nrao-carta-backend/issues/19">GitHub issue</a>)</li>
+<li>artifacts when using very large line widths in AST overlay (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/120">GitHub issue</a>)</li>
+<li>incorrect native coordinate when reopening an image (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/73">GitHub issue</a>)</li>
+</ul>
+</div>
+<div class="section" id="animator">
+<h2>Animator<a class="headerlink" href="#animator" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>no radio button is checked (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/108">GitHub issue</a>)</li>
+</ul>
+</div>
+<div class="section" id="misc">
+<h2>Misc.<a class="headerlink" href="#misc" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Export image: long names not fully visible in the Save As field (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/130">GitHub issue</a>)</li>
+<li>no png image is saved (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/102">GitHub issue</a>)</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="appendix_a_version_history.html" title="Appendix A: version history"
+             >previous</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018-2019, ASIAA, IDIA, and NRAO.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.
+    </div>
+  </body>
+</html>
