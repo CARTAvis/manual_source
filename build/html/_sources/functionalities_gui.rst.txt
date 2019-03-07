@@ -7,7 +7,7 @@ With version 1.0.1 patch release, CARTA futher provides enhanced file browser na
 
 Server side status
 -------------------
-(NEW v1.0.1) As CARTA is fundamentally a client-server application, it is important to know the status of the server side at the client side. The server status is now display as a circular icon at the top-right corner of the main window. There are three kinds of status:
+(NEW v1.0.1) As CARTA is fundamentally a client-server application, it would be good to know the status of the server side at the client side. The server status is now displayed as a circular icon at the top-right corner of the main window. There are three kinds of status:
 
 * Green: this means that the server side is initially connected successfully.
 * Orange: this means that the initial connection to the server side was broken (e.g., unstable internet) but has been reconnected. Please note that CARTA may behave abnormally in this case.  
