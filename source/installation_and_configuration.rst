@@ -2,9 +2,9 @@
 
 Installation and configuration
 ==============================
-CARTA utilizes discrete or integrated GPU for image rendering. Therefore, the CARTA Desktop 'local' version is intended for use on a laptop or desktop computer directly connected to a monitor.
+CARTA utilizes discrete or integrated GPU for image rendering. Therefore, the CARTA-desktop 'Local' version is intended for use on a laptop or desktop computer directly connected to a monitor.
 
-We also provide a 'remote' version for users who wish to run CARTA from a remote RedHat6/CentOS6 or RedHat7/CentOS7 server via the ssh protocol. As the majority of servers do not have onboard GPUs, the remote version runs the CARTA 'backend' on the server, while the CARTA 'frontend' is accessed through your web browser of choice running on your local machine. This allows your local machine's GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM instensive tasks.
+We also provide a 'Remote' version for users who wish to run CARTA from a remote RedHat6/CentOS6 or RedHat7/CentOS7 server via the ssh protocol. As the majority of servers do not have onboard GPUs, the remote version runs the CARTA 'backend' on the server, while the CARTA 'frontend' is accessed through your web browser of choice running on your local machine. This allows your local machine's GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM instensive tasks.
 
 If there is any problem, please contact `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ for help.
 
@@ -15,9 +15,12 @@ macOS 10.13/10.14
 ^^^^^^^^^^^^^^^^^
 Please follow the steps:
 
-1. `Download the package <https://github.com/CARTAvis/carta-releases/releases/download/v1.0.1/CARTA-v1.0.1.dmg>`_
-2. Open the dmg file and drag the CARTA-v1.0.1.app to the /Applications folder. 
-3. To run CARTA-v1.0.1, click on it in the Launchpad, or double click on it in the Finder.
+1. `Download the dmg installer file at <https://github.com/CARTAvis/carta-releases/releases/download/v1.1/CARTA-v1.1.dmg>`_
+2. Open the dmg file and drag the CARTA-v1.1.app icon to your /Applications folder. 
+3. To run CARTA, either
+
+  * Find the CARTA-v1.1-beta0 icon in the Launchpad and click it, or double click it in the Finder.
+  
 
 .. tip::
    Alternatively, the user may run CARTA from the terminal by adding an alias to their ~/.bashrc file. e.g. 

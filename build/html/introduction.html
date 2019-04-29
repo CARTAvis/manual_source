@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Introduction &#8212; CARTA 1.0.1 documentation</title>
+    <title>Introduction &#8212; CARTA 1.1 documentation</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
@@ -33,7 +33,7 @@
         <li class="right" >
           <a href="index.html" title="CARTA - Cube Analysis and Rendering Tool for Astronomy"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.0.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -103,27 +103,43 @@
 <h2>Codebase and releases<a class="headerlink" href="#codebase-and-releases" title="Permalink to this headline">¶</a></h2>
 <p>CARTA is an open-source project. Its source code is available at <a class="reference external" href="https://github.com/CARTAvis">https://github.com/CARTAvis</a>.</p>
 <p>CARTA ultimately will have two distributions: CARTA-server and CARTA-desktop. The former is designed for handling large datasets with remote servers, while the later is suitable for smaller datasets (a few thousand pixels in the x and y dimensions) which can still be handled with personal computer or laptop.</p>
-<p>With the version 1.0 desktop release, CARTA supports two use cases. For users using a laptop or a desktop with a monitor, please use the “Local” version. For users using a remote server via the ssh protocol, please use the “Remote” version. Installation guides for these two versions are provided in the section <a class="reference internal" href="installation_and_configuration.html#installation-configuration"><span class="std std-ref">Installation and configuration</span></a>.</p>
-<p>With the <em>current</em> version 1.0.1 desktop patch release, CARTA further provides:</p>
+<p>With the <em>current</em> version 1.1 desktop release, CARTA supports two use cases. For users using a laptop or a desktop with a monitor, please use the “Local” version. For users using a remote server via the ssh protocol, please use the “Remote” version. Installation guides for these two versions are provided in the section <a class="reference internal" href="installation_and_configuration.html#installation-configuration"><span class="std std-ref">Installation and configuration</span></a>.</p>
+<p>The release plan and major goals are the following:</p>
 <ul class="simple">
-<li>enhanced file browser navigation capability.</li>
-<li>remote server (backend) status icon.</li>
-<li>improvements of file information and header.</li>
-<li>displaying data values in the spatial and the spectral profilers.</li>
-</ul>
-<p>The release plan and major goals are the following (incorporating bug fixes):</p>
-<ul class="simple">
-<li>Version 1.0: basic image and profile viewing capability.<ul>
-<li>Version 1.0.1: current release, enhanced file browser navigation capability</li>
+<li>v1.0: Basic image and profile viewing capability (released late December 2018).</li>
+<li>v1.1: Initial support of region of interest, ROI (early May 2019; <em>current release</em>)<ul>
+<li>basic ROI for single image including rectangle and ellipse</li>
+<li>ROI statistics</li>
+<li>ROI spectral profile</li>
+<li>ROI histogram</li>
+<li>HDF5-IDIA image format support</li>
+<li>Improved remote version</li>
+<li>Performance and memory usage improvements</li>
 </ul>
 </li>
-<li>Version 1.1: basic region of interest (ROI) support and relevant analysis tools (statistics, histogram, and profilers). HDF5-IDIA image format support for server release.</li>
-<li>Version 1.2: WCS group support which allows multiple images to be aligned in spatial and spectral domains. Additional server support and performance enhancements.</li>
-<li>Next: multiple-panel view</li>
-<li>Next: moments image, position-velocity image, and scripting interface</li>
-<li>Next: interactive clean</li>
-<li>Next: collaborative mode</li>
-<li>Next: misc.</li>
+<li>v1.2: performance and usability improvement (mid 2019)<ul>
+<li>ROI: polygon and point</li>
+<li>ROI: import/export</li>
+<li>tiled rendering</li>
+<li>profile delivery optimization</li>
+<li>performance improvement</li>
+<li>usability improvement</li>
+<li>server support improvement</li>
+</ul>
+</li>
+<li>v1.3: WCS group (Q3 2019)<ul>
+<li>WCS group, alignment of multiple images</li>
+<li>contour rendering</li>
+<li>ROI in WCS group</li>
+</ul>
+</li>
+<li>v1.4: Scripting interface and image analytics tools (Q4 2019)<ul>
+<li>multi-panel image view</li>
+<li>image analytics tools</li>
+<li>scripting interface</li>
+</ul>
+</li>
+<li>v1.5: Interactive clean (Q4 2019/Q1 2020)</li>
 </ul>
 </div>
 <div class="section" id="getting-help">
@@ -181,7 +197,7 @@
         <li class="right" >
           <a href="index.html" title="CARTA - Cube Analysis and Rendering Tool for Astronomy"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.0.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
