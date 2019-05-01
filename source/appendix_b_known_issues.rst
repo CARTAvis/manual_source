@@ -8,7 +8,13 @@ Stability and performace
 ^^^^^^^^^^^^^^^^^^^^^^^^
 * performance degradation of images with per-plane-beam (`GitHub issue <https://github.com/CARTAvis/nrao-carta-backend/issues/46>`_)
 
-* backend crash when close file but threads are still running (`GitHub issue <https://github.com/CARTAvis/nrao-carta-backend/issues/19>`_)
+* backend crash when close file but threads are still running (`GitHub issue <https://github.com/CARTAvis/carta-backend/issues/19>`_)
+
+* HDF5 files should be opened in read mode, not write mode (`GitHub issue <https://github.com/CARTAvis/carta-backend/issues/87>`_)
+
+* HDF5 files with a non-float main dataset are not supported (`GitHub issue <https://github.com/CARTAvis/carta-backend/issues/77>`_)
+
+* HDF5 file stays open if reading main dataset in file info loader fails (`GitHub issue <https://github.com/CARTAvis/carta-backend/issues/76>`_)
 
 Image viewer
 ^^^^^^^^^^^^
