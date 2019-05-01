@@ -350,34 +350,46 @@ Troubleshooting
 ---------------
 In this section, we provide common issues we have experienced so far and provide solutions. If none of the solutions work, please do contact `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ for help.
 
-.. tip::
-   The following is a tip for VNC users. 
-   
-   If your VNC connection passes through an intermediate or 'gate' machine, e.g. 
-   
-   <local machine> - <gate machine> - <remote machine>,
-   
-   you may need to do an additional port mapping step.
+* I see a blank image...
 
-   Assuming you have successfully connected to <remote machine> and have started the CARTA remote server there, you will see the CARTA URL with two unique port numbers
-   e.g.
+  If you are using vnc:
+
+  .. tip::
+     The following is a tip for VNC users. 
+   
+     If your VNC connection passes through an intermediate or 'gate' machine, e.g. 
+   
+     <local machine> - <gate machine> - <remote machine>,
+   
+     you may need to do an additional port mapping step.
+
+     Assuming you have successfully connected to <remote machine> and have started the CARTA remote server there, you will see the CARTA URL with two unique port numbers
+     e.g.
     
-   .. code-block:: bash 
+     .. code-block:: bash 
    
-      <remote machine>:<1st port number>/?socketUrl=ws://<remote machine>:<2nd port number>
+        <remote machine>:<1st port number>/?socketUrl=ws://<remote machine>:<2nd port number>
 
-   On your local machine, open a new terminal and enter the following command:
+     On your local machine, open a new terminal and enter the following command:
 
-   .. code-block:: bash
+     .. code-block:: bash
    
-      ssh -L 1234:<remote machine>:<1st port number> -L 5678:<remote machine>:<2nd port number> <username>@<gate machine>
+        ssh -L 1234:<remote machine>:<1st port number> -L 5678:<remote machine>:<2nd port number> <username>@<gate machine>
 
-   You can now enter 
+     You can now enter 
    
-   .. code-block:: bash 
+     .. code-block:: bash 
    
-      <remote machine>:1234/?socketUrl=ws://<remote machine>:5678
+        <remote machine>:1234/?socketUrl=ws://<remote machine>:5678
       
-   in your local machine's web browser to connect to CARTA remote server running on the remote machine (1234 and 5678 are given as an example. You may choose different port numbers if you wish).
+     in your local machine's web browser to connect to CARTA remote server running on the remote machine (1234 and 5678 are given as an example. You may choose different port numbers if you wish).
 
-   <remote machine> can either be the machine's hostname or IP address.
+     <remote machine> can either be the machine's hostname or IP address.
+
+* After copy-and-paste a CARTA URL, I see the CARTA GUI is not initialized...
+
+  Check your browser version. It needs to support wasm sreaming and enabled. 
+
+* CARTA does not launch...
+
+  Check if there is existing "carta_backend" process running. The port number may conflict.

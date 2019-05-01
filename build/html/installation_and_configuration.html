@@ -298,7 +298,7 @@ carta
 </div>
 <div class="section" id="command-line-startup">
 <span id="commandlinestartup"></span><h2>Command line startup<a class="headerlink" href="#command-line-startup" title="Permalink to this headline">¶</a></h2>
-<p>CARTA supports startup method through command line. To enable this feature, alias of the CARTA executable needs to be created first.</p>
+<p>CARTA can be started through the command line. To enable this feature, an alias of the CARTA executable needs to be created first.</p>
 <p>Once it is set, simply typing “carta” then hitting the “return” key will lanuch CARTA.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta              <span class="c1"># file browser will show images in the current working directory ($PWD)</span>
 </pre></div>
@@ -381,7 +381,10 @@ Press ctrl+c to <span class="nb">exit</span>
 </div>
 <div class="section" id="troubleshooting">
 <span id="id2"></span><h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
-<p>In this section, we provide common issues we have experienced so far and provide solutions. If none of the solutions works, please do contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a> for help.</p>
+<p>In this section, we provide common issues we have experienced so far and provide solutions. If none of the solutions work, please do contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a> for help.</p>
+<ul>
+<li><p class="first">I see a blank image…</p>
+<p>If you are using vnc:</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>The following is a tip for VNC users.</p>
@@ -404,6 +407,14 @@ e.g.</p>
 <p>in your local machine’s web browser to connect to CARTA remote server running on the remote machine (1234 and 5678 are given as an example. You may choose different port numbers if you wish).</p>
 <p class="last">&lt;remote machine&gt; can either be the machine’s hostname or IP address.</p>
 </div>
+</li>
+<li><p class="first">After copy-and-paste a CARTA URL, I see the CARTA GUI is not initialized…</p>
+<p>Check your browser version. It needs to support wasm sreaming and enabled.</p>
+</li>
+<li><p class="first">CARTA does not launch…</p>
+<p>Check if there is existing “carta_backend” process running. The port number may conflict.</p>
+</li>
+</ul>
 </div>
 </div>
 
