@@ -61,11 +61,11 @@ Please follow the steps:
       
       ./CARTA-v1.1-ubuntu.AppImage
    
-   b) (**Highly recommanded**) Create alias in your shell script file. For example, if you are using bash and the AppImage happens to be in your Downloads folder, open ~/.bashrc file in a text editor and add a line
+   b) (**Highly recommanded**) Create an alias in your shell script file. For example, if you are using bash and the AppImage happens to be in your Downloads folder, open ~/.bashrc file in a text editor and add a line
 
    .. code-block:: bash
 
-      alias carta='~/Downloads/CARTA-v1.1-beta0-ubuntu.AppImage'
+      alias carta='~/Downloads/CARTA-v1.1-ubuntu.AppImage'
    
    Then, after entering source ~/.bashrc in the terminal, you will be able to start carta by simply typing “carta”.
 
@@ -78,20 +78,20 @@ Please follow the steps:
    
    .. code-block:: tcsh
    
-      alias carta '~/Downloads/CARTA-v1.1-beta0-ubuntu.AppImage'
+      alias carta '~/Downloads/CARTA-v1.1-ubuntu.AppImage'
    
    and 
    
    .. code-block:: tcsh
 
-      source ~/.csh
+      source ~/.cshrc
       carta
    
    or 
    
    .. code-block:: tcsh
    
-      source ~/.tcsh
+      source ~/.tcshrc
       carta
 
 .. note::
@@ -134,7 +134,7 @@ Please follow the steps:
   
   .. code-block:: bash
 
-     alias carta='~/Downloads/CARTA-v1.1-beta0-RedHat7.AppImage'
+     alias carta='~/Downloads/CARTA-v1.1-RedHat7.AppImage'
 
   Then, after entering source ~/.bashrc in the terminal, you will be able to start carta by simply typing “carta”.
   
@@ -153,14 +153,14 @@ Please follow the steps:
   
   .. code-block:: tcsh
  
-     source ~/.csh
+     source ~/.cshrc
      carta 
   
   or
   
   .. code-block:: tcsh
  
-     source ~/.tcsh
+     source ~/.tcshrc
      carta 
 
 .. note::
@@ -227,12 +227,31 @@ Please follow the steps:
 
       alias carta='~/CARTA-v1.1-remote/carta'
 
+   If you use csh or tcsh, the syntax differs only in that there is no equals sign, therefore it would be 
+  
+   .. code-block:: tcsh
+  
+      alias carta '~/Downloads/CARTA-v1.1-RedHat7.AppImage'
+
+   and 
+  
+   .. code-block:: tcsh
+ 
+      source ~/.cshrc
+      carta 
+  
+   or
+  
+   .. code-block:: tcsh
+ 
+      source ~/.tcshrc
+      carta 
 
 .. _commandLineStartup:
 
 Command line startup 
 --------------------
-CARTA supports startup method through command line. To enable this feature, alias of the CARTA executable needs to be created first. 
+CARTA can be started through the command line. To enable this feature, an alias of the CARTA executable needs to be created first. 
 
 Once it is set, simply typing "carta" then hitting the "return" key will lanuch CARTA. 
 
@@ -329,7 +348,7 @@ An online user manual regarding all the above mentioned keyword arguments is als
 
 Troubleshooting 
 ---------------
-In this section, we provide common issues we have experienced so far and provide solutions. If none of the solutions works, please do contact `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ for help.
+In this section, we provide common issues we have experienced so far and provide solutions. If none of the solutions work, please do contact `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ for help.
 
 .. tip::
    The following is a tip for VNC users. 
