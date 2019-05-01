@@ -141,9 +141,9 @@ carta
 </pre></div>
 </div>
 <ol class="loweralpha simple" start="2">
-<li>(<strong>Highly recommanded</strong>) Create alias in your shell script file. For example, if you are using bash and the AppImage happens to be in your Downloads folder, open ~/.bashrc file in a text editor and add a line</li>
+<li>(<strong>Highly recommanded</strong>) Create an alias in your shell script file. For example, if you are using bash and the AppImage happens to be in your Downloads folder, open ~/.bashrc file in a text editor and add a line</li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span><span class="s1">&#39;~/Downloads/CARTA-v1.1-beta0-ubuntu.AppImage&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span><span class="s1">&#39;~/Downloads/CARTA-v1.1-ubuntu.AppImage&#39;</span>
 </pre></div>
 </div>
 <p>Then, after entering source ~/.bashrc in the terminal, you will be able to start carta by simply typing “carta”.</p>
@@ -152,16 +152,16 @@ carta
 </pre></div>
 </div>
 <p>If you use csh or tcsh, the syntax differs only in that there is no equals sign, therefore it would be</p>
-<div class="highlight-tcsh notranslate"><div class="highlight"><pre><span></span><span class="nb">alias </span>carta <span class="s1">&#39;~/Downloads/CARTA-v1.1-beta0-ubuntu.AppImage&#39;</span>
+<div class="highlight-tcsh notranslate"><div class="highlight"><pre><span></span><span class="nb">alias </span>carta <span class="s1">&#39;~/Downloads/CARTA-v1.1-ubuntu.AppImage&#39;</span>
 </pre></div>
 </div>
 <p>and</p>
-<div class="highlight-tcsh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.csh
+<div class="highlight-tcsh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.cshrc
 carta
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-tcsh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.tcsh
+<div class="highlight-tcsh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.tcshrc
 carta
 </pre></div>
 </div>
@@ -203,7 +203,7 @@ carta
 <ol class="loweralpha simple" start="2">
 <li>(<strong>Highly recommanded</strong>) Set up an alias in your shell script file. For example, if your are using bash and the AppImage happens to be in your Downloads folder, open your ~/.bashrc file in a text editor and add a line</li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span><span class="s1">&#39;~/Downloads/CARTA-v1.1-beta0-RedHat7.AppImage&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span><span class="s1">&#39;~/Downloads/CARTA-v1.1-RedHat7.AppImage&#39;</span>
 </pre></div>
 </div>
 <p>Then, after entering source ~/.bashrc in the terminal, you will be able to start carta by simply typing “carta”.</p>
@@ -216,12 +216,12 @@ carta
 </pre></div>
 </div>
 <p>and</p>
-<div class="highlight-tcsh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.csh
+<div class="highlight-tcsh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.cshrc
 carta
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-tcsh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.tcsh
+<div class="highlight-tcsh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.tcshrc
 carta
 </pre></div>
 </div>
@@ -277,6 +277,20 @@ carta
 </li>
 <li><p class="first">You could make an alias in your ~/.bashrc file similar to this</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span><span class="s1">&#39;~/CARTA-v1.1-remote/carta&#39;</span>
+</pre></div>
+</div>
+<p>If you use csh or tcsh, the syntax differs only in that there is no equals sign, therefore it would be</p>
+<div class="highlight-tcsh notranslate"><div class="highlight"><pre><span></span><span class="nb">alias </span>carta <span class="s1">&#39;~/Downloads/CARTA-v1.1-RedHat7.AppImage&#39;</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-tcsh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.cshrc
+carta
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-tcsh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.tcshrc
+carta
 </pre></div>
 </div>
 </li>
