@@ -114,7 +114,7 @@ When an image is loaded via the file browser, it is shown in the image viewer wi
    Contour rendering will be available in v1.3.
 
 .. warning::
-    If you are running a VNC session from a headless server, CARTA may fail to render images properly (they may appear as a solid colour). This is due to the fact that CARTA renders images using WebGL which uses GPU acceleration. Most headless servers have neither discrete nor dedicated GPUs. In such cases, it is  recommended to use the 'Remote version' of CARTA. Or please check :ref:`remote_version` carefully for extra settings.
+    If you are running a VNC session from a headless server, CARTA may fail to render images properly (they may appear as a solid colour). This is due to the fact that CARTA renders images using WebGL which uses GPU acceleration. Most headless servers have neither discrete nor dedicated GPUs. In such cases, it is recommended to use the "remote" mode of CARTA (see :ref:`commandLineStartup` for instructions).
 
 The aspect ratio of the image view is determined by the panel geometry. When the image viewer panel is resized, a tip with a ratio in screen pixel will be displayed (c.f., :ref:`resizing_a_panel` ).
 
@@ -276,7 +276,7 @@ As of version 1.1, CARTA supports region types:
 .. note::
    In version 1.2, polygon and (multiple) point regions will be supported. Import/export region in the casa region text format (.crtf) or the ds9 region format (.reg) as a text file will be supported in version 1.2. 
 
-The creation and modification of regions are demostrated in the section :ref:`mouse_interaction_with_regions`. To create a region, use the region button at the bottom-right corner of the image viewer, then use cursor to draw a region. Keyboard shortcuts associated with regions are listed below.
+The creation and modification of regions are demostrated in the section :ref:`mouse_interaction_with_regions`. To create a region, use the region button at the bottom-right corner of the image viewer, then use cursor to draw a region. CARTA allows regions to be created even if the region is outside the image. Keyboard shortcuts associated with regions are listed below.
 
 +----------------------------------+----------------------------+-----------------------------+
 |                                  | macOS                      | Linux                       |
@@ -371,15 +371,9 @@ The interactions of the spatial profiler widget are demonstrated in the section 
 
 Spectral profiler
 -----------------
-Spectral profiler provides the spectral profile of the current image cube at the selected region. The default region is set to "Cursor". When the cursor stops moving for more than 200 ms (applicable to CASA, FITS, and MIRIAD image format), a spectral profile derived at the cursor position from the full resolution image cube will be displayed. For the HDF5-IDIA image format, throttled cursor update is applied since it is much more efficient to access cursor spectral profile from a rotated cube (ZXY) which is available from an HDF5-IDIA image. The "F" key will disable and enable profile update. A marker "+" will be placed on the image to indicate the position of the profiles taken. 
+Spectral profiler provides the spectral profile of the current image cube at the selected region. The default region is set to "Cursor". When the cursor stops moving by more than 200 ms (applicable to CASA, FITS, and MIRIAD image format), a spectral profile derived at the cursor position from the full resolution image cube will be displayed. For the HDF5-IDIA image format, throttled cursor update is applied since it is much more efficient to access cursor spectral profile from a rotated cube (ZXY) which is available from an HDF5-IDIA image. The "**F**" key will disable and enable profile update. A marker "+" will be placed on the image to indicate the position of the profile taken. 
 
-
-
-
-
-
-
-(NEW v1.0.1) When the cursor is on the image in the image viewer, the pointed pixel value (frequency or velocity or channel index, and pixel value) will be displayed at the bottom-left corner of the spectral profiler. When the cursor is on the spectral profiler graph, the pointed profile data will be displayed instead. 
+When regions are created, the spectral profiler widget can be configured to display a profile from a specific region with the "*region*" dropdown menu. Additional statistic types to compute the region spectral profile are available with the "*statistic*" dropdown menu (default to mean). If the image cube has multiple Stokes, the "*Stokes*" dropdown menu will be activated and defaulted to "current" which is synchronized with the selection in the animator. To view a specific Stokes, select with the "*Stokes*" dropdown menu.
 
 
 .. raw:: html
@@ -388,7 +382,17 @@ Spectral profiler provides the spectral profile of the current image cube at the
      <source src="_static/carta_fn_spectralProfiler_demo.mp4" type="video/mp4">
    </video>
 
-The interactions of the spectral profiler widget are demonstrated in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the channel of the image displayed in the image viewer. The bottom axis shows the spectral coordinate, while optional channel coordinate can be displayed instead. Extra options to configure the profile plot are available to the right border. The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the botton-left corner (NEW v1.0.1). The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
+Multiple spectral profile widgets can be configured to display different region spectral profiles. The widget with the selected region will be highlighted with a persistent blue box.
+
+.. raw:: html
+
+   <img src="_static/carta_fn_spectralProfiler_multiwidget.png" 
+        style="width:100%;height:auto;">
+
+
+The interactions of the spectral profiler widget are demonstrated in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the channel of the image displayed in the image viewer. Clicking directly on the spectral profiler graph will change the displayed image to the clicked channel. Alternatively, the red vertical bar is draggable and acts just like the animator slider. 
+
+The bottom axis shows the spectral coordinate, while optional channel coordinate can be displayed instead. Extra options to configure the profile plot are available to the right border. The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the botton-left corner. When the cursor is on the image in the image viewer, the pointed pixel value (frequency or velocity or channel index, and pixel value) will be displayed at the bottom-left corner of the spectral profiler. When the cursor is on the spectral profiler graph, the pointed profile data will be displayed instead. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
 
 
 .. raw:: html
@@ -396,6 +400,33 @@ The interactions of the spectral profiler widget are demonstrated in the section
    <img src="_static/carta_fn_spectralProfiler_widget.png" 
         style="width:100%;height:auto;">
 
+
 .. note::
-   Approximated spectral profile while cursor is moving (like spatial profiler) will be provided in future releases. More flexibilities on how mean and rms values are derived will be provided in future releases. Profile fitting capability will be available in future release.
-   
+   More flexibilities on how mean and rms values are derived will be provided in future releases. Profile fitting capability will be available in future releases.
+
+
+
+Statistics widget
+-----------------
+Statistics widget allows users to see statistics with respect to a selected region. The "Region" dropdown menu can be used to select which region statistics to be displayed. The default is "Image" which means the entire image of the displayed channel is adopted to compute statistics. Multiple statistics widgets can be created to display statistics of different regions as demostrated below. The widget with the selected region will be highlighted with a persistent blue box. 
+
+.. raw:: html
+
+   <img src="_static/carta_fn_statistics_widget.png" 
+        style="width:100%;height:auto;">
+
+.. note::
+   Flux density will be supported in version 1.2.
+
+
+Histogram widget
+----------------
+Histogram widget allows users to visualize data in a historgram with respect to a selected region. The "Region" dropdown menu can be used to select which region histogram to be displayed. The default is "Image" which means the entire image of the displayed channel is adopted to construct a histogram. Multiple histogram widgets can be created to display histograms of different regions as demostrated below. The widget with the selected region will be highlighted with a persistent blue box.
+
+.. raw:: html
+
+   <img src="_static/carta_fn_histogram_widget.png" 
+        style="width:100%;height:auto;">
+
+.. note::
+   With v1.1, histogram bin width and bin count are automatically decided. Enhancement of the histogram widget, including histogram fitting, will be available in later releases. 

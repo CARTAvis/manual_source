@@ -1,5 +1,12 @@
 Appendix A: version history
 ===========================
+Version 1.1
+-----------
+Initial support of region of interest and the HDF5-IDIA image format.
+
+This version enables the initial support of region of interest and relevant analysis tools (statistics, histogram, region spectral profiler). Initial support of the HDF5-IDIA image format is implemented, which takes the advantage of pre-calculated data and rotated cube to speed up some time-consuming tasks. A basic server-side authentication model and command line startup options are provided. Performance enhancement and bug fixes are included as well.
+
+
 
 Version 1.0.1
 -------------
