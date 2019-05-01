@@ -44,7 +44,8 @@
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Functionality</a><ul>
-<li><a class="reference internal" href="#server-side-status">Server side status</a></li>
+<li><a class="reference internal" href="#server-side-status">Server-side status</a></li>
+<li><a class="reference internal" href="#server-side-authentication">Server-side authentication</a></li>
 <li><a class="reference internal" href="#file-browser">File browser</a></li>
 <li><a class="reference internal" href="#image-viewer">Image viewer</a><ul>
 <li><a class="reference internal" href="#image-resolution-and-screen-resolution">Image resolution and screen resolution</a></li>
@@ -55,6 +56,7 @@
 <li><a class="reference internal" href="#configuring-an-image-plot">Configuring an image plot</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#region-of-interest">Region of interest</a></li>
 <li><a class="reference internal" href="#animator">Animator</a></li>
 <li><a class="reference internal" href="#spatial-profiler">Spatial profiler</a></li>
 <li><a class="reference internal" href="#spectral-profiler">Spectral profiler</a></li>
@@ -97,18 +99,66 @@
             
   <div class="section" id="functionality">
 <h1>Functionality<a class="headerlink" href="#functionality" title="Permalink to this headline">¶</a></h1>
-<p>With version 1.0, CARTA provides basic image viewing capabilities, basic profile viewing capabilities in both spatial and spectral domains, and basic per-frame or per-cube histogram viewing capabilities. Exporting images or charts in png format and charts in plain text format are supported.</p>
-<p>With version 1.0.1 patch release, CARTA futher provides enhanced file browser navigation capability, remote server (backend) status icon, improvements of file information and header, and displaying data values in the spatial and the spectral profilers.</p>
+<p>With version 1.1, CARTA provides the following widgets/dialogs for image view and analysis:</p>
+<ul class="simple">
+<li>file browser dialog</li>
+<li>image viewer: to view raster images</li>
+<li>render configuration widget: to configure how a raster image is rendered</li>
+<li>animator widget: to navigate through different images, different channels, and different Stokes</li>
+<li>region list widget: to view and configure region properties</li>
+<li>spatial profiler: to view x and y spatial profiles at the cursor position</li>
+<li>spectral profiler: to view spectral profile from a region of interest</li>
+<li>histogram widget: to view histogram from a region of interest</li>
+<li>statistics widget: to view basic statistics from a region of interest</li>
+<li>log widget: to view program logs.</li>
+</ul>
+<p>In addition, version 1.1 starts to support basic server authentication which allows server adminstrator to set a specific folder as private or public. Initial support of the HDF5-IDIA image format is implemented in version 1.1.</p>
 <div class="section" id="server-side-status">
-<h2>Server side status<a class="headerlink" href="#server-side-status" title="Permalink to this headline">¶</a></h2>
-<p>(NEW v1.0.1) As CARTA is fundamentally a client-server application, it would be good to know the status of the server side at the client side. The server status is now displayed as a circular icon at the top-right corner of the main window. There are three kinds of status:</p>
+<h2>Server-side status<a class="headerlink" href="#server-side-status" title="Permalink to this headline">¶</a></h2>
+<p>As CARTA is fundamentally a client-server application, it would be good to know the status of the server side at the client side. The server status is now displayed as a circular icon at the top-right corner of the main window. The connection latency can be seen by hovering over the icon. There are three kinds of status:</p>
 <ul class="simple">
 <li>Green: this means that the server side is initially connected successfully.</li>
 <li>Orange: this means that the initial connection to the server side was broken (e.g., unstable internet) but has been reconnected. Please note that CARTA may behave abnormally in this case.</li>
 <li>Red: this means that the server side is not accessible. CARTA is not functional in this case.</li>
 </ul>
 <img src="_static/carta_gui_server_status.png"
-     style="width:100%;height:auto;"></div>
+     style="width:100%;height:auto;"><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If CARTA behaves abnormally or stops responding, please check the server-side status icon and connection latency. If it becomes orange, the internet connection might be interupted. If it becomes red, the internet connection is lost, or the backend process has been terminated. It is recommanded to reload CARTA if you see orange or red icon. If the stituation reoccurs, please contact us through the <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a> (<a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">carta_helpdesk<span>&#64;</span>asiaa<span>&#46;</span>sinica<span>&#46;</span>edu<span>&#46;</span>tw</a>).</p>
+</div>
+</div>
+<div class="section" id="server-side-authentication">
+<h2>Server-side authentication<a class="headerlink" href="#server-side-authentication" title="Permalink to this headline">¶</a></h2>
+<p>Desktop users can skip this section as it is only relevent to the CARTA-server application and server-side administration.</p>
+<p>A basic server-side authentication model has been implemented in version 1.1. The server adminstrator can set permission to folders through a permission text file containing API keys. If a user enters a valid API key through “<strong>FILE</strong>” -&gt; “<strong>Enter API key</strong>” dialog, which matches the server-side permission file “<em>permission.txt</em>”, the user will only be able to access the folders that have been granted for access.</p>
+<p>An example of the permission file (must be named as “<em>permisison.txt</em>”) is shown below.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># some very basic folder-based permissions for images in the viewer</span>
+<span class="c1"># each user has their own API key which they can enter into the viewer through</span>
+<span class="c1"># the &quot;Enter API key&quot; dialog. The key will be stored in the browser&#39;s local storage</span>
+/:
+*
+public:
+*
+<span class="c1">####################################</span>
+<span class="c1">#</span>
+<span class="c1">####################################</span>
+user01:
+0b2ee132-87ba-45a9-9944-02e7f9a03b25
+
+user02:
+675db74a-2d48-4850-9e3d-a94a77e2819d
+
+shared:
+0b2ee132-87ba-45a9-9944-02e7f9a03b25
+675db74a-2d48-4850-9e3d-a94a77e2819d
+</pre></div>
+</div>
+<p>In the above setup, there are four different folders, named as “<em>public</em>”, “<em>user01</em>”, “<em>user02</em>”, and “<em>shared</em>”, repectively. The “<em>public</em>” folder will always be visibile and accessible with and without an API key. On the contrary, “<em>user01</em>” and “<em>shared</em>” folders will only be visible and accessible if the API key “<em>0b2ee132-87ba-45a9-9944-02e7f9a03b25</em>” has been entered through the “<strong>Enter API key</strong>” dialog. The server adminstrator can enable this basic authentication by using the keyword argument “<em>permissions=true</em>” when launching the CARTA backend service.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">exec</span> carta_backend <span class="nv">port</span><span class="o">=</span><span class="m">6002</span> <span class="nv">base</span><span class="o">=</span>/scratch/images <span class="nv">root</span><span class="o">=</span>/scratch/images <span class="nv">permissions</span><span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>More server-side authentication models will be introduced in later versions.</p>
+</div>
 <div class="section" id="file-browser">
 <h2>File browser<a class="headerlink" href="#file-browser" title="Permalink to this headline">¶</a></h2>
 <p>File browser, accessible via the menu <strong>File</strong> -&gt; <strong>Open image</strong> or the menu <strong>File</strong> -&gt; <strong>Append image</strong>, provides information of images supported by CARTA. Currently CARTA supports images in:</p>
@@ -118,17 +168,21 @@
 <li>FITS format</li>
 <li>MIRIAD format</li>
 </ul>
-<p>Only these formats will be shown in the file list with image type and file size. When an image is selected, a brief summary of image properties is provided on the right side of the dialog. Full header is also available in the second tab. To view an image, click the <strong>Load</strong> button at the bottom-right corner. To view a new image with all the loaded images closed, use <strong>File</strong> -&gt; <strong>Open image</strong> -&gt; <strong>Load</strong>. To view multiple images, use <strong>File</strong> -&gt; <strong>Append image</strong> -&gt; <strong>Append</strong>.</p>
-<p>(NEW v1.0.1) File browser now remembers the last path where an image was opened within one CARTA session. Therefore, when the file browser is re-opened to load other images, a file list should be displayed at the last path where the previous image was opened. Users can now freely navigate through the file system (up to root or “/”) with the v1.0.1 desktop release.</p>
+<p>Only the images matched these formats will be shown in the file list with image type and file size. When an image is selected, a brief summary of image properties is provided on the right side of the dialog. Full header is also available in the second tab. To view an image, click the <strong>Load</strong> button at the bottom-right corner. To view a new image with all the loaded images closed, use <strong>File</strong> -&gt; <strong>Open image</strong> -&gt; <strong>Load</strong>. To view multiple images, use <strong>File</strong> -&gt; <strong>Append image</strong> -&gt; <strong>Append</strong>.</p>
 <img src="_static/carta_fn_fileBrowser.png"
-     style="width:100%;height:auto;"><div class="admonition note">
+     style="width:100%;height:auto;"><p>File browser remembers the last path where an image was opened within one CARTA session. Therefore, when the file browser is re-opened to load other images, a file list will be displayed at the last path where the previous image was opened. Users can now freely navigate through the file system (up to root or “/”) with the v1.1 desktop release.</p>
+<p>For the CARTA-server application, the server administrator can limit the global directory access through the “<em>root</em>” keyword argument when lanuching the CARTA backend service.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">exec</span> carta_backend <span class="nv">port</span><span class="o">=</span><span class="m">6002</span> <span class="nv">base</span><span class="o">=</span>/scratch/images/Orion <span class="nv">root</span><span class="o">=</span>/scratch/images
+</pre></div>
+</div>
+<p>In the above example, users will see a list of images at “/scratch/images/Orion” when accessing the file browser dialog for the first time in a new session. Users can navigate to any other folders inside “/scratch/images/Orion”. Users can also navigate one level up to “/scratch/images”, but not beyound that (neither “/scratch” nor “/”).</p>
+<div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>When viewing images in appending mode, alignments in the world coordinate system (WCS) and the frequency/velocity space are not available in this version. This feature is expected in v1.2.</p>
-<p class="last">The support of HDF5-IDIA is conditional. Full support will be available in v1.1</p>
+<p class="last">When viewing images in appending mode, alignments in the world coordinate system (WCS) and the frequency/velocity space are not available in this version. This feature is expected in v1.3.</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">When the file information of an image cube with a <em>per-plane-beam</em> is requested, CARTA will spend a significant amount of time to calculate the beam information. This also applies when opening images with a per-plane-beam. This is a known issue and the development team will try to solve it as soon as possible.</p>
+<p class="last">When the file information of an image cube with a <em>per-plane-beam</em> is requested, CARTA will spend a significant amount of time to calculate the beam information. This also applies when opening images with a per-plane-beam. This is a known issue and the development team will try to solve it in future releases.</p>
 </div>
 </div>
 <div class="section" id="image-viewer">
@@ -136,7 +190,7 @@
 <p>When an image is loaded via the file browser, it is shown in the image viewer with its per-frame histogram shown in the render configuration widget. Currently CARTA supports raster image only.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Contour rendering will be available in v1.2.</p>
+<p class="last">Contour rendering will be available in v1.3.</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -156,7 +210,7 @@
 <div class="section" id="render-configuration-of-a-raster-image">
 <h3>Render configuration of a raster image<a class="headerlink" href="#render-configuration-of-a-raster-image" title="Permalink to this headline">¶</a></h3>
 <p>The render configuration widget controls how a raster image is rendered in the image viewer. On the top, there is a row of buttons with different clip levels plus a custom button. Below there is a plot showing the per-channel histogram (logarithmic scale) with a bin count equals to the geometric mean of the image size (x and y). The two vertical red bars indicate the two clip values of a colormap. Interaction with a chart, such as the histogram, is demonstrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. On the right, there is a column of options, such as histogram type, scaling function, color map, clip values, and control parameter of a scaling function (if applicable). Extra options to configure the histogram plot are hidden in the tool box on the right border. The histogram can be exported as a png image or a text file in tsv format.</p>
-<p>By default, CARTA calculates per-channel histogram. When per-cube histogram is requested, a warning message and a progress widget will show up. Calculating a per-cube histogram can be time-consuming for large image cubes. Users may cancel the request at any time by pressing the cancel button in the progress widget.</p>
+<p>By default, CARTA calculates per-channel histogram. When per-cube histogram is requested, a warning message and a progress widget will show up. Calculating a per-cube histogram can be time-consuming for large image cubes. Users may cancel the request at any time by pressing the cancel button in the progress widget. If the image is in the HDF5-IDIA format, the pre-calculated per-cube histogram will be loaded directly and displayed mostly instantly.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_renderConfig_widget.mp4" type="video/mp4">
 </video><p>By default, CARTA determines the boundary values of a colormap on <strong>per-channel</strong> basis. That is, a default “99.9%” clip level is applied to the per-channel histogram to look for the two clip values. Then apply the values in “linear” scale to the default colormap “inferno” to render a raster image. This helps to inspect an image in detail without suffering from improper image rendering in most of cases. Below is an example of this per-channel rendering approach.</p>
@@ -175,18 +229,19 @@
 <li>power: <span class="math notranslate nohighlight">\(y = ({\alpha}x-1)/{\alpha}\)</span></li>
 </ul>
 <p>A set of colormaps adopted from <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html?highlight=colormap">matplotlib</a> is provided in CARTA.</p>
-</div>
+<img src="_static/carta_fn_renderConfig_colormaps.png"
+     style="width:100%;height:auto;"></div>
 <div class="section" id="carta-image-viewing-performance">
 <h3>CARTA image viewing performance<a class="headerlink" href="#carta-image-viewing-performance" title="Permalink to this headline">¶</a></h3>
 <p>The per-frame rendering approach helps to improve the performance of loading an image significantly. Traditionally when an image is loaded, the minimum and maximum of the entire image (cube) are looked for. This becomes a serious performance issue if the image (cube) size is extraordinary large (&gt; several GB). In addition, applying the global minimum and maximum to render a raster image usually (if not often) results in a poorly rendered image if the dynamical range is high. Then users need to re-render the image repeatedly with refined boundary values. Re-rendering such a large image repeatedly further deduces user experiences.</p>
-<p>CARTA hopes to improve the image viewing experience by adopting GPU rendering with web browser technology. In addition, CARTA only renders an image with just enough image resolution (down-sampling). This combination results in a high-performance remote image viewer. The total file size is no longer a bottleneck. The determinative factors are  1) image size in x and y dimensions, and 2) internet bandwidth, instead.</p>
+<p>CARTA hopes to improve the image viewing experience by adopting GPU rendering with web browser technology. In addition, CARTA only renders an image with just enough image resolution (down-sampling). This combination results in a high-performance remote image viewer. The total file size is no longer a bottleneck. The determinative factors are 1) image size in x and y dimensions, 2) internet bandwidth, and 3) storage I/O, instead.</p>
 </div>
 <div class="section" id="changing-image-view">
 <h3>Changing image view<a class="headerlink" href="#changing-image-view" title="Permalink to this headline">¶</a></h3>
 <p>CARTA provides different ways to change the image view. With a mouse, image zoom or pan actions are achieved by scrolling up/down or clicking, respectively, as demonstrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-images"><span class="std std-ref">Mouse interactions with images</span></a>. Alternatively, the image can be changed to fit the image viewer, or to fit the screen resolution (i.e., screen resolution equals full image resolution), by using the buttons at the bottom-right corner of the image viewer. Zoom in and zoom out buttons are provided as well.  To change to different frames, channels, or stokes, please refer to the section <a class="reference internal" href="#animator-intro"><span class="std std-ref">Animator</span></a>.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_imageViewer_changeView.mp4" type="video/mp4">
-</video><p>When an image is zoomed in or out, the precision of the coordinate tick values is dynamically adjusted based on the zoom level. This feature allows users to analyze images with very different scales (WCS group; v1.2).</p>
+</video><p>When an image is zoomed in or out, the precision of the coordinate tick values is dynamically adjusted based on the zoom level. This feature allows users to analyze images with very different scales (WCS group; v1.3).</p>
 </div>
 <div class="section" id="cursor-information">
 <h3>Cursor information<a class="headerlink" href="#cursor-information" title="Permalink to this headline">¶</a></h3>
@@ -199,15 +254,14 @@
 <li>Frequency, velocity, and reference frame (if applicable).</li>
 </ul>
 <img src="_static/carta_fn_imageViewer_cursorInfo.png"
-     style="width:100%;height:auto;"><p>When the coordinate system is changed (e.g., ICRS to Galactic), the displayed world coordinate will be changed accordingly. The precision is determined dynamically based on the image header.</p>
+     style="width:100%;height:auto;"><p>When the coordinate system is changed (e.g., ICRS to Galactic), the displayed world coordinate will be changed accordingly. The precision is determined dynamically based on the image header and image zoom level.</p>
 <p>The reference image coordinate (0,0) locates at the center of the bottom-left pixel of the image. Regardless the displayed image is down-sampled or not, the image coordinate always refers to full resolution image.</p>
-<p>When cursor is moving, the pixel value adopted from the down-sampled image is displayed.
-.. When the cursor stops moving by 200 ms, the pixel value will be updated to the pixel value at full image resolution.</p>
-<p>If image header provides sufficient information in the frequency/velocity domain, the frequency and velocity with the reference frame of the current channel will be shown.</p>
+<p>When cursor is moving, the pixel value adopted from the down-sampled image is displayed. If image header provides sufficient information in the frequency/velocity domain, the frequency and velocity with the reference frame of the current channel will be shown.</p>
+<p>To stop/resume cursor update, press “<strong>F</strong>” key. When the cursor stops updating, the cursor information bar, cursor spatial profiler, cursor spectral profiler will stop updating too.</p>
 </div>
 <div class="section" id="configuring-an-image-plot">
 <h3>Configuring an image plot<a class="headerlink" href="#configuring-an-image-plot" title="Permalink to this headline">¶</a></h3>
-<p>CARTA provides flexible options to configure the appearance of an image plot. The overlay settings are accessible via <strong>View</strong> -&gt; <strong>Overlay</strong> -&gt; <strong>Customize</strong>.</p>
+<p>CARTA provides flexible options to configure the appearance of an image plot. The overlay settings are accessible via “<strong>View</strong>” -&gt; “<strong>Overlay</strong>” -&gt; “<strong>Customize</strong>”.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_astOptions.mp4" type="video/mp4">
 </video><p>As an example, below is an image with default overlay settings.</p>
@@ -215,7 +269,75 @@
      style="width:100%;height:auto;"><p>And, this is a customized one. The coordinate system has been switched from FK5 to Galactic. Font type, size, and color are customized, as well as the axis border and grid lines.</p>
 <img src="_static/carta_fn_astOptions_after.png"
      style="width:100%;height:auto;"><p>The restoring beam is shown at the bottom-left corner, if applicable.</p>
-<p>The image can be exported as a png image by clicking the “Export image” button at the bottom-right corner of the image viewer, or by <strong>File</strong> -&gt; <strong>Export image</strong>.</p>
+<p>The image can be exported as a png image by clicking the “Export image” button at the bottom-right corner of the image viewer, or by “<strong>File</strong>” -&gt; “<strong>Export image</strong>”.</p>
+</div>
+</div>
+<div class="section" id="region-of-interest">
+<h2>Region of interest<a class="headerlink" href="#region-of-interest" title="Permalink to this headline">¶</a></h2>
+<p>As of version 1.1, CARTA supports region types:</p>
+<ul class="simple">
+<li>rectangle (rotatable)</li>
+<li>ellipse (rotatable)</li>
+<li>square (rotatable; as a special case of rectangle; “<strong>shift</strong>” key + drag)</li>
+<li>circle (as a special case of ellipse; “<strong>shift</strong>” key + drag)</li>
+<li>point (single one only through “<strong>F</strong>” key)</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In version 1.2, polygon and (multiple) point regions will be supported. Import/export region in the casa region text format (.crtf) or the ds9 region format (.reg) as a text file will be supported in version 1.2.</p>
+</div>
+<p>The creation and modification of regions are demostrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-regions"><span class="std std-ref">Mouse interactions with region of interest</span></a>. To create a region, use the region button at the bottom-right corner of the image viewer, then use cursor to draw a region. Keyboard shortcuts associated with regions are listed below.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="31%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">macOS</th>
+<th class="head">Linux</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Region properties</td>
+<td>double-click</td>
+<td>double-click</td>
+</tr>
+<tr class="row-odd"><td>Delete selected region</td>
+<td>del / backspace</td>
+<td>del / backspace</td>
+</tr>
+<tr class="row-even"><td>Toggle region creation mode</td>
+<td>c</td>
+<td>c</td>
+</tr>
+<tr class="row-odd"><td>Deselect region</td>
+<td>esc</td>
+<td>esc</td>
+</tr>
+<tr class="row-even"><td>Corner-to-corner region creation</td>
+<td>cmd + drag</td>
+<td>ctrl + drag</td>
+</tr>
+<tr class="row-odd"><td>Symmetric region creation</td>
+<td>shift + drag</td>
+<td>shift + drag</td>
+</tr>
+<tr class="row-even"><td>Pan image (inside region)</td>
+<td>cmd + click / middle-click</td>
+<td>ctrl + click / middle-click</td>
+</tr>
+</tbody>
+</table>
+<p>All created regions are listed in the region list widget with basic region properties. To select a region (region state changes to “selected”), simply click on the region in the image viewer, or click on the region in the region list widget. To modify the properties of a selected region, double-click on a region in the image viewer or a region in the region list widget. The color, line style, name, location, and shape, of a region are all configurable with the region property dialog. To de-select a region, press “<strong>esc</strong>” key. To delete a selected region, press “<strong>delete</strong>” or “<strong>backspace</strong>” key.</p>
+<img src="_static/carta_fn_roi.png"
+     style="width:100%;height:auto;"><p>Region of interest enables practical image cube analysis through statistics, histogram, and spectral profiler widgets. When a region is selected, the region associated widgets will be highlighted with a persistent blue box as demostrated below.</p>
+<video controls loop style="width:100%;height:auto;">
+  <source src="_static/carta_fn_roi_widgetHighlight.mp4" type="video/mp4">
+</video><div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">As of version 1.1, single mouse click may trigger image pan or region selection. If it is intendted to pan to a position <em>inside</em> a region, hold “<strong>command</strong>” or “<strong>ctrl</strong>” key then click, or use middle-click if available.</p>
 </div>
 </div>
 <div class="section" id="animator">
@@ -227,16 +349,16 @@
   <source src="_static/carta_fn_animator_delayedFrame.mp4" type="video/mp4">
 </video><div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">More animator features, such as playback modes (backward, bouncing), playback range and step, etc. will be available in future releases.</p>
+<p class="last">More animator features, such as playback modes (backward, bouncing), playback range and step, etc. will be available in release v1.2.</p>
 </div>
 </div>
 <div class="section" id="spatial-profiler">
 <h2>Spatial profiler<a class="headerlink" href="#spatial-profiler" title="Permalink to this headline">¶</a></h2>
 <p>Spatial profiler provides the spatial profiles of the current image at the cursor position. When the cursor is moving on the image, instant profiles derived from the (down-sampled) raster image are displayed. When the cursor stops moving for more than 200 ms, profiles derived from the full resolution image will be displayed instead. This allows users to inspect the image in an efficient way. The “F” key will disable and enable profile update. A marker “+” will be placed on the image to indicate the position of the profiles taken.</p>
-<p>(NEW v1.0.1) When the cursor is on the image in the image viewer, the pointed  pixel value (pixel index and pixel value) will be displayed at the bottom-left corner of the spatial profiler. When the cursor is on the spatial profiler graph, the pointed profile data will be displayed instead.</p>
+<p>When the cursor is on the image in the image viewer, the pointed pixel value (pixel index and pixel value) will be displayed at the bottom-left corner of the spatial profiler. When the cursor is on the spatial profiler graph, the pointed profile data will be displayed instead.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_spatialProfiler_demo.mp4" type="video/mp4">
-</video><p>The interactions of the spatial profiler widget are demonstrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available to the right border. The option “Show Mean/RMS” will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the botton-left corner (NEW v1.0.1). The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.</p>
+</video><p>The interactions of the spatial profiler widget are demonstrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available to the right border. The option “Show Mean/RMS” will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the botton-left corner. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.</p>
 <img src="_static/carta_fn_spatialProfiler_widget.png"
      style="width:100%;height:auto;"><div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -245,7 +367,7 @@
 </div>
 <div class="section" id="spectral-profiler">
 <h2>Spectral profiler<a class="headerlink" href="#spectral-profiler" title="Permalink to this headline">¶</a></h2>
-<p>Spectral profiler provides the spectral profile of the current image cube at the cursor position. When the cursor stops moving for more than 200 ms, a spectral profile derived at the cursor position from the full resolution image cube will be displayed. The “F” key will disable and enable profile update. A marker “+” will be placed on the image to indicate the position of the profiles taken.</p>
+<p>Spectral profiler provides the spectral profile of the current image cube at the selected region. The default region is set to “Cursor”. When the cursor stops moving for more than 200 ms (applicable to CASA, FITS, and MIRIAD image format), a spectral profile derived at the cursor position from the full resolution image cube will be displayed. For the HDF5-IDIA image format, throttled cursor update is applied since it is much more efficient to access cursor spectral profile from a rotated cube (ZXY) which is available from an HDF5-IDIA image. The “F” key will disable and enable profile update. A marker “+” will be placed on the image to indicate the position of the profiles taken.</p>
 <p>(NEW v1.0.1) When the cursor is on the image in the image viewer, the pointed pixel value (frequency or velocity or channel index, and pixel value) will be displayed at the bottom-left corner of the spectral profiler. When the cursor is on the spectral profiler graph, the pointed profile data will be displayed instead.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_spectralProfiler_demo.mp4" type="video/mp4">
