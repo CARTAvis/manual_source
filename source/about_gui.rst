@@ -1,6 +1,8 @@
+.. _about_gui:
+
 Graphical user interface
 ========================
-The graphical user interface (GUI) of CARTA is flexible and user friendly to support most of use cases, such as continuum image analysis, or spectral line cube analysis, etc. In this section, we introduce the details of the GUI and provide examples to guide users to get familiar with configuring layouts via mouse interactions.
+The graphical user interface (GUI) of CARTA is designed to be flexible and user friendly to support most of use cases, such as continuum image analysis, or spectral line cube analysis, etc. In this section, we introduce the GUI and provide examples to guide users to get familiar with configuring layouts via mouse interactions. Examples on how to interact with regions and charts are provided as well.
 
 
 Components
@@ -10,9 +12,11 @@ The GUI of CARTA is classified into different components:
 * main window
 * menu bar
 * widget bar
-* panel 
-* tab
+* panel (docked widget)
 * floating widget
+* tab
+* dialog
+* status icon
 
 
 .. raw:: html
@@ -22,8 +26,7 @@ The GUI of CARTA is classified into different components:
    
 
 
-
-The main window consists of a set of panels and each panel may hold multiple tabs. For example, in the above figure there are six panels in the main window and there are two tabs in the bottom-right panel. A tab may be detached to become a floating widget. The menu bar provides control options, such as image input/output, launching widgets, getting helps, etc. The widget bar provides tools to view or analyze images. 
+The main window consists of a set of panels and each panel may hold multiple docked widgets in tabs. For example, in the above figure there are five panels in the main window and there are two tabs in the bottom-left panel. A tab or a docked widget may be detached to become a floating widget. The menu bar provides control options, such as image input/output, launching widgets, getting helps, etc. The widget bar provides tools to view or analyze images. The icon at the top-right corner of the main window is an indicator of server (backend) status. A dialog provides options to configure compoments, such as image layout, or region properties, etc.
 
 
 
@@ -84,7 +87,7 @@ By clicking the **maximize** icon at the top-right corner of a panel, the panel 
 
 Detaching and attaching a tab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-By clicking the **detach** (unpin) icon at the top-right corner of a panel, the activated tab will be detached to become a floating widget. By dragging the **attach** (pin) icon, a floating window will be attached to an existing panel or as a new panel.
+By clicking the **detach** (unpin) icon at the top-right corner of a panel, the activated tab will be detached to become a floating widget. By dragging the **attach** (pin) icon, a floating widget will be attached to an existing panel or as a new panel.
 
 .. raw:: html
 
@@ -95,7 +98,7 @@ By clicking the **detach** (unpin) icon at the top-right corner of a panel, the 
 
 Creating a widget as a floating widget or as a tab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A widget is activated as a floating widget by clicking the button in the widget bar. A widget can be activated as a tab by dragging the button in the widget bar directly to a desired location.
+A widget is activated as a floating widget by clicking the button in the widget bar. Alternatively, a widget can be activated as a tab by dragging the button in the widget bar directly to a desired location.
 
 .. raw:: html
 
@@ -140,6 +143,50 @@ The image can be panned equivalently by single-clicking a position in the image.
      <source src="_static/carta_gui_mouse_images_pan.mp4" type="video/mp4">
    </video>
 
+If it is intended to pan *inside* a region, please hold **command** (mac) or **ctrl** (linux) key and click inside a region, or simply use middle click. Single click on a region will change the region state to "selected".  
+
+.. raw:: html
+
+   <video controls loop style="width:100%;height:auto;">
+     <source src="_static/carta_gui_mouse_images_pan_roi.mp4" type="video/mp4">
+   </video>
+
+
+.. _mouse_interaction_with_regions:
+
+Mouse interactions with region of interest
+------------------------------------------
+
+Region creation
+^^^^^^^^^^^^^^^
+A region can be created by firstly entering the region creation mode then dragging on the image viewer. To enter the region creation mode, click the *region* button at the bottom-right corner of the image viewer or press "**c**" key. Double-clicking the region icon brings up all available region types (in version 1.1, only rectangle and ellipse are available). As a default, a region is created in the "center-to-corner" mode. To temporarily switch to "corner-to-corner" mode, hold "**commmand**" (mac) or "**ctrl**" (linux) key then drag. A symmetric region such as "circle" or "square" can be created by holding **shift** key then dragging.
+
+.. raw:: html
+
+   <video controls loop style="width:100%;height:auto;">
+     <source src="_static/carta_roi_creation.mp4" type="video/mp4">
+   </video>
+
+
+Region selection and modification
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Click on a region will change the region state to "selected" and the selected region will be highlighted in the region list widget. Alternatively, a region can be selected by clicking the region list. CARTA provides the flexibility to select "region in region" as demostrated in the following video. The layer order of regions is adjusted automatically based on the region size. To de-select all regions, press "**esc**" key.
+
+.. raw:: html
+
+   <video controls loop style="width:100%;height:auto;">
+     <source src="_static/carta_roi_selection.mp4" type="video/mp4">
+   </video>
+
+Double-click on a region or a region in the region list brings up the region property dialog. The dialog allows users to modify region's name, location, shapes, and region cosmetics. Pressing "**delete**" key will remove the selected region. 
+
+.. raw:: html
+
+   <video controls loop style="width:100%;height:auto;">
+     <source src="_static/carta_roi_modification.mp4" type="video/mp4">
+   </video>
+
+
 
 .. _mouse_interaction_with_charts:
 
@@ -148,7 +195,7 @@ Mouse interactions with charts
 
 Zooming
 ^^^^^^^
-A chart (profiles and histograms) is zoom by scrolling.
+A chart (profiles and histograms) can be zoomed by wheel scrolling.
 
 .. raw:: html
 
@@ -188,46 +235,68 @@ Double-clicking on the chart resets the plotting range.
    </video>
 
 
-Keyboard shortcuts
-------------------
+Controls and shortcuts
+----------------------
 CARTA supports keyboard shortcuts to enable certain controls without using a mouse. A summary is accessible via the menu **Help** -> **Controls and Shortcuts**, or the shortcut **shift** + **?**. The shortcuts are slightly different depending on the operating system in use. The shortcuts for each operating system are summarized in the following table.
 
 
-+------------------------------+-----------------------+-----------------------+
-| Control                      | macOS                 | Linux                 |
-+==============================+=======================+=======================+
-| **Help**                     |                       |                       |
-+------------------------------+-----------------------+-----------------------+
-| Controls and shortcuts       | shift + ?             | shift + ?             |
-+------------------------------+-----------------------+-----------------------+
-| **Appearance**               |                       |                       |
-+------------------------------+-----------------------+-----------------------+
-| Toggle light/dark theme      | shift + D             | shift + D             |
-+------------------------------+-----------------------+-----------------------+
-| **Cursor**                   |                       |                       |
-+------------------------------+-----------------------+-----------------------+
-| Toggle frozen cursor         | F                     | F                     |
-+------------------------------+-----------------------+-----------------------+
-| **File**                     |                       |                       |
-+------------------------------+-----------------------+-----------------------+
-| Open image                   | cmd + O               | ctrl + O              |
-+------------------------------+-----------------------+-----------------------+
-| Append image                 | cmd + L               | ctrl + L              |
-+------------------------------+-----------------------+-----------------------+
-| Export image                 | cmd + E               | ctrl + E              |
-+------------------------------+-----------------------+-----------------------+
-| **Frame**                    |                       |                       |
-+------------------------------+-----------------------+-----------------------+
-| Next frame                   | cmd + ]               | ctrl + ]              |
-+------------------------------+-----------------------+-----------------------+
-| Previous frame               | cmd + [               | ctrl + [              |
-+------------------------------+-----------------------+-----------------------+
-| Next channel                 | cmd + up              | ctrl + up             |
-+------------------------------+-----------------------+-----------------------+
-| Previous channel             | cmd + down            | ctrl + down           |
-+------------------------------+-----------------------+-----------------------+
-| Next Stokes                  | cmd + shift + up      | ctrl + shift + up     |
-+------------------------------+-----------------------+-----------------------+
-| Previous Stokes              | cmd + shift + down    | ctrl + shift + down   |
-+------------------------------+-----------------------+-----------------------+
++----------------------------------+----------------------------+-----------------------------+
+| Control                          | macOS                      | Linux                       |
++==================================+============================+=============================+
+| **Help**                         |                            |                             |
++----------------------------------+----------------------------+-----------------------------+
+| Controls and shortcuts           | shift + ?                  | shift + ?                   |
++----------------------------------+----------------------------+-----------------------------+
+| **Navigation**                   |                            |                             | 
++----------------------------------+----------------------------+-----------------------------+
+| Pan image                        | click                      | click                       |
++----------------------------------+----------------------------+-----------------------------+
+| Pan image (inside region)        | cmd + click / middle-click | ctrl + click / middle-click |
++----------------------------------+----------------------------+-----------------------------+
+| Zoom image                       | mouse wheel                | mouse wheel                 |
++----------------------------------+----------------------------+-----------------------------+
+| **Regions**                      |                            |                             |
++----------------------------------+----------------------------+-----------------------------+
+| Region properties                | double-click               | double-click                | 
++----------------------------------+----------------------------+-----------------------------+
+| Delete selected region           | del / backspace            | del / backspace             |
++----------------------------------+----------------------------+-----------------------------+
+| Toggle region creation mode      | c                          | c                           |
++----------------------------------+----------------------------+-----------------------------+
+| Deselect region                  | esc                        | esc                         |
++----------------------------------+----------------------------+-----------------------------+
+| Corner-to-corner region creation | cmd + drag                 | ctrl + drag                 |
++----------------------------------+----------------------------+-----------------------------+
+| Symmetric region creation        | shift + drag               | shift + drag                |
++----------------------------------+----------------------------+-----------------------------+
+| **Appearance**                   |                            |                             |
++----------------------------------+----------------------------+-----------------------------+
+| Toggle light/dark theme          | shift + D                  | shift + D                   |
++----------------------------------+----------------------------+-----------------------------+
+| **Cursor**                       |                            |                             |
++----------------------------------+----------------------------+-----------------------------+
+| Freeze/unfreeze cursor           | F                          | F                           |
++----------------------------------+----------------------------+-----------------------------+
+| **File controls**                |                            |                             |
++----------------------------------+----------------------------+-----------------------------+
+| Open image                       | cmd + O                    | ctrl + O                    |
++----------------------------------+----------------------------+-----------------------------+
+| Append image                     | cmd + L                    | ctrl + L                    |
++----------------------------------+----------------------------+-----------------------------+
+| Export image                     | cmd + E                    | ctrl + E                    |
++----------------------------------+----------------------------+-----------------------------+
+| **Frame controls**               |                            |                             |
++----------------------------------+----------------------------+-----------------------------+
+| Next frame                       | cmd + ]                    | ctrl + ]                    |
++----------------------------------+----------------------------+-----------------------------+
+| Previous frame                   | cmd + [                    | ctrl + [                    |
++----------------------------------+----------------------------+-----------------------------+
+| Next channel                     | cmd + up                   | ctrl + up                   |
++----------------------------------+----------------------------+-----------------------------+
+| Previous channel                 | cmd + down                 | ctrl + down                 |
++----------------------------------+----------------------------+-----------------------------+
+| Next Stokes                      | cmd + shift + up           | ctrl + shift + up           |
++----------------------------------+----------------------------+-----------------------------+
+| Previous Stokes                  | cmd + shift + down         | ctrl + shift + down         |
++----------------------------------+----------------------------+-----------------------------+
 

@@ -21,28 +21,47 @@ CARTA is an open-source project. Its source code is available at https://github.
 
 CARTA ultimately will have two distributions: CARTA-server and CARTA-desktop. The former is designed for handling large datasets with remote servers, while the later is suitable for smaller datasets (a few thousand pixels in the x and y dimensions) which can still be handled with personal computer or laptop. 
 
-With the version 1.0 desktop release, CARTA supports two use cases. For users using a laptop or a desktop with a monitor, please use the "Local" version. For users using a remote server via the ssh protocol, please use the "Remote" version. Installation guides for these two versions are provided in the section :ref:`installation_configuration`.
+With the *current* version 1.1 desktop release, CARTA supports two use cases. For users using a laptop or a desktop with a monitor, please use the "Local" version. For users using a remote server via the ssh protocol, please use the "Remote" version. Installation guides for these two versions are provided in the section :ref:`installation_configuration`.
 
-With the *current* version 1.0.1 desktop patch release, CARTA further provides:
+The release plan and major goals are the following:
 
-* enhanced file browser navigation capability.
-* remote server (backend) status icon.
-* improvements of file information and header.
-* displaying data values in the spatial and the spectral profilers.
+* v1.0: Basic image and profile viewing capability (released late December 2018).
 
-The release plan and major goals are the following (incorporating bug fixes):
+* v1.1: Initial support of region of interest, ROI (early May 2019; *current release*)
 
-* Version 1.0: basic image and profile viewing capability.
-  
-  * Version 1.0.1: current release, enhanced file browser navigation capability
+  * basic ROI for single image including rectangle and ellipse
+  * ROI statistics
+  * ROI spectral profile
+  * ROI histogram
+  * HDF5-IDIA image format support
+  * Improved remote version
+  * Performance and memory usage improvements
 
-* Version 1.1: basic region of interest (ROI) support and relevant analysis tools (statistics, histogram, and profilers). HDF5-IDIA image format support for server release.
-* Version 1.2: WCS group support which allows multiple images to be aligned in spatial and spectral domains. Additional server support and performance enhancements.
-* Next: multiple-panel view
-* Next: moments image, position-velocity image, and scripting interface
-* Next: interactive clean
-* Next: collaborative mode
-* Next: misc.
+* v1.2: performance and usability improvement (mid 2019)
+
+  * ROI: polygon and point
+  * ROI: import/export
+  * tiled rendering
+  * profile delivery optimization
+  * performance improvement
+  * usability improvement
+  * server support improvement
+
+* v1.3: WCS group (Q3 2019)
+
+  * WCS group, alignment of multiple images
+  * contour rendering
+  * ROI in WCS group
+
+* v1.4: Scripting interface and image analytics tools (Q4 2019)
+
+  * multi-panel image view
+  * image analytics tools
+  * scripting interface
+
+* v1.5: Interactive clean (Q4 2019/Q1 2020)
+
+
 
 
 Getting help
@@ -87,8 +106,6 @@ CARTA is mainly built in C++, TypeScript, and JavaScript, and with the following
 * React: https://reactjs.org
 * TBB: https://www.threadingbuildingblocks.org
 
-.. * HDF5: https://www.hdfgroup.org/solutions/hdf5
-
 
 The source code of CARTA is hosted on `Github <https://github.com/CARTAvis>`_.
 
@@ -97,20 +114,3 @@ The source code of CARTA is hosted on `Github <https://github.com/CARTAvis>`_.
 Copyright and License
 ---------------------
 Copyright (C) 2018-2019 ASIAA, IDIA, and NRAO. This program is free software; you can redistribute it and/or modify it under the terms of the `GNU General Public License version 3 <http://www.gnu.org/copyleft/gpl.html>`_ as published by the Free Software Foundation.
-
-.. It is the policy of Associated Universities, Inc. (AUI), that the copyright and licensing for all software created at the National Radio Astronomy Observatory (NRAO) allows the source code for that software to be freely distributed and modified. This policy is both to support the Observatory's mission in providing software which might be of use in new scientific contexts, and to acknowledge that the Observatory has gained great advantage from open source software and the best way to repay this debt is to contribute to the effort. This policy does not require you to distribute software intended for in-house work, although if it might be of general interest we encourage you to do so. This policy also does not result in any additional support burden: the software is to be made available only on an "as is" basis unless special arrangements are negotiated.
-
-.. As a further policy, due to the familiarity of the Observatory with the Free Software Foundation's GNU `General Public License (GPL) <http://www.gnu.org/copyleft/gpl.html>`_, and with the GNU `Lesser General Public License (LGPL) <http://www.gnu.org/copyleft/lesser.html>`_, these licenses are to be used. In both cases the line: 
-
-..    Copyright (C) 2018-2019 Associated Universities, Inc. Washington DC, USA.
-
-.. Alternative licensing is possible (for example a BSD style license), but will require individual approval.
-
-.. Exceptions to either policy require a waiver from the Associate Director for Data Management.
-
-
-.. .. raw:: html
-
-..   <hr>
-
-.. The newly developed and modified source code by ASIAA CASA team will be licensed with GNU General Purpose License (GPL) or GNU Lesser General Purpose License (LGPL) with Associated Universities, Inc listed as the copyright holder. This license may be modified to another open source license agreement by agreement of NRAO and ASIAA.

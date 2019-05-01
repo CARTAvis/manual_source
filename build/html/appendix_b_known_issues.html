@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Appendix B: known issues &#8212; CARTA 1.0.1 documentation</title>
+    <title>Appendix B: known issues &#8212; CARTA 1.1 documentation</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
@@ -29,7 +29,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="appendix_a_version_history.html" title="Appendix A: version history"
              accesskey="P">previous</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.0.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -43,6 +43,7 @@
 <li><a class="reference internal" href="#stability-and-performace">Stability and performace</a></li>
 <li><a class="reference internal" href="#image-viewer">Image viewer</a></li>
 <li><a class="reference internal" href="#animator">Animator</a></li>
+<li><a class="reference internal" href="#region-of-interest">Region of interest</a></li>
 <li><a class="reference internal" href="#misc">Misc.</a></li>
 </ul>
 </li>
@@ -80,22 +81,18 @@
             
   <div class="section" id="appendix-b-known-issues">
 <h1>Appendix B: known issues<a class="headerlink" href="#appendix-b-known-issues" title="Permalink to this headline">¶</a></h1>
-<p>CARTA has the following known issues for the release v1.0. The CARTA development team will try to fix them in coming releases. The list is updated up to December 21, 2018.</p>
+<p>CARTA has the following known issues for the release v1.1. The CARTA development team will try to fix them in coming releases. The list is updated up to May 1, 2019.</p>
 <div class="section" id="stability-and-performace">
 <h2>Stability and performace<a class="headerlink" href="#stability-and-performace" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>memory leak when stepping through channels (<a class="reference external" href="https://github.com/CARTAvis/nrao-carta-backend/issues/41">GitHub issue</a>)</li>
-<li>memory leak when calculating cube histogram (<a class="reference external" href="https://github.com/CARTAvis/nrao-carta-backend/issues/42">GitHub issue</a>)</li>
 <li>performance degradation of images with per-plane-beam (<a class="reference external" href="https://github.com/CARTAvis/nrao-carta-backend/issues/46">GitHub issue</a>)</li>
+<li>backend crash when close file but threads are still running (<a class="reference external" href="https://github.com/CARTAvis/nrao-carta-backend/issues/19">GitHub issue</a>)</li>
 </ul>
 </div>
 <div class="section" id="image-viewer">
 <h2>Image viewer<a class="headerlink" href="#image-viewer" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>backend crashes when multiple sessions access same dataset (<a class="reference external" href="https://github.com/CARTAvis/nrao-carta-backend/issues/17">GitHub issue</a>)</li>
-<li>backend crash when close file but threads are still running (<a class="reference external" href="https://github.com/CARTAvis/nrao-carta-backend/issues/19">GitHub issue</a>)</li>
-<li>artifacts when using very large line widths in AST overlay (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/120">GitHub issue</a>)</li>
-<li>incorrect native coordinate when reopening an image (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/73">GitHub issue</a>)</li>
+<li>no update on image cursor values when switching stokes or channel (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/150">GitHub issue</a>)</li>
 </ul>
 </div>
 <div class="section" id="animator">
@@ -104,11 +101,16 @@
 <li>no radio button is checked (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/108">GitHub issue</a>)</li>
 </ul>
 </div>
+<div class="section" id="region-of-interest">
+<h2>Region of interest<a class="headerlink" href="#region-of-interest" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>symmetric creation/modification of a region with side anchor and shift key (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/308">GitHub issue</a>)</li>
+</ul>
+</div>
 <div class="section" id="misc">
 <h2>Misc.<a class="headerlink" href="#misc" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Export image: long names not fully visible in the Save As field (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/130">GitHub issue</a>)</li>
-<li>no png image is saved (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/102">GitHub issue</a>)</li>
 </ul>
 </div>
 </div>
@@ -125,7 +127,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="appendix_a_version_history.html" title="Appendix A: version history"
              >previous</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.0.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

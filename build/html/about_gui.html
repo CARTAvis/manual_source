@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Graphical user interface &#8212; CARTA 1.0.1 documentation</title>
+    <title>Graphical user interface &#8212; CARTA 1.1 documentation</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
@@ -18,7 +18,7 @@
     <script type="text/javascript" src="_static/bizstyle.js"></script>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Functionality" href="functionalities_gui.html" />
-    <link rel="prev" title="Installation and configuration" href="installation_and_configuration.html" />
+    <link rel="prev" title="Quickstart guide" href="quickstart.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
@@ -31,9 +31,9 @@
           <a href="functionalities_gui.html" title="Functionality"
              accesskey="N">next</a></li>
         <li class="right" >
-          <a href="installation_and_configuration.html" title="Installation and configuration"
+          <a href="quickstart.html" title="Quickstart guide"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.0.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -60,20 +60,25 @@
 <li><a class="reference internal" href="#panning">Panning</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#mouse-interactions-with-region-of-interest">Mouse interactions with region of interest</a><ul>
+<li><a class="reference internal" href="#region-creation">Region creation</a></li>
+<li><a class="reference internal" href="#region-selection-and-modification">Region selection and modification</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#mouse-interactions-with-charts">Mouse interactions with charts</a><ul>
 <li><a class="reference internal" href="#id2">Zooming</a></li>
 <li><a class="reference internal" href="#id3">Panning</a></li>
 <li><a class="reference internal" href="#resetting-range">Resetting range</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#keyboard-shortcuts">Keyboard shortcuts</a></li>
+<li><a class="reference internal" href="#controls-and-shortcuts">Controls and shortcuts</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="installation_and_configuration.html"
-                        title="previous chapter">Installation and configuration</a></p>
+  <p class="topless"><a href="quickstart.html"
+                        title="previous chapter">Quickstart guide</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="functionalities_gui.html"
                         title="next chapter">Functionality</a></p>
@@ -105,8 +110,8 @@
           <div class="body" role="main">
             
   <div class="section" id="graphical-user-interface">
-<h1>Graphical user interface<a class="headerlink" href="#graphical-user-interface" title="Permalink to this headline">¶</a></h1>
-<p>The graphical user interface (GUI) of CARTA is flexible and user friendly to support most of use cases, such as continuum image analysis, or spectral line cube analysis, etc. In this section, we introduce the details of the GUI and provide examples to guide users to get familiar with configuring layouts via mouse interactions.</p>
+<span id="about-gui"></span><h1>Graphical user interface<a class="headerlink" href="#graphical-user-interface" title="Permalink to this headline">¶</a></h1>
+<p>The graphical user interface (GUI) of CARTA is designed to be flexible and user friendly to support most of use cases, such as continuum image analysis, or spectral line cube analysis, etc. In this section, we introduce the GUI and provide examples to guide users to get familiar with configuring layouts via mouse interactions. Examples on how to interact with regions and charts are provided as well.</p>
 <div class="section" id="components">
 <h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
 <p>The GUI of CARTA is classified into different components:</p>
@@ -114,12 +119,14 @@
 <li>main window</li>
 <li>menu bar</li>
 <li>widget bar</li>
-<li>panel</li>
-<li>tab</li>
+<li>panel (docked widget)</li>
 <li>floating widget</li>
+<li>tab</li>
+<li>dialog</li>
+<li>status icon</li>
 </ul>
 <img src="_static/carta_gui.png"
-     style="width:100%;height:auto;"><p>The main window consists of a set of panels and each panel may hold multiple tabs. For example, in the above figure there are six panels in the main window and there are two tabs in the bottom-right panel. A tab may be detached to become a floating widget. The menu bar provides control options, such as image input/output, launching widgets, getting helps, etc. The widget bar provides tools to view or analyze images.</p>
+     style="width:100%;height:auto;"><p>The main window consists of a set of panels and each panel may hold multiple docked widgets in tabs. For example, in the above figure there are five panels in the main window and there are two tabs in the bottom-left panel. A tab or a docked widget may be detached to become a floating widget. The menu bar provides control options, such as image input/output, launching widgets, getting helps, etc. The widget bar provides tools to view or analyze images. The icon at the top-right corner of the main window is an indicator of server (backend) status. A dialog provides options to configure compoments, such as image layout, or region properties, etc.</p>
 </div>
 <div class="section" id="configuring-the-layout">
 <h2>Configuring the layout<a class="headerlink" href="#configuring-the-layout" title="Permalink to this headline">¶</a></h2>
@@ -150,13 +157,13 @@
 </video></div>
 <div class="section" id="detaching-and-attaching-a-tab">
 <h3>Detaching and attaching a tab<a class="headerlink" href="#detaching-and-attaching-a-tab" title="Permalink to this headline">¶</a></h3>
-<p>By clicking the <strong>detach</strong> (unpin) icon at the top-right corner of a panel, the activated tab will be detached to become a floating widget. By dragging the <strong>attach</strong> (pin) icon, a floating window will be attached to an existing panel or as a new panel.</p>
+<p>By clicking the <strong>detach</strong> (unpin) icon at the top-right corner of a panel, the activated tab will be detached to become a floating widget. By dragging the <strong>attach</strong> (pin) icon, a floating widget will be attached to an existing panel or as a new panel.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_detach_attach_tab.mp4" type="video/mp4">
 </video></div>
 <div class="section" id="creating-a-widget-as-a-floating-widget-or-as-a-tab">
 <h3>Creating a widget as a floating widget or as a tab<a class="headerlink" href="#creating-a-widget-as-a-floating-widget-or-as-a-tab" title="Permalink to this headline">¶</a></h3>
-<p>A widget is activated as a floating widget by clicking the button in the widget bar. A widget can be activated as a tab by dragging the button in the widget bar directly to a desired location.</p>
+<p>A widget is activated as a floating widget by clicking the button in the widget bar. Alternatively, a widget can be activated as a tab by dragging the button in the widget bar directly to a desired location.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_activating_widget.mp4" type="video/mp4">
 </video></div>
@@ -180,13 +187,34 @@
 <p>The image can be panned equivalently by single-clicking a position in the image. The image will be re-centered at that position in the view.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_mouse_images_pan.mp4" type="video/mp4">
+</video><p>If it is intended to pan <em>inside</em> a region, please hold <strong>command</strong> (mac) or <strong>ctrl</strong> (linux) key and click inside a region, or simply use middle click. Single click on a region will change the region state to “selected”.</p>
+<video controls loop style="width:100%;height:auto;">
+  <source src="_static/carta_gui_mouse_images_pan_roi.mp4" type="video/mp4">
+</video></div>
+</div>
+<div class="section" id="mouse-interactions-with-region-of-interest">
+<span id="mouse-interaction-with-regions"></span><h2>Mouse interactions with region of interest<a class="headerlink" href="#mouse-interactions-with-region-of-interest" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="region-creation">
+<h3>Region creation<a class="headerlink" href="#region-creation" title="Permalink to this headline">¶</a></h3>
+<p>A region can be created by firstly entering the region creation mode then dragging on the image viewer. To enter the region creation mode, click the <em>region</em> button at the bottom-right corner of the image viewer or press “<strong>c</strong>” key. Double-clicking the region icon brings up all available region types (in version 1.1, only rectangle and ellipse are available). As a default, a region is created in the “center-to-corner” mode. To temporarily switch to “corner-to-corner” mode, hold “<strong>commmand</strong>” (mac) or “<strong>ctrl</strong>” (linux) key then drag. A symmetric region such as “circle” or “square” can be created by holding <strong>shift</strong> key then dragging.</p>
+<video controls loop style="width:100%;height:auto;">
+  <source src="_static/carta_roi_creation.mp4" type="video/mp4">
+</video></div>
+<div class="section" id="region-selection-and-modification">
+<h3>Region selection and modification<a class="headerlink" href="#region-selection-and-modification" title="Permalink to this headline">¶</a></h3>
+<p>Click on a region will change the region state to “selected” and the selected region will be highlighted in the region list widget. Alternatively, a region can be selected by clicking the region list. CARTA provides the flexibility to select “region in region” as demostrated in the following video. The layer order of regions is adjusted automatically based on the region size. To de-select all regions, press “<strong>esc</strong>” key.</p>
+<video controls loop style="width:100%;height:auto;">
+  <source src="_static/carta_roi_selection.mp4" type="video/mp4">
+</video><p>Double-click on a region or a region in the region list brings up the region property dialog. The dialog allows users to modify region’s name, location, shapes, and region cosmetics. Pressing “<strong>delete</strong>” key will remove the selected region.</p>
+<video controls loop style="width:100%;height:auto;">
+  <source src="_static/carta_roi_modification.mp4" type="video/mp4">
 </video></div>
 </div>
 <div class="section" id="mouse-interactions-with-charts">
 <span id="mouse-interaction-with-charts"></span><h2>Mouse interactions with charts<a class="headerlink" href="#mouse-interactions-with-charts" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
 <h3>Zooming<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>A chart (profiles and histograms) is zoom by scrolling.</p>
+<p>A chart (profiles and histograms) can be zoomed by wheel scrolling.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_mouse_charts_zoom1.mp4" type="video/mp4">
 </video><p>Alternatively, horizontal zoom, vertical zoom, and box zoom are supported.</p>
@@ -206,14 +234,14 @@
   <source src="_static/carta_gui_mouse_charts_reset.mp4" type="video/mp4">
 </video></div>
 </div>
-<div class="section" id="keyboard-shortcuts">
-<h2>Keyboard shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="controls-and-shortcuts">
+<h2>Controls and shortcuts<a class="headerlink" href="#controls-and-shortcuts" title="Permalink to this headline">¶</a></h2>
 <p>CARTA supports keyboard shortcuts to enable certain controls without using a mouse. A summary is accessible via the menu <strong>Help</strong> -&gt; <strong>Controls and Shortcuts</strong>, or the shortcut <strong>shift</strong> + <strong>?</strong>. The shortcuts are slightly different depending on the operating system in use. The shortcuts for each operating system are summarized in the following table.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="39%" />
-<col width="30%" />
-<col width="30%" />
+<col width="37%" />
+<col width="31%" />
+<col width="32%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Control</th>
@@ -230,63 +258,107 @@
 <td>shift + ?</td>
 <td>shift + ?</td>
 </tr>
-<tr class="row-even"><td><strong>Appearance</strong></td>
+<tr class="row-even"><td><strong>Navigation</strong></td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>Toggle light/dark theme</td>
+<tr class="row-odd"><td>Pan image</td>
+<td>click</td>
+<td>click</td>
+</tr>
+<tr class="row-even"><td>Pan image (inside region)</td>
+<td>cmd + click / middle-click</td>
+<td>ctrl + click / middle-click</td>
+</tr>
+<tr class="row-odd"><td>Zoom image</td>
+<td>mouse wheel</td>
+<td>mouse wheel</td>
+</tr>
+<tr class="row-even"><td><strong>Regions</strong></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Region properties</td>
+<td>double-click</td>
+<td>double-click</td>
+</tr>
+<tr class="row-even"><td>Delete selected region</td>
+<td>del / backspace</td>
+<td>del / backspace</td>
+</tr>
+<tr class="row-odd"><td>Toggle region creation mode</td>
+<td>c</td>
+<td>c</td>
+</tr>
+<tr class="row-even"><td>Deselect region</td>
+<td>esc</td>
+<td>esc</td>
+</tr>
+<tr class="row-odd"><td>Corner-to-corner region creation</td>
+<td>cmd + drag</td>
+<td>ctrl + drag</td>
+</tr>
+<tr class="row-even"><td>Symmetric region creation</td>
+<td>shift + drag</td>
+<td>shift + drag</td>
+</tr>
+<tr class="row-odd"><td><strong>Appearance</strong></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Toggle light/dark theme</td>
 <td>shift + D</td>
 <td>shift + D</td>
 </tr>
-<tr class="row-even"><td><strong>Cursor</strong></td>
+<tr class="row-odd"><td><strong>Cursor</strong></td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>Toggle frozen cursor</td>
+<tr class="row-even"><td>Freeze/unfreeze cursor</td>
 <td>F</td>
 <td>F</td>
 </tr>
-<tr class="row-even"><td><strong>File</strong></td>
+<tr class="row-odd"><td><strong>File controls</strong></td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>Open image</td>
+<tr class="row-even"><td>Open image</td>
 <td>cmd + O</td>
 <td>ctrl + O</td>
 </tr>
-<tr class="row-even"><td>Append image</td>
+<tr class="row-odd"><td>Append image</td>
 <td>cmd + L</td>
 <td>ctrl + L</td>
 </tr>
-<tr class="row-odd"><td>Export image</td>
+<tr class="row-even"><td>Export image</td>
 <td>cmd + E</td>
 <td>ctrl + E</td>
 </tr>
-<tr class="row-even"><td><strong>Frame</strong></td>
+<tr class="row-odd"><td><strong>Frame controls</strong></td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>Next frame</td>
+<tr class="row-even"><td>Next frame</td>
 <td>cmd + ]</td>
 <td>ctrl + ]</td>
 </tr>
-<tr class="row-even"><td>Previous frame</td>
+<tr class="row-odd"><td>Previous frame</td>
 <td>cmd + [</td>
 <td>ctrl + [</td>
 </tr>
-<tr class="row-odd"><td>Next channel</td>
+<tr class="row-even"><td>Next channel</td>
 <td>cmd + up</td>
 <td>ctrl + up</td>
 </tr>
-<tr class="row-even"><td>Previous channel</td>
+<tr class="row-odd"><td>Previous channel</td>
 <td>cmd + down</td>
 <td>ctrl + down</td>
 </tr>
-<tr class="row-odd"><td>Next Stokes</td>
+<tr class="row-even"><td>Next Stokes</td>
 <td>cmd + shift + up</td>
 <td>ctrl + shift + up</td>
 </tr>
-<tr class="row-even"><td>Previous Stokes</td>
+<tr class="row-odd"><td>Previous Stokes</td>
 <td>cmd + shift + down</td>
 <td>ctrl + shift + down</td>
 </tr>
@@ -308,9 +380,9 @@
           <a href="functionalities_gui.html" title="Functionality"
              >next</a></li>
         <li class="right" >
-          <a href="installation_and_configuration.html" title="Installation and configuration"
+          <a href="quickstart.html" title="Quickstart guide"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.0.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
