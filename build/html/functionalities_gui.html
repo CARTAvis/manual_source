@@ -114,7 +114,7 @@
 <li>statistics widget: to view basic statistics from a region of interest</li>
 <li>log widget: to view program logs.</li>
 </ul>
-<p>In addition, version 1.1 starts to support basic server authentication which allows server adminstrator to set a specific folder as private or public. Initial support of the HDF5-IDIA image format is implemented in version 1.1.</p>
+<p>In addition, version 1.1 starts to support basic server authentication which allows server administrator to set a specific folder as private or public. Initial support of the HDF5-IDIA image format is implemented in version 1.1.</p>
 <div class="section" id="server-side-status">
 <h2>Server-side status<a class="headerlink" href="#server-side-status" title="Permalink to this headline">¶</a></h2>
 <p>As CARTA is fundamentally a client-server application, it would be good to know the status of the server side at the client side. The server status is now displayed as a circular icon at the top-right corner of the main window. The connection latency can be seen by hovering over the icon. There are three kinds of status:</p>
@@ -126,14 +126,14 @@
 <img src="_static/carta_gui_server_status.png"
      style="width:100%;height:auto;"><div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If CARTA behaves abnormally or stops responding, please check the server-side status icon and connection latency. If it becomes orange, the internet connection might be interupted. If it becomes red, the internet connection is lost, or the backend process has been terminated. It is recommanded to reload CARTA if you see orange or red icon. If the stituation reoccurs, please contact us through the <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a> (<a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">carta_helpdesk<span>&#64;</span>asiaa<span>&#46;</span>sinica<span>&#46;</span>edu<span>&#46;</span>tw</a>).</p>
+<p class="last">If CARTA behaves abnormally or stops responding, please check the server-side status icon and connection latency. If it becomes orange, the internet connection might be interrupted. If it becomes red, the internet connection is lost, or the backend process has been terminated. It is recommended to reload CARTA if you see orange or red icon. If the situation reoccurs, please contact us through the <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a> (<a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">carta_helpdesk<span>&#64;</span>asiaa<span>&#46;</span>sinica<span>&#46;</span>edu<span>&#46;</span>tw</a>).</p>
 </div>
 </div>
 <div class="section" id="server-side-authentication">
 <h2>Server-side authentication<a class="headerlink" href="#server-side-authentication" title="Permalink to this headline">¶</a></h2>
-<p>Desktop users can skip this section as it is only relevent to the CARTA-server application and server-side administration.</p>
-<p>A basic server-side authentication model has been implemented in version 1.1. The server adminstrator can set permission to folders through a permission text file containing API keys. If a user enters a valid API key through “<strong>FILE</strong>” -&gt; “<strong>Enter API key</strong>” dialog, which matches the server-side permission file “<em>permission.txt</em>”, the user will only be able to access the folders that have been granted for access.</p>
-<p>An example of the permission file (must be named as “<em>permisison.txt</em>”) is shown below.</p>
+<p>Desktop users can skip this section as it is only relevant to the CARTA-server application and server-side administration.</p>
+<p>A basic server-side authentication model has been implemented in version 1.1. The server administrator can set permission to folders through a permission text file containing API keys. If a user enters a valid API key through “<strong>FILE</strong>” -&gt; “<strong>Enter API key</strong>” dialog, which matches the server-side permission file “<em>permission.txt</em>”, the user will only be able to access the folders that have been granted for access.</p>
+<p>An example of the permission file (must be named as “<em>permission.txt</em>”) is shown below.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># some very basic folder-based permissions for images in the viewer</span>
 <span class="c1"># each user has their own API key which they can enter into the viewer through</span>
 <span class="c1"># the &quot;Enter API key&quot; dialog. The key will be stored in the browser&#39;s local storage</span>
@@ -155,7 +155,7 @@ shared:
 675db74a-2d48-4850-9e3d-a94a77e2819d
 </pre></div>
 </div>
-<p>In the above setup, there are four different folders, named as “<em>public</em>”, “<em>user01</em>”, “<em>user02</em>”, and “<em>shared</em>”, repectively. The “<em>public</em>” folder will always be visibile and accessible with and without an API key. On the contrary, “<em>user01</em>” and “<em>shared</em>” folders will only be visible and accessible if the API key “<em>0b2ee132-87ba-45a9-9944-02e7f9a03b25</em>” has been entered through the “<strong>Enter API key</strong>” dialog. The server adminstrator can enable this basic authentication by using the keyword argument “<em>permissions=true</em>” when launching the CARTA backend service.</p>
+<p>In the above setup, there are four different folders, named as “<em>public</em>”, “<em>user01</em>”, “<em>user02</em>”, and “<em>shared</em>”, respectively. The “<em>public</em>” folder will always be visible and accessible with and without an API key. On the contrary, “<em>user01</em>” and “<em>shared</em>” folders will only be visible and accessible if the API key “<em>0b2ee132-87ba-45a9-9944-02e7f9a03b25</em>” has been entered through the “<strong>Enter API key</strong>” dialog. The server administrator can enable this basic authentication by using the keyword argument “<em>permissions=true</em>” when launching the CARTA backend service.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">exec</span> carta_backend <span class="nv">port</span><span class="o">=</span><span class="m">6002</span> <span class="nv">base</span><span class="o">=</span>/scratch/images <span class="nv">root</span><span class="o">=</span>/scratch/images <span class="nv">permissions</span><span class="o">=</span><span class="nb">true</span>
 </pre></div>
 </div>
@@ -173,11 +173,11 @@ shared:
 <p>Only the images matched these formats will be shown in the file list with image type and file size. When an image is selected, a brief summary of image properties is provided on the right side of the dialog. Full header is also available in the second tab. To view an image, click the <strong>Load</strong> button at the bottom-right corner. To view a new image with all the loaded images closed, use <strong>File</strong> -&gt; <strong>Open image</strong> -&gt; <strong>Load</strong>. To view multiple images, use <strong>File</strong> -&gt; <strong>Append image</strong> -&gt; <strong>Append</strong>.</p>
 <img src="_static/carta_fn_fileBrowser.png"
      style="width:100%;height:auto;"><p>File browser remembers the last path where an image was opened within one CARTA session. Therefore, when the file browser is re-opened to load other images, a file list will be displayed at the last path where the previous image was opened. Users can now freely navigate through the file system (up to root or “/”) with the v1.1 desktop release.</p>
-<p>For the CARTA-server application, the server administrator can limit the global directory access through the “<em>root</em>” keyword argument when lanuching the CARTA backend service.</p>
+<p>For the CARTA-server application, the server administrator can limit the global directory access through the “<em>root</em>” keyword argument when launching the CARTA backend service.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">exec</span> carta_backend <span class="nv">port</span><span class="o">=</span><span class="m">6002</span> <span class="nv">base</span><span class="o">=</span>/scratch/images/Orion <span class="nv">root</span><span class="o">=</span>/scratch/images
 </pre></div>
 </div>
-<p>In the above example, users will see a list of images at “/scratch/images/Orion” when accessing the file browser dialog for the first time in a new session. Users can navigate to any other folders inside “/scratch/images/Orion”. Users can also navigate one level up to “/scratch/images”, but not beyound that (neither “/scratch” nor “/”).</p>
+<p>In the above example, users will see a list of images at “/scratch/images/Orion” when accessing the file browser dialog for the first time in a new session. Users can navigate to any other folders inside “/scratch/images/Orion”. Users can also navigate one level up to “/scratch/images”, but not beyond that (neither “/scratch” nor “/”).</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">When viewing images in appending mode, alignments in the world coordinate system (WCS) and the frequency/velocity space are not available in this version. This feature is expected in v1.3.</p>
@@ -196,7 +196,7 @@ shared:
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">If you are running a VNC session from a headless server, CARTA may fail to render images properly (they may appear as a solid colour). This is due to the fact that CARTA renders images using WebGL which uses GPU acceleration. Most headless servers have neither discrete nor dedicated GPUs. In such cases, it is recommended to use the “remote” mode of CARTA (see <a class="reference internal" href="installation_and_configuration.html#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions).</p>
+<p class="last">If you are running a VNC session from a headless server, CARTA may fail to render images properly (they may appear as a solid color). This is due to the fact that CARTA renders images using WebGL which uses GPU acceleration. Most headless servers have neither discrete nor dedicated GPUs. In such cases, it is recommended to use the “remote” mode of CARTA (see <a class="reference internal" href="installation_and_configuration.html#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions).</p>
 </div>
 <p>The aspect ratio of the image view is determined by the panel geometry. When the image viewer panel is resized, a tip with a ratio in screen pixel will be displayed (c.f., <a class="reference internal" href="about_gui.html#resizing-a-panel"><span class="std std-ref">Resizing a panel</span></a> ).</p>
 <div class="section" id="image-resolution-and-screen-resolution">
@@ -206,7 +206,7 @@ shared:
   <source src="_static/carta_fn_imageViewer_downsample.mp4" type="video/mp4">
 </video><div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">To make remote visualization of large images possible and efficient, CARTA adopts the above mentioned downsampling approach together with an efficient image compression algorithm. At rare circumstance, artifects may be seen on the images. A known issue is viewing an image with all pixels as zeros but one with a very high value. At low or default zoom level, some artifects will be observed around that pixel. At higher zoom levels, the artifects should disapear. CARTA has been tuned to localize the artifects within few screen pixels in order to minimize the impact of scientific analysis on such special cases. Should this become a problem in any kinds of analysis of yours, please contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">carta_helpdesk</a> for help.</p>
+<p class="last">To make remote visualization of large images possible and efficient, CARTA adopts the above mentioned downsampling approach together with an efficient image compression algorithm. At rare circumstance, artifacts may be seen on the images. A known issue is viewing an image with all pixels as zeros but one with a very high value. At low or default zoom level, some artifacts will be observed around that pixel. At higher zoom levels, the artifacts should disappear. CARTA has been tuned to localize the artifacts within few screen pixels in order to minimize the impact of scientific analysis on such special cases. Should this become a problem in any kinds of analysis of yours, please contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">carta_helpdesk</a> for help.</p>
 </div>
 </div>
 <div class="section" id="render-configuration-of-a-raster-image">
@@ -288,7 +288,7 @@ shared:
 <p class="first admonition-title">Note</p>
 <p class="last">In version 1.2, polygon and (multiple) point regions will be supported. Import/export region in the casa region text format (.crtf) or the ds9 region format (.reg) as a text file will be supported in version 1.2.</p>
 </div>
-<p>The creation and modification of regions are demostrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-regions"><span class="std std-ref">Mouse interactions with region of interest</span></a>. To create a region, use the region button at the bottom-right corner of the image viewer, then use cursor to draw a region. CARTA allows regions to be created even if the region is outside the image. Keyboard shortcuts associated with regions are listed below.</p>
+<p>The creation and modification of regions are demonstrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-regions"><span class="std std-ref">Mouse interactions with region of interest</span></a>. To create a region, use the region button at the bottom-right corner of the image viewer, then use cursor to draw a region. CARTA allows regions to be created even if the region is outside the image. Keyboard shortcuts associated with regions are listed below.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="37%" />
@@ -334,12 +334,12 @@ shared:
 </table>
 <p>All created regions are listed in the region list widget with basic region properties. To select a region (region state changes to “selected”), simply click on the region in the image viewer, or click on the region in the region list widget. To modify the properties of a selected region, double-click on a region in the image viewer or a region in the region list widget. The color, line style, name, location, and shape, of a region are all configurable with the region property dialog. To de-select a region, press “<strong>esc</strong>” key. To delete a selected region, press “<strong>delete</strong>” or “<strong>backspace</strong>” key.</p>
 <img src="_static/carta_fn_roi.png"
-     style="width:100%;height:auto;"><p>Region of interest enables practical image cube analysis through statistics, histogram, and spectral profiler widgets. When a region is selected, the region associated widgets will be highlighted with a persistent blue box as demostrated below.</p>
+     style="width:100%;height:auto;"><p>Region of interest enables practical image cube analysis through statistics, histogram, and spectral profiler widgets. When a region is selected, the region associated widgets will be highlighted with a persistent blue box as demonstrated below.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_roi_widgetHighlight.mp4" type="video/mp4">
 </video><div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">As of version 1.1, single mouse click may trigger image pan or region selection. If it is intendted to pan to a position <em>inside</em> a region, hold “<strong>command</strong>” or “<strong>ctrl</strong>” key then click, or use middle-click if available.</p>
+<p class="last">As of version 1.1, single mouse click may trigger image pan or region selection. If it is intended to pan to a position <em>inside</em> a region, hold “<strong>command</strong>” or “<strong>ctrl</strong>” key then click, or use middle-click if available.</p>
 </div>
 </div>
 <div class="section" id="animator">
@@ -360,7 +360,7 @@ shared:
 <p>When the cursor is on the image in the image viewer, the pointed pixel value (pixel index and pixel value) will be displayed at the bottom-left corner of the spatial profiler. When the cursor is on the spatial profiler graph, the pointed profile data will be displayed instead.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_spatialProfiler_demo.mp4" type="video/mp4">
-</video><p>The interactions of the spatial profiler widget are demonstrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available to the right border. The option “Show Mean/RMS” will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the botton-left corner. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.</p>
+</video><p>The interactions of the spatial profiler widget are demonstrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available to the right border. The option “Show Mean/RMS” will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.</p>
 <img src="_static/carta_fn_spatialProfiler_widget.png"
      style="width:100%;height:auto;"><div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -376,7 +376,7 @@ shared:
 </video><p>Multiple spectral profile widgets can be configured to display different region spectral profiles. The widget with the selected region will be highlighted with a persistent blue box.</p>
 <img src="_static/carta_fn_spectralProfiler_multiwidget.png"
      style="width:100%;height:auto;"><p>The interactions of the spectral profiler widget are demonstrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. The red vertical bar indicates the channel of the image displayed in the image viewer. Clicking directly on the spectral profiler graph will change the displayed image to the clicked channel. Alternatively, the red vertical bar is draggable and acts just like the animator slider.</p>
-<p>The bottom axis shows the spectral coordinate, while optional channel coordinate can be displayed instead. Extra options to configure the profile plot are available to the right border. The option “Show Mean/RMS” will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the botton-left corner. When the cursor is on the image in the image viewer, the pointed pixel value (frequency or velocity or channel index, and pixel value) will be displayed at the bottom-left corner of the spectral profiler. When the cursor is on the spectral profiler graph, the pointed profile data will be displayed instead. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.</p>
+<p>The bottom axis shows the spectral coordinate, while optional channel coordinate can be displayed instead. Extra options to configure the profile plot are available to the right border. The option “Show Mean/RMS” will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. When the cursor is on the image in the image viewer, the pointed pixel value (frequency or velocity or channel index, and pixel value) will be displayed at the bottom-left corner of the spectral profiler. When the cursor is on the spectral profiler graph, the pointed profile data will be displayed instead. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.</p>
 <img src="_static/carta_fn_spectralProfiler_widget.png"
      style="width:100%;height:auto;"><div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -385,7 +385,7 @@ shared:
 </div>
 <div class="section" id="statistics-widget">
 <h2>Statistics widget<a class="headerlink" href="#statistics-widget" title="Permalink to this headline">¶</a></h2>
-<p>Statistics widget allows users to see statistics with respect to a selected region. The “Region” dropdown menu can be used to select which region statistics to be displayed. The default is “Image” which means the entire image of the displayed channel is adopted to compute statistics. Multiple statistics widgets can be created to display statistics of different regions as demostrated below. The widget with the selected region will be highlighted with a persistent blue box.</p>
+<p>Statistics widget allows users to see statistics with respect to a selected region. The “Region” dropdown menu can be used to select which region statistics to be displayed. The default is “Image” which means the entire image of the displayed channel is adopted to compute statistics. Multiple statistics widgets can be created to display statistics of different regions as demonstrated below. The widget with the selected region will be highlighted with a persistent blue box.</p>
 <img src="_static/carta_fn_statistics_widget.png"
      style="width:100%;height:auto;"><div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -394,7 +394,7 @@ shared:
 </div>
 <div class="section" id="histogram-widget">
 <h2>Histogram widget<a class="headerlink" href="#histogram-widget" title="Permalink to this headline">¶</a></h2>
-<p>Histogram widget allows users to visualize data in a historgram with respect to a selected region. The “Region” dropdown menu can be used to select which region histogram to be displayed. The default is “Image” which means the entire image of the displayed channel is adopted to construct a histogram. Multiple histogram widgets can be created to display histograms of different regions as demostrated below. The widget with the selected region will be highlighted with a persistent blue box.</p>
+<p>Histogram widget allows users to visualize data in a histogram with respect to a selected region. The “Region” dropdown menu can be used to select which region histogram to be displayed. The default is “Image” which means the entire image of the displayed channel is adopted to construct a histogram. Multiple histogram widgets can be created to display histograms of different regions as demonstrated below. The widget with the selected region will be highlighted with a persistent blue box.</p>
 <img src="_static/carta_fn_histogram_widget.png"
      style="width:100%;height:auto;"><div class="admonition note">
 <p class="first admonition-title">Note</p>

@@ -11,7 +11,7 @@ CARTA v1.1 supports the following operating systems:
 
 Command line to launch CARTA is also supported in version 1.1 (see :ref:`commandLineStartup` for instructions).
 
-CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7 or Ubuntu 16.04 LTS/18.04 LTS server via the ssh protocol, CARTA v1.1 also provides a "remote" mode for this use case (see :ref:`commandLineStartup` for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA "backend" on the server, while the CARTA "frontend" is accessed through your web browser of choice running on your local machine. This allows your local machine's GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM instensive tasks.
+CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7 or Ubuntu 16.04 LTS/18.04 LTS server via the ssh protocol, CARTA v1.1 also provides a "remote" mode for this use case (see :ref:`commandLineStartup` for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA "backend" on the server, while the CARTA "frontend" is accessed through your web browser of choice running on your local machine. This allows your local machine's GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.
 
 If there is any problem, please contact `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ for help.
 
@@ -27,7 +27,7 @@ Please follow the steps:
 
   a) Find the CARTA-v1.1 icon in the Launchpad and click it, or double click it in the Finder.
 
-  b) (**Highly recommanded**) Create an alias in your ~/.bashrc file by opening your ~/.bashrc file in a text editor and add the following line:
+  b) (**Highly recommended**) Create an alias in your ~/.bashrc file by opening your ~/.bashrc file in a text editor and add the following line:
 
   .. code-block:: bash
 
@@ -61,7 +61,7 @@ Please follow the steps:
       
       ./CARTA-v1.1-ubuntu.AppImage
    
-   b) (**Highly recommanded**) Create an alias in your shell script file. For example, if you are using bash and the AppImage happens to be in your Downloads folder, open ~/.bashrc file in a text editor and add a line
+   b) (**Highly recommended**) Create an alias in your shell script file. For example, if you are using bash and the AppImage happens to be in your Downloads folder, open ~/.bashrc file in a text editor and add a line
 
    .. code-block:: bash
 
@@ -130,7 +130,7 @@ Please follow the steps:
   
      ./CARTA-v1.1-RedHat7.AppImage
   
-  b) (**Highly recommanded**) Set up an alias in your shell script file. For example, if your are using bash and the AppImage happens to be in your Downloads folder, open your ~/.bashrc file in a text editor and add a line
+  b) (**Highly recommended**) Set up an alias in your shell script file. For example, if your are using bash and the AppImage happens to be in your Downloads folder, open your ~/.bashrc file in a text editor and add a line
   
   .. code-block:: bash
 
@@ -194,7 +194,7 @@ Please follow the steps:
 
       carta --remote
 
-   If using remote mode on RedHat7 with Firefox browser, the Firefox version needs to be newer than ESR 52.7.2 and have wasm streaming enabled (See :ref:`troubleshooting` for more information).
+   If using remote mode on RedHat7 with Firefox browser, the Firefox version needs to be newer than ESR 52.7.2 and have "*wasm*" streaming enabled (See :ref:`troubleshooting` for more information).
 
 
 Redhat 6
@@ -219,7 +219,7 @@ Please follow the steps:
 
 4. Follow the onscreen instructions to copy and paste the unique URL into your web browser.
 
-5. Usage instructions are slightly different from the Desktop versions so please check the help command with "./carta --help". For example, you can not open images directly (can not "./carta image.fits")
+5. Usage instructions are slightly different from the Desktop versions so please check the help command with "./carta -//-help". For example, you can not open images directly (can not "./carta image.fits")
 
 6. You could make an alias in your ~/.bashrc file similar to this 
 
@@ -253,7 +253,7 @@ Command line startup
 --------------------
 CARTA can be started through the command line. To enable this feature, an alias of the CARTA executable needs to be created first. 
 
-Once it is set, simply typing "carta" then hitting the "return" key will lanuch CARTA. 
+Once it is set, simply typing "carta" then hitting the "return" key will launch CARTA. 
 
 .. code-block:: bash 
    
@@ -277,7 +277,7 @@ The CARTA executable alias accepts keyword arguments or flags to configure how t
      carta /my/image/directory     
 
 
-If CARTA is installed on a remote server, and users access the server via the ssh protocal, CARTA backend can be initialized via the following options.
+If CARTA is installed on a remote server, and users access the server via the ssh protocol, CARTA backend can be initialized via the following options.
 
 * initialize a remote CARTA backend service with both frontend and backend ports selected automatically:
 
@@ -340,7 +340,7 @@ An online user manual regarding all the above mentioned keyword arguments is als
 
 .. code-block:: bash 
    
-   carta --help     # show all available keyword arguments with explainations. 
+   carta --help     # show all available keyword arguments with explanations. 
 
 
 .. _troubleshooting:
@@ -388,7 +388,7 @@ In this section, we provide common issues we have experienced so far and provide
 
 * After copy-and-paste a CARTA URL, I see the CARTA GUI is not initialized...
 
-  Check your browser version. It needs to support wasm sreaming and enabled. 
+  Check your browser version. It needs to support "*wasm*" sreaming and enabled. 
 
 * CARTA does not launch...
 

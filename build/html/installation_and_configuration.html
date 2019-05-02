@@ -97,7 +97,7 @@
 <li>RedHat 6 (conditional)</li>
 </ul>
 <p>Command line to launch CARTA is also supported in version 1.1 (see <a class="reference internal" href="#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions).</p>
-<p>CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7 or Ubuntu 16.04 LTS/18.04 LTS server via the ssh protocol, CARTA v1.1 also provides a “remote” mode for this use case (see <a class="reference internal" href="#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA “backend” on the server, while the CARTA “frontend” is accessed through your web browser of choice running on your local machine. This allows your local machine’s GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM instensive tasks.</p>
+<p>CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7 or Ubuntu 16.04 LTS/18.04 LTS server via the ssh protocol, CARTA v1.1 also provides a “remote” mode for this use case (see <a class="reference internal" href="#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA “backend” on the server, while the CARTA “frontend” is accessed through your web browser of choice running on your local machine. This allows your local machine’s GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.</p>
 <p>If there is any problem, please contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a> for help.</p>
 <div class="section" id="macos-10-13-10-14">
 <h2>macOS 10.13/10.14<a class="headerlink" href="#macos-10-13-10-14" title="Permalink to this headline">¶</a></h2>
@@ -110,7 +110,7 @@
 <blockquote>
 <div><ol class="loweralpha simple">
 <li>Find the CARTA-v1.1 icon in the Launchpad and click it, or double click it in the Finder.</li>
-<li>(<strong>Highly recommanded</strong>) Create an alias in your ~/.bashrc file by opening your ~/.bashrc file in a text editor and add the following line:</li>
+<li>(<strong>Highly recommended</strong>) Create an alias in your ~/.bashrc file by opening your ~/.bashrc file in a text editor and add the following line:</li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span><span class="s1">&#39;/Applications/CARTA-v1.1.app/Contents/MacOS/CARTA-v1.1&#39;</span>
 </pre></div>
@@ -141,7 +141,7 @@ carta
 </pre></div>
 </div>
 <ol class="loweralpha simple" start="2">
-<li>(<strong>Highly recommanded</strong>) Create an alias in your shell script file. For example, if you are using bash and the AppImage happens to be in your Downloads folder, open ~/.bashrc file in a text editor and add a line</li>
+<li>(<strong>Highly recommended</strong>) Create an alias in your shell script file. For example, if you are using bash and the AppImage happens to be in your Downloads folder, open ~/.bashrc file in a text editor and add a line</li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span><span class="s1">&#39;~/Downloads/CARTA-v1.1-ubuntu.AppImage&#39;</span>
 </pre></div>
@@ -201,7 +201,7 @@ carta
 </pre></div>
 </div>
 <ol class="loweralpha simple" start="2">
-<li>(<strong>Highly recommanded</strong>) Set up an alias in your shell script file. For example, if your are using bash and the AppImage happens to be in your Downloads folder, open your ~/.bashrc file in a text editor and add a line</li>
+<li>(<strong>Highly recommended</strong>) Set up an alias in your shell script file. For example, if your are using bash and the AppImage happens to be in your Downloads folder, open your ~/.bashrc file in a text editor and add a line</li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span><span class="s1">&#39;~/Downloads/CARTA-v1.1-RedHat7.AppImage&#39;</span>
 </pre></div>
@@ -251,7 +251,7 @@ carta
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta --remote
 </pre></div>
 </div>
-<p class="last">If using remote mode on RedHat7 with Firefox browser, the Firefox version needs to be newer than ESR 52.7.2 and have wasm streaming enabled (See <a class="reference internal" href="#troubleshooting"><span class="std std-ref">Troubleshooting</span></a> for more information).</p>
+<p class="last">If using remote mode on RedHat7 with Firefox browser, the Firefox version needs to be newer than ESR 52.7.2 and have “<em>wasm</em>” streaming enabled (See <a class="reference internal" href="#troubleshooting"><span class="std std-ref">Troubleshooting</span></a> for more information).</p>
 </div>
 </div>
 <div class="section" id="redhat-6">
@@ -273,7 +273,7 @@ carta
 </li>
 <li><p class="first">Follow the onscreen instructions to copy and paste the unique URL into your web browser.</p>
 </li>
-<li><p class="first">Usage instructions are slightly different from the Desktop versions so please check the help command with “./carta –help”. For example, you can not open images directly (can not “./carta image.fits”)</p>
+<li><p class="first">Usage instructions are slightly different from the Desktop versions so please check the help command with “./carta -//-help”. For example, you can not open images directly (can not “./carta image.fits”)</p>
 </li>
 <li><p class="first">You could make an alias in your ~/.bashrc file similar to this</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span><span class="s1">&#39;~/CARTA-v1.1-remote/carta&#39;</span>
@@ -299,7 +299,7 @@ carta
 <div class="section" id="command-line-startup">
 <span id="commandlinestartup"></span><h2>Command line startup<a class="headerlink" href="#command-line-startup" title="Permalink to this headline">¶</a></h2>
 <p>CARTA can be started through the command line. To enable this feature, an alias of the CARTA executable needs to be created first.</p>
-<p>Once it is set, simply typing “carta” then hitting the “return” key will lanuch CARTA.</p>
+<p>Once it is set, simply typing “carta” then hitting the “return” key will launch CARTA.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta              <span class="c1"># file browser will show images in the current working directory ($PWD)</span>
 </pre></div>
 </div>
@@ -319,7 +319,7 @@ carta M51.im       <span class="c1"># to open an image in MIRIAD format</span>
 </div>
 </li>
 </ul>
-<p>If CARTA is installed on a remote server, and users access the server via the ssh protocal, CARTA backend can be initialized via the following options.</p>
+<p>If CARTA is installed on a remote server, and users access the server via the ssh protocol, CARTA backend can be initialized via the following options.</p>
 <ul>
 <li><p class="first">initialize a remote CARTA backend service with both frontend and backend ports selected automatically:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta --remote     <span class="c1"># CARTA URL will be shown in the prompt.</span>
@@ -375,7 +375,7 @@ Press ctrl+c to <span class="nb">exit</span>
 </li>
 </ul>
 <p>An online user manual regarding all the above mentioned keyword arguments is also available.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta --help     <span class="c1"># show all available keyword arguments with explainations.</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta --help     <span class="c1"># show all available keyword arguments with explanations.</span>
 </pre></div>
 </div>
 </div>
@@ -409,7 +409,7 @@ e.g.</p>
 </div>
 </li>
 <li><p class="first">After copy-and-paste a CARTA URL, I see the CARTA GUI is not initialized…</p>
-<p>Check your browser version. It needs to support wasm sreaming and enabled.</p>
+<p>Check your browser version. It needs to support “<em>wasm</em>” sreaming and enabled.</p>
 </li>
 <li><p class="first">CARTA does not launch…</p>
 <p>Check if there is existing “carta_backend” process running. The port number may conflict.</p>
