@@ -13,7 +13,7 @@ With version 1.1, CARTA provides the following widgets/dialogs for image view an
 * statistics widget: to view basic statistics from a region of interest
 * log widget: to view program logs.
 
-In addition, version 1.1 starts to support basic server authentication which allows server adminstrator to set a specific folder as private or public. Initial support of the HDF5-IDIA image format is implemented in version 1.1. 
+In addition, version 1.1 starts to support basic server authentication which allows server administrator to set a specific folder as private or public. Initial support of the HDF5-IDIA image format is implemented in version 1.1. 
 
 Server-side status
 ------------------
@@ -29,16 +29,16 @@ As CARTA is fundamentally a client-server application, it would be good to know 
         style="width:100%;height:auto;">
 
 .. note::
-   If CARTA behaves abnormally or stops responding, please check the server-side status icon and connection latency. If it becomes orange, the internet connection might be interupted. If it becomes red, the internet connection is lost, or the backend process has been terminated. It is recommanded to reload CARTA if you see orange or red icon. If the stituation reoccurs, please contact us through the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw). 
+   If CARTA behaves abnormally or stops responding, please check the server-side status icon and connection latency. If it becomes orange, the internet connection might be interrupted. If it becomes red, the internet connection is lost, or the backend process has been terminated. It is recommended to reload CARTA if you see orange or red icon. If the situation reoccurs, please contact us through the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw). 
 
 
 Server-side authentication
 --------------------------
-Desktop users can skip this section as it is only relevent to the CARTA-server application and server-side administration. 
+Desktop users can skip this section as it is only relevant to the CARTA-server application and server-side administration. 
 
-A basic server-side authentication model has been implemented in version 1.1. The server adminstrator can set permission to folders through a permission text file containing API keys. If a user enters a valid API key through "**FILE**" -> "**Enter API key**" dialog, which matches the server-side permission file "*permission.txt*", the user will only be able to access the folders that have been granted for access. 
+A basic server-side authentication model has been implemented in version 1.1. The server administrator can set permission to folders through a permission text file containing API keys. If a user enters a valid API key through "**FILE**" -> "**Enter API key**" dialog, which matches the server-side permission file "*permission.txt*", the user will only be able to access the folders that have been granted for access. 
 
-An example of the permission file (must be named as "*permisison.txt*") is shown below. 
+An example of the permission file (must be named as "*permission.txt*") is shown below. 
 
 .. code-block:: bash
 
@@ -62,7 +62,7 @@ An example of the permission file (must be named as "*permisison.txt*") is shown
    0b2ee132-87ba-45a9-9944-02e7f9a03b25
    675db74a-2d48-4850-9e3d-a94a77e2819d
 
-In the above setup, there are four different folders, named as "*public*", "*user01*", "*user02*", and "*shared*", repectively. The "*public*" folder will always be visibile and accessible with and without an API key. On the contrary, "*user01*" and "*shared*" folders will only be visible and accessible if the API key "*0b2ee132-87ba-45a9-9944-02e7f9a03b25*" has been entered through the "**Enter API key**" dialog. The server adminstrator can enable this basic authentication by using the keyword argument "*permissions=true*" when launching the CARTA backend service. 
+In the above setup, there are four different folders, named as "*public*", "*user01*", "*user02*", and "*shared*", respectively. The "*public*" folder will always be visible and accessible with and without an API key. On the contrary, "*user01*" and "*shared*" folders will only be visible and accessible if the API key "*0b2ee132-87ba-45a9-9944-02e7f9a03b25*" has been entered through the "**Enter API key**" dialog. The server administrator can enable this basic authentication by using the keyword argument "*permissions=true*" when launching the CARTA backend service. 
 
 .. code-block:: bash
 
@@ -90,13 +90,13 @@ Only the images matched these formats will be shown in the file list with image 
 
 File browser remembers the last path where an image was opened within one CARTA session. Therefore, when the file browser is re-opened to load other images, a file list will be displayed at the last path where the previous image was opened. Users can now freely navigate through the file system (up to root or "/") with the v1.1 desktop release.
 
-For the CARTA-server application, the server administrator can limit the global directory access through the "*root*" keyword argument when lanuching the CARTA backend service. 
+For the CARTA-server application, the server administrator can limit the global directory access through the "*root*" keyword argument when launching the CARTA backend service. 
 
 .. code-block:: bash
 
    exec carta_backend port=6002 base=/scratch/images/Orion root=/scratch/images
 
-In the above example, users will see a list of images at "/scratch/images/Orion" when accessing the file browser dialog for the first time in a new session. Users can navigate to any other folders inside "/scratch/images/Orion". Users can also navigate one level up to "/scratch/images", but not beyound that (neither "/scratch" nor "/"). 
+In the above example, users will see a list of images at "/scratch/images/Orion" when accessing the file browser dialog for the first time in a new session. Users can navigate to any other folders inside "/scratch/images/Orion". Users can also navigate one level up to "/scratch/images", but not beyond that (neither "/scratch" nor "/"). 
 
 
 .. note::
@@ -114,7 +114,7 @@ When an image is loaded via the file browser, it is shown in the image viewer wi
    Contour rendering will be available in v1.3.
 
 .. warning::
-    If you are running a VNC session from a headless server, CARTA may fail to render images properly (they may appear as a solid colour). This is due to the fact that CARTA renders images using WebGL which uses GPU acceleration. Most headless servers have neither discrete nor dedicated GPUs. In such cases, it is recommended to use the "remote" mode of CARTA (see :ref:`commandLineStartup` for instructions).
+    If you are running a VNC session from a headless server, CARTA may fail to render images properly (they may appear as a solid color). This is due to the fact that CARTA renders images using WebGL which uses GPU acceleration. Most headless servers have neither discrete nor dedicated GPUs. In such cases, it is recommended to use the "remote" mode of CARTA (see :ref:`commandLineStartup` for instructions).
 
 The aspect ratio of the image view is determined by the panel geometry. When the image viewer panel is resized, a tip with a ratio in screen pixel will be displayed (c.f., :ref:`resizing_a_panel` ).
 
@@ -132,7 +132,7 @@ In CARTA, the resolution of an image displayed in the image viewer is *dynamical
 
 
 .. warning::
-   To make remote visualization of large images possible and efficient, CARTA adopts the above mentioned downsampling approach together with an efficient image compression algorithm. At rare circumstance, artifects may be seen on the images. A known issue is viewing an image with all pixels as zeros but one with a very high value. At low or default zoom level, some artifects will be observed around that pixel. At higher zoom levels, the artifects should disapear. CARTA has been tuned to localize the artifects within few screen pixels in order to minimize the impact of scientific analysis on such special cases. Should this become a problem in any kinds of analysis of yours, please contact `carta_helpdesk`_ for help.
+   To make remote visualization of large images possible and efficient, CARTA adopts the above mentioned downsampling approach together with an efficient image compression algorithm. At rare circumstance, artifacts may be seen on the images. A known issue is viewing an image with all pixels as zeros but one with a very high value. At low or default zoom level, some artifacts will be observed around that pixel. At higher zoom levels, the artifacts should disappear. CARTA has been tuned to localize the artifacts within few screen pixels in order to minimize the impact of scientific analysis on such special cases. Should this become a problem in any kinds of analysis of yours, please contact `carta_helpdesk`_ for help.
 
    .. _carta_helpdesk: carta_helpdesk@asiaa.sinica.edu.tw
 
@@ -276,7 +276,7 @@ As of version 1.1, CARTA supports region types:
 .. note::
    In version 1.2, polygon and (multiple) point regions will be supported. Import/export region in the casa region text format (.crtf) or the ds9 region format (.reg) as a text file will be supported in version 1.2. 
 
-The creation and modification of regions are demostrated in the section :ref:`mouse_interaction_with_regions`. To create a region, use the region button at the bottom-right corner of the image viewer, then use cursor to draw a region. CARTA allows regions to be created even if the region is outside the image. Keyboard shortcuts associated with regions are listed below.
+The creation and modification of regions are demonstrated in the section :ref:`mouse_interaction_with_regions`. To create a region, use the region button at the bottom-right corner of the image viewer, then use cursor to draw a region. CARTA allows regions to be created even if the region is outside the image. Keyboard shortcuts associated with regions are listed below.
 
 +----------------------------------+----------------------------+-----------------------------+
 |                                  | macOS                      | Linux                       |
@@ -304,7 +304,7 @@ All created regions are listed in the region list widget with basic region prope
    <img src="_static/carta_fn_roi.png" 
         style="width:100%;height:auto;">
 
-Region of interest enables practical image cube analysis through statistics, histogram, and spectral profiler widgets. When a region is selected, the region associated widgets will be highlighted with a persistent blue box as demostrated below.
+Region of interest enables practical image cube analysis through statistics, histogram, and spectral profiler widgets. When a region is selected, the region associated widgets will be highlighted with a persistent blue box as demonstrated below.
 
 .. raw:: html
 
@@ -313,7 +313,7 @@ Region of interest enables practical image cube analysis through statistics, his
    </video>
 
 .. tip::
-   As of version 1.1, single mouse click may trigger image pan or region selection. If it is intendted to pan to a position *inside* a region, hold "**command**" or "**ctrl**" key then click, or use middle-click if available.
+   As of version 1.1, single mouse click may trigger image pan or region selection. If it is intended to pan to a position *inside* a region, hold "**command**" or "**ctrl**" key then click, or use middle-click if available.
 
 
 
@@ -356,7 +356,7 @@ When the cursor is on the image in the image viewer, the pointed pixel value (pi
      <source src="_static/carta_fn_spatialProfiler_demo.mp4" type="video/mp4">
    </video>
 
-The interactions of the spatial profiler widget are demonstrated in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available to the right border. The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the botton-left corner. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
+The interactions of the spatial profiler widget are demonstrated in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available to the right border. The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
 
 
 .. raw:: html
@@ -392,7 +392,7 @@ Multiple spectral profile widgets can be configured to display different region 
 
 The interactions of the spectral profiler widget are demonstrated in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the channel of the image displayed in the image viewer. Clicking directly on the spectral profiler graph will change the displayed image to the clicked channel. Alternatively, the red vertical bar is draggable and acts just like the animator slider. 
 
-The bottom axis shows the spectral coordinate, while optional channel coordinate can be displayed instead. Extra options to configure the profile plot are available to the right border. The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the botton-left corner. When the cursor is on the image in the image viewer, the pointed pixel value (frequency or velocity or channel index, and pixel value) will be displayed at the bottom-left corner of the spectral profiler. When the cursor is on the spectral profiler graph, the pointed profile data will be displayed instead. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
+The bottom axis shows the spectral coordinate, while optional channel coordinate can be displayed instead. Extra options to configure the profile plot are available to the right border. The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. When the cursor is on the image in the image viewer, the pointed pixel value (frequency or velocity or channel index, and pixel value) will be displayed at the bottom-left corner of the spectral profiler. When the cursor is on the spectral profiler graph, the pointed profile data will be displayed instead. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
 
 
 .. raw:: html
@@ -408,7 +408,7 @@ The bottom axis shows the spectral coordinate, while optional channel coordinate
 
 Statistics widget
 -----------------
-Statistics widget allows users to see statistics with respect to a selected region. The "Region" dropdown menu can be used to select which region statistics to be displayed. The default is "Image" which means the entire image of the displayed channel is adopted to compute statistics. Multiple statistics widgets can be created to display statistics of different regions as demostrated below. The widget with the selected region will be highlighted with a persistent blue box. 
+Statistics widget allows users to see statistics with respect to a selected region. The "Region" dropdown menu can be used to select which region statistics to be displayed. The default is "Image" which means the entire image of the displayed channel is adopted to compute statistics. Multiple statistics widgets can be created to display statistics of different regions as demonstrated below. The widget with the selected region will be highlighted with a persistent blue box. 
 
 .. raw:: html
 
@@ -421,7 +421,7 @@ Statistics widget allows users to see statistics with respect to a selected regi
 
 Histogram widget
 ----------------
-Histogram widget allows users to visualize data in a historgram with respect to a selected region. The "Region" dropdown menu can be used to select which region histogram to be displayed. The default is "Image" which means the entire image of the displayed channel is adopted to construct a histogram. Multiple histogram widgets can be created to display histograms of different regions as demostrated below. The widget with the selected region will be highlighted with a persistent blue box.
+Histogram widget allows users to visualize data in a histogram with respect to a selected region. The "Region" dropdown menu can be used to select which region histogram to be displayed. The default is "Image" which means the entire image of the displayed channel is adopted to construct a histogram. Multiple histogram widgets can be created to display histograms of different regions as demonstrated below. The widget with the selected region will be highlighted with a persistent blue box.
 
 .. raw:: html
 
