@@ -219,7 +219,7 @@ Please follow the steps:
 
 4. Follow the onscreen instructions to copy and paste the unique URL into your web browser.
 
-5. Usage instructions are slightly different from the Desktop versions so please check the help command with "./carta -//-help". For example, you can not open images directly (can not "./carta image.fits")
+5. Usage instructions are slightly different from the Desktop versions so please check the help command with "./carta -\\-help". For example, you can not open images directly (can not "./carta image.fits")
 
 6. You could make an alias in your ~/.bashrc file similar to this 
 
