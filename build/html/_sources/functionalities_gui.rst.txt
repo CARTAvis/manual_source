@@ -2,7 +2,7 @@ Functionality
 =============
 With version 1.1, CARTA provides the following widgets/dialogs for image view and analysis:
 
-* file browser dialog
+* file browser dialog: to view image header and to load an image
 * image viewer: to view raster images
 * render configuration widget: to configure how a raster image is rendered
 * animator widget: to navigate through different images, different channels, and different Stokes
