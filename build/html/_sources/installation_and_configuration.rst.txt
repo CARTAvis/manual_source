@@ -300,6 +300,22 @@ If CARTA is installed on a remote server, and users access the server via the ss
  
      Press ctrl+c to exit
 
+  .. tip::
+     When using remote mode, an image may be opened directly using a modified URL. For example, if we wanted to open a remote image file "/home/acdc/CARTA/Images/jet.fits", we would append
+     
+     .. code-block:: bash 
+     
+        &folder=/home/acdc/CARTA/Images&file=jet.fits
+        
+     to the end of the URL (e.g., http://www.carta.edu:2000/?socketUrl=ws://www.carta.edu:3000). In this example our full URL is 
+     
+     .. code-block:: bash 
+    
+        http://www.carta.edu:2000/?socketUrl=ws://www.carta.edu:3000&folder=/home/acdc/CARTA/Images&file=jet.fits 
+        
+     Please note that it is necessary to give *full* path. Tilde (~) is not allowed.
+
+
 * initialize a remote CARTA backend service with customized frontend (e.g., 5678) and backend (e.g., 1234) ports:
 
   .. code-block:: bash 

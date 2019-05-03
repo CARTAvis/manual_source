@@ -105,6 +105,21 @@ In the above example, users will see a list of images at "/scratch/images/Orion"
 .. warning::
    When the file information of an image cube with a *per-plane-beam* is requested, CARTA will spend a significant amount of time to calculate the beam information. This also applies when opening images with a per-plane-beam. This is a known issue and the development team will try to solve it in future releases.
 
+.. tip::
+   When using remote mode, an image may be opened directly using a modified URL. For example, if we wanted to open a remote image file "/home/acdc/CARTA/Images/jet.fits", we would append
+     
+   .. code-block:: bash 
+     
+      &folder=/home/acdc/CARTA/Images&file=jet.fits
+        
+   to the end of the URL (e.g., http://www.carta.edu:2000/?socketUrl=ws://www.carta.edu:3000). In this example our full URL is 
+     
+   .. code-block:: bash 
+    
+      http://www.carta.edu:2000/?socketUrl=ws://www.carta.edu:3000&folder=/home/acdc/CARTA/Images&file=jet.fits 
+        
+   Please note that it is necessary to give *full* path. Tilde (~) is not allowed.
+
 
 Image viewer
 ------------

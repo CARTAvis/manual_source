@@ -186,6 +186,18 @@ shared:
 <p class="first admonition-title">Warning</p>
 <p class="last">When the file information of an image cube with a <em>per-plane-beam</em> is requested, CARTA will spend a significant amount of time to calculate the beam information. This also applies when opening images with a per-plane-beam. This is a known issue and the development team will try to solve it in future releases.</p>
 </div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>When using remote mode, an image may be opened directly using a modified URL. For example, if we wanted to open a remote image file “/home/acdc/CARTA/Images/jet.fits”, we would append</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">&amp;</span><span class="nv">folder</span><span class="o">=</span>/home/acdc/CARTA/Images<span class="p">&amp;</span><span class="nv">file</span><span class="o">=</span>jet.fits
+</pre></div>
+</div>
+<p>to the end of the URL (e.g., <a class="reference external" href="http://www.carta.edu:2000/?socketUrl=ws://www.carta.edu:3000">http://www.carta.edu:2000/?socketUrl=ws://www.carta.edu:3000</a>). In this example our full URL is</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://www.carta.edu:2000/?socketUrl<span class="o">=</span>ws://www.carta.edu:3000<span class="p">&amp;</span><span class="nv">folder</span><span class="o">=</span>/home/acdc/CARTA/Images<span class="p">&amp;</span><span class="nv">file</span><span class="o">=</span>jet.fits
+</pre></div>
+</div>
+<p class="last">Please note that it is necessary to give <em>full</em> path. Tilde (~) is not allowed.</p>
+</div>
 </div>
 <div class="section" id="image-viewer">
 <h2>Image viewer<a class="headerlink" href="#image-viewer" title="Permalink to this headline">¶</a></h2>
