@@ -404,7 +404,7 @@ In this section, we provide common issues we have experienced so far and provide
 
 * After copy-and-paste a CARTA URL, I see the CARTA GUI is not initialized...
 
-  Check your browser version. It needs to support "*wasm*" sreaming and be enabled. More information about browser support of WebAssembly can be found at https://caniuse.com/#search=WebAssembly 
+  Check your browser version. It needs to support "*wasm*" streaming and be enabled. More information about browser support of WebAssembly can be found at https://caniuse.com/#search=WebAssembly 
 
   CARTA utilises WebAssembly and that was introduced in version 52 of Firefox. Some RedHat6 and RedHat7 distributions may have versions of Firefox earlier than version 52. If that is the case, we highly recommend that you update to a more recent Firefox version with "sudo yum update firefox".
 
@@ -423,3 +423,7 @@ In this section, we provide common issues we have experienced so far and provide
 * CARTA does not launch...
 
   Check if there is existing "carta_backend" process running. The port number may conflict.
+
+* The RedHat7 AppImage does not open and it prints a message suggesting to extract the AppImage using the "-\\-appimage-extract" flag.
+
+  This error is due to lack of FUSE (File System in Userspace) support. We suspect that FUSE support in RedHat7 systems may be disabled in some institute environments for security reasons. If that is the case, we recommend using the 'remote' version of CARTA instead.
