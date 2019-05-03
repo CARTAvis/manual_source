@@ -404,7 +404,21 @@ In this section, we provide common issues we have experienced so far and provide
 
 * After copy-and-paste a CARTA URL, I see the CARTA GUI is not initialized...
 
-  Check your browser version. It needs to support "*wasm*" sreaming and enabled. 
+  Check your browser version. It needs to support "*wasm*" sreaming and be enabled. More information about browser support of WebAssembly can be found at https://caniuse.com/#search=WebAssembly 
+
+  CARTA utilises WebAssembly and that was introduced in version 52 of Firefox. Some RedHat6 and RedHat7 distributions may have versions of Firefox earlier than version 52. If that is the case, we highly recommend that you update to a more recent Firefox version with "sudo yum update firefox".
+
+  Other RedHat7 distributions may have Firefox 52 ESR which although having WebAssembly support, it is deactivated by default. We still recommend updating to a newer version of Firefox, but if you can not, you can try activating WebAssembly as follows:
+
+  1) Open a new tab and enter "about:config" in the URL bar. 
+  2) A warning message will appear. Click the button to continue. 
+  3) In the search box enter "wasm" and the list will filter down to a few results. 
+  4) Double click each line related to "javascript.options.wasm" so that the "Value" column shows them as "true". 
+  5) Then simply close the "about:config" tab and the CARTA frontend should now load properly.
+
+  As for the Chrome browser, Webassembly support was introduced in Chrome version 51, but versions 51 to 56 have it deactivated by default. To activate WebAssembly in Chrome 51 to 56 enter "chrome://flags" in the URL bar, type WebAssembly in the search box that appears, and change each WebAssembly option to "Enabled". If you have Chrome version 57 or newer, WebAssembly should be activated by default. 
+
+  
 
 * CARTA does not launch...
 
