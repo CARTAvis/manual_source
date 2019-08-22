@@ -94,6 +94,8 @@ The Inter-University Institute for Data Intensive Astronomy is a partnership of 
 
 The National Radio Astronomy Observatory is a facility of the National Science Foundation operated under cooperative agreement by Associated Universities, Inc.
 
+ACKNOWLEDEGMENT from Department of Physics, University of Alberta.
+
 CARTA is mainly built in C++, TypeScript, and JavaScript, and with the following third-party libraries:
 
 * AST: http://starlink.eao.hawaii.edu/starlink/AST
@@ -113,4 +115,4 @@ The source code of CARTA is hosted on `Github <https://github.com/CARTAvis>`_.
 
 Copyright and License
 ---------------------
-Copyright (C) 2018-2019 ASIAA, IDIA, and NRAO. This program is free software; you can redistribute it and/or modify it under the terms of the `GNU General Public License version 3 <http://www.gnu.org/copyleft/gpl.html>`_ as published by the Free Software Foundation.
+Copyright (C) 2018-2019 ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta. This program is free software; you can redistribute it and/or modify it under the terms of the `GNU General Public License version 3 <http://www.gnu.org/copyleft/gpl.html>`_ as published by the Free Software Foundation.

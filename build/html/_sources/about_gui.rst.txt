@@ -159,7 +159,7 @@ Mouse interactions with region of interest
 
 Region creation
 ^^^^^^^^^^^^^^^
-A region can be created by firstly entering the region creation mode then dragging on the image viewer. To enter the region creation mode, click the *region* button at the bottom-right corner of the image viewer or press "**c**" key. Double-clicking the region icon brings up all available region types (in version 1.1, only rectangle and ellipse are available). As a default, a region is created in the "center-to-corner" mode. To temporarily switch to "corner-to-corner" mode, hold "**commmand**" (mac) or "**ctrl**" (linux) key then drag. A symmetric region such as "circle" or "square" can be created by holding **shift** key then dragging.
+A region can be created by firstly entering the region creation mode then dragging on the image viewer. To enter the region creation mode, click the *region* button at the bottom-right corner of the image viewer or press "**c**" key. Double-clicking the region icon brings up all available region types (in version 1.1, only rectangle and ellipse are available). As a default, a region is created in the "center-to-corner" mode. To temporarily switch to "corner-to-corner" mode, hold "**command**" (mac) or "**ctrl**" (linux) key then drag. A symmetric region such as "circle" or "square" can be created by holding **shift** key then dragging.
 
 .. raw:: html
 
