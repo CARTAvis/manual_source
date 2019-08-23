@@ -101,10 +101,13 @@ CARTA is mainly built in C++, TypeScript, and JavaScript, and with the following
 * AST: http://starlink.eao.hawaii.edu/starlink/AST
 * Blueprint: https://blueprintjs.com
 * casacore: https://casacore.github.io
+* CASA source code: https://casa.nrao.edu/index.shtml
 * Chart.js: https://www.chartjs.org
 * Electron: https://electronjs.org
 * GoldenLayout: https://golden-layout.com
+* jsoncpp: https://github.com/open-source-parsers/jsoncpp
 * MobX: https://mobx.js.org
+* MongoDB: https://www.mongodb.com
 * React: https://reactjs.org
 * TBB: https://www.threadingbuildingblocks.org
 
