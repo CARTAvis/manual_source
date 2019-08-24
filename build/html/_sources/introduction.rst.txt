@@ -94,7 +94,7 @@ The Inter-University Institute for Data Intensive Astronomy is a partnership of 
 
 The National Radio Astronomy Observatory is a facility of the National Science Foundation operated under cooperative agreement by Associated Universities, Inc.
 
-ACKNOWLEDEGMENT from Department of Physics, University of Alberta.
+The Department of Physics at the University of Alberta has contributed to the CARTA project thanks to support from the National Radio Astronomy Observatory under an ALMA Development Project and from the Canada Foundation for Innovation as part of the Canadian Initiative for Radio Astronomy Data Analysis (CIRADA).
 
 CARTA is mainly built in C++, TypeScript, and JavaScript, and with the following third-party libraries:
 

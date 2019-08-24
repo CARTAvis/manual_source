@@ -54,6 +54,7 @@
 <li><a class="reference internal" href="#detaching-and-attaching-a-tab">Detaching and attaching a tab</a></li>
 <li><a class="reference internal" href="#creating-a-widget-as-a-floating-widget-or-as-a-tab">Creating a widget as a floating widget or as a tab</a></li>
 <li><a class="reference internal" href="#light-and-dark-theme">Light and dark theme</a></li>
+<li><a class="reference internal" href="#custom-layout-save-and-restore">Custom layout, save, and restore</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#mouse-interactions-with-images">Mouse interactions with images</a><ul>
@@ -120,18 +121,19 @@
 <li>main window</li>
 <li>menu bar</li>
 <li>widget bar</li>
+<li>tool bar</li>
 <li>panel (docked widget)</li>
 <li>floating widget</li>
 <li>tab</li>
-<li>dialog</li>
+<li>dialogue</li>
 <li>status icon</li>
 </ul>
 <img src="_static/carta_gui.png"
-     style="width:100%;height:auto;"><p>The main window consists of a set of panels and each panel may hold multiple docked widgets in tabs. For example, in the above figure there are five panels in the main window and there are two tabs in the bottom-left panel. A tab or a docked widget may be detached to become a floating widget. The menu bar provides control options, such as image input/output, launching widgets, getting helps, etc. The widget bar provides tools to view or analyze images. The icon at the top-right corner of the main window is an indicator of server (backend) status. A dialog provides options to configure compoments, such as image layout, or region properties, etc.</p>
+     style="width:100%;height:auto;"><p>The main window consists of a set of panels and each panel may contain multiple docked widgets as tabs. For example, in the above figure there are five panels in the main window and there are two docked widgets as tabs in the bottom-left panel. A tab or a docked widget may be detached to become a floating widget. The menu bar provides control options, such as image input/output, launching widgets, getting helps, etc. The widget bar provides widgets to view or to analyze images. The icon at the top-right corner of the main window is an indicator of server (backend) status. A dialogue provides options to configure compoments, such as image layout, or region properties, etc. A tool bar provides tools for a widget, such as zoom buttons for the image viewer widget or the export options for the spectral profile widget, etc.</p>
 </div>
 <div class="section" id="configuring-the-layout">
 <h2>Configuring the layout<a class="headerlink" href="#configuring-the-layout" title="Permalink to this headline">¶</a></h2>
-<p>The layout configuration can be changed by mouse operations, like single click or drag-and-drop. In the examples below, the drag-and-drop action is guided on the GUI with a semi-transparent rectangle. Various operations are demonstrated below.</p>
+<p>The layout configuration can be changed by mouse operations, like single click or drag-and-drop. In the examples below, the drag-and-drop action is guided on the GUI with a semi-transparent guider. Various operations are demonstrated below.</p>
 <div class="section" id="resizing-a-panel">
 <span id="id1"></span><h3>Resizing a panel<a class="headerlink" href="#resizing-a-panel" title="Permalink to this headline">¶</a></h3>
 <p>As shown in the example below, a panel can be resized by dragging its borders. After a panel is resized, nearby panels are resized automatically to fit the new layout. Note that the appearance of the UI elements is adaptive to the size of the panel, as seen in the <strong>render configuration</strong> widget or the <strong>animator</strong> widget in the example.</p>
@@ -174,6 +176,15 @@
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_theme.mp4" type="video/mp4">
 </video></div>
+<div class="section" id="custom-layout-save-and-restore">
+<h3>Custom layout, save, and restore<a class="headerlink" href="#custom-layout-save-and-restore" title="Permalink to this headline">¶</a></h3>
+<p>CARTA has a set of preset layouts sutiable for different kinds of image analysis. These layouts are accessible via the menu <strong>Layout</strong> -&gt; <strong>Layouts</strong> -&gt; <strong>Existing layouts</strong> -&gt; <strong>Presets</strong>.</p>
+<img src="_static/carta_gui_layout_menu.png"
+     style="width:100%;height:auto;"><p>Users may further customize a preset layout or make a new layout from scratch for different purposes and save it for the future. To save a custom layout, use the menu <strong>Layout</strong> -&gt; <strong>Layouts</strong> -&gt; <strong>Save layout</strong>. A name is required when saving a layout (e.g., “my layout 01” in the above example).</p>
+<p>A saved layout can be restored via the menu <strong>Layout</strong> -&gt; <strong>Layouts</strong> -&gt; <strong>Existing layouts</strong>. The currently activated layout is highlighted in blue (“Default” in the above example). Saved layouts can be removed via the menu <strong>Layout</strong> -&gt; <strong>Layouts</strong> -&gt; <strong>Delete layout</strong>.</p>
+<p>By deafult, CARTA will load the “Default” preset layout when initialized. Which layout, including user customized layouts, should be loaded can be further defined via the preferences dialogue <strong>File</strong> -&gt; <strong>Preferences</strong>. The initial layout can be set via <strong>Global</strong> -&gt; <strong>Initial layout</strong>.</p>
+<img src="_static/carta_gui_layout_preference.png"
+     style="width:90%;height:auto;"></div>
 </div>
 <div class="section" id="mouse-interactions-with-images">
 <span id="mouse-interaction-with-images"></span><h2>Mouse interactions with images<a class="headerlink" href="#mouse-interactions-with-images" title="Permalink to this headline">¶</a></h2>
@@ -197,7 +208,7 @@
 <span id="mouse-interaction-with-regions"></span><h2>Mouse interactions with region of interest<a class="headerlink" href="#mouse-interactions-with-region-of-interest" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="region-creation">
 <h3>Region creation<a class="headerlink" href="#region-creation" title="Permalink to this headline">¶</a></h3>
-<p>A region can be created by firstly entering the region creation mode then dragging on the image viewer. To enter the region creation mode, click the <em>region</em> button at the bottom-right corner of the image viewer or press “<strong>c</strong>” key. Double-clicking the region icon brings up all available region types (in version 1.1, only rectangle and ellipse are available). As a default, a region is created in the “center-to-corner” mode. To temporarily switch to “corner-to-corner” mode, hold “<strong>command</strong>” (mac) or “<strong>ctrl</strong>” (linux) key then drag. A symmetric region such as “circle” or “square” can be created by holding <strong>shift</strong> key then dragging.</p>
+<p>A region can be created by firstly entering the region creation mode then dragging on the image viewer. To enter the region creation mode, click the <em>region</em> button at the bottom-right corner of the image viewer or press “<strong>C</strong>” key. Double-clicking the region icon brings up all available region types (rectangle, ellipse, polygon, and point, as of v1.2). For rectangle or ellipse, it can be created in the “center-to-corner” mode or the “corner-to-corner” mode, depending on the preference setting in the preference dialogue (<strong>File</strong> -&gt; <strong>Preferences</strong> -&gt; <strong>Default region settings</strong>). To temporarily switch to the other mode than the default, hold “<strong>command</strong>” (mac) or “<strong>ctrl</strong>” (linux) key then drag. “circle” and “square” regions are the special cases of ellipse and rectangle regions, respectively. These symmetric regions can be created by holding <strong>shift</strong> key then dragging.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_roi_creation.mp4" type="video/mp4">
 </video></div>
@@ -288,20 +299,28 @@
 <td>del / backspace</td>
 </tr>
 <tr class="row-odd"><td>Toggle region creation mode</td>
-<td>c</td>
-<td>c</td>
+<td>C</td>
+<td>C</td>
 </tr>
 <tr class="row-even"><td>Deselect region</td>
 <td>esc</td>
 <td>esc</td>
 </tr>
-<tr class="row-odd"><td>Corner-to-corner region creation</td>
+<tr class="row-odd"><td>Switch region creation mode</td>
 <td>cmd + drag</td>
 <td>ctrl + drag</td>
 </tr>
 <tr class="row-even"><td>Symmetric region creation</td>
 <td>shift + drag</td>
 <td>shift + drag</td>
+</tr>
+<tr class="row-odd"><td>Toggle current region lock</td>
+<td>L</td>
+<td>L</td>
+</tr>
+<tr class="row-even"><td>Unlock all regions</td>
+<td>shift + L</td>
+<td>shift + L</td>
 </tr>
 <tr class="row-odd"><td><strong>Appearance</strong></td>
 <td>&#160;</td>

@@ -12,10 +12,11 @@ The GUI of CARTA is classified into different components:
 * main window
 * menu bar
 * widget bar
+* tool bar
 * panel (docked widget)
 * floating widget
 * tab
-* dialog
+* dialogue
 * status icon
 
 
@@ -26,13 +27,13 @@ The GUI of CARTA is classified into different components:
    
 
 
-The main window consists of a set of panels and each panel may hold multiple docked widgets in tabs. For example, in the above figure there are five panels in the main window and there are two tabs in the bottom-left panel. A tab or a docked widget may be detached to become a floating widget. The menu bar provides control options, such as image input/output, launching widgets, getting helps, etc. The widget bar provides tools to view or analyze images. The icon at the top-right corner of the main window is an indicator of server (backend) status. A dialog provides options to configure compoments, such as image layout, or region properties, etc.
+The main window consists of a set of panels and each panel may contain multiple docked widgets as tabs. For example, in the above figure there are five panels in the main window and there are two docked widgets as tabs in the bottom-left panel. A tab or a docked widget may be detached to become a floating widget. The menu bar provides control options, such as image input/output, launching widgets, getting helps, etc. The widget bar provides widgets to view or to analyze images. The icon at the top-right corner of the main window is an indicator of server (backend) status. A dialogue provides options to configure compoments, such as image layout, or region properties, etc. A tool bar provides tools for a widget, such as zoom buttons for the image viewer widget or the export options for the spectral profile widget, etc. 
 
 
 
 Configuring the layout
 ----------------------
-The layout configuration can be changed by mouse operations, like single click or drag-and-drop. In the examples below, the drag-and-drop action is guided on the GUI with a semi-transparent rectangle. Various operations are demonstrated below.
+The layout configuration can be changed by mouse operations, like single click or drag-and-drop. In the examples below, the drag-and-drop action is guided on the GUI with a semi-transparent guider. Various operations are demonstrated below.
 
 
 .. _resizing_a_panel:
@@ -47,7 +48,6 @@ As shown in the example below, a panel can be resized by dragging its borders. A
    <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_resizing_panel.mp4" type="video/mp4">
    </video>
-
 
 
 Relocating a tab as a new panel
@@ -73,10 +73,8 @@ A tab can be moved to other existing panel by dragging its title to the upper bo
    </video>
 
 
-
-
 Maximixing and restoring a panel
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 By clicking the **maximize** icon at the top-right corner of a panel, the panel (including all tabs) will be maximized to the main window. By clicking the **restore** icon, the panel will be restored to its original location.
 
 .. raw:: html
@@ -97,7 +95,7 @@ By clicking the **detach** (unpin) icon at the top-right corner of a panel, the 
 
 
 Creating a widget as a floating widget or as a tab
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A widget is activated as a floating widget by clicking the button in the widget bar. Alternatively, a widget can be activated as a tab by dragging the button in the widget bar directly to a desired location.
 
 .. raw:: html
@@ -115,6 +113,27 @@ CARTA supports a light (default) and dark theme. The theme can be changed using 
    <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_theme.mp4" type="video/mp4">
    </video>
+
+
+Custom layout, save, and restore
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+CARTA has a set of preset layouts sutiable for different kinds of image analysis. These layouts are accessible via the menu **Layout** -> **Layouts** -> **Existing layouts** -> **Presets**. 
+
+.. raw:: html
+
+   <img src="_static/carta_gui_layout_menu.png" 
+        style="width:100%;height:auto;">
+
+Users may further customize a preset layout or make a new layout from scratch for different purposes and save it for the future. To save a custom layout, use the menu **Layout** -> **Layouts** -> **Save layout**. A name is required when saving a layout (e.g., "my layout 01" in the above example). 
+
+A saved layout can be restored via the menu **Layout** -> **Layouts** -> **Existing layouts**. The currently activated layout is highlighted in blue ("Default" in the above example). Saved layouts can be removed via the menu **Layout** -> **Layouts** -> **Delete layout**.
+
+By deafult, CARTA will load the "Default" preset layout when initialized. Which layout, including user customized layouts, should be loaded can be further defined via the preferences dialogue **File** -> **Preferences**. The initial layout can be set via **Global** -> **Initial layout**.
+
+.. raw:: html
+
+   <img src="_static/carta_gui_layout_preference.png" 
+        style="width:90%;height:auto;">
 
 
 .. _mouse_interaction_with_images:
@@ -159,7 +178,8 @@ Mouse interactions with region of interest
 
 Region creation
 ^^^^^^^^^^^^^^^
-A region can be created by firstly entering the region creation mode then dragging on the image viewer. To enter the region creation mode, click the *region* button at the bottom-right corner of the image viewer or press "**c**" key. Double-clicking the region icon brings up all available region types (in version 1.1, only rectangle and ellipse are available). As a default, a region is created in the "center-to-corner" mode. To temporarily switch to "corner-to-corner" mode, hold "**command**" (mac) or "**ctrl**" (linux) key then drag. A symmetric region such as "circle" or "square" can be created by holding **shift** key then dragging.
+A region can be created by firstly entering the region creation mode then dragging on the image viewer. To enter the region creation mode, click the *region* button at the bottom-right corner of the image viewer or press "**C**" key. Double-clicking the region icon brings up all available region types (rectangle, ellipse, polygon, and point, as of v1.2). For rectangle or ellipse, it can be created in the "center-to-corner" mode or the "corner-to-corner" mode, depending on the preference setting in the preference dialogue (**File** -> **Preferences** -> **Default region settings**). To temporarily switch to the other mode than the default, hold "**command**" (mac) or "**ctrl**" (linux) key then drag. "circle" and "square" regions are the special cases of ellipse and rectangle regions, respectively. These symmetric regions can be created by holding **shift** key then dragging.
+
 
 .. raw:: html
 
@@ -261,13 +281,17 @@ CARTA supports keyboard shortcuts to enable certain controls without using a mou
 +----------------------------------+----------------------------+-----------------------------+
 | Delete selected region           | del / backspace            | del / backspace             |
 +----------------------------------+----------------------------+-----------------------------+
-| Toggle region creation mode      | c                          | c                           |
+| Toggle region creation mode      | C                          | C                           |
 +----------------------------------+----------------------------+-----------------------------+
 | Deselect region                  | esc                        | esc                         |
 +----------------------------------+----------------------------+-----------------------------+
-| Corner-to-corner region creation | cmd + drag                 | ctrl + drag                 |
+| Switch region creation mode      | cmd + drag                 | ctrl + drag                 |
 +----------------------------------+----------------------------+-----------------------------+
 | Symmetric region creation        | shift + drag               | shift + drag                |
++----------------------------------+----------------------------+-----------------------------+
+| Toggle current region lock       | L                          | L                           |
++----------------------------------+----------------------------+-----------------------------+
+| Unlock all regions               | shift + L                  | shift + L                   |
 +----------------------------------+----------------------------+-----------------------------+
 | **Appearance**                   |                            |                             |
 +----------------------------------+----------------------------+-----------------------------+

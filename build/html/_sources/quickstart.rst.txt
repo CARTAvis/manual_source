@@ -55,7 +55,7 @@ Cursor update
 -------------
 To freeze/unfreeze cursor position update in the image viewer
 
-* press “**f**” key
+* press “**F**” key
 
 Chart interactions
 ------------------

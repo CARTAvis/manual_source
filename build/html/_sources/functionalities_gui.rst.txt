@@ -1,8 +1,8 @@
 Functionality
 =============
-With version 1.1, CARTA provides the following widgets/dialogs for image view and analysis:
+With version 1.2, CARTA provides the following widgets/dialogues for image view or analysis:
 
-* file browser dialog: to view image header and to load an image
+* file browser dialogue: to view image header and to load an image
 * image viewer: to view raster images
 * render configuration widget: to configure how a raster image is rendered
 * animator widget: to navigate through different images, different channels, and different Stokes
@@ -11,13 +11,17 @@ With version 1.1, CARTA provides the following widgets/dialogs for image view an
 * spectral profiler: to view spectral profile from a region of interest
 * histogram widget: to view histogram from a region of interest
 * statistics widget: to view basic statistics from a region of interest
+* Stokes analysis widget: to view basic polarization quantities
 * log widget: to view program logs.
 
-In addition, version 1.1 starts to support basic server authentication which allows server administrator to set a specific folder as private or public. Initial support of the HDF5-IDIA image format is implemented in version 1.1. 
+In addition, version 1.2 supports server authentication via the "Lightweight Directory Access Protocol" (LDAP). When using the server version, users can log in with their user name and password indentical to the server hosting their images (either local or network storage). To share access of a given folder to collaborators, users can just change the permission via the "chmod" command. 
+
+The support of the HDF5 image (IDIA schema) is further enhanced in verson 1.2. Rotated dataset and pre-calculated quantities, such as statistics or histograms, are properly utilized to enhance performance and user experience.  
+
 
 Server-side status
 ------------------
-As CARTA is fundamentally a client-server application, it would be good to know the status of the server side at the client side. The server status is now displayed as a circular icon at the top-right corner of the main window. The connection latency can be seen by hovering over the icon. There are three kinds of status:
+As CARTA is fundamentally a client-server application, it would be good to know the status of the server side at the client side. This is also useful for the desktop version to know if the application runs normally or not. The server status is now displayed as a circular icon at the top-right corner of the main window. The connection latency can be seen by hovering over the icon. There are three kinds of status:
 
 * Green: this means that the server side is initially connected successfully.
 * Orange: this means that the initial connection to the server side was broken (e.g., unstable internet) but has been reconnected. Please note that CARTA may behave abnormally in this case.  
@@ -36,40 +40,11 @@ Server-side authentication
 --------------------------
 Desktop users can skip this section as it is only relevant to the CARTA-server application and server-side administration. 
 
-A basic server-side authentication model has been implemented in version 1.1. The server administrator can set permission to folders through a permission text file containing API keys. If a user enters a valid API key through "**FILE**" -> "**Enter API key**" dialog, which matches the server-side permission file "*permission.txt*", the user will only be able to access the folders that have been granted for access. 
-
-An example of the permission file (must be named as "*permission.txt*") is shown below. 
-
-.. code-block:: bash
-
-   # some very basic folder-based permissions for images in the viewer
-   # each user has their own API key which they can enter into the viewer through
-   # the "Enter API key" dialog. The key will be stored in the browser's local storage
-   /:
-   *
-   public:
-   *
-   ####################################
-   # 
-   ####################################
-   user01:
-   0b2ee132-87ba-45a9-9944-02e7f9a03b25
-   
-   user02:
-   675db74a-2d48-4850-9e3d-a94a77e2819d
-
-   shared:
-   0b2ee132-87ba-45a9-9944-02e7f9a03b25
-   675db74a-2d48-4850-9e3d-a94a77e2819d
-
-In the above setup, there are four different folders, named as "*public*", "*user01*", "*user02*", and "*shared*", respectively. The "*public*" folder will always be visible and accessible with and without an API key. On the contrary, "*user01*" and "*shared*" folders will only be visible and accessible if the API key "*0b2ee132-87ba-45a9-9944-02e7f9a03b25*" has been entered through the "**Enter API key**" dialog. The server administrator can enable this basic authentication by using the keyword argument "*permissions=true*" when launching the CARTA backend service. 
-
-.. code-block:: bash
-
-   exec carta_backend port=6002 base=/scratch/images root=/scratch/images permissions=true
-
-More server-side authentication models will be introduced in later versions. 
-
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
 File browser
@@ -77,18 +52,18 @@ File browser
 File browser, accessible via the menu **File** -> **Open image** or the menu **File** -> **Append image**, provides information of images supported by CARTA. Currently CARTA supports images in:  
 
 * CASA format
-* HDF5-IDIA format
+* HDF5 format (IDIA schema)
 * FITS format
 * MIRIAD format 
 
-Only the images matched these formats will be shown in the file list with image type and file size. When an image is selected, a brief summary of image properties is provided on the right side of the dialog. Full header is also available in the second tab. To view an image, click the **Load** button at the bottom-right corner. To view a new image with all the loaded images closed, use **File** -> **Open image** -> **Load**. To view multiple images, use **File** -> **Append image** -> **Append**.
+Only the images matched these formats will be shown in the file list with image type and file size. When an image is selected, a brief summary of image properties is provided on the right side of the dialogue. Full header is also available in the second tab. To view an image, click the **Load** button at the bottom-right corner. To view a new image with all the loaded images closed, use **File** -> **Open image** -> **Load**. To view multiple images, use **File** -> **Append image** -> **Append**.
 
 .. raw:: html
 
    <img src="_static/carta_fn_fileBrowser.png" 
         style="width:100%;height:auto;">
 
-File browser remembers the last path where an image was opened within one CARTA session. Therefore, when the file browser is re-opened to load other images, a file list will be displayed at the last path where the previous image was opened. Users can now freely navigate through the file system (up to root or "/") with the v1.1 desktop release.
+File browser remembers the last path where an image was opened within one CARTA session and the path is displayed (breadcrumbs) at the top of the dialogue. Therefore, when the file browser is re-opened to load other images, a file list will be displayed at the last path where the previous image was opened. Users can use the breadcrumbs to navigate to parent directories. 
 
 For the CARTA-server application, the server administrator can limit the global directory access through the "*root*" keyword argument when launching the CARTA backend service. 
 
@@ -96,7 +71,7 @@ For the CARTA-server application, the server administrator can limit the global 
 
    exec carta_backend port=6002 base=/scratch/images/Orion root=/scratch/images
 
-In the above example, users will see a list of images at "/scratch/images/Orion" when accessing the file browser dialog for the first time in a new session. Users can navigate to any other folders inside "/scratch/images/Orion". Users can also navigate one level up to "/scratch/images", but not beyond that (neither "/scratch" nor "/"). 
+In the above example, users will see a list of images at "/scratch/images/Orion" when accessing the file browser dialogue for the first time in a new session. Users can navigate to any other folders inside "/scratch/images/Orion". Users can also navigate one level up to "/scratch/images", but not beyond that (neither "/scratch" nor "/"). 
 
 
 .. note::
@@ -134,20 +109,26 @@ When an image is loaded via the file browser, it is shown in the image viewer wi
 The aspect ratio of the image view is determined by the panel geometry. When the image viewer panel is resized, a tip with a ratio in screen pixel will be displayed (c.f., :ref:`resizing_a_panel` ).
 
 
+Tiled rendering
+^^^^^^^^^^^^^^^
+CARTA utilizes an efficient approach, "tiled rendering", to display a raster image. What users see in the image viewer is an ensemble of tiles (default 256 pixel by 256 pixel) processed in parallel. As an example shown in the figure below, if we have an image with 2048 pixels by 2048 pixels, tiles will be constructed in four layers with differnt downsample factors. The zero-th layer contains only one tile with a size of 256 pixels by 256 pixels. A downsample factor of 8 is applied to the original image to create this tile. The first layer contains four tiles with each a size of 256 pixels by 256 pixels. The downsample factor of 4 is applied to the original image to create these four tiles. This process continues until no downsampling is required. In this case, the tiles of the third layer are not downsampled. As users change the field of view, or the size of the image viewer, tile data of the *right* layer will be used. For example, if a user is interested in the field of the blue box and the image viewer has a screen size of 512 pixels by 384 pixels, tiles of the layer 2 will be used for rendering. In this case, nine tiles will be used. If the user pans a little bit around the blue box, no new tile data are required. If the user pans the view to the green box with the same viewer size, only the additional two tiles of layer 2 are required and four tiles will be *re-used* for rendering. With this tiled rendering approach, tiles will be re-used for different zoom levels and different field of views to minimize the amount of data transfer while keeping the image sharp on screen. Effectively, users will see that the image becomes sharper and sharper at higher and higher zoom levels.
 
-Image resolution and screen resolution
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In CARTA, the resolution of an image displayed in the image viewer is *dynamically* determined by the screen resolution. For example, if an image with 10000 x 10000 pixels is loaded with the image viewer having a screen resolution of 500 x 500 pixels, a down-sampled image with a resolution of 500 x 500 pixels (a down-sample factor of 20) will be generated first, then displayed on screen with GPU accelerations. As users zoom in the images, new down-sample factors will be recomputed at every sampled zoom level. Effectively, users will see that the image becomes sharper and sharper at higher and higher zoom levels. No down-sampling is applied until the image resolution in the view is lower than the screen resolution. 
 
 .. raw:: html
 
-   <video controls loop style="width:100%;height:auto;">
-     <source src="_static/carta_fn_imageViewer_downsample.mp4" type="video/mp4">
-   </video>
+   <img src="_static/carta_fn_tiledRendering.png" 
+        style="width:80%;height:auto;">
+
+The performace of tiled rendering can be customized with the preferences dialogue, **File** -> **Preferences** -> **Performance**. The default values are chosen to assure raster images are displayed efficiently with sufficient accuracy. Advanced users may refine the setup if necessary. For example, when using the server version under poor internet condition, compression quality might be lowered down a bit to make the tile data smaller. Note that a smaller compression quality might introduce noticible artifacts on the raster image. Please use with caution. 
+
+.. raw:: html
+
+   <img src="_static/carta_fn_tiledRendering_preference.png" 
+        style="width:80%;height:auto;">
 
 
 .. warning::
-   To make remote visualization of large images possible and efficient, CARTA adopts the above mentioned downsampling approach together with an efficient image compression algorithm. At rare circumstance, artifacts may be seen on the images. A known issue is viewing an image with all pixels as zeros but one with a very high value. At low or default zoom level, some artifacts will be observed around that pixel. At higher zoom levels, the artifacts should disappear. CARTA has been tuned to localize the artifacts within few screen pixels in order to minimize the impact of scientific analysis on such special cases. Should this become a problem in any kinds of analysis of yours, please contact `carta_helpdesk`_ for help.
+   To make remote visualization of large images possible and efficient, CARTA adopts the above mentioned tiled rendering approach together with an efficient image compression algorithm. At rare circumstance, artifacts may be seen on the images. A known issue is viewing an image with all pixels as zeros but one with a very high value. At low or default zoom level, some artifacts will be observed around that pixel. At higher zoom levels, the artifacts may disappear. CARTA has been tuned to localize the artifacts within few screen pixels in order to minimize the impact of scientific analysis on such special cases. The compression quality is adjustable via the preferences dialogue, **File** -> **Preferences** -> **Performance**. Advanced users may need to chose a higher compression quality for those special cases with caution. Should this become a problem in any kinds of analysis of yours, please contact `carta_helpdesk`_ for help.
 
    .. _carta_helpdesk: carta_helpdesk@asiaa.sinica.edu.tw
 
