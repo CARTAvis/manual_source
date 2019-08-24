@@ -136,6 +136,61 @@ By deafult, CARTA will load the "Default" preset layout when initialized. Which 
         style="width:90%;height:auto;">
 
 
+
+User preferences
+----------------
+CARTA provides a number of preferences for users to customize the GUI, including layouts. The preferences are persistent so that next time when users launch CARTA, all the preferences and a layout are restored. The preferences dialogue is accessible via the menu **File** -> **Preferences**. Preferences are effective after CARTA reloads, except few that are effective immediately. Below we summarize the options of all preferences.  
+
+.. raw:: html
+
+   <img src="_static/carta_gui_preferences.png" 
+        style="width:100%;height:auto;">
+
+* Global
+
+  * Theme: to adopt light or dark theme of the GUI (default: light) [effective immediately]
+  * Auto-launch file browser: to launch the file browser or not when CARTA is initialized (default: yes)
+  * Initial layout: the layout to adopt when CARTA is initialized (default: "Default")
+  * Initial cursor position: to fix the cursor position on the image or not when CARTA is initialized. If it is fixed, a cross will be shown at the image center. Use "**F**" key to switch to the tracking mode (default: Tracking)
+  * Initial zoom level: to select the initial zoom level of the image to be filling up the field of view or to be displayed as one image pixel to one screen pixel ratio (default: "Zoom to fit")
+
+* Default render config
+
+  * Scaling: the scaling function of the color map (default: linear)
+  * Color map: the default color for the raster image (default: inferno)
+  * Percentile ranks: the default clip level for the color map (default: 99.9%)
+
+* Default WCS overlay
+
+  * Color: the color for the WCS overlay, including border, grid line, ticks, labels, and title (default: blue)
+  * Grid visible: to show grid line or not as default (default: yes)
+  * Label visible: to show coordinate labels or not as default (default: yes)
+  * WCS type: the format of the displayed world coordinate. The default is "automatic" which means for galactic or ecliptic system, the world coordinate is displayed in decimal degrees, and for FK4, FK5, or ICRS, the world coordinate is displayed in sexigesimal format. (default: automatic) [effective for new images]
+
+* Default region settings
+
+  * Color: the default color of a region (default: cyan) [effective for new regions]
+  * Line width (px): the default line width of a region (default: 2) [effective for new regions]
+  * Dash length (px): the default dash length of the line composing a region. The default is to show a region in solid line (default: 0) [effective for new regions]
+  * Region type: the default selected region in the tool bar of the image viewer (default: rectangle)
+  * Creation mode: the method of how a rectange or an ellipse is created by mouse dragging. Two methods are supplied: center-to-corner and corner-to-corner (default: center-to-corner) [effective for new regions]
+
+* Performance
+
+  * Compression quality (image): a parameter (1~32) to control the image quality with lossy compression. The higher the number is, the better quality the images are. Choose with caution. (default: 11) [effective immediately]
+  * Compression quality (animation): a parameter (1~32) to control the animation quality with lossy compression. The higher the number is, the better quality the images are. Choose with caution. (default: 9) [effective immediately]
+  * GPU tile cache size (MB): the cache size of GPU for tiles (default: 512 MB)
+  * System tile cache size (MB): the cache size of system memory for tiles (default: 4096 MB)
+
+* Log events
+
+  * This is for debugging purpose. Normal users can skip this part.
+
+
+
+
+
+
 .. _mouse_interaction_with_images:
 
 Mouse interactions with images
