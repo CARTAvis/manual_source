@@ -97,6 +97,22 @@ In the above example, users will see a list of images at "/scratch/images/Orion"
    Please note that it is necessary to give *full* path. Tilde (~) is not allowed.
 
 
+HDF5 (IDIA schema) image support
+--------------------------------
+Except the CASA image format, the FITS format, and the MIRIAD format, CARTA also support images in the HDF5 format under the IDIA schema.  The IDIA schema is designed to ensure that efficient image visualization is retained even with extraordinary large image cubes (hundreds GB to a few TB). The HDF5 image file contains extra data to skip or to speed up expensive computations, such as per-cube histogram or spectral profile, etc. A brief outline of the content of an HDF5 image is provided below:
+
+* XYZW dataset (spatial-spatial-spectral-Stokes): similar to the FITS format
+* ZYXW dataset (swizzeled): rotated dataset
+* per-frame statistics: basic statistics of the XY plane
+* per-cube statistics: basic statistics of the XYZ cube
+* per-frame histogram: histogram of the pixel values of the XY plane
+* per-cube histogram: histogram of the XYZ cube
+
+Additional tiled image data, which will speed up the process of loading very large images significantly, will be added to the HDF5 image file in the near future. 
+
+
+
+
 Image viewer
 ------------
 When an image is loaded via the file browser, it is shown in the image viewer with its per-frame histogram shown in the render configuration widget. Currently CARTA supports raster image only. 
@@ -256,19 +272,6 @@ The restoring beam is shown at the bottom-left corner, if applicable.
 
 The image can be exported as a png image by clicking the "Export image" button at the bottom-right corner of the image viewer, or by "**File**" -> "**Export image**".
 
-
-HDF5 (IDIA schema) image support
---------------------------------
-Except the CASA image format, the FITS format, and the MIRIAD format, CARTA also support images in the HDF5 format under the IDIA schema.  The IDIA schema is designed to ensure that efficient image visualization is retained even with extraordinary large image cubes (hundreds GB to a few TB). The HDF5 image file contains extra data to skip or to speed up expensive computations, such as per-cube histogram or spectral profile, etc. A brief outline of the content of an HDF5 image is provided below:
-
-* XYZW dataset (spatial-spatial-spectral-Stokes): similar to the FITS format
-* ZYXW dataset (swizzeled): rotated dataset
-* per-frame statistics: basic statistics of the XY plane
-* per-cube statistics: basic statistics of the XYZ cube
-* per-frame histogram: histogram of the pixel values of the XY plane
-* per-cube histogram: histogram of the XYZ cube
-
-Additional tiled image data, which will speed up the process of loading very large images significantly, will be added to the HDF5 image file in the near future. 
 
 .. _animator_intro:
 
