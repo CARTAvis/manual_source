@@ -2,7 +2,7 @@ Appendix A: version history
 ===========================
 Version 1.2
 -----------
-Release XXX August 2019
+Released XXX August 2019
 
 This release includes the following new features:
 

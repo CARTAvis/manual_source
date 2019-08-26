@@ -2,16 +2,16 @@
 
 Installation and configuration
 ==============================
-CARTA v1.1 supports the following operating systems:
+CARTA v1.2 supports the following operating systems:
 
 * macOS 10.13/10.14
 * Ubuntu 16.04 LTS/18.04 LTS
 * RedHat 7
 * RedHat 6 (conditional)
 
-Command line to launch CARTA is also supported in version 1.1 (see :ref:`commandLineStartup` for instructions).
+Command line to launch CARTA is also supported in version 1.2 (see :ref:`commandLineStartup` for instructions).
 
-CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7 or Ubuntu 16.04 LTS/18.04 LTS server via the ssh protocol, CARTA v1.1 also provides a "remote" mode for this use case (see :ref:`commandLineStartup` for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA "backend" on the server, while the CARTA "frontend" is accessed through your web browser of choice running on your local machine. This allows your local machine's GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.
+CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7 or Ubuntu 16.04 LTS/18.04 LTS server via the ssh protocol, CARTA v1.2 also provides a "remote" mode for this use case (see :ref:`commandLineStartup` for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA "backend" on the server, while the CARTA "frontend" is accessed through your web browser of choice running on your local machine. This allows your local machine's GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.
 
 If there is any problem, please contact `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ for help.
 
@@ -19,19 +19,19 @@ macOS 10.13/10.14
 -----------------
 Please follow the steps:
 
-1. `Download the DMG installer file <https://github.com/CARTAvis/carta-releases/releases/download/v1.1/CARTA-v1.1.dmg>`_
+1. `Download the DMG installer file <https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2.dmg>`_
 
-2. Open the DMG file and drag the CARTA-v1.1 icon to your /Applications folder.
+2. Open the DMG file and drag the CARTA-v1.2 icon to your /Applications folder.
 
 3. To run CARTA either:
 
-  a) Find the CARTA-v1.1 icon in the Launchpad and click it, or double click it in the Finder.
+  a) Find the CARTA-v1.2 icon in the Launchpad and click it, or double click it in the Finder.
 
   b) (**Highly recommended**) Create an alias in your ~/.bashrc file by opening your ~/.bashrc file in a text editor and add the following line:
 
   .. code-block:: bash
 
-     alias carta='/Applications/CARTA-v1.1.app/Contents/MacOS/CARTA-v1.1'
+     alias carta='/Applications/CARTA-v1.2.app/Contents/MacOS/CARTA-v1.2'
 
   Then, after entering source ~/.bashrc in the terminal, you will be able to start CARTA by simply typing “carta”.
 
@@ -45,13 +45,13 @@ Ubuntu 16.04 LTS/18.04 LTS
 --------------------------
 Please follow the steps:
 
-1. `Download the AppImage file <https://github.com/CARTAvis/carta-releases/releases/download/v1.1/CARTA-v1.1-ubuntu.AppImage>`_
+1. `Download the AppImage file <https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-ubuntu.AppImage>`_
 
 2. Make the AppImage file executable
 
    .. code-block:: bash
 
-      chmod 755 CARTA-v1.1-ubuntu.AppImage 
+      chmod 755 CARTA-v1.2-ubuntu.AppImage 
 
 3. To run CARTA either 
    
@@ -59,13 +59,13 @@ Please follow the steps:
    
    .. code-block:: bash
       
-      ./CARTA-v1.1-ubuntu.AppImage
+      ./CARTA-v1.2-ubuntu.AppImage
    
    b) (**Highly recommended**) Create an alias in your shell script file. For example, if you are using bash and the AppImage happens to be in your Downloads folder, open ~/.bashrc file in a text editor and add a line
 
    .. code-block:: bash
 
-      alias carta='~/Downloads/CARTA-v1.1-ubuntu.AppImage'
+      alias carta='~/Downloads/CARTA-v1.2-ubuntu.AppImage'
    
    Then, after entering source ~/.bashrc in the terminal, you will be able to start carta by simply typing “carta”.
 
@@ -78,7 +78,7 @@ Please follow the steps:
    
    .. code-block:: tcsh
    
-      alias carta '~/Downloads/CARTA-v1.1-ubuntu.AppImage'
+      alias carta '~/Downloads/CARTA-v1.2-ubuntu.AppImage'
    
    and 
    
@@ -95,13 +95,13 @@ Please follow the steps:
       carta
 
 .. note::
-   For this v1.1 release we are providing a combined desktop and remote server capability. 
+   For this v1.2 release we are providing a combined desktop and remote server capability. 
    
    Invoke remote mode with the "-\\-remote" flag
    
    .. code-block:: bash
    
-      ./CARTA-v1.1-ubuntu.AppImage --remote
+      ./CARTA-v1.2-ubuntu.AppImage --remote
       
    or, if an alias is created, 
    
@@ -114,13 +114,13 @@ Redhat 7
 --------
 Please follow the steps:
 
-1. `Download the AppImage file <https://github.com/CARTAvis/carta-releases/releases/download/v1.1/CARTA-v1.1-RedHat7.AppImage>`_
+1. `Download the AppImage file <https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-RedHat7.AppImage>`_
 
 2. Make the AppImage file executable.
 
 .. code-block:: bash
 
-   chmod 755 CARTA-v1.1-RedHat7.AppImage
+   chmod 755 CARTA-v1.2-RedHat7.AppImage
 
 3. To run CARTA either 
 
@@ -128,13 +128,13 @@ Please follow the steps:
   
   .. code-block:: bash 
   
-     ./CARTA-v1.1-RedHat7.AppImage
+     ./CARTA-v1.2-RedHat7.AppImage
   
   b) (**Highly recommended**) Set up an alias in your shell script file. For example, if your are using bash and the AppImage happens to be in your Downloads folder, open your ~/.bashrc file in a text editor and add a line
   
   .. code-block:: bash
 
-     alias carta='~/Downloads/CARTA-v1.1-RedHat7.AppImage'
+     alias carta='~/Downloads/CARTA-v1.2-RedHat7.AppImage'
 
   Then, after entering source ~/.bashrc in the terminal, you will be able to start carta by simply typing “carta”.
   
@@ -147,7 +147,7 @@ Please follow the steps:
   
   .. code-block:: tcsh
   
-     alias carta '~/Downloads/CARTA-v1.1-RedHat7.AppImage'
+     alias carta '~/Downloads/CARTA-v1.2-RedHat7.AppImage'
 
   and 
   
@@ -180,13 +180,13 @@ Please follow the steps:
 
 
 .. note::
-   For this v1.1 release we are providing a combined desktop and remote server capability. 
+   For this v1.2 release we are providing a combined desktop and remote server capability. 
    
    Invoke remote mode with the "-\\-remote" flag e.g. 
 
    .. code-block:: bash
 
-     ./CARTA-v1.1-RedHat7.AppImage --remote 
+     ./CARTA-v1.2-RedHat7.AppImage --remote 
 
    or
 
@@ -203,15 +203,15 @@ Neither AppImage nor Electron runs on RedHat 6, therefore we supply a "standalon
 
 Please follow the steps:
 
-1. `Download the tar.gz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.1/CARTA-v1.1-remote.tar.gz>`_
+1. `Download the tar.gz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-remote.tar.gz>`_
 
 2. Extract the archive
 
    .. code-block:: bash
 
-      tar -xvf CARTA-v1.1-remote.tar.gz
+      tar -xvf CARTA-v1.2-remote.tar.gz
 
-3. Execute the carta script within the "CARTA-v1.1-remote" folder
+3. Execute the carta script within the "CARTA-v1.2-remote" folder
 
    .. code-block:: bash
 
@@ -225,13 +225,13 @@ Please follow the steps:
 
    .. code-block:: bash
 
-      alias carta='~/CARTA-v1.1-remote/carta'
+      alias carta='~/CARTA-v1.2-remote/carta'
 
    If you use csh or tcsh, the syntax differs only in that there is no equals sign, therefore it would be 
   
    .. code-block:: tcsh
   
-      alias carta '~/Downloads/CARTA-v1.1-RedHat7.AppImage'
+      alias carta '~/Downloads/CARTA-v1.2-RedHat7.AppImage'
 
    and 
   
@@ -296,7 +296,7 @@ If CARTA is installed on a remote server, and users access the server via the ss
      OR
  
 
-     192.168.1.112:2000/?socketUrl=ws://192.168.1.112:3000
+     192.168.1.212:2000/?socketUrl=ws://192.168.1.212:3000
  
      Press ctrl+c to exit
 
@@ -332,7 +332,7 @@ If CARTA is installed on a remote server, and users access the server via the ss
      OR
 
  
-     192.168.1.112:5678/?socketUrl=ws://192.168.1.112:1234
+     192.168.1.212:5678/?socketUrl=ws://192.168.1.212:1234
  
      Press ctrl+c to exit
 
