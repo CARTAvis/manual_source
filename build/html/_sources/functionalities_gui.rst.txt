@@ -40,6 +40,7 @@ Server-side authentication
 --------------------------
 Desktop users can skip this section as it is only relevant to the CARTA-server application and server-side administration. 
 
+
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -119,7 +120,7 @@ CARTA utilizes an efficient approach, "tiled rendering", to display a raster ima
    <img src="_static/carta_fn_tiledRendering.png" 
         style="width:80%;height:auto;">
 
-The performace of tiled rendering can be customized with the preferences dialogue, **File** -> **Preferences** -> **Performance**. The default values are chosen to assure raster images are displayed efficiently with sufficient accuracy. Advanced users may refine the setup if necessary. For example, when using the server version under poor internet condition, compression quality might be lowered down a bit to make the tile data smaller. Note that a smaller compression quality might introduce noticible artifacts on the raster image. Please use with caution. 
+The performace of tiled rendering can be customized with the preferences dialogue, **File** -> **Preferences** -> **Performance**. The default values are chosen to assure raster images are displayed efficiently with sufficient accuracy. Advanced users may refine the setup if necessary. For example, when using the server version under poor internet condition, compression quality might be lowered down a bit to make the tile data smaller. Note that a smaller compression quality might introduce noticible artifacts on the raster image. Please adjust with caution. 
 
 .. raw:: html
 
@@ -132,6 +133,12 @@ The performace of tiled rendering can be customized with the preferences dialogu
 
    .. _carta_helpdesk: carta_helpdesk@asiaa.sinica.edu.tw
 
+
+CARTA image viewing performance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The per-frame rendering approach helps to improve the performance of loading an image significantly. Traditionally when an image is loaded, the minimum and maximum of the entire image (cube) are looked for. This becomes a serious performance issue if the image (cube) size is extraordinary large (> several GB). In addition, applying the global minimum and maximum to render a raster image usually (if not often) results in a poorly rendered image if the dynamical range is high. Then users need to re-render the image repeatedly with refined boundary values. Re-rendering such a large image repeatedly further deduces user experiences.
+
+CARTA hopes to improve the image viewing experience by adopting GPU accelerated rendering with web browser technology. In addition, CARTA only renders an image with just enough image resolution (tiles and down-sampling). This combination results in a scalable and high-performance remote image viewer. The total file size is no longer a bottleneck. The determinative factors are 1) image size in x and y dimensions, 2) internet bandwidth, and 3) storage I/O, instead.
 
 
 
@@ -181,13 +188,6 @@ A set of colormaps adopted from `matplotlib <https://matplotlib.org/tutorials/co
         style="width:100%;height:auto;">
 
 
-CARTA image viewing performance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The per-frame rendering approach helps to improve the performance of loading an image significantly. Traditionally when an image is loaded, the minimum and maximum of the entire image (cube) are looked for. This becomes a serious performance issue if the image (cube) size is extraordinary large (> several GB). In addition, applying the global minimum and maximum to render a raster image usually (if not often) results in a poorly rendered image if the dynamical range is high. Then users need to re-render the image repeatedly with refined boundary values. Re-rendering such a large image repeatedly further deduces user experiences.
-
-CARTA hopes to improve the image viewing experience by adopting GPU rendering with web browser technology. In addition, CARTA only renders an image with just enough image resolution (down-sampling). This combination results in a high-performance remote image viewer. The total file size is no longer a bottleneck. The determinative factors are 1) image size in x and y dimensions, 2) internet bandwidth, and 3) storage I/O, instead.
-
-
 Changing image view
 ^^^^^^^^^^^^^^^^^^^
 CARTA provides different ways to change the image view. With a mouse, image zoom or pan actions are achieved by scrolling up/down or clicking, respectively, as demonstrated in the section :ref:`mouse_interaction_with_images`. Alternatively, the image can be changed to fit the image viewer, or to fit the screen resolution (i.e., screen resolution equals full image resolution), by using the buttons at the bottom-right corner of the image viewer. Zoom in and zoom out buttons are provided as well.  To change to different frames, channels, or stokes, please refer to the section :ref:`animator_intro`.
@@ -208,7 +208,6 @@ When the cursor is on the image viewer, pixel information at the cursor position
 * World coordinate of the current coordinate system. 
 * Image coordinate in pixel.
 * Pixel value.
-* Down-sample factor (if applicable).
 * Frequency, velocity, and reference frame (if applicable).
 
 
@@ -217,15 +216,14 @@ When the cursor is on the image viewer, pixel information at the cursor position
    <img src="_static/carta_fn_imageViewer_cursorInfo.png" 
         style="width:100%;height:auto;">
 
-When the coordinate system is changed (e.g., ICRS to Galactic), the displayed world coordinate will be changed accordingly. The precision is determined dynamically based on the image header and image zoom level. 
+When the coordinate system is changed (e.g., ICRS to Galactic), the displayed world coordinate will be changed accordingly. By default, they are displayed in decimal degrees for galactic and ecliptic sysyems, while for FK5, FK4, and ICRS systems, they are displayed in sexagesimal format. The precision of both formats is determined dynamically based on the image header and image zoom level. 
 
 The reference image coordinate (0,0) locates at the center of the bottom-left pixel of the image. Regardless the displayed image is down-sampled or not, the image coordinate always refers to full resolution image.
 
-When cursor is moving, the pixel value adopted from the down-sampled image is displayed. If image header provides sufficient information in the frequency/velocity domain, the frequency and velocity with the reference frame of the current channel will be shown.
+When cursor is moving, pixel value of the full resolution image is displayed. If image header provides sufficient information in the frequency/velocity domain, the frequency and velocity with the reference frame of the current channel will be shown.
 
 To stop/resume cursor update, press "**F**" key. When the cursor stops updating, the cursor information bar, cursor spatial profiler, cursor spectral profiler will stop updating too. 
 
-.. When the cursor stops moving by 200 ms, the pixel value will be updated to the pixel value at full image resolution. 
 
 
 Configuring an image plot
@@ -259,18 +257,50 @@ The restoring beam is shown at the bottom-left corner, if applicable.
 The image can be exported as a png image by clicking the "Export image" button at the bottom-right corner of the image viewer, or by "**File**" -> "**Export image**".
 
 
+HDF5 (IDIA schema) image support
+--------------------------------
+Except the CASA image format, the FITS format, and the MIRIAD format, CARTA also support images in the HDF5 format under the IDIA schema.  The IDIA schema is designed to ensure that efficient image visualization is retained even with extraordinary large image cubes (hundreds GB to a few TB). The HDF5 image file contains extra data to skip or to speed up expensive computations, such as per-cube histogram or spectral profile, etc. A brief outline of the content of an HDF5 image is provided below:
+
+* XYZW dataset (spatial-spatial-spectral-Stokes): similar to the FITS format
+* ZYXW dataset (swizzeled): rotated dataset
+* per-frame statistics: basic statistics of the XY plane
+* per-cube statistics: basic statistics of the XYZ cube
+* per-frame histogram: histogram of the pixel values of the XY plane
+* per-cube histogram: histogram of the XYZ cube
+
+Additional tiled image data, which will speed up the process of loading very large images significantly, will be added to the HDF5 image file in the near future. 
+
+.. _animator_intro:
+
+Animator
+--------
+The animator widget provides controls of image frames, channels, and stokes. When multiple images are loaded via **File** -> **Append image**, "Frame" slider will show up and allows users to switch between different loaded images. If an image file has multiple channels or stokes, "Channel" or "Stokes" slider will appear. The double slider right below the "Channel" slider allows users to specify a range of channel for animation playback. On the top there is a set of animation control buttons such play, stop, next, etc. The action will be applied to the slider with the activated radio button. As an example below, the action will be applied to the *channel* axis of the second stokes axis of the third image file. 
+
+
+.. raw:: html
+
+   <img src="_static/carta_fn_animator_widget.png" 
+        style="width:100%;height:auto;">
+
+
+
+The frame rate spin box controls the *desired* frame per second (fps). The *actual* frame rate depends on image size and internet condition. 
+
+.. note::
+   More animator features, such as playback modes (backward, bouncing), playback range and step, etc. will be available in future releases.   
+
+
 Region of interest
 ------------------
-As of version 1.1, CARTA supports region types:
+As of v1.2, CARTA supports the following region types:
 
 * rectangle (rotatable)
 * ellipse (rotatable)
 * square (rotatable; as a special case of rectangle; "**shift**" key + drag)
 * circle (as a special case of ellipse; "**shift**" key + drag)
-* point (single one only through "**F**" key)
+* point
+* polygon
 
-.. note::
-   In version 1.2, polygon and (multiple) point regions will be supported. Import/export region in the casa region text format (.crtf) or the ds9 region format (.reg) as a text file will be supported in version 1.2. 
 
 The creation and modification of regions are demonstrated in the section :ref:`mouse_interaction_with_regions`. To create a region, use the region button at the bottom-right corner of the image viewer, then use cursor to draw a region. CARTA allows regions to be created even if the region is outside the image. Keyboard shortcuts associated with regions are listed below.
 
@@ -281,19 +311,22 @@ The creation and modification of regions are demonstrated in the section :ref:`m
 +----------------------------------+----------------------------+-----------------------------+
 | Delete selected region           | del / backspace            | del / backspace             |
 +----------------------------------+----------------------------+-----------------------------+
-| Toggle region creation mode      | c                          | c                           |
+| Toggle region creation mode      | C                          | C                           |
 +----------------------------------+----------------------------+-----------------------------+
 | Deselect region                  | esc                        | esc                         |
 +----------------------------------+----------------------------+-----------------------------+
-| Corner-to-corner region creation | cmd + drag                 | ctrl + drag                 |
+| Switch region creation mode      | cmd + drag                 | ctrl + drag                 |
 +----------------------------------+----------------------------+-----------------------------+
 | Symmetric region creation        | shift + drag               | shift + drag                |
 +----------------------------------+----------------------------+-----------------------------+
 | Pan image (inside region)        | cmd + click / middle-click | ctrl + click / middle-click |
 +----------------------------------+----------------------------+-----------------------------+
+| Toggle current region lock       | L                          | L                           |
++----------------------------------+----------------------------+-----------------------------+
+| Unlock all regions               | shift + L                  | shift + L                   |
++----------------------------------+----------------------------+-----------------------------+
 
-
-All created regions are listed in the region list widget with basic region properties. To select a region (region state changes to "selected"), simply click on the region in the image viewer, or click on the region in the region list widget. To modify the properties of a selected region, double-click on a region in the image viewer or a region in the region list widget. The color, line style, name, location, and shape, of a region are all configurable with the region property dialog. To de-select a region, press "**esc**" key. To delete a selected region, press "**delete**" or "**backspace**" key.
+All created regions are listed in the region list widget with basic region properties. To select a region (region state changes to "selected"), simply click on the region in the image viewer, or click on the region in the region list widget. To modify the properties of a selected region, double-click on a region in the image viewer or a region in the region list widget. The color, line style, name, location, and shape, of a region are all configurable with the region property dialogue. To de-select a region, press "**esc**" key. To delete a selected region, press "**delete**" or "**backspace**" key. The activated region can be locked by pressing "**L**" key or by clicking the lock icon in the region list widget or region property dialogue. When a region is locked, it cannot be modified (resize, move, or delete) with mouse actions and the "**delete**" or "**backspace**" key. A locked region, however, can still be modified or delected via the region property dialogue. Locking a region could help the stituation when users want to modify overlapping regions, or could prevent modifying a region accidentally. 
 
 .. raw:: html
 
@@ -309,51 +342,61 @@ Region of interest enables practical image cube analysis through statistics, his
    </video>
 
 .. tip::
-   As of version 1.1, single mouse click may trigger image pan or region selection. If it is intended to pan to a position *inside* a region, hold "**command**" or "**ctrl**" key then click, or use middle-click if available.
+   Single mouse click may trigger image pan or region selection. If it is intended to pan to a position *inside* a region, hold "**command**" or "**ctrl**" key then click, or use middle-click if available.
 
 
+**Import and export regions**
 
-
-.. _animator_intro:
-
-Animator
---------
-The animator widget provides controls of image frames, channels, and stokes. When multiple images are loaded via **File** -> **Append image**, "Frame" slide bar will show up and allows users to switch between different loaded images. If an image file has multiple channels or stokes, "Channel" or "Stokes" slide bars will appear. On the top there is a set of animation control buttons such play, stop, next, etc. The action will be applied to the slide bar with the activated radio button. As an example below, the action will be applied to the *channel* axis of the second stokes axis of the third image file. 
-
+Regions, in world coordinate or in image coordinate, can be exported to a text file or imported from a text file. To import a region file, use the menu **File** -> **Import regions**. 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_animator_widget.png" 
+   <img src="_static/carta_fn_regionImport.png" 
         style="width:100%;height:auto;">
 
-
-
-The frame rate spin box controls the *desired* frame per second (fps). The *actual* frame rate depends on image size and internet condition. The "Req" index will display the requested frame index, while the "Current" index will display the actually displayed index in the image viewer. When the "play" button is triggered, the "Req" index will keep the number of the delayed frames to be comparable to the desired fps, if the image is large and/or the internet condition is poor.
+To export regions to a region file, use the meun **File** -> **Export regions**. All regions, except cursor, will be exported. 
 
 .. raw:: html
 
-   <video controls loop style="width:100%;height:auto;">
-     <source src="_static/carta_fn_animator_delayedFrame.mp4" type="video/mp4">
-   </video>
+   <img src="_static/carta_fn_regionExport.png" 
+        style="width:100%;height:auto;">
 
-.. note::
-   More animator features, such as playback modes (backward, bouncing), playback range and step, etc. will be available in release v1.2.   
+As of v1.2, CASA region text format (.crtf) is supported with some limitations. Currently only the 2D region defination is supported. Other properties, such as spectral range, reference frame, or decoration (line style, line width, etc.) will be supported in future releases. DS9 region format will be supported in the future releases too. 
+
+The currently supported crtf region syntax is summerized below:
+
+* Rectangle
+
+  * box[[x1, y1], [x2, y2]]
+  * centerbox[[x, y], [x_width, y_width]]
+  * rotbox[[x, y], [x_width, y_width], rotang]
+
+* Ellipse
+
+  * circle[[x, y], r]
+  * ellipse[[x, y], [bmaj, bmin], pa]
+
+* Polygon
+
+  * poly[[x1, y1], [x2, y2], [x3, y3], ...]
+
+* Point
+
+  * symbol[[x, y], .]
+
+Please refer to https://casa.nrao.edu/casadocs/casa-5.6.0/imaging/image-analysis/region-file-format for more detailed descriptions about the crtf syntax. 
+
 
 
 Spatial profiler
 ----------------
-Spatial profiler provides the spatial profiles of the current image at the cursor position. When the cursor is moving on the image, instant profiles derived from the (down-sampled) raster image are displayed. When the cursor stops moving for more than 200 ms, profiles derived from the full resolution image will be displayed instead. This allows users to inspect the image in an efficient way. The "F" key will disable and enable profile update. A marker "+" will be placed on the image to indicate the position of the profiles taken. 
+Spatial profiler provides the spatial profiles of the current image at the cursor position. When the cursor is moving on the image, profiles derived from the full resolution raster image are displayed. The "F" key will disable or enable profile update. When cursor update is disabled, a marker "+" will be placed on the image to indicate the position of the profiles taken. 
 
-When the cursor is on the image in the image viewer, the pointed pixel value (pixel index and pixel value) will be displayed at the bottom-left corner of the spatial profiler. When the cursor is on the spatial profiler graph, the pointed profile data will be displayed instead. 
-
-.. raw:: html
-
-   <video controls loop style="width:100%;height:auto;">
-     <source src="_static/carta_fn_spatialProfiler_demo.mp4" type="video/mp4">
-   </video>
+When displaying a spatial profile with the number of pixels more than the number of screen pixels of the spatial profiler widget, a *decimated* profile will be derived and displayed to users as an enhancement of performance. Min/max decimation of a profile is adopted to ensure profile features are preserved. In other words, positive and negative peaks should stay at the same screen pixels just like displaying the full resolution profile. When users keep zooming in the profile, decimation with narrower and narrower interval is applied dynamically. Full resolution profile is displayed when the number of screen pixels is more than the number of pixels of the profile to be displayed.  
 
 The interactions of the spatial profiler widget are demonstrated in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available to the right border. The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
 
+When the cursor is on the image in the image viewer, the pointed pixel value (pixel index and pixel value) will be displayed at the bottom-left corner of the spatial profiler. When the cursor is on the spatial profiler graph, the pointed profile data will be displayed instead. 
 
 .. raw:: html
 
@@ -362,21 +405,36 @@ The interactions of the spatial profiler widget are demonstrated in the section 
 
 
 .. note::
-   More flexibilities on how mean and rms values are derived will be provided in future releases. Profile fitting capability will be available in future release.   
+   More flexibilities on how mean and rms values are derived will be provided in future releases. Profile fitting capability will be available in future releases.   
 
 
 Spectral profiler
 -----------------
-Spectral profiler provides the spectral profile of the current image cube at the selected region. The default region is set to "Cursor". When the cursor stops moving by more than 200 ms (applicable to CASA, FITS, and MIRIAD image format), a spectral profile derived at the cursor position from the full resolution image cube will be displayed. For the HDF5-IDIA image format, throttled cursor update is applied since it is much more efficient to access cursor spectral profile from a rotated cube (ZXY) which is available from an HDF5-IDIA image. The "**F**" key will disable and enable profile update. A marker "+" will be placed on the image to indicate the position of the profile taken. 
+Spectral profiler provides the spectral profile of the current image cube at the selected region. The default region is set to "Cursor". The "**F**" key will disable or enable cursor profile update. When cursor update is disabled, a marker "+" will be placed on the image to indicate the position of the profile taken. 
 
-When regions are created, the spectral profiler widget can be configured to display a profile from a specific region with the "*region*" dropdown menu. Additional statistic types to compute the region spectral profile are available with the "*statistic*" dropdown menu (default to mean). If the image cube has multiple Stokes, the "*Stokes*" dropdown menu will be activated and defaulted to "current" which is synchronized with the selection in the animator. To view a specific Stokes, select with the "*Stokes*" dropdown menu.
+When requesting a spectral profile, a common disappointing user experience is that users may have to wait for an unknown amount of time to see the final result if the image cube is large. As an improvement on this aspect, CARTA supports *partial update* of spectral profile. Partial profiles will be periodically delivered to users while the full profile calculations are still ongoing. 
+
+.. raw:: html
+
+   <video controls loop style="width:100%;height:auto;">
+     <source src="_static/carta_fn_spectralProfiler_partialUpdate.mp4" type="video/mp4">
+   </video>
+
+
+When the property of a region (cursor or a regular region) is modified while the profile of the original region is being updated, the partial profile will disappear and a new partial profile cooresponding to the new region will start updating. If users modify the request of a spectral profile via the spectral profile widget before it is fully delivered, the original profile calculations will be cancelled and new profile calculations will start. In short, now CARTA should just focus on calculating and showing the profiles that users pay attention to. If a profile is no longer needed to be shown on the screen, the profile calculation will be cancelled immediately, instead of blocking and queueing up new profile requests. 
 
 
 .. raw:: html
 
    <video controls loop style="width:100%;height:auto;">
-     <source src="_static/carta_fn_spectralProfiler_demo.mp4" type="video/mp4">
+     <source src="_static/carta_fn_spectralProfiler_profileCancellation.mp4" type="video/mp4">
    </video>
+
+
+When displaying a spectral profile with the number of channels more than the number of screen pixels of the spectral profiler widget, a *decimated* profile will be derived and displayed to users as an enhancement of performance. Min/max decimation of a profile is adopted to ensure profile features are preserved. In other words, positive and negative peaks should stay at the same screen pixels just like displaying the full resolution profile. When users keep zooming in the profile, decimation with narrower and narrower interval is applied dynamically. Full resolution profile is displayed when the number of screen pixels is more than the number of pixels of the profile to be displayed. 
+
+When regions are created, the spectral profiler widget can be configured to display a profile from a specific region with the "*region*" dropdown menu. Additional statistic types to compute the region spectral profile are available with the "*statistic*" dropdown menu (default to mean). If the image cube has multiple Stokes, the "*Stokes*" dropdown menu will be activated and defaulted to "current" which is synchronized with the selection in the animator. To view a specific Stokes, select with the "*Stokes*" dropdown menu.
+
 
 Multiple spectral profile widgets can be configured to display different region spectral profiles. The widget with the selected region will be highlighted with a persistent blue box.
 
@@ -398,8 +456,30 @@ The bottom axis shows the spectral coordinate, while optional channel coordinate
 
 
 .. note::
-   More flexibilities on how mean and rms values are derived will be provided in future releases. Profile fitting capability will be available in future releases.
+   More flexibilities on how mean and rms values are derived will be provided in future releases. Enhancement of the spectral profile widget will be available in future releases.
 
+
+Stokes analysis widget
+----------------------
+Stokes analysis widget allows users to view basic polarization quantities of a multi-channel (number of channel > 1), multi-Stokes (IQU or IQUV) cube efficiently. The widget includes the following plots:
+
+* Stokes Q intensity and Stokes U intensity over the spectral axis
+* Linearly polarized intensity over the spectral axis
+* Linear polarization angle over the spectral axis
+* Stokes Q intensity versus Stokes U intensity
+
+The profiles can be zoomed and panned with mouse similar to the spatial profile widget or the  spectral profile widget (:ref:`mouse_interaction_with_charts`). The Stokes Q versus Stokes U scatter plot is color-encoded from red to blue with increasing frequencies. The profiles can be requested at the cursor position (single pixel) or over a region of interest. Fractional polarization quantities are also supported. Examples are given in the following figures. The first one is from real ALMA data, while the second one is from an artifical Stokes cube. 
+
+.. raw:: html
+
+   <img src="_static/carta_fn_Stokes_widget.png" 
+        style="width:100%;height:auto;">
+
+
+.. raw:: html
+
+   <img src="_static/carta_fn_Stokes_widget2.png" 
+        style="width:100%;height:auto;">
 
 
 Statistics widget
@@ -410,9 +490,6 @@ Statistics widget allows users to see statistics with respect to a selected regi
 
    <img src="_static/carta_fn_statistics_widget.png" 
         style="width:100%;height:auto;">
-
-.. note::
-   Flux density will be supported in version 1.2.
 
 
 Histogram widget
@@ -425,4 +502,4 @@ Histogram widget allows users to visualize data in a histogram with respect to a
         style="width:100%;height:auto;">
 
 .. note::
-   With v1.1, histogram bin width and bin count are automatically decided. Enhancement of the histogram widget, including histogram fitting, will be available in later releases. 
+   With v1.2, histogram bin width and bin count are automatically decided. Enhancement of the histogram widget, including histogram fitting, will be available in future releases. 

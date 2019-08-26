@@ -179,15 +179,12 @@ CARTA provides a number of preferences for users to customize the GUI, including
 
   * Compression quality (image): a parameter (1~32) to control the image quality with lossy compression. The higher the number is, the better quality the images are. Choose with caution. (default: 11) [effective immediately]
   * Compression quality (animation): a parameter (1~32) to control the animation quality with lossy compression. The higher the number is, the better quality the images are. Choose with caution. (default: 9) [effective immediately]
-  * GPU tile cache size (MB): the cache size of GPU for tiles (default: 512 MB)
-  * System tile cache size (MB): the cache size of system memory for tiles (default: 4096 MB)
+  * GPU tile cache size (number of tiles): the cache size of GPU for tiles (default: 512)
+  * System tile cache size (number of tiles): the cache size of system memory for tiles (default: 4096)
 
 * Log events
 
   * This is for debugging purpose. Normal users can skip this part.
-
-
-
 
 
 
@@ -233,14 +230,24 @@ Mouse interactions with region of interest
 
 Region creation
 ^^^^^^^^^^^^^^^
-A region can be created by firstly entering the region creation mode then dragging on the image viewer. To enter the region creation mode, click the *region* button at the bottom-right corner of the image viewer or press "**C**" key. Double-clicking the region icon brings up all available region types (rectangle, ellipse, polygon, and point, as of v1.2). For rectangle or ellipse, it can be created in the "center-to-corner" mode or the "corner-to-corner" mode, depending on the preference setting in the preference dialogue (**File** -> **Preferences** -> **Default region settings**). To temporarily switch to the other mode than the default, hold "**command**" (mac) or "**ctrl**" (linux) key then drag. "circle" and "square" regions are the special cases of ellipse and rectangle regions, respectively. These symmetric regions can be created by holding **shift** key then dragging.
-
+A region can be created by firstly entering the region creation mode then drawing on the image viewer. To enter the region creation mode, click the *region* button at the bottom-right corner of the image viewer or press "**C**" key. Double-clicking the region icon brings up all available region types (rectangle, ellipse, polygon, and point, as of v1.2). To create a point region, a single click will do. For rectangle or ellipse, it can be created in the "center-to-corner" mode or the "corner-to-corner" mode, depending on the preference setting in the preference dialogue (**File** -> **Preferences** -> **Default region settings**). To temporarily switch to the other mode than the default, hold "**command**" (mac) or "**ctrl**" (linux) key then drag. "circle" and "square" regions are the special cases of ellipse and rectangle regions, respectively. These symmetric regions can be created by holding **shift** key then dragging.
 
 .. raw:: html
 
    <video controls loop style="width:100%;height:auto;">
-     <source src="_static/carta_roi_creation.mp4" type="video/mp4">
+     <source src="_static/carta_fn_roi_creation1.mp4" type="video/mp4">
    </video>
+
+
+To create a polygon region, start with a click followed by a series of clicks to define anchors of a desired polygonal shape and finish with a double click. CARTA detects "complex" polygon (polygon with intersections) and shows it in pink color. Spectral profiles, statistics, or histogram of a complex polygon can still be requested but please note that the results may be beyond users' expectations since the actual pixel coverage depends on *how* a complex polygon is created. 
+
+.. raw:: html
+
+   <video controls loop style="width:100%;height:auto;">
+     <source src="_static/carta_fn_roi_creation2.mp4" type="video/mp4">
+   </video>
+
+
 
 
 Region selection and modification
@@ -253,12 +260,20 @@ Click on a region will change the region state to "selected" and the selected re
      <source src="_static/carta_roi_selection.mp4" type="video/mp4">
    </video>
 
-Double-click on a region or a region in the region list brings up the region property dialog. The dialog allows users to modify region's name, location, shapes, and region cosmetics. Pressing "**delete**" key will remove the selected region. 
+Double-click on a region or a region in the region list brings up the region property dialogue. The dialogue allows users to modify region's name, location, shapes, and region cosmetics. Pressing "**delete**" key will remove the selected region. 
 
 .. raw:: html
 
    <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_roi_modification.mp4" type="video/mp4">
+   </video>
+
+For a polygon region, new anchors can be added by clicking on the line segment. An anchor can be delected by double clicking on the anchor.
+
+.. raw:: html
+
+   <video controls loop style="width:100%;height:auto;">
+     <source src="_static/carta_fn_roi_creation3.mp4" type="video/mp4">
    </video>
 
 
