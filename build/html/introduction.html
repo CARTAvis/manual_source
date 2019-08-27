@@ -97,18 +97,18 @@
 </div>
 <div class="section" id="client-server-architecture">
 <h2>Client-Server architecture<a class="headerlink" href="#client-server-architecture" title="Permalink to this headline">¶</a></h2>
-<p>CARTA uses a client-server architecture which is suitable for visualizing images with large file sizes (GB to TB) easily obtained from ALMA or VLA observations. It is practically difficult to process such a huge file with personal computer or laptop. By using a client-server architecture, computation and data storage are handled by remote enterprise-class servers or clusters with high performance storage, while processed products are sent to clients only for visualization with modern web features, such as GPU-accelerated rendering. This architecture also enables users to interact with the ALMA and VLA science archives by using CARTA as an interface.</p>
+<p>CARTA uses a client-server architecture which is suitable for visualizing images with large file sizes (GB to TB) easily obtained from ALMA, VLA, or SKA pathfinders observations. It is practically difficult to process such a huge file with personal computer or laptop. By using a client-server architecture, computation and data storage are handled by remote enterprise-class servers or clusters with high performance storage, while processed products are sent to clients only for visualization with modern web features, such as GPU-accelerated rendering. This architecture also enables users to interact with the ALMA and VLA science archives by using CARTA as an interface.</p>
 <img src="_static/carta_intro_serverClient.png"
      style="width:100%;height:auto;"></div>
 <div class="section" id="codebase-and-releases">
 <h2>Codebase and releases<a class="headerlink" href="#codebase-and-releases" title="Permalink to this headline">¶</a></h2>
 <p>CARTA is an open-source project. Its source code is available at <a class="reference external" href="https://github.com/CARTAvis">https://github.com/CARTAvis</a>.</p>
 <p>CARTA ultimately will have two distributions: CARTA-server and CARTA-desktop. The former is designed for handling large datasets with remote servers, while the later is suitable for smaller datasets (a few thousand pixels in the x and y dimensions) which can still be handled with personal computer or laptop.</p>
-<p>With the <em>current</em> version 1.1 desktop release, CARTA supports two use cases. For users using a laptop or a desktop with a monitor, please use the “Local” version. For users using a remote server via the ssh protocol, please use the “Remote” version. Installation guides for these two versions are provided in the section <a class="reference internal" href="installation_and_configuration.html#installation-configuration"><span class="std std-ref">Installation and configuration</span></a>.</p>
+<p>With the <em>current</em> version 1.2 desktop release, CARTA supports two use cases. For users using a laptop or a desktop with a monitor, please use the “Local” version. For users using a remote server via the ssh protocol, please use the “Remote” version. Installation guides for these two versions are provided in the section <a class="reference internal" href="installation_and_configuration.html#installation-configuration"><span class="std std-ref">Installation and configuration</span></a>.</p>
 <p>The release plan and major goals are the following:</p>
 <ul class="simple">
-<li>v1.0: Basic image and profile viewing capability (released late December 2018).</li>
-<li>v1.1: Initial support of region of interest, ROI (early May 2019; <em>current release</em>)<ul>
+<li>v1.0: Basic image and profile viewing capability (released 29th December 2018)</li>
+<li>v1.1: Initial support of region of interest, ROI (released 2nd May 2019)<ul>
 <li>basic ROI for single image including rectangle and ellipse</li>
 <li>ROI statistics</li>
 <li>ROI spectral profile</li>
@@ -118,29 +118,29 @@
 <li>Performance and memory usage improvements</li>
 </ul>
 </li>
-<li>v1.2: performance and usability improvement (mid 2019)<ul>
+<li>v1.2: performance and usability improvement (<strong>current release</strong>)<ul>
 <li>ROI: polygon and point</li>
 <li>ROI: import/export</li>
 <li>tiled rendering</li>
-<li>profile delivery optimization</li>
+<li>profile delivery enhancement</li>
 <li>performance improvement</li>
 <li>usability improvement</li>
 <li>server support improvement</li>
 </ul>
 </li>
-<li>v1.3: WCS group (Q3 2019)<ul>
+<li>v1.3: WCS group (Q4 2019)<ul>
 <li>WCS group, alignment of multiple images</li>
 <li>contour rendering</li>
 <li>ROI in WCS group</li>
 </ul>
 </li>
-<li>v1.4: Scripting interface and image analytics tools (Q4 2019)<ul>
+<li>v1.4: Scripting interface and image analytics tools<ul>
 <li>multi-panel image view</li>
 <li>image analytics tools</li>
 <li>scripting interface</li>
 </ul>
 </li>
-<li>v1.5: Interactive clean (Q4 2019/Q1 2020)</li>
+<li>v1.5: Interactive clean</li>
 </ul>
 </div>
 <div class="section" id="getting-help">

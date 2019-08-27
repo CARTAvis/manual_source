@@ -14,14 +14,14 @@ With version 1.2, CARTA provides the following widgets/dialogues for image view 
 * Stokes analysis widget: to view basic polarization quantities
 * log widget: to view program logs.
 
-In addition, version 1.2 supports server authentication via the "Lightweight Directory Access Protocol" (LDAP). When using the server version, users can log in with their user name and password indentical to the server hosting their images (either local or network storage). To share access of a given folder to collaborators, users can just change the permission via the "chmod" command. 
+In addition, the server version of version 1.2 supports server authentication via the "Lightweight Directory Access Protocol" (LDAP). When using the server version, users can log in with their user name and password identical to the server hosting their images (either local or network storage). To share access of a given folder to collaborators, users can just change the permission via the "chmod" command. 
 
 The support of the HDF5 image (IDIA schema) is further enhanced in verson 1.2. Rotated dataset and pre-calculated quantities, such as statistics or histograms, are properly utilized to enhance performance and user experience.  
 
 
 Server-side status
 ------------------
-As CARTA is fundamentally a client-server application, it would be good to know the status of the server side at the client side. This is also useful for the desktop version to know if the application runs normally or not. The server status is now displayed as a circular icon at the top-right corner of the main window. The connection latency can be seen by hovering over the icon. There are three kinds of status:
+As CARTA is fundamentally a client-server application, it would be good to know the status of the server side at the client side. This is also useful for the desktop version to know if the application runs normally or not. The server status is displayed as a circular icon at the top-right corner of the main window. The connection latency can be seen by hovering over the icon. There are three kinds of status:
 
 * Green: this means that the server side is initially connected successfully.
 * Orange: this means that the initial connection to the server side was broken (e.g., unstable internet) but has been reconnected. Please note that CARTA may behave abnormally in this case.  
@@ -33,19 +33,8 @@ As CARTA is fundamentally a client-server application, it would be good to know 
         style="width:100%;height:auto;">
 
 .. note::
-   If CARTA behaves abnormally or stops responding, please check the server-side status icon and connection latency. If it becomes orange, the internet connection might be interrupted. If it becomes red, the internet connection is lost, or the backend process has been terminated. It is recommended to reload CARTA if you see orange or red icon. If the situation reoccurs, please contact us through the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw). 
+   If CARTA behaves abnormally or stops responding, please check the server-side status icon and connection latency. If it becomes orange, the internet connection might have been interrupted. If it becomes red, the internet connection is lost, or the backend process has been terminated. It is highly recommended to reload CARTA if you see orange or red icon. If the situation reoccurs, please contact us through the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw). 
 
-
-Server-side authentication
---------------------------
-Desktop users can skip this section as it is only relevant to the CARTA-server application and server-side administration. 
-
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
 File browser
@@ -78,6 +67,12 @@ In the above example, users will see a list of images at "/scratch/images/Orion"
 .. note::
    When viewing images in appending mode, alignments in the world coordinate system (WCS) and the frequency/velocity space are not available in this version. This feature is expected in v1.3.
 
+.. note::
+   Position-velocity (PV) images are not currently supported yet. 
+
+.. note::
+   The ability to close a loaded image will be addressed in v1.3.
+
 .. warning::
    When the file information of an image cube with a *per-plane-beam* is requested, CARTA will spend a significant amount of time to calculate the beam information. This also applies when opening images with a per-plane-beam. This is a known issue and the development team will try to solve it in future releases.
 
@@ -102,7 +97,7 @@ HDF5 (IDIA schema) image support
 Except the CASA image format, the FITS format, and the MIRIAD format, CARTA also support images in the HDF5 format under the IDIA schema.  The IDIA schema is designed to ensure that efficient image visualization is retained even with extraordinary large image cubes (hundreds GB to a few TB). The HDF5 image file contains extra data to skip or to speed up expensive computations, such as per-cube histogram or spectral profile, etc. A brief outline of the content of an HDF5 image is provided below:
 
 * XYZW dataset (spatial-spatial-spectral-Stokes): similar to the FITS format
-* ZYXW dataset (swizzeled): rotated dataset
+* ZYXW dataset: rotated dataset
 * per-frame statistics: basic statistics of the XY plane
 * per-cube statistics: basic statistics of the XYZ cube
 * per-frame histogram: histogram of the pixel values of the XY plane
@@ -150,19 +145,39 @@ The performace of tiled rendering can be customized with the preferences dialogu
    .. _carta_helpdesk: carta_helpdesk@asiaa.sinica.edu.tw
 
 
-CARTA image viewing performance
+CARTA image loading performance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The per-frame rendering approach helps to improve the performance of loading an image significantly. Traditionally when an image is loaded, the minimum and maximum of the entire image (cube) are looked for. This becomes a serious performance issue if the image (cube) size is extraordinary large (> several GB). In addition, applying the global minimum and maximum to render a raster image usually (if not often) results in a poorly rendered image if the dynamical range is high. Then users need to re-render the image repeatedly with refined boundary values. Re-rendering such a large image repeatedly further deduces user experiences.
+The per-frame rendering approach helps to improve the performance of loading an image significantly. Traditionally when an image is loaded, the minimum and maximum of the entire image (cube) are computed first before image rendering. This becomes a serious performance issue if the image (cube) size is extraordinary large (> several GB). In addition, applying the global minimum and maximum to render a raster image usually (if not often) results in a poorly rendered image if the dynamical range is high. Then users need to re-render the image repeatedly with refined boundary values. Re-rendering such a large image repeatedly further deduces user experiences.
 
-CARTA hopes to improve the image viewing experience by adopting GPU accelerated rendering with web browser technology. In addition, CARTA only renders an image with just enough image resolution (tiles and down-sampling). This combination results in a scalable and high-performance remote image viewer. The total file size is no longer a bottleneck. The determinative factors are 1) image size in x and y dimensions, 2) internet bandwidth, and 3) storage I/O, instead.
+CARTA hopes to improve the image viewing experience by adopting GPU accelerated rendering with web browser technology. In addition, CARTA only renders an image with just enough image resolution (tiles and down-sampling). This combination results in a scalable and high-performance remote image viewer. The total file size is no longer a bottleneck. The determinative factors are: 1) image size in x and y dimensions, 2) internet bandwidth, and 3) storage I/O, instead. For a laptop with 8 GB of RAM, the largest image it can load without swapping is about 40000 pixels by 40000 pixels (assuming most of the RAM are free before loading image). 
 
+The approximated RAM usage of loading images with various spatial sizes is summarized below.
 
++----------------------------------+----------------------------+
+| Image size (x, y) [pixel]        | RAM usage                  |
++==================================+============================+
+| 512                              | 1 MB                       | 
++----------------------------------+----------------------------+
+| 1024                             | 4 MB                       |
++----------------------------------+----------------------------+
+| 2048                             | 16 MB                      | 
++----------------------------------+----------------------------+
+| 4096                             | 64 MB                      |
++----------------------------------+----------------------------+
+| 8192                             | 256 MB                     | 
++----------------------------------+----------------------------+
+| 16384                            | 1 GB                       |
++----------------------------------+----------------------------+
+| 32768                            | 4 GB                       | 
++----------------------------------+----------------------------+
+| 65536                            | 16 GB                      |
++----------------------------------+----------------------------+
 
 Render configuration of a raster image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The render configuration widget controls how a raster image is rendered in the image viewer. On the top, there is a row of buttons with different clip levels plus a custom button. Below there is a plot showing the per-channel histogram (logarithmic scale) with a bin count equals to the geometric mean of the image size (x and y). The two vertical red bars indicate the two clip values of a colormap. Interaction with a chart, such as the histogram, is demonstrated in the section :ref:`mouse_interaction_with_charts`. On the right, there is a column of options, such as histogram type, scaling function, color map, clip values, and control parameter of a scaling function (if applicable). Extra options to configure the histogram plot are hidden in the tool box on the right border. The histogram can be exported as a png image or a text file in tsv format.
 
-By default, CARTA calculates per-channel histogram. When per-cube histogram is requested, a warning message and a progress widget will show up. Calculating a per-cube histogram can be time-consuming for large image cubes. Users may cancel the request at any time by pressing the cancel button in the progress widget. If the image is in the HDF5-IDIA format, the pre-calculated per-cube histogram will be loaded directly and displayed mostly instantly. 
+By default, CARTA calculates per-channel histogram. When per-cube histogram is requested, a warning message and a progress dialogue will show up. Calculating a per-cube histogram can be time-consuming for large image cubes. Users may cancel the request at any time by pressing the cancel button in the progress dialogue. If the image is in the HDF5 format (IDIA schema), the pre-calculated per-cube histogram will be loaded directly and displayed mostly instantly. 
 
 .. raw:: html
 
@@ -203,6 +218,7 @@ A set of colormaps adopted from `matplotlib <https://matplotlib.org/tutorials/co
    <img src="_static/carta_fn_renderConfig_colormaps.png" 
         style="width:100%;height:auto;">
 
+The default scaling function, colormap, and percentile rank can be customized via the menu **File** -> **Preferences** -> **Default render config**.
 
 Changing image view
 ^^^^^^^^^^^^^^^^^^^
@@ -232,7 +248,7 @@ When the cursor is on the image viewer, pixel information at the cursor position
    <img src="_static/carta_fn_imageViewer_cursorInfo.png" 
         style="width:100%;height:auto;">
 
-When the coordinate system is changed (e.g., ICRS to Galactic), the displayed world coordinate will be changed accordingly. By default, they are displayed in decimal degrees for galactic and ecliptic sysyems, while for FK5, FK4, and ICRS systems, they are displayed in sexagesimal format. The precision of both formats is determined dynamically based on the image header and image zoom level. 
+When the coordinate system is changed (e.g., ICRS to Galactic), the displayed world coordinate will be changed accordingly. By default, they are displayed in decimal degrees for Galactic and Ecliptic systems, while for FK5, FK4, and ICRS systems, they are displayed in sexagesimal format. The precision of both formats is determined dynamically based on the image header and image zoom level. 
 
 The reference image coordinate (0,0) locates at the center of the bottom-left pixel of the image. Regardless the displayed image is down-sampled or not, the image coordinate always refers to full resolution image.
 
@@ -272,25 +288,31 @@ The restoring beam is shown at the bottom-left corner, if applicable.
 
 The image can be exported as a png image by clicking the "Export image" button at the bottom-right corner of the image viewer, or by "**File**" -> "**Export image**".
 
+.. note::
+   The ability to customize the appearance of a beam will be provided in future releases. 
+
+.. note::
+   Currently displaying beams of a cube with per-plane-beam is not supported.  
+
 
 .. _animator_intro:
 
 Animator
 --------
-The animator widget provides controls of image frames, channels, and stokes. When multiple images are loaded via **File** -> **Append image**, "Frame" slider will show up and allows users to switch between different loaded images. If an image file has multiple channels or stokes, "Channel" or "Stokes" slider will appear. The double slider right below the "Channel" slider allows users to specify a range of channel for animation playback. On the top there is a set of animation control buttons such play, stop, next, etc. The action will be applied to the slider with the activated radio button. As an example below, the action will be applied to the *channel* axis of the second stokes axis of the third image file. 
+The animator widget provides controls of image frames, channels, and stokes. When multiple images are loaded via **File** -> **Append image**, "Frame" slider will show up and allows users to switch between different loaded images. If an image file has multiple channels and/or stokes, "Channel" and/or "Stokes" slider will appear. The double slider right below the "Channel" slider allows users to specify a range of channels for animation playback. On the top there is a set of animation control buttons such play, next, etc. The action will be applied to the slider with the activated radio button. As an example below, the action will be applied to the *channel* axis of the second stokes axis of the third image file, and the animation range is from the second channel to the last channel. 
 
 
 .. raw:: html
 
    <img src="_static/carta_fn_animator_widget.png" 
-        style="width:100%;height:auto;">
+        style="width:80%;height:auto;">
 
 
 
 The frame rate spin box controls the *desired* frame per second (fps). The *actual* frame rate depends on image size and internet condition. 
 
 .. note::
-   More animator features, such as playback modes (backward, bouncing), playback range and step, etc. will be available in future releases.   
+   More animator features, such as playback modes (backward, bouncing), and playback step, etc. will be available in future releases.   
 
 
 Region of interest
@@ -329,12 +351,25 @@ The creation and modification of regions are demonstrated in the section :ref:`m
 | Unlock all regions               | shift + L                  | shift + L                   |
 +----------------------------------+----------------------------+-----------------------------+
 
+.. tip::
+  "**backspace**" does not delete a region...
+
+  If using CARTA remote mode in Firefox on MacOS, you may find the "**backspace**" key navigates back a page instead of removing a region. This behaviour can be prevented by modifying your Firefox web browser settings:
+
+  1. Enter about:config in the address bar.
+  2. Click "I accept the risk!"
+  3. A search bar appears at the top of a long list of preferences. Search for "browser.backspace_action"
+  4. It will likely have a value of 0. Double click it, and then modify it to a value of "2".
+  5. Close the about:config tab and now backspace will no longer navigate back a page.
+
 All created regions are listed in the region list widget with basic region properties. To select a region (region state changes to "selected"), simply click on the region in the image viewer, or click on the region in the region list widget. To modify the properties of a selected region, double-click on a region in the image viewer or a region in the region list widget. The color, line style, name, location, and shape, of a region are all configurable with the region property dialogue. To de-select a region, press "**esc**" key. To delete a selected region, press "**delete**" or "**backspace**" key. The activated region can be locked by pressing "**L**" key or by clicking the lock icon in the region list widget or region property dialogue. When a region is locked, it cannot be modified (resize, move, or delete) with mouse actions and the "**delete**" or "**backspace**" key. A locked region, however, can still be modified or delected via the region property dialogue. Locking a region could help the stituation when users want to modify overlapping regions, or could prevent modifying a region accidentally. 
 
 .. raw:: html
 
    <img src="_static/carta_fn_roi.png" 
         style="width:100%;height:auto;">
+
+CARTA checks if a polygon is simple or complex. If a polygon is detected as complex, its color will be in pink as a warning. Spectral profile, statistics, or histogram of a complex polygon can still be requested. However, the outcome may be beyond users' expectation. The enclosed pixels depend on *how* a complex polygon is constructed. Please use complex polygon with caution. 
 
 Region of interest enables practical image cube analysis through statistics, histogram, and spectral profiler widgets. When a region is selected, the region associated widgets will be highlighted with a persistent blue box as demonstrated below.
 
@@ -347,10 +382,7 @@ Region of interest enables practical image cube analysis through statistics, his
 .. tip::
    Single mouse click may trigger image pan or region selection. If it is intended to pan to a position *inside* a region, hold "**command**" or "**ctrl**" key then click, or use middle-click if available.
 
-
-**Import and export regions**
-
-Regions, in world coordinate or in image coordinate, can be exported to a text file or imported from a text file. To import a region file, use the menu **File** -> **Import regions**. 
+As of v1.2, CARTA supports basic region import and export capability. Regions, in world coordinate or in image coordinate, can be exported to a text file or imported from a text file. To import a region file, use the menu **File** -> **Import regions**. 
 
 .. raw:: html
 
@@ -366,7 +398,7 @@ To export regions to a region file, use the meun **File** -> **Export regions**.
 
 As of v1.2, CASA region text format (.crtf) is supported with some limitations. Currently only the 2D region defination is supported. Other properties, such as spectral range, reference frame, or decoration (line style, line width, etc.) will be supported in future releases. DS9 region format will be supported in the future releases too. 
 
-The currently supported crtf region syntax is summerized below:
+The currently supported CRTF region syntax is summerized below:
 
 * Rectangle
 
@@ -387,7 +419,11 @@ The currently supported crtf region syntax is summerized below:
 
   * symbol[[x, y], .]
 
-Please refer to https://casa.nrao.edu/casadocs/casa-5.6.0/imaging/image-analysis/region-file-format for more detailed descriptions about the crtf syntax. 
+Please refer to https://casa.nrao.edu/casadocs/casa-5.6.0/imaging/image-analysis/region-file-format for more detailed descriptions about the CRTF syntax. 
+
+.. note::
+   Full support of the CRTF and DS9 region formats will be available in future releases. 
+
 
 
 
@@ -493,6 +529,9 @@ Statistics widget allows users to see statistics with respect to a selected regi
 
    <img src="_static/carta_fn_statistics_widget.png" 
         style="width:100%;height:auto;">
+
+.. note::
+   Flux density (Jy) will be supported in a patch release before v1.3.
 
 
 Histogram widget

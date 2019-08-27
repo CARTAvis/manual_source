@@ -7,7 +7,7 @@ CARTA is the *Cube Analysis and Rendering Tool for Astronomy*, a new image visua
 
 Client-Server architecture
 --------------------------
-CARTA uses a client-server architecture which is suitable for visualizing images with large file sizes (GB to TB) easily obtained from ALMA or VLA observations. It is practically difficult to process such a huge file with personal computer or laptop. By using a client-server architecture, computation and data storage are handled by remote enterprise-class servers or clusters with high performance storage, while processed products are sent to clients only for visualization with modern web features, such as GPU-accelerated rendering. This architecture also enables users to interact with the ALMA and VLA science archives by using CARTA as an interface. 
+CARTA uses a client-server architecture which is suitable for visualizing images with large file sizes (GB to TB) easily obtained from ALMA, VLA, or SKA pathfinders observations. It is practically difficult to process such a huge file with personal computer or laptop. By using a client-server architecture, computation and data storage are handled by remote enterprise-class servers or clusters with high performance storage, while processed products are sent to clients only for visualization with modern web features, such as GPU-accelerated rendering. This architecture also enables users to interact with the ALMA and VLA science archives by using CARTA as an interface. 
 
 
 .. raw:: html
@@ -21,13 +21,13 @@ CARTA is an open-source project. Its source code is available at https://github.
 
 CARTA ultimately will have two distributions: CARTA-server and CARTA-desktop. The former is designed for handling large datasets with remote servers, while the later is suitable for smaller datasets (a few thousand pixels in the x and y dimensions) which can still be handled with personal computer or laptop. 
 
-With the *current* version 1.1 desktop release, CARTA supports two use cases. For users using a laptop or a desktop with a monitor, please use the "Local" version. For users using a remote server via the ssh protocol, please use the "Remote" version. Installation guides for these two versions are provided in the section :ref:`installation_configuration`.
+With the *current* version 1.2 desktop release, CARTA supports two use cases. For users using a laptop or a desktop with a monitor, please use the "Local" version. For users using a remote server via the ssh protocol, please use the "Remote" version. Installation guides for these two versions are provided in the section :ref:`installation_configuration`.
 
 The release plan and major goals are the following:
 
-* v1.0: Basic image and profile viewing capability (released late December 2018).
+* v1.0: Basic image and profile viewing capability (released 29th December 2018)
 
-* v1.1: Initial support of region of interest, ROI (early May 2019; *current release*)
+* v1.1: Initial support of region of interest, ROI (released 2nd May 2019)
 
   * basic ROI for single image including rectangle and ellipse
   * ROI statistics
@@ -37,29 +37,29 @@ The release plan and major goals are the following:
   * Improved remote version
   * Performance and memory usage improvements
 
-* v1.2: performance and usability improvement (mid 2019)
+* v1.2: performance and usability improvement (**current release**)
 
   * ROI: polygon and point
   * ROI: import/export
   * tiled rendering
-  * profile delivery optimization
+  * profile delivery enhancement
   * performance improvement
   * usability improvement
   * server support improvement
 
-* v1.3: WCS group (Q3 2019)
+* v1.3: WCS group (Q4 2019)
 
   * WCS group, alignment of multiple images
   * contour rendering
   * ROI in WCS group
 
-* v1.4: Scripting interface and image analytics tools (Q4 2019)
+* v1.4: Scripting interface and image analytics tools
 
   * multi-panel image view
   * image analytics tools
   * scripting interface
 
-* v1.5: Interactive clean (Q4 2019/Q1 2020)
+* v1.5: Interactive clean
 
 
 

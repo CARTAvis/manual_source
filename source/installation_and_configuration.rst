@@ -427,3 +427,14 @@ In this section, we provide common issues we have experienced so far and provide
 * The RedHat7 AppImage does not open and it prints a message suggesting to extract the AppImage using the "-\\-appimage-extract" flag.
 
   This error is due to lack of FUSE (File System in Userspace) support. We suspect that FUSE support in RedHat7 systems may be disabled in some institute environments for security reasons. If that is the case, we recommend using the 'remote' version of CARTA instead.
+
+
+* "**backspace**" does not delete a region...
+
+  If using CARTA remote mode in Firefox on MacOS, you may find the "**backspace**" key navigates back a page instead of removing a region. This behaviour can be prevented by modifying your Firefox web browser settings:
+
+  1. Enter about:config in the address bar.
+  2. Click "I accept the risk!"
+  3. A search bar appears at the top of a long list of preferences. Search for "browser.backspace_action"
+  4. It will likely have a value of 0. Double click it, and then modify it to a value of "2".
+  5. Close the about:config tab and now backspace will no longer navigate back a page.
