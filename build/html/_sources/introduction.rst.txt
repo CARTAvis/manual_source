@@ -88,7 +88,7 @@ The development of the CARTA project is a joint effort from (in alphabetical ord
 
 Software citation
 -----------------
-The CARTA team acknowledges your citation when using CARTA for publications.
+Please use the following DOI as a citation when using CARTA for publications.
 
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3377984.svg
    :target: https://doi.org/10.5281/zenodo.3377984
