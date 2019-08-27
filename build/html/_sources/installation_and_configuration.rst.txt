@@ -52,27 +52,33 @@ CARTA-desktop: Ubuntu 16.04 LTS/18.04 LTS
 -----------------------------------------
 Please follow the steps:
 
-1. `Download the AppImage file <https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-ubuntu.AppImage>`_
+1. `Download the tgz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-ubuntu.tgz>`_
 
-2. Make the AppImage file executable
+2. Unzip the tgz file
 
    .. code-block:: bash
 
-      chmod 755 CARTA-v1.2-ubuntu.AppImage 
+      tar -xvf CARTA-v1.2-ubuntu.tgz
 
-3. To run CARTA either 
+3. Make the AppImage file executable
+
+   .. code-block:: bash
+
+      chmod 755 CARTA.AppImage 
+
+4. To run CARTA either 
    
    a) Execute the AppImage directly
    
    .. code-block:: bash
       
-      ./CARTA-v1.2-ubuntu.AppImage
+      ./CARTA.AppImage
    
    b) (**Highly recommended**) Create an alias in your shell script file. For example, if you are using bash and the AppImage happens to be in your Downloads folder, open ~/.bashrc file in a text editor and add a line
 
    .. code-block:: bash
 
-      alias carta='~/Downloads/CARTA-v1.2-ubuntu.AppImage'
+      alias carta='~/Downloads/CARTA.AppImage'
    
    Then, after entering source ~/.bashrc in the terminal, you will be able to start carta by simply typing “carta”.
 
@@ -85,7 +91,7 @@ Please follow the steps:
    
    .. code-block:: tcsh
    
-      alias carta '~/Downloads/CARTA-v1.2-ubuntu.AppImage'
+      alias carta '~/Downloads/CARTA.AppImage'
    
    and 
    
@@ -108,7 +114,7 @@ Please follow the steps:
    
    .. code-block:: bash
    
-      ./CARTA-v1.2-ubuntu.AppImage --remote
+      ./CARTA.AppImage --remote
       
    or, if an alias is created, 
    
@@ -121,13 +127,19 @@ CARTA-desktop: Redhat 7
 -----------------------
 Please follow the steps:
 
-1. `Download the AppImage file <https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-RedHat7.AppImage>`_
+1. `Download the tgz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-RedHat7.tgz>`_
+
+2. Unzip the tgz file
+
+   .. code-block:: bash
+
+      tar -xvf CARTA-v1.2-RedHat7.tgz
 
 2. Make the AppImage file executable.
 
 .. code-block:: bash
 
-   chmod 755 CARTA-v1.2-RedHat7.AppImage
+   chmod 755 CARTA.AppImage
 
 3. To run CARTA either 
 
@@ -135,13 +147,13 @@ Please follow the steps:
   
   .. code-block:: bash 
   
-     ./CARTA-v1.2-RedHat7.AppImage
+     ./CARTA.AppImage
   
   b) (**Highly recommended**) Set up an alias in your shell script file. For example, if your are using bash and the AppImage happens to be in your Downloads folder, open your ~/.bashrc file in a text editor and add a line
   
   .. code-block:: bash
 
-     alias carta='~/Downloads/CARTA-v1.2-RedHat7.AppImage'
+     alias carta='~/Downloads/CARTA.AppImage'
 
   Then, after entering source ~/.bashrc in the terminal, you will be able to start carta by simply typing “carta”.
   
@@ -154,7 +166,7 @@ Please follow the steps:
   
   .. code-block:: tcsh
   
-     alias carta '~/Downloads/CARTA-v1.2-RedHat7.AppImage'
+     alias carta '~/Downloads/CARTA.AppImage'
 
   and 
   
@@ -193,7 +205,7 @@ Please follow the steps:
 
    .. code-block:: bash
 
-     ./CARTA-v1.2-RedHat7.AppImage --remote 
+     ./CARTA.AppImage --remote 
 
    or
 
@@ -238,7 +250,7 @@ Please follow the steps:
   
    .. code-block:: tcsh
   
-      alias carta '~/Downloads/CARTA-v1.2-RedHat7.AppImage'
+      alias carta '~/Downloads/CARTA-v1.2-remote/carta'
 
    and 
   
