@@ -16,8 +16,8 @@ CARTA utilizes discrete or integrated GPU for image rendering. For users who wis
 If there is any problem, please contact `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ for help.
 
 
-CARTA-server installation and configuration
--------------------------------------------
+CARTA-server
+------------
 The installation and configuration of the server version is available through `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_. The CARTA team would be happy to work with you on getting CARTA-server installed on your server.
 
 
