@@ -39,9 +39,6 @@ The release plan and major goals are the following:
 
 * v1.2: performance and usability improvement (**current release**)
 
-  .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3377984.svg
-     :target: https://doi.org/10.5281/zenodo.3377984
-
   * New server authentication method
   * User preferences and layouts
   * Tiled rendering and animator enhancement
@@ -73,7 +70,6 @@ Getting help
 The CARTA team welcomes any suggestion, feature request, or bug report, to make CARTA better via the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw).
 
 
-
 Contributors
 ------------
 The development of the CARTA project is a joint effort from (in alphabetical order):
@@ -88,6 +84,15 @@ The development of the CARTA project is a joint effort from (in alphabetical ord
 
    <img src="_static/carta_wg_logo.png" 
         style="width:100%;height:auto;">
+
+
+Software citation
+-----------------
+The CARTA team acknowledges your citation when using CARTA for publication.
+
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3377984.svg
+   :target: https://doi.org/10.5281/zenodo.3377984
+
 
 
 Acknowledgement
