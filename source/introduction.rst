@@ -39,13 +39,14 @@ The release plan and major goals are the following:
 
 * v1.2: performance and usability improvement (**current release**)
 
-  * ROI: polygon and point
-  * ROI: import/export
-  * tiled rendering
-  * profile delivery enhancement
-  * performance improvement
-  * usability improvement
-  * server support improvement
+  * New server authentication method
+  * User preferences and layouts
+  * Tiled rendering and animator enhancement
+  * support point and polygon regions
+  * support region import/export in crtf syntax
+  * introducing enhanced profile delivery strategies 
+  * new Stokes analysis widget
+  * support HDF5 images under IDIA schema
 
 * v1.3: WCS group (Q4 2019)
 

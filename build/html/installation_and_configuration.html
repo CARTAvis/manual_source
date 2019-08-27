@@ -45,10 +45,11 @@
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Installation and configuration</a><ul>
-<li><a class="reference internal" href="#macos-10-13-10-14">macOS 10.13/10.14</a></li>
-<li><a class="reference internal" href="#ubuntu-16-04-lts-18-04-lts">Ubuntu 16.04 LTS/18.04 LTS</a></li>
-<li><a class="reference internal" href="#redhat-7">Redhat 7</a></li>
-<li><a class="reference internal" href="#redhat-6">Redhat 6</a></li>
+<li><a class="reference internal" href="#carta-server-installation-and-configuration">CARTA-server installation and configuration</a></li>
+<li><a class="reference internal" href="#carta-desktop-macos-10-13-10-14">CARTA-desktop: macOS 10.13/10.14</a></li>
+<li><a class="reference internal" href="#carta-desktop-ubuntu-16-04-lts-18-04-lts">CARTA-desktop: Ubuntu 16.04 LTS/18.04 LTS</a></li>
+<li><a class="reference internal" href="#carta-desktop-redhat-7">CARTA-desktop: Redhat 7</a></li>
+<li><a class="reference internal" href="#carta-desktop-redhat-6">CARTA-desktop: Redhat 6</a></li>
 <li><a class="reference internal" href="#command-line-startup">Command line startup</a></li>
 <li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
@@ -97,23 +98,27 @@
 <li>RedHat 7</li>
 <li>RedHat 6 (conditional)</li>
 </ul>
-<p>Command line to launch CARTA is also supported in version 1.2 (see <a class="reference internal" href="#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions).</p>
+<p>Command line to launch CARTA is supported (see <a class="reference internal" href="#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions).</p>
 <p>CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7 or Ubuntu 16.04 LTS/18.04 LTS server via the ssh protocol, CARTA v1.2 also provides a “remote” mode for this use case (see <a class="reference internal" href="#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA “backend” on the server, while the CARTA “frontend” is accessed through your web browser of choice running on your local machine. This allows your local machine’s GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.</p>
 <p>If there is any problem, please contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a> for help.</p>
-<div class="section" id="macos-10-13-10-14">
-<h2>macOS 10.13/10.14<a class="headerlink" href="#macos-10-13-10-14" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="carta-server-installation-and-configuration">
+<h2>CARTA-server installation and configuration<a class="headerlink" href="#carta-server-installation-and-configuration" title="Permalink to this headline">¶</a></h2>
+<p>The installation and configuration of the server version is available through <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a>. The CARTA team would be happy to work with you on getting CARTA-server installed on your server.</p>
+</div>
+<div class="section" id="carta-desktop-macos-10-13-10-14">
+<h2>CARTA-desktop: macOS 10.13/10.14<a class="headerlink" href="#carta-desktop-macos-10-13-10-14" title="Permalink to this headline">¶</a></h2>
 <p>Please follow the steps:</p>
 <ol class="arabic simple">
 <li><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2.dmg">Download the DMG installer file</a></li>
-<li>Open the DMG file and drag the CARTA-v1.2 icon to your /Applications folder.</li>
+<li>Open the DMG file and drag the CARTA icon to your /Applications folder.</li>
 <li>To run CARTA either:</li>
 </ol>
 <blockquote>
 <div><ol class="loweralpha simple">
-<li>Find the CARTA-v1.2 icon in the Launchpad and click it, or double click it in the Finder.</li>
+<li>Find the CARTA icon in the Launchpad and click it, or double click it in the Finder.</li>
 <li>(<strong>Highly recommended</strong>) Create an alias in your ~/.bashrc file by opening your ~/.bashrc file in a text editor and add the following line:</li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span><span class="s1">&#39;/Applications/CARTA-v1.2.app/Contents/MacOS/CARTA-v1.2&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span><span class="s1">&#39;/Applications/CARTA.app/Contents/MacOS/CARTA&#39;</span>
 </pre></div>
 </div>
 <p>Then, after entering source ~/.bashrc in the terminal, you will be able to start CARTA by simply typing “carta”.</p>
@@ -123,8 +128,8 @@ carta
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="ubuntu-16-04-lts-18-04-lts">
-<h2>Ubuntu 16.04 LTS/18.04 LTS<a class="headerlink" href="#ubuntu-16-04-lts-18-04-lts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="carta-desktop-ubuntu-16-04-lts-18-04-lts">
+<h2>CARTA-desktop: Ubuntu 16.04 LTS/18.04 LTS<a class="headerlink" href="#carta-desktop-ubuntu-16-04-lts-18-04-lts" title="Permalink to this headline">¶</a></h2>
 <p>Please follow the steps:</p>
 <ol class="arabic">
 <li><p class="first"><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-ubuntu.AppImage">Download the AppImage file</a></p>
@@ -181,8 +186,8 @@ carta
 </div>
 </div>
 </div>
-<div class="section" id="redhat-7">
-<h2>Redhat 7<a class="headerlink" href="#redhat-7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="carta-desktop-redhat-7">
+<h2>CARTA-desktop: Redhat 7<a class="headerlink" href="#carta-desktop-redhat-7" title="Permalink to this headline">¶</a></h2>
 <p>Please follow the steps:</p>
 <ol class="arabic simple">
 <li><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-RedHat7.AppImage">Download the AppImage file</a></li>
@@ -255,8 +260,8 @@ carta
 <p class="last">If using remote mode on RedHat7 with Firefox browser, the Firefox version needs to be newer than ESR 52.7.2 and have “<em>wasm</em>” streaming enabled (See <a class="reference internal" href="#troubleshooting"><span class="std std-ref">Troubleshooting</span></a> for more information).</p>
 </div>
 </div>
-<div class="section" id="redhat-6">
-<h2>Redhat 6<a class="headerlink" href="#redhat-6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="carta-desktop-redhat-6">
+<h2>CARTA-desktop: Redhat 6<a class="headerlink" href="#carta-desktop-redhat-6" title="Permalink to this headline">¶</a></h2>
 <p>Neither AppImage nor Electron runs on RedHat 6, therefore we supply a “standalone” remote server package. It is intended for RedHat 6 use only, however it can also run on both RedHat 7 and Ubuntu 16.04 LTS/18.04 LTS.</p>
 <p>Please follow the steps:</p>
 <ol class="arabic">
@@ -393,7 +398,7 @@ Press ctrl+c to <span class="nb">exit</span>
 </div>
 </div>
 <div class="section" id="troubleshooting">
-<span id="id2"></span><h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
 <p>In this section, we provide common issues we have experienced so far and provide solutions. If none of the solutions work, please do contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a> for help.</p>
 <ul>
 <li><p class="first">I see a blank image…</p>

@@ -268,10 +268,22 @@
 <p>Click on a region will change the region state to “selected” and the selected region will be highlighted in the region list widget. Alternatively, a region can be selected by clicking the region list. CARTA provides the flexibility to select “region in region” as demostrated in the following video. The layer order of regions is adjusted automatically based on the region size. To de-select all regions, press “<strong>esc</strong>” key.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_roi_selection.mp4" type="video/mp4">
-</video><p>Double-click on a region or a region in the region list brings up the region property dialogue. The dialogue allows users to modify region’s name, location, shapes, and region cosmetics. Pressing “<strong>delete</strong>” key will remove the selected region.</p>
+</video><p>Double-click on a region or a region in the region list brings up the region property dialogue. The dialogue allows users to modify region’s name, location, shapes, and region cosmetics. Pressing “<strong>delete</strong>” or “<strong>backspace</strong>” key will remove the selected region.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_roi_modification.mp4" type="video/mp4">
-</video><p>For a polygon region, new anchors can be added by clicking on the line segment. An anchor can be delected by double clicking on the anchor.</p>
+</video><div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>“<strong>backspace</strong>” does not delete a region…</p>
+<p>If using CARTA remote mode in Firefox on MacOS, you may find the “<strong>backspace</strong>” key navigates back a page instead of removing a region. This behaviour can be prevented by modifying your Firefox web browser settings:</p>
+<ol class="last arabic simple">
+<li>Enter <a class="reference external" href="about:config">about:config</a> in the address bar.</li>
+<li>Click “I accept the risk!”</li>
+<li>A search bar appears at the top of a long list of preferences. Search for “browser.backspace_action”</li>
+<li>It will likely have a value of 0. Double click it, and then modify it to a value of “2”.</li>
+<li>Close the <a class="reference external" href="about:config">about:config</a> tab and now backspace will no longer navigate back a page.</li>
+</ol>
+</div>
+<p>For a polygon region, new anchors can be added by clicking on the line segment. An anchor can be delected by double clicking on the anchor.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_roi_creation3.mp4" type="video/mp4">
 </video></div>

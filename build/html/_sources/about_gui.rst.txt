@@ -260,13 +260,25 @@ Click on a region will change the region state to "selected" and the selected re
      <source src="_static/carta_roi_selection.mp4" type="video/mp4">
    </video>
 
-Double-click on a region or a region in the region list brings up the region property dialogue. The dialogue allows users to modify region's name, location, shapes, and region cosmetics. Pressing "**delete**" key will remove the selected region. 
+Double-click on a region or a region in the region list brings up the region property dialogue. The dialogue allows users to modify region's name, location, shapes, and region cosmetics. Pressing "**delete**" or "**backspace**" key will remove the selected region. 
 
 .. raw:: html
 
    <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_roi_modification.mp4" type="video/mp4">
    </video>
+
+.. tip::
+  "**backspace**" does not delete a region...
+
+  If using CARTA remote mode in Firefox on MacOS, you may find the "**backspace**" key navigates back a page instead of removing a region. This behaviour can be prevented by modifying your Firefox web browser settings:
+
+  1. Enter about:config in the address bar.
+  2. Click "I accept the risk!"
+  3. A search bar appears at the top of a long list of preferences. Search for "browser.backspace_action"
+  4. It will likely have a value of 0. Double click it, and then modify it to a value of "2".
+  5. Close the about:config tab and now backspace will no longer navigate back a page.
+
 
 For a polygon region, new anchors can be added by clicking on the line segment. An anchor can be delected by double clicking on the anchor.
 

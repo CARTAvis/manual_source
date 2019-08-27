@@ -9,29 +9,36 @@ CARTA v1.2 supports the following operating systems:
 * RedHat 7
 * RedHat 6 (conditional)
 
-Command line to launch CARTA is also supported in version 1.2 (see :ref:`commandLineStartup` for instructions).
+Command line to launch CARTA is supported (see :ref:`commandLineStartup` for instructions).
 
 CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7 or Ubuntu 16.04 LTS/18.04 LTS server via the ssh protocol, CARTA v1.2 also provides a "remote" mode for this use case (see :ref:`commandLineStartup` for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA "backend" on the server, while the CARTA "frontend" is accessed through your web browser of choice running on your local machine. This allows your local machine's GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.
 
 If there is any problem, please contact `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ for help.
 
-macOS 10.13/10.14
------------------
+
+CARTA-server installation and configuration
+-------------------------------------------
+The installation and configuration of the server version is available through `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_. The CARTA team would be happy to work with you on getting CARTA-server installed on your server.
+
+
+
+CARTA-desktop: macOS 10.13/10.14
+--------------------------------
 Please follow the steps:
 
 1. `Download the DMG installer file <https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2.dmg>`_
 
-2. Open the DMG file and drag the CARTA-v1.2 icon to your /Applications folder.
+2. Open the DMG file and drag the CARTA icon to your /Applications folder.
 
 3. To run CARTA either:
 
-  a) Find the CARTA-v1.2 icon in the Launchpad and click it, or double click it in the Finder.
+  a) Find the CARTA icon in the Launchpad and click it, or double click it in the Finder.
 
   b) (**Highly recommended**) Create an alias in your ~/.bashrc file by opening your ~/.bashrc file in a text editor and add the following line:
 
   .. code-block:: bash
 
-     alias carta='/Applications/CARTA-v1.2.app/Contents/MacOS/CARTA-v1.2'
+     alias carta='/Applications/CARTA.app/Contents/MacOS/CARTA'
 
   Then, after entering source ~/.bashrc in the terminal, you will be able to start CARTA by simply typing “carta”.
 
@@ -41,8 +48,8 @@ Please follow the steps:
      carta
 
 
-Ubuntu 16.04 LTS/18.04 LTS
---------------------------
+CARTA-desktop: Ubuntu 16.04 LTS/18.04 LTS
+-----------------------------------------
 Please follow the steps:
 
 1. `Download the AppImage file <https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-ubuntu.AppImage>`_
@@ -110,8 +117,8 @@ Please follow the steps:
       carta --remote
 
 
-Redhat 7
---------
+CARTA-desktop: Redhat 7
+-----------------------
 Please follow the steps:
 
 1. `Download the AppImage file <https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-RedHat7.AppImage>`_
@@ -197,8 +204,8 @@ Please follow the steps:
    If using remote mode on RedHat7 with Firefox browser, the Firefox version needs to be newer than ESR 52.7.2 and have "*wasm*" streaming enabled (See :ref:`troubleshooting` for more information).
 
 
-Redhat 6
---------
+CARTA-desktop: Redhat 6
+-----------------------
 Neither AppImage nor Electron runs on RedHat 6, therefore we supply a "standalone" remote server package. It is intended for RedHat 6 use only, however it can also run on both RedHat 7 and Ubuntu 16.04 LTS/18.04 LTS.
 
 Please follow the steps:

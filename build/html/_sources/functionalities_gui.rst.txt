@@ -131,6 +131,15 @@ CARTA utilizes an efficient approach, "tiled rendering", to display a raster ima
    <img src="_static/carta_fn_tiledRendering.png" 
         style="width:80%;height:auto;">
 
+Below is a demonstration of tiled rendering in action. Note that the video clip is made under a special internet condition in order for users to see the process clearly. Normally images are rendered much faster.
+
+.. raw:: html
+
+   <video controls loop style="width:100%;height:auto;">
+     <source src="_static/carta_fn_tiledRendering_demo.mp4" type="video/mp4">
+   </video>
+
+
 The performace of tiled rendering can be customized with the preferences dialogue, **File** -> **Preferences** -> **Performance**. The default values are chosen to assure raster images are displayed efficiently with sufficient accuracy. Advanced users may refine the setup if necessary. For example, when using the server version under poor internet condition, compression quality might be lowered down a bit to make the tile data smaller. Note that a smaller compression quality might introduce noticible artifacts on the raster image. Please adjust with caution. 
 
 .. raw:: html
