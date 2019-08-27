@@ -39,6 +39,9 @@ The release plan and major goals are the following:
 
 * v1.2: performance and usability improvement (**current release**)
 
+  .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3377984.svg
+     :target: https://doi.org/10.5281/zenodo.3377984
+
   * New server authentication method
   * User preferences and layouts
   * Tiled rendering and animator enhancement
