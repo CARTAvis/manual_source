@@ -42,9 +42,9 @@
   <ul>
 <li><a class="reference internal" href="#">Appendix B: known issues</a><ul>
 <li><a class="reference internal" href="#stability-and-performace">Stability and performace</a></li>
-<li><a class="reference internal" href="#image-viewer">Image viewer</a></li>
 <li><a class="reference internal" href="#animator">Animator</a></li>
 <li><a class="reference internal" href="#region-of-interest">Region of interest</a></li>
+<li><a class="reference internal" href="#gui">GUI</a></li>
 <li><a class="reference internal" href="#misc">Misc.</a></li>
 </ul>
 </li>
@@ -88,27 +88,36 @@
 <ul class="simple">
 <li>performance degradation of images with per-plane-beam (<a class="reference external" href="https://github.com/CARTAvis/nrao-carta-backend/issues/46">GitHub issue</a>)</li>
 <li>backend crash when close file but threads are still running (<a class="reference external" href="https://github.com/CARTAvis/carta-backend/issues/19">GitHub issue</a>)</li>
-<li>HDF5 files should be opened in read mode, not write mode (<a class="reference external" href="https://github.com/CARTAvis/carta-backend/issues/87">GitHub issue</a>)</li>
 <li>HDF5 files with a non-float main dataset are not supported (<a class="reference external" href="https://github.com/CARTAvis/carta-backend/issues/77">GitHub issue</a>)</li>
-<li>HDF5 file stays open if reading main dataset in file info loader fails (<a class="reference external" href="https://github.com/CARTAvis/carta-backend/issues/76">GitHub issue</a>)</li>
-</ul>
-</div>
-<div class="section" id="image-viewer">
-<h2>Image viewer<a class="headerlink" href="#image-viewer" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>no update on image cursor values when switching stokes or channel (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/150">GitHub issue</a>)</li>
+<li>performance impact of AST grid tolerance to wide field images (<a class="reference external" href="https://github.com/CARTAvis/carta-backend/issues/451">GitHub issue</a>)</li>
 </ul>
 </div>
 <div class="section" id="animator">
 <h2>Animator<a class="headerlink" href="#animator" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>no radio button is checked (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/108">GitHub issue</a>)</li>
+<li>Req index and Current index in animator (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/424">GitHub issue</a>)</li>
+<li>mis-aligned range index with current index in the animator (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/399">GitHub issue</a>)</li>
 </ul>
 </div>
 <div class="section" id="region-of-interest">
 <h2>Region of interest<a class="headerlink" href="#region-of-interest" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
+<li>Cannot export regions when image has invalid or non-existent WCS headers (<a class="reference external" href="https://github.com/CARTAvis/carta-backend/issues/334">GitHub issue</a>)</li>
+<li>Regions entirely outside image cannot be imported or exported (<a class="reference external" href="https://github.com/CARTAvis/carta-backend/issues/320">GitHub issue</a>)</li>
 <li>symmetric creation/modification of a region with side anchor and shift key (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/308">GitHub issue</a>)</li>
+<li>cannot create a polygon if users click too fast (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/443">GitHub issue</a>)</li>
+</ul>
+</div>
+<div class="section" id="gui">
+<h2>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>floating widget cannot be moved to new location if its content is updating (spectral profile) (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/482">GitHub issue</a>)</li>
+<li>x range of profile widget (spatial/spectral) when open a new image (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/463">GitHub issue</a>)</li>
+<li>Zooming in a profile in point style results in empty plot (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/453">GitHub issue</a>)</li>
+<li>[dynamic layout] raster view turns black when switching layouts during animation (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/416">GitHub issue</a>)</li>
+<li>dropdown indicator is not visible in “light” theme (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/405">GitHub issue</a>)</li>
+<li>draggable marker should be stopped when out of chart (<a class="reference external" href="https://github.com/CARTAvis/carta-frontend/issues/152">GitHub issue</a>)</li>
 </ul>
 </div>
 <div class="section" id="misc">
