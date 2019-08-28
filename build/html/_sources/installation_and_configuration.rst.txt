@@ -60,13 +60,7 @@ Please follow the steps:
 
       tar -xvf CARTA-v1.2-ubuntu.tgz
 
-3. Make the AppImage file executable
-
-   .. code-block:: bash
-
-      chmod 755 CARTA.AppImage 
-
-4. To run CARTA either 
+3. To run CARTA either 
    
    a) Execute the AppImage directly
    
@@ -134,12 +128,6 @@ Please follow the steps:
    .. code-block:: bash
 
       tar -xvf CARTA-v1.2-RedHat7.tgz
-
-2. Make the AppImage file executable.
-
-.. code-block:: bash
-
-   chmod 755 CARTA.AppImage
 
 3. To run CARTA either 
 
