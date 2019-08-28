@@ -7,8 +7,8 @@ With version 1.2, CARTA provides the following widgets/dialogues for image view 
 * render configuration widget: to configure how a raster image is rendered
 * animator widget: to navigate through different images, different channels, and different Stokes
 * region list widget: to view and configure region properties
-* spatial profiler: to view x and y spatial profiles at the cursor position
-* spectral profiler: to view spectral profile from a region of interest
+* spatial profile widget: to view x and y spatial profiles at the cursor position
+* spectral profile widget: to view spectral profile from a region of interest
 * histogram widget: to view histogram from a region of interest
 * statistics widget: to view basic statistics from a region of interest
 * Stokes analysis widget: to view basic polarization quantities
