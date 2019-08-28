@@ -2,36 +2,43 @@
 
 Installation and configuration
 ==============================
-CARTA v1.1 supports the following operating systems:
+CARTA v1.2 supports the following operating systems:
 
 * macOS 10.13/10.14
 * Ubuntu 16.04 LTS/18.04 LTS
 * RedHat 7
 * RedHat 6 (conditional)
 
-Command line to launch CARTA is also supported in version 1.1 (see :ref:`commandLineStartup` for instructions).
+Command line to launch CARTA is supported (see :ref:`commandLineStartup` for instructions).
 
-CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7 or Ubuntu 16.04 LTS/18.04 LTS server via the ssh protocol, CARTA v1.1 also provides a "remote" mode for this use case (see :ref:`commandLineStartup` for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA "backend" on the server, while the CARTA "frontend" is accessed through your web browser of choice running on your local machine. This allows your local machine's GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.
+CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7 or Ubuntu 16.04 LTS/18.04 LTS server via the ssh protocol, CARTA v1.2 also provides a "remote" mode for this use case (see :ref:`commandLineStartup` for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA "backend" on the server, while the CARTA "frontend" is accessed through your web browser of choice running on your local machine. This allows your local machine's GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.
 
 If there is any problem, please contact `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ for help.
 
-macOS 10.13/10.14
------------------
+
+CARTA-server
+------------
+The installation and configuration of the server version is available through `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_. The CARTA team would be happy to work with you on getting CARTA-server installed on your server.
+
+
+
+CARTA-desktop: macOS 10.13/10.14
+--------------------------------
 Please follow the steps:
 
-1. `Download the DMG installer file <https://github.com/CARTAvis/carta-releases/releases/download/v1.1/CARTA-v1.1.dmg>`_
+1. `Download the DMG installer file <https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2.dmg>`_
 
-2. Open the DMG file and drag the CARTA-v1.1 icon to your /Applications folder.
+2. Open the DMG file and drag the CARTA icon to your /Applications folder.
 
 3. To run CARTA either:
 
-  a) Find the CARTA-v1.1 icon in the Launchpad and click it, or double click it in the Finder.
+  a) Find the CARTA icon in the Launchpad and click it, or double click it in the Finder.
 
   b) (**Highly recommended**) Create an alias in your ~/.bashrc file by opening your ~/.bashrc file in a text editor and add the following line:
 
   .. code-block:: bash
 
-     alias carta='/Applications/CARTA-v1.1.app/Contents/MacOS/CARTA-v1.1'
+     alias carta='/Applications/CARTA.app/Contents/MacOS/CARTA'
 
   Then, after entering source ~/.bashrc in the terminal, you will be able to start CARTA by simply typing “carta”.
 
@@ -41,17 +48,17 @@ Please follow the steps:
      carta
 
 
-Ubuntu 16.04 LTS/18.04 LTS
---------------------------
+CARTA-desktop: Ubuntu 16.04 LTS/18.04 LTS
+-----------------------------------------
 Please follow the steps:
 
-1. `Download the AppImage file <https://github.com/CARTAvis/carta-releases/releases/download/v1.1/CARTA-v1.1-ubuntu.AppImage>`_
+1. `Download the tgz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-ubuntu.tgz>`_
 
-2. Make the AppImage file executable
+2. Unzip the tgz file
 
    .. code-block:: bash
 
-      chmod 755 CARTA-v1.1-ubuntu.AppImage 
+      tar -xvf CARTA-v1.2-ubuntu.tgz
 
 3. To run CARTA either 
    
@@ -59,13 +66,13 @@ Please follow the steps:
    
    .. code-block:: bash
       
-      ./CARTA-v1.1-ubuntu.AppImage
+      ./CARTA.AppImage
    
    b) (**Highly recommended**) Create an alias in your shell script file. For example, if you are using bash and the AppImage happens to be in your Downloads folder, open ~/.bashrc file in a text editor and add a line
 
    .. code-block:: bash
 
-      alias carta='~/Downloads/CARTA-v1.1-ubuntu.AppImage'
+      alias carta='~/Downloads/CARTA.AppImage'
    
    Then, after entering source ~/.bashrc in the terminal, you will be able to start carta by simply typing “carta”.
 
@@ -78,7 +85,7 @@ Please follow the steps:
    
    .. code-block:: tcsh
    
-      alias carta '~/Downloads/CARTA-v1.1-ubuntu.AppImage'
+      alias carta '~/Downloads/CARTA.AppImage'
    
    and 
    
@@ -95,13 +102,13 @@ Please follow the steps:
       carta
 
 .. note::
-   For this v1.1 release we are providing a combined desktop and remote server capability. 
+   For this v1.2 release we are providing a combined desktop and remote server capability. 
    
    Invoke remote mode with the "-\\-remote" flag
    
    .. code-block:: bash
    
-      ./CARTA-v1.1-ubuntu.AppImage --remote
+      ./CARTA.AppImage --remote
       
    or, if an alias is created, 
    
@@ -110,17 +117,17 @@ Please follow the steps:
       carta --remote
 
 
-Redhat 7
---------
+CARTA-desktop: Redhat 7
+-----------------------
 Please follow the steps:
 
-1. `Download the AppImage file <https://github.com/CARTAvis/carta-releases/releases/download/v1.1/CARTA-v1.1-RedHat7.AppImage>`_
+1. `Download the tgz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-RedHat7.tgz>`_
 
-2. Make the AppImage file executable.
+2. Unzip the tgz file
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   chmod 755 CARTA-v1.1-RedHat7.AppImage
+      tar -xvf CARTA-v1.2-RedHat7.tgz
 
 3. To run CARTA either 
 
@@ -128,13 +135,13 @@ Please follow the steps:
   
   .. code-block:: bash 
   
-     ./CARTA-v1.1-RedHat7.AppImage
+     ./CARTA.AppImage
   
   b) (**Highly recommended**) Set up an alias in your shell script file. For example, if your are using bash and the AppImage happens to be in your Downloads folder, open your ~/.bashrc file in a text editor and add a line
   
   .. code-block:: bash
 
-     alias carta='~/Downloads/CARTA-v1.1-RedHat7.AppImage'
+     alias carta='~/Downloads/CARTA.AppImage'
 
   Then, after entering source ~/.bashrc in the terminal, you will be able to start carta by simply typing “carta”.
   
@@ -147,7 +154,7 @@ Please follow the steps:
   
   .. code-block:: tcsh
   
-     alias carta '~/Downloads/CARTA-v1.1-RedHat7.AppImage'
+     alias carta '~/Downloads/CARTA.AppImage'
 
   and 
   
@@ -180,13 +187,13 @@ Please follow the steps:
 
 
 .. note::
-   For this v1.1 release we are providing a combined desktop and remote server capability. 
+   For this v1.2 release we are providing a combined desktop and remote server capability. 
    
    Invoke remote mode with the "-\\-remote" flag e.g. 
 
    .. code-block:: bash
 
-     ./CARTA-v1.1-RedHat7.AppImage --remote 
+     ./CARTA.AppImage --remote 
 
    or
 
@@ -197,21 +204,21 @@ Please follow the steps:
    If using remote mode on RedHat7 with Firefox browser, the Firefox version needs to be newer than ESR 52.7.2 and have "*wasm*" streaming enabled (See :ref:`troubleshooting` for more information).
 
 
-Redhat 6
---------
+CARTA-desktop: Redhat 6
+-----------------------
 Neither AppImage nor Electron runs on RedHat 6, therefore we supply a "standalone" remote server package. It is intended for RedHat 6 use only, however it can also run on both RedHat 7 and Ubuntu 16.04 LTS/18.04 LTS.
 
 Please follow the steps:
 
-1. `Download the tar.gz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.1/CARTA-v1.1-remote.tar.gz>`_
+1. `Download the tar.gz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-remote.tgz>`_
 
 2. Extract the archive
 
    .. code-block:: bash
 
-      tar -xvf CARTA-v1.1-remote.tar.gz
+      tar -xvf CARTA-v1.2-remote.tgz
 
-3. Execute the carta script within the "CARTA-v1.1-remote" folder
+3. Execute the carta script within the "CARTA-v1.2-remote" folder
 
    .. code-block:: bash
 
@@ -225,13 +232,13 @@ Please follow the steps:
 
    .. code-block:: bash
 
-      alias carta='~/CARTA-v1.1-remote/carta'
+      alias carta='~/CARTA-v1.2-remote/carta'
 
    If you use csh or tcsh, the syntax differs only in that there is no equals sign, therefore it would be 
   
    .. code-block:: tcsh
   
-      alias carta '~/Downloads/CARTA-v1.1-RedHat7.AppImage'
+      alias carta '~/Downloads/CARTA-v1.2-remote/carta'
 
    and 
   
@@ -296,7 +303,7 @@ If CARTA is installed on a remote server, and users access the server via the ss
      OR
  
 
-     192.168.1.112:2000/?socketUrl=ws://192.168.1.112:3000
+     192.168.1.212:2000/?socketUrl=ws://192.168.1.212:3000
  
      Press ctrl+c to exit
 
@@ -332,7 +339,7 @@ If CARTA is installed on a remote server, and users access the server via the ss
      OR
 
  
-     192.168.1.112:5678/?socketUrl=ws://192.168.1.112:1234
+     192.168.1.212:5678/?socketUrl=ws://192.168.1.212:1234
  
      Press ctrl+c to exit
 
@@ -402,6 +409,15 @@ In this section, we provide common issues we have experienced so far and provide
 
      <remote machine> can either be the machine's hostname or IP address.
 
+  .. tip::
+     If you are running the RedHat7 AppImage version on a VNC server but loaded images appear blank, please use the following prefix when starting the AppImage: 
+
+     .. code-block:: bash
+     
+        LIBGL_ALWAYS_INDIRECT=1 ./CARTA.AppImage 
+
+     Loaded images should now render correctly.
+
 * After copy-and-paste a CARTA URL, I see the CARTA GUI is not initialized...
 
   Check your browser version. It needs to support "*wasm*" streaming and be enabled. More information about browser support of WebAssembly can be found at https://caniuse.com/#search=WebAssembly 
@@ -427,3 +443,14 @@ In this section, we provide common issues we have experienced so far and provide
 * The RedHat7 AppImage does not open and it prints a message suggesting to extract the AppImage using the "-\\-appimage-extract" flag.
 
   This error is due to lack of FUSE (File System in Userspace) support. We suspect that FUSE support in RedHat7 systems may be disabled in some institute environments for security reasons. If that is the case, we recommend using the 'remote' version of CARTA instead.
+
+
+* "**backspace**" does not delete a region...
+
+  If using CARTA remote mode in Firefox on MacOS, you may find the "**backspace**" key navigates back a page instead of removing a region. This behaviour can be prevented by modifying your Firefox web browser settings:
+
+  1. Enter about:config in the address bar.
+  2. Click "I accept the risk!"
+  3. A search bar appears at the top of a long list of preferences. Search for "browser.backspace_action"
+  4. It will likely have a value of 0. Double click it, and then modify it to a value of "2".
+  5. Close the about:config tab and now backspace will no longer navigate back a page.

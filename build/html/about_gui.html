@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Graphical user interface &#8212; CARTA 1.1 documentation</title>
+    <title>Graphical user interface &#8212; CARTA 1.2 documentation</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
@@ -14,7 +14,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/bizstyle.js"></script>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Functionality" href="functionalities_gui.html" />
@@ -33,7 +34,7 @@
         <li class="right" >
           <a href="quickstart.html" title="Quickstart guide"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.2 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -53,8 +54,10 @@
 <li><a class="reference internal" href="#detaching-and-attaching-a-tab">Detaching and attaching a tab</a></li>
 <li><a class="reference internal" href="#creating-a-widget-as-a-floating-widget-or-as-a-tab">Creating a widget as a floating widget or as a tab</a></li>
 <li><a class="reference internal" href="#light-and-dark-theme">Light and dark theme</a></li>
+<li><a class="reference internal" href="#custom-layout-save-and-restore">Custom layout, save, and restore</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#user-preferences">User preferences</a></li>
 <li><a class="reference internal" href="#mouse-interactions-with-images">Mouse interactions with images</a><ul>
 <li><a class="reference internal" href="#zooming">Zooming</a></li>
 <li><a class="reference internal" href="#panning">Panning</a></li>
@@ -119,18 +122,19 @@
 <li>main window</li>
 <li>menu bar</li>
 <li>widget bar</li>
+<li>tool bar</li>
 <li>panel (docked widget)</li>
 <li>floating widget</li>
 <li>tab</li>
-<li>dialog</li>
+<li>dialogue</li>
 <li>status icon</li>
 </ul>
 <img src="_static/carta_gui.png"
-     style="width:100%;height:auto;"><p>The main window consists of a set of panels and each panel may hold multiple docked widgets in tabs. For example, in the above figure there are five panels in the main window and there are two tabs in the bottom-left panel. A tab or a docked widget may be detached to become a floating widget. The menu bar provides control options, such as image input/output, launching widgets, getting helps, etc. The widget bar provides tools to view or analyze images. The icon at the top-right corner of the main window is an indicator of server (backend) status. A dialog provides options to configure compoments, such as image layout, or region properties, etc.</p>
+     style="width:100%;height:auto;"><p>The main window consists of a set of panels and each panel may contain multiple docked widgets as tabs. For example, in the above figure there are five panels in the main window and there are two docked widgets as tabs in the bottom-left panel. A tab or a docked widget may be detached to become a floating widget. The menu bar provides control options, such as image input/output, launching widgets, getting helps, etc. The widget bar provides widgets to view or to analyze images. The icon at the top-right corner of the main window is an indicator of server (backend) status. A dialogue provides options to configure compoments, such as image layout, or region properties, etc. A tool bar provides tools for a widget, such as zoom buttons for the image viewer widget or the export options for the spectral profile widget, etc.</p>
 </div>
 <div class="section" id="configuring-the-layout">
 <h2>Configuring the layout<a class="headerlink" href="#configuring-the-layout" title="Permalink to this headline">¶</a></h2>
-<p>The layout configuration can be changed by mouse operations, like single click or drag-and-drop. In the examples below, the drag-and-drop action is guided on the GUI with a semi-transparent rectangle. Various operations are demonstrated below.</p>
+<p>The layout configuration can be changed by mouse operations, like single click or drag-and-drop. In the examples below, the drag-and-drop action is guided on the GUI with a semi-transparent guider. Various operations are demonstrated below.</p>
 <div class="section" id="resizing-a-panel">
 <span id="id1"></span><h3>Resizing a panel<a class="headerlink" href="#resizing-a-panel" title="Permalink to this headline">¶</a></h3>
 <p>As shown in the example below, a panel can be resized by dragging its borders. After a panel is resized, nearby panels are resized automatically to fit the new layout. Note that the appearance of the UI elements is adaptive to the size of the panel, as seen in the <strong>render configuration</strong> widget or the <strong>animator</strong> widget in the example.</p>
@@ -173,6 +177,62 @@
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_theme.mp4" type="video/mp4">
 </video></div>
+<div class="section" id="custom-layout-save-and-restore">
+<h3>Custom layout, save, and restore<a class="headerlink" href="#custom-layout-save-and-restore" title="Permalink to this headline">¶</a></h3>
+<p>CARTA has a set of preset layouts sutiable for different kinds of image analysis. These layouts are accessible via the menu <strong>Layout</strong> -&gt; <strong>Layouts</strong> -&gt; <strong>Existing layouts</strong> -&gt; <strong>Presets</strong>.</p>
+<img src="_static/carta_gui_layout_menu.png"
+     style="width:100%;height:auto;"><p>Users may further customize a preset layout or make a new layout from scratch for different purposes and save it for the future. To save a custom layout, use the menu <strong>Layout</strong> -&gt; <strong>Layouts</strong> -&gt; <strong>Save layout</strong>. A name is required when saving a layout (e.g., “my layout 01” in the above example).</p>
+<p>A saved layout can be restored via the menu <strong>Layout</strong> -&gt; <strong>Layouts</strong> -&gt; <strong>Existing layouts</strong>. The currently activated layout is highlighted in blue (“Default” in the above example). Saved layouts can be removed via the menu <strong>Layout</strong> -&gt; <strong>Layouts</strong> -&gt; <strong>Delete layout</strong>.</p>
+<p>By deafult, CARTA will load the “Default” preset layout when initialized. Which layout, including user customized layouts, should be loaded can be further defined via the preferences dialogue <strong>File</strong> -&gt; <strong>Preferences</strong>. The initial layout can be set via <strong>Global</strong> -&gt; <strong>Initial layout</strong>.</p>
+<img src="_static/carta_gui_layout_preference.png"
+     style="width:90%;height:auto;"></div>
+</div>
+<div class="section" id="user-preferences">
+<h2>User preferences<a class="headerlink" href="#user-preferences" title="Permalink to this headline">¶</a></h2>
+<p>CARTA provides a number of preferences for users to customize the GUI, including layouts. The preferences are persistent so that next time when users launch CARTA, all the preferences and a layout are restored. The preferences dialogue is accessible via the menu <strong>File</strong> -&gt; <strong>Preferences</strong>. Preferences are effective after CARTA reloads, except few that are effective immediately. Below we summarize the options of all preferences.</p>
+<img src="_static/carta_gui_preferences.png"
+     style="width:100%;height:auto;"><ul class="simple">
+<li>Global<ul>
+<li>Theme: to adopt light or dark theme of the GUI (default: light) [effective immediately]</li>
+<li>Auto-launch file browser: to launch the file browser or not when CARTA is initialized (default: yes)</li>
+<li>Initial layout: the layout to adopt when CARTA is initialized (default: “Default”)</li>
+<li>Initial cursor position: to fix the cursor position on the image or not when CARTA is initialized. If it is fixed, a cross will be shown at the image center. Use “<strong>F</strong>” key to switch to the tracking mode (default: Tracking)</li>
+<li>Initial zoom level: to select the initial zoom level of the image to be filling up the field of view or to be displayed as one image pixel to one screen pixel ratio (default: “Zoom to fit”)</li>
+</ul>
+</li>
+<li>Default render config<ul>
+<li>Scaling: the scaling function of the color map (default: linear)</li>
+<li>Color map: the default color for the raster image (default: inferno)</li>
+<li>Percentile ranks: the default clip level for the color map (default: 99.9%)</li>
+</ul>
+</li>
+<li>Default WCS overlay<ul>
+<li>Color: the color for the WCS overlay, including border, grid line, ticks, labels, and title (default: blue)</li>
+<li>Grid visible: to show grid line or not as default (default: yes)</li>
+<li>Label visible: to show coordinate labels or not as default (default: yes)</li>
+<li>WCS type: the format of the displayed world coordinate. The default is “automatic” which means for galactic or ecliptic system, the world coordinate is displayed in decimal degrees, and for FK4, FK5, or ICRS, the world coordinate is displayed in sexigesimal format. (default: automatic) [effective for new images]</li>
+</ul>
+</li>
+<li>Default region settings<ul>
+<li>Color: the default color of a region (default: cyan) [effective for new regions]</li>
+<li>Line width (px): the default line width of a region (default: 2) [effective for new regions]</li>
+<li>Dash length (px): the default dash length of the line composing a region. The default is to show a region in solid line (default: 0) [effective for new regions]</li>
+<li>Region type: the default selected region in the tool bar of the image viewer (default: rectangle)</li>
+<li>Creation mode: the method of how a rectange or an ellipse is created by mouse dragging. Two methods are supplied: center-to-corner and corner-to-corner (default: center-to-corner) [effective for new regions]</li>
+</ul>
+</li>
+<li>Performance<ul>
+<li>Compression quality (image): a parameter (1~32) to control the image quality with lossy compression. The higher the number is, the better quality the images are. Choose with caution. (default: 11) [effective immediately]</li>
+<li>Compression quality (animation): a parameter (1~32) to control the animation quality with lossy compression. The higher the number is, the better quality the images are. Choose with caution. (default: 9) [effective immediately]</li>
+<li>GPU tile cache size (number of tiles): the cache size of GPU for tiles (default: 512)</li>
+<li>System tile cache size (number of tiles): the cache size of system memory for tiles (default: 4096)</li>
+</ul>
+</li>
+<li>Log events<ul>
+<li>This is for debugging purpose. Normal users can skip this part.</li>
+</ul>
+</li>
+</ul>
 </div>
 <div class="section" id="mouse-interactions-with-images">
 <span id="mouse-interaction-with-images"></span><h2>Mouse interactions with images<a class="headerlink" href="#mouse-interactions-with-images" title="Permalink to this headline">¶</a></h2>
@@ -196,18 +256,36 @@
 <span id="mouse-interaction-with-regions"></span><h2>Mouse interactions with region of interest<a class="headerlink" href="#mouse-interactions-with-region-of-interest" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="region-creation">
 <h3>Region creation<a class="headerlink" href="#region-creation" title="Permalink to this headline">¶</a></h3>
-<p>A region can be created by firstly entering the region creation mode then dragging on the image viewer. To enter the region creation mode, click the <em>region</em> button at the bottom-right corner of the image viewer or press “<strong>c</strong>” key. Double-clicking the region icon brings up all available region types (in version 1.1, only rectangle and ellipse are available). As a default, a region is created in the “center-to-corner” mode. To temporarily switch to “corner-to-corner” mode, hold “<strong>commmand</strong>” (mac) or “<strong>ctrl</strong>” (linux) key then drag. A symmetric region such as “circle” or “square” can be created by holding <strong>shift</strong> key then dragging.</p>
+<p>A region can be created by firstly entering the region creation mode then drawing on the image viewer. To enter the region creation mode, click the <em>region</em> button at the bottom-right corner of the image viewer or press “<strong>C</strong>” key. Double-clicking the region icon brings up all available region types (rectangle, ellipse, polygon, and point, as of v1.2). To create a point region, a single click will do. For rectangle or ellipse, it can be created in the “center-to-corner” mode or the “corner-to-corner” mode, depending on the preference setting in the preference dialogue (<strong>File</strong> -&gt; <strong>Preferences</strong> -&gt; <strong>Default region settings</strong>). To temporarily switch to the other mode than the default, hold “<strong>command</strong>” (mac) or “<strong>ctrl</strong>” (linux) key then drag. “circle” and “square” regions are the special cases of ellipse and rectangle regions, respectively. These symmetric regions can be created by holding <strong>shift</strong> key then dragging.</p>
 <video controls loop style="width:100%;height:auto;">
-  <source src="_static/carta_roi_creation.mp4" type="video/mp4">
+  <source src="_static/carta_fn_roi_creation1.mp4" type="video/mp4">
+</video><p>To create a polygon region, start with a click followed by a series of clicks to define anchors of a desired polygonal shape and finish with a double click. CARTA detects “complex” polygon (polygon with intersections) and shows it in pink color. Spectral profiles, statistics, or histogram of a complex polygon can still be requested but please note that the results may be beyond users’ expectations since the actual pixel coverage depends on <em>how</em> a complex polygon is created.</p>
+<video controls loop style="width:100%;height:auto;">
+  <source src="_static/carta_fn_roi_creation2.mp4" type="video/mp4">
 </video></div>
 <div class="section" id="region-selection-and-modification">
 <h3>Region selection and modification<a class="headerlink" href="#region-selection-and-modification" title="Permalink to this headline">¶</a></h3>
 <p>Click on a region will change the region state to “selected” and the selected region will be highlighted in the region list widget. Alternatively, a region can be selected by clicking the region list. CARTA provides the flexibility to select “region in region” as demostrated in the following video. The layer order of regions is adjusted automatically based on the region size. To de-select all regions, press “<strong>esc</strong>” key.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_roi_selection.mp4" type="video/mp4">
-</video><p>Double-click on a region or a region in the region list brings up the region property dialog. The dialog allows users to modify region’s name, location, shapes, and region cosmetics. Pressing “<strong>delete</strong>” key will remove the selected region.</p>
+</video><p>Double-click on a region or a region in the region list brings up the region property dialogue. The dialogue allows users to modify region’s name, location, shapes, and region cosmetics. Pressing “<strong>delete</strong>” or “<strong>backspace</strong>” key will remove the selected region.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_roi_modification.mp4" type="video/mp4">
+</video><div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>“<strong>backspace</strong>” does not delete a region…</p>
+<p>If using CARTA remote mode in Firefox on MacOS, you may find the “<strong>backspace</strong>” key navigates back a page instead of removing a region. This behaviour can be prevented by modifying your Firefox web browser settings:</p>
+<ol class="last arabic simple">
+<li>Enter <a class="reference external" href="about:config">about:config</a> in the address bar.</li>
+<li>Click “I accept the risk!”</li>
+<li>A search bar appears at the top of a long list of preferences. Search for “browser.backspace_action”</li>
+<li>It will likely have a value of 0. Double click it, and then modify it to a value of “2”.</li>
+<li>Close the <a class="reference external" href="about:config">about:config</a> tab and now backspace will no longer navigate back a page.</li>
+</ol>
+</div>
+<p>For a polygon region, new anchors can be added by clicking on the line segment. An anchor can be delected by double clicking on the anchor.</p>
+<video controls loop style="width:100%;height:auto;">
+  <source src="_static/carta_fn_roi_creation3.mp4" type="video/mp4">
 </video></div>
 </div>
 <div class="section" id="mouse-interactions-with-charts">
@@ -287,20 +365,28 @@
 <td>del / backspace</td>
 </tr>
 <tr class="row-odd"><td>Toggle region creation mode</td>
-<td>c</td>
-<td>c</td>
+<td>C</td>
+<td>C</td>
 </tr>
 <tr class="row-even"><td>Deselect region</td>
 <td>esc</td>
 <td>esc</td>
 </tr>
-<tr class="row-odd"><td>Corner-to-corner region creation</td>
+<tr class="row-odd"><td>Switch region creation mode</td>
 <td>cmd + drag</td>
 <td>ctrl + drag</td>
 </tr>
 <tr class="row-even"><td>Symmetric region creation</td>
 <td>shift + drag</td>
 <td>shift + drag</td>
+</tr>
+<tr class="row-odd"><td>Toggle current region lock</td>
+<td>L</td>
+<td>L</td>
+</tr>
+<tr class="row-even"><td>Unlock all regions</td>
+<td>shift + L</td>
+<td>shift + L</td>
 </tr>
 <tr class="row-odd"><td><strong>Appearance</strong></td>
 <td>&#160;</td>
@@ -382,12 +468,12 @@
         <li class="right" >
           <a href="quickstart.html" title="Quickstart guide"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.2 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2018-2019, ASIAA, IDIA, and NRAO.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.
+        &#169; Copyright 2018-2019, ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
     </div>
   </body>
 </html>

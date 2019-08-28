@@ -1,5 +1,23 @@
 Appendix A: version history
 ===========================
+Version 1.2
+-----------
+Released XXX August 2019
+
+This release includes the following new features:
+
+* New server authentication method
+* User preferences and layouts
+* Tiled rendering and animator enhancement
+* support point and polygon regions
+* support region import/export in crtf syntax
+* introducing enhanced profile delivery strategies 
+* new Stokes analysis widget
+* support HDF5 images under IDIA schema
+
+Performance enhancement and bug fixes are included as well.
+
+
 Version 1.1
 -----------
 Released 2nd May 2019.
