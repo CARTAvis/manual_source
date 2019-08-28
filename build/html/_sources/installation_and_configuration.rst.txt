@@ -210,13 +210,13 @@ Neither AppImage nor Electron runs on RedHat 6, therefore we supply a "standalon
 
 Please follow the steps:
 
-1. `Download the tar.gz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-remote.tar.gz>`_
+1. `Download the tar.gz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-remote.tgz>`_
 
 2. Extract the archive
 
    .. code-block:: bash
 
-      tar -xvf CARTA-v1.2-remote.tar.gz
+      tar -xvf CARTA-v1.2-remote.tgz
 
 3. Execute the carta script within the "CARTA-v1.2-remote" folder
 
