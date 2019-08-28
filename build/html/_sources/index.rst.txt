@@ -8,6 +8,10 @@ CARTA - Cube Analysis and Rendering Tool for Astronomy
 
 .. index:: Table of Content
 
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3377984.svg
+   :target: https://doi.org/10.5281/zenodo.3377984
+
+
 .. toctree::
    :maxdepth: 3
    :caption: CARTA user manual
