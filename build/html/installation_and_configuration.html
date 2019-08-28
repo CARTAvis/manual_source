@@ -426,6 +426,14 @@ e.g.</p>
 <p>in your local machine’s web browser to connect to CARTA remote server running on the remote machine (1234 and 5678 are given as an example. You may choose different port numbers if you wish).</p>
 <p class="last">&lt;remote machine&gt; can either be the machine’s hostname or IP address.</p>
 </div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>If you are running the RedHat7 AppImage version on a VNC server but loaded images appear blank, please use the following prefix when starting the AppImage:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">LIBGL_ALWAYS_INDIRECT</span><span class="o">=</span><span class="m">1</span> ./CARTA.AppImage
+</pre></div>
+</div>
+<p class="last">Loaded images should now render correctly.</p>
+</div>
 </li>
 <li><p class="first">After copy-and-paste a CARTA URL, I see the CARTA GUI is not initialized…</p>
 <p>Check your browser version. It needs to support “<em>wasm</em>” streaming and be enabled. More information about browser support of WebAssembly can be found at <a class="reference external" href="https://caniuse.com/#search=WebAssembly">https://caniuse.com/#search=WebAssembly</a></p>

@@ -409,6 +409,15 @@ In this section, we provide common issues we have experienced so far and provide
 
      <remote machine> can either be the machine's hostname or IP address.
 
+  .. tip::
+     If you are running the RedHat7 AppImage version on a VNC server but loaded images appear blank, please use the following prefix when starting the AppImage: 
+
+     .. code-block:: bash
+     
+        LIBGL_ALWAYS_INDIRECT=1 ./CARTA.AppImage 
+
+     Loaded images should now render correctly.
+
 * After copy-and-paste a CARTA URL, I see the CARTA GUI is not initialized...
 
   Check your browser version. It needs to support "*wasm*" streaming and be enabled. More information about browser support of WebAssembly can be found at https://caniuse.com/#search=WebAssembly 
