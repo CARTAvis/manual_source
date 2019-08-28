@@ -47,6 +47,19 @@ Please follow the steps:
      source ~/.bashrc
      carta
 
+.. note::
+   If you see a prompt with "CARTA can't be opended because Apple cannot check it for malicious software.", please go to **System preferences** -> **Security & Privacy** and hit the **Open anyway** button to launch CARTA.
+
+   .. raw:: html
+
+      <img src="_static/carta_blocked.png" 
+        style="width:100%;height:auto;">
+
+   .. raw:: html
+
+      <img src="_static/carta_blocked_solution.png" 
+        style="width:100%;height:auto;">
+
 
 CARTA-desktop: Ubuntu 16.04 LTS/18.04 LTS
 -----------------------------------------
