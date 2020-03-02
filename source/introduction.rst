@@ -19,9 +19,11 @@ Codebase and releases
 ---------------------
 CARTA is an open-source project. Its source code is available at https://github.com/CARTAvis. 
 
-CARTA ultimately will have two distributions: CARTA-server and CARTA-desktop. The former is designed for handling large datasets with remote servers, while the later is suitable for smaller datasets (a few thousand pixels in the x and y dimensions) which can still be handled with personal computer or laptop. 
+CARTA has two flavors: CARTA-server and CARTA-desktop. The former is intended for hosting multiple users with an enterprise-class server, while the later is intedned for single-user usage with a personal computer or a laptop. The desktop version can also be used in the "remote" mode, where the backend (server) is launched in a remote server and the frontend (client) is run locally with an internet browser. 
 
-With the *current* version 1.2 desktop release, CARTA supports two use cases. For users using a laptop or a desktop with a monitor, please use the "Local" version. For users using a remote server via the ssh protocol, please use the "Remote" version. Installation guides for these two versions are provided in the section :ref:`installation_configuration`.
+Deployment of CARTA in a server environment may require addtional efforts of server configurations, such as user authentication, server load balance, or resource monitoring, etc. Please contact the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw) for consultations. 
+
+Installation guides for the desktop version are provided in the section :ref:`installation_configuration`, including the usages of the remote mode. 
 
 The release plan and major goals are the following:
 
@@ -37,7 +39,7 @@ The release plan and major goals are the following:
   * Improved remote version
   * Performance and memory usage improvements
 
-* v1.2: performance and usability improvement (**current release**)
+* v1.2: performance and usability improvement (released 28th August 2019)
 
   * New server authentication method
   * User preferences and layouts
@@ -48,26 +50,26 @@ The release plan and major goals are the following:
   * new Stokes analysis widget
   * support HDF5 images under IDIA schema
 
-* v1.3: WCS group (Q4 2019)
+* v1.3: WCS matching (**current release**)
 
-  * WCS group, alignment of multiple images
-  * contour rendering
-  * ROI in WCS group
-
-* v1.4: Scripting interface and image analytics tools
-
-  * multi-panel image view
-  * image analytics tools
-  * scripting interface
-
-* v1.5: Interactive clean
-
+  * Contour rendering
+  * WCS matching
+  * Tiled animation
+  * Active region
+  * Spectral conversion
+  * In-app help
+  * Improved remote mode
+  * Initial touchscreen support
+  * Bug fixes and performance improvements
 
 
 
 Getting help
 ------------
-The CARTA team welcomes any suggestion, feature request, or bug report, to make CARTA better via the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw).
+The CARTA team welcomes any suggestion, feature request, or bug report, to make CARTA better via 
+
+* `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw) 
+* `Github Issue <https://github.com/CARTAvis/carta/issues>`_ (https://github.com/CARTAvis/carta/issues)
 
 
 Contributors
@@ -117,14 +119,15 @@ CARTA is mainly built in C++, TypeScript, and JavaScript, and with the following
 * jsoncpp: https://github.com/open-source-parsers/jsoncpp
 * MobX: https://mobx.js.org
 * MongoDB: https://www.mongodb.com
+* OpenMP: https://www.openmp.org
 * React: https://reactjs.org
 * TBB: https://www.threadingbuildingblocks.org
 
 
 The source code of CARTA is hosted on `Github <https://github.com/CARTAvis>`_.
 
-
+The CARTA development team is grateful to David Berry for consultation of the AST library and to Kumar Golap for consultation of the casacore library.
 
 Copyright and License
 ---------------------
-Copyright (C) 2018-2019 ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta. This program is free software; you can redistribute it and/or modify it under the terms of the `GNU General Public License version 3 <http://www.gnu.org/copyleft/gpl.html>`_ as published by the Free Software Foundation.
+Copyright (C) 2018-2020 ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta. This program is free software; you can redistribute it and/or modify it under the terms of the `GNU General Public License version 3 <http://www.gnu.org/copyleft/gpl.html>`_ as published by the Free Software Foundation.

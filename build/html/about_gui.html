@@ -4,9 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Graphical user interface &#8212; CARTA 1.2 documentation</title>
+    <meta charset="utf-8" />
+    <title>Graphical user interface &#8212; CARTA 1.3 documentation</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
@@ -34,7 +33,7 @@
         <li class="right" >
           <a href="quickstart.html" title="Quickstart guide"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.2 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.3 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -93,13 +92,11 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -119,15 +116,15 @@
 <h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
 <p>The GUI of CARTA is classified into different components:</p>
 <ul class="simple">
-<li>main window</li>
-<li>menu bar</li>
-<li>widget bar</li>
-<li>tool bar</li>
-<li>panel (docked widget)</li>
-<li>floating widget</li>
-<li>tab</li>
-<li>dialogue</li>
-<li>status icon</li>
+<li><p>main window</p></li>
+<li><p>menu bar</p></li>
+<li><p>widget bar</p></li>
+<li><p>tool bar</p></li>
+<li><p>panel (docked widget)</p></li>
+<li><p>floating widget</p></li>
+<li><p>tab</p></li>
+<li><p>dialogue</p></li>
+<li><p>status icon</p></li>
 </ul>
 <img src="_static/carta_gui.png"
      style="width:100%;height:auto;"><p>The main window consists of a set of panels and each panel may contain multiple docked widgets as tabs. For example, in the above figure there are five panels in the main window and there are two docked widgets as tabs in the bottom-left panel. A tab or a docked widget may be detached to become a floating widget. The menu bar provides control options, such as image input/output, launching widgets, getting helps, etc. The widget bar provides widgets to view or to analyze images. The icon at the top-right corner of the main window is an indicator of server (backend) status. A dialogue provides options to configure compoments, such as image layout, or region properties, etc. A tool bar provides tools for a widget, such as zoom buttons for the image viewer widget or the export options for the spectral profile widget, etc.</p>
@@ -192,44 +189,50 @@
 <p>CARTA provides a number of preferences for users to customize the GUI, including layouts. The preferences are persistent so that next time when users launch CARTA, all the preferences and a layout are restored. The preferences dialogue is accessible via the menu <strong>File</strong> -&gt; <strong>Preferences</strong>. Preferences are effective after CARTA reloads, except few that are effective immediately. Below we summarize the options of all preferences.</p>
 <img src="_static/carta_gui_preferences.png"
      style="width:100%;height:auto;"><ul class="simple">
-<li>Global<ul>
-<li>Theme: to adopt light or dark theme of the GUI (default: light) [effective immediately]</li>
-<li>Auto-launch file browser: to launch the file browser or not when CARTA is initialized (default: yes)</li>
-<li>Initial layout: the layout to adopt when CARTA is initialized (default: “Default”)</li>
-<li>Initial cursor position: to fix the cursor position on the image or not when CARTA is initialized. If it is fixed, a cross will be shown at the image center. Use “<strong>F</strong>” key to switch to the tracking mode (default: Tracking)</li>
-<li>Initial zoom level: to select the initial zoom level of the image to be filling up the field of view or to be displayed as one image pixel to one screen pixel ratio (default: “Zoom to fit”)</li>
+<li><p>Global</p>
+<ul>
+<li><p>Theme: to adopt light or dark theme of the GUI (default: light) [effective immediately]</p></li>
+<li><p>Auto-launch file browser: to launch the file browser or not when CARTA is initialized (default: yes)</p></li>
+<li><p>Initial layout: the layout to adopt when CARTA is initialized (default: “Default”)</p></li>
+<li><p>Initial cursor position: to fix the cursor position on the image or not when CARTA is initialized. If it is fixed, a cross will be shown at the image center. Use “<strong>F</strong>” key to switch to the tracking mode (default: Tracking)</p></li>
+<li><p>Initial zoom level: to select the initial zoom level of the image to be filling up the field of view or to be displayed as one image pixel to one screen pixel ratio (default: “Zoom to fit”)</p></li>
 </ul>
 </li>
-<li>Default render config<ul>
-<li>Scaling: the scaling function of the color map (default: linear)</li>
-<li>Color map: the default color for the raster image (default: inferno)</li>
-<li>Percentile ranks: the default clip level for the color map (default: 99.9%)</li>
+<li><p>Default render config</p>
+<ul>
+<li><p>Scaling: the scaling function of the color map (default: linear)</p></li>
+<li><p>Color map: the default color for the raster image (default: inferno)</p></li>
+<li><p>Percentile ranks: the default clip level for the color map (default: 99.9%)</p></li>
 </ul>
 </li>
-<li>Default WCS overlay<ul>
-<li>Color: the color for the WCS overlay, including border, grid line, ticks, labels, and title (default: blue)</li>
-<li>Grid visible: to show grid line or not as default (default: yes)</li>
-<li>Label visible: to show coordinate labels or not as default (default: yes)</li>
-<li>WCS type: the format of the displayed world coordinate. The default is “automatic” which means for galactic or ecliptic system, the world coordinate is displayed in decimal degrees, and for FK4, FK5, or ICRS, the world coordinate is displayed in sexigesimal format. (default: automatic) [effective for new images]</li>
+<li><p>Default WCS overlay</p>
+<ul>
+<li><p>Color: the color for the WCS overlay, including border, grid line, ticks, labels, and title (default: blue)</p></li>
+<li><p>Grid visible: to show grid line or not as default (default: yes)</p></li>
+<li><p>Label visible: to show coordinate labels or not as default (default: yes)</p></li>
+<li><p>WCS type: the format of the displayed world coordinate. The default is “automatic” which means for galactic or ecliptic system, the world coordinate is displayed in decimal degrees, and for FK4, FK5, or ICRS, the world coordinate is displayed in sexigesimal format. (default: automatic) [effective for new images]</p></li>
 </ul>
 </li>
-<li>Default region settings<ul>
-<li>Color: the default color of a region (default: cyan) [effective for new regions]</li>
-<li>Line width (px): the default line width of a region (default: 2) [effective for new regions]</li>
-<li>Dash length (px): the default dash length of the line composing a region. The default is to show a region in solid line (default: 0) [effective for new regions]</li>
-<li>Region type: the default selected region in the tool bar of the image viewer (default: rectangle)</li>
-<li>Creation mode: the method of how a rectange or an ellipse is created by mouse dragging. Two methods are supplied: center-to-corner and corner-to-corner (default: center-to-corner) [effective for new regions]</li>
+<li><p>Default region settings</p>
+<ul>
+<li><p>Color: the default color of a region (default: cyan) [effective for new regions]</p></li>
+<li><p>Line width (px): the default line width of a region (default: 2) [effective for new regions]</p></li>
+<li><p>Dash length (px): the default dash length of the line composing a region. The default is to show a region in solid line (default: 0) [effective for new regions]</p></li>
+<li><p>Region type: the default selected region in the tool bar of the image viewer (default: rectangle)</p></li>
+<li><p>Creation mode: the method of how a rectange or an ellipse is created by mouse dragging. Two methods are supplied: center-to-corner and corner-to-corner (default: center-to-corner) [effective for new regions]</p></li>
 </ul>
 </li>
-<li>Performance<ul>
-<li>Compression quality (image): a parameter (1~32) to control the image quality with lossy compression. The higher the number is, the better quality the images are. Choose with caution. (default: 11) [effective immediately]</li>
-<li>Compression quality (animation): a parameter (1~32) to control the animation quality with lossy compression. The higher the number is, the better quality the images are. Choose with caution. (default: 9) [effective immediately]</li>
-<li>GPU tile cache size (number of tiles): the cache size of GPU for tiles (default: 512)</li>
-<li>System tile cache size (number of tiles): the cache size of system memory for tiles (default: 4096)</li>
+<li><p>Performance</p>
+<ul>
+<li><p>Compression quality (image): a parameter (1~32) to control the image quality with lossy compression. The higher the number is, the better quality the images are. Choose with caution. (default: 11) [effective immediately]</p></li>
+<li><p>Compression quality (animation): a parameter (1~32) to control the animation quality with lossy compression. The higher the number is, the better quality the images are. Choose with caution. (default: 9) [effective immediately]</p></li>
+<li><p>GPU tile cache size (number of tiles): the cache size of GPU for tiles (default: 512)</p></li>
+<li><p>System tile cache size (number of tiles): the cache size of system memory for tiles (default: 4096)</p></li>
 </ul>
 </li>
-<li>Log events<ul>
-<li>This is for debugging purpose. Normal users can skip this part.</li>
+<li><p>Log events</p>
+<ul>
+<li><p>This is for debugging purpose. Normal users can skip this part.</p></li>
 </ul>
 </li>
 </ul>
@@ -272,15 +275,15 @@
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_roi_modification.mp4" type="video/mp4">
 </video><div class="admonition tip">
-<p class="first admonition-title">Tip</p>
+<p class="admonition-title">Tip</p>
 <p>“<strong>backspace</strong>” does not delete a region…</p>
 <p>If using CARTA remote mode in Firefox on MacOS, you may find the “<strong>backspace</strong>” key navigates back a page instead of removing a region. This behaviour can be prevented by modifying your Firefox web browser settings:</p>
-<ol class="last arabic simple">
-<li>Enter <a class="reference external" href="about:config">about:config</a> in the address bar.</li>
-<li>Click “I accept the risk!”</li>
-<li>A search bar appears at the top of a long list of preferences. Search for “browser.backspace_action”</li>
-<li>It will likely have a value of 0. Double click it, and then modify it to a value of “2”.</li>
-<li>Close the <a class="reference external" href="about:config">about:config</a> tab and now backspace will no longer navigate back a page.</li>
+<ol class="arabic simple">
+<li><p>Enter <a class="reference external" href="about:config">about:config</a> in the address bar.</p></li>
+<li><p>Click “I accept the risk!”</p></li>
+<li><p>A search bar appears at the top of a long list of preferences. Search for “browser.backspace_action”</p></li>
+<li><p>It will likely have a value of 0. Double click it, and then modify it to a value of “2”.</p></li>
+<li><p>Close the <a class="reference external" href="about:config">about:config</a> tab and now backspace will no longer navigate back a page.</p></li>
 </ol>
 </div>
 <p>For a polygon region, new anchors can be added by clicking on the line segment. An anchor can be delected by double clicking on the anchor.</p>
@@ -315,138 +318,138 @@
 <div class="section" id="controls-and-shortcuts">
 <h2>Controls and shortcuts<a class="headerlink" href="#controls-and-shortcuts" title="Permalink to this headline">¶</a></h2>
 <p>CARTA supports keyboard shortcuts to enable certain controls without using a mouse. A summary is accessible via the menu <strong>Help</strong> -&gt; <strong>Controls and Shortcuts</strong>, or the shortcut <strong>shift</strong> + <strong>?</strong>. The shortcuts are slightly different depending on the operating system in use. The shortcuts for each operating system are summarized in the following table.</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="37%" />
-<col width="31%" />
-<col width="32%" />
+<col style="width: 37%" />
+<col style="width: 31%" />
+<col style="width: 32%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Control</th>
-<th class="head">macOS</th>
-<th class="head">Linux</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Control</p></th>
+<th class="head"><p>macOS</p></th>
+<th class="head"><p>Linux</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><strong>Help</strong></td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tbody>
+<tr class="row-even"><td><p><strong>Help</strong></p></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>Controls and shortcuts</td>
-<td>shift + ?</td>
-<td>shift + ?</td>
+<tr class="row-odd"><td><p>Controls and shortcuts</p></td>
+<td><p>shift + ?</p></td>
+<td><p>shift + ?</p></td>
 </tr>
-<tr class="row-even"><td><strong>Navigation</strong></td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p><strong>Navigation</strong></p></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>Pan image</td>
-<td>click</td>
-<td>click</td>
+<tr class="row-odd"><td><p>Pan image</p></td>
+<td><p>click</p></td>
+<td><p>click</p></td>
 </tr>
-<tr class="row-even"><td>Pan image (inside region)</td>
-<td>cmd + click / middle-click</td>
-<td>ctrl + click / middle-click</td>
+<tr class="row-even"><td><p>Pan image (inside region)</p></td>
+<td><p>cmd + click / middle-click</p></td>
+<td><p>ctrl + click / middle-click</p></td>
 </tr>
-<tr class="row-odd"><td>Zoom image</td>
-<td>mouse wheel</td>
-<td>mouse wheel</td>
+<tr class="row-odd"><td><p>Zoom image</p></td>
+<td><p>mouse wheel</p></td>
+<td><p>mouse wheel</p></td>
 </tr>
-<tr class="row-even"><td><strong>Regions</strong></td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p><strong>Regions</strong></p></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>Region properties</td>
-<td>double-click</td>
-<td>double-click</td>
+<tr class="row-odd"><td><p>Region properties</p></td>
+<td><p>double-click</p></td>
+<td><p>double-click</p></td>
 </tr>
-<tr class="row-even"><td>Delete selected region</td>
-<td>del / backspace</td>
-<td>del / backspace</td>
+<tr class="row-even"><td><p>Delete selected region</p></td>
+<td><p>del / backspace</p></td>
+<td><p>del / backspace</p></td>
 </tr>
-<tr class="row-odd"><td>Toggle region creation mode</td>
-<td>C</td>
-<td>C</td>
+<tr class="row-odd"><td><p>Toggle region creation mode</p></td>
+<td><p>C</p></td>
+<td><p>C</p></td>
 </tr>
-<tr class="row-even"><td>Deselect region</td>
-<td>esc</td>
-<td>esc</td>
+<tr class="row-even"><td><p>Deselect region</p></td>
+<td><p>esc</p></td>
+<td><p>esc</p></td>
 </tr>
-<tr class="row-odd"><td>Switch region creation mode</td>
-<td>cmd + drag</td>
-<td>ctrl + drag</td>
+<tr class="row-odd"><td><p>Switch region creation mode</p></td>
+<td><p>cmd + drag</p></td>
+<td><p>ctrl + drag</p></td>
 </tr>
-<tr class="row-even"><td>Symmetric region creation</td>
-<td>shift + drag</td>
-<td>shift + drag</td>
+<tr class="row-even"><td><p>Symmetric region creation</p></td>
+<td><p>shift + drag</p></td>
+<td><p>shift + drag</p></td>
 </tr>
-<tr class="row-odd"><td>Toggle current region lock</td>
-<td>L</td>
-<td>L</td>
+<tr class="row-odd"><td><p>Toggle current region lock</p></td>
+<td><p>L</p></td>
+<td><p>L</p></td>
 </tr>
-<tr class="row-even"><td>Unlock all regions</td>
-<td>shift + L</td>
-<td>shift + L</td>
+<tr class="row-even"><td><p>Unlock all regions</p></td>
+<td><p>shift + L</p></td>
+<td><p>shift + L</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Appearance</strong></td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p><strong>Appearance</strong></p></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>Toggle light/dark theme</td>
-<td>shift + D</td>
-<td>shift + D</td>
+<tr class="row-even"><td><p>Toggle light/dark theme</p></td>
+<td><p>shift + D</p></td>
+<td><p>shift + D</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Cursor</strong></td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p><strong>Cursor</strong></p></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>Freeze/unfreeze cursor</td>
-<td>F</td>
-<td>F</td>
+<tr class="row-even"><td><p>Freeze/unfreeze cursor</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
 </tr>
-<tr class="row-odd"><td><strong>File controls</strong></td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p><strong>File controls</strong></p></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>Open image</td>
-<td>cmd + O</td>
-<td>ctrl + O</td>
+<tr class="row-even"><td><p>Open image</p></td>
+<td><p>cmd + O</p></td>
+<td><p>ctrl + O</p></td>
 </tr>
-<tr class="row-odd"><td>Append image</td>
-<td>cmd + L</td>
-<td>ctrl + L</td>
+<tr class="row-odd"><td><p>Append image</p></td>
+<td><p>cmd + L</p></td>
+<td><p>ctrl + L</p></td>
 </tr>
-<tr class="row-even"><td>Export image</td>
-<td>cmd + E</td>
-<td>ctrl + E</td>
+<tr class="row-even"><td><p>Export image</p></td>
+<td><p>cmd + E</p></td>
+<td><p>ctrl + E</p></td>
 </tr>
-<tr class="row-odd"><td><strong>Frame controls</strong></td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p><strong>Frame controls</strong></p></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>Next frame</td>
-<td>cmd + ]</td>
-<td>ctrl + ]</td>
+<tr class="row-even"><td><p>Next frame</p></td>
+<td><p>cmd + ]</p></td>
+<td><p>ctrl + ]</p></td>
 </tr>
-<tr class="row-odd"><td>Previous frame</td>
-<td>cmd + [</td>
-<td>ctrl + [</td>
+<tr class="row-odd"><td><p>Previous frame</p></td>
+<td><p>cmd + [</p></td>
+<td><p>ctrl + [</p></td>
 </tr>
-<tr class="row-even"><td>Next channel</td>
-<td>cmd + up</td>
-<td>ctrl + up</td>
+<tr class="row-even"><td><p>Next channel</p></td>
+<td><p>cmd + up</p></td>
+<td><p>ctrl + up</p></td>
 </tr>
-<tr class="row-odd"><td>Previous channel</td>
-<td>cmd + down</td>
-<td>ctrl + down</td>
+<tr class="row-odd"><td><p>Previous channel</p></td>
+<td><p>cmd + down</p></td>
+<td><p>ctrl + down</p></td>
 </tr>
-<tr class="row-even"><td>Next Stokes</td>
-<td>cmd + shift + up</td>
-<td>ctrl + shift + up</td>
+<tr class="row-even"><td><p>Next Stokes</p></td>
+<td><p>cmd + shift + up</p></td>
+<td><p>ctrl + shift + up</p></td>
 </tr>
-<tr class="row-odd"><td>Previous Stokes</td>
-<td>cmd + shift + down</td>
-<td>ctrl + shift + down</td>
+<tr class="row-odd"><td><p>Previous Stokes</p></td>
+<td><p>cmd + shift + down</p></td>
+<td><p>ctrl + shift + down</p></td>
 </tr>
 </tbody>
 </table>
@@ -468,12 +471,12 @@
         <li class="right" >
           <a href="quickstart.html" title="Quickstart guide"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.2 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.3 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2018-2019, ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+        &#169; Copyright 2018-2020, ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>
