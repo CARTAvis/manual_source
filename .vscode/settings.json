@@ -1,4 +1,4 @@
 {
     "restructuredtext.confPath": "${workspaceFolder}/source",
-    "python.pythonPath": "/Users/kswang/anaconda2/bin/python"
+    "python.pythonPath": "/Users/kswang/opt/anaconda3/bin/python"
 }
