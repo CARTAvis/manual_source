@@ -119,7 +119,6 @@ CARTA is mainly built in C++, TypeScript, and JavaScript, and with the following
 * jsoncpp: https://github.com/open-source-parsers/jsoncpp
 * MobX: https://mobx.js.org
 * MongoDB: https://www.mongodb.com
-* OpenMP: https://www.openmp.org
 * React: https://reactjs.org
 * TBB: https://www.threadingbuildingblocks.org
 
