@@ -73,7 +73,7 @@ A tab can be moved to other existing panel by dragging its title to the upper bo
    </video>
 
 
-Maximixing and restoring a panel
+Maximizing and restoring a panel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 By clicking the **maximize** icon at the top-right corner of a panel, the panel (including all tabs) will be maximized to the main window. By clicking the **restore** icon, the panel will be restored to its original location.
 

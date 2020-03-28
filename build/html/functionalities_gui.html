@@ -44,7 +44,7 @@
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Functionality</a><ul>
-<li><a class="reference internal" href="#server-side-status">Server-side status</a></li>
+<li><a class="reference internal" href="#server-side-status-and-session-resume">Server-side status and session resume</a></li>
 <li><a class="reference internal" href="#file-browser">File browser</a></li>
 <li><a class="reference internal" href="#hdf5-idia-schema-image-support">HDF5 (IDIA schema) image support</a></li>
 <li><a class="reference internal" href="#image-viewer">Image viewer</a><ul>
@@ -100,35 +100,49 @@
             
   <div class="section" id="functionality">
 <h1>Functionality<a class="headerlink" href="#functionality" title="Permalink to this headline">¶</a></h1>
-<p>With version 1.2, CARTA provides the following widgets/dialogues for image view or analysis:</p>
+<p>With version 1.3, CARTA provides the following widgets/dialogues for image view or analysis:</p>
 <ul class="simple">
-<li><p>file browser dialogue: to view image header and to load an image</p></li>
+<li><p>Widget</p>
+<ul>
 <li><p>image viewer: to view raster images</p></li>
-<li><p>render configuration widget: to configure how a raster image is rendered</p></li>
-<li><p>animator widget: to navigate through different images, different channels, and different Stokes</p></li>
-<li><p>region list widget: to view and configure region properties</p></li>
-<li><p>spatial profile widget: to view x and y spatial profiles at the cursor position</p></li>
-<li><p>spectral profile widget: to view spectral profile from a region of interest</p></li>
-<li><p>histogram widget: to view histogram from a region of interest</p></li>
-<li><p>statistics widget: to view basic statistics from a region of interest</p></li>
-<li><p>Stokes analysis widget: to view basic polarization quantities</p></li>
-<li><p>log widget: to view program logs.</p></li>
+<li><p>render configuration: to configure how a raster image is rendered</p></li>
+<li><p>animator: to navigate through different images, different channels, or different Stokes</p></li>
+<li><p>layer list: to configure image matching in world coordinates</p></li>
+<li><p>region list: to view and configure region properties</p></li>
+<li><p>spatial profiler: to view x and y spatial profiles at the cursor position</p></li>
+<li><p>spectral profiler: to view spectral profile from a region of interest</p></li>
+<li><p>histogram: to view histogram from a region of interest</p></li>
+<li><p>statistics: to view basic statistics from a region of interest</p></li>
+<li><p>Stokes analysis: to view basic polarization quantities</p></li>
+<li><p>log: to view program logs</p></li>
 </ul>
-<p>In addition, the server version of version 1.2 supports server authentication via the “Lightweight Directory Access Protocol” (LDAP). When using the server version, users can log in with their user name and password identical to the server hosting their images (either local or network storage). To share access of a given folder to collaborators, users can just change the permission via the “chmod” command.</p>
-<p>The support of the HDF5 image (IDIA schema) is further enhanced in verson 1.2. Rotated dataset and pre-calculated quantities, such as statistics or histograms, are properly utilized to enhance performance and user experience.</p>
-<div class="section" id="server-side-status">
-<h2>Server-side status<a class="headerlink" href="#server-side-status" title="Permalink to this headline">¶</a></h2>
+</li>
+<li><p>Dialogue</p>
+<ul>
+<li><p>file browser: to view image headers and to load an image</p></li>
+<li><p>contour configuration: to configure how a contour image is rendered</p></li>
+<li><p>file information: to view image headers</p></li>
+<li><p>preferences: to configure user preferneces of the graphical user interface</p></li>
+<li><p>overlay settings: to configure the appearance of an image in the image viewer</p></li>
+</ul>
+</li>
+</ul>
+<p>In addition, the server version of version 1.3 supports server authentication via the “Lightweight Directory Access Protocol” (LDAP). When using the server version, users can log in with their user name and password identical to the server hosting their images (either local or network storage). To share access of a given folder to collaborators, users can just change the permission via the “chmod” command.</p>
+<p>The support of the HDF5 image (IDIA schema) is further enhanced in verson 1.3. Rotated dataset and pre-calculated quantities, such as statistics or histograms, are properly utilized to enhance performance and user experience.</p>
+<div class="section" id="server-side-status-and-session-resume">
+<h2>Server-side status and session resume<a class="headerlink" href="#server-side-status-and-session-resume" title="Permalink to this headline">¶</a></h2>
 <p>As CARTA is fundamentally a client-server application, it would be good to know the status of the server side at the client side. This is also useful for the desktop version to know if the application runs normally or not. The server status is displayed as a circular icon at the top-right corner of the main window. The connection latency can be seen by hovering over the icon. There are three kinds of status:</p>
 <ul class="simple">
-<li><p>Green: this means that the server side is initially connected successfully.</p></li>
-<li><p>Orange: this means that the initial connection to the server side was broken (e.g., unstable internet) but has been reconnected. Please note that CARTA may behave abnormally in this case.</p></li>
+<li><p>Green: this means that the server side is connected successfully.</p></li>
+<li><p>Orange: this means that the initial connection to the server side was broken (e.g., unstable internet) but has been reconnected. Users will asked to resume the previous session or not.</p></li>
 <li><p>Red: this means that the server side is not accessible. CARTA is not functional in this case.</p></li>
 </ul>
 <img src="_static/carta_gui_server_status.png"
      style="width:100%;height:auto;"><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If CARTA behaves abnormally or stops responding, please check the server-side status icon and connection latency. If it becomes orange, the internet connection might have been interrupted. If it becomes red, the internet connection is lost, or the backend process has been terminated. It is highly recommended to reload CARTA if you see orange or red icon. If the situation reoccurs, please contact us through the <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a> (<a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">carta_helpdesk<span>&#64;</span>asiaa<span>&#46;</span>sinica<span>&#46;</span>edu<span>&#46;</span>tw</a>).</p>
-</div>
+<p>If CARTA behaves abnormally or stops responding, please check the server-side status icon and connection latency. If it becomes red, the connection between the client side and the server side is interrupted. At this point, CARTA is not funtional. When the connection is re-established automatically, the status icon becomes orange and a prompt will be shown to ask users wheater or not to resume the previous CARTA session. By clicking the OK button, CARTA will try to resume the previous session if possible. If users choose not to resume the previous session, please reload CARTA to establish a new session. Interacting with CARTA when the status icon is orange may lead to abnormal behaviors.</p>
+<img src="_static/carta_gui_session_resume.png"
+     style="width:100%;height:auto;"></div>
 </div>
 <div class="section" id="file-browser">
 <h2>File browser<a class="headerlink" href="#file-browser" title="Permalink to this headline">¶</a></h2>

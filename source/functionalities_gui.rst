@@ -1,30 +1,40 @@
 Functionality
 =============
-With version 1.2, CARTA provides the following widgets/dialogues for image view or analysis:
+With version 1.3, CARTA provides the following widgets/dialogues for image view or analysis:
 
-* file browser dialogue: to view image header and to load an image
-* image viewer: to view raster images
-* render configuration widget: to configure how a raster image is rendered
-* animator widget: to navigate through different images, different channels, and different Stokes
-* region list widget: to view and configure region properties
-* spatial profile widget: to view x and y spatial profiles at the cursor position
-* spectral profile widget: to view spectral profile from a region of interest
-* histogram widget: to view histogram from a region of interest
-* statistics widget: to view basic statistics from a region of interest
-* Stokes analysis widget: to view basic polarization quantities
-* log widget: to view program logs.
+* Widget
+  
+  * image viewer: to view raster images
+  * render configuration: to configure how a raster image is rendered
+  * animator: to navigate through different images, different channels, or different Stokes
+  * layer list: to configure image matching in world coordinates
+  * region list: to view and configure region properties
+  * spatial profiler: to view x and y spatial profiles at the cursor position
+  * spectral profiler: to view spectral profile from a region of interest
+  * histogram: to view histogram from a region of interest
+  * statistics: to view basic statistics from a region of interest
+  * Stokes analysis: to view basic polarization quantities
+  * log: to view program logs
 
-In addition, the server version of version 1.2 supports server authentication via the "Lightweight Directory Access Protocol" (LDAP). When using the server version, users can log in with their user name and password identical to the server hosting their images (either local or network storage). To share access of a given folder to collaborators, users can just change the permission via the "chmod" command. 
+* Dialogue
 
-The support of the HDF5 image (IDIA schema) is further enhanced in verson 1.2. Rotated dataset and pre-calculated quantities, such as statistics or histograms, are properly utilized to enhance performance and user experience.  
+  * file browser: to view image headers and to load an image
+  * contour configuration: to configure how a contour image is rendered
+  * file information: to view image headers
+  * preferences: to configure user preferneces of the graphical user interface
+  * overlay settings: to configure the appearance of an image in the image viewer
+
+In addition, the server version of version 1.3 supports server authentication via the "Lightweight Directory Access Protocol" (LDAP). When using the server version, users can log in with their user name and password identical to the server hosting their images (either local or network storage). To share access of a given folder to collaborators, users can just change the permission via the "chmod" command. 
+
+The support of the HDF5 image (IDIA schema) is further enhanced in verson 1.3. Rotated dataset and pre-calculated quantities, such as statistics or histograms, are properly utilized to enhance performance and user experience.  
 
 
-Server-side status
-------------------
+Server-side status and session resume
+-------------------------------------
 As CARTA is fundamentally a client-server application, it would be good to know the status of the server side at the client side. This is also useful for the desktop version to know if the application runs normally or not. The server status is displayed as a circular icon at the top-right corner of the main window. The connection latency can be seen by hovering over the icon. There are three kinds of status:
 
-* Green: this means that the server side is initially connected successfully.
-* Orange: this means that the initial connection to the server side was broken (e.g., unstable internet) but has been reconnected. Please note that CARTA may behave abnormally in this case.  
+* Green: this means that the server side is connected successfully.
+* Orange: this means that the initial connection to the server side was broken (e.g., unstable internet) but has been reconnected. Users will asked to resume the previous session or not.  
 * Red: this means that the server side is not accessible. CARTA is not functional in this case. 
 
 .. raw:: html
@@ -33,8 +43,13 @@ As CARTA is fundamentally a client-server application, it would be good to know 
         style="width:100%;height:auto;">
 
 .. note::
-   If CARTA behaves abnormally or stops responding, please check the server-side status icon and connection latency. If it becomes orange, the internet connection might have been interrupted. If it becomes red, the internet connection is lost, or the backend process has been terminated. It is highly recommended to reload CARTA if you see orange or red icon. If the situation reoccurs, please contact us through the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw). 
+   If CARTA behaves abnormally or stops responding, please check the server-side status icon and connection latency. If it becomes red, the connection between the client side and the server side is interrupted. At this point, CARTA is not funtional. When the connection is re-established automatically, the status icon becomes orange and a prompt will be shown to ask users wheater or not to resume the previous CARTA session. By clicking the OK button, CARTA will try to resume the previous session if possible. If users choose not to resume the previous session, please reload CARTA to establish a new session. Interacting with CARTA when the status icon is orange may lead to abnormal behaviors. 
+   
+   .. raw:: html
 
+      <img src="_static/carta_gui_session_resume.png" 
+           style="width:100%;height:auto;">
+   
 
 
 File browser
