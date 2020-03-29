@@ -378,10 +378,88 @@ The appearance of contours can be customized in the "Styling" tab. As an example
         style="width:50%;height:auto;">
 
 
+Match images in world coordinates
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When multiple images are loaded in the append mode, users may optionally trigger image matching based on their world coordinates. It is a common practice to compare images from different telescopes or even from the same telescope with different spectral and spatial setups. Users can use the "Layer list widget" to trigger image matching process,  
+
+.. raw:: html
+
+   <img src="_static/carta_fn_layerList.png" 
+        style="width:70%;height:auto;">
+
+or the tool button in the image viewer.
+
+.. raw:: html
+
+   <img src="_static/carta_fn_triggerMatch.png" 
+        style="width:40%;height:auto;">
+
+The layer list widget lists up all load images, including their:
+
+* file name
+* rendering type ("Type"): "R" means raster and "C" mean contour
+* image matching state ("Matching"): "XY" means spatial domain and "Z" means spectral domain. 
+* channel index
+* Stokes index 
+
+The first loaded image with valid spatial world coordinates serves as the spatial reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.image.mom0). Similarly, the first loaded image with valid spectral coordinates servers as the spectral reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.fits). To match world coordinates of other loaded image, users can click "XY" to match in the spatial domain and click "Z" to match in the spectral domain. 
+
+For raster images, matching in the spatial domain is achieved by applying translation, rotation, and scaling to images with respect to the reference image. 
+
+.. raw:: html
+
+   <video controls loop style="width:100%;height:auto;">
+     <source src="_static/carta_fn_spatialMatching.mp4" type="video/mp4">
+   </video>
+
+For contour images, matching in the spatial domain is achieved by reprojecting contour vertices to the raster image in the view. Multiple contour images are displayed on top of a raster image if spatial matching is enabled. 
+
+.. raw:: html
+
+   <video controls loop style="width:100%;height:auto;">
+     <source src="_static/carta_fn_contourMatching.mp4" type="video/mp4">
+   </video>
+
+For image cubes, matching in the spectral domain is achieved by nearest interpolation in radio velocity. When spectral matching is enabled by clicking "Z", the matched channel and Stokes indices are shown in the layer list widget. 
+
+.. raw:: html
+
+   <video controls loop style="width:100%;height:auto;">
+     <source src="_static/carta_fn_spectralMatching.mp4" type="video/mp4">
+   </video>
+
+.. note::
+   Animation playback does not work properly with spectrally matched cubes in v1.3. This will be improved in v1.4.
+
+.. hint::
+   Users may change spatial or spectral reference image by right-clicking a cell in the "Matching" column in the layer list widget.
+
+.. note::
+   If spatial reference image or spectral reference image is closed via "**File**" -> "**Close image**", all matched images will be unmatched and a new reference image will be automatically registered.
+
+Raster image or contour image may be hidden in the image viewer by clicking "R" or "C" in the layer list widget. For example, to create an image with contours only, users can click the "R" button to hide the raster image. 
+ 
+.. raw:: html
+
+   <video controls loop style="width:100%;height:auto;">
+     <source src="_static/carta_fn_hideLayer.mp4" type="video/mp4">
+   </video>
+
+When multiple images are loaded in the append mode, their order determines the order in the frame slider of the animator widget. With the layer list widget, this order can be changed by dragging an entry to a desired place. 
+
+.. raw:: html
+
+   <video controls loop style="width:100%;height:auto;">
+     <source src="_static/carta_fn_reorderFrame.mp4" type="video/mp4">
+   </video>
+
+
+
+
 
 Changing image view
 ^^^^^^^^^^^^^^^^^^^
-CARTA provides different ways to change the image view. With a mouse, image zoom or pan actions are achieved by scrolling up/down or clicking, respectively, as demonstrated in the section :ref:`mouse_interaction_with_images`. Alternatively, the image can be changed to fit the image viewer, or to fit the screen resolution (i.e., screen resolution equals full image resolution), by using the buttons at the bottom-right corner of the image viewer. Zoom in and zoom out buttons are provided as well.  To change to different frames, channels, or stokes, please refer to the section :ref:`animator_intro`.
+CARTA provides different ways to change the image view. With a mouse, image zoom is achieved by scrolling up/down. Image pan is achieved by dragging or command+clicking (mac) or ctrl+clicking (linux). Alternatively, image can be changed to fit the image viewer, or to fit the screen resolution (i.e., screen resolution equals full image resolution), by using the buttons at the bottom-right corner of the image viewer. Zoom in and zoom out buttons are provided as well.  To change to different frames, channels, or stokes, please refer to the section :ref:`animator_intro`.
 
 .. raw:: html
 
@@ -389,7 +467,7 @@ CARTA provides different ways to change the image view. With a mouse, image zoom
      <source src="_static/carta_fn_imageViewer_changeView.mp4" type="video/mp4">
    </video>
 
-When an image is zoomed in or out, the precision of the coordinate tick values is dynamically adjusted based on the zoom level. This feature allows users to analyze images with very different scales (WCS group; v1.3).
+When an image is zoomed in or out, the precision of the coordinate tick values is dynamically adjusted based on the zoom level. 
 
 
 Cursor information
@@ -427,8 +505,8 @@ CARTA provides flexible options to configure the appearance of an image plot. Th
      <source src="_static/carta_fn_astOptions.mp4" type="video/mp4">
    </video>
 
-As an example, below is an image with default overlay settings.
 
+As an example, below is an image with default overlay settings.
 
 .. raw:: html
 
@@ -447,8 +525,6 @@ The restoring beam is shown at the bottom-left corner, if applicable.
 
 The image can be exported as a png image by clicking the "Export image" button at the bottom-right corner of the image viewer, or by "**File**" -> "**Export image**".
 
-.. note::
-   The ability to customize the appearance of a beam will be provided in future releases. 
 
 .. note::
    Currently displaying beams of a cube with per-plane-beam is not supported.  
@@ -458,7 +534,7 @@ The image can be exported as a png image by clicking the "Export image" button a
 
 Animator
 --------
-The animator widget provides controls of image frames, channels, and stokes. When multiple images are loaded via **File** -> **Append image**, "Frame" slider will show up and allows users to switch between different loaded images. If an image file has multiple channels and/or stokes, "Channel" and/or "Stokes" slider will appear. The double slider right below the "Channel" slider allows users to specify a range of channels for animation playback. On the top there is a set of animation control buttons such play, next, etc. The action will be applied to the slider with the activated radio button. As an example below, the action will be applied to the *channel* axis of the second stokes axis of the third image file, and the animation range is from the second channel to the last channel. 
+The animator widget provides controls of image frames, channels, and stokes. When multiple images are loaded via **File** -> **Append image**, "Frame" slider will show up and allows users to switch between different loaded images. If an image file has multiple channels and/or stokes, "Channel" and/or "Stokes" slider will appear. The double slider right below the "Channel" slider allows users to specify a range of channels for animation playback. On the top there is a set of animation control buttons such play, next, etc. Playback modes, including "forward", "backward", "Bouncing" and "Blink", are supported. Playback action will be applied to the slider with the activated radio button. As an example below, the action will be applied to the *channel* axis of the second stokes axis of the third image file, and the animation range is from the second channel to the last channel. 
 
 
 .. raw:: html
@@ -471,12 +547,12 @@ The animator widget provides controls of image frames, channels, and stokes. Whe
 The frame rate spin box controls the *desired* frame per second (fps). The *actual* frame rate depends on image size and internet condition. 
 
 .. note::
-   More animator features, such as playback modes (backward, bouncing), and playback step, etc. will be available in future releases.   
+   Step for animation playback will be added in future releases. Currently the step is unity. 
 
 
 Region of interest
 ------------------
-As of v1.2, CARTA supports the following region types:
+As of v1.3, CARTA supports the following region types:
 
 * rectangle (rotatable)
 * ellipse (rotatable)
@@ -521,12 +597,13 @@ The creation and modification of regions are demonstrated in the section :ref:`m
   4. It will likely have a value of 0. Double click it, and then modify it to a value of "2".
   5. Close the about:config tab and now backspace will no longer navigate back a page.
 
-All created regions are listed in the region list widget with basic region properties. To select a region (region state changes to "selected"), simply click on the region in the image viewer, or click on the region in the region list widget. To modify the properties of a selected region, double-click on a region in the image viewer or a region in the region list widget. The color, line style, name, location, and shape, of a region are all configurable with the region property dialogue. To de-select a region, press "**esc**" key. To delete a selected region, press "**delete**" or "**backspace**" key. The activated region can be locked by pressing "**L**" key or by clicking the lock icon in the region list widget or region property dialogue. When a region is locked, it cannot be modified (resize, move, or delete) with mouse actions and the "**delete**" or "**backspace**" key. A locked region, however, can still be modified or delected via the region property dialogue. Locking a region could help the stituation when users want to modify overlapping regions, or could prevent modifying a region accidentally. 
+All created regions are listed in the region list widget with basic region properties. To select a region (region state changes to "selected"), simply click on the region in the image viewer, or click on the region in the region list widget. To modify the properties of a selected region, double-click on a region in the image viewer or a region in the region list widget. The color, line style, name, location, and shape, of a region are all configurable with the region property dialogue. To de-select a region, press "**esc**" key. To delete a selected region, press "**delete**" or "**backspace**" key. The activated region can be locked by pressing "**L**" key or by clicking the "lock" icon in the region list widget or region property dialogue. When a region is locked, it cannot be modified (resize, move, or delete) with mouse actions and the "**delete**" or "**backspace**" key. A locked region, however, can still be modified or delected via the region property dialogue. Locking a region could help the stituation when users want to modify overlapping regions, or could prevent modifying a region accidentally. The "eye" icon is to show the corresponding region at the center of image view. 
 
 .. raw:: html
 
    <img src="_static/carta_fn_roi.png" 
         style="width:100%;height:auto;">
+
 
 CARTA checks if a polygon is simple or complex. If a polygon is detected as complex, its color will be in pink as a warning. Spectral profile, statistics, or histogram of a complex polygon can still be requested. However, the outcome may be beyond users' expectation. The enclosed pixels depend on *how* a complex polygon is constructed. Please use complex polygon with caution. 
 
@@ -538,10 +615,9 @@ Region of interest enables practical image cube analysis through statistics, his
      <source src="_static/carta_fn_roi_widgetHighlight.mp4" type="video/mp4">
    </video>
 
-.. tip::
-   Single mouse click may trigger image pan or region selection. If it is intended to pan to a position *inside* a region, hold "**command**" or "**ctrl**" key then click, or use middle-click if available.
 
-As of v1.2, CARTA supports basic region import and export capability. Regions, in world coordinate or in image coordinate, can be exported to a text file or imported from a text file. To import a region file, use the menu **File** -> **Import regions**. 
+
+As of v1.3, CARTA supports basic region import and export capability. Regions, in world coordinate or in image coordinate, can be exported to a text file or imported from a text file. To import a region file, use the menu **File** -> **Import regions**. 
 
 .. raw:: html
 
@@ -555,7 +631,7 @@ To export regions to a region file, use the meun **File** -> **Export regions**.
    <img src="_static/carta_fn_regionExport.png" 
         style="width:100%;height:auto;">
 
-As of v1.2, CASA region text format (.crtf) is supported with some limitations. Currently only the 2D region defination is supported. Other properties, such as spectral range, reference frame, or decoration (line style, line width, etc.) will be supported in future releases. DS9 region format will be supported in the future releases too. 
+As of v1.3, CASA region text format (.crtf) and ds9 region text formate (.reg) are supported with some limitations. Currently only the 2D region defination is supported. Other properties, such as spectral range, reference frame, or decoration (line style, line width, etc.) will be supported in future releases.  
 
 The currently supported CRTF region syntax is summerized below:
 
@@ -580,10 +656,27 @@ The currently supported CRTF region syntax is summerized below:
 
 Please refer to https://casa.nrao.edu/casadocs/casa-5.6.0/imaging/image-analysis/region-file-format for more detailed descriptions about the CRTF syntax. 
 
-.. note::
-   Full support of the CRTF and DS9 region formats will be available in future releases. 
 
+The currently supported ds9 region syntax is summerized below:
 
+* Rectangle
+
+  * box x y width height angle
+
+* Ellipse
+
+  * ellipse x y radius radius angle
+  * circle x y radius
+
+* Polygon
+
+  * polygon x1 y1 x2 y2 x3 y3 ...
+
+* Point
+
+  * point x y
+
+Please refer to http://ds9.si.edu/doc/ref/region.html for more detailed descriptions about the ds9 region syntax. 
 
 
 Spatial profiler
