@@ -550,6 +550,12 @@ The frame rate spin box controls the *desired* frame per second (fps). The *actu
    Step for animation playback will be added in future releases. Currently the step is unity. 
 
 
+.. warning::
+   In v1.3, channel animation playback of spatially matched contour images is not supported. Only spatially matched raster image is supported. This limiiation will be removed in v1.4.
+
+
+
+
 Region of interest
 ------------------
 As of v1.3, CARTA supports the following region types:
@@ -677,6 +683,11 @@ The currently supported ds9 region syntax is summerized below:
   * point x y
 
 Please refer to http://ds9.si.edu/doc/ref/region.html for more detailed descriptions about the ds9 region syntax. 
+
+
+.. warning::
+   In v1.3, region is registered to individual image (just like v1.2) even if the image is matched to other images in world coordinates. This limitation will be removed in v1.4, so that users can request analytics data from *all* matched images in the same region. 
+
 
 
 Spatial profiler

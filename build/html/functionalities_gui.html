@@ -481,6 +481,10 @@
 <p class="admonition-title">Note</p>
 <p>Step for animation playback will be added in future releases. Currently the step is unity.</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In v1.3, channel animation playback of spatially matched contour images is not supported. Only spatially matched raster image is supported. This limiiation will be removed in v1.4.</p>
+</div>
 </div>
 <div class="section" id="region-of-interest">
 <h2>Region of interest<a class="headerlink" href="#region-of-interest" title="Permalink to this headline">¶</a></h2>
@@ -620,6 +624,10 @@
 </li>
 </ul>
 <p>Please refer to <a class="reference external" href="http://ds9.si.edu/doc/ref/region.html">http://ds9.si.edu/doc/ref/region.html</a> for more detailed descriptions about the ds9 region syntax.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In v1.3, region is registered to individual image (just like v1.2) even if the image is matched to other images in world coordinates. This limitation will be removed in v1.4, so that users can request analytics data from <em>all</em> matched images in the same region.</p>
+</div>
 </div>
 <div class="section" id="spatial-profiler">
 <h2>Spatial profiler<a class="headerlink" href="#spatial-profiler" title="Permalink to this headline">¶</a></h2>
