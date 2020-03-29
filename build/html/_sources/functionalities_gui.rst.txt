@@ -685,7 +685,7 @@ Spatial profiler provides the spatial profiles of the current image at the curso
 
 When displaying a spatial profile with the number of pixels more than the number of screen pixels of the spatial profiler widget, a *decimated* profile will be derived and displayed to users as an enhancement of performance. Min/max decimation of a profile is adopted to ensure profile features are preserved. In other words, positive and negative peaks should stay at the same screen pixels just like displaying the full resolution profile. When users keep zooming in the profile, decimation with narrower and narrower interval is applied dynamically. Full resolution profile is displayed when the number of screen pixels is more than the number of pixels of the profile to be displayed.  
 
-The interactions of the spatial profiler widget are demonstrated in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available to the right border. The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
+The interactions of the spatial profiler widget are demonstrated in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available in the spatial profiler settings dialogue which is launched by clicking the "cog" icon at the top-right corner. The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
 
 When the cursor is on the image in the image viewer, the pointed pixel value (pixel index and pixel value) will be displayed at the bottom-left corner of the spatial profiler. When the cursor is on the spatial profiler graph, the pointed profile data will be displayed instead. 
 
@@ -694,16 +694,19 @@ When the cursor is on the image in the image viewer, the pointed pixel value (pi
    <img src="_static/carta_fn_spatialProfiler_widget.png" 
         style="width:100%;height:auto;">
 
-
 .. note::
-   More flexibilities on how mean and rms values are derived will be provided in future releases. Profile fitting capability will be available in future releases.   
+   In future release, the following features will be supported:
+   
+   * More flexibilities on how mean and rms values are derived in the plot
+   * Profile fitting capability 
+   * Profile along a line segment, polyline, or an arbitary curve  
 
 
 Spectral profiler
 -----------------
 Spectral profiler provides the spectral profile of the current image cube at the selected region. The default region is set to "Cursor". The "**F**" key will disable or enable cursor profile update. When cursor update is disabled, a marker "+" will be placed on the image to indicate the position of the profile taken. 
 
-When requesting a spectral profile, a common disappointing user experience is that users may have to wait for an unknown amount of time to see the final result if the image cube is large. As an improvement on this aspect, CARTA supports *partial update* of spectral profile. Partial profiles will be periodically delivered to users while the full profile calculations are still ongoing. 
+When requesting a spectral profile, a common disappointing user experience is that users may have to wait for an unknown amount of time to see the final result if the image cube is large. As an improvement on this aspect, CARTA supports *progressive update* of spectral profile. Partial profiles will be periodically delivered to users while the full profile calculations are still ongoing. 
 
 .. raw:: html
 
@@ -721,10 +724,9 @@ When the property of a region (cursor or a regular region) is modified while the
      <source src="_static/carta_fn_spectralProfiler_profileCancellation.mp4" type="video/mp4">
    </video>
 
-
 When displaying a spectral profile with the number of channels more than the number of screen pixels of the spectral profiler widget, a *decimated* profile will be derived and displayed to users as an enhancement of performance. Min/max decimation of a profile is adopted to ensure profile features are preserved. In other words, positive and negative peaks should stay at the same screen pixels just like displaying the full resolution profile. When users keep zooming in the profile, decimation with narrower and narrower interval is applied dynamically. Full resolution profile is displayed when the number of screen pixels is more than the number of pixels of the profile to be displayed. 
 
-When regions are created, the spectral profiler widget can be configured to display a profile from a specific region with the "*region*" dropdown menu. Additional statistic types to compute the region spectral profile are available with the "*statistic*" dropdown menu (default to mean). If the image cube has multiple Stokes, the "*Stokes*" dropdown menu will be activated and defaulted to "current" which is synchronized with the selection in the animator. To view a specific Stokes, select with the "*Stokes*" dropdown menu.
+When regions are created, the spectral profiler widget can be configured to display a profile from a specific region with the "*region*" dropdown menu. The default of the "*region*" dropdown is "Active" which points to the current active (selected) region. If no region is active, it defaults to cursor region. Additional statistic types to compute the region spectral profile are available with the "*statistic*" dropdown menu (default to mean). If the image cube has multiple Stokes, the "*Stokes*" dropdown menu will be activated and defaulted to "current" which is synchronized with the selection in the animator. To view a specific Stokes, select with the "*Stokes*" dropdown menu.
 
 
 Multiple spectral profile widgets can be configured to display different region spectral profiles. The widget with the selected region will be highlighted with a persistent blue box.
@@ -734,11 +736,9 @@ Multiple spectral profile widgets can be configured to display different region 
    <img src="_static/carta_fn_spectralProfiler_multiwidget.png" 
         style="width:100%;height:auto;">
 
-
 The interactions of the spectral profiler widget are demonstrated in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the channel of the image displayed in the image viewer. Clicking directly on the spectral profiler graph will change the displayed image to the clicked channel. Alternatively, the red vertical bar is draggable and acts just like the animator slider. 
 
-The bottom axis shows the spectral coordinate, while optional channel coordinate can be displayed instead. Extra options to configure the profile plot are available to the right border. The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. When the cursor is on the image in the image viewer, the pointed pixel value (frequency or velocity or channel index, and pixel value) will be displayed at the bottom-left corner of the spectral profiler. When the cursor is on the spectral profiler graph, the pointed profile data will be displayed instead. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
-
+The bottom axis shows the spectral coordinate, Extra options to configure the profile plot are available in the spectral profile settings dialogue which can be launched by clicking the "cog" icon in the top-right corner. In the dialogue, users may select a different spectral convention (e.g., optical velocity) and a different reference system (e.g., TOPO). The option "Show Mean/RMS" will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. When the cursor is on the image in the image viewer, the pointed pixel value (frequency or velocity or channel index, and pixel value) will be displayed at the bottom-left corner of the spectral profiler. When the cursor is on the spectral profiler graph, the pointed profile data will be displayed instead. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
 
 .. raw:: html
 
@@ -747,7 +747,13 @@ The bottom axis shows the spectral coordinate, while optional channel coordinate
 
 
 .. note::
-   More flexibilities on how mean and rms values are derived will be provided in future releases. Enhancement of the spectral profile widget will be available in future releases.
+   In future releases, the follow features will be supported:
+   
+   * More flexibilities on how mean and rms values are derived
+   * Profile fitting
+   * Line identification toolkit
+   * Intensity unit conversion
+
 
 
 Stokes analysis widget
@@ -772,28 +778,51 @@ The profiles can be zoomed and panned with mouse similar to the spatial profile 
    <img src="_static/carta_fn_Stokes_widget2.png" 
         style="width:100%;height:auto;">
 
+When profiles are zoomed, the scatter plot will highlight those channels remaining in the profile view. Similarly, when scatter plot is zoomed, the profile plot will highlight those channels remaining in the scatter plot view.
+
+.. raw:: html
+
+   <video controls loop style="width:100%;height:auto;">
+     <source src="_static/carta_fn_stokesLinkedPlot.mp4" type="video/mp4">
+   </video>
+
+Additional options to customize the plots in the Stokes analysis widget are provided in the settings dialogue which can be launched by clicking the "cog" icon at the top-right corner. 
+
+.. raw:: html
+
+   <img src="_static/carta_fn_Stokes_settings.png" 
+        style="width:100%;height:auto;">
+
 
 Statistics widget
 -----------------
-Statistics widget allows users to see statistics with respect to a selected region. The "Region" dropdown menu can be used to select which region statistics to be displayed. The default is "Image" which means the entire image of the displayed channel is adopted to compute statistics. Multiple statistics widgets can be created to display statistics of different regions as demonstrated below. The widget with the selected region will be highlighted with a persistent blue box. 
+Statistics widget allows users to see statistics with respect to a selected region. The "Region" dropdown menu can be used to select which region statistics to be displayed. The default is "Active" which means the current active (selected) region. If no region is active, it defaults to the entire image of the displayed channel to compute statistics. Multiple statistics widgets can be created to display statistics of different regions as demonstrated below. The widget with the selected region will be highlighted with a persistent blue box. 
 
 .. raw:: html
 
    <img src="_static/carta_fn_statistics_widget.png" 
         style="width:100%;height:auto;">
 
-.. note::
-   Flux density (Jy) will be supported in a patch release before v1.3.
 
 
 Histogram widget
 ----------------
-Histogram widget allows users to visualize data in a histogram with respect to a selected region. The "Region" dropdown menu can be used to select which region histogram to be displayed. The default is "Image" which means the entire image of the displayed channel is adopted to construct a histogram. Multiple histogram widgets can be created to display histograms of different regions as demonstrated below. The widget with the selected region will be highlighted with a persistent blue box.
+Histogram widget allows users to visualize data in a histogram with respect to a selected region. The "Region" dropdown menu can be used to select which region histogram to be displayed. The default is "Active" which means the current active (selected) region. If no region is active, it defaults to the entire image of the displayed channel to construct a histogram. Multiple histogram widgets can be created to display histograms of different regions as demonstrated below. The widget with the selected region will be highlighted with a persistent blue box.
 
 .. raw:: html
 
    <img src="_static/carta_fn_histogram_widget.png" 
         style="width:100%;height:auto;">
 
+Additional options to customize the histogram in the histogram widget are provided in the settings dialogue which can be launched by clicking the "cog" icon at the top-right corner. 
+
+.. raw:: html
+
+   <img src="_static/carta_fn_histogram_settings.png" 
+        style="width:100%;height:auto;">
+
+
+
+
 .. note::
-   With v1.2, histogram bin width and bin count are automatically decided. Enhancement of the histogram widget, including histogram fitting, will be available in future releases. 
+   With v1.3, histogram bin width and bin count are automatically decided. Enhancement of the histogram widget, including histogram fitting, will be available in future releases. 
