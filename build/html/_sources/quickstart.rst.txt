@@ -11,14 +11,15 @@ To zoom an image
 * use mouse wheel to scroll
 * use buttons at the bottom-left corner of image viewer
 
-To pan an image (center on a specific pixel)
+To pan an image
 
-* use single mouse click
+* use mouse to drag on image (default) 
+* hold “**command**” (mac) / “**ctrl**” (linux) key then mouse click
 
 To pan *inside* a region
 
-* hold “**command**” (mac) / “**ctrl**” (linux) key then single mouse click
-*  single mouse middle click
+* hold “**command**” (mac) / “**ctrl**” (linux) key then mouse click
+* mouse middle click
 
 Region of interest interactions
 -------------------------------

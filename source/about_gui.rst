@@ -12,6 +12,7 @@ The GUI of CARTA is classified into different components:
 * main window
 * menu bar
 * widget bar
+* dialogue bar
 * tool bar
 * panel (docked widget)
 * floating widget
@@ -19,15 +20,13 @@ The GUI of CARTA is classified into different components:
 * dialogue
 * status icon
 
-
 .. raw:: html
 
    <img src="_static/carta_gui.png" 
         style="width:100%;height:auto;">
    
 
-
-The main window consists of a set of panels and each panel may contain multiple docked widgets as tabs. For example, in the above figure there are five panels in the main window and there are two docked widgets as tabs in the bottom-left panel. A tab or a docked widget may be detached to become a floating widget. The menu bar provides control options, such as image input/output, launching widgets, getting helps, etc. The widget bar provides widgets to view or to analyze images. The icon at the top-right corner of the main window is an indicator of server (backend) status. A dialogue provides options to configure compoments, such as image layout, or region properties, etc. A tool bar provides tools for a widget, such as zoom buttons for the image viewer widget or the export options for the spectral profile widget, etc. 
+The main window consists of a set of panels and each panel may contain multiple docked widgets as tabs. For example, in the above figure there are five panels in the main window and there are two docked widgets as tabs in the bottom-left panel. A tab or a docked widget may be detached to become a floating widget. The menu bar provides control options, such as image input/output, launching widgets, getting helps, etc. The widget bar provides widgets to view or to analyze images. The dialogue bar provides dialogues for configurations. The icon at the top-right corner of the main window is an indicator of server (backend) status. A dialogue provides options to configure compoments, such as image layout, or region properties, etc. A tool bar provides tools for a widget, such as zoom buttons for the image viewer widget or the export options for the spectral profile widget, etc. 
 
 
 

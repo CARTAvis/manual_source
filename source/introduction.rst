@@ -3,7 +3,7 @@ Introduction
 
 The mission of CARTA
 --------------------
-CARTA is the *Cube Analysis and Rendering Tool for Astronomy*, a new image visualization and analysis tool designed for the ALMA, the VLA, and the SKA pathfinders - MeerKAT and ASKAP. As the image size increases drastically with modern telescopes in recent years, viewing an image with a local image viewer or with a remote image viewer via the ssh protocol plus X11 tunneling or the VNC becomes less efficient. The mission of CARTA is to provide usability and scalability for the future by utilizing modern web technologies and computing parallelization. 
+CARTA is the *Cube Analysis and Rendering Tool for Astronomy*, a new image visualization and analysis tool designed for the ALMA, the VLA, and the SKA pathfinders - MeerKAT and ASKAP. As the image size increases drastically with modern telescopes in recent years, viewing an image with a local image viewer or with a remote image viewer via the ssh protocol plus X11 tunneling or the VNC becomes much less efficient. The mission of CARTA is to provide usability and scalability for the future by utilizing modern web technologies and computing parallelization. 
 
 Client-Server architecture
 --------------------------
@@ -62,6 +62,17 @@ The release plan and major goals are the following:
   * Initial touchscreen support
   * Bug fixes and performance improvements
 
+* v1.4: Catalogue overlay and analysis tools (subject to change)
+
+  * Catalogue overlay
+  * WCS region of interest
+  * Animator improvement
+  * Mip map support in HDF5 (IDIA schema) format
+  * Initial support of scripting interface in Python3
+  * Server-side authentication improvements
+  * Profile smoothing
+  * Moment map generator
+  * Line catalogue overlay
 
 
 Getting help
