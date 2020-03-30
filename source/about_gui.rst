@@ -35,7 +35,7 @@ The main window consists of a set of panels and each panel may contain multiple 
 
 Quickstart guide
 ----------------
-In this section, basic instructions on how to interact with CARTA through the graphical user interface (GUI) are introduced. A summary of the full set of controls and shortcuts can be found via the "Help" -> "Controls and Shortcuts" menu or via "**shift**"+"**?**" keys. Users may refer to :ref:`about_gui` for more detailed descriptions.
+In this section, basic instructions on how to interact with CARTA through the graphical user interface (GUI) are introduced. A summary of the full set of controls and shortcuts can be found via the "Help" -> "Controls and Shortcuts" menu or via "**shift**"+"**?**" keys. 
 
 Image viewing interactions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
