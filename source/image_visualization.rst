@@ -68,7 +68,7 @@ In the above example, users will see a list of images at the "*base*" directory 
 
 
 .. note::
-   An image might be closed via **File** -> **Close image**. The image currently displayed in the image viewer will be closed. If the image being closed is a WCS reference image, any other matched images to this reference image will be unmatched, thus they behave like individual images. See Section XXX for more information.  
+   An image might be closed via **File** -> **Close image**. The image currently displayed in the image viewer will be closed. If the image being closed is a WCS reference image, any other matched images to this reference image will be unmatched, thus they behave like individual images. 
 
 .. note::
    Currently CARTA does not support the following types of images:
@@ -130,7 +130,7 @@ Starting from v1.3, CARTA can display images in differnt ways, such as:
    <img src="_static/carta_fn_imageViewer_examples.png" 
         style="width:100%;height:auto;">
 
-When an image is loaded in CARTA, it is shown as a raster image by default, such as the first example in the above figure. Users then could generate contour images (ref XXX) and enable WCS matching between different images (ref XXX), such as the other three examples above.
+When an image is loaded in CARTA, it is shown as a raster image by default, such as the first example in the above figure. Users then could generate contour images (see :ref:`contourrendering`) and enable WCS matching between different images (see :ref:`wcsmatching`), such as the other three examples above.
 
 .. warning::
     If you are running a VNC session from a headless server, CARTA may fail to render images properly (they may appear as a solid color). This is due to the fact that CARTA renders images using WebGL which uses GPU to accelerate rendering process. Most headless servers have neither discrete nor dedicated GPUs. In such cases, it is highly recommended to use the "remote" mode of CARTA (see :ref:`commandLineStartup` for instructions).
@@ -274,6 +274,7 @@ The default scaling function, colormap, percentile rank, and a color for NaN pix
         style="width:80%;height:auto;">
 
 
+.. _contourrendering:
 
 Contour rendering
 -----------------
@@ -306,10 +307,13 @@ Once a set of levels has been defined, users can click the "Apply" button to vis
      <source src="_static/carta_fn_contourRendering.mp4" type="video/mp4">
    </video>
 
-In the above demostration, a contour image is generated on top of its raster image. If users would like to plot a contour image on top of other raster image (e.g., CO 2-1 image as contour, 1 mm continuum image as raster), users need to enable WCS matching of the two raster images first (Section XXX). Then users can generate the contour image just like the above example. When the contour image is generated, use the layer list widget or the animator widget to switch to the 1 mm continuum image. Users should see the CO 2-1 contour image on top of the 1 mm continuum raster image. In short, contour images are visible for raster images matched in world coordinates. 
+In the above demostration, a contour image is generated on top of its raster image. If users would like to plot a contour image on top of other raster image (e.g., velocity field as contour, integrated intensity image as raster), users need to enable WCS matching of the two raster images first (see :ref:`wcsmatching`). Then users can generate the contour image just like the above example. When the contour image is generated, use the layer list widget or the animator widget to switch to the integrated intensity image. Users should see the velocity field image as contours on top of the integrated intensity image as raster. In short, contour images are visible for raster images matched in world coordinates. 
 
+.. raw:: html
 
-**ADD VIDEO!!!**
+   <video controls loop style="width:100%;height:auto;">
+     <source src="_static/carta_fn_contourMatching2.mp4" type="video/mp4">
+   </video>
 
 
 If there are multiple images loaded in append mode, users may use the "Data Source" dropdown to select an image as the data source of contour calculations. If the state of the "lock" button is locked, image viewer will show the selected image as a raster image and the frame slider in the animator widget will be updated to the selected image too. To disable this synchronization, click the "lock" button to set the state to unlock. 
@@ -365,6 +369,8 @@ The appearance of contours can be customized in the "Styling" tab. As an example
    <img src="_static/carta_fn_contourStyling.png" 
         style="width:50%;height:auto;">
 
+
+.. _wcsmatching:
 
 Match images in world coordinates
 ---------------------------------

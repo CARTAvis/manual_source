@@ -412,7 +412,7 @@ Frontend
 * `Improved colormap <https://github.com/CARTAvis/carta-frontend/pull/2>`_
 * `updated to blueprint 3 <https://github.com/CARTAvis/carta-frontend/pull/1>`_
 
-ADD PR before repo migration ( < 2018-07-11 )
+.. ADD PR before repo migration ( < 2018-07-11 )
 
 Backend
 
