@@ -132,7 +132,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'CARTA.tex', u'CARTA Documentation',
-     u'CARTA working group', 'manual'),
+     u'CARTA team', 'manual'),
 ]
 
 

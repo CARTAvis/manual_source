@@ -1,29 +1,30 @@
-Appendix C: Change log
+Appendix C: change log
 ======================
+
 Current release: v1.3
 
 Change log v1.2.2 -> v1.3
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 Frondend
 
 Backend
 
 Change log v1.2.1 -> v1.2.2
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Frondend
 
 Backend
 
 
 Change log v1.2 -> v1.2.1
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 Frondend
 
 Backend
 
 
 Change log v1.1 -> v1.2
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 Frondend
 
 * `reduces point region size to 6 px <https://github.com/CARTAvis/carta-frontend/pull/509>`_
@@ -187,7 +188,7 @@ Backend
 
 
 Change log v1.0.1 -> v1.1
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 Frondend
 
 * `adjusted EventType enums to match backend style <https://github.com/CARTAvis/carta-frontend/pull/320>`_
@@ -334,7 +335,7 @@ Backend
 
 
 Change log v1.0 -> v1.0.1
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 Frondend
 
 * `CARTA 1.0.1 patch (data folder changes) <https://github.com/CARTAvis/carta-frontend/pull/137>`_
