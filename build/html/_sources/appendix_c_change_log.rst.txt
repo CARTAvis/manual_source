@@ -349,6 +349,83 @@ Change log up to v1.0
 
 Frontend
 
+* `Angus/cube histogram cancellation <https://github.com/CARTAvis/carta-frontend/pull/131>`_
+* `Angus/cube histogram <https://github.com/CARTAvis/carta-frontend/pull/128>`_
+* `Angus/documentation dialogs <https://github.com/CARTAvis/carta-frontend/pull/127>`_
+* `Add midpoint steps for profile plots <https://github.com/CARTAvis/carta-frontend/pull/110>`_
+* `Angus/shortcut modifier macos linux <https://github.com/CARTAvis/carta-frontend/pull/107>`_
+* `cursor info returns image coordinates as floats <https://github.com/CARTAvis/carta-frontend/pull/106>`_
+* `Angus/image view ratio overlay <https://github.com/CARTAvis/carta-frontend/pull/101>`_
+* `Confluence/save profiles <https://github.com/CARTAvis/carta-frontend/pull/100>`_
+* `added initial beam profile indicator <https://github.com/CARTAvis/carta-frontend/pull/99>`_
+* `Angus/tooltip updates <https://github.com/CARTAvis/carta-frontend/pull/96>`_
+* `Fix testing: CURSOR_XY_PROFILE 2 <https://github.com/CARTAvis/carta-frontend/pull/95>`_
+* `Refetor testing to connect server <https://github.com/CARTAvis/carta-frontend/pull/94>`_
+* `Confluence/save images <https://github.com/CARTAvis/carta-frontend/pull/93>`_
+* `cursor info freq <https://github.com/CARTAvis/carta-frontend/pull/91>`_
+* `Fix testing: CURSOR_XY_PROFILE. <https://github.com/CARTAvis/carta-frontend/pull/88>`_
+* `Add testing: CURSOR_Z_PROFILE. <https://github.com/CARTAvis/carta-frontend/pull/87>`_
+* `Confluence/auto cursor <https://github.com/CARTAvis/carta-frontend/pull/86>`_
+* `Add testing: CURSOR_XY_PROFILE. <https://github.com/CARTAvis/carta-frontend/pull/85>`_
+* `Add testing: FILEINFO <https://github.com/CARTAvis/carta-frontend/pull/84>`_
+* `Fix test linting <https://github.com/CARTAvis/carta-frontend/pull/83>`_
+* `Add functionality test: FILETYPE_PARSER <https://github.com/CARTAvis/carta-frontend/pull/82>`_
+* `Add functionality testing for CARTA backend <https://github.com/CARTAvis/carta-frontend/pull/81>`_
+* `Confluence/invalid wcs fix <https://github.com/CARTAvis/carta-frontend/pull/80>`_
+* `Addendum to previous padding / gap PR <https://github.com/CARTAvis/carta-frontend/pull/79>`_
+* `Fix label and title positioning using new AST feature <https://github.com/CARTAvis/carta-frontend/pull/78>`_
+* `adjusts zoom-to-fit offset to correct position <https://github.com/CARTAvis/carta-frontend/pull/77>`_
+* `adjusts zoom/panning offset to correct position <https://github.com/CARTAvis/carta-frontend/pull/76>`_
+* `adjusted channel slider step to always include first and last channels <https://github.com/CARTAvis/carta-frontend/pull/75>`_
+* `fixed offset in WCS coordinates due to zero/one indexing inconsistency <https://github.com/CARTAvis/carta-frontend/pull/74>`_
+* `Confluence/ast final features <https://github.com/CARTAvis/carta-frontend/pull/69>`_
+* `Confluence/ast final features <https://github.com/CARTAvis/carta-frontend/pull/67>`_
+* `frozen cursor indicator <https://github.com/CARTAvis/carta-frontend/pull/65>`_
+* `fixed log and power scaling shader <https://github.com/CARTAvis/carta-frontend/pull/63>`_
+* `button group for plot type implemented <https://github.com/CARTAvis/carta-frontend/pull/60>`_
+* `Some AST overlay fixes <https://github.com/CARTAvis/carta-frontend/pull/59>`_
+* `Angus/bug fixes <https://github.com/CARTAvis/carta-frontend/pull/58>`_
+* `Angus/spatial profile enhancement <https://github.com/CARTAvis/carta-frontend/pull/46>`_
+* `More AST overlay changes <https://github.com/CARTAvis/carta-frontend/pull/44>`_
+* `Angus/plot component enhancement <https://github.com/CARTAvis/carta-frontend/pull/42>`_
+* `minor style cleanup and min/max inputs <https://github.com/CARTAvis/carta-frontend/pull/39>`_
+* `Angus/adaptive compression <https://github.com/CARTAvis/carta-frontend/pull/35>`_
+* `Angus/histogram improvements <https://github.com/CARTAvis/carta-frontend/pull/32>`_
+* `Simplified and rearranged panel layout with clearer handling of dynamic settings and per-axis settings <https://github.com/CARTAvis/carta-frontend/pull/31>`_
+* `Eliminate = of END in header <https://github.com/CARTAvis/carta-frontend/pull/30>`_
+* `Angus/coordinate ref fix <https://github.com/CARTAvis/carta-frontend/pull/29>`_
+* `moves observable map key to requestId to prevent duplication <https://github.com/CARTAvis/carta-frontend/pull/27>`_
+* `Angus/cursor profiles <https://github.com/CARTAvis/carta-frontend/pull/26>`_
+* `added half-pixel offsets to fix overlay/image alignment issues <https://github.com/CARTAvis/carta-frontend/pull/25>`_
+* `First pass of hooking up additional AST overlay properties to the UI <https://github.com/CARTAvis/carta-frontend/pull/24>`_
+* `Add file info, header tab to filebrowser, fix filename sorting issue <https://github.com/CARTAvis/carta-frontend/pull/23>`_
+* `Angus/colormap fix <https://github.com/CARTAvis/carta-frontend/pull/22>`_
+* `Issue #15 <https://github.com/CARTAvis/carta-frontend/pull/21>`_
+* `Angus/animation fix <https://github.com/CARTAvis/carta-frontend/pull/20>`_
+* `implemented request queue limiting tied to frame rate <https://github.com/CARTAvis/carta-frontend/pull/17>`_
+* `Angus/maths svg <https://github.com/CARTAvis/carta-frontend/pull/13>`_
+* `Angus/colormap select <https://github.com/CARTAvis/carta-frontend/pull/12>`_
+* `Angus/dialog rnd <https://github.com/CARTAvis/carta-frontend/pull/10>`_
+* `Angus/animator <https://github.com/CARTAvis/carta-frontend/pull/9>`_
+* `Confine the moving range of image <https://github.com/CARTAvis/carta-frontend/pull/7>`_
+* `Angus/floating widgets <https://github.com/CARTAvis/carta-frontend/pull/5>`_
+* `Improved colormap <https://github.com/CARTAvis/carta-frontend/pull/2>`_
+* `updated to blueprint 3 <https://github.com/CARTAvis/carta-frontend/pull/1>`_
 
+ADD PR before repo migration ( < 2018-07-11 )
 
 Backend
+
+* `Limit histogram cache  <https://github.com/CARTAvis/carta-backend/pull/44>`_
+* `Update histogram bins in progress message  <https://github.com/CARTAvis/carta-backend/pull/43>`_
+* `Make cube region and use same auto bin size as for channel histogram  <https://github.com/CARTAvis/carta-backend/pull/39>`_
+* `Fix spectral frame with spectral reference conversion  <https://github.com/CARTAvis/carta-backend/pull/35>`_
+* `Implement cube histogram with progress updates  <https://github.com/CARTAvis/carta-backend/pull/34>`_
+* `Add error handling for open file  <https://github.com/CARTAvis/carta-backend/pull/31>`_
+* `Add rad2deg & unify the unit of Pixel Increment/Restoring Beam in CAS…  <https://github.com/CARTAvis/carta-backend/pull/25>`_
+* `Convert unit of bmaj/bmin to rad in CASA image  <https://github.com/CARTAvis/carta-backend/pull/22>`_
+* `Pam/zoom image  <https://github.com/CARTAvis/carta-backend/pull/16>`_
+* `Refine Pixel increment in file information  <https://github.com/CARTAvis/carta-backend/pull/15>`_
+* `Fix file browser issues with sym links, directory size, fits files  <https://github.com/CARTAvis/carta-backend/pull/8>`_
+
+ADD PR before repo migration ( < 2018-12-04 )
