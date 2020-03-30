@@ -1,8 +1,37 @@
 Appendix A: version history
 ===========================
+Version 1.3
+-----------
+Released 31th March 2020
+
+* Contour rendering
+* Matching images in world coordinates
+* Support "Active" region type in analytics widgets
+* Enhanced remote mode for desktop version
+* Spectral conversion in the spectral profiler
+* Tiled animation
+* In-app help manual 
+
+Performance enhancement and bug fixes are included as well.
+
+
+Version 1.2.2
+-------------
+Released 3rd January 2020
+
+* Critical bug fix
+
+
+Version 1.2.1
+-------------
+Released 30th October 2019
+
+* Support region import/export in ds9 syntax
+* Critical bug fix
+
 Version 1.2
 -----------
-Released XXX August 2019
+Released 28th August 2019
 
 This release includes the following new features:
 

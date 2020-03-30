@@ -17,7 +17,7 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/bizstyle.js"></script>
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Functionality" href="functionalities_gui.html" />
+    <link rel="next" title="Image cube visualization" href="image_visualization.html" />
     <link rel="prev" title="Quickstart guide" href="quickstart.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
@@ -28,7 +28,7 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="functionalities_gui.html" title="Functionality"
+          <a href="image_visualization.html" title="Image cube visualization"
              accesskey="N">next</a></li>
         <li class="right" >
           <a href="quickstart.html" title="Quickstart guide"
@@ -45,6 +45,7 @@
   <ul>
 <li><a class="reference internal" href="#">Graphical user interface</a><ul>
 <li><a class="reference internal" href="#components">Components</a></li>
+<li><a class="reference internal" href="#getting-help">Getting help</a></li>
 <li><a class="reference internal" href="#configuring-the-layout">Configuring the layout</a><ul>
 <li><a class="reference internal" href="#resizing-a-panel">Resizing a panel</a></li>
 <li><a class="reference internal" href="#relocating-a-tab-as-a-new-panel">Relocating a tab as a new panel</a></li>
@@ -82,8 +83,8 @@
   <p class="topless"><a href="quickstart.html"
                         title="previous chapter">Quickstart guide</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="functionalities_gui.html"
-                        title="next chapter">Functionality</a></p>
+  <p class="topless"><a href="image_visualization.html"
+                        title="next chapter">Image cube visualization</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -130,9 +131,15 @@
 <img src="_static/carta_gui.png"
      style="width:100%;height:auto;"><p>The main window consists of a set of panels and each panel may contain multiple docked widgets as tabs. For example, in the above figure there are five panels in the main window and there are two docked widgets as tabs in the bottom-left panel. A tab or a docked widget may be detached to become a floating widget. The menu bar provides control options, such as image input/output, launching widgets, getting helps, etc. The widget bar provides widgets to view or to analyze images. The dialogue bar provides dialogues for configurations. The icon at the top-right corner of the main window is an indicator of server (backend) status. A dialogue provides options to configure compoments, such as image layout, or region properties, etc. A tool bar provides tools for a widget, such as zoom buttons for the image viewer widget or the export options for the spectral profile widget, etc.</p>
 </div>
+<div class="section" id="getting-help">
+<h2>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
+<p>This online user manual can be accessed via “<strong>Help</strong>” -&gt; “<strong>Online manual</strong>”. A new browser window will be launched and show the CARTA user manual. In addition, in-app help (no internet is required) can be accessed via the “?” icon at the top-right corner of a panel. The help content will be displayed in a drawer.</p>
+<video controls loop style="width:100%;height:auto;">
+  <source src="_static/carta_gui_inapphelp.mp4" type="video/mp4">
+</video></div>
 <div class="section" id="configuring-the-layout">
 <h2>Configuring the layout<a class="headerlink" href="#configuring-the-layout" title="Permalink to this headline">¶</a></h2>
-<p>The layout configuration can be changed by mouse operations, like single click or drag-and-drop. In the examples below, the drag-and-drop action is guided on the GUI with a semi-transparent guider. Various operations are demonstrated below.</p>
+<p>The layout configuration can be changed by mouse operations, such as click or drag-and-drop. The drag-and-drop action is guided on the GUI with a semi-transparent guider. Various operations are demonstrated below.</p>
 <div class="section" id="resizing-a-panel">
 <span id="id1"></span><h3>Resizing a panel<a class="headerlink" href="#resizing-a-panel" title="Permalink to this headline">¶</a></h3>
 <p>As shown in the example below, a panel can be resized by dragging its borders. After a panel is resized, nearby panels are resized automatically to fit the new layout. Note that the appearance of the UI elements is adaptive to the size of the panel, as seen in the <strong>render configuration</strong> widget or the <strong>animator</strong> widget in the example.</p>
@@ -188,54 +195,86 @@
 <div class="section" id="user-preferences">
 <h2>User preferences<a class="headerlink" href="#user-preferences" title="Permalink to this headline">¶</a></h2>
 <p>CARTA provides a number of preferences for users to customize the GUI, including layouts. The preferences are persistent so that next time when users launch CARTA, all the preferences and a layout are restored. The preferences dialogue is accessible via the menu <strong>File</strong> -&gt; <strong>Preferences</strong>. Preferences are effective after CARTA reloads, except few that are effective immediately. Below we summarize the options of all preferences.</p>
-<img src="_static/carta_gui_preferences.png"
-     style="width:100%;height:auto;"><ul class="simple">
-<li><p>Global</p>
 <ul>
+<li><p>Global</p>
+<ul class="simple">
 <li><p>Theme: to adopt light or dark theme of the GUI (default: light) [effective immediately]</p></li>
 <li><p>Auto-launch file browser: to launch the file browser or not when CARTA is initialized (default: yes)</p></li>
 <li><p>Initial layout: the layout to adopt when CARTA is initialized (default: “Default”)</p></li>
 <li><p>Initial cursor position: to fix the cursor position on the image or not when CARTA is initialized. If it is fixed, a cross will be shown at the image center. Use “<strong>F</strong>” key to switch to the tracking mode (default: Tracking)</p></li>
 <li><p>Initial zoom level: to select the initial zoom level of the image to be filling up the field of view or to be displayed as one image pixel to one screen pixel ratio (default: “Zoom to fit”)</p></li>
+<li><p>Zoom to: zoom with respect to cursor position or image viewer center</p></li>
+<li><p>Enable drag-to-pan: pan image by mouse drag or mouse click</p></li>
+<li><p>WCS matching on append: trigger WCS matching automatically for newly appended images</p></li>
+<li><p>Spectral matching: spectral convention adopted for spectral matching</p></li>
 </ul>
-</li>
-<li><p>Default render config</p>
-<ul>
+<img src="_static/carta_gui_preferences_global.png"
+     style="width:100%;height:auto;"></li>
+<li><p>Render configuration</p>
+<ul class="simple">
 <li><p>Scaling: the scaling function of the color map (default: linear)</p></li>
 <li><p>Color map: the default color for the raster image (default: inferno)</p></li>
 <li><p>Percentile ranks: the default clip level for the color map (default: 99.9%)</p></li>
+<li><p>NaN color: color for rendering NaN pixels</p></li>
 </ul>
-</li>
-<li><p>Default WCS overlay</p>
-<ul>
-<li><p>Color: the color for the WCS overlay, including border, grid line, ticks, labels, and title (default: blue)</p></li>
-<li><p>Grid visible: to show grid line or not as default (default: yes)</p></li>
-<li><p>Label visible: to show coordinate labels or not as default (default: yes)</p></li>
-<li><p>WCS type: the format of the displayed world coordinate. The default is “automatic” which means for galactic or ecliptic system, the world coordinate is displayed in decimal degrees, and for FK4, FK5, or ICRS, the world coordinate is displayed in sexigesimal format. (default: automatic) [effective for new images]</p></li>
+<img src="_static/carta_gui_preferences_renderConfig.png"
+     style="width:100%;height:auto;"></li>
+<li><p>Contour configuration</p>
+<ul class="simple">
+<li><p>Generator type: tools for generating a set of contour levels to be calculated and rendered</p></li>
+<li><p>Smoothing mode: image smoothing mode before calculating contour vertices</p></li>
+<li><p>Default smoothing factor: kernel size in number of pixels for image smoothing</p></li>
+<li><p>Default contour levels: number of contour levels to be generated by the level generator</p></li>
+<li><p>Thickness: line thickness of contour rendering</p></li>
+<li><p>Default color mode: render contours with a constant color or a color map</p></li>
+<li><p>Default color map: color map for contour rendering</p></li>
+<li><p>Default color: constant color for contour rendering</p></li>
 </ul>
-</li>
-<li><p>Default region settings</p>
-<ul>
+<img src="_static/carta_gui_preferences_contourConfig.png"
+     style="width:100%;height:auto;"></li>
+<li><p>Overlay configuration</p>
+<ul class="simple">
+<li><p>AST color: the color for the WCS overlay, including border, grid line, ticks, labels, and title (default: blue)</p></li>
+<li><p>AST grid visible: to show grid line or not as default (default: yes)</p></li>
+<li><p>AST label visible: to show coordinate labels or not as default (default: yes)</p></li>
+<li><p>WCS format: the format of the displayed world coordinate. The default is “automatic” which means for galactic or ecliptic system, the world coordinate is displayed in decimal degrees, and for FK4, FK5, or ICRS, the world coordinate is displayed in sexigesimal format. (default: automatic) [effective for new images]</p></li>
+<li><p>Beam visible: show a spatial resolution element</p></li>
+<li><p>Beam color: color for rendering a spatial resolution element</p></li>
+<li><p>Beam type: styling for rendering a spatial resolution element</p></li>
+<li><p>Beam width: line width for rendering a spatial resolution element</p></li>
+</ul>
+<img src="_static/carta_gui_preferences_overlayConfig.png"
+     style="width:100%;height:auto;"></li>
+<li><p>Region</p>
+<ul class="simple">
 <li><p>Color: the default color of a region (default: cyan) [effective for new regions]</p></li>
 <li><p>Line width (px): the default line width of a region (default: 2) [effective for new regions]</p></li>
 <li><p>Dash length (px): the default dash length of the line composing a region. The default is to show a region in solid line (default: 0) [effective for new regions]</p></li>
 <li><p>Region type: the default selected region in the tool bar of the image viewer (default: rectangle)</p></li>
 <li><p>Creation mode: the method of how a rectange or an ellipse is created by mouse dragging. Two methods are supplied: center-to-corner and corner-to-corner (default: center-to-corner) [effective for new regions]</p></li>
 </ul>
-</li>
+<img src="_static/carta_gui_preferences_region.png"
+     style="width:100%;height:auto;"></li>
 <li><p>Performance</p>
-<ul>
+<ul class="simple">
+<li><p>Low bandwidth mode: reduce required image resolution by a factor of two and reduce the cursor responsiveness to 400 ms</p></li>
 <li><p>Compression quality (image): a parameter (1~32) to control the image quality with lossy compression. The higher the number is, the better quality the images are. Choose with caution. (default: 11) [effective immediately]</p></li>
 <li><p>Compression quality (animation): a parameter (1~32) to control the animation quality with lossy compression. The higher the number is, the better quality the images are. Choose with caution. (default: 9) [effective immediately]</p></li>
 <li><p>GPU tile cache size (number of tiles): the cache size of GPU for tiles (default: 512)</p></li>
 <li><p>System tile cache size (number of tiles): the cache size of system memory for tiles (default: 4096)</p></li>
+<li><p>Contour rounding factor: number of contour vertices per pixel</p></li>
+<li><p>Contour compression level: compression quality of contour image data</p></li>
+<li><p>Contour chunk size: chunk size of contour data streaming</p></li>
+<li><p>Contour control map resolution: control map resolution for reprojecting contour vertices to other coordinate system</p></li>
+<li><p>Stream image tiles while zooming: streaming image tiles for all sampled zoom levels</p></li>
+<li><p>Stop animation playback in: a timer to automatically stop animation playback for server resource management</p></li>
 </ul>
-</li>
+<img src="_static/carta_gui_preferences_performance.png"
+     style="width:100%;height:auto;"></li>
 <li><p>Log events</p>
-<ul>
-<li><p>This is for debugging purpose. Normal users can skip this part.</p></li>
-</ul>
-</li>
+<p>This is for debugging purpose. Normal users can skip this part. The client side and the server side of CARTA communicate through “protocal buffer” messages. For debugging purpose, advanced users can identify a set of messages in the list and launch browser’s Javascript console to see those messages.</p>
+<img src="_static/carta_gui_preferences_log.png"
+     style="width:100%;height:auto;"></li>
 </ul>
 </div>
 <div class="section" id="mouse-interactions-with-images">
@@ -248,10 +287,10 @@
 </video></div>
 <div class="section" id="panning">
 <h3>Panning<a class="headerlink" href="#panning" title="Permalink to this headline">¶</a></h3>
-<p>The image can be panned equivalently by single-clicking a position in the image. The image will be re-centered at that position in the view.</p>
+<p>The image can be panned by mouse drag-and-drop on the image.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_mouse_images_pan.mp4" type="video/mp4">
-</video><p>If it is intended to pan <em>inside</em> a region, please hold <strong>command</strong> (mac) or <strong>ctrl</strong> (linux) key and click inside a region, or simply use middle click. Single click on a region will change the region state to “selected”.</p>
+</video><p>If it is intended to pan <em>inside</em> a region, please hold <strong>command</strong> (mac) or <strong>ctrl</strong> (linux) key and click inside a region, or simply use middle click. Single click on a region will change the region state to “selected”. With the same operation, users can center an image pixel (regardless it is inside a region or not) in the image viewer.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_mouse_images_pan_roi.mp4" type="video/mp4">
 </video></div>
@@ -260,7 +299,7 @@
 <span id="mouse-interaction-with-regions"></span><h2>Mouse interactions with region of interest<a class="headerlink" href="#mouse-interactions-with-region-of-interest" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="region-creation">
 <h3>Region creation<a class="headerlink" href="#region-creation" title="Permalink to this headline">¶</a></h3>
-<p>A region can be created by firstly entering the region creation mode then drawing on the image viewer. To enter the region creation mode, click the <em>region</em> button at the bottom-right corner of the image viewer or press “<strong>C</strong>” key. Double-clicking the region icon brings up all available region types (rectangle, ellipse, polygon, and point, as of v1.2). To create a point region, a single click will do. For rectangle or ellipse, it can be created in the “center-to-corner” mode or the “corner-to-corner” mode, depending on the preference setting in the preference dialogue (<strong>File</strong> -&gt; <strong>Preferences</strong> -&gt; <strong>Default region settings</strong>). To temporarily switch to the other mode than the default, hold “<strong>command</strong>” (mac) or “<strong>ctrl</strong>” (linux) key then drag. “circle” and “square” regions are the special cases of ellipse and rectangle regions, respectively. These symmetric regions can be created by holding <strong>shift</strong> key then dragging.</p>
+<p>A region can be created by firstly entering the region creation mode then drawing on the image viewer. To enter the region creation mode, click the <em>region</em> button at the bottom-right corner of the image viewer or press “<strong>C</strong>” key. Double-clicking the region icon brings up all available region types (rectangle, ellipse, polygon, and point, as of v1.3). To create a point region, a single click will do. For rectangle or ellipse, it can be created in the “center-to-corner” mode or the “corner-to-corner” mode, depending on the preference setting in the preference dialogue (<strong>File</strong> -&gt; <strong>Preferences</strong> -&gt; <strong>Default region settings</strong>). To temporarily switch to the other mode than the default, hold “<strong>command</strong>” (mac) or “<strong>ctrl</strong>” (linux) key then drag. “circle” and “square” regions are the special cases of ellipse and rectangle regions, respectively. These symmetric regions can be created by holding <strong>shift</strong> key then dragging.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_roi_creation1.mp4" type="video/mp4">
 </video><p>To create a polygon region, start with a click followed by a series of clicks to define anchors of a desired polygonal shape and finish with a double click. CARTA detects “complex” polygon (polygon with intersections) and shows it in pink color. Spectral profiles, statistics, or histogram of a complex polygon can still be requested but please note that the results may be beyond users’ expectations since the actual pixel coverage depends on <em>how</em> a complex polygon is created.</p>
@@ -467,7 +506,7 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="functionalities_gui.html" title="Functionality"
+          <a href="image_visualization.html" title="Image cube visualization"
              >next</a></li>
         <li class="right" >
           <a href="quickstart.html" title="Quickstart guide"
