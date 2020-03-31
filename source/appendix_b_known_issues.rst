@@ -24,6 +24,7 @@ File browser
 Animator
 ^^^^^^^^
 * frame label and other info out of sync with image change when animating between frames (`GitHub issue <https://github.com/CARTAvis/carta-frontend/issues/815>`_)
+* a flash with missing tiles then full image restored when we press stop to stop animation (`GitHub issue <https://github.com/CARTAvis/carta-frontend/issues/794>`_)
 * incomplete contour rendering when stop animating (`GitHub issue <https://github.com/CARTAvis/carta-frontend/issues/579>`_)
 * Synchronise contour and raster data when animating (`GitHub issue <https://github.com/CARTAvis/carta-frontend/issues/569>`_)
 * no radio button is checked (`GitHub issue <https://github.com/CARTAvis/carta-frontend/issues/108>`_)
