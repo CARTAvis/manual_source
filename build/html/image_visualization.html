@@ -391,6 +391,10 @@
 <li><p>Stokes index</p></li>
 </ul>
 <p>The first loaded image with valid spatial world coordinates serves as the spatial reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.image.mom0). Similarly, the first loaded image with valid spectral coordinates servers as the spectral reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.fits). To match world coordinates of other loaded image, users can click “XY” to match in the spatial domain and click “Z” to match in the spectral domain.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Users may change spatial or spectral reference image by right-clicking a cell in the “Matching” column in the layer list widget.</p>
+</div>
 <p>For raster images, matching in the spatial domain is achieved by applying translation, rotation, and scaling to images with respect to the reference image.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_spatialMatching.mp4" type="video/mp4">
@@ -402,15 +406,18 @@
   <source src="_static/carta_fn_spectralMatching.mp4" type="video/mp4">
 </video><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Animation playback does not work properly with spectrally matched cubes in v1.3. This will be improved in v1.4.</p>
-</div>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Users may change spatial or spectral reference image by right-clicking a cell in the “Matching” column in the layer list widget.</p>
-</div>
+<p>Projection effects of raster images</p>
+<p>As raster images are matched spatially by applying translation, rotation, and scaling, projection effects between different images might be visible if images have wide field of view and/or images have very different projection schemes. In the following video, projection effects in raster images are demonstrated. However, projection effects of contour images are properly handled in CARTA. Contours are reprojected with sufficient accuracy with respect to the raster image as seen by users in the image viewer.</p>
+<video controls loop style="width:100%;height:auto;">
+  <source src="_static/carta_fn_projectionEffect.mp4" type="video/mp4">
+</video></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If spatial reference image or spectral reference image is closed via “<strong>File</strong>” -&gt; “<strong>Close image</strong>”, all matched images will be unmatched and a new reference image will be automatically registered.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Animation playback does not work properly with spectrally matched cubes in v1.3. This will be improved in v1.4.</p>
 </div>
 <p>Raster image or contour image may be hidden in the image viewer by clicking “R” or “C” in the layer list widget. For example, to create an image with contours only, users can click the “R” button to hide the raster image.</p>
 <video controls loop style="width:100%;height:auto;">

@@ -398,6 +398,9 @@ The layer list widget lists up all load images, including their:
 
 The first loaded image with valid spatial world coordinates serves as the spatial reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.image.mom0). Similarly, the first loaded image with valid spectral coordinates servers as the spectral reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.fits). To match world coordinates of other loaded image, users can click "XY" to match in the spatial domain and click "Z" to match in the spectral domain. 
 
+.. hint::
+   Users may change spatial or spectral reference image by right-clicking a cell in the "Matching" column in the layer list widget.
+
 For raster images, matching in the spatial domain is achieved by applying translation, rotation, and scaling to images with respect to the reference image. 
 
 .. raw:: html
@@ -423,13 +426,23 @@ For image cubes, matching in the spectral domain is achieved by nearest interpol
    </video>
 
 .. note::
-   Animation playback does not work properly with spectrally matched cubes in v1.3. This will be improved in v1.4.
+   Projection effects of raster images
 
-.. hint::
-   Users may change spatial or spectral reference image by right-clicking a cell in the "Matching" column in the layer list widget.
+   As raster images are matched spatially by applying translation, rotation, and scaling, projection effects between different images might be visible if images have wide field of view and/or images have very different projection schemes. In the following video, projection effects in raster images are demonstrated. However, projection effects of contour images are properly handled in CARTA. Contours are reprojected with sufficient accuracy with respect to the raster image as seen by users in the image viewer.  
+
+   .. raw:: html
+
+      <video controls loop style="width:100%;height:auto;">
+        <source src="_static/carta_fn_projectionEffect.mp4" type="video/mp4">
+      </video>
+
 
 .. note::
    If spatial reference image or spectral reference image is closed via "**File**" -> "**Close image**", all matched images will be unmatched and a new reference image will be automatically registered.
+
+.. warning::
+   Animation playback does not work properly with spectrally matched cubes in v1.3. This will be improved in v1.4.
+
 
 Raster image or contour image may be hidden in the image viewer by clicking "R" or "C" in the layer list widget. For example, to create an image with contours only, users can click the "R" button to hide the raster image. 
  
