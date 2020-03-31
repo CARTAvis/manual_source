@@ -5,6 +5,8 @@ Graphical user interface
 The graphical user interface (GUI) of CARTA is designed to be flexible and user friendly to support most of use cases, such as continuum image analysis, or spectral line cube analysis, etc. In this section, we introduce the GUI and provide examples to guide users to get familiar with configuring layouts via mouse interactions. Examples on how to interact with regions and charts are provided as well.
 
 
+
+
 Components
 ----------
 The GUI of CARTA is classified into different components:
@@ -12,6 +14,7 @@ The GUI of CARTA is classified into different components:
 * main window
 * menu bar
 * widget bar
+* dialogue bar
 * tool bar
 * panel (docked widget)
 * floating widget
@@ -19,21 +22,119 @@ The GUI of CARTA is classified into different components:
 * dialogue
 * status icon
 
-
 .. raw:: html
 
    <img src="_static/carta_gui.png" 
         style="width:100%;height:auto;">
    
 
+The main window consists of a set of panels and each panel may contain multiple docked widgets as tabs. For example, in the above figure there are five panels in the main window and there are two docked widgets as tabs in the bottom-left panel. A tab or a docked widget may be detached to become a floating widget. The menu bar provides control options, such as image input/output, launching widgets, getting helps, etc. The widget bar provides widgets to view or to analyze images. The dialogue bar provides dialogues for configurations. The icon at the top-right corner of the main window is an indicator of server (backend) status. A dialogue provides options to configure compoments, such as image layout, or region properties, etc. A tool bar provides tools for a widget, such as zoom buttons for the image viewer widget or the export options for the spectral profile widget, etc. 
 
-The main window consists of a set of panels and each panel may contain multiple docked widgets as tabs. For example, in the above figure there are five panels in the main window and there are two docked widgets as tabs in the bottom-left panel. A tab or a docked widget may be detached to become a floating widget. The menu bar provides control options, such as image input/output, launching widgets, getting helps, etc. The widget bar provides widgets to view or to analyze images. The icon at the top-right corner of the main window is an indicator of server (backend) status. A dialogue provides options to configure compoments, such as image layout, or region properties, etc. A tool bar provides tools for a widget, such as zoom buttons for the image viewer widget or the export options for the spectral profile widget, etc. 
+
+.. _quickstart:
+
+Quickstart guide
+----------------
+In this section, basic instructions on how to interact with CARTA through the graphical user interface (GUI) are introduced. A summary of the full set of controls and shortcuts can be found via the "Help" -> "Controls and Shortcuts" menu or via "**shift**"+"**?**" keys. 
+
+Image viewing interactions
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+To zoom an image
+
+* use mouse wheel to scroll
+* use buttons at the bottom-left corner of image viewer
+
+To pan an image
+
+* use mouse to drag on image (default) 
+* hold “**command**” (mac) / “**ctrl**” (linux) key then mouse click
+
+To pan *inside* a region
+
+* hold “**command**” (mac) / “**ctrl**” (linux) key then mouse click
+* mouse middle click
+
+Region of interest interactions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+To enable region creation mode
+
+* press “**C**” key
+
+To create symmetric regions (circle or square)
+
+* hold “**shift**” key then mouse drag
+
+To create / modify a region (rectangle or ellipse) with the alternative mode (center-to-corner or corner-to-corner).
+
+* hold “**command**” (mac) / “**ctrl**” (linux) key then mouse drag
+
+To configure a region
+
+* double mouse click on the region list
+* double mouse click inside a region in image viewer
+
+To lock/unlock a region
+
+* press "**L**" key
+* press "**shift**" + "**L**" key to unlock all locked regions
+* click the lock icon in the region list widget
+* click the lock icon in the region configuration dialogue.
+
+To delete a region
+
+* press “**delete**” key
+* press “**backspace**” key
+
+Cursor update
+^^^^^^^^^^^^^
+To freeze/unfreeze cursor position update in the image viewer
+
+* press “**F**” key
+
+Chart interactions
+^^^^^^^^^^^^^^^^^^
+Focused zoom
+
+* use mouse wheel to scroll
+
+Horizontal zoom
+
+* hold-and-drag in horizontal direction
+
+Vertical zoom
+
+* hold-and-drag in vertical direction
+
+Box zoom
+
+* hold-and-drag in diagonal direction
+
+Reset zoom
+
+* double mouse click
+
+Horizontal pan
+
+* hold “**shift**” key then mouse drag horizontally
+
+
+
+Getting help
+------------
+This online user manual can be accessed via "**Help**" -> "**Online manual**". A new browser window will be launched and show the CARTA user manual. In addition, in-app help (no internet is required) can be accessed via the "?" icon at the top-right corner of a panel. The help content will be displayed in a drawer.
+
+
+.. raw:: html
+
+   <video controls loop style="width:100%;height:auto;">
+     <source src="_static/carta_gui_inapphelp.mp4" type="video/mp4">
+   </video>
 
 
 
 Configuring the layout
 ----------------------
-The layout configuration can be changed by mouse operations, like single click or drag-and-drop. In the examples below, the drag-and-drop action is guided on the GUI with a semi-transparent guider. Various operations are demonstrated below.
+The layout configuration can be changed by mouse operations, such as click or drag-and-drop. The drag-and-drop action is guided on the GUI with a semi-transparent guider. Various operations are demonstrated below.
 
 
 .. _resizing_a_panel:
@@ -49,7 +150,6 @@ As shown in the example below, a panel can be resized by dragging its borders. A
      <source src="_static/carta_gui_resizing_panel.mp4" type="video/mp4">
    </video>
 
-
 Relocating a tab as a new panel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A tab can be relocated by dragging its title to a desired new panel. The target location is visualized with a semi-transparent box, as shown in the example below.
@@ -60,6 +160,7 @@ A tab can be relocated by dragging its title to a desired new panel. The target 
    <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_relocating_tab_as_panel.mp4" type="video/mp4">
    </video>
+
 
 Relocating a tab to another panel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -72,8 +173,7 @@ A tab can be moved to other existing panel by dragging its title to the upper bo
      <source src="_static/carta_gui_relocating_tab_as_tab.mp4" type="video/mp4">
    </video>
 
-
-Maximixing and restoring a panel
+Maximizing and restoring a panel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 By clicking the **maximize** icon at the top-right corner of a panel, the panel (including all tabs) will be maximized to the main window. By clicking the **restore** icon, the panel will be restored to its original location.
 
@@ -82,6 +182,7 @@ By clicking the **maximize** icon at the top-right corner of a panel, the panel 
    <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_max_min_panel.mp4" type="video/mp4">
    </video>
+
 
 Detaching and attaching a tab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -93,7 +194,6 @@ By clicking the **detach** (unpin) icon at the top-right corner of a panel, the 
      <source src="_static/carta_gui_detach_attach_tab.mp4" type="video/mp4">
    </video>
 
-
 Creating a widget as a floating widget or as a tab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A widget is activated as a floating widget by clicking the button in the widget bar. Alternatively, a widget can be activated as a tab by dragging the button in the widget bar directly to a desired location.
@@ -103,6 +203,7 @@ A widget is activated as a floating widget by clicking the button in the widget 
    <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_activating_widget.mp4" type="video/mp4">
    </video>
+
 
 Light and dark theme
 ^^^^^^^^^^^^^^^^^^^^
@@ -136,15 +237,11 @@ By deafult, CARTA will load the "Default" preset layout when initialized. Which 
         style="width:90%;height:auto;">
 
 
-
 User preferences
 ----------------
 CARTA provides a number of preferences for users to customize the GUI, including layouts. The preferences are persistent so that next time when users launch CARTA, all the preferences and a layout are restored. The preferences dialogue is accessible via the menu **File** -> **Preferences**. Preferences are effective after CARTA reloads, except few that are effective immediately. Below we summarize the options of all preferences.  
 
-.. raw:: html
 
-   <img src="_static/carta_gui_preferences.png" 
-        style="width:100%;height:auto;">
 
 * Global
 
@@ -153,21 +250,67 @@ CARTA provides a number of preferences for users to customize the GUI, including
   * Initial layout: the layout to adopt when CARTA is initialized (default: "Default")
   * Initial cursor position: to fix the cursor position on the image or not when CARTA is initialized. If it is fixed, a cross will be shown at the image center. Use "**F**" key to switch to the tracking mode (default: Tracking)
   * Initial zoom level: to select the initial zoom level of the image to be filling up the field of view or to be displayed as one image pixel to one screen pixel ratio (default: "Zoom to fit")
+  * Zoom to: zoom with respect to cursor position or image viewer center
+  * Enable drag-to-pan: pan image by mouse drag or mouse click
+  * WCS matching on append: trigger WCS matching automatically for newly appended images
+  * Spectral matching: spectral convention adopted for spectral matching 
 
-* Default render config
+  .. raw:: html
+
+   <img src="_static/carta_gui_preferences_global.png" 
+        style="width:100%;height:auto;">
+
+
+* Render configuration
 
   * Scaling: the scaling function of the color map (default: linear)
   * Color map: the default color for the raster image (default: inferno)
   * Percentile ranks: the default clip level for the color map (default: 99.9%)
+  * NaN color: color for rendering NaN pixels
 
-* Default WCS overlay
+  .. raw:: html
 
-  * Color: the color for the WCS overlay, including border, grid line, ticks, labels, and title (default: blue)
-  * Grid visible: to show grid line or not as default (default: yes)
-  * Label visible: to show coordinate labels or not as default (default: yes)
-  * WCS type: the format of the displayed world coordinate. The default is "automatic" which means for galactic or ecliptic system, the world coordinate is displayed in decimal degrees, and for FK4, FK5, or ICRS, the world coordinate is displayed in sexigesimal format. (default: automatic) [effective for new images]
+   <img src="_static/carta_gui_preferences_renderConfig.png" 
+        style="width:100%;height:auto;">
 
-* Default region settings
+
+
+* Contour configuration
+
+  * Generator type: tools for generating a set of contour levels to be calculated and rendered
+  * Smoothing mode: image smoothing mode before calculating contour vertices
+  * Default smoothing factor: kernel size in number of pixels for image smoothing 
+  * Default contour levels: number of contour levels to be generated by the level generator
+  * Thickness: line thickness of contour rendering
+  * Default color mode: render contours with a constant color or a color map
+  * Default color map: color map for contour rendering
+  * Default color: constant color for contour rendering
+
+  .. raw:: html
+
+   <img src="_static/carta_gui_preferences_contourConfig.png" 
+        style="width:100%;height:auto;">
+
+
+* Overlay configuration
+
+  * AST color: the color for the WCS overlay, including border, grid line, ticks, labels, and title (default: blue)
+  * AST grid visible: to show grid line or not as default (default: yes)
+  * AST label visible: to show coordinate labels or not as default (default: yes)
+  * WCS format: the format of the displayed world coordinate. The default is "automatic" which means for galactic or ecliptic system, the world coordinate is displayed in decimal degrees, and for FK4, FK5, or ICRS, the world coordinate is displayed in sexigesimal format. (default: automatic) [effective for new images]
+  * Beam visible: show a spatial resolution element
+  * Beam color: color for rendering a spatial resolution element
+  * Beam type: styling for rendering a spatial resolution element
+  * Beam width: line width for rendering a spatial resolution element
+
+  .. raw:: html
+
+   <img src="_static/carta_gui_preferences_overlayConfig.png" 
+        style="width:100%;height:auto;">
+
+
+
+* Region
 
   * Color: the default color of a region (default: cyan) [effective for new regions]
   * Line width (px): the default line width of a region (default: 2) [effective for new regions]
@@ -175,18 +318,41 @@ CARTA provides a number of preferences for users to customize the GUI, including
   * Region type: the default selected region in the tool bar of the image viewer (default: rectangle)
   * Creation mode: the method of how a rectange or an ellipse is created by mouse dragging. Two methods are supplied: center-to-corner and corner-to-corner (default: center-to-corner) [effective for new regions]
 
+  .. raw:: html
+
+   <img src="_static/carta_gui_preferences_region.png" 
+        style="width:100%;height:auto;">
+
+
 * Performance
 
+  * Low bandwidth mode: reduce required image resolution by a factor of two and reduce the cursor responsiveness to 400 ms
   * Compression quality (image): a parameter (1~32) to control the image quality with lossy compression. The higher the number is, the better quality the images are. Choose with caution. (default: 11) [effective immediately]
   * Compression quality (animation): a parameter (1~32) to control the animation quality with lossy compression. The higher the number is, the better quality the images are. Choose with caution. (default: 9) [effective immediately]
   * GPU tile cache size (number of tiles): the cache size of GPU for tiles (default: 512)
   * System tile cache size (number of tiles): the cache size of system memory for tiles (default: 4096)
+  * Contour rounding factor: number of contour vertices per pixel
+  * Contour compression level: compression quality of contour image data
+  * Contour chunk size: chunk size of contour data streaming
+  * Contour control map resolution: control map resolution for reprojecting contour vertices to other coordinate system
+  * Stream image tiles while zooming: streaming image tiles for all sampled zoom levels
+  * Stop animation playback in: a timer to automatically stop animation playback for server resource management
+
+  .. raw:: html
+
+   <img src="_static/carta_gui_preferences_performance.png" 
+        style="width:100%;height:auto;">
+
+
 
 * Log events
 
-  * This is for debugging purpose. Normal users can skip this part.
+  This is for debugging purpose. Normal users can skip this part. The client side and the server side of CARTA communicate through "protocal buffer" messages. For debugging purpose, advanced users can identify a set of messages in the list and launch browser's Javascript console to see those messages.
 
+  .. raw:: html
 
+   <img src="_static/carta_gui_preferences_log.png" 
+        style="width:100%;height:auto;">
 
 .. _mouse_interaction_with_images:
 
@@ -203,10 +369,9 @@ The image can be zoomed in by scrolling up and zoomed out by scrolling down.
      <source src="_static/carta_gui_mouse_images_zoom.mp4" type="video/mp4">
    </video>
 
-
 Panning
 ^^^^^^^
-The image can be panned equivalently by single-clicking a position in the image. The image will be re-centered at that position in the view.  
+The image can be panned by mouse drag-and-drop on the image. 
 
 .. raw:: html
 
@@ -214,13 +379,15 @@ The image can be panned equivalently by single-clicking a position in the image.
      <source src="_static/carta_gui_mouse_images_pan.mp4" type="video/mp4">
    </video>
 
-If it is intended to pan *inside* a region, please hold **command** (mac) or **ctrl** (linux) key and click inside a region, or simply use middle click. Single click on a region will change the region state to "selected".  
+If it is intended to pan *inside* a region, please hold **command** (mac) or **ctrl** (linux) key and click inside a region, or simply use middle click. Single click on a region will change the region state to "selected". With the same operation, users can center an image pixel (regardless it is inside a region or not) in the image viewer.  
+
 
 .. raw:: html
 
    <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_gui_mouse_images_pan_roi.mp4" type="video/mp4">
    </video>
+
 
 
 .. _mouse_interaction_with_regions:
@@ -230,13 +397,14 @@ Mouse interactions with region of interest
 
 Region creation
 ^^^^^^^^^^^^^^^
-A region can be created by firstly entering the region creation mode then drawing on the image viewer. To enter the region creation mode, click the *region* button at the bottom-right corner of the image viewer or press "**C**" key. Double-clicking the region icon brings up all available region types (rectangle, ellipse, polygon, and point, as of v1.2). To create a point region, a single click will do. For rectangle or ellipse, it can be created in the "center-to-corner" mode or the "corner-to-corner" mode, depending on the preference setting in the preference dialogue (**File** -> **Preferences** -> **Default region settings**). To temporarily switch to the other mode than the default, hold "**command**" (mac) or "**ctrl**" (linux) key then drag. "circle" and "square" regions are the special cases of ellipse and rectangle regions, respectively. These symmetric regions can be created by holding **shift** key then dragging.
+A region can be created by firstly entering the region creation mode then drawing on the image viewer. To enter the region creation mode, click the *region* button at the bottom-right corner of the image viewer or press "**C**" key. Double-clicking the region icon brings up all available region types (rectangle, ellipse, polygon, and point, as of v1.3). To create a point region, a single click will do. For rectangle or ellipse, it can be created in the "center-to-corner" mode or the "corner-to-corner" mode, depending on the preference setting in the preference dialogue (**File** -> **Preferences** -> **Default region settings**). To temporarily switch to the other mode than the default, hold "**command**" (mac) or "**ctrl**" (linux) key then drag. "circle" and "square" regions are the special cases of ellipse and rectangle regions, respectively. These symmetric regions can be created by holding **shift** key then dragging.
 
 .. raw:: html
 
    <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_fn_roi_creation1.mp4" type="video/mp4">
    </video>
+
 
 
 To create a polygon region, start with a click followed by a series of clicks to define anchors of a desired polygonal shape and finish with a double click. CARTA detects "complex" polygon (polygon with intersections) and shows it in pink color. Spectral profiles, statistics, or histogram of a complex polygon can still be requested but please note that the results may be beyond users' expectations since the actual pixel coverage depends on *how* a complex polygon is created. 
@@ -246,8 +414,6 @@ To create a polygon region, start with a click followed by a series of clicks to
    <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_fn_roi_creation2.mp4" type="video/mp4">
    </video>
-
-
 
 
 Region selection and modification
@@ -260,6 +426,7 @@ Click on a region will change the region state to "selected" and the selected re
      <source src="_static/carta_roi_selection.mp4" type="video/mp4">
    </video>
 
+
 Double-click on a region or a region in the region list brings up the region property dialogue. The dialogue allows users to modify region's name, location, shapes, and region cosmetics. Pressing "**delete**" or "**backspace**" key will remove the selected region. 
 
 .. raw:: html
@@ -267,6 +434,7 @@ Double-click on a region or a region in the region list brings up the region pro
    <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_roi_modification.mp4" type="video/mp4">
    </video>
+
 
 .. tip::
   "**backspace**" does not delete a region...
@@ -287,7 +455,6 @@ For a polygon region, new anchors can be added by clicking on the line segment. 
    <video controls loop style="width:100%;height:auto;">
      <source src="_static/carta_fn_roi_creation3.mp4" type="video/mp4">
    </video>
-
 
 
 .. _mouse_interaction_with_charts:
@@ -405,4 +572,3 @@ CARTA supports keyboard shortcuts to enable certain controls without using a mou
 +----------------------------------+----------------------------+-----------------------------+
 | Previous Stokes                  | cmd + shift + down         | ctrl + shift + down         |
 +----------------------------------+----------------------------+-----------------------------+
-

@@ -4,9 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Installation and configuration &#8212; CARTA 1.2 documentation</title>
+    <meta charset="utf-8" />
+    <title>Installation and configuration &#8212; CARTA 1.3 documentation</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
@@ -18,7 +17,7 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/bizstyle.js"></script>
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Quickstart guide" href="quickstart.html" />
+    <link rel="next" title="Graphical user interface" href="about_gui.html" />
     <link rel="prev" title="Introduction" href="introduction.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
@@ -29,12 +28,12 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="quickstart.html" title="Quickstart guide"
+          <a href="about_gui.html" title="Graphical user interface"
              accesskey="N">next</a></li>
         <li class="right" >
           <a href="introduction.html" title="Introduction"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.2 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.3 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -46,7 +45,7 @@
   <ul>
 <li><a class="reference internal" href="#">Installation and configuration</a><ul>
 <li><a class="reference internal" href="#carta-server">CARTA-server</a></li>
-<li><a class="reference internal" href="#carta-desktop-macos-10-13-10-14">CARTA-desktop: macOS 10.13/10.14</a></li>
+<li><a class="reference internal" href="#carta-desktop-macos-10-14-10-15">CARTA-desktop: macOS 10.14/10.15</a></li>
 <li><a class="reference internal" href="#carta-desktop-ubuntu-16-04-lts-18-04-lts">CARTA-desktop: Ubuntu 16.04 LTS/18.04 LTS</a></li>
 <li><a class="reference internal" href="#carta-desktop-redhat-7">CARTA-desktop: Redhat 7</a></li>
 <li><a class="reference internal" href="#carta-desktop-redhat-6">CARTA-desktop: Redhat 6</a></li>
@@ -60,8 +59,8 @@
   <p class="topless"><a href="introduction.html"
                         title="previous chapter">Introduction</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="quickstart.html"
-                        title="next chapter">Quickstart guide</a></p>
+  <p class="topless"><a href="about_gui.html"
+                        title="next chapter">Graphical user interface</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -70,13 +69,11 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -91,32 +88,32 @@
             
   <div class="section" id="installation-and-configuration">
 <span id="installation-configuration"></span><h1>Installation and configuration<a class="headerlink" href="#installation-and-configuration" title="Permalink to this headline">¶</a></h1>
-<p>CARTA v1.2 supports the following operating systems:</p>
+<p>CARTA v1.3 supports the following operating systems:</p>
 <ul class="simple">
-<li>macOS 10.13/10.14</li>
-<li>Ubuntu 16.04 LTS/18.04 LTS</li>
-<li>RedHat 7</li>
-<li>RedHat 6 (conditional)</li>
+<li><p>macOS 10.14/10.15</p></li>
+<li><p>Ubuntu 16.04 LTS/18.04 LTS</p></li>
+<li><p>RedHat 7</p></li>
+<li><p>RedHat 6 (conditional)</p></li>
 </ul>
 <p>Command line to launch CARTA is supported (see <a class="reference internal" href="#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions).</p>
-<p>CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7 or Ubuntu 16.04 LTS/18.04 LTS server via the ssh protocol, CARTA v1.2 also provides a “remote” mode for this use case (see <a class="reference internal" href="#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA “backend” on the server, while the CARTA “frontend” is accessed through your web browser of choice running on your local machine. This allows your local machine’s GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.</p>
+<p>CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7 or Ubuntu 16.04 LTS/18.04 LTS server via the ssh protocol, CARTA v1.3 also provides a “remote” mode for this use case (see <a class="reference internal" href="#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA “backend” on the server, while the CARTA “frontend” is accessed through your web browser of choice running on your local machine. This allows your local machine’s GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.</p>
 <p>If there is any problem, please contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a> for help.</p>
 <div class="section" id="carta-server">
 <h2>CARTA-server<a class="headerlink" href="#carta-server" title="Permalink to this headline">¶</a></h2>
 <p>The installation and configuration of the server version is available through <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a>. The CARTA team would be happy to work with you on getting CARTA-server installed on your server.</p>
 </div>
-<div class="section" id="carta-desktop-macos-10-13-10-14">
-<h2>CARTA-desktop: macOS 10.13/10.14<a class="headerlink" href="#carta-desktop-macos-10-13-10-14" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="carta-desktop-macos-10-14-10-15">
+<h2>CARTA-desktop: macOS 10.14/10.15<a class="headerlink" href="#carta-desktop-macos-10-14-10-15" title="Permalink to this headline">¶</a></h2>
 <p>Please follow the steps:</p>
 <ol class="arabic simple">
-<li><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2.dmg">Download the DMG installer file</a></li>
-<li>Open the DMG file and drag the CARTA icon to your /Applications folder.</li>
-<li>To run CARTA either:</li>
+<li><p><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.3/CARTA-v1.3.dmg">Download the DMG installer file</a></p></li>
+<li><p>Open the DMG file and drag the CARTA icon to your /Applications folder.</p></li>
+<li><p>To run CARTA either:</p></li>
 </ol>
 <blockquote>
 <div><ol class="loweralpha simple">
-<li>Find the CARTA icon in the Launchpad and click it, or double click it in the Finder.</li>
-<li>(<strong>Highly recommended</strong>) Create an alias in your ~/.bashrc file by opening your ~/.bashrc file in a text editor and add the following line:</li>
+<li><p>Find the CARTA icon in the Launchpad and click it, or double click it in the Finder.</p></li>
+<li><p>(<strong>Highly recommended</strong>) Create an alias in your ~/.bashrc file by opening your ~/.bashrc file in a text editor and add the following line:</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span><span class="s1">&#39;/Applications/CARTA.app/Contents/MacOS/CARTA&#39;</span>
 </pre></div>
@@ -128,32 +125,31 @@ carta
 </div>
 </div></blockquote>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>If you see a prompt with “CARTA can’t be opended because Apple cannot check it for malicious software.”, please go to <strong>System preferences</strong> -&gt; <strong>Security &amp; Privacy</strong> and hit the <strong>Open anyway</strong> button to launch CARTA.</p>
 <img src="_static/carta_blocked.png"
-  style="width:100%;height:auto;"><div class="last"><img src="_static/carta_blocked_solution.png"
-  style="width:100%;height:auto;"></div></div>
+  style="width:100%;height:auto;"><img src="_static/carta_blocked_solution.png"
+  style="width:100%;height:auto;"></div>
 </div>
 <div class="section" id="carta-desktop-ubuntu-16-04-lts-18-04-lts">
 <h2>CARTA-desktop: Ubuntu 16.04 LTS/18.04 LTS<a class="headerlink" href="#carta-desktop-ubuntu-16-04-lts-18-04-lts" title="Permalink to this headline">¶</a></h2>
 <p>Please follow the steps:</p>
 <ol class="arabic">
-<li><p class="first"><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-ubuntu.tgz">Download the tgz file</a></p>
-</li>
-<li><p class="first">Unzip the tgz file</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -xvf CARTA-v1.2-ubuntu.tgz
+<li><p><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.3/CARTA-v1.3-ubuntu.tgz">Download the tgz file</a></p></li>
+<li><p>Unzip the tgz file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -xvf CARTA-v1.3-ubuntu.tgz
 </pre></div>
 </div>
 </li>
-<li><p class="first">To run CARTA either</p>
+<li><p>To run CARTA either</p>
 <ol class="loweralpha simple">
-<li>Execute the AppImage directly</li>
+<li><p>Execute the AppImage directly</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./CARTA.AppImage
 </pre></div>
 </div>
 <ol class="loweralpha simple" start="2">
-<li>(<strong>Highly recommended</strong>) Create an alias in your shell script file. For example, if you are using bash and the AppImage happens to be in your Downloads folder, open ~/.bashrc file in a text editor and add a line</li>
+<li><p>(<strong>Highly recommended</strong>) Create an alias in your shell script file. For example, if you are using bash and the AppImage happens to be in your Downloads folder, open ~/.bashrc file in a text editor and add a line</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span><span class="s1">&#39;~/Downloads/CARTA.AppImage&#39;</span>
 </pre></div>
@@ -180,14 +176,14 @@ carta
 </li>
 </ol>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>For this v1.2 release we are providing a combined desktop and remote server capability.</p>
+<p class="admonition-title">Note</p>
+<p>For this v1.3 release we are providing a combined desktop and remote server capability.</p>
 <p>Invoke remote mode with the “--remote” flag</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./CARTA.AppImage --remote
 </pre></div>
 </div>
 <p>or, if an alias is created,</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>carta --remote
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta --remote
 </pre></div>
 </div>
 </div>
@@ -196,25 +192,23 @@ carta
 <h2>CARTA-desktop: Redhat 7<a class="headerlink" href="#carta-desktop-redhat-7" title="Permalink to this headline">¶</a></h2>
 <p>Please follow the steps:</p>
 <ol class="arabic">
-<li><p class="first"><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-RedHat7.tgz">Download the tgz file</a></p>
-</li>
-<li><p class="first">Unzip the tgz file</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -xvf CARTA-v1.2-RedHat7.tgz
+<li><p><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.3/CARTA-v1.3-RedHat7.tgz">Download the tgz file</a></p></li>
+<li><p>Unzip the tgz file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -xvf CARTA-v1.3-RedHat7.tgz
 </pre></div>
 </div>
 </li>
-<li><p class="first">To run CARTA either</p>
-</li>
+<li><p>To run CARTA either</p></li>
 </ol>
 <blockquote>
 <div><ol class="loweralpha simple">
-<li>Execute the AppImage directly</li>
+<li><p>Execute the AppImage directly</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./CARTA.AppImage
 </pre></div>
 </div>
 <ol class="loweralpha simple" start="2">
-<li>(<strong>Highly recommended</strong>) Set up an alias in your shell script file. For example, if your are using bash and the AppImage happens to be in your Downloads folder, open your ~/.bashrc file in a text editor and add a line</li>
+<li><p>(<strong>Highly recommended</strong>) Set up an alias in your shell script file. For example, if your are using bash and the AppImage happens to be in your Downloads folder, open your ~/.bashrc file in a text editor and add a line</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span><span class="s1">&#39;~/Downloads/CARTA.AppImage&#39;</span>
 </pre></div>
@@ -240,22 +234,22 @@ carta
 </div>
 </div></blockquote>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>On RedHat7 machines, an updated ‘nss’ package may need to be installed.</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo yum install nss
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo yum install nss
 </pre></div>
 </div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>On RedHat7 machines after starting the AppImage, you may see a warning about ‘Fontconfig’. It does not affect usage of CARTA, but the warning can be removed by installing the fontconfig package.</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo yum install fontconfig
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo yum install fontconfig
 </pre></div>
 </div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>For this v1.2 release we are providing a combined desktop and remote server capability.</p>
+<p class="admonition-title">Note</p>
+<p>For this v1.3 release we are providing a combined desktop and remote server capability.</p>
 <p>Invoke remote mode with the “--remote” flag e.g.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./CARTA.AppImage --remote
 </pre></div>
@@ -264,7 +258,7 @@ carta
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta --remote
 </pre></div>
 </div>
-<p class="last">If using remote mode on RedHat7 with Firefox browser, the Firefox version needs to be newer than ESR 52.7.2 and have “<em>wasm</em>” streaming enabled (See <a class="reference internal" href="#troubleshooting"><span class="std std-ref">Troubleshooting</span></a> for more information).</p>
+<p>If using remote mode on RedHat7 with Firefox browser, the Firefox version needs to be newer than ESR 52.7.2 and have “<em>wasm</em>” streaming enabled (See <a class="reference internal" href="#troubleshooting"><span class="std std-ref">Troubleshooting</span></a> for more information).</p>
 </div>
 </div>
 <div class="section" id="carta-desktop-redhat-6">
@@ -272,28 +266,25 @@ carta
 <p>Neither AppImage nor Electron runs on RedHat 6, therefore we supply a “standalone” remote server package. It is intended for RedHat 6 use only, however it can also run on both RedHat 7 and Ubuntu 16.04 LTS/18.04 LTS.</p>
 <p>Please follow the steps:</p>
 <ol class="arabic">
-<li><p class="first"><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.2/CARTA-v1.2-remote.tgz">Download the tar.gz file</a></p>
-</li>
-<li><p class="first">Extract the archive</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -xvf CARTA-v1.2-remote.tgz
+<li><p><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.3/CARTA-v1.3-remote.tgz">Download the tar.gz file</a></p></li>
+<li><p>Extract the archive</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -xvf CARTA-v1.3-remote.tgz
 </pre></div>
 </div>
 </li>
-<li><p class="first">Execute the carta script within the “CARTA-v1.2-remote” folder</p>
+<li><p>Execute the carta script within the “CARTA-v1.3-remote” folder</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./carta
 </pre></div>
 </div>
 </li>
-<li><p class="first">Follow the onscreen instructions to copy and paste the unique URL into your web browser.</p>
-</li>
-<li><p class="first">Usage instructions are slightly different from the Desktop versions so please check the help command with “./carta --help”. For example, you can not open images directly (can not “./carta image.fits”)</p>
-</li>
-<li><p class="first">You could make an alias in your ~/.bashrc file similar to this</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span><span class="s1">&#39;~/CARTA-v1.2-remote/carta&#39;</span>
+<li><p>Follow the onscreen instructions to copy and paste the unique URL into your web browser.</p></li>
+<li><p>Usage instructions are slightly different from the Desktop versions so please check the help command with “./carta --help”. For example, you can not open images directly (can not “./carta image.fits”)</p></li>
+<li><p>You could make an alias in your ~/.bashrc file similar to this</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span><span class="s1">&#39;~/CARTA-v1.3-remote/carta&#39;</span>
 </pre></div>
 </div>
 <p>If you use csh or tcsh, the syntax differs only in that there is no equals sign, therefore it would be</p>
-<div class="highlight-tcsh notranslate"><div class="highlight"><pre><span></span><span class="nb">alias </span>carta <span class="s1">&#39;~/Downloads/CARTA-v1.2-remote/carta&#39;</span>
+<div class="highlight-tcsh notranslate"><div class="highlight"><pre><span></span><span class="nb">alias </span>carta <span class="s1">&#39;~/Downloads/CARTA-v1.3-remote/carta&#39;</span>
 </pre></div>
 </div>
 <p>and</p>
@@ -318,7 +309,7 @@ carta
 </div>
 <p>The CARTA executable alias accepts keyword arguments or flags to configure how the CARTA backend is initialized. Common use cases are summarized below.</p>
 <ul>
-<li><p class="first">open an image via the command line</p>
+<li><p>open an image via the command line</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta M51.fits     <span class="c1"># to open an image in FITS format</span>
 carta M51.image    <span class="c1"># to open an image in CASA format</span>
 carta M51.hdf5     <span class="c1"># to open an image in HDF5-IDIA format</span>
@@ -326,7 +317,7 @@ carta M51.im       <span class="c1"># to open an image in MIRIAD format</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">launch CARTA and have the file browser to show images at a custom directory</p>
+<li><p>launch CARTA and have the file browser to show images at a custom directory</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta /my/image/directory
 </pre></div>
 </div>
@@ -334,7 +325,7 @@ carta M51.im       <span class="c1"># to open an image in MIRIAD format</span>
 </ul>
 <p>If CARTA is installed on a remote server, and users access the server via the ssh protocol, CARTA backend can be initialized via the following options.</p>
 <ul>
-<li><p class="first">initialize a remote CARTA backend service with both frontend and backend ports selected automatically:</p>
+<li><p>initialize a remote CARTA backend service with both frontend and backend ports selected automatically:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta --remote     <span class="c1"># CARTA URL will be shown in the prompt.</span>
                    <span class="c1"># Copy-and-paste the URL to your local browser (Chrome, Firefox, or Safari)</span>
 
@@ -348,13 +339,13 @@ www.carta.edu:2000/?socketUrl<span class="o">=</span>ws://www.carta.edu:3000
 OR
 
 
-<span class="m">192</span>.168.1.212:2000/?socketUrl<span class="o">=</span>ws://192.168.1.212:3000
+<span class="m">192</span>.168.1.312:2000/?socketUrl<span class="o">=</span>ws://192.168.1.312:3000
 
 Press ctrl+c to <span class="nb">exit</span>
 </pre></div>
 </div>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
+<p class="admonition-title">Tip</p>
 <p>When using remote mode, an image may be opened directly using a modified URL. For example, if we wanted to open a remote image file “/home/acdc/CARTA/Images/jet.fits”, we would append</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">&amp;</span><span class="nv">folder</span><span class="o">=</span>/home/acdc/CARTA/Images<span class="p">&amp;</span><span class="nv">file</span><span class="o">=</span>jet.fits
 </pre></div>
@@ -363,10 +354,10 @@ Press ctrl+c to <span class="nb">exit</span>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://www.carta.edu:2000/?socketUrl<span class="o">=</span>ws://www.carta.edu:3000<span class="p">&amp;</span><span class="nv">folder</span><span class="o">=</span>/home/acdc/CARTA/Images<span class="p">&amp;</span><span class="nv">file</span><span class="o">=</span>jet.fits
 </pre></div>
 </div>
-<p class="last">Please note that it is necessary to give <em>full</em> path. Tilde (~) is not allowed.</p>
+<p>Please note that it is necessary to give <em>full</em> path. Tilde (~) is not allowed.</p>
 </div>
 </li>
-<li><p class="first">initialize a remote CARTA backend service with customized frontend (e.g., 5678) and backend (e.g., 1234) ports:</p>
+<li><p>initialize a remote CARTA backend service with customized frontend (e.g., 5678) and backend (e.g., 1234) ports:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta --remote --port<span class="o">=</span><span class="m">1234</span> --fport<span class="o">=</span><span class="nv">5678</span>
 
 <span class="o">===========</span> what you may see after hitting <span class="k">return</span> <span class="nv">key</span> <span class="o">===========</span>
@@ -379,20 +370,20 @@ www.carta.edu:5678/?socketUrl<span class="o">=</span>ws://www.carta.edu:1234
 OR
 
 
-<span class="m">192</span>.168.1.212:5678/?socketUrl<span class="o">=</span>ws://192.168.1.212:1234
+<span class="m">192</span>.168.1.312:5678/?socketUrl<span class="o">=</span>ws://192.168.1.312:1234
 
 Press ctrl+c to <span class="nb">exit</span>
 </pre></div>
 </div>
 <p>For CARTA-server administration, the following advanced keyword arguments may be adopted.</p>
 </li>
-<li><p class="first">to set a limit of the file list scope:</p>
+<li><p>to set a limit of the file list scope:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta --remote --root<span class="o">=</span>/lustre/users/bob     <span class="c1"># user cannot navigate up to /lustre/users</span>
                                             <span class="c1"># --root defaults to &quot;/&quot;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">to set a number of threads for the CARTA backend service:</p>
+<li><p>to set a number of threads for the CARTA backend service:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta --remote --threads<span class="o">=</span><span class="m">24</span>     <span class="c1"># set 24 threads for the CARTA backend service</span>
                                 <span class="c1"># --threads defaults to number of cores on your system</span>
 </pre></div>
@@ -400,7 +391,53 @@ Press ctrl+c to <span class="nb">exit</span>
 </li>
 </ul>
 <p>An online user manual regarding all the above mentioned keyword arguments is also available.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta --help     <span class="c1"># show all available keyword arguments with explanations.</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta --help     # show all available keyword arguments with explanations.
+
+usage: carta [] CARTA file browser will default to the current path.
+          [&lt;path&gt;]                 CARTA file browser will default to the specified
+                                   path &lt;path&gt; e.g. carta ~/CARTA/Images
+
+          [&lt;image&gt;]                CARTA will directly open the image named &lt;image&gt;
+                                   e.g. carta aJ.fits or carta ~/CARTA/Images/aJ.fits
+
+          [--folder=&lt;path&gt;]        Optional: An alternative way to define the
+                                   default CARTA file browser path.
+                                   Note: Not for directly opening an image.
+
+          [--help]                 View this help output
+
+Remote mode flags
+          [--remote]               start CARTA in &#39;remote&#39; mode. For accessing CARTA&#39;s
+                                   frontend through your webrowser rather than the standard
+                                   Electron interface. A free websocket port and a frontend
+                                   port will be chosen automatically.
+
+          [--port=&lt;number&gt;]        Optional: Manually choose a websocket port for the
+                                   backend. CARTA will check if the port is available
+                                   and issue a warning if not. A typical value is
+                                   between 1025-65535.
+
+          [--fport=&lt;number&gt;]       Optional: Manually choose a frontend port for the
+                                   CARTA web interface. CARTA will check if the port
+                                   is available and issue a warning if not. A typical
+                                   value is between 1025-65535.
+
+Advanced usage flags
+          [--root=&lt;path&gt;]          Define the lowest path the file browser can
+                                   navigate to. e.g. carta --root /home/bob means the
+                                   the file browser can not access anything in /home
+                                   Note: --root can not be set inside --folder.
+
+          [--threads=&lt;number&gt;]     Set the number of threads. It controls how many
+                                   tasks CARTA handles simultaneosuly. The default
+                                   value is set as 4
+
+          [--omp_threads=&lt;number&gt;] Set the number of OpenMP threads. It controls
+                                   how trivially parallelisable tasks are split
+                                   by CARTA. The default value is the
+                                   automatically detected number of cores on
+                                   your system; usually 4 or 8 on a typcial
+                                   desktop or laptop.
 </pre></div>
 </div>
 </div>
@@ -408,10 +445,10 @@ Press ctrl+c to <span class="nb">exit</span>
 <span id="id3"></span><h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
 <p>In this section, we provide common issues we have experienced so far and provide solutions. If none of the solutions work, please do contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a> for help.</p>
 <ul>
-<li><p class="first">I see a blank image…</p>
+<li><p>I see a blank image…</p>
 <p>If you are using vnc:</p>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
+<p class="admonition-title">Tip</p>
 <p>The following is a tip for VNC users.</p>
 <p>If your VNC connection passes through an intermediate or ‘gate’ machine, e.g.</p>
 <p>&lt;local machine&gt; - &lt;gate machine&gt; - &lt;remote machine&gt;,</p>
@@ -430,44 +467,44 @@ e.g.</p>
 </pre></div>
 </div>
 <p>in your local machine’s web browser to connect to CARTA remote server running on the remote machine (1234 and 5678 are given as an example. You may choose different port numbers if you wish).</p>
-<p class="last">&lt;remote machine&gt; can either be the machine’s hostname or IP address.</p>
+<p>&lt;remote machine&gt; can either be the machine’s hostname or IP address.</p>
 </div>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
+<p class="admonition-title">Tip</p>
 <p>If you are running the RedHat7 AppImage version on a VNC server but loaded images appear blank, please use the following prefix when starting the AppImage:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">LIBGL_ALWAYS_INDIRECT</span><span class="o">=</span><span class="m">1</span> ./CARTA.AppImage
 </pre></div>
 </div>
-<p class="last">Loaded images should now render correctly.</p>
+<p>Loaded images should now render correctly.</p>
 </div>
 </li>
-<li><p class="first">After copy-and-paste a CARTA URL, I see the CARTA GUI is not initialized…</p>
+<li><p>After copy-and-paste a CARTA URL, I see the CARTA GUI is not initialized…</p>
 <p>Check your browser version. It needs to support “<em>wasm</em>” streaming and be enabled. More information about browser support of WebAssembly can be found at <a class="reference external" href="https://caniuse.com/#search=WebAssembly">https://caniuse.com/#search=WebAssembly</a></p>
 <p>CARTA utilises WebAssembly and that was introduced in version 52 of Firefox. Some RedHat6 and RedHat7 distributions may have versions of Firefox earlier than version 52. If that is the case, we highly recommend that you update to a more recent Firefox version with “sudo yum update firefox”.</p>
 <p>Other RedHat7 distributions may have Firefox 52 ESR which although having WebAssembly support, it is deactivated by default. We still recommend updating to a newer version of Firefox, but if you can not, you can try activating WebAssembly as follows:</p>
 <ol class="arabic simple">
-<li>Open a new tab and enter “<a class="reference external" href="about:config">about:config</a>” in the URL bar.</li>
-<li>A warning message will appear. Click the button to continue.</li>
-<li>In the search box enter “wasm” and the list will filter down to a few results.</li>
-<li>Double click each line related to “javascript.options.wasm” so that the “Value” column shows them as “true”.</li>
-<li>Then simply close the “<a class="reference external" href="about:config">about:config</a>” tab and the CARTA frontend should now load properly.</li>
+<li><p>Open a new tab and enter “<a class="reference external" href="about:config">about:config</a>” in the URL bar.</p></li>
+<li><p>A warning message will appear. Click the button to continue.</p></li>
+<li><p>In the search box enter “wasm” and the list will filter down to a few results.</p></li>
+<li><p>Double click each line related to “javascript.options.wasm” so that the “Value” column shows them as “true”.</p></li>
+<li><p>Then simply close the “<a class="reference external" href="about:config">about:config</a>” tab and the CARTA frontend should now load properly.</p></li>
 </ol>
 <p>As for the Chrome browser, Webassembly support was introduced in Chrome version 51, but versions 51 to 56 have it deactivated by default. To activate WebAssembly in Chrome 51 to 56 enter “chrome://flags” in the URL bar, type WebAssembly in the search box that appears, and change each WebAssembly option to “Enabled”. If you have Chrome version 57 or newer, WebAssembly should be activated by default.</p>
 </li>
-<li><p class="first">CARTA does not launch…</p>
+<li><p>CARTA does not launch…</p>
 <p>Check if there is existing “carta_backend” process running. The port number may conflict.</p>
 </li>
-<li><p class="first">The RedHat7 AppImage does not open and it prints a message suggesting to extract the AppImage using the “--appimage-extract” flag.</p>
+<li><p>The RedHat7 AppImage does not open and it prints a message suggesting to extract the AppImage using the “--appimage-extract” flag.</p>
 <p>This error is due to lack of FUSE (File System in Userspace) support. We suspect that FUSE support in RedHat7 systems may be disabled in some institute environments for security reasons. If that is the case, we recommend using the ‘remote’ version of CARTA instead.</p>
 </li>
-<li><p class="first">“<strong>backspace</strong>” does not delete a region…</p>
+<li><p>“<strong>backspace</strong>” does not delete a region…</p>
 <p>If using CARTA remote mode in Firefox on MacOS, you may find the “<strong>backspace</strong>” key navigates back a page instead of removing a region. This behaviour can be prevented by modifying your Firefox web browser settings:</p>
 <ol class="arabic simple">
-<li>Enter <a class="reference external" href="about:config">about:config</a> in the address bar.</li>
-<li>Click “I accept the risk!”</li>
-<li>A search bar appears at the top of a long list of preferences. Search for “browser.backspace_action”</li>
-<li>It will likely have a value of 0. Double click it, and then modify it to a value of “2”.</li>
-<li>Close the <a class="reference external" href="about:config">about:config</a> tab and now backspace will no longer navigate back a page.</li>
+<li><p>Enter <a class="reference external" href="about:config">about:config</a> in the address bar.</p></li>
+<li><p>Click “I accept the risk!”</p></li>
+<li><p>A search bar appears at the top of a long list of preferences. Search for “browser.backspace_action”</p></li>
+<li><p>It will likely have a value of 0. Double click it, and then modify it to a value of “2”.</p></li>
+<li><p>Close the <a class="reference external" href="about:config">about:config</a> tab and now backspace will no longer navigate back a page.</p></li>
 </ol>
 </li>
 </ul>
@@ -484,17 +521,17 @@ e.g.</p>
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="quickstart.html" title="Quickstart guide"
+          <a href="about_gui.html" title="Graphical user interface"
              >next</a></li>
         <li class="right" >
           <a href="introduction.html" title="Introduction"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.2 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.3 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2018-2019, ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+        &#169; Copyright 2018-2020, ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

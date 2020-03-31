@@ -3,11 +3,11 @@ Introduction
 
 The mission of CARTA
 --------------------
-CARTA is the *Cube Analysis and Rendering Tool for Astronomy*, a new image visualization and analysis tool designed for the ALMA, the VLA, and the SKA pathfinders. As the image size increases drastically with modern telescopes in recent years, viewing an image with a local image viewer or with a remote image viewer via the ssh protocol becomes less efficient. The mission of CARTA is to provide usability and scalability for the future by utilizing modern web technologies and computing parallelization. 
+CARTA is the *Cube Analysis and Rendering Tool for Astronomy*, a new image visualization and analysis tool designed for the ALMA, the VLA, and the SKA pathfinders - MeerKAT and ASKAP. As the image size increases drastically with modern telescopes in recent years, viewing an image with a local image viewer or with a remote image viewer via the ssh protocol plus X11 tunneling or the VNC becomes much less efficient. The mission of CARTA is to provide usability and scalability for the future by utilizing modern web technologies and computing parallelization. 
 
 Client-Server architecture
 --------------------------
-CARTA uses a client-server architecture which is suitable for visualizing images with large file sizes (GB to TB) easily obtained from ALMA, VLA, or SKA pathfinders observations. It is practically difficult to process such a huge file with personal computer or laptop. By using a client-server architecture, computation and data storage are handled by remote enterprise-class servers or clusters with high performance storage, while processed products are sent to clients only for visualization with modern web features, such as GPU-accelerated rendering. This architecture also enables users to interact with the ALMA and VLA science archives by using CARTA as an interface. 
+CARTA uses a client-server architecture which is suitable for visualizing images with large file sizes (GB to TB) easily obtained from ALMA, VLA, or SKA pathfinders (MeerKAT and ASKAP) observations. It is practically difficult to process such a huge file with personal computer or laptop. By using a client-server architecture, computation and data storage are handled by remote enterprise-class servers or clusters with high performance storage, while processed products are sent to clients only for visualization with modern web features, such as GPU-accelerated rendering. This architecture also enables users to interact with the ALMA and VLA science archives by using CARTA as an interface. 
 
 
 .. raw:: html
@@ -19,9 +19,11 @@ Codebase and releases
 ---------------------
 CARTA is an open-source project. Its source code is available at https://github.com/CARTAvis. 
 
-CARTA ultimately will have two distributions: CARTA-server and CARTA-desktop. The former is designed for handling large datasets with remote servers, while the later is suitable for smaller datasets (a few thousand pixels in the x and y dimensions) which can still be handled with personal computer or laptop. 
+CARTA has two flavors: CARTA-server and CARTA-desktop. The former is intended for hosting multiple users with an enterprise-class server, while the later is intedned for single-user usage with a personal computer or a laptop. The desktop version can also be used in the "remote" mode, where the backend (server) is run in a remote server and the frontend (client) is run locally with an internet browser. 
 
-With the *current* version 1.2 desktop release, CARTA supports two use cases. For users using a laptop or a desktop with a monitor, please use the "Local" version. For users using a remote server via the ssh protocol, please use the "Remote" version. Installation guides for these two versions are provided in the section :ref:`installation_configuration`.
+Deployment of CARTA in a server environment may require addtional efforts of server configurations, such as user authentication, server load balance, or resource monitoring, etc. Please contact the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw) for consultations. 
+
+Installation guides for the desktop version are provided in the section :ref:`installation_configuration`, including the usages of the remote mode. 
 
 The release plan and major goals are the following:
 
@@ -37,7 +39,7 @@ The release plan and major goals are the following:
   * Improved remote version
   * Performance and memory usage improvements
 
-* v1.2: performance and usability improvement (**current release**)
+* v1.2: performance and usability improvement (released 28th August 2019)
 
   * New server authentication method
   * User preferences and layouts
@@ -48,26 +50,41 @@ The release plan and major goals are the following:
   * new Stokes analysis widget
   * support HDF5 images under IDIA schema
 
-* v1.3: WCS group (Q4 2019)
-
-  * WCS group, alignment of multiple images
-  * contour rendering
-  * ROI in WCS group
-
-* v1.4: Scripting interface and image analytics tools
-
-  * multi-panel image view
-  * image analytics tools
-  * scripting interface
-
-* v1.5: Interactive clean
+* v1.3: WCS matching (**current release**)
 
 
+  * Contour rendering
+  * Raster image matching in world coordinates
+  * Contour image matching in world coordinates
+  * Image matching in spectral domain
+  * Drag-to-pan support
+  * Spectral conversion in the spectral profiler
+  * Enhanced usability with “Active” region type
+  * Enhanced “remote” mode
+  * Optional low-bandwidth mode for poor network connections
+  * Offline in-app help manual
+  * Bug fixes and performance improvements
+
+
+* v1.4: Catalogue overlay and analysis tools (subject to change)
+
+  * Catalogue overlay
+  * WCS region of interest
+  * Animator improvement
+  * Mip map support in HDF5 (IDIA schema) format
+  * Initial support of scripting interface in Python3
+  * Server-side authentication improvements
+  * Profile smoothing
+  * Moment map generator
+  * Line catalogue overlay
 
 
 Getting help
 ------------
-The CARTA team welcomes any suggestion, feature request, or bug report, to make CARTA better via the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw).
+The CARTA team welcomes any suggestion, feature request, or bug report, to make CARTA better via 
+
+* `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw) 
+* `Github Issue <https://github.com/CARTAvis/carta/issues>`_ (https://github.com/CARTAvis/carta/issues)
 
 
 Contributors
@@ -123,8 +140,8 @@ CARTA is mainly built in C++, TypeScript, and JavaScript, and with the following
 
 The source code of CARTA is hosted on `Github <https://github.com/CARTAvis>`_.
 
-
+The CARTA development team is grateful to David Berry for consultation of the AST library and to Kumar Golap for consultation of the casacore library.
 
 Copyright and License
 ---------------------
-Copyright (C) 2018-2019 ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta. This program is free software; you can redistribute it and/or modify it under the terms of the `GNU General Public License version 3 <http://www.gnu.org/copyleft/gpl.html>`_ as published by the Free Software Foundation.
+Copyright (C) 2018-2020 ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta. This program is free software; you can redistribute it and/or modify it under the terms of the `GNU General Public License version 3 <http://www.gnu.org/copyleft/gpl.html>`_ as published by the Free Software Foundation.
