@@ -52,15 +52,19 @@ The release plan and major goals are the following:
 
 * v1.3: WCS matching (**current release**)
 
+
   * Contour rendering
-  * WCS matching
-  * Tiled animation
-  * Active region
-  * Spectral conversion
-  * In-app help
-  * Improved remote mode
-  * Initial touchscreen support
+  * Raster image matching in world coordinates
+  * Contour image matching in world coordinates
+  * Image matching in spectral domain
+  * Drag-to-pan support
+  * Spectral conversion in the spectral profiler
+  * Enhanced usability with “Active” region type
+  * Enhanced “remote” mode
+  * Optional low-bandwidth mode for poor network connections
+  * Offline in-app help manual
   * Bug fixes and performance improvements
+
 
 * v1.4: Catalogue overlay and analysis tools (subject to change)
 
