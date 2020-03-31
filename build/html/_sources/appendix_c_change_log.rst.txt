@@ -1,5 +1,5 @@
-Appendix C: change log
-======================
+Appendix C: development log
+===========================
 
 
 
