@@ -110,7 +110,31 @@ Please use the following DOI as a citation when using CARTA for publications.
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3377984.svg
    :target: https://doi.org/10.5281/zenodo.3377984
 
+The bibtex for v1.3 is
 
+.. code-block:: bibtex
+   
+   @software{angus_comrie_2020_3746095,
+   author       = {Angus Comrie and
+                  Kuo-Song Wang and
+                  Pamela Harris and
+                  Anthony Moraghan and
+                  Shou-Chieh Hsu and
+                  Adrianna Pińska and
+                  Cheng-Chin Chiang and
+                  Hengtai Jan and
+                  Rob Simmonds and
+                  Tien-Hao Chang and
+                  Ming-Yi Lin},
+   title        = {{CARTA: The Cube Analysis and Rendering Tool for 
+                   Astronomy}},
+   month        = mar,
+   year         = 2020,
+   publisher    = {Zenodo},
+   version      = {1.3.0},
+   doi          = {10.5281/zenodo.3746095},
+   url          = {https://doi.org/10.5281/zenodo.3746095}
+   }
 
 Acknowledgement
 ---------------
