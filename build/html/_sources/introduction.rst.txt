@@ -70,14 +70,26 @@ The release plan and major goals are the following:
 
   * Catalogue overlay
   * WCS region of interest
-  * Animator improvement
+  * Animator improvement for spatially and spectrally matched images
   * Mip map support in HDF5 (IDIA schema) format
   * Initial support of scripting interface in Python3
   * Server-side authentication improvements
   * Profile smoothing
   * Moment map generator
+  * Polarization contours and images
   * Line catalogue overlay
 
+* into the future (this is a non-exclusive list of features we would like in a subsequent release but these are not decided upon yet, and depend on feedback from users, resourcing etc. )
+
+  * Multi-panel view
+  * Channel map view
+  * Position-velocity map generator
+  * Collaborative tools
+  * Vector field rendering
+  * Volume rendering
+  * Profile, histogram, and image fitting tools
+  * Scripting interface (Python3)
+  * Three-color blender
 
 Getting help
 ------------
