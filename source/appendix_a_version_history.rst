@@ -1,5 +1,20 @@
 Appendix A: version history
 ===========================
+Version 1.3.1
+-------------
+Released 5th May 2020
+
+Bug fixes
+
+* Truncated header values in HDF5 images.
+* Crashes when creating a region on a single channel image while the spectral profiler is launched.
+* Hanging when requesting statistics.
+* Correct axes labeling in region widget.
+* Swapped major/minor axes of ellipse when exporting as region file.
+* Incorrect or inaccurate angular size of rectangle and ellipse regions in the region dialog.
+* Server version database fix.
+
+
 Version 1.3
 -----------
 Released 31th March 2020

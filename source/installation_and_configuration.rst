@@ -26,7 +26,7 @@ CARTA-desktop: macOS 10.14/10.15
 --------------------------------
 Please follow the steps:
 
-1. `Download the DMG installer file <https://github.com/CARTAvis/carta-releases/releases/download/v1.3/CARTA-v1.3.dmg>`_
+1. `Download the DMG installer file <https://github.com/CARTAvis/carta-releases/releases/download/v1.3.1/CARTA-v1.3.1.dmg>`_
 
 2. Open the DMG file and drag the CARTA icon to your /Applications folder.
 
@@ -65,13 +65,13 @@ CARTA-desktop: Ubuntu 16.04 LTS/18.04 LTS
 -----------------------------------------
 Please follow the steps:
 
-1. `Download the tgz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.3/CARTA-v1.3-ubuntu.tgz>`_
+1. `Download the tgz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.3.1/CARTA-v1.3.1-ubuntu.tgz>`_
 
 2. Unzip the tgz file
 
    .. code-block:: bash
 
-      tar -xvf CARTA-v1.3-ubuntu.tgz
+      tar -xvf CARTA-v1.3.1-ubuntu.tgz
 
 3. To run CARTA either 
    
@@ -134,7 +134,7 @@ CARTA-desktop: Redhat 7
 -----------------------
 Please follow the steps:
 
-1. `Download the tgz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.3/CARTA-v1.3-RedHat7.tgz>`_
+1. `Download the tgz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.3.1/CARTA-v1.3.1-RedHat7.tgz>`_
 
 2. Unzip the tgz file
 
@@ -223,15 +223,15 @@ Neither AppImage nor Electron runs on RedHat 6, therefore we supply a "standalon
 
 Please follow the steps:
 
-1. `Download the tar.gz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.3/CARTA-v1.3-remote.tgz>`_
+1. `Download the tar.gz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.3.1/CARTA-v1.3.1-remote.tgz>`_
 
 2. Extract the archive
 
    .. code-block:: bash
 
-      tar -xvf CARTA-v1.3-remote.tgz
+      tar -xvf CARTA-v1.3.1-remote.tgz
 
-3. Execute the carta script within the "CARTA-v1.3-remote" folder
+3. Execute the carta script within the "CARTA-v1.3.1-remote" folder
 
    .. code-block:: bash
 
@@ -245,13 +245,13 @@ Please follow the steps:
 
    .. code-block:: bash
 
-      alias carta='~/CARTA-v1.3-remote/carta'
+      alias carta='~/CARTA-v1.3.1-remote/carta'
 
    If you use csh or tcsh, the syntax differs only in that there is no equals sign, therefore it would be 
   
    .. code-block:: tcsh
   
-      alias carta '~/Downloads/CARTA-v1.3-remote/carta'
+      alias carta '~/Downloads/CARTA-v1.3.1-remote/carta'
 
    and 
   

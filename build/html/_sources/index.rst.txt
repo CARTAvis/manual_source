@@ -14,7 +14,7 @@ CARTA - Cube Analysis and Rendering Tool for Astronomy
 
 .. toctree::
    :maxdepth: 3
-   :caption: CARTA user manual
+   :caption: CARTA user manual for v1.3 and v1.3.1
 
    introduction.rst
    installation_and_configuration.rst
