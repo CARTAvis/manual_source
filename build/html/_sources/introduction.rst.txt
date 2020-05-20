@@ -76,13 +76,14 @@ The release plan and major goals are the following:
   * Server-side authentication improvements
   * Profile smoothing
   * Moment map generator
-  * Polarization contours and images
   * Line catalogue overlay
 
-* into the future (this is a non-exclusive list of features we would like in a subsequent release but these are not decided upon yet, and depend on feedback from users, resourcing etc. )
+* Into the future (this is a non-exclusive list of features we would like in a subsequent release but these are not decided upon yet, and depend on feedback from users, resourcing etc. )
 
+  * Interactive CLEAN with CASA
   * Multi-panel view
   * Channel map view
+  * View other image formats including complex value images
   * Position-velocity map generator
   * Collaborative tools
   * Vector field rendering
