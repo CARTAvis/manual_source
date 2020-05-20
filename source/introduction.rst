@@ -78,8 +78,9 @@ The release plan and major goals are the following:
   * Moment map generator
   * Line catalogue overlay
 
-* Into the future (this is a non-exclusive list of features we would like in a subsequent release but these are not decided upon yet, and depend on feedback from users, resourcing etc. )
+* Into the future (this is a non-exclusive list of features we would like in subsequent releases but these are not decided upon yet, and depend on feedback from users, resourcing etc. )
 
+  * Polarization contour and images
   * Interactive CLEAN with CASA
   * Multi-panel view
   * Channel map view
