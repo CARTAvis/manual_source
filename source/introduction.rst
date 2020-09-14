@@ -50,7 +50,7 @@ The release plan and major goals are the following:
   * new Stokes analysis widget
   * support HDF5 images under IDIA schema
 
-* v1.3: WCS matching (**current release**)
+* v1.3: WCS matching (released 31st March 2020)
 
 
   * Contour rendering
@@ -66,19 +66,17 @@ The release plan and major goals are the following:
   * Bug fixes and performance improvements
 
 
-* v1.4: Catalogue overlay and analysis tools (subject to change)
+* v1.4: Catalogue overlay and analysis tools (**current release**; released 17th September 2020)
 
-  * Catalogue overlay
-  * WCS region of interest
-  * Animator improvement for spatially and spectrally matched images
-  * Mip map support in HDF5 (IDIA schema) format
-  * Initial support of scripting interface in Python3
+  * Catalogue visualization
+  * Analytics with solid-angle-conserved shared regions
+  * Animator improvement for spatially and spectrally matched raster and contour images
   * Server-side authentication improvements
   * Profile smoothing
   * Moment map generator
   * Line catalogue overlay
 
-* Into the future (this is a non-exclusive list of features we would like in subsequent releases but these are not decided upon yet, and depend on feedback from users, resourcing etc. )
+* Into the future (this is a non-exclusive list of features that we would like to implemnt in subsequent releases but these are not decided upon yet, and depend on feedback from users, and resourcing etc. )
 
   * Polarization contour and images
   * Interactive CLEAN with CASA
@@ -92,6 +90,7 @@ The release plan and major goals are the following:
   * Profile, histogram, and image fitting tools
   * Scripting interface (Python3)
   * Three-color blender
+  * Mip map support in HDF5 (IDIA schema) format
 
 Getting help
 ------------
@@ -168,11 +167,16 @@ CARTA is mainly built in C++, TypeScript, and JavaScript, and with the following
 * Chart.js: https://www.chartjs.org
 * Electron: https://electronjs.org
 * GoldenLayout: https://golden-layout.com
-* jsoncpp: https://github.com/open-source-parsers/jsoncpp
+* gRPC: https://grpc.io/
+* GSL: https://www.gnu.org/software/gsl/
 * MobX: https://mobx.js.org
 * MongoDB: https://www.mongodb.com
+* node.js: https://nodejs.org
+* Plotly: https://plotly.com
+* Protocol buffers: https://developers.google.com/protocol-buffers 
 * React: https://reactjs.org
 * TBB: https://www.threadingbuildingblocks.org
+* WebAssembly: https://webassembly.org
 
 
 The source code of CARTA is hosted on `Github <https://github.com/CARTAvis>`_.

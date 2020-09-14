@@ -374,11 +374,11 @@ If CARTA is installed on a remote server, and users access the server via the ss
 
 An online user manual regarding all the above mentioned keyword arguments is also available.
 
-.. code-block:: bash 
+  .. code-block:: bash 
    
-   carta --help     # show all available keyword arguments with explanations. 
+     carta --help     # show all available keyword arguments with explanations. 
 
-   usage: carta [] CARTA file browser will default to the current path.
+     usage: carta [] CARTA file browser will default to the current path.
              [<path>]                 CARTA file browser will default to the specified
                                       path <path> e.g. carta ~/CARTA/Images
              
@@ -391,7 +391,7 @@ An online user manual regarding all the above mentioned keyword arguments is als
              
              [--help]                 View this help output
    
-   Remote mode flags
+     Remote mode flags
              [--remote]               start CARTA in 'remote' mode. For accessing CARTA's
                                       frontend through your webrowser rather than the standard 
                                       Electron interface. A free websocket port and a frontend
@@ -407,7 +407,7 @@ An online user manual regarding all the above mentioned keyword arguments is als
                                       is available and issue a warning if not. A typical
                                       value is between 1025-65535.
    
-   Advanced usage flags
+     Advanced usage flags
              [--root=<path>]          Define the lowest path the file browser can
                                       navigate to. e.g. carta --root /home/bob means the 
                                       the file browser can not access anything in /home

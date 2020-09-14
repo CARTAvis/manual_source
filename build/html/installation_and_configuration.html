@@ -391,55 +391,57 @@ Press ctrl+c to <span class="nb">exit</span>
 </li>
 </ul>
 <p>An online user manual regarding all the above mentioned keyword arguments is also available.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta --help     # show all available keyword arguments with explanations.
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta --help     # show all available keyword arguments with explanations.
 
 usage: carta [] CARTA file browser will default to the current path.
-          [&lt;path&gt;]                 CARTA file browser will default to the specified
-                                   path &lt;path&gt; e.g. carta ~/CARTA/Images
+        [&lt;path&gt;]                 CARTA file browser will default to the specified
+                                 path &lt;path&gt; e.g. carta ~/CARTA/Images
 
-          [&lt;image&gt;]                CARTA will directly open the image named &lt;image&gt;
-                                   e.g. carta aJ.fits or carta ~/CARTA/Images/aJ.fits
+        [&lt;image&gt;]                CARTA will directly open the image named &lt;image&gt;
+                                 e.g. carta aJ.fits or carta ~/CARTA/Images/aJ.fits
 
-          [--folder=&lt;path&gt;]        Optional: An alternative way to define the
-                                   default CARTA file browser path.
-                                   Note: Not for directly opening an image.
+        [--folder=&lt;path&gt;]        Optional: An alternative way to define the
+                                 default CARTA file browser path.
+                                 Note: Not for directly opening an image.
 
-          [--help]                 View this help output
+        [--help]                 View this help output
 
 Remote mode flags
-          [--remote]               start CARTA in &#39;remote&#39; mode. For accessing CARTA&#39;s
-                                   frontend through your webrowser rather than the standard
-                                   Electron interface. A free websocket port and a frontend
-                                   port will be chosen automatically.
+        [--remote]               start CARTA in &#39;remote&#39; mode. For accessing CARTA&#39;s
+                                 frontend through your webrowser rather than the standard
+                                 Electron interface. A free websocket port and a frontend
+                                 port will be chosen automatically.
 
-          [--port=&lt;number&gt;]        Optional: Manually choose a websocket port for the
-                                   backend. CARTA will check if the port is available
-                                   and issue a warning if not. A typical value is
-                                   between 1025-65535.
+        [--port=&lt;number&gt;]        Optional: Manually choose a websocket port for the
+                                 backend. CARTA will check if the port is available
+                                 and issue a warning if not. A typical value is
+                                 between 1025-65535.
 
-          [--fport=&lt;number&gt;]       Optional: Manually choose a frontend port for the
-                                   CARTA web interface. CARTA will check if the port
-                                   is available and issue a warning if not. A typical
-                                   value is between 1025-65535.
+        [--fport=&lt;number&gt;]       Optional: Manually choose a frontend port for the
+                                 CARTA web interface. CARTA will check if the port
+                                 is available and issue a warning if not. A typical
+                                 value is between 1025-65535.
 
 Advanced usage flags
-          [--root=&lt;path&gt;]          Define the lowest path the file browser can
-                                   navigate to. e.g. carta --root /home/bob means the
-                                   the file browser can not access anything in /home
-                                   Note: --root can not be set inside --folder.
+        [--root=&lt;path&gt;]          Define the lowest path the file browser can
+                                 navigate to. e.g. carta --root /home/bob means the
+                                 the file browser can not access anything in /home
+                                 Note: --root can not be set inside --folder.
 
-          [--threads=&lt;number&gt;]     Set the number of threads. It controls how many
-                                   tasks CARTA handles simultaneosuly. The default
-                                   value is set as 4
+        [--threads=&lt;number&gt;]     Set the number of threads. It controls how many
+                                 tasks CARTA handles simultaneosuly. The default
+                                 value is set as 4
 
-          [--omp_threads=&lt;number&gt;] Set the number of OpenMP threads. It controls
-                                   how trivially parallelisable tasks are split
-                                   by CARTA. The default value is the
-                                   automatically detected number of cores on
-                                   your system; usually 4 or 8 on a typcial
-                                   desktop or laptop.
+        [--omp_threads=&lt;number&gt;] Set the number of OpenMP threads. It controls
+                                 how trivially parallelisable tasks are split
+                                 by CARTA. The default value is the
+                                 automatically detected number of cores on
+                                 your system; usually 4 or 8 on a typcial
+                                 desktop or laptop.
 </pre></div>
 </div>
+</div></blockquote>
 </div>
 <div class="section" id="troubleshooting">
 <span id="id3"></span><h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>

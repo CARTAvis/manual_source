@@ -1,15 +1,23 @@
 Image cube analysis tools
 =========================
-With version 1.3, CARTA provides the following widgets for image cube analysis:
+With version 1.4, CARTA provides the following widgets and tools for image cube analysis:
 
 * Widget
   
-  * region list: to view and configure region properties
-  * spatial profiler: to view x and y spatial profiles at the cursor position
-  * spectral profiler: to view spectral profile from a region of interest
-  * histogram: to view histogram from a region of interest
-  * statistics: to view basic statistics from a region of interest
+  * Region list: to view and configure region properties
+  * Spatial profiler: to view x and y spatial profiles at the cursor position
+  * Spectral profiler: to view spectral profile from a region of interest
+  * Histogram: to view histogram from a region of interest
+  * Statistics: to view basic statistics from a region of interest
   * Stokes analysis: to view basic polarization quantities
+  * Spectral line query: to make a query to the Splatalogue service and create line labels on a spectral profile plot
+  * Catalogue widget: to visualize a catalogue as an image overlay, a 2D scatter plot, or a histogram
+
+* Tool
+
+  * Profile smoothing: to smooth a profile for a better S/N
+  * Moment map generator: to collapse an image cube with various moments and statistics
+
 
 
 Region of interest
@@ -37,15 +45,17 @@ The creation and modification of regions are demonstrated in the section :ref:`m
 +----------------------------------+----------------------------+-----------------------------+
 | Deselect region                  | esc                        | esc                         |
 +----------------------------------+----------------------------+-----------------------------+
+| Cancel region creation           | esc                        | esc                         |
++----------------------------------+----------------------------+-----------------------------+
 | Switch region creation mode      | cmd + drag                 | ctrl + drag                 |
 +----------------------------------+----------------------------+-----------------------------+
 | Symmetric region creation        | shift + drag               | shift + drag                |
 +----------------------------------+----------------------------+-----------------------------+
-| Pan image (inside region)        | cmd + click / middle-click | ctrl + click / middle-click |
-+----------------------------------+----------------------------+-----------------------------+
 | Toggle current region lock       | L                          | L                           |
 +----------------------------------+----------------------------+-----------------------------+
 | Unlock all regions               | shift + L                  | shift + L                   |
++----------------------------------+----------------------------+-----------------------------+
+| Pan image (inside region)        | cmd + click / middle-click | ctrl + click / middle-click |
 +----------------------------------+----------------------------+-----------------------------+
 
 .. tip::
@@ -222,6 +232,17 @@ The bottom axis shows the spectral coordinate, Extra options to configure the pr
    * Intensity unit conversion
 
 
+Moment map generator
+--------------------
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+Spectral line query
+-------------------
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
 
 Stokes analysis widget
 ----------------------
@@ -260,6 +281,10 @@ Additional options to customize the plots in the Stokes analysis widget are prov
    <img src="_static/carta_fn_Stokes_settings.png" 
         style="width:100%;height:auto;">
 
+Profile smoothing
+-----------------
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 
 Statistics widget
 -----------------
@@ -291,3 +316,9 @@ Additional options to customize the histogram in the histogram widget are provid
 
 .. note::
    With v1.3, histogram bin width and bin count are automatically decided. Enhancement of the histogram widget, including histogram fitting, will be available in future releases. 
+
+
+
+Catalogue widget
+----------------
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
