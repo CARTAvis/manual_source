@@ -21,6 +21,7 @@ CARTA - Cube Analysis and Rendering Tool for Astronomy
    about_gui.rst
    image_visualization.rst
    analysis_tools.rst
+   catalogue_visualization.rst
    appendix_a_version_history.rst
    appendix_b_known_issues.rst
    appendix_c_dev_log.rst
