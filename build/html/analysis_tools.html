@@ -284,7 +284,7 @@
 <h2>Spatial profiler<a class="headerlink" href="#spatial-profiler" title="Permalink to this headline">¶</a></h2>
 <p>Spatial profiler provides the spatial profiles of the current image at the cursor position. When the cursor is moving on the image, profiles derived from the full resolution raster image are displayed. The “F” key will disable or enable profile update. When cursor update is disabled, a marker “+” will be placed on the image to indicate the position of the profiles taken.</p>
 <p>When displaying a spatial profile with the number of pixels more than the number of screen pixels of the spatial profiler widget, a <em>decimated</em> profile will be derived and displayed to users as an enhancement of performance. Min/max decimation of a profile is adopted to ensure profile features are preserved. In other words, positive and negative peaks should stay at the same screen pixels just like displaying the full resolution profile. When users keep zooming in the profile, decimation with narrower and narrower interval is applied dynamically. Full resolution profile is displayed when the number of screen pixels is more than the number of pixels of the profile to be displayed.</p>
-<p>The interactions of the spatial profiler widget are demonstrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available in the spatial profiler settings dialogue which is launched by clicking the “cog” icon at the top-right corner. The option “Show Mean/RMS” will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.</p>
+<p>The interactions of the spatial profiler widget are demonstrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available in the spatial profiler settings dialogue which is launched by clicking the “cog” icon at the top-right corner. The option “Show Mean/RMS” in the Styling tab will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. Optionally, the profile can be smoothed with different methods provided in the Smoothing tab (see section <a class="reference internal" href="#profile-smoothing"><span class="std std-ref">Profile smoothing</span></a>). The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner when hovering over the plot.</p>
 <p>When the cursor is on the image in the image viewer, the pointed pixel value (pixel index and pixel value) will be displayed at the bottom-left corner of the spatial profiler. When the cursor is on the spatial profiler graph, the pointed profile data will be displayed instead.</p>
 <img src="_static/carta_fn_spatialProfiler_widget.png"
      style="width:100%;height:auto;"><div class="admonition note">
@@ -303,15 +303,15 @@
 <p>When requesting a spectral profile, a common disappointing user experience is that users may have to wait for an unknown amount of time to see the final result if the image cube is large. As an improvement on this aspect, CARTA supports <em>progressive update</em> of spectral profile. Partial profiles will be periodically delivered to users while the full profile calculations are still ongoing.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_spectralProfiler_partialUpdate.mp4" type="video/mp4">
-</video><p>When the property of a region (cursor or a regular region) is modified while the profile of the original region is being updated, the partial profile will disappear and a new partial profile cooresponding to the new region will start updating. If users modify the request of a spectral profile via the spectral profile widget before it is fully delivered, the original profile calculations will be cancelled and new profile calculations will start. In short, now CARTA should just focus on calculating and showing the profiles that users pay attention to. If a profile is no longer needed to be shown on the screen, the profile calculation will be cancelled immediately, instead of blocking and queueing up new profile requests.</p>
+</video><p>When the property of a region (cursor or a regular region) is modified while the profile of the original region is being updated, the partial profile will disappear and a new partial profile cooresponding to the new region will start updating. If users modify the request of a spectral profile via the spectral profile widget before it is fully delivered, the original profile calculations will be cancelled and new profile calculations will start. In short, CARTA should just focus on calculating and showing the profiles that users pay attention to. If a profile is no longer needed to be shown on the screen, the profile calculation will be cancelled immediately, instead of blocking and queueing up new profile requests.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_spectralProfiler_profileCancellation.mp4" type="video/mp4">
 </video><p>When displaying a spectral profile with the number of channels more than the number of screen pixels of the spectral profiler widget, a <em>decimated</em> profile will be derived and displayed to users as an enhancement of performance. Min/max decimation of a profile is adopted to ensure profile features are preserved. In other words, positive and negative peaks should stay at the same screen pixels just like displaying the full resolution profile. When users keep zooming in the profile, decimation with narrower and narrower interval is applied dynamically. Full resolution profile is displayed when the number of screen pixels is more than the number of pixels of the profile to be displayed.</p>
-<p>When regions are created, the spectral profiler widget can be configured to display a profile from a specific region with the “<em>region</em>” dropdown menu. The default of the “<em>region</em>” dropdown is “Active” which points to the current active (selected) region. If no region is active, it defaults to cursor region. Additional statistic types to compute the region spectral profile are available with the “<em>statistic</em>” dropdown menu (default to mean). If the image cube has multiple Stokes, the “<em>Stokes</em>” dropdown menu will be activated and defaulted to “current” which is synchronized with the selection in the animator. To view a specific Stokes, select with the “<em>Stokes</em>” dropdown menu.</p>
-<p>Multiple spectral profile widgets can be configured to display different region spectral profiles. The widget with the selected region will be highlighted with a persistent blue box.</p>
+<p>When regions are created, the spectral profiler widget can be configured to display a profile from a specific region with the “<em>Region</em>” dropdown menu. The default of the “<em>Region</em>” dropdown is “Active” which points to the current active (selected) region. If no region is active, it defaults to cursor region. Additional statistic types to compute the region spectral profile are available with the “<em>Statistic</em>” dropdown menu (default to mean). If the image cube has multiple Stokes, the “<em>Stokes</em>” dropdown menu will be activated and defaulted to “Current” which is synchronized with the selection in the animator. To view a specific Stokes, select with the “<em>Stokes</em>” dropdown menu.</p>
+<p>Multiple spectral profile widgets can be configured to display different region (“<em>Region</em>” dropdown menu) spectral profiles from different image cubes (“<em>Image</em>” dropdown menu) and Stokes (“<em>Stokes</em>” dropdown menu, if applicable) with different statistics (“<em>Statistic</em>” dropdown menu).</p>
 <img src="_static/carta_fn_spectralProfiler_multiwidget.png"
-     style="width:100%;height:auto;"><p>The interactions of the spectral profiler widget are demonstrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. The red vertical bar indicates the channel of the image displayed in the image viewer. Clicking directly on the spectral profiler graph will change the displayed image to the clicked channel. Alternatively, the red vertical bar is draggable and acts just like the animator slider.</p>
-<p>The bottom axis shows the spectral coordinate, Extra options to configure the profile plot are available in the spectral profile settings dialogue which can be launched by clicking the “cog” icon in the top-right corner. In the dialogue, users may select a different spectral convention (e.g., optical velocity) and a different reference system (e.g., TOPO). The option “Show Mean/RMS” will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. When the cursor is on the image in the image viewer, the pointed pixel value (frequency or velocity or channel index, and pixel value) will be displayed at the bottom-left corner of the spectral profiler. When the cursor is on the spectral profiler graph, the pointed profile data will be displayed instead. The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.</p>
+     style="width:100%;height:auto;"><p>The interactions of the spectral profiler widget are demonstrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. The red vertical bar indicates the channel of the image displayed in the image viewer. Clicking directly on the spectral profiler graph will change the displayed image to the clicked channel. Alternatively, the red vertical bar is draggable and acts just like the channel slider of the animator widget.</p>
+<p>The bottom axis shows the spectral coordinate. Additional options to configure the profile plot are available in the spectral profile settings dialogue which can be launched by clicking the “cog” icon in the top-right corner. In the dialogue, users may select a different spectral convention (e.g., optical velocity) and a different reference system (e.g., TOPO) with the Conversion tab. The option “Show Mean/RMS” in the Styling tab will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. When the cursor is on the image in the image viewer, the pointed pixel value (frequency or velocity or channel index, and pixel value) will be displayed at the bottom-left corner of the spectral profiler. When the cursor is on the spectral profiler graph, the pointed profile data will be displayed instead. Optionally, the displayed profile can be smoothed via the options in the Smoothing tab (see section <a class="reference internal" href="#profile-smoothing"><span class="std std-ref">Profile smoothing</span></a>). Image collapsing is available in the Moments tab. Various image moments and statistics are supported (see section <a class="reference internal" href="#moment-generator"><span class="std std-ref">Moment map generator</span></a>). The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.</p>
 <img src="_static/carta_fn_spectralProfiler_widget.png"
      style="width:100%;height:auto;"><div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -319,18 +319,69 @@
 <ul class="simple">
 <li><p>More flexibilities on how mean and rms values are derived</p></li>
 <li><p>Profile fitting</p></li>
-<li><p>Line identification toolkit</p></li>
 <li><p>Intensity unit conversion</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="moment-map-generator">
-<h2>Moment map generator<a class="headerlink" href="#moment-map-generator" title="Permalink to this headline">¶</a></h2>
-<p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+<span id="moment-generator"></span><h2>Moment map generator<a class="headerlink" href="#moment-map-generator" title="Permalink to this headline">¶</a></h2>
+<p>Moment images can be generated and viewed with CARTA. A shortcut button, linking to the Moments tab of the settings dialogue, can be found at the top-right corner of the spectral profiler widget.</p>
+<img src="_static/carta_fn_momentGenerator_tool.png"
+     style="width:100%;height:auto;"><p>The Moments tab provides several control parameters to define how moment images are calculated, including:</p>
+<ul class="simple">
+<li><p>Image: the image file for moment calculations. “Active” refers to the image displayed in the image viewer.</p></li>
+<li><p>Region: a region can be selected so that moment calculations are limited inside the region. “Active” refers to the selected region in the image viewer. If no region is selected, full image is included in the moment calculations.</p></li>
+<li><p>Coordinate, System, and Range: the spectral range (e.g., velocity range) used for moment calculations is defined with these options. The range can be defined either via the text input fields, or via the cursor by dragging horizontally in the spectral profiler widget.</p></li>
+<li><p>Mask and Range: these options define a pixel value range used for moment calculations. If mask is “None”, all pixels are included. If mask is “Include” or “Exclude”, the pixel value range defined in the text input fields is included or excluded, respectively. Alternatively, the pixel value range can be defined via the cursor by dragging vertically in the spectral profiler widget.</p></li>
+<li><p>Moments: which moment images to be calculated are defined here. Supported options are:</p>
+<ul>
+<li><p>-1: Mean value of the spectrum</p></li>
+<li><p>0: Integrated value of the spectrum</p></li>
+<li><p>1: Intensity weighted coordinate</p></li>
+<li><p>2: Intensity weighted dispersion of the coordinate</p></li>
+<li><p>3: Median value of the spectrum</p></li>
+<li><p>4: Median coordinate</p></li>
+<li><p>5: Standard deviation about the mean of the spectrum</p></li>
+<li><p>6: Root mean square of the spectrum</p></li>
+<li><p>7: Absolute mean deviation of the spectrum</p></li>
+<li><p>8: Maximum value of the spectrum</p></li>
+<li><p>9: Coordinate of the maximum value of the spectrum</p></li>
+<li><p>10: Minimum value of the spectrum</p></li>
+<li><p>11: Coordinate of the minimum value of the spectrum</p></li>
+</ul>
+</li>
+</ul>
+<p>When all the parameters are defined, by clicking the “Generate” button moment calculations will begin. Depending on the file size, moment calculations may take a while. If that happens, users may consider to cancel the calculations and re-define a proper region and/or spectral range.</p>
+<p>Once moment images are generated, they will be loaded and displayed in the image viewer. They are named as $image_filename.moment.$keyword. For example, if moment 0, 1 and 2 images are generated from the image M51.fits, they will be named as <em>M51.fits.moment.integrated</em>, <em>M51.fits.moment.weighted_coord</em>, and <em>M51.fits.moment.weighted_dispersion_coord</em>, respectively. These images are kept in RAM per session and if there is a new request of moment calculations, these images will be deleted first. Optionally, calculated moment images can be exported in CASA or FITS format via <strong>File</strong> -&gt; <strong>Save image</strong>.</p>
+<img src="_static/carta_fn_momentGenerator_tool2.png"
+     style="width:100%;height:auto;"><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Due to a CASA issue, image of “Median coordinate” cannot be generated. The request of “Median coordinate” is ignored automatically.</p>
+</div>
 </div>
 <div class="section" id="spectral-line-query">
 <h2>Spectral line query<a class="headerlink" href="#spectral-line-query" title="Permalink to this headline">¶</a></h2>
-<p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+<p>CARTA supports an <em>initial</em> implementation of spectral line ID overlay on a spectral profiler widget with a query to the Splatalogue service (<a class="reference external" href="https://splatalogue.online">https://splatalogue.online</a>). The query is made by defining a spectral range in frequency or wavelength and optionally a lower limit of CDMS/JPL line intensity (log). The spectral range can be defined as from-to or a center with a width.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The current implementation has some limitations when making a query to the Splatalogue service:</p>
+<ul class="simple">
+<li><p>The allowed maximum query range, equivalent in frequency, is 20 GHz.</p></li>
+<li><p>The actual query is made with a frequency range in MHz rounded to integer.</p></li>
+<li><p>When an intensity limit is applied, only the lines from CDMS and JPL catalogues will be returned.</p></li>
+<li><p>Up to 100000 lines are displayed.</p></li>
+</ul>
+<p>Improvements of the above limiations will be made in future releases.</p>
+<p>Currently, the Splatalogue query service is under active development. Unexpected query results might happen. When users believe there is something wrong, please contact <a class="reference external" href="mailto:carta&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">the CARTA helpdesk</a>, or file an issue on <a class="reference external" href="https://github.com/CARTAvis/carta/issues">Github</a> (recommended).</p>
+</div>
+<p>Once a query is successfully made, the line catalogue will be displayed in the tables. The upper table shows the column information in the catalogue with options to show or hide a specific column. The actual line catalogue is displayed in the lower table.</p>
+<p>The “Shifted Frequency” column is computed based on the user input of a velocity or a redshift. This “Shifted Frequency” is adopted for line ID overlay on a spectral profiler widget. Users can use the checkbox to select a set of lines to be overplotted on a spectral profiler widget. The maximum number of line ID overlay is 1000.</p>
+<img src="_static/carta_fn_linequery_widget.png"
+     style="width:100%;height:auto;"><p>The text labels of the line ID overlay are shown dynamically based on the zoom level of a profile. Different line ID overlays (with different velocity shifts) can be created on different spectral profilers widgets via the “Spectral Profiler” dropdown. By clicking the “Clear” button, the line ID overlay on the selected “Spectral Profiler” will be removed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The sorting and filtering functions in the line table will be available in the next release (v1.5).</p>
+</div>
 </div>
 <div class="section" id="stokes-analysis-widget">
 <h2>Stokes analysis widget<a class="headerlink" href="#stokes-analysis-widget" title="Permalink to this headline">¶</a></h2>
@@ -341,7 +392,7 @@
 <li><p>Linear polarization angle over the spectral axis</p></li>
 <li><p>Stokes Q intensity versus Stokes U intensity</p></li>
 </ul>
-<p>The profiles can be zoomed and panned with mouse similar to the spatial profile widget or the  spectral profile widget (<a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>). The Stokes Q versus Stokes U scatter plot is color-encoded from red to blue with increasing frequencies. The profiles can be requested at the cursor position (single pixel) or over a region of interest. Fractional polarization quantities are also supported. Examples are given in the following figures. The first one is from real ALMA data, while the second one is from an artifical Stokes cube.</p>
+<p>The profiles can be zoomed and panned with mouse similar to the spatial profile widget or the spectral profile widget (<a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>). The Stokes Q versus Stokes U scatter plot is color-encoded from red to blue with increasing frequencies. The profiles can be requested at the cursor position (single pixel) or over a region of interest. Fractional polarization quantities are also supported. Examples are given in the following figures. The first one is from real ALMA data, while the second one is from an artifical Stokes cube.</p>
 <img src="_static/carta_fn_Stokes_widget.png"
      style="width:100%;height:auto;"><img src="_static/carta_fn_Stokes_widget2.png"
      style="width:100%;height:auto;"><p>When profiles are zoomed, the scatter plot will highlight those channels remaining in the profile view. Similarly, when scatter plot is zoomed, the profile plot will highlight those channels remaining in the scatter plot view.</p>
@@ -351,7 +402,7 @@
 <img src="_static/carta_fn_Stokes_settings.png"
      style="width:100%;height:auto;"></div>
 <div class="section" id="profile-smoothing">
-<h2>Profile smoothing<a class="headerlink" href="#profile-smoothing" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>Profile smoothing<a class="headerlink" href="#profile-smoothing" title="Permalink to this headline">¶</a></h2>
 <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
 </div>
 <div class="section" id="statistics-widget">
