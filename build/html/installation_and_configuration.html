@@ -46,8 +46,8 @@
 <li><a class="reference internal" href="#">Installation and configuration</a><ul>
 <li><a class="reference internal" href="#carta-server">CARTA-server</a></li>
 <li><a class="reference internal" href="#carta-desktop-macos-10-14-10-15">CARTA-desktop: macOS 10.14/10.15</a></li>
-<li><a class="reference internal" href="#carta-desktop-ubuntu-16-04-lts-18-04-lts">CARTA-desktop: Ubuntu 16.04 LTS/18.04 LTS</a></li>
-<li><a class="reference internal" href="#carta-desktop-redhat-7">CARTA-desktop: Redhat 7</a></li>
+<li><a class="reference internal" href="#carta-desktop-ubuntu-18-04-lts-20-04-lts">CARTA-desktop: Ubuntu 18.04 LTS/20.04 LTS</a></li>
+<li><a class="reference internal" href="#carta-desktop-redhat-7-and-8">CARTA-desktop: Redhat 7 and 8</a></li>
 <li><a class="reference internal" href="#carta-desktop-redhat-6">CARTA-desktop: Redhat 6</a></li>
 <li><a class="reference internal" href="#command-line-startup">Command line startup</a></li>
 <li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
@@ -91,12 +91,12 @@
 <p>CARTA v1.4 supports the following operating systems:</p>
 <ul class="simple">
 <li><p>macOS 10.14/10.15</p></li>
-<li><p>Ubuntu 16.04 LTS/18.04 LTS</p></li>
-<li><p>RedHat 7</p></li>
+<li><p>Ubuntu 18.04 LTS/20.04 LTS</p></li>
+<li><p>RedHat 7 and 8</p></li>
 <li><p>RedHat 6 (conditional)</p></li>
 </ul>
 <p>Command line to launch CARTA is supported (see <a class="reference internal" href="#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions).</p>
-<p>CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7 or Ubuntu 16.04 LTS/18.04 LTS server via the ssh protocol, CARTA v1.4 also provides a “remote” mode for this use case (see <a class="reference internal" href="#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA “backend” on the server, while the CARTA “frontend” is accessed through your web browser of choice running on your local machine. This allows your local machine’s GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.</p>
+<p>CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7/8 or Ubuntu 18.04 LTS/20.04 LTS server via the ssh protocol, CARTA v1.4 also provides a “remote” mode for this use case (see <a class="reference internal" href="#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA “backend” on the server, while the CARTA “frontend” is accessed through your web browser of choice running on your local machine. This allows your local machine’s GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.</p>
 <p>If there is any problem, please contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a> for help.</p>
 <div class="section" id="carta-server">
 <h2>CARTA-server<a class="headerlink" href="#carta-server" title="Permalink to this headline">¶</a></h2>
@@ -131,8 +131,8 @@ carta
   style="width:100%;height:auto;"><img src="_static/carta_blocked_solution.png"
   style="width:100%;height:auto;"></div>
 </div>
-<div class="section" id="carta-desktop-ubuntu-16-04-lts-18-04-lts">
-<h2>CARTA-desktop: Ubuntu 16.04 LTS/18.04 LTS<a class="headerlink" href="#carta-desktop-ubuntu-16-04-lts-18-04-lts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="carta-desktop-ubuntu-18-04-lts-20-04-lts">
+<h2>CARTA-desktop: Ubuntu 18.04 LTS/20.04 LTS<a class="headerlink" href="#carta-desktop-ubuntu-18-04-lts-20-04-lts" title="Permalink to this headline">¶</a></h2>
 <p>Please follow the steps:</p>
 <ol class="arabic">
 <li><p><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.4/CARTA-v1.4-ubuntu.tgz">Download the tgz file</a></p></li>
@@ -188,8 +188,8 @@ carta
 </div>
 </div>
 </div>
-<div class="section" id="carta-desktop-redhat-7">
-<h2>CARTA-desktop: Redhat 7<a class="headerlink" href="#carta-desktop-redhat-7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="carta-desktop-redhat-7-and-8">
+<h2>CARTA-desktop: Redhat 7 and 8<a class="headerlink" href="#carta-desktop-redhat-7-and-8" title="Permalink to this headline">¶</a></h2>
 <p>Please follow the steps:</p>
 <ol class="arabic">
 <li><p><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.4/CARTA-v1.4-RedHat7.tgz">Download the tgz file</a></p></li>
@@ -263,7 +263,7 @@ carta
 </div>
 <div class="section" id="carta-desktop-redhat-6">
 <h2>CARTA-desktop: Redhat 6<a class="headerlink" href="#carta-desktop-redhat-6" title="Permalink to this headline">¶</a></h2>
-<p>Neither AppImage nor Electron runs on RedHat 6, therefore we supply a “standalone” remote server package. It is intended for RedHat 6 use only, however it can also run on both RedHat 7 and Ubuntu 16.04 LTS/18.04 LTS.</p>
+<p>Neither AppImage nor Electron runs on RedHat 6, therefore we supply a “standalone” remote server package. It is intended for RedHat 6 use only, however it can also run on RedHat 7/8 and Ubuntu 16.04 LTS/18.04 LTS.</p>
 <p>Please follow the steps:</p>
 <ol class="arabic">
 <li><p><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.4/CARTA-v1.4-remote.tgz">Download the tar.gz file</a></p></li>
@@ -391,57 +391,54 @@ Press ctrl+c to <span class="nb">exit</span>
 </li>
 </ul>
 <p>An online user manual regarding all the above mentioned keyword arguments is also available.</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta --help     # show all available keyword arguments with explanations.
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>carta --help     # show all available keyword arguments with explanations.
 
-usage: carta [] CARTA file browser will default to the current path.
-        [&lt;path&gt;]                 CARTA file browser will default to the specified
+usage: carta []                CARTA file browser will default to the current path.
+             [&lt;path&gt;]          CARTA file browser will default to the specified
                                  path &lt;path&gt; e.g. carta ~/CARTA/Images
-
-        [&lt;image&gt;]                CARTA will directly open the image named &lt;image&gt;
+             [&lt;image&gt;]         CARTA will directly open the image named &lt;image&gt;
                                  e.g. carta aJ.fits or carta ~/CARTA/Images/aJ.fits
-
-        [--folder=&lt;path&gt;]        Optional: An alternative way to define the
+             [--folder=&lt;path&gt;] Optional: An alternative way to define the
                                  default CARTA file browser path.
                                  Note: Not for directly opening an image.
+             [--help]          View this help output
 
-        [--help]                 View this help output
-
-Remote mode flags
-        [--remote]               start CARTA in &#39;remote&#39; mode. For accessing CARTA&#39;s
-                                 frontend through your webrowser rather than the standard
-                                 Electron interface. A free websocket port and a frontend
-                                 port will be chosen automatically.
-
-        [--port=&lt;number&gt;]        Optional: Manually choose a websocket port for the
-                                 backend. CARTA will check if the port is available
-                                 and issue a warning if not. A typical value is
-                                 between 1025-65535.
-
-        [--fport=&lt;number&gt;]       Optional: Manually choose a frontend port for the
-                                 CARTA web interface. CARTA will check if the port
-                                 is available and issue a warning if not. A typical
-                                 value is between 1025-65535.
-
-Advanced usage flags
-        [--root=&lt;path&gt;]          Define the lowest path the file browser can
-                                 navigate to. e.g. carta --root /home/bob means the
-                                 the file browser can not access anything in /home
-                                 Note: --root can not be set inside --folder.
-
-        [--threads=&lt;number&gt;]     Set the number of threads. It controls how many
-                                 tasks CARTA handles simultaneosuly. The default
-                                 value is set as 4
-
-        [--omp_threads=&lt;number&gt;] Set the number of OpenMP threads. It controls
-                                 how trivially parallelisable tasks are split
-                                 by CARTA. The default value is the
-                                 automatically detected number of cores on
-                                 your system; usually 4 or 8 on a typcial
-                                 desktop or laptop.
+        Remote mode flags
+             [--remote]             Start CARTA in &#39;remote&#39; mode. For accessing CARTA&#39;s
+                                      frontend through your webrowser rather than the
+                                      standard Electron interface. A free websocket port
+                                      and a frontend port will be chosen automatically.
+             [--port=&lt;number&gt;]      Optional: Manually choose a websocket port for the
+                                      backend. CARTA will check if the port is available
+                                      and issue a warning if not. A typical value is
+                                      between 1025-65535.
+             [--fport=&lt;number&gt;]     Optional: Manually choose a frontend port for the
+                                      CARTA web interface. CARTA will check if the port
+                                      is available and issue a warning if not. A typical
+                                      value is between 1025-65535.
+             [--grpc_port=&lt;number&gt;] Optional: Manually choose a port to activate
+                                      and use the scripting functionality.
+                                      Note: This feature is currently in development.
+        Advanced usage flags
+             [--root=&lt;path&gt;]           Define the lowest path the file browser can
+                                         navigate to. e.g. carta --root /home/bob means the
+                                         the file browser can not access anything in /home
+                                         Note: --root can not be set inside --folder.
+             [--threads=&lt;number&gt;]      Set the number of threads. It controls how many
+                                         tasks CARTA handles simultaneosuly. The default
+                                         value is set as 4
+             [--omp_threads=&lt;number&gt;]  Set the number of OpenMP threads. It controls
+                                         how trivially parallelisable tasks are split
+                                         by CARTA. The default value is the
+                                         automatically detected number of cores on
+                                         your system; usually 4 or 8 on a typcial
+             [--size=&lt;width&gt;x&lt;height&gt;] Manually define the dimensions of CARTA&#39;s
+                                         Electron window in pixels.
+             [--disable-gpu]           May help if running CARTA Desktop through a VNC server
+                                         and images are not rendering properly.
+             [--debug]                 Open the DevTools in the Electron window.
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="troubleshooting">
 <span id="id3"></span><h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>

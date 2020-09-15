@@ -1,6 +1,17 @@
 Appendix C: development log
 ===========================
 
+v1.3 -> v1.4
+^^^^^^^^^^^^
+Frontend
+
+* `Closed issues <https://github.com/CARTAvis/carta-frontend/issues?q=is%3Aissue+closed%3A2020-03-31..2020-09-17>`_
+* `Merged pull requests <https://github.com/CARTAvis/carta-frontend/issues?q=merged%3A2020-03-31..2020-09-17+>`_
+
+Backend
+
+* `Closed issues <https://github.com/CARTAvis/carta-backend/issues?q=is%3Aissue+closed%3A2020-03-31..2020-09-17+>`_
+* `Merged pull requests <https://github.com/CARTAvis/carta-backend/issues?q=merged%3A2020-03-31..2020-09-17+>`_
 
 
 v1.2 -> v1.3

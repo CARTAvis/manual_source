@@ -5,13 +5,13 @@ Installation and configuration
 CARTA v1.4 supports the following operating systems:
 
 * macOS 10.14/10.15
-* Ubuntu 16.04 LTS/18.04 LTS
-* RedHat 7
+* Ubuntu 18.04 LTS/20.04 LTS
+* RedHat 7 and 8
 * RedHat 6 (conditional)
 
 Command line to launch CARTA is supported (see :ref:`commandLineStartup` for instructions).
 
-CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7 or Ubuntu 16.04 LTS/18.04 LTS server via the ssh protocol, CARTA v1.4 also provides a "remote" mode for this use case (see :ref:`commandLineStartup` for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA "backend" on the server, while the CARTA "frontend" is accessed through your web browser of choice running on your local machine. This allows your local machine's GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.
+CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7/8 or Ubuntu 18.04 LTS/20.04 LTS server via the ssh protocol, CARTA v1.4 also provides a "remote" mode for this use case (see :ref:`commandLineStartup` for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA "backend" on the server, while the CARTA "frontend" is accessed through your web browser of choice running on your local machine. This allows your local machine's GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.
 
 If there is any problem, please contact `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ for help.
 
@@ -61,7 +61,7 @@ Please follow the steps:
         style="width:100%;height:auto;">
 
 
-CARTA-desktop: Ubuntu 16.04 LTS/18.04 LTS
+CARTA-desktop: Ubuntu 18.04 LTS/20.04 LTS
 -----------------------------------------
 Please follow the steps:
 
@@ -130,8 +130,8 @@ Please follow the steps:
       carta --remote
 
 
-CARTA-desktop: Redhat 7
------------------------
+CARTA-desktop: Redhat 7 and 8
+-----------------------------
 Please follow the steps:
 
 1. `Download the tgz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.4/CARTA-v1.4-RedHat7.tgz>`_
@@ -219,7 +219,7 @@ Please follow the steps:
 
 CARTA-desktop: Redhat 6
 -----------------------
-Neither AppImage nor Electron runs on RedHat 6, therefore we supply a "standalone" remote server package. It is intended for RedHat 6 use only, however it can also run on both RedHat 7 and Ubuntu 16.04 LTS/18.04 LTS.
+Neither AppImage nor Electron runs on RedHat 6, therefore we supply a "standalone" remote server package. It is intended for RedHat 6 use only, however it can also run on RedHat 7/8 and Ubuntu 16.04 LTS/18.04 LTS.
 
 Please follow the steps:
 
@@ -374,55 +374,55 @@ If CARTA is installed on a remote server, and users access the server via the ss
 
 An online user manual regarding all the above mentioned keyword arguments is also available.
 
-  .. code-block:: bash 
+.. code-block:: text 
    
      carta --help     # show all available keyword arguments with explanations. 
 
-     usage: carta [] CARTA file browser will default to the current path.
-             [<path>]                 CARTA file browser will default to the specified
+     usage: carta []                CARTA file browser will default to the current path.
+                  [<path>]          CARTA file browser will default to the specified
                                       path <path> e.g. carta ~/CARTA/Images
-             
-             [<image>]                CARTA will directly open the image named <image>
+                  [<image>]         CARTA will directly open the image named <image>
                                       e.g. carta aJ.fits or carta ~/CARTA/Images/aJ.fits
-             
-             [--folder=<path>]        Optional: An alternative way to define the
+                  [--folder=<path>] Optional: An alternative way to define the
                                       default CARTA file browser path.
                                       Note: Not for directly opening an image.
-             
-             [--help]                 View this help output
-   
-     Remote mode flags
-             [--remote]               start CARTA in 'remote' mode. For accessing CARTA's
-                                      frontend through your webrowser rather than the standard 
-                                      Electron interface. A free websocket port and a frontend
-                                      port will be chosen automatically.
-             
-             [--port=<number>]        Optional: Manually choose a websocket port for the
-                                      backend. CARTA will check if the port is available
-                                      and issue a warning if not. A typical value is
-                                      between 1025-65535.
-             
-             [--fport=<number>]       Optional: Manually choose a frontend port for the
-                                      CARTA web interface. CARTA will check if the port
-                                      is available and issue a warning if not. A typical
-                                      value is between 1025-65535.
-   
-     Advanced usage flags
-             [--root=<path>]          Define the lowest path the file browser can
-                                      navigate to. e.g. carta --root /home/bob means the 
-                                      the file browser can not access anything in /home
-                                      Note: --root can not be set inside --folder.
-             
-             [--threads=<number>]     Set the number of threads. It controls how many
-                                      tasks CARTA handles simultaneosuly. The default
-                                      value is set as 4
-             
-             [--omp_threads=<number>] Set the number of OpenMP threads. It controls
-                                      how trivially parallelisable tasks are split
-                                      by CARTA. The default value is the
-                                      automatically detected number of cores on
-                                      your system; usually 4 or 8 on a typcial
-                                      desktop or laptop.
+                  [--help]          View this help output
+
+             Remote mode flags
+                  [--remote]             Start CARTA in 'remote' mode. For accessing CARTA's
+                                           frontend through your webrowser rather than the 
+                                           standard Electron interface. A free websocket port 
+                                           and a frontend port will be chosen automatically.
+                  [--port=<number>]      Optional: Manually choose a websocket port for the
+                                           backend. CARTA will check if the port is available
+                                           and issue a warning if not. A typical value is
+                                           between 1025-65535.
+                  [--fport=<number>]     Optional: Manually choose a frontend port for the
+                                           CARTA web interface. CARTA will check if the port
+                                           is available and issue a warning if not. A typical
+                                           value is between 1025-65535.
+                  [--grpc_port=<number>] Optional: Manually choose a port to activate 
+                                           and use the scripting functionality.
+                                           Note: This feature is currently in development.
+             Advanced usage flags
+                  [--root=<path>]           Define the lowest path the file browser can
+                                              navigate to. e.g. carta --root /home/bob means the 
+                                              the file browser can not access anything in /home
+                                              Note: --root can not be set inside --folder.
+                  [--threads=<number>]      Set the number of threads. It controls how many
+                                              tasks CARTA handles simultaneosuly. The default
+                                              value is set as 4
+                  [--omp_threads=<number>]  Set the number of OpenMP threads. It controls
+                                              how trivially parallelisable tasks are split
+                                              by CARTA. The default value is the
+                                              automatically detected number of cores on
+                                              your system; usually 4 or 8 on a typcial
+                  [--size=<width>x<height>] Manually define the dimensions of CARTA's
+                                              Electron window in pixels.
+                  [--disable-gpu]           May help if running CARTA Desktop through a VNC server
+                                              and images are not rendering properly.
+                  [--debug]                 Open the DevTools in the Electron window.
+
             
 
 
