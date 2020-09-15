@@ -28,7 +28,7 @@ For string columns, partial match is adopted. For example, :code:`gal` (no quota
 
 Once filters are set, by clicking the "Update" button, the filters will be applied and a filtered source catalogue will be displayed up to a number of entries defined in the "Max Rows" text input field. When the "Reset" button is clicked, all filters will be removed and the image overlay (if exists) will be removed too. For the histogram plot or the 2D scatter plot, the plot will be reset so that only the first (up to) 50 entries are rendered.
 
-In the example below, a catalogue is loaded and displayed in the Catalogue widget. The rendering type is selected as "Image Overlay" and the 5th and the 6th columns are identified as source coordinates in FK5 system. A filter is applied to the "ANG_DIST" column, resulting 638 filtered sources. These sources are rendered on the image as green circles. With the catalogue selection button in the tool bar of the image viewer (bottom-right corner when hovering over), a source is selected and highlighted in red. The same source in the catalogue table is also highlighted in red.
+In the example below, a catalogue is loaded and displayed in the Catalogue widget. The rendering type is selected as "Image Overlay" and the 5th and the 6th columns are identified as source coordinates in the FK5 system. A filter is applied to the "ANG_DIST" column, resulting in 638 filtered sources. These sources are rendered on the image as green circles. With the catalogue selection button in the tool bar of the image viewer (bottom-right corner when hovering over), a source is selected and highlighted in red. The same source in the catalogue table is also highlighted in red.
 
 .. raw:: html
 
