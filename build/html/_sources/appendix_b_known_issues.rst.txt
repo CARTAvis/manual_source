@@ -1,6 +1,6 @@
 Appendix B: known issues
 ========================
-CARTA has the following known issues for the release v1.3. The CARTA development team will try to fix them in coming releases. The list is updated up to March 31, 2020. 
+CARTA has the following known issues for the release v1.4. The CARTA development team will try to fix them in coming releases. The list is updated up to September 17, 2020. 
 
 
 

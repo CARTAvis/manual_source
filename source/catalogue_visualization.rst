@@ -4,7 +4,7 @@ Source catalogue files in the *VOTable* or *FITS* format can be loaded in CARTA 
 
 Catalogue filtering and rendering as image overlay
 --------------------------------------------------
-Depending on the rendering type defined (via a dropdown menu) in the top bar, the "Represent As" column allows users to set which columns are used for visualization. If the rendering type is "Image overlay", the content of the dropdown menu of the "Represent As" column is determined by the "System" dropdown. Users need to tell CARTA which coordinate system the source catalogue file refers to. Source catalogue defined in image coordinate (0-based or 1-based) is also supported. Two numeric columns are required to render the source catalogue as an "Image overlay". To render the source catalogue as a catalogue overlay in the image viewer, users need to identify which columns represents the source coodinates. If the rendering type is "Histogram", one numeric column is required. If the rendering type is "2D scatter", two numeric columns are needed.
+Depending on the rendering type defined (via a dropdown menu) in the top bar, the "Represent As" column allows users to set which columns are used for visualization. If the rendering type is "Image overlay", the content of the dropdown menu of the "Represent As" column is determined by the "System" dropdown. Users need to tell CARTA which coordinate system the source catalogue file refers to. Source catalogue defined in image coordinate (0-based or 1-based) is also supported. Two numeric columns are required to render the source catalogue as an "Image overlay". To render the source catalogue as a catalogue overlay in the image viewer, users need to identify which columns represent the source coordinates. If the rendering type is "Histogram", one numeric column is required. If the rendering type is "2D scatter", two numeric columns are needed.
  
 The source catalogue table accepts sub-filters such as partial string match or value range. For numeric columns, supported operators are:
 
@@ -20,7 +20,7 @@ The source catalogue table accepts sub-filters such as partial string match or v
 For examples:
 
 * to filter everything less than 10, use :code:`< 10`
-* to filter entires equal to 1.23, use :code:`== 1.23`
+* to filter entries equal to 1.23, use :code:`== 1.23`
 * to filter everything between 10 and 50 (exclusive), use :code:`10..50`
 * to filter everything between 10 and 50 (inclusive), use :code:`10...50`
 

@@ -186,7 +186,7 @@ Spatial profiler
 ----------------
 Spatial profiler provides the spatial profiles of the current image at the cursor position. When the cursor is moving on the image, profiles derived from the full resolution raster image are displayed. The "F" key will disable or enable profile update. When cursor update is disabled, a marker "+" will be placed on the image to indicate the position of the profiles taken. 
 
-When displaying a spatial profile with the number of pixels more than the number of screen pixels of the spatial profiler widget, a *decimated* profile will be derived and displayed to users as an enhancement of performance. Min/max decimation of a profile is adopted to ensure profile features are preserved. In other words, positive and negative peaks should stay at the same screen pixels just like displaying the full resolution profile. When users keep zooming in the profile, decimation with narrower and narrower interval is applied dynamically. Full resolution profile is displayed when the number of screen pixels is more than the number of pixels of the profile to be displayed.  
+When displaying a spatial profile with the number of pixels more than the number of screen pixels of the spatial profiler widget, a *decimated* profile will be derived and displayed to users as an enhancement of performance. Min/max decimation of a profile is adopted to ensure profile features are preserved. In other words, positive and negative peaks should stay at the same screen pixels just like displaying the full resolution profile. When users keep zooming in the profile, decimation with narrower and narrower intervals is applied dynamically. Full resolution profile is displayed when the number of screen pixels is more than the number of pixels of the profile to be displayed.  
 
 The interactions of the spatial profiler widget are demonstrated in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available in the spatial profiler settings dialogue which is launched by clicking the "cog" icon at the top-right corner. The option "Show Mean/RMS" in the Styling tab will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. Optionally, the profile can be smoothed with different methods provided in the Smoothing tab (see section :ref:`profile_smoothing`). The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner when hovering over the plot.
 
@@ -200,11 +200,11 @@ When the cursor is on the image in the image viewer, the pointed pixel value (pi
         style="width:100%;height:auto;">
 
 .. note::
-   In future release, the following features will be supported:
+   In future releases, the following features will be supported:
    
    * More flexibilities on how mean and rms values are derived in the plot
    * Profile fitting capability 
-   * Profile along a line segment, polyline, or an arbitary curve  
+   * Profile along a line segment, polyline, or an arbitrary curve  
 
 
 Spectral profiler
@@ -220,7 +220,7 @@ When requesting a spectral profile, a common disappointing user experience is th
    </video>
 
 
-When the property of a region (cursor or a regular region) is modified while the profile of the original region is being updated, the partial profile will disappear and a new partial profile cooresponding to the new region will start updating. If users modify the request of a spectral profile via the spectral profile widget before it is fully delivered, the original profile calculations will be cancelled and new profile calculations will start. In short, CARTA should just focus on calculating and showing the profiles that users pay attention to. If a profile is no longer needed to be shown on the screen, the profile calculation will be cancelled immediately, instead of blocking and queueing up new profile requests. 
+When the property of a region (cursor or a regular region) is modified while the profile of the original region is being updated, the partial profile will disappear and a new partial profile corresponding to the new region will start updating. If users modify the request of a spectral profile via the spectral profile widget before it is fully delivered, the original profile calculations will be cancelled and new profile calculations will start. In short, CARTA should just focus on calculating and showing the profiles that users pay attention to. If a profile is no longer needed to be shown on the screen, the profile calculation will be cancelled immediately, instead of blocking and queueing up new profile requests. 
 
 
 .. raw:: html
@@ -229,7 +229,7 @@ When the property of a region (cursor or a regular region) is modified while the
      <source src="_static/carta_fn_spectralProfiler_profileCancellation.mp4" type="video/mp4">
    </video>
 
-When displaying a spectral profile with the number of channels more than the number of screen pixels of the spectral profiler widget, a *decimated* profile will be derived and displayed to users as an enhancement of performance. Min/max decimation of a profile is adopted to ensure profile features are preserved. In other words, positive and negative peaks should stay at the same screen pixels just like displaying the full resolution profile. When users keep zooming in the profile, decimation with narrower and narrower interval is applied dynamically. Full resolution profile is displayed when the number of screen pixels is more than the number of pixels of the profile to be displayed. 
+When displaying a spectral profile with the number of channels more than the number of screen pixels of the spectral profiler widget, a *decimated* profile will be derived and displayed to users as an enhancement of performance. Min/max decimation of a profile is adopted to ensure profile features are preserved. In other words, positive and negative peaks should stay at the same screen pixels just like displaying the full resolution profile. When users keep zooming in the profile, decimation with narrower and narrower intervals is applied dynamically. Full resolution profile is displayed when the number of screen pixels is more than the number of pixels of the profile to be displayed. 
 
 When regions are created, the spectral profiler widget can be configured to display a profile from a specific region with the "*Region*" dropdown menu. The default of the "*Region*" dropdown is "Active" which points to the current active (selected) region. If no region is active, it defaults to cursor region. Additional statistic types to compute the region spectral profile are available with the "*Statistic*" dropdown menu (default to mean). If the image cube has multiple Stokes, the "*Stokes*" dropdown menu will be activated and defaulted to "Current" which is synchronized with the selection in the animator. To view a specific Stokes, select with the "*Stokes*" dropdown menu.
 
@@ -272,9 +272,9 @@ Moment images can be generated and viewed with CARTA. A shortcut button, linking
 The Moments tab provides several control parameters to define how moment images are calculated, including:
                 
 * Image: the image file for moment calculations. "Active" refers to the image displayed in the image viewer.
-* Region: a region can be selected so that moment calculations are limited inside the region. "Active" refers to the selected region in the image viewer. If no region is selected, full image is included in the moment calculations.
+* Region: a region can be selected so that moment calculations are limited inside the region. "Active" refers to the selected region in the image viewer. If no region is selected, the full image is included in the moment calculations.
 * Coordinate, System, and Range: the spectral range (e.g., velocity range) used for moment calculations is defined with these options. The range can be defined either via the text input fields, or via the cursor by dragging horizontally in the spectral profiler widget.
-* Mask and Range: these options define a pixel value range used for moment calculations. If mask is "None", all pixels are included. If mask is "Include" or "Exclude", the pixel value range defined in the text input fields is included or excluded, respectively. Alternatively, the pixel value range can be defined via the cursor by dragging vertically in the spectral profiler widget.
+* Mask and Range: these options define a pixel value range used for moment calculations. If the mask is "None", all pixels are included. If the mask is "Include" or "Exclude", the pixel value range defined in the text input fields is included or excluded, respectively. Alternatively, the pixel value range can be defined via the cursor by dragging vertically in the spectral profiler widget.
 * Moments: which moment images to be calculated are defined here. Supported options are:
                         
   - -1: Mean value of the spectrum
@@ -319,7 +319,7 @@ CARTA supports an *initial* implementation of spectral line ID overlay on a spec
    * When an intensity limit is applied, only the lines from CDMS and JPL catalogues will be returned.
    * Up to 100000 lines are displayed. 
 
-   Improvements of the above limiations will be made in future releases.
+   Improvements of the above limitations will be made in future releases.
 
    Currently, the Splatalogue query service is under active development. Unexpected query results might happen. When users believe there is something wrong, please contact `the CARTA helpdesk <mailto:carta@asiaa.sinica.edu.tw>`_, or file an issue on `Github <https://github.com/CARTAvis/carta/issues>`_ (recommended).  
 
@@ -353,7 +353,7 @@ Stokes analysis widget allows users to view basic polarization quantities of a m
 * Linear polarization angle over the spectral axis
 * Stokes Q intensity versus Stokes U intensity
 
-The profiles can be zoomed and panned with mouse similar to the spatial profile widget or the spectral profile widget (:ref:`mouse_interaction_with_charts`). The Stokes Q versus Stokes U scatter plot is color-encoded from red to blue with increasing frequencies. The profiles can be requested at the cursor position (single pixel) or over a region of interest. Fractional polarization quantities are also supported. Examples are given in the following figures. The first one is from real ALMA data, while the second one is from an artifical Stokes cube. 
+The profiles can be zoomed and panned with a mouse similar to the spatial profile widget or the spectral profile widget (:ref:`mouse_interaction_with_charts`). The Stokes Q versus Stokes U scatter plot is color-encoded from red to blue with increasing frequencies. The profiles can be requested at the cursor position (single pixel) or over a region of interest. Fractional polarization quantities are also supported. Examples are given in the following figures. The first one is from real ALMA data, while the second one is from an artificial Stokes cube. 
 
 .. raw:: html
 
@@ -366,7 +366,7 @@ The profiles can be zoomed and panned with mouse similar to the spatial profile 
    <img src="_static/carta_fn_Stokes_widget2.png" 
         style="width:100%;height:auto;">
 
-When profiles are zoomed, the scatter plot will highlight those channels remaining in the profile view. Similarly, when scatter plot is zoomed, the profile plot will highlight those channels remaining in the scatter plot view.
+When profiles are zoomed, the scatter plot will highlight those channels remaining in the profile view. Similarly, when the scatter plot is zoomed, the profile plot will highlight those channels remaining in the scatter plot view.
 
 .. raw:: html
 
@@ -383,7 +383,7 @@ Additional options to customize the plots in the Stokes analysis widget are prov
 
 
 .. note::
-   In the next release (v1.5), indivisual Stokes image (e.g., Stokes_Q.fits and Stokes_U.fits) can be loaded into CARTA and combined internally so that the Stokes analysis widget can show diagnostic plots. For the current release, the Stokes analysis widget only supports a single image with multiple Stokes planes (e.g., IQU, IQUV, or QU).
+   In the next release (v1.5), individual Stokes images (e.g., Stokes_Q.fits and Stokes_U.fits) can be loaded into CARTA and combined internally so that the Stokes analysis widget can show diagnostic plots. For the current release, the Stokes analysis widget only supports a single image with multiple Stokes planes (e.g., IQU, IQUV, or QU).
 
 
 
