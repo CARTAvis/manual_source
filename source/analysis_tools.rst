@@ -10,7 +10,7 @@ With version 1.4, CARTA provides the following widgets and tools for image cube 
   * Histogram: to view histogram from a region of interest
   * Statistics: to view basic statistics from a region of interest
   * Stokes analysis: to view basic polarization quantities
-  * Spectral line query: to make a query to the Splatalogue service and create line labels on a spectral profile plot
+  * Spectral line query: to make a query to the Splatalogue service and create labels on a spectral profile plot
   * Catalogue widget: to visualize a catalogue as an image overlay, a 2D scatter plot, or a histogram
 
 * Tool
@@ -22,7 +22,7 @@ With version 1.4, CARTA provides the following widgets and tools for image cube 
 
 Region of interest
 ------------------
-As of v1.3, CARTA supports the following region types:
+As of v1.4, CARTA supports the following region types:
 
 * rectangle (rotatable)
 * ellipse (rotatable)
@@ -32,7 +32,7 @@ As of v1.3, CARTA supports the following region types:
 * polygon
 
 
-The creation and modification of regions are demonstrated in the section :ref:`mouse_interaction_with_regions`. To create a region, use the region button at the bottom-right corner of the image viewer, then use cursor to draw a region. CARTA allows regions to be created even if the region is outside the image. Keyboard shortcuts associated with regions are listed below.
+The creation and modification of regions are demonstrated in the section :ref:`mouse_interaction_with_regions`. To create a region, use the region button at the bottom-right corner of the image viewer or use the region buttons at the top of the GUI, then use the cursor to draw a region. CARTA allows regions to be created even if the region is outside the image. Keyboard shortcuts associated with regions are listed below.
 
 +----------------------------------+----------------------------+-----------------------------+
 |                                  | macOS                      | Linux                       |
@@ -69,7 +69,7 @@ The creation and modification of regions are demonstrated in the section :ref:`m
   4. It will likely have a value of 0. Double click it, and then modify it to a value of "2".
   5. Close the about:config tab and now backspace will no longer navigate back a page.
 
-All created regions are listed in the region list widget with basic region properties. To select a region (region state changes to "selected"), simply click on the region in the image viewer, or click on the region in the region list widget. To modify the properties of a selected region, double-click on a region in the image viewer or a region in the region list widget. The color, line style, name, location, and shape, of a region are all configurable with the region property dialogue. To de-select a region, press "**esc**" key. To delete a selected region, press "**delete**" or "**backspace**" key. The activated region can be locked by pressing "**L**" key or by clicking the "lock" icon in the region list widget or region property dialogue. When a region is locked, it cannot be modified (resize, move, or delete) with mouse actions and the "**delete**" or "**backspace**" key. A locked region, however, can still be modified or delected via the region property dialogue. Locking a region could help the stituation when users want to modify overlapping regions, or could prevent modifying a region accidentally. The "eye" icon is to show the corresponding region at the center of image view. 
+All created regions are listed in the region list widget with basic region properties. To select a region (region state changes to "selected"), simply click on the region in the image viewer, or click on the region in the region list widget. To modify the properties of a selected region, double-click on a region in the image viewer or a region in the region list widget. The color, line style, name, location, and shape, of a region are all configurable with the region configuration dialogue. The location and shape properties can be edited in the image coordinate, or in the world coordinate with angular scales (default). To de-select a region or cancel a region creation process, press "**esc**" key. To delete a selected region, press "**delete**" or "**backspace**" key. The activated region can be locked by pressing "**L**" key or by clicking the "lock" icon in the region list widget or region property dialogue. When a region is locked, it cannot be modified (resize, move, or delete) with mouse actions and the "**delete**" or "**backspace**" key. A locked region, however, can still be modified or deleted via the region configuration dialogue. Locking a region could help the situation when users want to modify overlapping regions, or could prevent modifying a region accidentally. The "center" icon is to show the corresponding region at the center of image view. 
 
 .. raw:: html
 
@@ -77,35 +77,65 @@ All created regions are listed in the region list widget with basic region prope
         style="width:100%;height:auto;">
 
 
-CARTA checks if a polygon is simple or complex. If a polygon is detected as complex, its color will be in pink as a warning. Spectral profile, statistics, or histogram of a complex polygon can still be requested. However, the outcome may be beyond users' expectation. The enclosed pixels depend on *how* a complex polygon is constructed. Please use complex polygon with caution. 
+CARTA checks if a polygon is simple or complex. If a polygon is detected as complex, its color will be in pink as a warning. Spectral profile, statistics, or histogram of a complex polygon can still be requested. However, the outcome may be beyond users' expectations. The enclosed pixels depend on *how* a complex polygon is constructed. Please use complex polygons with caution. 
 
-Region of interest enables practical image cube analysis through statistics, histogram, and spectral profiler widgets. When a region is selected, the region associated widgets will be highlighted with a persistent blue box as demonstrated below.
+When editing region properties in the world coordinate, the coordinate reference system can be changed with the dropdown menu. The default reference system is as defined in the image header and is the same as the one defining the grid line overlay in the image viewer. When users switch to different reference frames, the grid line overlay in the image viewer is changed too. If the reference system is ICRS, FK5 or FK4, the coordinate is in sexagesmial format. If the reference system is Galactic or Ecliptic, the coordinate is in decimal degrees. The region size property can be defined in arcsecond with **"**, in arcminute with **'**, or in degrees with **deg**.
+
+
+Shared region with conserved solid angle
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When a region is created on one of the spatially matched images, effectively the region is created on the image served as the spatial reference, regardless which image is being viewed. Then, the region is *shared* and rendered to other spatially matched images with the considerations of projection effects and difference in coordinate reference systems. Regions (except the point region) are approximated by polygons and each control point is transformed from the spatial reference image to the spatially-matched secondary image. In this way, the solid angles of the regions before and after polygonal approximation are nearly identical thus analytics of the *same* region among different spatially matched images can be compared directly. 
+
+In the following exaggerated example, two images with different coordinate systems and projection schemes are spatially matched. Regions on the spatial reference image retain their shapes. Polygon approximated regions on the spatially-matched secondary image may have visible distortions, depending on the projection schemes. In most use cases, the region distortion effect should be much less noticable if the field of view of the image is small.
 
 .. raw:: html
 
-   <video controls loop style="width:100%;height:auto;">
-     <source src="_static/carta_fn_roi_widgetHighlight.mp4" type="video/mp4">
-   </video>
+  <img src="_static/carta_fn_roi_sharedRegion.png" 
+      style="width:100%;height:auto;">
+
+Shared region management
+^^^^^^^^^^^^^^^^^^^^^^^^
+When regions are created on one of the spatially matched images, they are *all* registered to the spatial reference image for matching. The regions are shared to all the matched images, thus analytics can be derived and compared directly. When an image is unmatched with respect to the spatial reference image, the image will get a copy of all regions. This set of regions is now independent to the region set belonging to the matched images. If there are modifications of the regions and users re-match the image to the matched images, only those modified regions will be copied to the region set of the matched images. The following diagram illustrates the idea.
+
+.. raw:: html
+
+  <img src="_static/carta_fn_roi_sharedRegion_management.png" 
+      style="width:100%;height:auto;">
+
+Analytics with shared regions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Shared region of interest enables practical image cube analysis through statistics, histogram, spectral profiler, and Stokes analysis widgets. These widgets contains an image dropdown menu and a region dropdown menu. The former allows users to select which loaded image cube to show its analytics. The latter allows users to select which region to show the region analytics. With the combination of the two menus, CARTA provides a flexible user interface to explore image data. As an example below, three image cubes representing 12CO 2-1, 13CO 2-1, and C18O 2-1 are matched spatially and spectrally. Three shared regions are created to highlight different features. Three spectral profiler widgets are placed to show different profiles. The top one shows the square region profile from 12CO 2-1. The middle one shows the ellipse region profile of 13CO 2-1. The bottom one shows the circle region profile from C18O 2-1. 
 
 
+.. raw:: html
 
-As of v1.3, CARTA supports basic region import and export capability. Regions, in world coordinate or in image coordinate, can be exported to a text file or imported from a text file. To import a region file, use the menu **File** -> **Import regions**. 
+  <img src="_static/carta_fn_roi_sharedRegion_analytics.png" 
+      style="width:100%;height:auto;">
+
+Alternatively, users may use multiple widgets to show analytics from different regions of the same image, or show analytics of a shared region from different matched images, or the mix of the two scenarios as the example above.
+
+The image dropdown menu will be highlighted with a blue box if the selected image is currently displayed in the image viewer. The region dropdown menu will be highlighted with a blue box too if the selected region is currently selected (with control points displayed) in the image viewer. 
+
+
+Region import and export
+^^^^^^^^^^^^^^^^^^^^^^^^
+As of v1.4, CARTA supports basic region import and export capability. Regions, in world coordinate or in image coordinate, can be exported to a text file or imported from a text file. To import a region file, use the menu **File** -> **Import regions**. 
 
 .. raw:: html
 
    <img src="_static/carta_fn_regionImport.png" 
         style="width:100%;height:auto;">
 
-To export regions to a region file, use the meun **File** -> **Export regions**. All regions, except cursor, will be exported. 
+To export regions to a region file, use the menu **File** -> **Export regions**. All regions, except cursor, will be exported. 
 
 .. raw:: html
 
    <img src="_static/carta_fn_regionExport.png" 
         style="width:100%;height:auto;">
 
-As of v1.3, CASA region text format (.crtf) and ds9 region text formate (.reg) are supported with some limitations. Currently only the 2D region defination is supported. Other properties, such as spectral range, reference frame, or decoration (line style, line width, etc.) will be supported in future releases.  
+As of v1.4, CASA region text format (.crtf) and ds9 region text format (.reg) are supported with some limitations. Currently only the 2D region definition is supported. Other properties, such as spectral range or reference frame will be supported in future releases.  
 
-The currently supported CRTF region syntax is summerized below:
+The currently supported CRTF region syntax is summarized below:
 
 * Rectangle
 
@@ -126,10 +156,10 @@ The currently supported CRTF region syntax is summerized below:
 
   * symbol[[x, y], .]
 
-Please refer to https://casa.nrao.edu/casadocs/casa-5.6.0/imaging/image-analysis/region-file-format for more detailed descriptions about the CRTF syntax. 
+Please refer to https://casa.nrao.edu/casadocs/casa-5.7.0/imaging/image-analysis/region-file-format for more detailed descriptions about the CRTF syntax. 
 
 
-The currently supported ds9 region syntax is summerized below:
+The currently supported ds9 region syntax is summarized below:
 
 * Rectangle
 
@@ -150,9 +180,6 @@ The currently supported ds9 region syntax is summerized below:
 
 Please refer to http://ds9.si.edu/doc/ref/region.html for more detailed descriptions about the ds9 region syntax. 
 
-
-.. warning::
-   In v1.3, region is registered to individual image (just like v1.2) even if the image is matched to other images in world coordinates. This limitation will be removed in v1.4, so that users can request analytics data from *all* matched images in the same region. 
 
 
 

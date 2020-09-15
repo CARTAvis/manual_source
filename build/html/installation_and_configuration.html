@@ -88,7 +88,7 @@
             
   <div class="section" id="installation-and-configuration">
 <span id="installation-configuration"></span><h1>Installation and configuration<a class="headerlink" href="#installation-and-configuration" title="Permalink to this headline">¶</a></h1>
-<p>CARTA v1.3 supports the following operating systems:</p>
+<p>CARTA v1.4 supports the following operating systems:</p>
 <ul class="simple">
 <li><p>macOS 10.14/10.15</p></li>
 <li><p>Ubuntu 16.04 LTS/18.04 LTS</p></li>
@@ -96,17 +96,17 @@
 <li><p>RedHat 6 (conditional)</p></li>
 </ul>
 <p>Command line to launch CARTA is supported (see <a class="reference internal" href="#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions).</p>
-<p>CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7 or Ubuntu 16.04 LTS/18.04 LTS server via the ssh protocol, CARTA v1.3 also provides a “remote” mode for this use case (see <a class="reference internal" href="#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA “backend” on the server, while the CARTA “frontend” is accessed through your web browser of choice running on your local machine. This allows your local machine’s GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.</p>
+<p>CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7 or Ubuntu 16.04 LTS/18.04 LTS server via the ssh protocol, CARTA v1.4 also provides a “remote” mode for this use case (see <a class="reference internal" href="#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA “backend” on the server, while the CARTA “frontend” is accessed through your web browser of choice running on your local machine. This allows your local machine’s GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.</p>
 <p>If there is any problem, please contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a> for help.</p>
 <div class="section" id="carta-server">
 <h2>CARTA-server<a class="headerlink" href="#carta-server" title="Permalink to this headline">¶</a></h2>
-<p>The installation and configuration of the server version is available through <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a>. The CARTA team would be happy to work with you on getting CARTA-server installed on your server.</p>
+<p>The installation and configuration of the server version is available through <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a>. The CARTA team would be happy to work with you on getting CARTA-server deployed on your server.</p>
 </div>
 <div class="section" id="carta-desktop-macos-10-14-10-15">
 <h2>CARTA-desktop: macOS 10.14/10.15<a class="headerlink" href="#carta-desktop-macos-10-14-10-15" title="Permalink to this headline">¶</a></h2>
 <p>Please follow the steps:</p>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.3.1/CARTA-v1.3.1.dmg">Download the DMG installer file</a></p></li>
+<li><p><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.4/CARTA-v1.4.dmg">Download the DMG installer file</a></p></li>
 <li><p>Open the DMG file and drag the CARTA icon to your /Applications folder.</p></li>
 <li><p>To run CARTA either:</p></li>
 </ol>
@@ -135,9 +135,9 @@ carta
 <h2>CARTA-desktop: Ubuntu 16.04 LTS/18.04 LTS<a class="headerlink" href="#carta-desktop-ubuntu-16-04-lts-18-04-lts" title="Permalink to this headline">¶</a></h2>
 <p>Please follow the steps:</p>
 <ol class="arabic">
-<li><p><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.3.1/CARTA-v1.3.1-ubuntu.tgz">Download the tgz file</a></p></li>
+<li><p><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.4/CARTA-v1.4-ubuntu.tgz">Download the tgz file</a></p></li>
 <li><p>Unzip the tgz file</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -xvf CARTA-v1.3.1-ubuntu.tgz
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -xvf CARTA-v1.4-ubuntu.tgz
 </pre></div>
 </div>
 </li>
@@ -177,7 +177,7 @@ carta
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For this v1.3 release we are providing a combined desktop and remote server capability.</p>
+<p>For this v1.4 release we are providing a combined desktop and remote server capability.</p>
 <p>Invoke remote mode with the “--remote” flag</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./CARTA.AppImage --remote
 </pre></div>
@@ -192,9 +192,9 @@ carta
 <h2>CARTA-desktop: Redhat 7<a class="headerlink" href="#carta-desktop-redhat-7" title="Permalink to this headline">¶</a></h2>
 <p>Please follow the steps:</p>
 <ol class="arabic">
-<li><p><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.3.1/CARTA-v1.3.1-RedHat7.tgz">Download the tgz file</a></p></li>
+<li><p><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.4/CARTA-v1.4-RedHat7.tgz">Download the tgz file</a></p></li>
 <li><p>Unzip the tgz file</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -xvf CARTA-v1.3-RedHat7.tgz
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -xvf CARTA-v1.4-RedHat7.tgz
 </pre></div>
 </div>
 </li>
@@ -249,7 +249,7 @@ carta
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For this v1.3 release we are providing a combined desktop and remote server capability.</p>
+<p>For this v1.4 release we are providing a combined desktop and remote server capability.</p>
 <p>Invoke remote mode with the “--remote” flag e.g.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./CARTA.AppImage --remote
 </pre></div>
@@ -266,13 +266,13 @@ carta
 <p>Neither AppImage nor Electron runs on RedHat 6, therefore we supply a “standalone” remote server package. It is intended for RedHat 6 use only, however it can also run on both RedHat 7 and Ubuntu 16.04 LTS/18.04 LTS.</p>
 <p>Please follow the steps:</p>
 <ol class="arabic">
-<li><p><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.3.1/CARTA-v1.3.1-remote.tgz">Download the tar.gz file</a></p></li>
+<li><p><a class="reference external" href="https://github.com/CARTAvis/carta-releases/releases/download/v1.4/CARTA-v1.4-remote.tgz">Download the tar.gz file</a></p></li>
 <li><p>Extract the archive</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -xvf CARTA-v1.3.1-remote.tgz
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -xvf CARTA-v1.4-remote.tgz
 </pre></div>
 </div>
 </li>
-<li><p>Execute the carta script within the “CARTA-v1.3.1-remote” folder</p>
+<li><p>Execute the carta script within the “CARTA-v1.4-remote” folder</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./carta
 </pre></div>
 </div>
@@ -280,11 +280,11 @@ carta
 <li><p>Follow the onscreen instructions to copy and paste the unique URL into your web browser.</p></li>
 <li><p>Usage instructions are slightly different from the Desktop versions so please check the help command with “./carta --help”. For example, you can not open images directly (can not “./carta image.fits”)</p></li>
 <li><p>You could make an alias in your ~/.bashrc file similar to this</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span><span class="s1">&#39;~/CARTA-v1.3.1-remote/carta&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">carta</span><span class="o">=</span><span class="s1">&#39;~/CARTA-v1.4-remote/carta&#39;</span>
 </pre></div>
 </div>
 <p>If you use csh or tcsh, the syntax differs only in that there is no equals sign, therefore it would be</p>
-<div class="highlight-tcsh notranslate"><div class="highlight"><pre><span></span><span class="nb">alias </span>carta <span class="s1">&#39;~/Downloads/CARTA-v1.3.1-remote/carta&#39;</span>
+<div class="highlight-tcsh notranslate"><div class="highlight"><pre><span></span><span class="nb">alias </span>carta <span class="s1">&#39;~/Downloads/CARTA-v1.4-remote/carta&#39;</span>
 </pre></div>
 </div>
 <p>and</p>
@@ -339,7 +339,7 @@ www.carta.edu:2000/?socketUrl<span class="o">=</span>ws://www.carta.edu:3000
 OR
 
 
-<span class="m">192</span>.168.1.312:2000/?socketUrl<span class="o">=</span>ws://192.168.1.312:3000
+<span class="m">192</span>.168.1.412:2000/?socketUrl<span class="o">=</span>ws://192.168.1.412:3000
 
 Press ctrl+c to <span class="nb">exit</span>
 </pre></div>
@@ -370,7 +370,7 @@ www.carta.edu:5678/?socketUrl<span class="o">=</span>ws://www.carta.edu:1234
 OR
 
 
-<span class="m">192</span>.168.1.312:5678/?socketUrl<span class="o">=</span>ws://192.168.1.312:1234
+<span class="m">192</span>.168.1.412:5678/?socketUrl<span class="o">=</span>ws://192.168.1.412:1234
 
 Press ctrl+c to <span class="nb">exit</span>
 </pre></div>

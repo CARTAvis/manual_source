@@ -2,7 +2,7 @@
 
 Installation and configuration
 ==============================
-CARTA v1.3 supports the following operating systems:
+CARTA v1.4 supports the following operating systems:
 
 * macOS 10.14/10.15
 * Ubuntu 16.04 LTS/18.04 LTS
@@ -11,14 +11,14 @@ CARTA v1.3 supports the following operating systems:
 
 Command line to launch CARTA is supported (see :ref:`commandLineStartup` for instructions).
 
-CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7 or Ubuntu 16.04 LTS/18.04 LTS server via the ssh protocol, CARTA v1.3 also provides a "remote" mode for this use case (see :ref:`commandLineStartup` for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA "backend" on the server, while the CARTA "frontend" is accessed through your web browser of choice running on your local machine. This allows your local machine's GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.
+CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7 or Ubuntu 16.04 LTS/18.04 LTS server via the ssh protocol, CARTA v1.4 also provides a "remote" mode for this use case (see :ref:`commandLineStartup` for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA "backend" on the server, while the CARTA "frontend" is accessed through your web browser of choice running on your local machine. This allows your local machine's GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.
 
 If there is any problem, please contact `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ for help.
 
 
 CARTA-server
 ------------
-The installation and configuration of the server version is available through `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_. The CARTA team would be happy to work with you on getting CARTA-server installed on your server.
+The installation and configuration of the server version is available through `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_. The CARTA team would be happy to work with you on getting CARTA-server deployed on your server.
 
 
 
@@ -26,7 +26,7 @@ CARTA-desktop: macOS 10.14/10.15
 --------------------------------
 Please follow the steps:
 
-1. `Download the DMG installer file <https://github.com/CARTAvis/carta-releases/releases/download/v1.3.1/CARTA-v1.3.1.dmg>`_
+1. `Download the DMG installer file <https://github.com/CARTAvis/carta-releases/releases/download/v1.4/CARTA-v1.4.dmg>`_
 
 2. Open the DMG file and drag the CARTA icon to your /Applications folder.
 
@@ -65,13 +65,13 @@ CARTA-desktop: Ubuntu 16.04 LTS/18.04 LTS
 -----------------------------------------
 Please follow the steps:
 
-1. `Download the tgz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.3.1/CARTA-v1.3.1-ubuntu.tgz>`_
+1. `Download the tgz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.4/CARTA-v1.4-ubuntu.tgz>`_
 
 2. Unzip the tgz file
 
    .. code-block:: bash
 
-      tar -xvf CARTA-v1.3.1-ubuntu.tgz
+      tar -xvf CARTA-v1.4-ubuntu.tgz
 
 3. To run CARTA either 
    
@@ -115,7 +115,7 @@ Please follow the steps:
       carta
 
 .. note::
-   For this v1.3 release we are providing a combined desktop and remote server capability. 
+   For this v1.4 release we are providing a combined desktop and remote server capability. 
    
    Invoke remote mode with the "-\\-remote" flag
    
@@ -134,13 +134,13 @@ CARTA-desktop: Redhat 7
 -----------------------
 Please follow the steps:
 
-1. `Download the tgz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.3.1/CARTA-v1.3.1-RedHat7.tgz>`_
+1. `Download the tgz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.4/CARTA-v1.4-RedHat7.tgz>`_
 
 2. Unzip the tgz file
 
    .. code-block:: bash
 
-      tar -xvf CARTA-v1.3-RedHat7.tgz
+      tar -xvf CARTA-v1.4-RedHat7.tgz
 
 3. To run CARTA either 
 
@@ -200,7 +200,7 @@ Please follow the steps:
 
 
 .. note::
-   For this v1.3 release we are providing a combined desktop and remote server capability. 
+   For this v1.4 release we are providing a combined desktop and remote server capability. 
    
    Invoke remote mode with the "-\\-remote" flag e.g. 
 
@@ -223,15 +223,15 @@ Neither AppImage nor Electron runs on RedHat 6, therefore we supply a "standalon
 
 Please follow the steps:
 
-1. `Download the tar.gz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.3.1/CARTA-v1.3.1-remote.tgz>`_
+1. `Download the tar.gz file <https://github.com/CARTAvis/carta-releases/releases/download/v1.4/CARTA-v1.4-remote.tgz>`_
 
 2. Extract the archive
 
    .. code-block:: bash
 
-      tar -xvf CARTA-v1.3.1-remote.tgz
+      tar -xvf CARTA-v1.4-remote.tgz
 
-3. Execute the carta script within the "CARTA-v1.3.1-remote" folder
+3. Execute the carta script within the "CARTA-v1.4-remote" folder
 
    .. code-block:: bash
 
@@ -245,13 +245,13 @@ Please follow the steps:
 
    .. code-block:: bash
 
-      alias carta='~/CARTA-v1.3.1-remote/carta'
+      alias carta='~/CARTA-v1.4-remote/carta'
 
    If you use csh or tcsh, the syntax differs only in that there is no equals sign, therefore it would be 
   
    .. code-block:: tcsh
   
-      alias carta '~/Downloads/CARTA-v1.3.1-remote/carta'
+      alias carta '~/Downloads/CARTA-v1.4-remote/carta'
 
    and 
   
@@ -316,7 +316,7 @@ If CARTA is installed on a remote server, and users access the server via the ss
      OR
  
 
-     192.168.1.312:2000/?socketUrl=ws://192.168.1.312:3000
+     192.168.1.412:2000/?socketUrl=ws://192.168.1.412:3000
  
      Press ctrl+c to exit
 
@@ -352,7 +352,7 @@ If CARTA is installed on a remote server, and users access the server via the ss
      OR
 
  
-     192.168.1.312:5678/?socketUrl=ws://192.168.1.312:1234
+     192.168.1.412:5678/?socketUrl=ws://192.168.1.412:1234
  
      Press ctrl+c to exit
 
