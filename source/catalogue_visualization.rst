@@ -49,11 +49,24 @@ The Catalogue 2D scatter plot widget shows a 2D scatter plot of two numeric colu
 
 By clicking on a point or using the selection tools from the top-right corner of the plot, selected sources will be highlighted in the source catalogue table, in the histogram plot (if exists), and in the image viewer (if the catalog overlay is enabled). Points on the plot will be highlighted if sources are selected in the source catalog table, in the histogram plot (if exists), and in the image viewer (if the catalog overlay is enabled). The "Show only selected sources" toggle will update the source catalog table to show only the selected sources.
 
+.. raw:: html
+
+   <img src="_static/carta_fn_catalogue_widget_scatter.png" 
+        style="width:100%;height:auto;">
+
+
 Catalogue histogram plot
 ------------------------
 The Catalogue histogram plot widget shows a histogram of one numeric column of a catalogue file. The available numeric columns are determined by the "Display" column of the upper table in the Catalog widget. The data used for plotting the histogram is determined by the lower table in the Catalogue widget. The table may not show all entries due to the dynamic loading feature. Thus, the histogram plot may not include all entries (after filtering). The "Plot All" button will request a full download of all entries and the histogram plot will then include all entries (after filtering). The number of bins and the scale of the y-axis can be customized.
 
 By clicking on a certain histogram bin, source entries of that bin will be highlighted in the source catalog table, in the 2D scatter plot (if exists), and in the image viewer (if the catalog overlay is enabled). A certain histogram bin will be highlighted if source entries of that bin are selected in the source catalog table, in the 2D scatter plot (if exists), and in the image viewer (if the catalog overlay is enabled). The "Show only selected sources" toggle will update the source catalog table to show only the selected sources.
+
+
+.. raw:: html
+
+   <img src="_static/carta_fn_catalogue_widget_histogram.png" 
+        style="width:100%;height:auto;">
+
 
 Linked catalogue visualization
 ------------------------------
