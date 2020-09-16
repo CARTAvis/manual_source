@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Graphical user interface &#8212; CARTA 1.3 documentation</title>
+    <title>Graphical user interface &#8212; CARTA 1.4 documentation</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
@@ -33,7 +33,7 @@
         <li class="right" >
           <a href="installation_and_configuration.html" title="Installation and configuration"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.3 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.4 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -66,8 +66,8 @@
 </li>
 <li><a class="reference internal" href="#user-preferences">User preferences</a></li>
 <li><a class="reference internal" href="#mouse-interactions-with-images">Mouse interactions with images</a><ul>
-<li><a class="reference internal" href="#zooming">Zooming</a></li>
-<li><a class="reference internal" href="#panning">Panning</a></li>
+<li><a class="reference internal" href="#zooming-an-image">Zooming an image</a></li>
+<li><a class="reference internal" href="#panning-an-image">Panning an image</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#mouse-interactions-with-region-of-interest">Mouse interactions with region of interest</a><ul>
@@ -76,8 +76,8 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#mouse-interactions-with-charts">Mouse interactions with charts</a><ul>
-<li><a class="reference internal" href="#id2">Zooming</a></li>
-<li><a class="reference internal" href="#id3">Panning</a></li>
+<li><a class="reference internal" href="#zooming-a-chart">Zooming a chart</a></li>
+<li><a class="reference internal" href="#panning-a-chart">Panning a chart</a></li>
 <li><a class="reference internal" href="#resetting-range">Resetting range</a></li>
 </ul>
 </li>
@@ -119,24 +119,25 @@
             
   <div class="section" id="graphical-user-interface">
 <span id="about-gui"></span><h1>Graphical user interface<a class="headerlink" href="#graphical-user-interface" title="Permalink to this headline">¶</a></h1>
-<p>The graphical user interface (GUI) of CARTA is designed to be flexible and user friendly to support most of use cases, such as continuum image analysis, or spectral line cube analysis, etc. In this section, we introduce the GUI and provide examples to guide users to get familiar with configuring layouts via mouse interactions. Examples on how to interact with regions and charts are provided as well.</p>
+<p>The graphical user interface (GUI) of CARTA is designed to be flexible and user friendly to support most use cases, such as continuum image analysis, or spectral line cube analysis, etc. In this section, we introduce the GUI and provide examples to guide users to get familiar with configuring layouts via mouse interactions. Examples on how to interact with regions and charts are provided as well.</p>
 <div class="section" id="components">
 <h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
 <p>The GUI of CARTA is classified into different components:</p>
 <ul class="simple">
-<li><p>main window</p></li>
-<li><p>menu bar</p></li>
-<li><p>widget bar</p></li>
-<li><p>dialogue bar</p></li>
-<li><p>tool bar</p></li>
-<li><p>panel (docked widget)</p></li>
-<li><p>floating widget</p></li>
-<li><p>tab</p></li>
-<li><p>dialogue</p></li>
-<li><p>status icon</p></li>
+<li><p>Main window</p></li>
+<li><p>Menu bar</p></li>
+<li><p>Region bar</p></li>
+<li><p>Widget bar</p></li>
+<li><p>Dialogue bar</p></li>
+<li><p>Tool bar</p></li>
+<li><p>Panel (docked widget)</p></li>
+<li><p>Floating widget</p></li>
+<li><p>Tab</p></li>
+<li><p>Dialogue</p></li>
+<li><p>Status icon</p></li>
 </ul>
 <img src="_static/carta_gui.png"
-     style="width:100%;height:auto;"><p>The main window consists of a set of panels and each panel may contain multiple docked widgets as tabs. For example, in the above figure there are five panels in the main window and there are two docked widgets as tabs in the bottom-left panel. A tab or a docked widget may be detached to become a floating widget. The menu bar provides control options, such as image input/output, launching widgets, getting helps, etc. The widget bar provides widgets to view or to analyze images. The dialogue bar provides dialogues for configurations. The icon at the top-right corner of the main window is an indicator of server (backend) status. A dialogue provides options to configure compoments, such as image layout, or region properties, etc. A tool bar provides tools for a widget, such as zoom buttons for the image viewer widget or the export options for the spectral profile widget, etc.</p>
+     style="width:100%;height:auto;"><p>The main window consists of a set of panels and each panel may contain multiple docked widgets as tabs. For example, in the above figure there are five panels in the main window and there are two docked widgets as tabs in the bottom-left panel. A tab or a docked widget may be detached to become a floating widget. The menu bar provides control options, such as image input/output, launching widgets, getting help, etc. The widget bar provides widgets to view or to analyze images. The dialogue bar provides dialogues for configurations. The region bar provides shortcut buttons for creating region of interest. The icons at the top-right corner of the main window are the indicators of server (backend) status and data stream. A dialogue provides options to configure components, such as image layout, or region properties, etc. A tool bar provides tools for a widget, such as zoom buttons for the image viewer widget or the export options for the spectral profile widget, etc.</p>
 </div>
 <div class="section" id="quickstart-guide">
 <span id="quickstart"></span><h2>Quickstart guide<a class="headerlink" href="#quickstart-guide" title="Permalink to this headline">¶</a></h2>
@@ -146,7 +147,7 @@
 <p>To zoom an image</p>
 <ul class="simple">
 <li><p>use mouse wheel to scroll</p></li>
-<li><p>use buttons at the bottom-left corner of image viewer</p></li>
+<li><p>use the zoom buttons at the bottom-left corner of image viewer</p></li>
 </ul>
 <p>To pan an image</p>
 <ul class="simple">
@@ -189,6 +190,7 @@
 <ul class="simple">
 <li><p>press “<strong>delete</strong>” key</p></li>
 <li><p>press “<strong>backspace</strong>” key</p></li>
+<li><p>click the delete button in the region configuration dialogue.</p></li>
 </ul>
 </div>
 <div class="section" id="cursor-update">
@@ -206,15 +208,15 @@
 </ul>
 <p>Horizontal zoom</p>
 <ul class="simple">
-<li><p>hold-and-drag in horizontal direction</p></li>
+<li><p>hold-and-drag in the horizontal direction</p></li>
 </ul>
 <p>Vertical zoom</p>
 <ul class="simple">
-<li><p>hold-and-drag in vertical direction</p></li>
+<li><p>hold-and-drag in the vertical direction</p></li>
 </ul>
 <p>Box zoom</p>
 <ul class="simple">
-<li><p>hold-and-drag in diagonal direction</p></li>
+<li><p>hold-and-drag in the diagonal direction</p></li>
 </ul>
 <p>Reset zoom</p>
 <ul class="simple">
@@ -228,7 +230,7 @@
 </div>
 <div class="section" id="getting-help">
 <h2>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
-<p>This online user manual can be accessed via “<strong>Help</strong>” -&gt; “<strong>Online manual</strong>”. A new browser window will be launched and show the CARTA user manual. In addition, in-app help (no internet is required) can be accessed via the “?” icon at the top-right corner of a panel. The help content will be displayed in a drawer.</p>
+<p>This online user manual can be accessed via “<strong>Help</strong>” -&gt; “<strong>Online manual</strong>”. A new browser window will be launched and show the CARTA user manual. In addition, an in-app help manual (no internet is required) can be accessed via the “?” icon at the top-right corner of a widget or a dialogue. The help content will be displayed in a drawer.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_inapphelp.mp4" type="video/mp4">
 </video></div>
@@ -249,7 +251,7 @@
 </video></div>
 <div class="section" id="relocating-a-tab-to-another-panel">
 <h3>Relocating a tab to another panel<a class="headerlink" href="#relocating-a-tab-to-another-panel" title="Permalink to this headline">¶</a></h3>
-<p>A tab can be moved to other existing panel by dragging its title to the upper boarder of the target panel, as shown in the example below.</p>
+<p>A tab can be moved to another existing panel by dragging its title to the upper boarder of the target panel, as shown in the example below.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_relocating_tab_as_tab.mp4" type="video/mp4">
 </video></div>
@@ -273,17 +275,17 @@
 </video></div>
 <div class="section" id="light-and-dark-theme">
 <h3>Light and dark theme<a class="headerlink" href="#light-and-dark-theme" title="Permalink to this headline">¶</a></h3>
-<p>CARTA supports a light (default) and dark theme. The theme can be changed using the <strong>View</strong> -&gt; <strong>Interface</strong> menu item, or the shortcut <strong>shift</strong> + <strong>D</strong>.</p>
+<p>CARTA supports light and dark themes. The default theme is determined automatically from the operating system (if applicable). The theme can be changed using the <strong>View</strong> -&gt; <strong>Theme</strong> menu item, or the shortcut <strong>shift</strong> + <strong>D</strong>.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_theme.mp4" type="video/mp4">
 </video></div>
 <div class="section" id="custom-layout-save-and-restore">
 <h3>Custom layout, save, and restore<a class="headerlink" href="#custom-layout-save-and-restore" title="Permalink to this headline">¶</a></h3>
-<p>CARTA has a set of preset layouts sutiable for different kinds of image analysis. These layouts are accessible via the menu <strong>Layout</strong> -&gt; <strong>Layouts</strong> -&gt; <strong>Existing layouts</strong> -&gt; <strong>Presets</strong>.</p>
+<p>CARTA has a set of preset layouts suitable for different kinds of image analysis. These layouts are accessible via the menu <strong>View</strong> -&gt; <strong>Layouts</strong> -&gt; <strong>Existing layouts</strong>.</p>
 <img src="_static/carta_gui_layout_menu.png"
-     style="width:100%;height:auto;"><p>Users may further customize a preset layout or make a new layout from scratch for different purposes and save it for the future. To save a custom layout, use the menu <strong>Layout</strong> -&gt; <strong>Layouts</strong> -&gt; <strong>Save layout</strong>. A name is required when saving a layout (e.g., “my layout 01” in the above example).</p>
-<p>A saved layout can be restored via the menu <strong>Layout</strong> -&gt; <strong>Layouts</strong> -&gt; <strong>Existing layouts</strong>. The currently activated layout is highlighted in blue (“Default” in the above example). Saved layouts can be removed via the menu <strong>Layout</strong> -&gt; <strong>Layouts</strong> -&gt; <strong>Delete layout</strong>.</p>
-<p>By deafult, CARTA will load the “Default” preset layout when initialized. Which layout, including user customized layouts, should be loaded can be further defined via the preferences dialogue <strong>File</strong> -&gt; <strong>Preferences</strong>. The initial layout can be set via <strong>Global</strong> -&gt; <strong>Initial layout</strong>.</p>
+     style="width:100%;height:auto;"><p>Users may further customize a preset layout or make a new layout from scratch for different purposes and save it for the future. To save a custom layout, use the menu <strong>View</strong> -&gt; <strong>Layouts</strong> -&gt; <strong>Save layout</strong>. A name is required when saving a layout (e.g., “my layout 01” in the above example).</p>
+<p>A saved layout can be restored via the menu <strong>View</strong> -&gt; <strong>Layouts</strong> -&gt; <strong>Existing layouts</strong>. The activated layout is highlighted in blue (“Default” in the above example). Saved layouts can be removed via the menu <strong>View</strong> -&gt; <strong>Layouts</strong> -&gt; <strong>Delete layout</strong>.</p>
+<p>By default, CARTA will load the “Default” preset layout when initialized. Which layout, including user customized layouts, should be loaded can be further defined via the preferences dialogue <strong>File</strong> -&gt; <strong>Preferences</strong>. The initial layout can be set via <strong>Global</strong> -&gt; <strong>Initial layout</strong>.</p>
 <img src="_static/carta_gui_layout_preference.png"
      style="width:90%;height:auto;"></div>
 </div>
@@ -293,7 +295,7 @@
 <ul>
 <li><p>Global</p>
 <ul class="simple">
-<li><p>Theme: to adopt light or dark theme of the GUI (default: light) [effective immediately]</p></li>
+<li><p>Theme: to adopt light or dark theme of the GUI (default: automatic) [effective immediately]</p></li>
 <li><p>Auto-launch file browser: to launch the file browser or not when CARTA is initialized (default: yes)</p></li>
 <li><p>Initial layout: the layout to adopt when CARTA is initialized (default: “Default”)</p></li>
 <li><p>Initial cursor position: to fix the cursor position on the image or not when CARTA is initialized. If it is fixed, a cross will be shown at the image center. Use “<strong>F</strong>” key to switch to the tracking mode (default: Tracking)</p></li>
@@ -307,9 +309,9 @@
      style="width:100%;height:auto;"></li>
 <li><p>Render configuration</p>
 <ul class="simple">
-<li><p>Scaling: the scaling function of the color map (default: linear)</p></li>
-<li><p>Color map: the default color for the raster image (default: inferno)</p></li>
-<li><p>Percentile ranks: the default clip level for the color map (default: 99.9%)</p></li>
+<li><p>Default scaling: the scaling function of the color map (default: linear)</p></li>
+<li><p>Default color map: the default color for the raster image (default: inferno)</p></li>
+<li><p>Default percentile ranks: the default clip level for the color map (default: 99.9%)</p></li>
 <li><p>NaN color: color for rendering NaN pixels</p></li>
 </ul>
 <img src="_static/carta_gui_preferences_renderConfig.png"
@@ -346,7 +348,8 @@
 <li><p>Line width (px): the default line width of a region (default: 2) [effective for new regions]</p></li>
 <li><p>Dash length (px): the default dash length of the line composing a region. The default is to show a region in solid line (default: 0) [effective for new regions]</p></li>
 <li><p>Region type: the default selected region in the tool bar of the image viewer (default: rectangle)</p></li>
-<li><p>Creation mode: the method of how a rectange or an ellipse is created by mouse dragging. Two methods are supplied: center-to-corner and corner-to-corner (default: center-to-corner) [effective for new regions]</p></li>
+<li><p>Region size: the default region (screen) size when creating by a single click (rectangle and ellipse)</p></li>
+<li><p>Creation mode: the method of how a rectangle or an ellipse is created by mouse dragging. Two methods are supplied: center-to-corner and corner-to-corner (default: center-to-corner) [effective for new regions]</p></li>
 </ul>
 <img src="_static/carta_gui_preferences_region.png"
      style="width:100%;height:auto;"></li>
@@ -367,21 +370,21 @@
 <img src="_static/carta_gui_preferences_performance.png"
      style="width:100%;height:auto;"></li>
 <li><p>Log events</p>
-<p>This is for debugging purpose. Normal users can skip this part. The client side and the server side of CARTA communicate through “protocal buffer” messages. For debugging purpose, advanced users can identify a set of messages in the list and launch browser’s Javascript console to see those messages.</p>
+<p>This is for debugging purpose. Normal users can skip this part. The client side and the server side of CARTA communicate through “protocol buffer” messages. For debugging purpose, advanced users can identify a set of messages in the list and launch browser’s Javascript console to see those messages.</p>
 <img src="_static/carta_gui_preferences_log.png"
      style="width:100%;height:auto;"></li>
 </ul>
 </div>
 <div class="section" id="mouse-interactions-with-images">
 <span id="mouse-interaction-with-images"></span><h2>Mouse interactions with images<a class="headerlink" href="#mouse-interactions-with-images" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="zooming">
-<h3>Zooming<a class="headerlink" href="#zooming" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="zooming-an-image">
+<h3>Zooming an image<a class="headerlink" href="#zooming-an-image" title="Permalink to this headline">¶</a></h3>
 <p>The image can be zoomed in by scrolling up and zoomed out by scrolling down.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_mouse_images_zoom.mp4" type="video/mp4">
 </video></div>
-<div class="section" id="panning">
-<h3>Panning<a class="headerlink" href="#panning" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="panning-an-image">
+<h3>Panning an image<a class="headerlink" href="#panning-an-image" title="Permalink to this headline">¶</a></h3>
 <p>The image can be panned by mouse drag-and-drop on the image.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_mouse_images_pan.mp4" type="video/mp4">
@@ -394,16 +397,17 @@
 <span id="mouse-interaction-with-regions"></span><h2>Mouse interactions with region of interest<a class="headerlink" href="#mouse-interactions-with-region-of-interest" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="region-creation">
 <h3>Region creation<a class="headerlink" href="#region-creation" title="Permalink to this headline">¶</a></h3>
-<p>A region can be created by firstly entering the region creation mode then drawing on the image viewer. To enter the region creation mode, click the <em>region</em> button at the bottom-right corner of the image viewer or press “<strong>C</strong>” key. Double-clicking the region icon brings up all available region types (rectangle, ellipse, polygon, and point, as of v1.3). To create a point region, a single click will do. For rectangle or ellipse, it can be created in the “center-to-corner” mode or the “corner-to-corner” mode, depending on the preference setting in the preference dialogue (<strong>File</strong> -&gt; <strong>Preferences</strong> -&gt; <strong>Default region settings</strong>). To temporarily switch to the other mode than the default, hold “<strong>command</strong>” (mac) or “<strong>ctrl</strong>” (linux) key then drag. “circle” and “square” regions are the special cases of ellipse and rectangle regions, respectively. These symmetric regions can be created by holding <strong>shift</strong> key then dragging.</p>
+<p>A region can be created by firstly entering the region creation mode then drawing on the image viewer. To enter the region creation mode, click the <em>region</em> button at the bottom-right corner of the image viewer or press “<strong>C</strong>” key. Double-clicking the region icon brings up all available region types (rectangle, ellipse, polygon, and point, as of v1.4). Alternatively, users may click the buttons in the region bar at the top of the GUI to enter the region creation mode.</p>
+<p>To create a point region, a single click will do. For the rectangle or the ellipse region, it can be created in the “center-to-corner” mode or the “corner-to-corner” mode, depending on the preference setting in the preference dialogue (<strong>File</strong> -&gt; <strong>Preferences</strong> -&gt; <strong>Region</strong>). To temporarily switch to the other mode than the default, hold the “<strong>command</strong>” (mac) or “<strong>ctrl</strong>” (linux) key then drag. “circle” and “square” regions are the special cases of ellipse and rectangle regions, respectively. These symmetric regions can be created by holding <strong>shift</strong> key then dragging. Alternatively, a rectangle region or an ellipse region can be created by a single mouse click. The default size on screen is defined in the preferences dialogue (<strong>File</strong> -&gt; <strong>Preferences</strong> -&gt; <strong>Region</strong>).</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_roi_creation1.mp4" type="video/mp4">
-</video><p>To create a polygon region, start with a click followed by a series of clicks to define anchors of a desired polygonal shape and finish with a double click. CARTA detects “complex” polygon (polygon with intersections) and shows it in pink color. Spectral profiles, statistics, or histogram of a complex polygon can still be requested but please note that the results may be beyond users’ expectations since the actual pixel coverage depends on <em>how</em> a complex polygon is created.</p>
+</video><p>To create a polygon region, start with a click followed by a series of clicks to define the control points of a desired polygonal shape and finish with a double click. CARTA detects “complex” polygon (polygon with intersections) and shows it in pink color. Spectral profiles, statistics, or histogram of a complex polygon can still be requested but please note that the results may be beyond users’ expectations since the actual pixel coverage depends on <em>how</em> a complex polygon is created.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_roi_creation2.mp4" type="video/mp4">
 </video></div>
 <div class="section" id="region-selection-and-modification">
 <h3>Region selection and modification<a class="headerlink" href="#region-selection-and-modification" title="Permalink to this headline">¶</a></h3>
-<p>Click on a region will change the region state to “selected” and the selected region will be highlighted in the region list widget. Alternatively, a region can be selected by clicking the region list. CARTA provides the flexibility to select “region in region” as demostrated in the following video. The layer order of regions is adjusted automatically based on the region size. To de-select all regions, press “<strong>esc</strong>” key.</p>
+<p>Click on a region will change the region state to “selected” and the selected region will be highlighted in the region list widget. Alternatively, a region can be selected by clicking the region list. CARTA provides the flexibility to select “region in region” as demonstrated in the following video. The layer order of regions is adjusted automatically based on the region size. To de-select all regions, press “<strong>esc</strong>” key.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_roi_selection.mp4" type="video/mp4">
 </video><p>Double-click on a region or a region in the region list brings up the region property dialogue. The dialogue allows users to modify region’s name, location, shapes, and region cosmetics. Pressing “<strong>delete</strong>” or “<strong>backspace</strong>” key will remove the selected region.</p>
@@ -421,15 +425,15 @@
 <li><p>Close the <a class="reference external" href="about:config">about:config</a> tab and now backspace will no longer navigate back a page.</p></li>
 </ol>
 </div>
-<p>For a polygon region, new anchors can be added by clicking on the line segment. An anchor can be delected by double clicking on the anchor.</p>
+<p>For a polygon region, a new control point can be added by clicking on a line segment. A control point can be deleted by double clicking on the control point.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_roi_creation3.mp4" type="video/mp4">
 </video></div>
 </div>
 <div class="section" id="mouse-interactions-with-charts">
 <span id="mouse-interaction-with-charts"></span><h2>Mouse interactions with charts<a class="headerlink" href="#mouse-interactions-with-charts" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3>Zooming<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="zooming-a-chart">
+<h3>Zooming a chart<a class="headerlink" href="#zooming-a-chart" title="Permalink to this headline">¶</a></h3>
 <p>A chart (profiles and histograms) can be zoomed by wheel scrolling.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_mouse_charts_zoom1.mp4" type="video/mp4">
@@ -437,8 +441,8 @@
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_mouse_charts_zoom2.mp4" type="video/mp4">
 </video></div>
-<div class="section" id="id3">
-<h3>Panning<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="panning-a-chart">
+<h3>Panning a chart<a class="headerlink" href="#panning-a-chart" title="Permalink to this headline">¶</a></h3>
 <p>Dragging while holding the shift key pans the chart.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_gui_mouse_charts_pan.mp4" type="video/mp4">
@@ -510,79 +514,91 @@
 <td><p>esc</p></td>
 <td><p>esc</p></td>
 </tr>
-<tr class="row-odd"><td><p>Switch region creation mode</p></td>
+<tr class="row-odd"><td><p>Cancel region creation</p></td>
+<td><p>esc</p></td>
+<td><p>esc</p></td>
+</tr>
+<tr class="row-even"><td><p>Switch region creation mode</p></td>
 <td><p>cmd + drag</p></td>
 <td><p>ctrl + drag</p></td>
 </tr>
-<tr class="row-even"><td><p>Symmetric region creation</p></td>
+<tr class="row-odd"><td><p>Symmetric region creation</p></td>
 <td><p>shift + drag</p></td>
 <td><p>shift + drag</p></td>
 </tr>
-<tr class="row-odd"><td><p>Toggle current region lock</p></td>
+<tr class="row-even"><td><p>Toggle current region lock</p></td>
 <td><p>L</p></td>
 <td><p>L</p></td>
 </tr>
-<tr class="row-even"><td><p>Unlock all regions</p></td>
+<tr class="row-odd"><td><p>Unlock all regions</p></td>
 <td><p>shift + L</p></td>
 <td><p>shift + L</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Appearance</strong></p></td>
+<tr class="row-even"><td><p><strong>Appearance</strong></p></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Toggle light/dark theme</p></td>
+<tr class="row-odd"><td><p>Toggle light/dark theme</p></td>
 <td><p>shift + D</p></td>
 <td><p>shift + D</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Cursor</strong></p></td>
+<tr class="row-even"><td><p><strong>Cursor</strong></p></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Freeze/unfreeze cursor</p></td>
+<tr class="row-odd"><td><p>Freeze/unfreeze cursor</p></td>
 <td><p>F</p></td>
 <td><p>F</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>File controls</strong></p></td>
+<tr class="row-even"><td><p><strong>File controls</strong></p></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Open image</p></td>
+<tr class="row-odd"><td><p>Open image</p></td>
 <td><p>cmd + O</p></td>
 <td><p>ctrl + O</p></td>
 </tr>
-<tr class="row-odd"><td><p>Append image</p></td>
+<tr class="row-even"><td><p>Append image</p></td>
 <td><p>cmd + L</p></td>
 <td><p>ctrl + L</p></td>
+</tr>
+<tr class="row-odd"><td><p>Close image</p></td>
+<td><p>cmd + W</p></td>
+<td><p>ctrl + W</p></td>
 </tr>
 <tr class="row-even"><td><p>Export image</p></td>
 <td><p>cmd + E</p></td>
 <td><p>ctrl + E</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Frame controls</strong></p></td>
+<tr class="row-odd"><td><p>Import catalogue</p></td>
+<td><p>cmd + C</p></td>
+<td><p>ctrl + C</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Frame controls</strong></p></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Next frame</p></td>
+<tr class="row-odd"><td><p>Next frame</p></td>
 <td><p>cmd + ]</p></td>
 <td><p>ctrl + ]</p></td>
 </tr>
-<tr class="row-odd"><td><p>Previous frame</p></td>
+<tr class="row-even"><td><p>Previous frame</p></td>
 <td><p>cmd + [</p></td>
 <td><p>ctrl + [</p></td>
 </tr>
-<tr class="row-even"><td><p>Next channel</p></td>
+<tr class="row-odd"><td><p>Next channel</p></td>
 <td><p>cmd + up</p></td>
 <td><p>ctrl + up</p></td>
 </tr>
-<tr class="row-odd"><td><p>Previous channel</p></td>
+<tr class="row-even"><td><p>Previous channel</p></td>
 <td><p>cmd + down</p></td>
 <td><p>ctrl + down</p></td>
 </tr>
-<tr class="row-even"><td><p>Next Stokes</p></td>
+<tr class="row-odd"><td><p>Next Stokes</p></td>
 <td><p>cmd + shift + up</p></td>
 <td><p>ctrl + shift + up</p></td>
 </tr>
-<tr class="row-odd"><td><p>Previous Stokes</p></td>
+<tr class="row-even"><td><p>Previous Stokes</p></td>
 <td><p>cmd + shift + down</p></td>
 <td><p>ctrl + shift + down</p></td>
 </tr>
@@ -606,7 +622,7 @@
         <li class="right" >
           <a href="installation_and_configuration.html" title="Installation and configuration"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.3 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.4 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

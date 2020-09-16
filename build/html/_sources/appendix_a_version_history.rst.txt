@@ -1,5 +1,21 @@
 Appendix A: version history
 ===========================
+Version 1.4
+-----------
+Released 17th September 2020
+
+* Catalogue support
+* Shared region analytics
+* Animation playback improvement of raster and contour images
+* Profile smoothing
+* Moment map generator
+* Spectral line query
+* Server authentication and deployment improvements
+* File browser improvements
+
+Performance enhancement and bug fixes are included as well.
+
+
 Version 1.3.1
 -------------
 Released 5th May 2020

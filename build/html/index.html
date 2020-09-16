@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>CARTA - Cube Analysis and Rendering Tool for Astronomy &#8212; CARTA 1.3 documentation</title>
+    <title>CARTA - Cube Analysis and Rendering Tool for Astronomy &#8212; CARTA 1.4 documentation</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
@@ -29,7 +29,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="introduction.html" title="Introduction"
              accesskey="N">next</a></li>
-        <li class="nav-item nav-item-0"><a href="#">CARTA 1.3 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">CARTA 1.4 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -69,7 +69,7 @@
 <h1>CARTA - Cube Analysis and Rendering Tool for Astronomy<a class="headerlink" href="#carta-cube-analysis-and-rendering-tool-for-astronomy" title="Permalink to this headline">¶</a></h1>
 <a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.3377984" id="index-0"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.3377984.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.3377984.svg" /></a>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">CARTA user manual for v1.3 and v1.3.1</span></p>
+<p class="caption"><span class="caption-text">CARTA user manual for v1.4</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#the-mission-of-carta">The mission of CARTA</a></li>
@@ -85,8 +85,8 @@
 <li class="toctree-l1"><a class="reference internal" href="installation_and_configuration.html">Installation and configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation_and_configuration.html#carta-server">CARTA-server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation_and_configuration.html#carta-desktop-macos-10-14-10-15">CARTA-desktop: macOS 10.14/10.15</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation_and_configuration.html#carta-desktop-ubuntu-16-04-lts-18-04-lts">CARTA-desktop: Ubuntu 16.04 LTS/18.04 LTS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation_and_configuration.html#carta-desktop-redhat-7">CARTA-desktop: Redhat 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_and_configuration.html#carta-desktop-ubuntu-18-04-lts-20-04-lts">CARTA-desktop: Ubuntu 18.04 LTS/20.04 LTS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_and_configuration.html#carta-desktop-redhat-7-and-8">CARTA-desktop: Redhat 7 and 8</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation_and_configuration.html#carta-desktop-redhat-6">CARTA-desktop: Redhat 6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation_and_configuration.html#command-line-startup">Command line startup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation_and_configuration.html#troubleshooting">Troubleshooting</a></li>
@@ -115,8 +115,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="about_gui.html#user-preferences">User preferences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="about_gui.html#mouse-interactions-with-images">Mouse interactions with images</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="about_gui.html#zooming">Zooming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="about_gui.html#panning">Panning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about_gui.html#zooming-an-image">Zooming an image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about_gui.html#panning-an-image">Panning an image</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="about_gui.html#mouse-interactions-with-region-of-interest">Mouse interactions with region of interest</a><ul>
@@ -125,8 +125,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="about_gui.html#mouse-interactions-with-charts">Mouse interactions with charts</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="about_gui.html#id2">Zooming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="about_gui.html#id3">Panning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about_gui.html#zooming-a-chart">Zooming a chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about_gui.html#panning-a-chart">Panning a chart</a></li>
 <li class="toctree-l3"><a class="reference internal" href="about_gui.html#resetting-range">Resetting range</a></li>
 </ul>
 </li>
@@ -151,15 +151,32 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="analysis_tools.html">Image cube analysis tools</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="analysis_tools.html#region-of-interest">Region of interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_tools.html#region-of-interest">Region of interest</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="analysis_tools.html#shared-region-with-conserved-solid-angle">Shared region with conserved solid angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis_tools.html#shared-region-management">Shared region management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis_tools.html#analytics-with-shared-regions">Analytics with shared regions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis_tools.html#region-import-and-export">Region import and export</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="analysis_tools.html#spatial-profiler">Spatial profiler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="analysis_tools.html#spectral-profiler">Spectral profiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_tools.html#moment-map-generator">Moment map generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_tools.html#spectral-line-query">Spectral line query</a></li>
 <li class="toctree-l2"><a class="reference internal" href="analysis_tools.html#stokes-analysis-widget">Stokes analysis widget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_tools.html#profile-smoothing">Profile smoothing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="analysis_tools.html#statistics-widget">Statistics widget</a></li>
 <li class="toctree-l2"><a class="reference internal" href="analysis_tools.html#histogram-widget">Histogram widget</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="catalogue_visualization.html">Catalogue visualization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="catalogue_visualization.html#catalogue-filtering-and-rendering-as-image-overlay">Catalogue filtering and rendering as image overlay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="catalogue_visualization.html#catalogue-2d-scatter-plot">Catalogue 2D scatter plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="catalogue_visualization.html#catalogue-histogram-plot">Catalogue histogram plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="catalogue_visualization.html#linked-catalogue-visualization">Linked catalogue visualization</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="appendix_a_version_history.html">Appendix A: version history</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="appendix_a_version_history.html#version-1-4">Version 1.4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendix_a_version_history.html#version-1-3-1">Version 1.3.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendix_a_version_history.html#version-1-3">Version 1.3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendix_a_version_history.html#version-1-2-2">Version 1.2.2</a></li>
@@ -174,15 +191,16 @@
 <li class="toctree-l2"><a class="reference internal" href="appendix_b_known_issues.html#stability-and-performace">Stability and performace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendix_b_known_issues.html#file-browser">File browser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendix_b_known_issues.html#animator">Animator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendix_b_known_issues.html#contour-configuration">Contour configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendix_b_known_issues.html#histogram">Histogram</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendix_b_known_issues.html#image-viewer">Image viewer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendix_b_known_issues.html#spectral-profiler">Spectral profiler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendix_b_known_issues.html#stokes-analysis">Stokes analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendix_b_known_issues.html#region-of-interest">Region of interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendix_b_known_issues.html#catalogue">Catalogue</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendix_b_known_issues.html#gui">GUI</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="appendix_c_dev_log.html">Appendix C: development log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="appendix_c_dev_log.html#v1-3-v1-4">v1.3 -&gt; v1.4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendix_c_dev_log.html#v1-2-v1-3">v1.2 -&gt; v1.3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendix_c_dev_log.html#v1-1-v1-2">v1.1 -&gt; v1.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendix_c_dev_log.html#v1-0-v1-1">v1.0 -&gt; v1.1</a></li>
@@ -204,7 +222,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="introduction.html" title="Introduction"
              >next</a></li>
-        <li class="nav-item nav-item-0"><a href="#">CARTA 1.3 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">CARTA 1.4 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

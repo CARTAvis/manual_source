@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Image cube visualization &#8212; CARTA 1.3 documentation</title>
+    <title>Image cube visualization &#8212; CARTA 1.4 documentation</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
@@ -33,7 +33,7 @@
         <li class="right" >
           <a href="about_gui.html" title="Graphical user interface"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.3 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.4 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -95,37 +95,37 @@
             
   <div class="section" id="image-cube-visualization">
 <h1>Image cube visualization<a class="headerlink" href="#image-cube-visualization" title="Permalink to this headline">¶</a></h1>
-<p>With version 1.3, CARTA provides the following widgets and dialogues for image cube visualization:</p>
+<p>With version 1.4, CARTA provides the following widgets and dialogues for image cube visualization:</p>
 <ul class="simple">
 <li><p>Widget</p>
 <ul>
 <li><p>image viewer: to view raster images and contour images</p></li>
 <li><p>render configuration: to configure how a raster image is rendered</p></li>
 <li><p>animator: to navigate through different images, different channels, or different Stokes</p></li>
-<li><p>layer list: to configure image matching in world coordinates</p></li>
+<li><p>image list: to configure image matching in world coordinates</p></li>
 </ul>
 </li>
 <li><p>Dialogue</p>
 <ul>
 <li><p>file browser: to view image headers and to load or to append an image</p></li>
 <li><p>contour configuration: to configure how a contour image is rendered</p></li>
-<li><p>file information: to view image headers</p></li>
+<li><p>file header: to view image header</p></li>
 <li><p>overlay settings: to configure the appearance of an image in the image viewer</p></li>
 </ul>
 </li>
 </ul>
 <div class="section" id="server-side-status-and-session-resume">
 <h2>Server-side status and session resume<a class="headerlink" href="#server-side-status-and-session-resume" title="Permalink to this headline">¶</a></h2>
-<p>As CARTA is fundamentally a client-server application, it would be good to know the status of the server side at the client side. This is also useful for the desktop version to know if the application runs normally or not. The server status is displayed as a circular icon at the top-right corner of the main window. The connection latency can be seen by hovering over the icon. There are three kinds of status:</p>
+<p>As CARTA is fundamentally a client-server application, it would be good to know the status of the server side at the client side. This is also useful for the desktop version to know if the application runs normally or not. The server status is displayed as a circular icon at the top-right corner of the main window. The connection latency and a session ID can be seen by hovering over the icon. There are three kinds of status:</p>
 <ul class="simple">
 <li><p>Green: this means that the server side is connected successfully.</p></li>
-<li><p>Orange: this means that the initial connection to the server side was broken (e.g., unstable internet) but has been reconnected. Users will asked to resume the previous session or not.</p></li>
-<li><p>Red: this means that the server side is not accessible. CARTA is not functional in this case.</p></li>
+<li><p>Orange: this means that the initial connection to the server side was broken (e.g., unstable internet) but has been reconnected. Users will be asked to resume the previous session or not.</p></li>
+<li><p>Red: this means that the server side is not accessible, either due to broken internet or backend crash. CARTA is not functional in this case.</p></li>
 </ul>
 <img src="_static/carta_gui_server_status.png"
      style="width:100%;height:auto;"><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If CARTA behaves abnormally or stops responding, please check the server-side status icon and connection latency. If it becomes red, the connection between the client side and the server side is interrupted. At this point, CARTA is not funtional. When the connection is re-established automatically, the status icon becomes orange and a prompt will be shown to ask users wheater or not to resume the previous CARTA session. By clicking the OK button, CARTA will try to resume the previous session if possible. If users choose not to resume the previous session, please reload CARTA to establish a new session. Interacting with CARTA when the status icon is orange may lead to abnormal behaviors.</p>
+<p>If CARTA behaves abnormally or stops responding, please check the server-side status icon and the connection latency. If it becomes red, the connection between the client side and the server side is interrupted. At this point, CARTA is not functional. When the connection is re-established automatically, the status icon becomes orange and a prompt will be shown to ask users whether or not to resume the previous CARTA session. By clicking the OK button, CARTA will try to resume the previous session if possible. If users choose not to resume the previous session, please reload CARTA to establish a new session. Interacting with CARTA when the status icon is orange may lead to abnormal behaviors.</p>
 <img src="_static/carta_gui_session_resume.png"
      style="width:100%;height:auto;"></div>
 </div>
@@ -138,9 +138,15 @@
 <li><p>FITS format</p></li>
 <li><p>MIRIAD format</p></li>
 </ul>
-<p>Only the images matched these formats will be shown in the file list with image type and file size. When an image is selected, a brief summary of image properties is provided on the right side of the dialogue. Full header is also available in the second tab. To view an image, click the <strong>Load</strong> button at the bottom-right corner. To view a new image and close all the loaded images, use <strong>File</strong> -&gt; <strong>Open image</strong> -&gt; <strong>Load</strong> button. To view multiple images, use <strong>File</strong> -&gt; <strong>Append image</strong> -&gt; <strong>Append</strong> button.</p>
+<p>Only the images matched these formats will be shown in the file list with image type and file size. When an image is selected, a brief summary of image properties is provided on the right side of the dialogue. Full header is also available in the second tab. To view an image, click the <strong>Load</strong> button at the bottom-right corner. To view a new image and close all the loaded images, use <strong>File</strong> -&gt; <strong>Open image</strong> -&gt; <strong>Load</strong> button. To view a new image without closing all the loaded images, use <strong>File</strong> -&gt; <strong>Append image</strong> -&gt; <strong>Append</strong> button.</p>
 <img src="_static/carta_fn_fileBrowser.png"
-     style="width:100%;height:auto;"><p>File browser remembers the last path where an image was opened within one CARTA session and the path is displayed (breadcrumbs) at the top of the dialogue. Therefore, when the file browser is re-opened to load other images, a file list will be displayed at the last path where the previous image was loaded. Users can use the breadcrumbs to navigate to one of the parent directories or click the home button to navigate to the base (i.e., initial) directory directly. To get an updated file list from the server side, users can click the reload button.</p>
+     style="width:100%;height:auto;"><p>Files and sub-directories can be searched via the filtering field. Three different methods are supported:</p>
+<ul class="simple">
+<li><p>Fuzzy search: free typing</p></li>
+<li><p>Unix pattern: e.g., *.fits</p></li>
+<li><p>Regular expression: e.g., colou?r</p></li>
+</ul>
+<p>File browser remembers the last path where an image was opened within one CARTA session and the path is displayed (breadcrumbs) at the top of the dialogue. Therefore, when the file browser is re-opened to load other images, a file list will be displayed at the last path where the previous image was loaded. Users can use the breadcrumbs to navigate to one of the parent directories or click the home button to navigate to the base (i.e., initial) directory directly. To get an updated file list from the server side, users can click the reload button.</p>
 <p>For the CARTA-server application, the server administrator can limit the global directory access through the “<em>root</em>” keyword argument when launching the CARTA backend service.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">exec</span> carta_backend <span class="nv">port</span><span class="o">=</span><span class="m">6002</span> <span class="nv">base</span><span class="o">=</span>/scratch/images/Orion <span class="nv">root</span><span class="o">=</span>/scratch/images
 </pre></div>
@@ -152,7 +158,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Currently CARTA does not support the following types of images:</p>
+<p>Currently CARTA does not fully support the following types of images:</p>
 <ul class="simple">
 <li><p>integer image</p></li>
 <li><p>complex image</p></li>
@@ -166,7 +172,7 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>When using remote mode, an image may be opened directly using a modified URL. For example, if we wanted to open a remote image file “/home/acdc/CARTA/Images/jet.fits”, we would append</p>
+<p>When using CARTA in the remote mode, an image may be opened directly using a modified URL. For example, if we wanted to open a remote image file “/home/acdc/CARTA/Images/jet.fits”, we would append</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">&amp;</span><span class="nv">folder</span><span class="o">=</span>/home/acdc/CARTA/Images<span class="p">&amp;</span><span class="nv">file</span><span class="o">=</span>jet.fits
 </pre></div>
 </div>
@@ -174,11 +180,11 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://www.carta.edu:2000/?socketUrl<span class="o">=</span>ws://www.carta.edu:3000<span class="p">&amp;</span><span class="nv">folder</span><span class="o">=</span>/home/acdc/CARTA/Images<span class="p">&amp;</span><span class="nv">file</span><span class="o">=</span>jet.fits
 </pre></div>
 </div>
-<p>Please note that it is necessary to give <em>full</em> path. Tilde (~) is not allowed.</p>
+<p>Please note that it is necessary to take a <em>full</em> path. Tilde (~) is not allowed.</p>
 </div>
 <div class="section" id="hdf5-idia-schema-image-support">
 <h3>HDF5 (IDIA schema) image support<a class="headerlink" href="#hdf5-idia-schema-image-support" title="Permalink to this headline">¶</a></h3>
-<p>Except the CASA image format, the FITS format, and the MIRIAD format, CARTA also support images in the HDF5 format under the IDIA schema.  The IDIA schema is designed to ensure that efficient image visualization is retained even with extraordinary large image cubes (hundreds GB to a few TB). The HDF5 image file contains extra data to skip or to speed up expensive computations, such as per-cube histogram or spectral profile, etc. A brief outline of the content of an HDF5 image is provided below:</p>
+<p>Except the CASA image format, the FITS format, and the MIRIAD format, CARTA also supports images in the HDF5 format under the IDIA schema.  The IDIA schema is designed to ensure that efficient image visualization is retained even with extraordinary large image cubes (hundreds GB to a few TB). The HDF5 image file contains extra data to skip or to speed up expensive computations, such as per-cube histogram or spectral profile, etc. A brief outline of the content of an HDF5 image is provided below:</p>
 <ul class="simple">
 <li><p>XYZW dataset (spatial-spatial-spectral-Stokes): similar to the FITS format</p></li>
 <li><p>ZYXW dataset: rotated dataset</p></li>
@@ -187,7 +193,7 @@
 <li><p>per-channel histogram: histogram of the pixel values of the XY plane</p></li>
 <li><p>per-cube histogram: histogram of the XYZ cube</p></li>
 </ul>
-<p>Additional tiled image data, which will speed up the process of loading very large images significantly, will be added to the HDF5 image file in v1.4.</p>
+<p>Additional tiled image data (mip map), which will speed up the process of loading very large images significantly, will be added to the HDF5 image file in v1.5.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Currently per-plane beam is not handled properly when converting a FITS image to the HDF5 format.</p>
@@ -196,7 +202,7 @@
 </div>
 <div class="section" id="image-viewer">
 <h2>Image viewer<a class="headerlink" href="#image-viewer" title="Permalink to this headline">¶</a></h2>
-<p>Starting from v1.3, CARTA can display images in differnt ways, such as:</p>
+<p>CARTA can render images in different ways, such as:</p>
 <ol class="arabic simple">
 <li><p>a single raster image</p></li>
 <li><p>a single raster image plus its own contours</p></li>
@@ -207,15 +213,16 @@
      style="width:100%;height:auto;"><p>When an image is loaded in CARTA, it is shown as a raster image by default, such as the first example in the above figure. Users then could generate contour images (see <a class="reference internal" href="#contourrendering"><span class="std std-ref">Contour rendering</span></a>) and enable WCS matching between different images (see <a class="reference internal" href="#wcsmatching"><span class="std std-ref">Match images in world coordinates</span></a>), such as the other three examples above.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you are running a VNC session from a headless server, CARTA may fail to render images properly (they may appear as a solid color). This is due to the fact that CARTA renders images using WebGL which uses GPU to accelerate rendering process. Most headless servers have neither discrete nor dedicated GPUs. In such cases, it is highly recommended to use the “remote” mode of CARTA (see <a class="reference internal" href="installation_and_configuration.html#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions).</p>
+<p>If you are running a VNC session from a headless server, CARTA may fail to render images properly (they may appear as a solid color). This is due to the fact that CARTA renders images using WebGL which uses GPU to accelerate the rendering process. Most headless servers have neither discrete nor dedicated GPUs. In such cases, it is highly recommended to use the “remote” mode of CARTA (see <a class="reference internal" href="installation_and_configuration.html#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions) as it is much more efficient than VNC.</p>
 </div>
 <p>In addition to displaying images, the image viewer displays cursor information at the top and provides a set of tool buttons at the bottom-right corner when hovering on the image.</p>
 <img src="_static/carta_fn_imageViewer_intro.png"
      style="width:100%;height:auto;"><p>The tool buttons allow users to:</p>
 <ul class="simple">
+<li><p>select a source from the catalog overlay (if applicable)</p></li>
 <li><p>create region of interests</p></li>
 <li><p>perform zoom or pan actions</p></li>
-<li><p>trigger matching images in world coordinates</p></li>
+<li><p>trigger matching images in world coordinates and/or in spectral domain</p></li>
 <li><p>change reference coordinate grid lines and labels</p></li>
 <li><p>export image as a png file</p></li>
 </ul>
@@ -224,22 +231,22 @@
 </div>
 <div class="section" id="tiled-rendering">
 <h2>Tiled rendering<a class="headerlink" href="#tiled-rendering" title="Permalink to this headline">¶</a></h2>
-<p>CARTA utilizes an efficient approach, “tiled rendering”, to display a raster image. What users see in the image viewer is an ensemble of tiles (default 256 pixel by 256 pixel) processed in parallel. As an example shown in the figure below, if we have an image with 2048 pixels by 2048 pixels, tiles will be constructed in four layers with differnt downsample factors. The zero-th layer contains only one tile with a size of 256 pixels by 256 pixels. A downsample factor of 8 is applied to the original image to create this tile. The first layer contains four tiles with each a size of 256 pixels by 256 pixels. The downsample factor of 4 is applied to the original image to create these four tiles. This process continues until no downsampling is required. In this case, the tiles of the third layer are not downsampled. As users change the field of view, or the size of the image viewer, tile data of the <em>right</em> layer will be used. For example, if a user is interested in the field of the blue box and the image viewer has a screen size of 512 pixels by 384 pixels, tiles of the layer 2 will be used for rendering. In this case, nine tiles will be used. If the user pans a little bit around the blue box, no new tile data are required. If the user pans the view to the green box with the same viewer size, only the additional two tiles of layer 2 are required and four tiles will be <em>re-used</em> for rendering. With this tiled rendering approach, tiles will be re-used for different zoom levels and different field of views to minimize the amount of data transfer while keeping the image sharp on screen. Effectively, users will see that the image becomes sharper and sharper at higher and higher zoom levels.</p>
+<p>CARTA utilizes an efficient approach, “tiled rendering”, to display a raster image. What users see in the image viewer is an ensemble of tiles (default 256 pixel by 256 pixel) processed in parallel. As an example shown in the figure below, if we have an image with 2048 pixels by 2048 pixels, tiles will be constructed in four layers with different downsample factors. The zero-th layer contains only one tile with a size of 256 pixels by 256 pixels. A downsample factor of 8 is applied to the original image to create this tile. The first layer contains four tiles with each a size of 256 pixels by 256 pixels. The downsample factor of 4 is applied to the original image to create these four tiles. This process continues until no downsampling is required. In this case, the tiles of the third layer are not downsampled. As users change the field of view, or the size of the image viewer, tile data of the <em>right</em> layer will be used. For example, if a user is interested in the field of the blue box and the image viewer has a screen size of 512 pixels by 384 pixels, tiles of the layer 2 will be used for rendering. In this case, nine tiles will be used. If the user pans a little bit around the blue box, no new tile data are required. If the user pans the view to the green box with the same viewer size, only the additional two tiles of layer 2 are required and four tiles will be <em>re-used</em> for rendering. With this tiled rendering approach, tiles will be re-used for different zoom levels and different fields of view to minimize the amount of data transfer while keeping the image sharp on screen. Effectively, users will see that the image becomes sharper and sharper at higher and higher zoom levels.</p>
 <img src="_static/carta_fn_tiledRendering.png"
-     style="width:80%;height:auto;"><p>Below is a demonstration of tiled rendering in action. Note that the video clip is made under a special internet condition in order for users to see the process clearly. Normally images are rendered much faster.</p>
+     style="width:80%;height:auto;"><p>Below is a demonstration of tiled rendering in action. Note that the video clip is made under a special internet condition for users to see the process clearly. Normally images are rendered much faster.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_tiledRendering_demo.mp4" type="video/mp4">
-</video><p>The performace of tiled rendering can be customized with the preferences dialogue, <strong>File</strong> -&gt; <strong>Preferences</strong> -&gt; <strong>Performance</strong>. The default values are chosen to assure raster images are displayed efficiently with sufficient accuracy. Advanced users may refine the setup if necessary. For example, when using the server version under poor internet condition, compression quality might be lowered down a bit to make the tile data smaller. Note that a smaller compression quality might introduce noticible artifacts on the raster image. Please adjust with caution. Alternatively, users may enable the low bandwidth mode, which will reduce required image resolutions by a factor of 2 (so that image will look a bit blurry) and cursor responsiveness from 200 ms to 400 ms (HDF5 images: from 100 ms to 400 ms). Under good internet conditions, users may enable streaming image tiles while zooming to see progressive updates of image resolutions at different zoom levels.</p>
+</video><p>The performance of tiled rendering can be customized with the preferences dialogue, <strong>File</strong> -&gt; <strong>Preferences</strong> -&gt; <strong>Performance</strong>. The default values are chosen to assure raster images are displayed efficiently with sufficient accuracy. Advanced users may refine the setup if necessary. For example, when using the server version under poor internet conditions, compression quality might be lowered down a bit to make the tile data smaller. Note that a lower compression quality might introduce noticeable artifacts on the raster image. Please adjust with caution. Alternatively, users may enable the low bandwidth mode, which will reduce required image resolutions by a factor of 2 (so that image will look a bit blurry) and cursor responsiveness from 200 ms to 400 ms (HDF5 images: from 100 ms to 400 ms). Under good internet conditions, users may enable streaming image tiles while zooming to see progressive updates of image resolutions at different zoom levels.</p>
 <img src="_static/carta_fn_tiledRendering_preference.png"
      style="width:80%;height:auto;"><div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>To make remote visualization of large images possible and efficient, CARTA adopts the above mentioned tiled rendering approach together with an efficient image compression algorithm. At rare circumstance, artifacts may be seen on the images. A known issue is viewing an image with all pixels as zeros but one with a very high value. At low or default zoom level, some artifacts will be observed around that pixel. At higher zoom levels, the artifacts may disappear. CARTA has been tuned to localize the artifacts within few screen pixels in order to minimize the impact of scientific analysis on such special cases. The compression quality is adjustable via the preferences dialogue, <strong>File</strong> -&gt; <strong>Preferences</strong> -&gt; <strong>Performance</strong>. Advanced users may need to chose a higher compression quality for those special cases with caution. Should this become a problem in any kinds of analysis of yours, please contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">carta_helpdesk</a> for help.</p>
+<p>To make remote visualization of large images possible and efficient, CARTA adopts the above mentioned tiled rendering approach together with an efficient image compression algorithm. At rare circumstances, artifacts may be seen on the images. A known issue is viewing an image with all pixels as zeros but one with a very high value (e.g., model image or clean component image of an unresolved source). At low or default zoom level, some artifacts will be observed around that pixel. At higher zoom levels, the artifacts may disappear. CARTA has been tuned to localize the artifacts within a few screen pixels in order to minimize the impact of scientific analysis on such special cases. The compression quality is adjustable via the preferences dialogue, <strong>File</strong> -&gt; <strong>Preferences</strong> -&gt; <strong>Performance</strong>. Advanced users may need to chose a higher compression quality for those special cases with caution. Should this become a problem in any kinds of analysis of yours, please contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">carta_helpdesk</a> for help.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>CARTA image loading performance</p>
-<p>The per-channel rendering approach helps to improve the performance of loading an image significantly. Traditionally when an image is loaded, the minimum and maximum of the entire image (cube) are computed first before image rendering. This becomes a serious performance issue if the image (cube) size is extraordinary large (&gt; several GB). In addition, applying the global minimum and maximum to render a raster image usually (if not often) results in a poorly rendered image if the dynamical range is high. Then users need to re-render the image repeatedly with refined boundary values. Re-rendering such a large image repeatedly further deduces user experiences.</p>
-<p>CARTA hopes to improve the image viewing experience by adopting GPU accelerated rendering with web browser technology. In addition, CARTA only renders an image with just enough image resolution (tiles and down-sampling). This combination results in a scalable and high-performance remote image viewer. The total file size is no longer a bottleneck. The determinative factors are: 1) image size in x and y dimensions, 2) internet bandwidth, and 3) storage I/O, instead. For a laptop with 8 GB of RAM, the largest image it can load without swapping is about 40000 pixels by 40000 pixels (assuming most of the RAM are free before loading image).</p>
+<p>The per-channel rendering approach helps to improve the performance of loading an image significantly. Traditionally when an image is loaded, the minimum and maximum of the entire image (cube) are computed first before image rendering. This becomes a serious performance issue if the image (cube) size is extraordinarily large (&gt; several GB). In addition, applying the global minimum and maximum to render a raster image usually (if not often) results in a poorly rendered image if the dynamical range is high. Then users need to re-render the image repeatedly with refined boundary values. Re-rendering such a large image repeatedly with CPUs further deduces user experiences.</p>
+<p>CARTA hopes to improve the image viewing experience by adopting GPU accelerated rendering with web browser technology. In addition, CARTA only renders an image with just enough image resolution (tiles and down-sampling). This combination results in a scalable and high-performance remote image viewer. The total file size is no longer a bottleneck. The determinative factors are: 1) image size in x and y dimensions, 2) internet bandwidth, and 3) storage I/O, instead. For a laptop with 8 GB of RAM, the largest image it can load without swapping is about 40000 pixels by 40000 pixels (assuming most of the RAM is free before loading the image).</p>
 <p>The approximated RAM usage of loading images with various spatial sizes is summarized below.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -282,14 +289,14 @@
 </div>
 <div class="section" id="render-configuration-of-a-raster-image">
 <h2>Render configuration of a raster image<a class="headerlink" href="#render-configuration-of-a-raster-image" title="Permalink to this headline">¶</a></h2>
-<p>The render configuration widget controls how a raster image is rendered in the image viewer. On the top, there is a row of buttons with different clip levels plus a custom button. Below there is a plot showing the per-channel histogram (in logarithmic scale) with a bin count equals to the geometric mean of the image size (x and y). The two vertical red bars indicate the two clip values of a colormap. The green dashed line marks the mean value and the green box marks the range from mean - one standard deviation to mean + one standard deviation. Interaction with a chart, such as the histogram, is demonstrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. On the right, there is a column of options, such as histogram type, scaling function, color map, invert color map, clip values, and control parameter of a scaling function (if applicable). Extra options to configure the histogram plot are placed in the render configuration settings dialogue enabled by the cog icon at the top-right corner of the render configuration widget. The histogram can be exported as a png image or a text file in tsv format.</p>
-<p>By default, CARTA calculates per-channel histogram. When per-cube histogram is requested, a warning message and a progress dialogue will show up. Calculating a per-cube histogram can be time-consuming for large image cubes. Users may cancel the request at any time by pressing the cancel button in the progress dialogue. If the image is in the HDF5 format (IDIA schema), the pre-calculated per-cube histogram will be loaded directly and displayed mostly instantly.</p>
+<p>The render configuration widget controls how a raster image is rendered in the image viewer. On the top, there is a row of buttons with different clip levels plus a custom button. Below there is a plot showing the per-channel histogram (in logarithmic scale) with a bin count equal to the geometric mean of the image size (x and y). The two vertical red bars indicate the two clip values of a colormap. The green dashed line marks the mean value and the green box marks the range from mean - one standard deviation to mean + one standard deviation. Interaction with a chart, such as the histogram, is demonstrated in the section <a class="reference internal" href="about_gui.html#mouse-interaction-with-charts"><span class="std std-ref">Mouse interactions with charts</span></a>. On the right, there is a column of options, such as histogram type, scaling function, color map, invert color map, clip values, and control parameter of a scaling function (if applicable). Extra options to configure the histogram plot are placed in the render configuration settings dialogue enabled by the cog icon at the top-right corner of the render configuration widget. The histogram can be exported as a png image or a text file in tsv format.</p>
+<p>By default, CARTA calculates a per-channel histogram. When a per-cube histogram is requested, a warning message and a progress dialogue will show up. Calculating a per-cube histogram can be time-consuming for large image cubes. Users may cancel the request at any time by pressing the cancel button in the progress dialogue. If the image is in the HDF5 format (IDIA schema), the pre-calculated per-cube histogram will be loaded directly and displayed mostly instantly.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_renderConfig_widget.mp4" type="video/mp4">
-</video><p>CARTA determines the boundary values of a colormap on <strong>per-channel</strong> basis by default. That is, a default “99.9%” clip level is applied to the per-channel histogram to look for the two clip values. Then apply the values in “linear” scale to the default colormap “inferno” to render a raster image. This helps to inspect an image in detail without suffering from improper image rendering in most of cases. Below is an example of this per-channel rendering approach.</p>
+</video><p>CARTA determines the boundary values of a colormap on a <strong>per-channel</strong> basis by default. That is, a default “99.9%” clip level is applied to the per-channel histogram to look for the two clip values. Then apply the values in “linear” scale to the default colormap “inferno” to render a raster image. This helps to inspect an image in detail without suffering from improper image rendering in most cases. Below is an example of this per-channel rendering approach.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_renderConfig_perFrame.mp4" type="video/mp4">
-</video><p>However, when comparing images channel by channel, color scales need to be fixed. This can be easily achieved by dragging the two vertical red bars, or typing in the values. When this happens, the “custom” button is enabled automatically and <em>all</em> frames will be rendered with the fixed boundary values. By clicking one of the clip buttons, CARTA switches back to the per-frame rendering mode <em>if per-channel histogram is requested</em>. Users may request the per-cube histogram to determine proper clip values. Below is an example of custom rendering with the per-cube histogram.</p>
+</video><p>However, when comparing images channel by channel, color scales need to be fixed. This can be easily achieved by dragging the two vertical red bars, or typing in the values. When this happens, the “custom” button is enabled automatically and <em>all</em> channels will be rendered with the fixed boundary values. By clicking one of the clip buttons, CARTA switches back to the per-frame rendering mode <em>if a per-channel histogram is requested</em>. Users may request the per-cube histogram to determine proper clip values. Below is an example of custom rendering with the per-cube histogram.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_renderConfig_perCustom.mp4" type="video/mp4">
 </video><p>CARTA provides a set of scaling functions, such as:</p>
@@ -308,7 +315,7 @@
      style="width:80%;height:auto;"></div>
 <div class="section" id="contour-rendering">
 <span id="contourrendering"></span><h2>Contour rendering<a class="headerlink" href="#contour-rendering" title="Permalink to this headline">¶</a></h2>
-<p>In addition to raster rendering, CARTA supports contour rendering as well. A contour image layer can be created on the same raster image or on a different raster image with world coordiantes properly matched. The contour generation process is achieved with the contour configuration dialogue which can be launched via the main tool bar.</p>
+<p>In addition to raster rendering, CARTA supports contour rendering as well. A contour image layer can be created on the same raster image or on a different raster image with world coordinates properly matched. The contour generation process is achieved with the contour configuration dialogue which can be launched via the dialogue bar.</p>
 <img src="_static/carta_fn_contourConfig.png"
      style="width:65%;height:auto;"><p>Users may follow the following steps to generate a contour image:</p>
 <ol class="arabic simple">
@@ -329,11 +336,11 @@
 <p>Once a set of levels has been defined, users can click the “Apply” button to visualize the contour image. Contour image is rendered progressively.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_contourRendering.mp4" type="video/mp4">
-</video><p>In the above demostration, a contour image is generated on top of its raster image. If users would like to plot a contour image on top of other raster image (e.g., velocity field as contour, integrated intensity image as raster), users need to enable WCS matching of the two raster images first (see <a class="reference internal" href="#wcsmatching"><span class="std std-ref">Match images in world coordinates</span></a>). Then users can generate the contour image just like the above example. When the contour image is generated, use the layer list widget or the animator widget to switch to the integrated intensity image. Users should see the velocity field image as contours on top of the integrated intensity image as raster. In short, contour images are visible for raster images matched in world coordinates.</p>
+</video><p>In the above demonstration, a contour image is generated on top of its raster image. If users would like to plot a contour image on top of other raster image (e.g., velocity field as contour, integrated intensity image as raster), users need to enable WCS matching of the two raster images first (see <a class="reference internal" href="#wcsmatching"><span class="std std-ref">Match images in world coordinates</span></a>). Then users can generate the contour image just like the above example. When the contour image is generated, use the image list widget or the animator widget to switch to the integrated intensity image. Users should see the velocity field image as contours on top of the integrated intensity image as raster. In short, contour images are visible for raster images matched in world coordinates.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_contourMatching2.mp4" type="video/mp4">
-</video><p>If there are multiple images loaded in append mode, users may use the “Data Source” dropdown to select an image as the data source of contour calculations. If the state of the “lock” button is locked, image viewer will show the selected image as a raster image and the frame slider in the animator widget will be updated to the selected image too. To disable this synchronization, click the “lock” button to set the state to unlock.</p>
-<p>CARTA provides four different level geneators to assist users to construct a set of contour levels.</p>
+</video><p>If there are multiple images loaded in append mode, users may use the “Data Source” dropdown to select an image as the data source of contour calculations. If the state of the “lock” button is locked, the image viewer will show the selected image as a raster image and the image slider in the animator widget will be updated to the selected image too. To disable this synchronization, click the “lock” button to set the state to unlock.</p>
+<p>CARTA provides four different level generators to assist users to construct a set of contour levels.</p>
 <ul>
 <li><p>“start-step-multiplier”</p>
 <p>A set of “N” levels will be computed from “start” with a (variable) step. For example, if start = 1.0, step = 0.1, N = 5, and multiplier = 2, five levels will be generated as “1.0, 1.1, 1.3, 1.7, 2.5”. The function of the multiplier is to make the step increase per next new level. Default parameters derived from full image statistics (per-channel) are:</p>
@@ -371,29 +378,29 @@
 </ul>
 </li>
 </ul>
-<p>CARTA provides three different contour smoothing methods, including no smooth, Gaussian smooth, and block smooth, in the “Configuration” tab. The kernel for smoothing is in number of pixels. The default is to apply Gaussian smooth with four pixels as the kernel size. Depending on science cases, users may choose different smooth methods and differnt kernel sizes.</p>
+<p>CARTA provides three different contour smoothing methods, including no smooth, Gaussian smooth, and block smooth, in the “Configuration” tab. The kernel for smoothing is in the number of pixels. The default is to apply Gaussian smooth with four pixels as the kernel size. Depending on science cases, users may choose different smooth methods and different kernel sizes.</p>
 <img src="_static/carta_fn_contourSmooth.png"
      style="width:100%;height:auto;"><p>The appearance of contours can be customized in the “Styling” tab. As an example, users may use the options to plot contours like below. Iso-velocity contours are rendered in different colors to present Doppler shifts of the source kinematics.</p>
 <img src="_static/carta_fn_contourStyling.png"
      style="width:50%;height:auto;"></div>
 <div class="section" id="match-images-in-world-coordinates">
 <span id="wcsmatching"></span><h2>Match images in world coordinates<a class="headerlink" href="#match-images-in-world-coordinates" title="Permalink to this headline">¶</a></h2>
-<p>When multiple images are loaded in the append mode, users may optionally trigger image matching based on their world coordinates. It is a common practice to compare images from different telescopes or even from the same telescope with different spectral and spatial setups. Users can use the “Layer list widget” to trigger image matching process,</p>
+<p>When multiple images are loaded in the append mode, users may optionally trigger image matching based on their world coordinates. It is a common practice to compare images from different telescopes or even from the same telescope with different spectral and spatial setups. Users can use the “Image list widget” to trigger image matching process,</p>
 <img src="_static/carta_fn_layerList.png"
      style="width:70%;height:auto;"><p>or the tool button in the image viewer.</p>
 <img src="_static/carta_fn_triggerMatch.png"
-     style="width:40%;height:auto;"><p>The layer list widget lists up all load images, including their:</p>
+     style="width:40%;height:auto;"><p>The image list widget lists up all loaded images, including their:</p>
 <ul class="simple">
 <li><p>file name</p></li>
-<li><p>rendering type (“Type”): “R” means raster and “C” mean contour</p></li>
+<li><p>rendering type (“Type”): “R” means raster and “C” means contour</p></li>
 <li><p>image matching state (“Matching”): “XY” means spatial domain and “Z” means spectral domain.</p></li>
 <li><p>channel index</p></li>
 <li><p>Stokes index</p></li>
 </ul>
-<p>The first loaded image with valid spatial world coordinates serves as the spatial reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.image.mom0). Similarly, the first loaded image with valid spectral coordinates servers as the spectral reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.fits). To match world coordinates of other loaded image, users can click “XY” to match in the spatial domain and click “Z” to match in the spectral domain.</p>
+<p>The first loaded image with valid spatial world coordinates serves as the default spatial reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.image.mom0). Similarly, the first loaded image with valid spectral coordinates servers as the default spectral reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.fits). To match world coordinates of other loaded images, users can click “XY” to match in the spatial domain and click “Z” to match in the spectral domain.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>Users may change spatial or spectral reference image by right-clicking a cell in the “Matching” column in the layer list widget.</p>
+<p>Users may change a spatial reference image or a spectral reference image by right-clicking a cell in the “Matching” column in the image list widget.</p>
 </div>
 <p>For raster images, matching in the spatial domain is achieved by applying translation, rotation, and scaling to images with respect to the reference image.</p>
 <video controls loop style="width:100%;height:auto;">
@@ -401,34 +408,30 @@
 </video><p>For contour images, matching in the spatial domain is achieved by reprojecting contour vertices to the raster image in the view. Multiple contour images are displayed on top of a raster image if spatial matching is enabled.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_contourMatching.mp4" type="video/mp4">
-</video><p>For image cubes, matching in the spectral domain is achieved by nearest interpolation in radio velocity. When spectral matching is enabled by clicking “Z”, the matched channel and Stokes indices are shown in the layer list widget.</p>
+</video><p>For image cubes, matching in the spectral domain is achieved by nearest interpolation in radio velocity. When spectral matching is enabled by clicking “Z”, the matched channel and Stokes indices are shown in the image list widget.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_spectralMatching.mp4" type="video/mp4">
 </video><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Projection effects of raster images</p>
-<p>As raster images are matched spatially by applying translation, rotation, and scaling, projection effects between different images might be visible if images have wide field of view and/or images have very different projection schemes. In the following video, projection effects in raster images are demonstrated. However, projection effects of contour images are properly handled in CARTA. Contours are reprojected with sufficient accuracy with respect to the raster image as seen by users in the image viewer.</p>
+<p>As raster images are matched spatially by applying translation, rotation, and scaling, projection effects between different images might be visible if images have a wide field of view and/or images have very different projection schemes. In the following video, projection effects in raster images are demonstrated. However, projection effects of contour images are properly handled in CARTA. Contours are reprojected with sufficient accuracy with respect to the raster image as seen by users in the image viewer.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_projectionEffect.mp4" type="video/mp4">
 </video></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If spatial reference image or spectral reference image is closed via “<strong>File</strong>” -&gt; “<strong>Close image</strong>”, all matched images will be unmatched and a new reference image will be automatically registered.</p>
+<p>If a spatial reference image or a spectral reference image is closed via “<strong>File</strong>” -&gt; “<strong>Close image</strong>”, all matched images will be unmatched and a new reference image will be automatically registered.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Animation playback does not work properly with spectrally matched cubes in v1.3. This will be improved in v1.4.</p>
-</div>
-<p>Raster image or contour image may be hidden in the image viewer by clicking “R” or “C” in the layer list widget. For example, to create an image with contours only, users can click the “R” button to hide the raster image.</p>
+<p>Raster image or contour image may be hidden in the image viewer by clicking “R” or “C” in the image list widget. For example, to create an image with contours only, users can click the “R” button to hide the raster image.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_hideLayer.mp4" type="video/mp4">
-</video><p>When multiple images are loaded in the append mode, their order determines the order in the frame slider of the animator widget. With the layer list widget, this order can be changed by dragging an entry to a desired place.</p>
+</video><p>When multiple images are loaded in the append mode, their order determines the order in the image slider of the animator widget. With the image list widget, this order can be changed by dragging an entry to a desired place.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_reorderFrame.mp4" type="video/mp4">
 </video></div>
 <div class="section" id="changing-image-view">
 <h2>Changing image view<a class="headerlink" href="#changing-image-view" title="Permalink to this headline">¶</a></h2>
-<p>CARTA provides different ways to change the image view. With a mouse, image zoom is achieved by scrolling up/down. Image pan is achieved by dragging or command+clicking (mac) or ctrl+clicking (linux). Alternatively, image can be changed to fit the image viewer, or to fit the screen resolution (i.e., screen resolution equals full image resolution), by using the buttons at the bottom-right corner of the image viewer. Zoom in and zoom out buttons are provided as well.  To change to different frames, channels, or stokes, please refer to the section <a class="reference internal" href="#animator-intro"><span class="std std-ref">Animator</span></a>.</p>
+<p>CARTA provides different ways to change the image view. With a mouse, image zoom is achieved by scrolling up/down. Image pan is achieved by dragging or command+clicking (mac) or ctrl+clicking (linux). Alternatively, the image can be changed to fit the image viewer, or to fit the screen resolution (i.e., screen resolution equals full image resolution), by using the buttons at the bottom-right corner of the image viewer. Zoom in and zoom out buttons are provided as well.  To change to different images, channels, or stokes, please refer to the section <a class="reference internal" href="#animator-intro"><span class="std std-ref">Animator</span></a>.</p>
 <video controls loop style="width:100%;height:auto;">
   <source src="_static/carta_fn_imageViewer_changeView.mp4" type="video/mp4">
 </video><p>When an image is zoomed in or out, the precision of the coordinate tick values is dynamically adjusted based on the zoom level.</p>
@@ -444,8 +447,8 @@
 </ul>
 <img src="_static/carta_fn_imageViewer_cursorInfo.png"
      style="width:100%;height:auto;"><p>When the coordinate system is changed (e.g., ICRS to Galactic), the displayed world coordinate will be changed accordingly. By default, they are displayed in decimal degrees for Galactic and Ecliptic systems, while for FK5, FK4, and ICRS systems, they are displayed in sexagesimal format. The precision of both formats is determined dynamically based on the image header and image zoom level.</p>
-<p>The reference image coordinate (0,0) locates at the center of the bottom-left pixel of the image. Regardless the displayed image is down-sampled or not, the image coordinate always refers to full resolution image.</p>
-<p>When cursor is moving, pixel value of the full resolution image is displayed. If image header provides sufficient information in the frequency/velocity domain, the frequency and velocity with the reference frame of the current channel will be shown.</p>
+<p>The reference image coordinate (0,0) locates at the center of the bottom-left pixel of the image. Regardless of whether the displayed image is down-sampled or not, the image coordinate always refers to the full resolution image.</p>
+<p>When the cursor is moving, the pixel value of the full resolution image is displayed. If the image header provides sufficient information in the frequency/velocity domain, the frequency and velocity with the reference frame of the current channel will be shown.</p>
 <p>To stop/resume cursor update, press “<strong>F</strong>” key. When the cursor stops updating, the cursor information bar, cursor spatial profiler, cursor spectral profiler will stop updating too.</p>
 </div>
 <div class="section" id="configuring-an-image-plot">
@@ -466,16 +469,12 @@
 </div>
 <div class="section" id="animator">
 <span id="animator-intro"></span><h2>Animator<a class="headerlink" href="#animator" title="Permalink to this headline">¶</a></h2>
-<p>The animator widget provides controls of image frames, channels, and stokes. When multiple images are loaded via <strong>File</strong> -&gt; <strong>Append image</strong>, “Frame” slider will show up and allows users to switch between different loaded images. If an image file has multiple channels and/or stokes, “Channel” and/or “Stokes” slider will appear. The double slider right below the “Channel” slider allows users to specify a range of channels for animation playback. On the top there is a set of animation control buttons such play, next, etc. Playback modes, including “forward”, “backward”, “Bouncing” and “Blink”, are supported. Playback action will be applied to the slider with the activated radio button. As an example below, the action will be applied to the <em>channel</em> axis of the second stokes axis of the third image file, and the animation range is from the second channel to the last channel.</p>
+<p>The animator widget provides controls of image frames, channels, and stokes. When multiple images are loaded via <strong>File</strong> -&gt; <strong>Append image</strong>, “Image” slider will show up and allows users to switch between different loaded images. If an image file has multiple channels and/or Stokes, “Channel” and/or “Stokes” slider will appear. The double slider right below the “Channel” slider allows users to specify a range of channels for animation playback. On the top there is a set of animation control buttons such as play, next, etc. Playback modes, including “forward”, “backward”, “Bouncing” and “Blink”, are supported. Playback action will be applied to the slider with the activated radio button. As an example below, the action will be applied to the <em>channel</em> axis of the second stokes axis of the third image file, and the animation range is from the second channel to the last channel.</p>
 <img src="_static/carta_fn_animator_widget.png"
      style="width:80%;height:auto;"><p>The frame rate spin box controls the <em>desired</em> frame per second (fps). The <em>actual</em> frame rate depends on image size and internet condition.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Step for animation playback will be added in future releases. Currently the step is unity.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>In v1.3, channel animation playback of spatially matched contour images is not supported. Only spatially matched raster image is supported. This limiiation will be removed in v1.4.</p>
+<p>A “step” for animation playback will be added in future releases. Currently the step is unity.</p>
 </div>
 </div>
 </div>
@@ -495,7 +494,7 @@
         <li class="right" >
           <a href="about_gui.html" title="Graphical user interface"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.3 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">CARTA 1.4 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
