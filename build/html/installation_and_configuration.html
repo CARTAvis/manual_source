@@ -99,8 +99,8 @@
 <p>CARTA utilizes discrete or integrated GPU for image rendering. For users who wish to run CARTA from a remote RedHat 6/7/8 or Ubuntu 18.04 LTS/20.04 LTS server via the ssh protocol, CARTA v1.4 also provides a “remote” mode for this use case (see <a class="reference internal" href="#commandlinestartup"><span class="std std-ref">Command line startup</span></a> for instructions). As the majority of servers do not have onboard GPUs, the remote mode runs the CARTA “backend” on the server, while the CARTA “frontend” is accessed through your web browser of choice running on your local machine. This allows your local machine’s GPU to perform the image rendering, while the remote server handles the storage and CPU/RAM intensive tasks.</p>
 <p>If there is any problem, please contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a> for help.</p>
 <div class="section" id="carta-server">
-<h2>CARTA-server<a class="headerlink" href="#carta-server" title="Permalink to this headline">¶</a></h2>
-<p>The installation and configuration of the server version is available through <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a>. The CARTA team would be happy to work with you on getting CARTA-server deployed on your server.</p>
+<span id="server-deployment"></span><h2>CARTA-server<a class="headerlink" href="#carta-server" title="Permalink to this headline">¶</a></h2>
+<p>The deployment and configuration of the server version is available <a class="reference external" href="https://github.com/CARTAvis/carta-node-server/blob/dev/README.md">here</a>. It includes the setup of the CARTA-frontend. To setup the CARTA-backend, please refer to the instructions <a class="reference external" href="https://github.com/CARTAvis/carta-backend/tree/dev/Dockerfiles">here</a>. The CARTA team would be happy to work with you on getting CARTA-server deployed on your server. Please contact us through <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a>.</p>
 </div>
 <div class="section" id="carta-desktop-macos-10-14-10-15">
 <h2>CARTA-desktop: macOS 10.14/10.15<a class="headerlink" href="#carta-desktop-macos-10-14-10-15" title="Permalink to this headline">¶</a></h2>
@@ -379,7 +379,7 @@ Press ctrl+c to <span class="nb">exit</span>
 </li>
 <li><p>to set a limit of the file list scope:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>carta --remote --root<span class="o">=</span>/lustre/users/bob     <span class="c1"># user cannot navigate up to /lustre/users</span>
-                                            <span class="c1"># --root defaults to &quot;/&quot;</span>
+                                            <span class="c1"># --root defaults to &quot;/&quot; if not defined</span>
 </pre></div>
 </div>
 </li>
@@ -441,11 +441,12 @@ usage: carta []                CARTA file browser will default to the current pa
 </div>
 </div>
 <div class="section" id="troubleshooting">
-<span id="id3"></span><h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
 <p>In this section, we provide common issues we have experienced so far and provide solutions. If none of the solutions work, please do contact <a class="reference external" href="mailto:carta_helpdesk&#37;&#52;&#48;asiaa&#46;sinica&#46;edu&#46;tw">CARTA Helpdesk</a> for help.</p>
 <ul>
-<li><p>I see a blank image…</p>
+<li><p><em>I see a blank image…</em></p>
 <p>If you are using vnc:</p>
+<p>CARTA uses GPU to render the image in the image viewer. If you are running the Desktop version of CARTA remotely through a VNC window, the image may fail to render correctly leading to a blank image even though X/Y profiles and contour still function correctly. In this case we recommend to use <code class="code docutils literal notranslate"><span class="pre">--remote</span></code> mode to launch CARTA at the remote server and use your local web browser to access the CARTA interface.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>The following is a tip for VNC users.</p>
@@ -468,16 +469,21 @@ e.g.</p>
 <p>in your local machine’s web browser to connect to CARTA remote server running on the remote machine (1234 and 5678 are given as an example. You may choose different port numbers if you wish).</p>
 <p>&lt;remote machine&gt; can either be the machine’s hostname or IP address.</p>
 </div>
+<p>Alternatively, if you really must use a VNC server:</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you are running the RedHat7 AppImage version on a VNC server but loaded images appear blank, please use the following prefix when starting the AppImage:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">LIBGL_ALWAYS_INDIRECT</span><span class="o">=</span><span class="m">1</span> ./CARTA.AppImage
 </pre></div>
 </div>
-<p>Loaded images should now render correctly.</p>
+<p>or,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./CARTA.AppImage --disable-gpu
+</pre></div>
+</div>
+<p>Now loaded images should be rendered correctly.</p>
 </div>
 </li>
-<li><p>After copy-and-paste a CARTA URL, I see the CARTA GUI is not initialized…</p>
+<li><p><em>After copy-and-paste a CARTA URL, I see the CARTA GUI is not initialized…</em></p>
 <p>Check your browser version. It needs to support “<em>wasm</em>” streaming and be enabled. More information about browser support of WebAssembly can be found at <a class="reference external" href="https://caniuse.com/#search=WebAssembly">https://caniuse.com/#search=WebAssembly</a></p>
 <p>CARTA utilises WebAssembly and that was introduced in version 52 of Firefox. Some RedHat6 and RedHat7 distributions may have versions of Firefox earlier than version 52. If that is the case, we highly recommend that you update to a more recent Firefox version with “sudo yum update firefox”.</p>
 <p>Other RedHat7 distributions may have Firefox 52 ESR which although having WebAssembly support, it is deactivated by default. We still recommend updating to a newer version of Firefox, but if you can not, you can try activating WebAssembly as follows:</p>
@@ -490,14 +496,14 @@ e.g.</p>
 </ol>
 <p>As for the Chrome browser, Webassembly support was introduced in Chrome version 51, but versions 51 to 56 have it deactivated by default. To activate WebAssembly in Chrome 51 to 56 enter “chrome://flags” in the URL bar, type WebAssembly in the search box that appears, and change each WebAssembly option to “Enabled”. If you have Chrome version 57 or newer, WebAssembly should be activated by default.</p>
 </li>
-<li><p>CARTA does not launch…</p>
+<li><p><em>CARTA does not launch…</em></p>
 <p>Check if there is existing “carta_backend” process running. The port number may conflict.</p>
 </li>
-<li><p>The RedHat7 AppImage does not open and it prints a message suggesting to extract the AppImage using the “--appimage-extract” flag.</p>
+<li><p><em>The RedHat7 AppImage does not open and it prints a message suggesting to extract the AppImage using the “--appimage-extract” flag.</em></p>
 <p>This error is due to lack of FUSE (File System in Userspace) support. We suspect that FUSE support in RedHat7 systems may be disabled in some institute environments for security reasons. If that is the case, we recommend using the ‘remote’ version of CARTA instead.</p>
 </li>
-<li><p>“<strong>backspace</strong>” does not delete a region…</p>
-<p>If using CARTA remote mode in Firefox on MacOS, you may find the “<strong>backspace</strong>” key navigates back a page instead of removing a region. This behaviour can be prevented by modifying your Firefox web browser settings:</p>
+<li><p><code class="code docutils literal notranslate"><span class="pre">backspace</span></code> <em>does not delete a region…</em></p>
+<p>If using CARTA remote mode in Firefox on MacOS, you may find the <code class="code docutils literal notranslate"><span class="pre">backspace</span></code> key navigates back a page instead of removing a region. This behaviour can be prevented by modifying your Firefox web browser settings:</p>
 <ol class="arabic simple">
 <li><p>Enter <a class="reference external" href="about:config">about:config</a> in the address bar.</p></li>
 <li><p>Click “I accept the risk!”</p></li>

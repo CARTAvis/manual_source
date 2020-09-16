@@ -16,9 +16,12 @@ CARTA utilizes discrete or integrated GPU for image rendering. For users who wis
 If there is any problem, please contact `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ for help.
 
 
+.. _server_deployment:
+
 CARTA-server
 ------------
-The installation and configuration of the server version is available through `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_. The CARTA team would be happy to work with you on getting CARTA-server deployed on your server.
+The deployment and configuration of the server version is available `here <https://github.com/CARTAvis/carta-node-server/blob/dev/README.md>`_. It includes the setup of the CARTA-frontend. To setup the CARTA-backend, please refer to the instructions `here <https://github.com/CARTAvis/carta-backend/tree/dev/Dockerfiles>`_. The CARTA team would be happy to work with you on getting CARTA-server deployed on your server. Please contact us through `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_.
+
 
 
 
@@ -363,7 +366,7 @@ If CARTA is installed on a remote server, and users access the server via the ss
   .. code-block:: bash 
    
      carta --remote --root=/lustre/users/bob     # user cannot navigate up to /lustre/users
-                                                 # --root defaults to "/"
+                                                 # --root defaults to "/" if not defined
 
 * to set a number of threads for the CARTA backend service:
 
@@ -433,10 +436,12 @@ Troubleshooting
 ---------------
 In this section, we provide common issues we have experienced so far and provide solutions. If none of the solutions work, please do contact `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ for help.
 
-* I see a blank image...
+* *I see a blank image...*
 
   If you are using vnc:
 
+  CARTA uses GPU to render the image in the image viewer. If you are running the Desktop version of CARTA remotely through a VNC window, the image may fail to render correctly leading to a blank image even though X/Y profiles and contour still function correctly. In this case we recommend to use :code:`--remote` mode to launch CARTA at the remote server and use your local web browser to access the CARTA interface. 
+  
   .. tip::
      The following is a tip for VNC users. 
    
@@ -469,6 +474,9 @@ In this section, we provide common issues we have experienced so far and provide
 
      <remote machine> can either be the machine's hostname or IP address.
 
+
+  Alternatively, if you really must use a VNC server:
+
   .. tip::
      If you are running the RedHat7 AppImage version on a VNC server but loaded images appear blank, please use the following prefix when starting the AppImage: 
 
@@ -476,9 +484,15 @@ In this section, we provide common issues we have experienced so far and provide
      
         LIBGL_ALWAYS_INDIRECT=1 ./CARTA.AppImage 
 
-     Loaded images should now render correctly.
+     or,
 
-* After copy-and-paste a CARTA URL, I see the CARTA GUI is not initialized...
+     .. code-block:: bash
+
+        ./CARTA.AppImage --disable-gpu
+
+     Now loaded images should be rendered correctly.
+
+* *After copy-and-paste a CARTA URL, I see the CARTA GUI is not initialized...*
 
   Check your browser version. It needs to support "*wasm*" streaming and be enabled. More information about browser support of WebAssembly can be found at https://caniuse.com/#search=WebAssembly 
 
@@ -496,18 +510,18 @@ In this section, we provide common issues we have experienced so far and provide
 
   
 
-* CARTA does not launch...
+* *CARTA does not launch...*
 
   Check if there is existing "carta_backend" process running. The port number may conflict.
 
-* The RedHat7 AppImage does not open and it prints a message suggesting to extract the AppImage using the "-\\-appimage-extract" flag.
+* *The RedHat7 AppImage does not open and it prints a message suggesting to extract the AppImage using the "-\\-appimage-extract" flag.*
 
   This error is due to lack of FUSE (File System in Userspace) support. We suspect that FUSE support in RedHat7 systems may be disabled in some institute environments for security reasons. If that is the case, we recommend using the 'remote' version of CARTA instead.
 
 
-* "**backspace**" does not delete a region...
+* :code:`backspace` *does not delete a region...*
 
-  If using CARTA remote mode in Firefox on MacOS, you may find the "**backspace**" key navigates back a page instead of removing a region. This behaviour can be prevented by modifying your Firefox web browser settings:
+  If using CARTA remote mode in Firefox on MacOS, you may find the :code:`backspace` key navigates back a page instead of removing a region. This behaviour can be prevented by modifying your Firefox web browser settings:
 
   1. Enter about:config in the address bar.
   2. Click "I accept the risk!"

@@ -3,11 +3,11 @@ Introduction
 
 The mission of CARTA
 --------------------
-CARTA is the *Cube Analysis and Rendering Tool for Astronomy*, a new image visualization and analysis tool designed for the ALMA, the VLA, and the SKA pathfinders - MeerKAT and ASKAP. As the image size increases drastically with modern telescopes in recent years, viewing an image with a local image viewer or with a remote image viewer via the ssh protocol plus X11 tunneling or the VNC becomes much less efficient. The mission of CARTA is to provide usability and scalability for the future by utilizing modern web technologies and computing parallelization. 
+CARTA is the *Cube Analysis and Rendering Tool for Astronomy*, a new image visualization and analysis tool designed for the ALMA, the VLA, and the SKA pathfinders - MeerKAT and ASKAP. As the image size increases dramatically with modern telescopes in recent years, viewing an image with a local image viewer or with a remote image viewer via the ssh protocol plus X11 tunneling or the VNC becomes much less efficient. The mission of CARTA is to provide usability and scalability for the future by utilizing modern web technologies and computing parallelization. 
 
 Client-Server architecture
 --------------------------
-CARTA uses a client-server architecture which is suitable for visualizing images with large file sizes (GB to TB) easily obtained from ALMA, VLA, or SKA pathfinders (MeerKAT and ASKAP) observations. It is practically difficult to process such a huge file with personal computer or laptop. By using a client-server architecture, computation and data storage are handled by remote enterprise-class servers or clusters with high performance storage, while processed products are sent to clients only for visualization with modern web features, such as GPU-accelerated rendering. This architecture also enables users to interact with the ALMA and VLA science archives by using CARTA as an interface. 
+CARTA uses a client-server architecture which is suitable for visualizing images with large file sizes (GB to TB) easily obtained from ALMA, VLA, or SKA pathfinders (MeerKAT and ASKAP) observations. It is practically difficult to process such a huge file with a personal computer or laptop. By using a client-server architecture, computation and data storage are handled by remote enterprise-class servers or clusters with high performance storage, while processed products are sent to clients only for visualization with modern web features, such as GPU-accelerated rendering. This architecture also enables users to interact with the ALMA and VLA science archives by using CARTA as an interface. 
 
 
 .. raw:: html
@@ -19,9 +19,9 @@ Codebase and releases
 ---------------------
 CARTA is an open-source project. Its source code is available at https://github.com/CARTAvis. 
 
-CARTA has two flavors: CARTA-server and CARTA-desktop. The former is intended for hosting multiple users with an enterprise-class server, while the later is intedned for single-user usage with a personal computer or a laptop. The desktop version can also be used in the "remote" mode, where the backend (server) is run in a remote server and the frontend (client) is run locally with an internet browser. 
+CARTA has two flavors: CARTA-server and CARTA-desktop. The former is intended for hosting multiple users with an enterprise-class server, while the later is intended for single-user usage with a personal computer or a laptop. The desktop version can also be used in the "remote" mode, where the backend (server) is run in a remote server and the frontend (client) is run locally with an internet browser. 
 
-Deployment of CARTA in a server environment may require addtional efforts of server configurations, such as user authentication, server load balance, or resource monitoring, etc. Please contact the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw) for consultations. 
+Deployment of CARTA in a server environment may require additional efforts of server configurations (see :ref:`server_deployment`), such as user authentication, server load balance, or resource monitoring, etc. Please contact the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw) for consultations. 
 
 Installation guides for the desktop version are provided in the section :ref:`installation_configuration`, including the usages of the remote mode. 
 
@@ -68,13 +68,15 @@ The release plan and major goals are the following:
 
 * v1.4: Catalogue overlay and analysis tools (**current release**; released 17th September 2020)
 
-  * Catalogue visualization
-  * Analytics with solid-angle-conserved shared regions
-  * Animator improvement for spatially and spectrally matched raster and contour images
-  * Server-side authentication improvements
+  * Catalogue support
+  * Shared region analytics
+  * Animation playback improvement of raster and contour images
   * Profile smoothing
   * Moment map generator
-  * Line catalogue overlay
+  * Spectral line query
+  * Server authentication and deployment improvements
+  * File browser improvements
+  * Bug fixes and performance improvements
 
 * Into the future (this is a non-exclusive list of features that we would like to implemnt in subsequent releases but these are not decided upon yet, and depend on feedback from users, and resourcing etc. )
 
