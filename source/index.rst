@@ -11,6 +11,10 @@ CARTA - Cube Analysis and Rendering Tool for Astronomy
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3377984.svg
    :target: https://doi.org/10.5281/zenodo.3377984
 
+.. note::
+   CARTA v1.4 is released on 17th of September 2020.
+   V1.4 user manual is `available <https://carta.readthedocs.io/en/1.4/>`_ now.
+
 
 .. toctree::
    :maxdepth: 3

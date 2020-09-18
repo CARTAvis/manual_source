@@ -462,8 +462,8 @@ In this section, we provide common issues we have experienced so far and provide
      You can now enter 
    
      .. code-block:: bash 
-   
-        <remote machine>:1234/?socketUrl=ws://<remote machine>:5678
+  
+        <local machine>:1234/?socketUrl=ws://<local machine>:5678
       
      in your local machine's web browser to connect to CARTA remote server running on the remote machine (1234 and 5678 are given as an example. You may choose different port numbers if you wish).
 
