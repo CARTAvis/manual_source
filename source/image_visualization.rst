@@ -1,6 +1,6 @@
 Image cube visualization
 ========================
-With version 1.4, CARTA provides the following widgets and dialogues for image cube visualization:
+With version 2.0, CARTA provides the following widgets and dialogues for image cube visualization:
 
 * Widget
   
@@ -11,7 +11,7 @@ With version 1.4, CARTA provides the following widgets and dialogues for image c
 
 * Dialogue
 
-  * file browser: to view image headers and to load or to append an image
+  * file browser: to view image headers, and to load or to append an image
   * contour configuration: to configure how a contour image is rendered
   * file header: to view image header
   * overlay settings: to configure the appearance of an image in the image viewer
@@ -19,7 +19,7 @@ With version 1.4, CARTA provides the following widgets and dialogues for image c
 
 Server-side status and session resume
 -------------------------------------
-As CARTA is fundamentally a client-server application, it would be good to know the status of the server side at the client side. This is also useful for the desktop version to know if the application runs normally or not. The server status is displayed as a circular icon at the top-right corner of the main window. The connection latency and a session ID can be seen by hovering over the icon. There are three kinds of status:
+As CARTA is fundamentally a client-server application, it would be essential to know the status of the server side at the client side. This is also useful for the standalone version to know if the application runs normally or not. The server (also known as the carta_backend) status is displayed as a circular icon at the top-right corner of the main window. The connection latency and a session ID can be seen by hovering over the icon. There are three kinds of status:
 
 * Green: this means that the server side is connected successfully.
 * Orange: this means that the initial connection to the server side was broken (e.g., unstable internet) but has been reconnected. Users will be asked to resume the previous session or not.  
@@ -31,7 +31,7 @@ As CARTA is fundamentally a client-server application, it would be good to know 
         style="width:100%;height:auto;">
 
 .. note::
-   If CARTA behaves abnormally or stops responding, please check the server-side status icon and the connection latency. If it becomes red, the connection between the client side and the server side is interrupted. At this point, CARTA is not functional. When the connection is re-established automatically, the status icon becomes orange and a prompt will be shown to ask users whether or not to resume the previous CARTA session. By clicking the OK button, CARTA will try to resume the previous session if possible. If users choose not to resume the previous session, please reload CARTA to establish a new session. Interacting with CARTA when the status icon is orange may lead to abnormal behaviors. 
+   If CARTA behaves abnormally or stops responding, please check the server-side status icon and the connection latency. If it becomes red, the connection between the client side and the server side is interrupted. At this point, CARTA is not functional. When the connection is re-established automatically, the status icon becomes orange and a prompt will be shown to ask users whether or not to resume the previous CARTA session. By clicking the OK button, CARTA will try to resume the previous session if possible. If users choose not to resume the previous session, please reload CARTA to establish a new session. Interacting with CARTA when the status icon is in orange may lead to abnormal behaviors. 
    
    .. raw:: html
 
@@ -56,15 +56,32 @@ Only the images matched these formats will be shown in the file list with image 
    <img src="_static/carta_fn_fileBrowser.png" 
         style="width:100%;height:auto;">
 
+
+If a set of images needs to be loaded into CARTA for visualization and analysis (e.g., CO 2-1, 13CO 2-1, and C18O 2-1), users may select *multiple* files in the file list with shift+click or command+click (macOS) or ctrl+click (linux) and load them all at once. Images will be loaded sequentially by clicking the "Load selected" button. 
+
+.. raw:: html
+
+   <img src="_static/carta_fn_fileBrowser_multiple_selection.png" 
+        style="width:100%;height:auto;">
+
+
+If a set of individual Stokes images needs to be loaded into CARTA for data inspection with the Stokes analysis widget, users can select indivisual Stokes images (i.e., image_I.fits, image_Q.fits, image_U.fits, and image_V.fits) in the file list with shift+click or command+click (macOS) or ctrl+click (linux). If the selected images are qualified to form a Stokes hypercube (a virtual cube from multiple image files), a "Load as hypercube" button will show up. When the button is clicked, a dialogue will pop up for users to confirm the identification of the Stokes parameters for selected images. After clicking the "Load" button, the backend will form a hypercube from the selected images. To users, *effectively* there is only one image with multiple Stokes parameters loaded in CARTA.
+
+.. raw:: html
+
+   <img src="_static/carta_fn_fileBrowser_multiple_selection_hypercube.png" 
+        style="width:100%;height:auto;">
+
+
 Files and sub-directories can be searched via the filtering field. Three different methods are supported:
 
 * Fuzzy search: free typing
 * Unix pattern: e.g., \*.fits
 * Regular expression: e.g., colou?r
 
-File browser remembers the last path where an image was opened within one CARTA session and the path is displayed (breadcrumbs) at the top of the dialogue. Therefore, when the file browser is re-opened to load other images, a file list will be displayed at the last path where the previous image was loaded. Users can use the breadcrumbs to navigate to one of the parent directories or click the home button to navigate to the base (i.e., initial) directory directly. To get an updated file list from the server side, users can click the reload button.
+File browser remembers the last path where an image was opened within one CARTA session and the path is displayed (as breadcrumbs) at the top of the dialogue. Therefore, when the file browser is re-opened to load other images, a file list will be displayed at the last path where the previous image was loaded. Users can use the breadcrumbs to navigate to one of the parent directories or click the home button to navigate to the base (i.e., initial) directory directly. To get an updated file list from the server side, users can click the reload button.
 
-For the CARTA-server application, the server administrator can limit the global directory access through the "*root*" keyword argument when launching the CARTA backend service. 
+**[TODO]** For the CARTA-server application, the server administrator can limit the global directory access through the "*top_level_folder*" keyword argument when launching the CARTA backend service. 
 
 .. code-block:: bash
 
@@ -77,20 +94,15 @@ In the above example, users will see a list of images at the "*base*" directory 
    An image might be closed via **File** -> **Close image**. The image currently displayed in the image viewer will be closed. If the image being closed is a WCS reference image, any other matched images to this reference image will be unmatched, thus they behave like individual images. 
 
 .. note::
-   Currently CARTA does not fully support the following types of images:
+   Currently CARTA does not fully support the following types of CASA images:
 
-   * integer image
    * complex image
-   * concatenated image
    * boolean image
-   * componentlist image
-   * image with uv coordinates
-   * position-velocity image
    * LEL image 
 
 
 .. tip::
-   When using CARTA in the remote mode, an image may be opened directly using a modified URL. For example, if we wanted to open a remote image file "/home/acdc/CARTA/Images/jet.fits", we would append
+   **[TODO]** When using CARTA in the remote mode, an image may be opened directly using a modified URL. For example, if we wanted to open a remote image file "/home/acdc/CARTA/Images/jet.fits", we would append
      
    .. code-block:: bash 
      
@@ -116,10 +128,15 @@ Except the CASA image format, the FITS format, and the MIRIAD format, CARTA also
 * per-channel histogram: histogram of the pixel values of the XY plane
 * per-cube histogram: histogram of the XYZ cube
 
-Additional tiled image data (mip map), which will speed up the process of loading very large images significantly, will be added to the HDF5 image file in v1.5. 
+.. note::
+
+   Additional tiled image data (mip map), which will speed up the process of loading very large images significantly, will be added to the HDF5 image file in v3.0. 
 
 .. note::
    Currently per-plane beam is not handled properly when converting a FITS image to the HDF5 format. 
+
+**[TODO]** add instructions of using fits2idia to convert a fits image to hdf5 format. 
+
 
 
 Image viewer
