@@ -156,7 +156,7 @@ CARTA can render images in different ways, such as:
 When an image is loaded in CARTA, it is shown as a raster image by default, such as the first example in the above figure. Users then could generate contour images (see :ref:`contourrendering`) and enable WCS matching between different images (see :ref:`wcsmatching`), such as the other three examples above.
 
 .. warning::
-    If you are running a VNC session from a headless server, CARTA may fail to render images properly (they may appear as a solid color). This is due to the fact that CARTA renders images using WebGL which uses GPU to accelerate the rendering process. Most headless servers have neither discrete nor dedicated GPUs. In such cases, it is highly recommended to use the "remote" mode of CARTA (see :ref:`commandLineStartup` for instructions) as it is much more efficient than VNC.
+    **[TODO]** If you are running a VNC session from a headless server, CARTA may fail to render images properly (they may appear as a solid color or as an empty plot). This is due to the fact that CARTA renders images using WebGL which uses GPU to accelerate the rendering process. Most headless servers have neither discrete nor integrated GPUs. In such cases, it is highly recommended to use your *local* web browser to access the backend as it is much more efficient than VNC.
 
 In addition to displaying images, the image viewer displays cursor information at the top and provides a set of tool buttons at the bottom-right corner when hovering on the image. 
 
@@ -168,8 +168,9 @@ In addition to displaying images, the image viewer displays cursor information a
 The tool buttons allow users to:
 
 * select a source from the catalog overlay (if applicable)
-* create region of interests
-* perform zoom or pan actions
+* create region of interest
+* perform zoom actions
+* enter pan mode
 * trigger matching images in world coordinates and/or in spectral domain
 * change reference coordinate grid lines and labels
 * export image as a png file
@@ -179,7 +180,7 @@ The tool buttons allow users to:
    <img src="_static/carta_fn_imageViewer_toolButtons.png" 
         style="width:50%;height:auto;">
 
-The aspect ratio of the image view is determined by the panel geometry. When the image viewer panel is resized, a tip with a ratio in screen pixel will be displayed (c.f., :ref:`resizing_a_panel` ).
+The aspect ratio of the image view is determined by the panel geometry. When the image viewer panel is resized, a tooltip with a ratio in screen pixel will be displayed (c.f., :ref:`resizing_a_panel` ).
 
 
 
@@ -197,12 +198,12 @@ Below is a demonstration of tiled rendering in action. Note that the video clip 
 
 .. raw:: html
 
-   <video controls loop style="width:100%;height:auto;">
+   <video controls style="width:100%;height:auto;">
      <source src="_static/carta_fn_tiledRendering_demo.mp4" type="video/mp4">
    </video>
 
 
-The performance of tiled rendering can be customized with the preferences dialogue, **File** -> **Preferences** -> **Performance**. The default values are chosen to assure raster images are displayed efficiently with sufficient accuracy. Advanced users may refine the setup if necessary. For example, when using the server version under poor internet conditions, compression quality might be lowered down a bit to make the tile data smaller. Note that a lower compression quality might introduce noticeable artifacts on the raster image. Please adjust with caution. Alternatively, users may enable the low bandwidth mode, which will reduce required image resolutions by a factor of 2 (so that image will look a bit blurry) and cursor responsiveness from 200 ms to 400 ms (HDF5 images: from 100 ms to 400 ms). Under good internet conditions, users may enable streaming image tiles while zooming to see progressive updates of image resolutions at different zoom levels. 
+The performance of tiled rendering can be customized with the preferences dialogue, **File** -> **Preferences** -> **Performance**. The default values are chosen to assure raster images are displayed efficiently with sufficient accuracy. Advanced users may refine the setup if necessary. For example, when accessing a remote backend under a poor internet condition, compression quality might be lowered down a bit to make the tile data smaller. Note that a lower compression quality might introduce noticeable artifacts on the raster image. Please adjust with caution. Alternatively, users may enable the low bandwidth mode, which will reduce required image resolutions by a factor of 2 (so that image will look a bit blurry) and cursor responsiveness from 200 ms to 400 ms (HDF5 images: from 100 ms to 400 ms). Under good internet conditions, users may enable streaming image tiles while zooming to see progressive updates of image resolutions at different zoom levels. 
 
 .. raw:: html
 
@@ -210,20 +211,14 @@ The performance of tiled rendering can be customized with the preferences dialog
         style="width:80%;height:auto;">
 
 
-.. warning::
-   To make remote visualization of large images possible and efficient, CARTA adopts the above mentioned tiled rendering approach together with an efficient image compression algorithm. At rare circumstances, artifacts may be seen on the images. A known issue is viewing an image with all pixels as zeros but one with a very high value (e.g., model image or clean component image of an unresolved source). At low or default zoom level, some artifacts will be observed around that pixel. At higher zoom levels, the artifacts may disappear. CARTA has been tuned to localize the artifacts within a few screen pixels in order to minimize the impact of scientific analysis on such special cases. The compression quality is adjustable via the preferences dialogue, **File** -> **Preferences** -> **Performance**. Advanced users may need to chose a higher compression quality for those special cases with caution. Should this become a problem in any kinds of analysis of yours, please contact `carta_helpdesk`_ for help.
-
-   .. _carta_helpdesk: carta_helpdesk@asiaa.sinica.edu.tw
-
-
 .. note::
    CARTA image loading performance
 
    The per-channel rendering approach helps to improve the performance of loading an image significantly. Traditionally when an image is loaded, the minimum and maximum of the entire image (cube) are computed first before image rendering. This becomes a serious performance issue if the image (cube) size is extraordinarily large (> several GB). In addition, applying the global minimum and maximum to render a raster image usually (if not often) results in a poorly rendered image if the dynamical range is high. Then users need to re-render the image repeatedly with refined boundary values. Re-rendering such a large image repeatedly with CPUs further deduces user experiences.
 
-   CARTA hopes to improve the image viewing experience by adopting GPU accelerated rendering with web browser technology. In addition, CARTA only renders an image with just enough image resolution (tiles and down-sampling). This combination results in a scalable and high-performance remote image viewer. The total file size is no longer a bottleneck. The determinative factors are: 1) image size in x and y dimensions, 2) internet bandwidth, and 3) storage I/O, instead. For a laptop with 8 GB of RAM, the largest image it can load without swapping is about 40000 pixels by 40000 pixels (assuming most of the RAM is free before loading the image). 
+   CARTA hopes to improve the image viewing experience by adopting GPU accelerated rendering with web browser technology. In addition, CARTA only renders an image with just enough image resolution (tiles and down-sampling) for your screen. This combination results in a scalable and high-performance remote image viewer. The total file size is no longer a bottleneck. The determinative factors are: 1) image size in x and y dimensions, 2) internet bandwidth, and 3) storage I/O, instead. For a laptop with 8 GB of RAM, the largest image it can load without swapping is about 40000 pixels by 40000 pixels (assuming most of the RAM is free before loading the image). 
 
-   The approximated RAM usage of loading images with various spatial sizes is summarized below.
+   The approximated RAM usage of loading an image with various spatial sizes is summarized below.
    
    +----------------------------------+----------------------------+
    | Image size (x, y) [pixel]        | RAM usage                  |
@@ -248,13 +243,15 @@ The performance of tiled rendering can be customized with the preferences dialog
 
 Render configuration of a raster image
 --------------------------------------
-The render configuration widget controls how a raster image is rendered in the image viewer. On the top, there is a row of buttons with different clip levels plus a custom button. Below there is a plot showing the per-channel histogram (in logarithmic scale) with a bin count equal to the geometric mean of the image size (x and y). The two vertical red bars indicate the two clip values of a colormap. The green dashed line marks the mean value and the green box marks the range from mean - one standard deviation to mean + one standard deviation. Interaction with a chart, such as the histogram, is demonstrated in the section :ref:`mouse_interaction_with_charts`. On the right, there is a column of options, such as histogram type, scaling function, color map, invert color map, clip values, and control parameter of a scaling function (if applicable). Extra options to configure the histogram plot are placed in the render configuration settings dialogue enabled by the cog icon at the top-right corner of the render configuration widget. The histogram can be exported as a png image or a text file in tsv format.
+The render configuration widget controls how a raster image is rendered in the image viewer. On the top, there is a row of buttons with different clip levels plus a custom button. Below there is a plot showing the per-channel histogram (with logarithmic scale in y) with a bin count equal to the geometric mean of the image size (x and y). The two vertical red bars indicate the two clip values of a colormap. The green dashed line marks the mean value and the green box marks the range from mean - one standard deviation to mean + one standard deviation. The grey curve between the two red vertical bars shows the applied scaling function including bias and contrast parameters. 
+
+Interaction with a chart, such as the histogram, is demonstrated in the section :ref:`mouse_interaction_with_charts`. On the right, there is a column of options, such as histogram type, scaling function, color map, invert color map, clip values, control parameter of a scaling function (if applicable), and bias/contrast adjustment (i.e. a 2D box with x as bias and y as contrast). Extra options to configure the histogram plot are placed in the render configuration settings dialogue enabled by the cog icon at the top-right corner of the render configuration widget. The histogram can be exported as a png image or a text file in tsv format.
 
 By default, CARTA calculates a per-channel histogram. When a per-cube histogram is requested, a warning message and a progress dialogue will show up. Calculating a per-cube histogram can be time-consuming for large image cubes. Users may cancel the request at any time by pressing the cancel button in the progress dialogue. If the image is in the HDF5 format (IDIA schema), the pre-calculated per-cube histogram will be loaded directly and displayed mostly instantly. 
 
 .. raw:: html
 
-   <video controls loop style="width:100%;height:auto;">
+   <video controls style="width:100%;height:auto;">
      <source src="_static/carta_fn_renderConfig_widget.mp4" type="video/mp4">
    </video>
 
@@ -262,7 +259,7 @@ CARTA determines the boundary values of a colormap on a **per-channel** basis by
 
 .. raw:: html
 
-   <video controls loop style="width:100%;height:auto;">
+   <video controls style="width:100%;height:auto;">
      <source src="_static/carta_fn_renderConfig_perFrame.mp4" type="video/mp4">
    </video>
 
@@ -270,18 +267,18 @@ However, when comparing images channel by channel, color scales need to be fixed
 
 .. raw:: html
 
-   <video controls loop style="width:100%;height:auto;">
+   <video controls style="width:100%;height:auto;">
      <source src="_static/carta_fn_renderConfig_perCustom.mp4" type="video/mp4">
    </video>
 
 CARTA provides a set of scaling functions, such as:
 
 * linear: :math:`y = x`
-* log: :math:`y = {\log}_{\alpha}({\alpha}x+1)`
+* log: :math:`y = {\log}_{{\alpha}x+1}({\alpha}x+1)`
 * square root: :math:`y = {\sqrt{x}}`
 * squared: :math:`y = x^2`
 * gamma: :math:`y = x^{\gamma}`
-* power: :math:`y = ({\alpha}x-1)/{\alpha}`
+* power: :math:`y = ({\alpha}^x-1)/({{\alpha}-1})`
 
 A set of colormaps adopted from `matplotlib <https://matplotlib.org/tutorials/colors/colormaps.html?highlight=colormap>`_ is provided in CARTA.
 
@@ -290,7 +287,7 @@ A set of colormaps adopted from `matplotlib <https://matplotlib.org/tutorials/co
    <img src="_static/carta_fn_renderConfig_colormaps.png" 
         style="width:100%;height:auto;">
 
-The default scaling function, colormap, percentile rank, and a color for NaN pixels can be customized via the menu **File** -> **Preferences** -> **Render Configuration**.
+The default scaling function, colormap, percentile rank, and a color for NaN pixels can be customized via the menu **File** -> **Preferences** -> **Render Configuration**. When the toggle of "Smoothed Bias/Contrast" is disabled, bias and constrast are applied in the way that discontinuity presents in the  resulting scaling function. 
 
 .. raw:: html
 
@@ -327,7 +324,7 @@ Once a set of levels has been defined, users can click the "Apply" button to vis
 
 .. raw:: html
 
-   <video controls loop style="width:100%;height:auto;">
+   <video controls style="width:100%;height:auto;">
      <source src="_static/carta_fn_contourRendering.mp4" type="video/mp4">
    </video>
 
@@ -335,7 +332,7 @@ In the above demonstration, a contour image is generated on top of its raster im
 
 .. raw:: html
 
-   <video controls loop style="width:100%;height:auto;">
+   <video controls style="width:100%;height:auto;">
      <source src="_static/carta_fn_contourMatching2.mp4" type="video/mp4">
    </video>
 
@@ -429,7 +426,7 @@ For raster images, matching in the spatial domain is achieved by applying transl
 
 .. raw:: html
 
-   <video controls loop style="width:100%;height:auto;">
+   <video controls style="width:100%;height:auto;">
      <source src="_static/carta_fn_spatialMatching.mp4" type="video/mp4">
    </video>
 
@@ -437,7 +434,7 @@ For contour images, matching in the spatial domain is achieved by reprojecting c
 
 .. raw:: html
 
-   <video controls loop style="width:100%;height:auto;">
+   <video controls style="width:100%;height:auto;">
      <source src="_static/carta_fn_contourMatching.mp4" type="video/mp4">
    </video>
 
@@ -445,7 +442,7 @@ For image cubes, matching in the spectral domain is achieved by nearest interpol
 
 .. raw:: html
 
-   <video controls loop style="width:100%;height:auto;">
+   <video controls style="width:100%;height:auto;">
      <source src="_static/carta_fn_spectralMatching.mp4" type="video/mp4">
    </video>
 
@@ -456,7 +453,7 @@ For image cubes, matching in the spectral domain is achieved by nearest interpol
 
    .. raw:: html
 
-      <video controls loop style="width:100%;height:auto;">
+      <video controls style="width:100%;height:auto;">
         <source src="_static/carta_fn_projectionEffect.mp4" type="video/mp4">
       </video>
 
@@ -469,7 +466,7 @@ Raster image or contour image may be hidden in the image viewer by clicking "R" 
  
 .. raw:: html
 
-   <video controls loop style="width:100%;height:auto;">
+   <video controls style="width:100%;height:auto;">
      <source src="_static/carta_fn_hideLayer.mp4" type="video/mp4">
    </video>
 
@@ -477,7 +474,7 @@ When multiple images are loaded in the append mode, their order determines the o
 
 .. raw:: html
 
-   <video controls loop style="width:100%;height:auto;">
+   <video controls style="width:100%;height:auto;">
      <source src="_static/carta_fn_reorderFrame.mp4" type="video/mp4">
    </video>
 
@@ -491,7 +488,7 @@ CARTA provides different ways to change the image view. With a mouse, image zoom
 
 .. raw:: html
 
-   <video controls loop style="width:100%;height:auto;">
+   <video controls style="width:100%;height:auto;">
      <source src="_static/carta_fn_imageViewer_changeView.mp4" type="video/mp4">
    </video>
 
@@ -529,7 +526,7 @@ CARTA provides flexible options to configure the appearance of an image plot. Th
 
 .. raw:: html
 
-   <video controls loop style="width:100%;height:auto;">
+   <video controls style="width:100%;height:auto;">
      <source src="_static/carta_fn_astOptions.mp4" type="video/mp4">
    </video>
 
