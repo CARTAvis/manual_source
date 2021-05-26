@@ -391,6 +391,18 @@ The appearance of contours can be customized in the "Styling" tab. As an example
         style="width:50%;height:auto;">
 
 
+
+Viewing a position-velocity image
+---------------------------------
+When a position-velocity image is loaded as a raster image, CARTA switches to the mode of using *rectangular* pixels for rendering in order to have a better readability. The aspect ratio is flexible based on the aspect ratio of the image viewer widget. By default, the "spectral" axis is displayed in velocity if possible based on the image header. Users may use the image viewer settings to apply conversions to other spectral conventions, such as frequency or wavelength. In the video below, a demonstration of how to apply spectral conversion to a position-velocity image is provided. 
+
+.. raw:: html
+
+   <video controls style="width:100%;height:auto;">
+     <source src="_static/carta_fn_pv_rendering.mp4" type="video/mp4">
+   </video>
+
+
 .. _wcsmatching:
 
 Match images in world coordinates
