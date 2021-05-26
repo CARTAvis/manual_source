@@ -510,9 +510,9 @@ Cursor information
 When the cursor is on the image viewer, pixel information at the cursor position is shown at the top side of the image. The information includes:
 
 * World coordinate of the current coordinate system. 
-* Image coordinate in pixel.
+* Image coordinate in pixel (0-based).
 * Pixel value.
-* Frequency, velocity, and reference frame (if applicable).
+* Frequency, velocity, reference frame (if applicable), and Stokes parameter (if applicable).
 
 
 .. raw:: html
@@ -524,7 +524,7 @@ When the coordinate system is changed (e.g., ICRS to Galactic), the displayed wo
 
 The reference image coordinate (0,0) locates at the center of the bottom-left pixel of the image. Regardless of whether the displayed image is down-sampled or not, the image coordinate always refers to the full resolution image.
 
-When the cursor is moving, the pixel value of the full resolution image is displayed. If the image header provides sufficient information in the frequency/velocity domain, the frequency and velocity with the reference frame of the current channel will be shown.
+When the cursor is moving, the pixel value of the full resolution image is displayed. If the image header provides sufficient information in the frequency/velocity domain, the frequency and velocity with the reference frame of the current channel will be shown. If Stokes information is available in the image header, a Stokes parameter will be displayed as well.
 
 To stop/resume cursor update, press "**F**" key. When the cursor stops updating, the cursor information bar, cursor spatial profiler, cursor spectral profiler will stop updating too. 
 
@@ -532,7 +532,7 @@ To stop/resume cursor update, press "**F**" key. When the cursor stops updating,
 
 Configuring an image plot
 -------------------------
-CARTA provides flexible options to configure the appearance of an image plot. The overlay settings are accessible via "**View**" -> "**Overlay**" -> "**Customize**".
+CARTA provides flexible options to configure the appearance of an image plot. The image settings dialogue are accessible by clicking the "cog" at the top-right corner of the image viewer widget.
 
 .. raw:: html
 
@@ -558,30 +558,30 @@ And, this is a customized one. The coordinate system has been switched from FK5 
 
 The restoring beam is shown at the bottom-left corner, if applicable.
 
-The image can be exported as a png image by clicking the "Export image" button at the bottom-right corner of the image viewer, or by "**File**" -> "**Export image**".
-
-
-.. note::
-   Currently displaying beams of a cube with per-plane-beam is not supported.  
+The image can be exported as a png image by clicking the "Export image" button at the bottom-right corner of the image viewer, or by "**File**" -> "**Export image**". By default a background layer in white or black, depending on the theme, will be added to the png file. If users prefer a transparent background, please go to "**File**" -> "**Preferences**" -> "**Global**" and set the "transparent image background" toggle to false. 
 
 
 .. _animator_intro:
 
 Animator
 --------
-The animator widget provides controls of image frames, channels, and stokes. When multiple images are loaded via **File** -> **Append image**, "Image" slider will show up and allows users to switch between different loaded images. If an image file has multiple channels and/or Stokes, "Channel" and/or "Stokes" slider will appear. The double slider right below the "Channel" slider allows users to specify a range of channels for animation playback. On the top there is a set of animation control buttons such as play, next, etc. Playback modes, including "forward", "backward", "Bouncing" and "Blink", are supported. Playback action will be applied to the slider with the activated radio button. As an example below, the action will be applied to the *channel* axis of the second stokes axis of the third image file, and the animation range is from the second channel to the last channel. 
+The animator widget provides controls of image frames, channels, and stokes. When multiple images are loaded via **File** -> **Append image**, "Image" slider will show up and allow users to switch between different loaded images. If an image file has multiple channels and/or Stokes, "Channel" and/or "Stokes" slider will appear. The double slider right below the "Channel" slider allows users to specify a range of channels for animation playback. On the top there is a set of animation control buttons such as play, next, etc. Playback modes, including "forward", "backward", "Bouncing" and "Blink", are supported. Playback action will be applied to the slider with the activated radio button. 
 
 
 .. raw:: html
 
    <img src="_static/carta_fn_animator_widget.png" 
-        style="width:80%;height:auto;">
+        style="width:90%;height:auto;">
 
 
 
-The frame rate spin box controls the *desired* frame per second (fps). The *actual* frame rate depends on image size and internet condition. 
+The frame rate spin box controls the *desired* frame per second (fps). The *actual* frame rate depends on image size and internet condition. Optionally, users can set a step for the animation playback (default as unity). By clicking the "Frame rate" dropdown, the "step" option will show up. 
 
-.. note::
-   A "step" for animation playback will be added in future releases. Currently the step is unity. 
+When multiple images are loaded in the append mode, their order determines the order in the image slider of the animator widget. With the image list widget, this order can be changed by dragging an entry to a desired place. 
 
+.. raw:: html
+
+   <video controls style="width:100%;height:auto;">
+     <source src="_static/carta_fn_reorderFrame.mp4" type="video/mp4">
+   </video>
 
