@@ -310,17 +310,17 @@ Users may follow the following steps to generate a contour image:
 
 1. Define contour levels. There are several ways to define a set of contour levels to be calculated at the server side:
   
-  a. by typing in individual level in the "Levels" field 
+  a. by typing in individual level in the "Levels" field manually
   b. by using the "Generator" to generate a series of levels
   c. by clicking directly on the histogram plot to create levels (right-click on an existing level to remove)
 
   Note that the "Levels" field is editable even if a set of levels has been generated with the level generator. 
 
-2. (optional) Define a smooth scheme and a kernel size in the "Configuration" tab. The default is Gaussian smooth with a kernel size of four pixels. 
+2. (optional) Define a smooth scheme and a kernel size in the "Configuration" tab. The default is Gaussian smooth with a kernel size of 4 by 4 pixels. 
 
-3. (optional) Define the appearance of contours to be rendered at the client side in the "Styling" tab. The appearance of contours can be modified after a set of contours has been rendered without triggering new contour calculations at the server side. This is the advantage of utilizing WebGL at the client side. 
+3. (optional) Define the appearance of contours to be rendered at the client side in the "Styling" tab. The appearance of contours can be modified after a set of contours has been rendered at the client side  without triggering new contour calculations at the server side. This is the advantage of utilizing WebGL at the client side. 
 
-Once a set of levels has been defined, users can click the "Apply" button to visualize the contour image. Contour image is rendered progressively.
+Once a set of levels has been defined, users can click the "Apply" button to visualize the contour image. Contour image is rendered progressively if there are lots of contour vertices.
 
 .. raw:: html
 
@@ -328,7 +328,7 @@ Once a set of levels has been defined, users can click the "Apply" button to vis
      <source src="_static/carta_fn_contourRendering.mp4" type="video/mp4">
    </video>
 
-In the above demonstration, a contour image is generated on top of its raster image. If users would like to plot a contour image on top of other raster image (e.g., velocity field as contour, integrated intensity image as raster), users need to enable WCS matching of the two raster images first (see :ref:`wcsmatching`). Then users can generate the contour image just like the above example. When the contour image is generated, use the image list widget or the animator widget to switch to the integrated intensity image. Users should see the velocity field image as contours on top of the integrated intensity image as raster. In short, contour images are visible for raster images matched in world coordinates. 
+In the above demonstration, a contour image is generated on top of its raster image. If users would like to plot a contour image on top of other raster image (e.g., velocity field as contour, integrated intensity image as raster), users need to enable WCS matching of the two raster images first (see :ref:`wcsmatching`). Then users can generate the contour image just like the above example. When the contour image is generated, use the image list widget or the animator widget to switch to the integrated intensity image. Users should see the velocity field image as contours on top of the integrated intensity image as raster. In short, a set of contour images are visible on top of a given raster image in the view if *all* the images are matched in world coordinates. 
 
 .. raw:: html
 
@@ -337,7 +337,7 @@ In the above demonstration, a contour image is generated on top of its raster im
    </video>
 
 
-If there are multiple images loaded in append mode, users may use the "Data Source" dropdown to select an image as the data source of contour calculations. If the state of the "lock" button is locked, the image viewer will show the selected image as a raster image and the image slider in the animator widget will be updated to the selected image too. To disable this synchronization, click the "lock" button to set the state to unlock. 
+If there are multiple images loaded in the append mode, users may use the "Data Source" dropdown to select an image as the data source of contour calculations. If the state of the "lock" button is locked, the image viewer will show the selected image as a raster image and the image slider in the animator widget will be updated to the selected image too. To disable this synchronization, click the "lock" button to set the state to unlock. 
 
 CARTA provides four different level generators to assist users to construct a set of contour levels. 
 
@@ -376,7 +376,7 @@ CARTA provides four different level generators to assist users to construct a se
   - sigma: full image standard deviation
   - sigma list: [-5, 5, 9, 13, 17]
 
-CARTA provides three different contour smoothing methods, including no smooth, Gaussian smooth, and block smooth, in the "Configuration" tab. The kernel for smoothing is in the number of pixels. The default is to apply Gaussian smooth with four pixels as the kernel size. Depending on science cases, users may choose different smooth methods and different kernel sizes. 
+CARTA provides three different contour smoothing methods, including no smooth, Gaussian smooth, and block smooth, in the "Configuration" tab. The kernel for smoothing is in N by N pixels. The default is to apply Gaussian smooth with 4 by 4 pixels as the kernel size. Depending on science cases, users may choose different smooth methods and different kernel sizes. 
 
 .. raw:: html
 
@@ -395,12 +395,12 @@ The appearance of contours can be customized in the "Styling" tab. As an example
 
 Match images in world coordinates
 ---------------------------------
-When multiple images are loaded in the append mode, users may optionally trigger image matching based on their world coordinates. It is a common practice to compare images from different telescopes or even from the same telescope with different spectral and spatial setups. Users can use the "Image list widget" to trigger image matching process,  
+When multiple images are loaded in the append mode, users may optionally trigger image matching based on their world coordinates. It is a common practice to compare images from different telescopes or even from the same telescope with different spectral and spatial setups. Users can use the "Matching" column of the "Image list widget" to trigger image matching process,  
 
 .. raw:: html
 
    <img src="_static/carta_fn_layerList.png" 
-        style="width:70%;height:auto;">
+        style="width:90%;height:auto;">
 
 or the tool button in the image viewer.
 
@@ -409,18 +409,28 @@ or the tool button in the image viewer.
    <img src="_static/carta_fn_triggerMatch.png" 
         style="width:40%;height:auto;">
 
-The image list widget lists up all loaded images, including their:
+The image list widget shows a list of all loaded images, including their:
 
 * file name
-* rendering type ("Type"): "R" means raster and "C" means contour
-* image matching state ("Matching"): "XY" means spatial domain and "Z" means spectral domain. 
+* rendering type ("Layers" column): "R" means raster and "C" means contour
+* image matching state ("Matching" column): 
+   
+  * "XY" means spatial domain
+  * "Z" means spectral domain
+  * "R" means the color range for raster rendering
+
 * channel index
 * Stokes index 
 
-The first loaded image with valid spatial world coordinates serves as the default spatial reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.image.mom0). Similarly, the first loaded image with valid spectral coordinates servers as the default spectral reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.fits). To match world coordinates of other loaded images, users can click "XY" to match in the spatial domain and click "Z" to match in the spectral domain. 
+The first loaded image with valid spatial world coordinates serves as the default spatial reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.image.mom0). Similarly, the first loaded image with valid spectral coordinates servers as the default spectral reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.fits). To match world coordinates of other loaded images, users can click "XY" to match in the spatial domain and click "Z" to match in the spectral domain. If users would like to apply the same color range for different raster images, click "R" so that matched images will have the same color range with respect to the reference image highlighted with an open black box (e.g., HD163296_CO_2_1.image.mom0)
 
 .. hint::
-   Users may change a spatial reference image or a spectral reference image by right-clicking a cell in the "Matching" column in the image list widget.
+   Users may change a spatial reference image or a spectral reference image or a raster scaling reference by right-clicking a cell in the "Matching" column in the image list widget.
+
+   .. raw:: html
+
+      <img src="_static/carta_fn_layerList2.png" 
+        style="width:90%;height:auto;">
 
 For raster images, matching in the spatial domain is achieved by applying translation, rotation, and scaling to images with respect to the reference image. 
 
@@ -449,7 +459,7 @@ For image cubes, matching in the spectral domain is achieved by nearest interpol
 .. note::
    Projection effects of raster images
 
-   As raster images are matched spatially by applying translation, rotation, and scaling, projection effects between different images might be visible if images have a wide field of view and/or images have very different projection schemes. In the following video, projection effects in raster images are demonstrated. However, projection effects of contour images are properly handled in CARTA. Contours are reprojected with sufficient accuracy with respect to the raster image as seen by users in the image viewer.  
+   As raster images are matched spatially by applying translation, rotation, and scaling, projection effects between different images might be visible if images have a wide field of view and/or images have very different projection schemes. In the following video, projection effects in raster images are demonstrated. However, projection effects of contour images are properly handled in CARTA. Contours are reprojected with sufficient accuracy with respect to the raster image as seen in the image viewer by users.  
 
    .. raw:: html
 
@@ -462,7 +472,7 @@ For image cubes, matching in the spectral domain is achieved by nearest interpol
    If a spatial reference image or a spectral reference image is closed via "**File**" -> "**Close image**", all matched images will be unmatched and a new reference image will be automatically registered.
 
 
-Raster image or contour image may be hidden in the image viewer by clicking "R" or "C" in the image list widget. For example, to create an image with contours only, users can click the "R" button to hide the raster image. 
+Raster image or contour image may be hidden in the image viewer by clicking "R" or "C" of the "Layers" column in the image list widget. For example, to create an image with contours only, users can click the "R" button to hide the raster image. 
  
 .. raw:: html
 
