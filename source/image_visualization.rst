@@ -138,6 +138,16 @@ Except the CASA image format, the FITS format, and the MIRIAD format, CARTA also
 **[TODO]** add instructions of using fits2idia to convert a fits image to hdf5 format. 
 
 
+File header dialogue
+--------------------
+A brief summary and the full header of an image file can be viewed via the file browser dialogue. Alternatively, they can be viewed via the file header dialogue (from the dialogue bar). In the header tab, users may use the search function to look for a keyword.
+
+.. raw:: html
+
+   <img src="_static/carta_fn_fileHeader.png" 
+        style="width:90%;height:auto;">
+
+
 
 Image viewer
 ------------
