@@ -20,11 +20,9 @@ Codebase and releases
 ---------------------
 CARTA is an open-source project. Its source code is publicly available at https://github.com/CARTAvis. 
 
-CARTA has two deployment modes: Site Deployment Mode (SDM) and User Deployment Mode (UDM). The former is intended for hosting multiple users with an enterprise-class server, while the later is intended for single-user usage with a personal computer, a laptop, or a remote server. 
+CARTA has two deployment modes: "Site Deployment Mode" (SDM) and "User Deployment Mode" (UDM). The former is intended for hosting multiple users with an enterprise-class server, while the later is intended for single-user usage with a personal computer, a laptop, or a remote server. 
 
-**[TODO]** Deployment of CARTA in a server environment may require additional efforts of server configurations (see :ref:`installation_SDM`), such as user authentication, server load balance, or resource monitoring, etc. Please contact the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw) for consultations. 
-
-Installation guides for the User Deployment Mode are provided in the section :ref:`installation_configuration`. 
+Installation guides for the "Site Deployment Mode" and the "User Deployment Mode" are provided in the section :ref:`installation_configuration`. Please contact the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw) if there is a problem. 
 
 The release plan and major goals are the following:
 
@@ -79,7 +77,7 @@ The release plan and major goals are the following:
   * Bug fixes and performance improvements
 
   
-* v2.0: Feature enhancement and codebase maintenance (**current release**, released ??? June 2021) 
+* v2.0: Feature enhancement and codebase maintenance (**current release**, released 7th June 2021) 
 
   * Multi-profile plot with the spectral profiler
   * Progress report and cancellation when requesting a long file list
@@ -95,7 +93,7 @@ The release plan and major goals are the following:
   * New deployment modes
 
 
-* Into the future (this is a non-exclusive list of features that we would like to implemnt in subsequent releases but these are not decided upon yet, and depend on feedback from users, and resourcing etc. )
+* Into the future (this is a non-exclusive list of features that we would like to implement in subsequent releases but these are not decided upon yet, and depend on feedback from users, and resourcing etc. )
 
   * Multi-panel view
   * Channel map view
@@ -181,7 +179,7 @@ The National Radio Astronomy Observatory is a facility of the National Science F
 
 The Department of Physics at the University of Alberta has contributed to the CARTA project thanks to support from the National Radio Astronomy Observatory under an ALMA Development Project and from the Canada Foundation for Innovation as part of the Canadian Initiative for Radio Astronomy Data Analysis (CIRADA).
 
-**[TODO]** CARTA is mainly built in C++, TypeScript, and JavaScript, and with the following third-party libraries:
+CARTA is mainly built in C++, TypeScript, and JavaScript, and with the following third-party libraries:
 
 * AST: http://starlink.eao.hawaii.edu/starlink/AST
 * Blueprint: https://blueprintjs.com
@@ -190,6 +188,7 @@ The Department of Physics at the University of Alberta has contributed to the CA
 * Chart.js: https://www.chartjs.org
 * Electron: https://electronjs.org
 * GoldenLayout: https://golden-layout.com
+* GoogleTest: https://github.com/google/googletest
 * gRPC: https://grpc.io/
 * GSL: https://www.gnu.org/software/gsl/
 * MobX: https://mobx.js.org
@@ -197,8 +196,12 @@ The Department of Physics at the University of Alberta has contributed to the CA
 * node.js: https://nodejs.org
 * Plotly: https://plotly.com
 * Protocol buffers: https://developers.google.com/protocol-buffers 
+* Pugixml: https://pugixml.org
 * React: https://reactjs.org
+* spdlog: https://github.com/gabime/spdlog
+* sse2neon: https://github.com/DLTcollab/sse2neon
 * TBB: https://www.threadingbuildingblocks.org
+* uWebsockets: https://github.com/uNetworking/uWebSockets
 * WebAssembly: https://webassembly.org
 
 
