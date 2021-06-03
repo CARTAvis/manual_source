@@ -516,7 +516,7 @@ For users who installed CARTA in the "User Deployment Mode", a set of configurat
 * config: configuration files including preferences and layouts
 * log: backend log named as "carta.log"
 
-The preferences and layout files are in the JSON format. The "preferences.json" file allows you to set up the preferences programmatically. A full set of options is avaiable at XXXXX. The layout folder contains all the custom layouts that you have created. Usually we do not recommend you to edit the layout files unless you know how to.
+The preferences and layout files are in the JSON format. The "preferences.json" file allows you to set up the preferences programmatically. A full set of options is avaiable in :ref:`appendix_d_preferences_schema`. The layout folder contains all the custom layouts that you have created.
 
 
 .. _troubleshooting:
