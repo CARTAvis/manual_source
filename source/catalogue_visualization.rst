@@ -58,7 +58,7 @@ The size, color, and orientation properties of the marker can be adjusted via th
    <img src="_static/carta_fn_catalogue_widget_marker_options.png" 
         style="width:100%;height:auto;">
 
-With the "Size", "Color", and "Orientation" tabs, you can create a catalog overlay with a uniform color, a uniform size, and a uniform orientation. Or, each of the maker properties can be mapped to a data column so that the marker property becomes variable. In the following example, an ellipse marker is used to generate the catalog overlay. Its color, size, and orientation are mapped to data columns. 
+With the "Size", "Color", and "Orientation" tabs, you can create a catalog overlay with a uniform color, a uniform size, and a uniform orientation. Or, each of the maker properties can be mapped to a data column with a scaling function and clip bounds so that the marker property becomes variable. In the following example, an ellipse marker is used to generate the catalog overlay. Its color, size, and orientation are mapped to data columns. 
 
 .. raw:: html
 

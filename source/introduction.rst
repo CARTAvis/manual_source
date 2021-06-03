@@ -22,7 +22,7 @@ CARTA is an open-source project. Its source code is publicly available at https:
 
 CARTA has two deployment modes: Site Deployment Mode (SDM) and User Deployment Mode (UDM). The former is intended for hosting multiple users with an enterprise-class server, while the later is intended for single-user usage with a personal computer, a laptop, or a remote server. 
 
-**[TODO]** Deployment of CARTA in a server environment may require additional efforts of server configurations (see :ref:`server_deployment`), such as user authentication, server load balance, or resource monitoring, etc. Please contact the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw) for consultations. 
+**[TODO]** Deployment of CARTA in a server environment may require additional efforts of server configurations (see :ref:`installation_SDM`), such as user authentication, server load balance, or resource monitoring, etc. Please contact the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw) for consultations. 
 
 Installation guides for the User Deployment Mode are provided in the section :ref:`installation_configuration`. 
 
