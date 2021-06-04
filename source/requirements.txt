@@ -1,2 +1,4 @@
+# File: docs/requirements.txt
 
-sphinx-jsonschema
+# Defining the exact version will make sure things don't break
+sphinx-jsonschema==1.16.8
