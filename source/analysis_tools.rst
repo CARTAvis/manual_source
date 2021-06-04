@@ -11,7 +11,7 @@ With version 2.0, CARTA provides the following widgets and tools for image cube 
   * Statistics: to view basic statistics from a region of interest
   * Stokes analysis: to view basic polarization quantities (e.g., polarized intensity and angle)
   * Spectral line query: to make a query to the Splatalogue service and create labels on a spectral profile plot
-  * Catalogue widget: to visualize a catalogue as an image overlay, a 2D scatter plot, or a histogram
+  * Catalog widget: to visualize a catalog as an image overlay, a 2D scatter plot, or a histogram
 
 * Tool
 
@@ -69,7 +69,7 @@ The creation and modification of regions are demonstrated in the section :ref:`m
   4. It will likely have a value of 0. Double click it, and then modify it to a value of "2".
   5. Close the about:config tab and now backspace will no longer navigate back a page.
 
-All created regions are listed in the region list widget with basic region properties. To select a region (region state changes to "selected"), simply click on the region in the image viewer, or click on the region in the region list widget. To modify the properties of a selected region, double-click on a region in the image viewer or a region in the region list widget. The color, line style, name, location, and shape, of a region are all configurable with the region configuration dialogue. The location and shape properties can be edited in the image coordinate, or in the world coordinate with angular scales (default). To de-select a region or cancel a region creation process, press "**esc**" key. To delete a selected region, press "**delete**" or "**backspace**" key. An activated region can be locked by pressing "**L**" key or by clicking the "lock" icon in the region list widget or region property dialogue. When a region is locked, it cannot be modified (resize, move, or delete) with mouse actions and the "**delete**" or "**backspace**" key. A locked region, however, can still be modified or deleted via the region configuration dialogue. Locking a region could help the situation when users want to modify overlapping regions, or could prevent modifying a region accidentally. The "center" icon is to show the corresponding region at the center of image view. 
+All created regions are listed in the region list widget with basic region properties. To select a region (region state changes to "selected"), simply click on the region in the image viewer, or click on the region in the region list widget. To modify the properties of a selected region, double-click on a region in the image viewer or a region in the region list widget. The color, line style, name, location, and shape of a region are all configurable with the region configuration dialog. The location and shape properties can be edited in the image coordinate, or in the world coordinate with angular scales (default). To de-select a region or cancel a region creation process, press the "**esc**" key. To delete a selected region, press the "**delete**" or "**backspace**" key. An activated region can be locked by pressing the "**L**" key or by clicking the "lock" icon in the region list widget or region property dialog. When a region is locked, it cannot be modified (resize, move, or delete) with mouse actions and the "**delete**" or  "**backspace**" key. A locked region, however, can still be modified or deleted via the region configuration dialog. Locking a region could help the situation when users want to modify overlapping regions, or could prevent modifying a region accidentally. The "center" icon is to show the corresponding region at the center of image view. 
 
 .. raw:: html
 
@@ -95,7 +95,7 @@ In the following exaggerated example, two images with different coordinate syste
 
 Shared region management
 ^^^^^^^^^^^^^^^^^^^^^^^^
-When regions are created on one of the spatially matched images, they are *all* registered to the spatial reference image for matching. The regions are shared to all the matched images, thus analytics can be derived and compared directly. When an image is unmatched with respect to the spatial reference image, the image will get a copy of all regions. This set of regions is now independent to the region set belonging to the matched images. If there are modifications of the regions and users re-match the image to the matched images, only those modified regions will be copied to the region set of the matched images. The following diagram illustrates the idea.
+When regions are created on one of the spatially matched images, they are *all* registered to the spatial reference image for matching. The regions are shared to all the matched images, thus analytics can be derived and compared directly. When an image is unmatched with respect to the spatial reference image, the image will get a copy of all regions. This set of regions is now independent of the region set belonging to the matched images. If there are modifications of the regions and users re-match the image to the matched images, only those modified regions will be copied to the region set of the matched images. The following diagram illustrates the idea.
 
 .. raw:: html
 
@@ -106,7 +106,7 @@ Analytics with shared regions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Shared region of interest enables practical image cube analysis through statistics, histogram, spectral profiler, and Stokes analysis widgets. These widgets contains an image dropdown menu and a region dropdown menu. The former allows users to select which loaded image cube to show its analytics. The latter allows users to select which region to show the region analytics. With the combination of the two menus, CARTA provides a flexible user interface to explore image data. 
 
-As an example below, two image cubes representing 12CO 2-1 and 13CO 2-1 are matched spatially and spectrally. Three shared regions are created to highlight different features. Three spectral profiler widgets are placed to show different profiles. The top one shows the square region profile from 12CO 2-1. The middle one shows the polygon region profile of 13CO 2-1. The bottom one shows both 12CO 2-1 and 13CO 2-1 profiles from the square region. Please refer to the section :ref:`spectral_profiler` to learn how to plot *multiple* profiles in one spectral profler widget. In addition, one statistics widget is configured to show the statistics of 13CO 2-1 from the circle region.
+As an example below, two image cubes representing 12CO 2-1 and 13CO 2-1 are matched spatially and spectrally. Three shared regions are created to highlight different features. Three spectral profiler widgets are placed to show different profiles. The top one shows the square region profile from 12CO 2-1. The middle one shows the polygon region profile of 13CO 2-1. The bottom one shows both 12CO 2-1 and 13CO 2-1 profiles from the square region. Please refer to the section :ref:`spectral_profiler` to learn how to plot *multiple* profiles in one spectral profiler widget. In addition, one statistics widget is configured to show the statistics of 13CO 2-1 from the circle region.
 
 .. raw:: html
 
@@ -186,7 +186,7 @@ Spatial profiler provides the spatial profiles of the current image at the curso
 
 When displaying a spatial profile with the number of pixels more than the number of screen pixels of the spatial profiler widget, a *decimated* profile will be derived and displayed to users as an enhancement of performance. Min/max decimation of a profile is adopted to ensure profile features are preserved. In other words, positive and negative peaks should stay at the same screen pixels just like displaying the full resolution profile. When users keep zooming in the profile, decimation with narrower and narrower intervals is applied dynamically. Full resolution profile is displayed when the number of screen pixels is more than the number of pixels of the profile to be displayed.  
 
-The interactions of the spatial profiler widget are demonstrated in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available in the spatial profiler settings dialogue which is launched by clicking the "cog" icon at the top-right corner. The option "Show Mean/RMS" in the Styling tab will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. Optionally, the profile can be smoothed with different methods provided in the Smoothing tab (see section :ref:`profile_smoothing`). The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner when hovering over the plot.
+The interactions of the spatial profiler widget are demonstrated in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the pixel where the profile is taken. The bottom axis shows the image coordinate, while optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available in the spatial profiler settings dialog which is launched by clicking the "cog" icon at the top-right corner. The option "Show Mean/RMS" in the Styling tab will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. Optionally, the profile can be smoothed with different methods provided in the Smoothing tab (see section :ref:`profile_smoothing`). The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner when hovering over the plot.
 
 When the cursor is on the image in the image viewer, the pointed pixel value (pixel index and pixel value) will be displayed at the bottom-left corner of the spatial profiler. When the cursor is on the spatial profiler graph, the pointed profile data will be displayed instead. 
 
@@ -221,7 +221,7 @@ The single-profile mode allows users to create multiple spectral profiler widget
 
 The configuration of how spectral profiles are extracted from image cubes and displayed is determined by the four dropdown menus and their selection states. When there is no checkbox selected, the spectral profiler widget displays one spectrum only depending on the selection of each dropdown menu (Image, Region, Statistic, and Stokes). When regions are created, the spectral profiler widget can be configured to display a profile from a specific region with the "*Region*" dropdown menu. The default of the "*Region*" dropdown is "Active" which points to the current active (selected) region. If no region is active, it defaults to cursor region. Additional statistic types to compute the region spectral profile are available with the "*Statistic*" dropdown menu (default to mean). If the image cube has multiple Stokes, the "*Stokes*" dropdown menu will be activated and defaulted to "Current" which is synchronized with the selection in the animator. To view a specific Stokes, select with the "*Stokes*" dropdown menu.
 
-Multiple spectral profile widgets can be configured to display different region ("*Region*" dropdown menu) spectral profiles from different image cubes ("*Image*" dropdown menu) and Stokes ("*Stokes*" dropdown menu, if applicable) with different statistics ("*Statistic*" dropdown menu), allowing a side-by-side comparsion of spectra.
+Multiple spectral profile widgets can be configured to display different region ("*Region*" dropdown menu) spectral profiles from different image cubes ("*Image*" dropdown menu) and Stokes ("*Stokes*" dropdown menu, if applicable) with different statistics ("*Statistic*" dropdown menu), allowing a side-by-side comparison of spectra.
 
 .. raw:: html
 
@@ -234,7 +234,7 @@ Multiple spectral profile widgets can be configured to display different region 
 
 When one of the Image, Region, Statistic, and Stokes checkboxes is selected, the spectral profiler widget switches to the multiple-profile mode. CARTA support four different use cases as the following:
 
-* **Comparing spectra from different image cubes**: When the Image checkbox is selected, spectral profiles from different *spatially and spectrally matched* cubes can be displayed. The image dropdown menu shows the matching state of each image as configured via the image list widget. The dropdown menu allows single-selection only. The selected image *and* its matched images are used for spectral profile computations based on the selected region (single selection), statistic (single selection), and Stokes (if applicable, single selection). In the following example, CO 2-1, 13CO 2-1, and C18O 2-1 lines from the source HD163296 are plotted for comparsion. The profiles are dervied from the rectangle region with mean statistic. 
+* **Comparing spectra from different image cubes**: When the Image checkbox is selected, spectral profiles from different *spatially and spectrally matched* cubes can be displayed. The image dropdown menu shows the matching state of each image as configured via the image list widget. The dropdown menu allows single-selection only. The selected image *and* its matched images are used for spectral profile computations based on the selected region (single selection), statistic (single selection), and Stokes (if applicable, single selection). In the following example, CO 2-1, 13CO 2-1, and C18O 2-1 lines from the source HD163296 are plotted for comparison. The profiles are derived from the rectangle region with mean statistics. 
 
    .. raw:: html
 
@@ -248,7 +248,7 @@ When one of the Image, Region, Statistic, and Stokes checkboxes is selected, the
       <img src="_static/carta_fn_spectralProfiler_multiple_region.png" 
          style="width:100%;height:auto;">
 
-* **Comparing spectra with different statistic quantities**: When the Statistic checkbox is selected, region spectral profiles with different statistic quantities can be displayed. The statistic dropdown menu allows multiple-selection of different statistic quantities. The region spectral profiles will be computed based on the selected image (single selection), region (single selection), and Stokes (if applicable, single selection). In the following example, CO 2-1 mean, standard deviation, and max spectra are compared. The profiles are derived from the ellipse region.
+* **Comparing spectra with different statistical quantities**: When the Statistic checkbox is selected, region spectral profiles with different statistical quantities can be displayed. The statistic dropdown menu allows multiple-selection of different statistical quantities. The region spectral profiles will be computed based on the selected image (single selection), region (single selection), and Stokes (if applicable, single selection). In the following example, CO 2-1 mean, standard deviation, and max spectra are compared. The profiles are derived from the ellipse region.
 
    .. raw:: html
 
@@ -256,7 +256,7 @@ When one of the Image, Region, Statistic, and Stokes checkboxes is selected, the
          style="width:100%;height:auto;">
 
 
-* **Comparing spectra with different Stokes parameters**: When the Stokes checkbox is selected, region spectral profiles with different Stokes parameters can be displayed. The Stokes dropdown menu allows multiple-selection of different Stokes. The region spectral profiles will be computed based on the selected image (single selection), region (single selection), and statistic (single selection). In the following exmaple, Stokes Q, U and V single-pixel spectra from IRC+10216 are compared. 
+* **Comparing spectra with different Stokes parameters**: When the Stokes checkbox is selected, region spectral profiles with different Stokes parameters can be displayed. The Stokes dropdown menu allows multiple-selection of different Stokes. The region spectral profiles will be computed based on the selected image (single selection), region (single selection), and statistic (single selection). In the following example, Stokes Q, U and V single-pixel spectra from IRC+10216 are compared. 
 
    .. raw:: html
 
@@ -280,7 +280,7 @@ When requesting a spectral profile, a common disappointing user experience is th
    </video>
 
 
-When the property of a region (cursor or a regular region) is modified while the profile of the original region is being updated, the partial profile will disappear and a new partial profile corresponding to the new region will start updating. If users modify the request of a spectral profile via the spectral profile widget before it is fully delivered, the original profile calculations will be cancelled and new profile calculations will start. In short, CARTA should just focus on calculating and showing the profiles that users pay attention to. If a profile is no longer needed to be shown on the screen, the profile calculation will be cancelled immediately, instead of blocking and queueing up new profile requests. 
+When the property of a region (cursor or a regular region) is modified while the profile of the original region is being updated, the partial profile will disappear and a new partial profile corresponding to the new region will start updating. If users modify the request of a spectral profile via the spectral profile widget before it is fully delivered, the original profile calculations will be cancelled and new profile calculations will start. In short, CARTA should just focus on calculating and showing the profiles that users pay attention to. If a profile no longer needs to be shown on the screen, the profile calculation will be cancelled immediately, instead of blocking and queueing up new profile requests. 
 
 
 .. raw:: html
@@ -293,7 +293,7 @@ When displaying a spectral profile with the number of channels more than the num
 
 The interactions of the spectral profiler widget are demonstrated in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the channel of the image displayed in the image viewer. Clicking directly on the spectral profiler graph will change the displayed image to the clicked channel. Alternatively, the red vertical bar is draggable and acts just like the channel slider of the animator widget. 
 
-The bottom axis shows the spectral coordinate. Additional options to configure the profile plot are available in the spectral profile settings dialogue which can be launched by clicking the "cog" icon in the top-right corner. In the dialogue, users may select a different spectral convention (e.g., optical velocity) and a different reference system (e.g., TOPO) with the Conversion tab. The option "Show Mean/RMS" in the Styling tab will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. When the cursor is on the image in the image viewer, the pointed pixel value (frequency or velocity or channel index, and pixel value) will be displayed at the bottom-left corner of the spectral profiler. When the cursor is on the spectral profiler graph, the pointed profile data will be displayed instead. Optionally, the displayed profile can be smoothed via the options in the Smoothing tab (see section :ref:`profile_smoothing`). Image collapsing is available in the Moments tab. Various image moments and statistics are supported (see section :ref:`moment_generator`). Profile fitting is available in the Fitting tab (see section :ref:`profile_fitting`). The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
+The bottom axis shows the spectral coordinate. Additional options to configure the profile plot are available in the spectral profile settings dialog which can be launched by clicking the "cog" icon in the top-right corner. In the dialog, users may select a different spectral convention (e.g., optical velocity) and a different reference system (e.g., TOPO) with the Conversion tab. The option "Show Mean/RMS" in the Styling tab will adopt the data in the current view to derive a mean value and an rms value, and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. When the cursor is on the image in the image viewer, the pointed pixel value (frequency or velocity or channel index, and pixel value) will be displayed at the bottom-left corner of the spectral profiler. When the cursor is on the spectral profiler graph, the pointed profile data will be displayed instead. Optionally, the displayed profile can be smoothed via the options in the Smoothing tab (see section :ref:`profile_smoothing`). Image collapsing is available in the Moments tab. Various image moments and statistics are supported (see section :ref:`moment_generator`). Profile fitting is available in the Fitting tab (see section :ref:`profile_fitting`). The profile can be exported as a png image or a text file in tsv format via the buttons at the bottom-right corner.
 
 .. raw:: html
 
@@ -316,9 +316,7 @@ The bottom axis shows the spectral coordinate. Additional options to configure t
 
 Moment map generator
 --------------------
-Moment images (i.e., collapsed cube along the spectral axis) can be generated and viewed with CARTA. A shortcut button, linking to the Moments tab of the spectral profilers settings dialogue, can be found at the top-right corner of the spectral profiler widget.
-
-**[TODO]** update the following figure again due to UI change...
+Moment images (i.e., collapsed cube along the spectral axis) can be generated and viewed with CARTA. A shortcut button, linking to the Moments tab of the spectral profilers settings dialog, can be found at the top-right corner of the spectral profiler widget.
 
 .. raw:: html
 
@@ -367,14 +365,14 @@ Once moment images are generated, they will be loaded and displayed in the image
    Due to a CASA issue, image of "Median coordinate" cannot be generated. The request of "Median coordinate" is ignored automatically.
 
 .. warning::
-   In a resumed session after a broken connetion to the backend, all in-memory images, such as the images generated with the moment generator, are lost. Those images will not be accessible in the resumed session.
+   In a resumed session after a broken connection to the backend, all in-memory images, such as the images generated with the moment generator, are lost. Those images will not be accessible in the resumed session.
 
 
 .. _profile_fitting:
 
 Profile fitting
 ---------------
-As of v2.0, the profile fitting function can be applied to the spectral profiler widget as an estimate of the spectral line properties, such as amplitude, FWHM, center, and intergrated area. The profile fitting function is available via the "Fitting" button at the top-right corner of the spectral profiler widget. 
+As of v2.0, the profile fitting function can be applied to the spectral profiler widget as an estimate of the spectral line properties, such as amplitude, FWHM, center, and integrated area. The profile fitting function is available via the "Fitting" button at the top-right corner of the spectral profiler widget. 
 
 .. raw:: html
 
@@ -391,7 +389,7 @@ CARTA supports two model profile functions in v2.0 (more will be added in a futu
 
 In addition, a continuum emission as a constant distribution (0th-order polynomial) or a linear distribution (1st-order polynomial) can be included in the profile fitting process.
 
-In order to work properly, a set resonable initial solutions needs to be provided to the fitting engine. CARTA provides flexible ways of setting up the initial solutions. They can be set manually with the text fields or with the cursor by drawing a box (for the profile function) or a line (for the continuum function) on the spectral profile plot. For each component, an amplitude, a FWHM, and a center need to be configured. Up to 20 components are supported in one single fit. When there are more than one component required in the fit, the "slider" can be used to switch to different components. The "delete" button can be used to delect a selected component.
+In order to work properly, a set of reasonable initial solutions needs to be provided to the fitting engine. CARTA provides flexible ways of setting up the initial solutions. They can be set manually with the text fields or with the cursor by drawing a box (for the profile function) or a line (for the continuum function) on the spectral profile plot. For each component, an amplitude, a FWHM, and a center need to be configured. Up to 20 components are supported in one single fit. When there are more than one component required in the fit, the "slider" can be used to switch to different components. The "delete" button can be used to delete a selected component.
 
 .. raw:: html
 
@@ -400,7 +398,7 @@ In order to work properly, a set resonable initial solutions needs to be provide
    </video>
 
 
-Alternatively, the "auto detect" function (experimental) tries to analyze your spectral profile data and sets up the initial solutions *automatically*. If there is a prominent continumm emission or offset, please enable the "w/ cont." toggle before clicking the "auto detect" button. If the "auto fit" toggle is enabled, the fitting engine will be triggered if the "auto detect" function found a set of initial solutions. When the "auto detect" function is applied, you may edit the initial solutions manually afterward, such as adding a new component, deleting an existing component, refining a parameter, etc.. 
+Alternatively, the "auto detect" function (experimental) tries to analyze your spectral profile data and sets up the initial solutions *automatically*. If there is a prominent continuum emission or offset, please enable the "w/ cont." toggle before clicking the "auto detect" button. If the "auto fit" toggle is enabled, the fitting engine will be triggered if the "auto detect" function found a set of initial solutions. When the "auto detect" function is applied, you may edit the initial solutions manually afterward, such as adding a new component, deleting an existing component, refining a parameter, etc.. 
 
 .. raw:: html
 
@@ -428,7 +426,7 @@ In some cases, a given free parameter, such as the center of a Gaussian componen
    The profile fitting function is not available when there are multiple profiles plotted in the spectral profiler widget. Please ensure that there is only one profile in the plot in order to use the profile fitting function.
 
 .. note::
-   In future releases, the spectral profile fitting function will be enhanced by referencing line catalog so that the relative positions of the model components can be locked. Line width and relative amplitude can be constrained too. 
+   In future releases, the spectral profile fitting function will be enhanced by referencing the line catalog so that the relative positions of the model components can be locked. Line width and relative amplitude can be constrained too. 
 
 
 
@@ -461,14 +459,14 @@ Optionally, the original profile can be overplotted with the smoothed profile. T
 
 Spectral line query
 -------------------
-CARTA supports an *initial* implementation of spectral line ID overlay on a spectral profiler widget based on the data from the Splatalogue service (https://splatalogue.online). The query is made by defining a spectral range in frequency or wavelength and optionally a lower limit of CDMS/JPL line intensity (log). The spectral range can be defined as from-to or center-width. Other filters, such as filtering by species name, or enery range, etc., can be applied *after* the data are retrived from the  Splatalogue.
+CARTA supports an *initial* implementation of spectral line ID overlay on a spectral profiler widget based on the data from the Splatalogue service (https://splatalogue.online). The query is made by defining a spectral range in frequency or wavelength and optionally a lower limit of CDMS/JPL line intensity (log). The spectral range can be defined as from-to or center-width. Other filters, such as filtering by species name, or energy range, etc., can be applied *after* the data are retrieved from the  Splatalogue.
 
 .. note::
    The current implementation has some limitations when making a query to the Splatalogue service:
 
    * The allowed maximum query range, equivalent in frequency, is 20 GHz.
    * The actual query is made with a frequency range in MHz rounded to integer.
-   * When an intensity limit is applied, only the lines from CDMS and JPL catalogues will be returned.
+   * When an intensity limit is applied, only the lines from CDMS and JPL catalogs will be returned.
    * Up to 100000 lines are displayed. 
 
    Improvements of the above limitations will be made in future releases.
@@ -476,7 +474,7 @@ CARTA supports an *initial* implementation of spectral line ID overlay on a spec
    Currently, the Splatalogue query service is under active development. Unexpected query results might happen. When users believe there is something wrong, please contact `the CARTA helpdesk <mailto:carta@asiaa.sinica.edu.tw>`_, or file an issue on `Github <https://github.com/CARTAvis/carta/issues>`_ (recommended).  
 
 
-Once a query is successfully made, the line catalogue will be displayed in the tables. The upper table shows the column information in the catalogue with options to show or hide a specific column. The actual line catalogue is displayed in the lower table. The line catalogue table accepts sub-filters such as partial string match or value range. For numeric columns, supported operators are:
+Once a query is successfully made, the line catalog will be displayed in the tables. The upper table shows the column information in the catalog with options to show or hide a specific column. The actual line catalog is displayed in the lower table. The line catalog table accepts sub-filters such as partial string match or value range. For numeric columns, supported operators are:
 
 * :code:`>` : greater than
 * :code:`>=` : greater than or equal to
@@ -517,7 +515,7 @@ The text labels of the line ID overlay are shown dynamically based on the zoom l
 
 Stokes analysis widget
 ----------------------
-Stokes analysis widget allows users to view basic polarization quantities of a multi-channel (number of channel > 1) cube with multi-Stokes (IQU, QU, or IQUV) efficiently. If different Stokes images are stored as individual files (i.e., image_I.fits, image_Q.fits, image_U.fits, and image_V.fits), users can use the file browser dialogue to create a Stokes hypercube by selecting multiple Stokes images and clicking the "Load as hypercube" button. Effectively, users will see that there is only one image loaded with multiple Stokes in CARTA. 
+Stokes analysis widget allows users to view basic polarization quantities of a multi-channel (number of channel > 1) cube with multi-Stokes (IQU, QU, or IQUV) efficiently. If different Stokes images are stored as individual files (i.e., image_I.fits, image_Q.fits, image_U.fits, and image_V.fits), users can use the file browser dialog to create a Stokes hypercube by selecting multiple Stokes images and clicking the "Load as hypercube" button. Effectively, users will see that there is only one image loaded with multiple Stokes in CARTA. 
 
 
 The widget includes the following plots:
@@ -548,7 +546,7 @@ When profiles are zoomed, the scatter plot will highlight those channels remaini
      <source src="_static/carta_fn_stokesLinkedPlot.mp4" type="video/mp4">
    </video>
 
-Additional options to customize the plots in the Stokes analysis widget are provided in the settings dialogue which can be launched by clicking the "cog" icon at the top-right corner. With the options in the dialogue, users can configure the appearance of the profile plots and the scatter plot. Optionally, profile smoothing can be applied with the Smoothing tab (see section :ref:`profile_smoothing`). A shortcut button to the Smoothing tab can be found at the top-right corner of the Stokes analysis widget.
+Additional options to customize the plots in the Stokes analysis widget are provided in the settings dialog which can be launched by clicking the "cog" icon at the top-right corner. With the options in the dialog, users can configure the appearance of the profile plots and the scatter plot. Optionally, profile smoothing can be applied with the Smoothing tab (see section :ref:`profile_smoothing`). A shortcut button to the Smoothing tab can be found at the top-right corner of the Stokes analysis widget.
 
 .. raw:: html
 
@@ -578,7 +576,7 @@ The "Region" dropdown menu and the "Image" dropdown menu can be used to select w
    <img src="_static/carta_fn_statistics_widget.png" 
         style="width:100%;height:auto;">
 
-The statstics table can be exported as a text file with the "export data" button at the bottom-right corner when hovering over the widget. 
+The statistics table can be exported as a text file with the "export data" button at the bottom-right corner when hovering over the widget. 
 
 .. note::
    A Stokes dropdown menu, allowing users to set a Stokes value without using the Stokes slider of the animator widget, will be added in a future release.
@@ -593,7 +591,7 @@ Histogram widget allows users to visualize image data as a histogram with respec
    <img src="_static/carta_fn_histogram_widget.png" 
         style="width:100%;height:auto;">
 
-Additional options to customize the histogram in the histogram widget are provided in the settings dialogue which can be launched by clicking the "cog" icon at the top-right corner. 
+Additional options to customize the histogram in the histogram widget are provided in the settings dialog which can be launched by clicking the "cog" icon at the top-right corner. 
 
 .. raw:: html
 
@@ -604,7 +602,7 @@ Additional options to customize the histogram in the histogram widget are provid
 .. note::
    With v2.0, histogram bin width and bin count are automatically decided. Enhancement of the histogram widget, including histogram fitting, will be available in a future release. 
 
-   A Stokes dropdown menu, allowing users to set a Stokes value without using the Stokes slider of the animator widget, will be added in the a future release.
+   A Stokes dropdown menu, allowing users to set a Stokes value without using the Stokes slider of the animator widget, will be added in a future release.
 
 
 Catalog widget
