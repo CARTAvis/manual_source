@@ -57,7 +57,7 @@ Only the images matched these formats will be shown in the file list with image 
         style="width:100%;height:auto;">
 
 
-If a set of images needs to be loaded into CARTA for visualization and analysis (e.g., CO 2-1, 13CO 2-1, and C18O 2-1), users may select *multiple* files in the file list with shift+click or command+click (macOS) or ctrl+click (linux) and load them all at once. Images will be loaded sequentially by clicking the "Load selected" button. 
+If a set of images needs to be loaded into CARTA for visualization and analysis (e.g., CO 2-1, 13CO 2-1, and C18O 2-1), users may select *multiple* files in the file list with :code:`shift+click` or :code:`command+click` (macOS) or :code:`ctrl+click` (linux) and load them all at once. Images will be loaded sequentially by clicking the "Load selected" button. 
 
 .. raw:: html
 
