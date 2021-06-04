@@ -1,5 +1,23 @@
 Appendix A: version history
 ===========================
+Version 2.0
+-----------
+Released 7th June 2021
+
+* Multi-profile plot with the spectral profiler
+* Progress report and cancellation when requesting a long file list
+* Forming a Stokes hypercube at image loading stage
+* Colorbar display in the image viewer and enhanced raster image config widget
+* Support rectangular pixel rendering for PV image
+* Filtering function in the spectral line query widget
+* Enhanced FITS and CASA image support
+* Saving subimage
+* Searching a keyword from image header
+* Profile fitting in the spectral profiler 
+* Marker-based catalog rendering and performance enhancement
+* New deployment modes
+
+
 Version 1.4
 -----------
 Released 17th September 2020

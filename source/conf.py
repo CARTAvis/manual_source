@@ -20,13 +20,13 @@
 # -- Project information -----------------------------------------------------
 
 project = u'CARTA'
-copyright = u'2018-2020, ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta'
+copyright = u'2018-2021, ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta'
 author = u'the CARTA team'
 
 # The short X.Y version
-version = u'1.4'
+version = u'2.0'
 # The full version, including alpha/beta/rc tags
-release = u'1.4'
+release = u'2.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -40,7 +40,8 @@ release = u'1.4'
 # ones.
 extensions = [
     'sphinx.ext.mathjax',
-    'sphinx.ext.githubpages'
+    'sphinx.ext.githubpages',
+    'sphinx-jsonschema'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -131,7 +132,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'CARTA.tex', u'CARTA Documentation',
+    (master_doc, 'CARTA.tex', u'CARTA User Manual',
      u'CARTA team', 'manual'),
 ]
 
@@ -141,7 +142,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'carta', u'CARTA Documentation',
+    (master_doc, 'carta', u'CARTA User Manual',
      [author], 1)
 ]
 
@@ -152,7 +153,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'CARTA', u'CARTA Documentation',
+    (master_doc, 'CARTA', u'CARTA User Manual',
      author, 'CARTA', 'One line description of project.',
      'Miscellaneous'),
 ]

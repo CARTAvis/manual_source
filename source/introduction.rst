@@ -7,7 +7,7 @@ CARTA is the *Cube Analysis and Rendering Tool for Astronomy*, a new image visua
 
 Client-Server architecture
 --------------------------
-CARTA uses a client-server architecture which is suitable for visualizing images with large file sizes (GB to TB) easily obtained from ALMA, VLA, or SKA pathfinders (MeerKAT and ASKAP) observations. It is practically difficult to process such a huge file with a personal computer or laptop. By using a client-server architecture, computation and data storage are handled by remote enterprise-class servers or clusters with high performance storage, while processed products are sent to clients only for visualization with modern web features, such as GPU-accelerated rendering. This architecture also enables users to interact with the ALMA and VLA science archives by using CARTA as an interface. 
+CARTA uses a client-server architecture which is suitable for visualizing images with large file sizes (GB to TB) easily obtained from ALMA, VLA, or SKA pathfinders (MeerKAT and ASKAP) observations. It is practically difficult to process such a huge file with a personal computer or laptop. By using a client-server architecture, computation and data storage are handled by remote enterprise-class servers or clusters with high computing power and high performance storage, while processed products are sent to clients only for visualization with modern web features, such as GPU-accelerated rendering. This architecture also enables users to visualize images from  the ALMA and the VLA science archives by using CARTA as an interface. 
 
 
 .. raw:: html
@@ -15,15 +15,14 @@ CARTA uses a client-server architecture which is suitable for visualizing images
    <img src="_static/carta_intro_serverClient.png" 
         style="width:100%;height:auto;">
 
+
 Codebase and releases
 ---------------------
-CARTA is an open-source project. Its source code is available at https://github.com/CARTAvis. 
+CARTA is an open-source project. Its source code is publicly available at https://github.com/CARTAvis. 
 
-CARTA has two flavors: CARTA-server and CARTA-desktop. The former is intended for hosting multiple users with an enterprise-class server, while the later is intended for single-user usage with a personal computer or a laptop. The desktop version can also be used in the "remote" mode, where the backend (server) is run in a remote server and the frontend (client) is run locally with an internet browser. 
+CARTA has two deployment modes: "Site Deployment Mode" (SDM) and "User Deployment Mode" (UDM). The former is intended for hosting multiple users with an enterprise-class server, while the later is intended for single-user usage with a personal computer, a laptop, or a remote server. 
 
-Deployment of CARTA in a server environment may require additional efforts of server configurations (see :ref:`server_deployment`), such as user authentication, server load balance, or resource monitoring, etc. Please contact the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw) for consultations. 
-
-Installation guides for the desktop version are provided in the section :ref:`installation_configuration`, including the usages of the remote mode. 
+Installation guides for the "Site Deployment Mode" and the "User Deployment Mode" are provided in the section :ref:`installation_configuration`. Please contact the `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ (carta_helpdesk@asiaa.sinica.edu.tw) if there is a problem. 
 
 The release plan and major goals are the following:
 
@@ -52,7 +51,6 @@ The release plan and major goals are the following:
 
 * v1.3: WCS matching (released 31st March 2020)
 
-
   * Contour rendering
   * Raster image matching in world coordinates
   * Contour image matching in world coordinates
@@ -66,7 +64,7 @@ The release plan and major goals are the following:
   * Bug fixes and performance improvements
 
 
-* v1.4: Catalogue overlay and analysis tools (**current release**; released 17th September 2020)
+* v1.4: Catalogue overlay and analysis tools (released 17th September 2020)
 
   * Catalogue support
   * Shared region analytics
@@ -78,21 +76,41 @@ The release plan and major goals are the following:
   * File browser improvements
   * Bug fixes and performance improvements
 
-* Into the future (this is a non-exclusive list of features that we would like to implemnt in subsequent releases but these are not decided upon yet, and depend on feedback from users, and resourcing etc. )
+  
+* v2.0: Feature enhancement and codebase maintenance (**current release**, released 7th June 2021) 
 
-  * Polarization contour and images
-  * Interactive CLEAN with CASA
+  * Multi-profile plot with the spectral profiler
+  * Progress report and cancellation when requesting a long file list
+  * Forming a Stokes hypercube at image loading stage
+  * Colorbar display in the image viewer and enhanced raster image config widget
+  * Support rectangular pixel rendering for PV image
+  * Filtering function in the spectral line query widget
+  * Enhanced FITS and CASA image support
+  * Saving subimage
+  * Searching a keyword from image header
+  * Profile fitting in the spectral profiler 
+  * Marker-based catalog rendering and performance enhancement
+  * New deployment modes
+
+
+* Into the future (this is a non-exclusive list of features that we would like to implement in subsequent releases but these are not decided upon yet, and depend on feedback from users, and resourcing etc. )
+
   * Multi-panel view
   * Channel map view
-  * View other image formats including complex value images
   * Position-velocity map generator
-  * Collaborative tools
-  * Vector field rendering
-  * Volume rendering
-  * Profile, histogram, and image fitting tools
-  * Scripting interface (Python3)
-  * Three-color blender
-  * Mip map support in HDF5 (IDIA schema) format
+  * Server collaborative tools
+  * Vector field (polarization) rendeting
+  * Volume (pseudo-3D) rendering
+  * Profile and histogram fitting tool
+  * Image (2D) fitting tool
+  * Scripting interface with Python3
+  * Three-color (RGB) image blender
+  * Angular distance measuring tool
+  * Image source finder
+  * Online image query (VO)
+  * Online catalog query (VO)
+  * Publication quality export (images)
+  * Image arithmetic
 
 Getting help
 ------------
@@ -120,7 +138,7 @@ The development of the CARTA project is a joint effort from (in alphabetical ord
 
 Software citation
 -----------------
-Please use the following DOI as a citation when using CARTA for publications.
+**[TODO]** Please use the following DOI as a citation when using CARTA for publications.
 
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3377984.svg
    :target: https://doi.org/10.5281/zenodo.3377984
@@ -150,6 +168,7 @@ The bibtex is
    url          = {https://doi.org/10.5281/zenodo.3377984}
    }
 
+
 Acknowledgement
 ---------------
 ASIAA CASA Development Center (ACDC) acknowledges the grant from the Ministry of Science and Technology of Taiwan for the ALMA-NA collaboration.
@@ -169,6 +188,7 @@ CARTA is mainly built in C++, TypeScript, and JavaScript, and with the following
 * Chart.js: https://www.chartjs.org
 * Electron: https://electronjs.org
 * GoldenLayout: https://golden-layout.com
+* GoogleTest: https://github.com/google/googletest
 * gRPC: https://grpc.io/
 * GSL: https://www.gnu.org/software/gsl/
 * MobX: https://mobx.js.org
@@ -176,8 +196,12 @@ CARTA is mainly built in C++, TypeScript, and JavaScript, and with the following
 * node.js: https://nodejs.org
 * Plotly: https://plotly.com
 * Protocol buffers: https://developers.google.com/protocol-buffers 
+* Pugixml: https://pugixml.org
 * React: https://reactjs.org
+* spdlog: https://github.com/gabime/spdlog
+* sse2neon: https://github.com/DLTcollab/sse2neon
 * TBB: https://www.threadingbuildingblocks.org
+* uWebsockets: https://github.com/uNetworking/uWebSockets
 * WebAssembly: https://webassembly.org
 
 
@@ -187,4 +211,4 @@ The CARTA development team is grateful to David Berry for consultation of the AS
 
 Copyright and License
 ---------------------
-Copyright (C) 2018-2020 ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta. This program is free software; you can redistribute it and/or modify it under the terms of the `GNU General Public License version 3 <http://www.gnu.org/copyleft/gpl.html>`_ as published by the Free Software Foundation.
+Copyright (C) 2018-2021 ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta. This program is free software; you can redistribute it and/or modify it under the terms of the `GNU General Public License version 3 <http://www.gnu.org/copyleft/gpl.html>`_ as published by the Free Software Foundation.
