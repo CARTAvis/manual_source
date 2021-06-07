@@ -138,7 +138,7 @@ The development of the CARTA project is a joint effort from (in alphabetical ord
 
 Software citation
 -----------------
-**[TODO]** Please use the following DOI as a citation when using CARTA for publications.
+Please use the following DOI as a citation when using CARTA for publications.
 
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3377984.svg
    :target: https://doi.org/10.5281/zenodo.3377984
@@ -150,14 +150,16 @@ The bibtex is
    @software{angus_comrie_2018_3377984,
    author       = {Angus Comrie and
                   Kuo-Song Wang and
-                  Pamela Harris and
-                  Anthony Moraghan and
                   Shou-Chieh Hsu and
+                  Anthony Moraghan and
+                  Pamela Harris and
+                  Qi Pang and
                   Adrianna Pińska and
                   Cheng-Chin Chiang and
-                  Hengtai Jan and
                   Rob Simmonds and
                   Tien-Hao Chang and
+                  Yu-Hsuan Hwang and
+                  Hengtai Jan and
                   Ming-Yi Lin},
    title        = {{CARTA: The Cube Analysis and Rendering Tool for 
                    Astronomy}},
@@ -168,6 +170,7 @@ The bibtex is
    url          = {https://doi.org/10.5281/zenodo.3377984}
    }
 
+You may also refer to https://ui.adsabs.harvard.edu/abs/2020zndo...3377984C/abstract.
 
 Acknowledgement
 ---------------
