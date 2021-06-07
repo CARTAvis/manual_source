@@ -148,8 +148,7 @@ Now CARTA can be installed with:
 
    brew install cartavis/tap/carta
 
-
-
+   
 .. _installation_UDM_direct_download:
 
 Installation of the stand-alone application (direct download)
@@ -201,8 +200,11 @@ You may use a different alias rather than 'carta' e.g. 'carta-v2.0' or 'carta-el
 
 Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
 
+.. note::
+   If you use an M1 based Mac, you may see better performance with the native Apple Silicon version of CARTA available `here <https://github.com/CARTAvis/carta/releases/download/v2.0/CARTA-v2.0-arm64.dmg>`_.
 
 
+   
 .. _how_to_run_carta:
 
 How to run CARTA?
