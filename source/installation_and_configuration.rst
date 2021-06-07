@@ -81,6 +81,9 @@ Ubuntu 18.04 and 20.04 packages are available from our `PPA <https://launchpad.n
 
 Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
 
+.. note::
+   For the Windows 10 users, you can install CARTA on the Ubuntu subsystem.
+
 **Red Hat Enterprise Linux 7**
 
 For Red Hat Enterprise Linux 7 users, you first need to add the el7 "cartavis" and "EPEL" repositories. Please note that *root* access is required, unless you install in a Docker container.
