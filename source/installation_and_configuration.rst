@@ -160,11 +160,11 @@ If you do not have *root* access and cannot use package managers to install CART
 
 The Ubuntu Linux AppImage does not require *root* access. You simply download, extract, and run it. The AppImage has been tested to run on Ubuntu 18.04 and 20.04.
 
-The AppImage can be downloaded `here <http://alma.asiaa.sinica.edu.tw/_downloads/carta-v2.0-ubuntu.tar.gz>`_. Alternatively, you can use the commandline:
+The AppImage can be downloaded `here <https://github.com/CARTAvis/carta/releases/download/v2.0/CARTA-v2.0-ubuntu.tgz>`_. Alternatively, you can use the commandline:
 
 .. code-block:: bash
 
-   wget http://alma.asiaa.sinica.edu.tw/_downloads/carta-v2.0-ubuntu.tar.gz
+   wget https://github.com/CARTAvis/carta/releases/download/v2.0/CARTA-v2.0-ubuntu.tgz
    tar -xzf carta-v2.0-ubuntu.tar.gz
 
 Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
@@ -174,11 +174,11 @@ Please refer to the section :ref:`how_to_run_carta` for different single-user us
 
 The Red Hat Linux AppImage does not require root access. You simply download, extract, and run it. The AppImage has been tested to run on Red Hat Enterprise Linux (RHEL) 7 and 8, as well as CentOS 7 and 8.
 
-The AppImage can be downloaded `here <http://alma.asiaa.sinica.edu.tw/_downloads/carta-v2.0-redhat.tar.gz>`_. Alternatively, you can use the commandline:
+The AppImage can be downloaded `here <https://github.com/CARTAvis/carta/releases/download/v2.0/CARTA-v2.0-redhat.tgz>`_. Alternatively, you can use the commandline:
 
 .. code-block:: bash
 
-   wget http://alma.asiaa.sinica.edu.tw/_downloads/carta-v2.0-redhat.tar.gz
+   wget https://github.com/CARTAvis/carta/releases/download/v2.0/CARTA-v2.0-redhat.tgz
    tar -xzf carta-v2.0-redhat.tar.gz
 
 Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
@@ -186,7 +186,7 @@ Please refer to the section :ref:`how_to_run_carta` for different single-user us
 
 **macOS Electron Desktop**
 
-The macOS Electron Desktop version can be downloaded `here <http://alma.asiaa.sinica.edu.tw/_downloads/CARTA-v2.0.dmg>`_. 
+The macOS Electron Desktop version can be downloaded `here <https://github.com/CARTAvis/carta/releases/download/v2.0/CARTA-v2.0.dmg>`_. 
 
 After downloading, open the DMG installer and drag the CARTA icon to the Applications folder.
 
