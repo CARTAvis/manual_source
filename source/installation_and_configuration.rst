@@ -164,7 +164,7 @@ The AppImage can be downloaded `here <https://github.com/CARTAvis/carta/releases
 .. code-block:: bash
 
    wget https://github.com/CARTAvis/carta/releases/download/v2.0/CARTA-v2.0-ubuntu.tgz
-   tar -xzf carta-v2.0-ubuntu.tar.gz
+   tar -xzf CARTA-v2.0-ubuntu.tgz
 
 Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
 
@@ -178,7 +178,7 @@ The AppImage can be downloaded `here <https://github.com/CARTAvis/carta/releases
 .. code-block:: bash
 
    wget https://github.com/CARTAvis/carta/releases/download/v2.0/CARTA-v2.0-redhat.tgz
-   tar -xzf carta-v2.0-redhat.tar.gz
+   tar -xzf CARTA-v2.0-redhat.tgz
 
 Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
 
