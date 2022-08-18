@@ -20,13 +20,13 @@
 # -- Project information -----------------------------------------------------
 
 project = u'CARTA'
-copyright = u'2018-2021, ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta'
+copyright = u'2018-2022, ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta'
 author = u'the CARTA team'
 
 # The short X.Y version
-version = u'2.0'
+version = u'3.0'
 # The full version, including alpha/beta/rc tags
-release = u'2.0'
+release = u'3.0.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -61,7 +61,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -154,8 +154,8 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'CARTA', u'CARTA User Manual',
-     author, 'CARTA', 'One line description of project.',
-     'Miscellaneous'),
+     author, 'CARTA', 'A tool for visualizing and analyzing big astronomical images',
+     ''),
 ]
 
 
