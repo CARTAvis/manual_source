@@ -526,6 +526,103 @@ For users who installed CARTA in the "User Deployment Mode", a set of configurat
 The preferences and layout files are in the JSON format. The "preferences.json" file allows you to set up the preferences programmatically. A full set of options is available in :ref:`appendix_d_preferences_schema`. The layout folder contains all the custom layouts that you have created.
 
 
+
+.. _fits2idia_installation:
+
+Installation of fits2idia
+-------------------------
+CARTA provides a commandline tool "fits2idia" for you to convert a FITS image to the HDF5 (IDIA schema) format which helps to improve the user experience of image visualization and analysis significantly, especially for large image cubes. 
+
+Installation via package managers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Ubuntu**
+
+The Ubuntu 18.04, 20.04, and 22.04 packages are available from our `PPA <https://launchpad.net/~cartavis-team/+archive/ubuntu/carta>`_. Please note that *root* access is required, unless you install in a Docker container.
+
+.. code-block:: bash
+
+   sudo add-apt-repository ppa:cartavis-team/carta
+   sudo apt-get update
+   sudo apt install fits2idia
+
+
+**CentOS 7 / AlmaLinux 8 / Rocky Linux 8**
+
+The "fits2idia" program requires packages from the epel repository.
+
+.. code-block:: bash
+
+   sudo curl https://packages.cartavis.org/cartavis.repo --output /etc/yum.repos.d/cartavis.repo
+   sudo yum -y install epel-release
+   sudo yum -y install fits2idia
+
+
+**Red Hat Enterprise Linux 7**
+
+The "fits2idia" program requires packages from the epel repository.
+
+.. code-block:: bash
+
+   sudo curl https://packages.cartavis.org/cartavis.repo --output /etc/yum.repos.d/cartavis.repo
+   sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+   sudo yum -y install fits2idia
+
+
+**Red Hat Enterprise Linux 8**
+
+The "fits2idia" program requires packages from the epel repository.
+
+.. code-block:: bash
+
+   sudo curl https://packages.cartavis.org/cartavis.repo --output /etc/yum.repos.d/cartavis.repo
+   sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+   sudo yum -y install fits2idia
+
+
+**macOS**
+
+The "fits2idia" program can be installed via "homebrew" on macOS 11 (BigSur) and macOS 12 (Monterey). To install Homebrew, if not already installed:
+
+.. code-block:: bash
+
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+Then, "fits2idia" can be simply be installed with:
+
+.. code-block:: bash
+
+   brew install cartavis/tap/fits2idia
+
+
+Other installation methods
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+If you do not have "su" or "root" privilege to install "fits2idia" via package managers, you can consider the following alternatives.
+
+**Linux AppImage**
+
+For Linux users (Ubuntu/RedHat) without root access, an AppImage version of "fits2idia" may be used.
+
+.. code-block:: bash
+
+   wget https://github.com/CARTAvis/fits2idia/releases/download/v0.1.15/fits2idia.AppImage.zip
+   unzip fits2idia.AppImage.zip
+
+For easier access, an 'alias' may be set up for running it.
+
+
+**macOS**
+
+For macOS users who do not wish to use Homebrew, we have bundled the "fits2idia" program with the CARTA v3.0.0 Electron version for convenience. We recommend setting up an alias to use it.
+
+Assuming you already have the CARTA v3.0.0 Electron version installed in the default location, you can create an alias to the 'fit2idia' executable. In your macOS terminal, open your "~/.zshrc" file (or "~/.bashrc" if you use bash) in a text editor and add the following line:
+
+.. code-block:: bash
+
+   alias fits2idia='/Applications/CARTA.app/Contents/Resources/app/carta-backend/bin/fits2idia'
+
+Then, rither :code:`source ~/.zshrc`` (or :code:`source ~/.bashrc`) or open a new tab or terminal window to use "fits2idia".
+
 .. _troubleshooting:
 
 Troubleshooting
