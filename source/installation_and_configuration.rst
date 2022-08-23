@@ -87,9 +87,24 @@ Please refer to the section :ref:`how_to_run_carta` for different single-user us
 .. note::
    For the Windows 10 users, you can install CARTA on the Ubuntu subsystem.
 
+**CentOS 7 / AlmaLinux 8 / Rocky Linux 8**
+
+For CentOS 7 / AlmaLinux 8 / Rocky Linux 8 users, the “cartavis” and “EPEL” repositories must be added. Please note that root access is required, unless using a Docker container.
+
+
+.. code-block:: bash
+
+   sudo curl https://packages.cartavis.org/cartavis.repo --output /etc/yum.repos.d/cartavis.repo
+   sudo yum -y install epel-release
+   sudo yum remove carta carta-frontend carta-backend # if you have installed CARTA v2.0 before
+   sudo yum -y install carta
+
+Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
+
+
 **Red Hat Enterprise Linux 7**
 
-For Red Hat Enterprise Linux 7 users, you need to add the "cartavis" and "EPEL" repositories. Please note that *root* access is required, unless you install in a Docker container.
+For Red Hat Enterprise Linux 7 users, the “cartavis” and “EPEL” repositories must be added. Please note that root access is required, unless using a Docker container.
 
 .. code-block:: bash
 
@@ -100,22 +115,11 @@ For Red Hat Enterprise Linux 7 users, you need to add the "cartavis" and "EPEL" 
 
 Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
 
-**CentOS 7**
 
-For CentOS 7 users, you first need to add the "cartavis" and "EPEL" repositories. Please note that *root* access is required, unless you install in a Docker container.
-
-.. code-block:: bash
-
-   sudo curl https://packages.cartavis.org/cartavis.repo --output /etc/yum.repos.d/cartavis.repo
-   sudo yum -y install epel-release
-   sudo yum remove carta carta-frontend carta-backend # if you have installed CARTA v2.0 before
-   sudo yum -y install carta
-
-Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
 
 **Red Hat Enterprise Linux 8**
 
-For Red Hat Enterprise Linux 8 users, you first need to add the "cartavis" and "EPEL" repositories. Please note that *root* access is required, unless you install in a Docker container.
+For Red Hat Enterprise Linux 8 users, the “cartavis” and “EPEL” repositories must be added. Please note that root access is required, unless using a Docker container.
 
 .. code-block:: bash
 
@@ -126,19 +130,6 @@ For Red Hat Enterprise Linux 8 users, you first need to add the "cartavis" and "
 
 Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
 
-**AlmaLinux 8 / Rocky Linux 8**
-
-For AlmaLinux 8 or Rocky Linux 8 users, you need to add the "cartavis", and "EPEL" repositories. Please note that *root* access is required, unless you install in a Docker container.
-
-.. code-block:: bash
-
-   sudo curl https://packages.cartavis.org/cartavis.repo --output /etc/yum.repos.d/cartavis.repo
-   sudo yum -y install 'dnf-command(config-manager)'
-   sudo yum -y install epel-release
-   sudo yum remove carta carta-frontend carta-backend # if you have installed CARTA v2.0 before
-   sudo yum -y install carta
-
-Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
 
 **macOS**
 
@@ -634,14 +625,14 @@ For x86_64 architectures:
 .. code-block:: bash
 
    wget https://github.com/CARTAvis/fits2idia/releases/download/v0.1.15/fits2idia.AppImage.x86_64.tgz
-   unzip fits2idia.AppImage.x86_64.tgz
+   tar -xvf fits2idia.AppImage.x86_64.tgz
 
 For aarch64 architectures:
 
 .. code-block:: bash
 
    wget https://github.com/CARTAvis/fits2idia/releases/download/v0.1.15/fits2idia.AppImage.aarch64.tgz
-   unzip fits2idia.AppImage.aarch64.tgz
+   tar -xvf fits2idia.AppImage.aarch64.tgz
 
 
 
