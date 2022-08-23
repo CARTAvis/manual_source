@@ -1,27 +1,23 @@
 Appendix B: known issues
 ========================
-CARTA has the following known issues for the release v2.0 (updated up to June 7, 2020). 
+CARTA has the following known issues for the release v3.0 (updated up to August 23rd, 2022). 
 
 The CARTA development team plans to address these issues in coming releases.
 
+
+
 Stability and performance
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-* `Optimize spatial matched catalog performance <https://github.com/CARTAvis/carta-frontend/issues/1432>`_
-* `Optimize catalog map calculation <https://github.com/CARTAvis/carta-frontend/issues/1426>`_
-* `frontend crash when loading a 1x1 pixel image <https://github.com/CARTAvis/carta-frontend/issues/1365>`_
-* `Frontend chokes when loading region files with a large number of regions <https://github.com/CARTAvis/carta-frontend/issues/1252>`_
-* `cursor update for profiles stops during zoom <https://github.com/CARTAvis/carta-frontend/issues/544>`_
+* `CARTA crashes when using beam tables with 64-bit floats <https://github.com/CARTAvis/carta-backend/issues/1166>`_
 * `performance impact of AST grid tolerance to wide field images <https://github.com/CARTAvis/carta-frontend/issues/451>`_
 * `backend crash when enable multiple profile plot <https://github.com/CARTAvis/carta-backend/issues/825>`_
-* `backend crash when attempting to load a per-plane-beam cube as new while the current one is animating <https://github.com/CARTAvis/carta-backend/issues/774>`_
-* `CARTA hangs when attempting double-click to load an image with long header <https://github.com/CARTAvis/carta-backend/issues/768>`_
-* `backend crash when cancelling moment calculations with per-plane-beam cube <https://github.com/CARTAvis/carta-backend/issues/652>`_
-* `Regex causes seg fault with 6000-point polygon <https://github.com/CARTAvis/carta-backend/issues/649>`_
 
 
 Spectral profiler
 ^^^^^^^^^^^^^^^^^
-* `progress indicator of the spectral profiler <https://github.com/CARTAvis/carta-frontend/issues/1429>`_ 
+* `unable to convert Jy/beam to K if the spectral axis is VRAD but converting to FREQ is possible <https://github.com/CARTAvis/carta-frontend/issues/1907>`_
+* `cursor info of the spectral profiler widget when profile smoothing is enabled <https://github.com/CARTAvis/carta-frontend/issues/1880>`_
+
 
 
 Spectral line query
@@ -31,21 +27,31 @@ Spectral line query
 
 Spatial profiler
 ^^^^^^^^^^^^^^^^
+* `backend crash related to spatial profiler <https://github.com/CARTAvis/carta-backend/issues/1102>`_
+* `corrupted spatial profile when cursor is moving <https://github.com/CARTAvis/carta-frontend/issues/1602>`_
+* `mean and rms do not update after smoothing <https://github.com/CARTAvis/carta-frontend/issues/1838>`
+* `Show smoothed values in the cursor info of the spatial profiler when profile smoothing is applied <https://github.com/CARTAvis/carta-frontend/issues/1937>`_
 * `world coordinate offset in the spatial profiler <https://github.com/CARTAvis/carta-frontend/issues/1319>`_
+
+
+Vector overlay dialog
+^^^^^^^^^^^^^^^^^^^^^
+* `annoying text input fields in the vector rendering dialog <https://github.com/CARTAvis/carta-frontend/issues/1906>`_
 
 
 File browser
 ^^^^^^^^^^^^
-* `non-ideal state when we load another image from a folder with lots of files <https://github.com/CARTAvis/carta-frontend/issues/1425>`_
-* `hdf5 header entry OBSGEO-X, OBSGEO-Y & OBSGEO-Z does not always match to fits header entry <https://github.com/CARTAvis/carta-backend/issues/779>`_
-* `CARTA freezes when file browser is opened during file change <https://github.com/CARTAvis/carta-backend/issues/578>`_
-* `Re-open image probably uses cache <https://github.com/CARTAvis/carta-backend/issues/579>`_
-* `casacore processed headers when exceptions happen <https://github.com/CARTAvis/carta-backend/issues/460>`_
+* `Cannot handle pixel values >~3e38 (v3.0.0-beta.2b) <https://github.com/CARTAvis/carta-backend/issues/1136>`_
+* `rock n roll file header box <https://github.com/CARTAvis/carta-frontend/issues/1684>`_
+* `Ability to render older AIPS cubes with FELO-HEL velocity axis <https://github.com/CARTAvis/carta-frontend/issues/1771>`_
 * `Hdf5 and CASA Images with a non-float main dataset are not supported <https://github.com/CARTAvis/carta-backend/issues/77>`_
+* `performance impact to the file browser when trying to export regions from a large set of regions <https://github.com/CARTAvis/carta-frontend/issues/1867>`_
+
 
 Animator
 ^^^^^^^^
-* `frame label and other info out of sync with image change when animating between frames <https://github.com/CARTAvis/carta-frontend/issues/815>`_
+* `odd small pixel tiles seen in hdf5 image after animation stops <https://github.com/CARTAvis/carta-frontend/issues/1846>`_
+* `animation playback with matched contour images and multi-panel view <https://github.com/CARTAvis/carta-frontend/issues/1860>`_
 * `a flash with missing tiles then full image restored when we press stop to stop animation <https://github.com/CARTAvis/carta-frontend/issues/794>`_
 * `incomplete contour rendering when stop animating <https://github.com/CARTAvis/carta-frontend/issues/579>`_
 * `Synchronise contour and raster data when animating <https://github.com/CARTAvis/carta-frontend/issues/569>`_
@@ -53,47 +59,52 @@ Animator
 
 Image viewer
 ^^^^^^^^^^^^
+* `weird 4x4 patterns in raster image due to zfp compression <https://github.com/CARTAvis/carta-frontend/issues/1223>`_
+* `Overlay's coordinate system should be independent between images <https://github.com/CARTAvis/carta-frontend/issues/1619>`_
+* `Rotation of line region anchors on non-square pixel images <https://github.com/CARTAvis/carta-frontend/issues/1732>`_
+* `spatial matching error seen in sub-milliarcsecond scale images <https://github.com/CARTAvis/carta-frontend/issues/1734>`_
+* `jumpy pv image with drag-and-drop <https://github.com/CARTAvis/carta-frontend/issues/1790>`_
+* `Regions not selectable near the bottom of the window <https://github.com/CARTAvis/carta-frontend/issues/1794>`_
+* `NaN* pixel value in the cursor info bar of the image viewer when the image is 1x1 pixel <https://github.com/CARTAvis/carta-frontend/issues/1879>`_
+* `Update image view mode when catalog selection button is disabled <https://github.com/CARTAvis/carta-frontend/issues/1967>`_
 * `missing tiles when animation stops <https://github.com/CARTAvis/carta-frontend/issues/954>`_
 * `missing raster image when zooming in edge pixels <https://github.com/CARTAvis/carta-frontend/issues/948>`_
 * `show empty sky if no tile is requested when switching between spatially matched images <https://github.com/CARTAvis/carta-frontend/issues/819>`_
 * `panning and zooming of spatially matched images is odd if image has very different FoV to reference <https://github.com/CARTAvis/carta-frontend/issues/719>`_
-* `edge pixels artifacts on the right side <https://github.com/CARTAvis/carta-frontend/issues/666>`_
 * `incorrect "AUTO" coordinate system when loading image as new <https://github.com/CARTAvis/carta-frontend/issues/582>`_
 
-
-Stokes analysis
-^^^^^^^^^^^^^^^
-* `stokes scatter plot point indicator not working <https://github.com/CARTAvis/carta-frontend/issues/1313>`_
 
 
 Region of interest
 ^^^^^^^^^^^^^^^^^^
-* `region list: center transformation error for matched image and size conversion accuracy <https://github.com/CARTAvis/carta-frontend/issues/1293>`_
-* `side control points of a region not at the middle of a side <https://github.com/CARTAvis/carta-frontend/issues/1278>`_
-* `detached region control point for rotation <https://github.com/CARTAvis/carta-frontend/issues/1208>`_
-* `region rendering precision at high(er) zoom level <https://github.com/CARTAvis/carta-frontend/issues/949>`_
-* `Cannot import ICRS regions to FK5 image <https://github.com/CARTAvis/carta-backend/issues/528>`_
-* `regions away from the reference pixel are distorted and give the wrong pixel count <https://github.com/CARTAvis/carta-backend/issues/389>`_
+* `Error importing region files when extension missing <https://github.com/CARTAvis/carta-backend/issues/1182>`_
+* `raster image rendering precision at high(er) zoom level <https://github.com/CARTAvis/carta-frontend/issues/949>`_
+
 
 Catalog
 ^^^^^^^
-* `Catalog overlay not updating after first 100K data chunk returned with Safari <https://github.com/CARTAvis/carta-frontend/issues/1417>`_
+* `regression: cannot load large catalog <https://github.com/CARTAvis/carta-frontend/issues/1652>`_
+* `The size of catalog overlay on Apple M1 and with Retina display <https://github.com/CARTAvis/carta-frontend/issues/1662>`_
+* `only enable catalog selection button when there is a layer of catalog overlay <https://github.com/CARTAvis/carta-frontend/issues/1826>`
+* `better precision handling of xy tick values in the catalog scatter and histogram plots <https://github.com/CARTAvis/carta-frontend/issues/1884>`_
 
+Online catalog query
+^^^^^^^^^^^^^^^^^^^^
+* `Simbad dist calculation has ~0.01-0.1 arcsec difference <https://github.com/CARTAvis/carta-frontend/issues/1669>`_
 
 GUI
 ^^^
 * `detached header search field <https://github.com/CARTAvis/carta-frontend/issues/1459>`_
 * `layout with blank panel <https://github.com/CARTAvis/carta-frontend/issues/1387>`_
-* `Popovers displayed on top of the splash screen <https://github.com/CARTAvis/carta-frontend/issues/1346>`_
 * `workaround for BlueprintJS column resizing bug <https://github.com/CARTAvis/carta-frontend/issues/1304>`_
 * `Safari only bug with CARTA icon in reconnection splash screen (when hosting frontend via backend) <https://github.com/CARTAvis/carta-frontend/issues/1296>`_
-* `safari specific: spatial profiler not resized properly <https://github.com/CARTAvis/carta-frontend/issues/970>`_
 * `keyboard event conflict between image viewer and drop down menu <https://github.com/CARTAvis/carta-frontend/issues/758>`_
 * `floating widget cannot be moved to new location if its content is updating (spectral profile) <https://github.com/CARTAvis/carta-frontend/issues/482>`_
-* `inconsistent spectralMatchingType in preferences schema and GUI <https://github.com/CARTAvis/carta-frontend/issues/1352>`_
-* `rounding histogram widget axis value floating points <https://github.com/CARTAvis/carta-frontend/issues/985>`_
-* `crowded indices of the frame axis in the animator <https://github.com/CARTAvis/carta-frontend/issues/940>`_
-* `mis-aligned range index with current index in the animator <https://github.com/CARTAvis/carta-frontend/issues/399>`_
 * `draggable marker should be stopped when out of chart <https://github.com/CARTAvis/carta-frontend/issues/152>`_
 
 
+Misc.
+^^^^^
+* `missing casacore log in carta.log <https://github.com/CARTAvis/carta-backend/issues/1169>`_
+* `Double-escaped URL parameters when file argument contains special characters <https://github.com/CARTAvis/carta-frontend/issues/1862>`_
+* `Opening a CASA image with a trailing / using the URL parameter doesn't work properly <https://github.com/CARTAvis/carta-frontend/issues/1816>`_
