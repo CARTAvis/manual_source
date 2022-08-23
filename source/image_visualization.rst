@@ -195,6 +195,8 @@ The "fits2idia" usage is the following:
    Currently the per-plane beam table is not supported in the HDF5 (IDIA schema) format. 
 
 
+.. _forming_hypercube:
+
 Forming a Stokes hypercube
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 If a set of individual Stokes images needs to be loaded into CARTA for data inspection with the Stokes analysis widget, you can multi-select individual Stokes images (i.e., image_I.fits, image_Q.fits, image_U.fits, and image_V.fits) in the file list with "**shift+click**"/"**command+click**" (macOS), or "**shift+click**"/"**ctrl+click**" (Linux). If the selected images are qualified to form a Stokes hypercube (a virtual cube from multiple image files), a "**Load as hypercube**" button will show up. When the button is clicked, a dialog will show up for you to confirm the identification of the Stokes parameters of the selected images. After clicking the "**Load**" button, the backend will form a hypercube from the selected images. *Effectively*, there is only one image with multiple Stokes parameters loaded in CARTA.

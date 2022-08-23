@@ -2,7 +2,7 @@
 
 Catalog visualization
 =====================
-Source catalog files in *VOTable* or *FITS* format can be loaded in CARTA (via **File** -> **Import catalog**) for visualization as an image overlay, or a 2D scatter plot, or a histogram. Alternatively, you can use the "online catalog query" dialog from the dialog bar to search for catalogs from "SIMBAD" (http://simbad.u-strasbg.fr) or "VizieR" (https://vizier.u-strasbg.fr/viz-bin/VizieR) service. Once a source catalog file is loaded, the information of each column will be shown in the upper table, while the actual catalog entries are displayed in the lower table. By default, only the first 10 columns of an offline catalog file are enabled and displayed (use "**File**" -> "**Preferences**" -> "**Catalog**" to change the default number). With the upper table, you may configure it to show or hide certain columns to be displayed in the lower table. 
+Source catalog files in *VOTable* or *FITS* format can be loaded in CARTA (via **File** -> **Import catalog**) for visualization as an image overlay, or a 2D scatter plot, or a histogram. Once a source catalog file is loaded, the information of each column will be shown in the upper table, while the actual catalog entries are displayed in the lower table. By default, only the first 10 columns of an offline catalog file are enabled and displayed (use "**File**" -> "**Preferences**" -> "**Catalog**" to change the default number). With the upper table, you may configure it to show or hide certain columns to be displayed in the lower table. 
 
 .. raw:: html
 
@@ -17,6 +17,18 @@ Multiple catalog files can be loaded and you may use the "**File**" dropdown men
 
    <img src="_static/carta_fn_catalogue_matching.png" 
         style="width:100%;height:auto;">
+
+Alternatively, you can use the "online catalog query" dialog from the dialog bar to search for catalogs from "SIMBAD" (http://simbad.u-strasbg.fr) or "VizieR" (https://vizier.u-strasbg.fr/viz-bin/VizieR) service and retrieve catalogs for visualization.
+
+.. raw:: html
+
+   <img src="_static/carta_fn_catalogue_onlineQuery.png" 
+        style="width:100%;height:auto;">
+
+.. raw:: html
+
+   <img src="_static/carta_fn_catalogue_onlineQuery2.png" 
+        style="width:80%;height:auto;">
 
 
 Catalog filtering

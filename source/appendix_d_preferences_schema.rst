@@ -10,4 +10,4 @@ The full preferences options are shown below. If you use an IDE to edit the "pre
       <source src="_static/carta_preferences_edit.mp4" type="video/mp4">
     </video>
 
-.. jsonschema:: https://cartavis.github.io/schemas/preference_schema_1.json
+.. jsonschema:: https://cartavis.org/schemas/preferences_schema_2.json

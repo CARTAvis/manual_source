@@ -1,5 +1,43 @@
 Appendix A: version history
 ===========================
+
+Version 3.0
+-----------
+Released 23rd August 2022
+
+* Vector overlay rendering
+* Loading images with the Lattice Expression Language (LEL)
+* Loading CASA images with pixel values as complex numbers
+* Initial implementation of image 2D Gaussian fitting
+* Generating computed polarization quantities (eg. linear polarization intensity) of a Stokes cube on the fly
+* Setting a new rest frequency when saving a subimage
+* Logging moment map generation information in header history
+* Line and polyline region spectral profiler
+* Initial implementation of PV image generator
+* Image file list filter
+* High-resolution PNG export
+* Enhanced spectral matching mode
+* Custom rest frequency for velocity conversion
+* Performance boost when loading a region file with massive amount of regions
+* Telemetry
+* Online catalog query from SIMBAD and VizieR
+* Region export and import enhancement
+* Initial implementation of intensity unit conversion
+* Multiple panel view
+* Pixel grid border rendering at high zoom levels
+* Interactive raster rendering with a cutoff via the interactive colorbar
+* Distance measuring tool
+* Spatial profiler widget enhancement
+* Histogram and statistics widget enhancement
+* Cursor info widget
+* Code snippets (experimental feature)
+* Support gzipped FITS images (fits.gz and fz)
+* HDF5 mip map support
+* Remember last used directory
+
+Performance enhancement and bug fixes are included as well.
+
+
 Version 2.0
 -----------
 Released 7th June 2021
@@ -16,6 +54,8 @@ Released 7th June 2021
 * Profile fitting in the spectral profiler 
 * Marker-based catalog rendering and performance enhancement
 * New deployment modes
+
+Performance enhancement and bug fixes are included as well.
 
 
 Version 1.4

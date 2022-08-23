@@ -2,7 +2,7 @@
 
 Installation and configuration
 ==============================
-CARTA is fundamentally a web application and utilizes client-server architecture. There are three main components:
+CARTA is fundamentally a web application and utilizes a client-server architecture. There are three main components:
 
 * carta_backend
 * carta_frontend
@@ -16,17 +16,18 @@ The supported operating systems of the two modes are summarized below.
 
 * Site Deployment Mode
   
-  * Ubuntu 18.04 LTS (Bionic Beaver) and 20.04 LTS (Focal Fossa)
+  * Ubuntu Linux 18.04 LTS (Bionic Beaver), 20.04 LTS (Focal Fossa), and 22.04 LTS (Jammy Jellyfish)
 
 * User Deployment Mode
 
-  * Ubuntu Linux: 18.04 LTS (Bionic Beaver), 20.04 LTS (Focal Fossa)
+  * Ubuntu Linux: 18.04 LTS (Bionic Beaver), 20.04 LTS (Focal Fossa), and 22.04 LTS (Jammy Jellyfish)
   * Red Hat Enterprise Linux: 7, 8
-  * CentOS: 7, 8
-  * macOS: 10.15 (Catalina), 11 (Big Sur)
+  * CentOS: 7
+  * AlmaLinux/Rocky Linux: 8
+  * macOS: 10.15 (Catalina), 11 (Big Sur), and 12 (Monterey)
 
 .. note::
-   CARTA may work on other Linux distributions (e.g., Fedora, Debian, etc), but has not been tested by us. CARTA may work on macOS 10.14 (Mojave), but again, it has not been tested by us.
+   CARTA may work on other Linux distributions (e.g., Fedora, Debian, etc), but has not been tested by the CARTA development team. CARTA may work on macOS 10.14 (Mojave), but again, it has not been tested.
 
 
 In the following two sections, we provide the installation instructions for the two deployment modes. System administrators who wish to deploy CARTA institution-wide, please refer to the section  :ref:`installation_SDM`. For general users, please refer to the section :ref:`installation_UDM`.
@@ -37,9 +38,9 @@ Site Deployment Mode
 --------------------
 The Site Deployment Mode supports the following operating systems:
 
-* Ubuntu 18.04 LTS (Bionic Beaver) and 20.04 LTS (Focal Fossa)
+* Ubuntu 18.04 LTS (Bionic Beaver), 20.04 LTS (Focal Fossa), and 22.04 LTS (Jammy Jellyfish)
 
-To deploy CARTA at your institution as a web-based application for multiple users, please refer to the  `CARTA controller documentation <https://carta-controller.readthedocs.io/en/dev/>`_. Detailed instructions on installation and configuration of the "carta_backend", the "carta_frontend", and the "carta-controller" are provided. If there is a problem, please contact the `CARTA helpdesk <mailto:carta_helpdesk@asiaa.sinica.edu.tw>`_.
+To deploy CARTA at your institution as a web-based application for multiple users, please refer to the  `CARTA controller documentation <https://carta-controller.readthedocs.io/en/dev/>`_. Detailed instructions on installation and configuration of the "carta_backend", the "carta_frontend", and the "carta-controller" are provided. If there is a problem, please contact the `CARTA helpdesk <mailto:support@carta.freshdesk.com>`_.
 
 
 .. _installation_UDM:
@@ -48,10 +49,12 @@ User Deployment Mode
 --------------------
 The User Deployment Mode supports the following operating systems:
 
-* Ubuntu Linux: 18.04 LTS (Bionic Beaver), 20.04 LTS (Focal Fossa)
+* Ubuntu Linux: 18.04 LTS (Bionic Beaver), 20.04 LTS (Focal Fossa), and 22.04 LTS (Jammy Jellyfish)
 * Red Hat Enterprise Linux: 7, 8
-* CentOS: 7, 8
-* macOS: 10.15 (Catalina), 11 (Big Sur)
+* CentOS: 7
+* AlmaLinux 8
+* Rocky Linux: 8
+* macOS: 10.15 (Catalina), 11 (Big Sur), and 12 (Monterey)
 
 If you have *root* access and can use a package manager to install CARTA via commandline, please refer to the section :ref:`installation_UDM_package_managers`. Otherwise, please refer to the section :ref:`installation_UDM_direct_download`.
 
@@ -63,15 +66,15 @@ Installation via package managers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 CARTA can be installed via commandline with package managers such as:
 
-* :code:`yum` on Red Hat Enterprise Linux and CentOS
+* :code:`yum` or :code:`dnf` on Red Hat Enterprise Linux, CentOS, AlmaLinux, and Rocky Linux
 * :code:`apt` on Ubuntu Linux
 * :code:`brew` on macOS
 
-Please identify your operating system where you wish to run CARTA and follow the instructions. If there is a problem, please contact the `CARTA helpdesk <mailto:carta_helpdesk@asiaa.sinica.edu.tw>`_.
+Please identify your operating system where you wish to run CARTA and follow the instructions. If there is a problem, please contact the `CARTA helpdesk <mailto:support@carta.freshdesk.com>`_.
 
 **Ubuntu**
 
-Ubuntu 18.04 and 20.04 packages are available from our `PPA <https://launchpad.net/~cartavis-team/+archive/ubuntu/carta>`_. Please note that *root* access is required, unless you install in a Docker container.
+Ubuntu 18.04, 20.04, and 22.04 packages are available from our `PPA <https://launchpad.net/~cartavis-team/+archive/ubuntu/carta>`_. Please note that *root* access is required, unless you install in a Docker container.
 
 .. code-block:: bash
 
@@ -86,11 +89,11 @@ Please refer to the section :ref:`how_to_run_carta` for different single-user us
 
 **Red Hat Enterprise Linux 7**
 
-For Red Hat Enterprise Linux 7 users, you first need to add the el7 "cartavis" and "EPEL" repositories. Please note that *root* access is required, unless you install in a Docker container.
+For Red Hat Enterprise Linux 7 users, you need to add the "cartavis" and "EPEL" repositories. Please note that *root* access is required, unless you install in a Docker container.
 
 .. code-block:: bash
 
-   sudo curl https://packages.cartavis.org/cartavis-el7.repo --output /etc/yum.repos.d/cartavis.repo
+   sudo curl https://packages.cartavis.org/cartavis.repo --output /etc/yum.repos.d/cartavis.repo
    sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
    sudo yum -y install carta
 
@@ -98,11 +101,11 @@ Please refer to the section :ref:`how_to_run_carta` for different single-user us
 
 **CentOS 7**
 
-For CentOS7 users, you first need to add the el7 "cartavis" and "EPEL" repositories. Please note that *root* access is required, unless you install in a Docker container.
+For CentOS 7 users, you first need to add the "cartavis" and "EPEL" repositories. Please note that *root* access is required, unless you install in a Docker container.
 
 .. code-block:: bash
 
-   sudo curl https://packages.cartavis.org/cartavis-el7.repo --output /etc/yum.repos.d/cartavis.repo
+   sudo curl https://packages.cartavis.org/cartavis.repo --output /etc/yum.repos.d/cartavis.repo
    sudo yum -y install epel-release
    sudo yum -y install carta
 
@@ -110,33 +113,34 @@ Please refer to the section :ref:`how_to_run_carta` for different single-user us
 
 **Red Hat Enterprise Linux 8**
 
-For Red Hat Enterprise Linux 8 users, you first need to add the el8 "cartavis" and "EPEL" repositories. Please note that *root* access is required, unless you install in a Docker container.
+For Red Hat Enterprise Linux 8 users, you first need to add the "cartavis" and "EPEL" repositories. Please note that *root* access is required, unless you install in a Docker container.
 
 .. code-block:: bash
 
-   sudo curl https://packages.cartavis.org/cartavis-el8.repo --output /etc/yum.repos.d/cartavis.repo
+   sudo curl https://packages.cartavis.org/cartavis.repo --output /etc/yum.repos.d/cartavis.repo
    sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
    sudo yum -y install carta
 
 Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
 
-**CentOS 8**
+**AlmaLinux 8 / Rocky Linux 8**
 
-For CentOS8 users, you first need to add the el8 "cartavis", "EPEL", and "powertools" repositories. Please note that *root*  access is required, unless you install in a Docker container.
+For AlmaLinux 8 or Rocky Linux 8 users, you need to add the "cartavis", "EPEL", and "powertools" repositories. Please note that *root*  access is required, unless you install in a Docker container.
 
 .. code-block:: bash
 
-   sudo curl https://packages.cartavis.org/cartavis-el8.repo --output /etc/yum.repos.d/cartavis.repo
+   sudo curl https://packages.cartavis.org/cartavis.repo --output /etc/yum.repos.d/cartavis.repo
    sudo dnf -y install 'dnf-command(config-manager)'
    sudo dnf -y install epel-release
    sudo dnf -y config-manager --set-enabled powertools
+   sudo yum remove carta carta-frontend carta-backend # if you have installed CARTA v2.0 before
    sudo dnf -y install carta
 
 Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
 
 **macOS**
 
-We officially support macOS 10.15 Catalina and macOS 11.0 Big Sur through `Homebrew <https://brew.sh/>`_. If you do not already have it, you may install Homebrew using the following command (*root* access is required):
+We officially support macOS 10.15 Catalina, macOS 11.0 Big Sur, and macOS 12 Monterey through `Homebrew <https://brew.sh/>`_. If you do not already have it, you may install Homebrew using the following command (*root* access is required):
 
 .. code-block:: bash
 
@@ -155,39 +159,33 @@ Installation of the stand-alone application (direct download)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you do not have *root* access and cannot use package managers to install CARTA via the commandline, here we provide alternative solutions.
 
-**Ubuntu Linux AppImage**
+**Linux AppImage**
 
-The Ubuntu Linux AppImage does not require *root* access. You simply download, extract, and run it. The AppImage has been tested to run on Ubuntu 18.04 and 20.04.
+The Linux AppImage does not require *root* access. It can be run with:
 
-The AppImage can be downloaded `here <https://github.com/CARTAvis/carta/releases/download/v2.0/CARTA-v2.0-ubuntu.tgz>`__. Alternatively, you can use the commandline:
+* Ubuntu 18.04 (LTS), 20.04 (LTS), and 22.04 (LTS)
+* Red Hat Enterprise Linux 7 and 8  
+* CentOS 7
+* AlmaLinux 8
+* Rocky Linux 8
+
+You can simply download, extract, and run it. 
+
+The AppImage can be downloaded `here <https://github.com/CARTAvis/carta/releases/download/v3.0/XXXXXXXXXX.tgz>`__. Alternatively, you can use the commandline:
 
 .. code-block:: bash
 
-   wget https://github.com/CARTAvis/carta/releases/download/v2.0/CARTA-v2.0-ubuntu.tgz
+   wget https://github.com/CARTAvis/carta/releases/download/v3.0/XXXXXXXXXX.tgz
    tar -xzf CARTA-v2.0-ubuntu.tgz
-
-Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
-
-
-**Red Hat Linux AppImage**
-
-The Red Hat Linux AppImage does not require root access. You simply download, extract, and run it. The AppImage has been tested to run on Red Hat Enterprise Linux (RHEL) 7 and 8, as well as CentOS 7 and 8.
-
-The AppImage can be downloaded `here <https://github.com/CARTAvis/carta/releases/download/v2.0/CARTA-v2.0-redhat.tgz>`__. Alternatively, you can use the commandline:
-
-.. code-block:: bash
-
-   wget https://github.com/CARTAvis/carta/releases/download/v2.0/CARTA-v2.0-redhat.tgz
-   tar -xzf CARTA-v2.0-redhat.tgz
 
 Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
 
 
 **macOS Electron Desktop**
 
-The macOS Electron Desktop version can be downloaded `here <https://github.com/CARTAvis/carta/releases/download/v2.0/CARTA-v2.0.dmg>`__. 
+The macOS Electron Desktop version can be downloaded `here <https://github.com/CARTAvis/carta/releases/download/v3.0/YYYYYYYYYY.dmg>`__. 
 
-After downloading, open the DMG installer and drag the CARTA icon to the Applications folder.
+After downloading, open the DMG installer and drag-and-drop the CARTA icon to the Applications folder.
 
 .. note::
    You may create an alias for starting the CARTA Electron version through your terminal. To do so, please open your "~/.zshrc" file (or "~/.bashrc" if you use bash) in a text editor and add the following line:
@@ -196,12 +194,12 @@ After downloading, open the DMG installer and drag the CARTA icon to the Applica
 
       alias carta='/Applications/CARTA.app/Contents/MacOS/CARTA'
 
-You may use a different alias rather than 'carta' e.g. 'carta-v2.0' or 'carta-electron'.
+You may use a different alias rather than 'carta' e.g. 'carta-v3.0' or 'carta-electron'.
 
 Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
 
 .. note::
-   If you use an M1 based Mac, you may see better performance with the native Apple Silicon version of CARTA available `here <https://github.com/CARTAvis/carta/releases/download/v2.0/CARTA-v2.0-arm64.dmg>`__.
+   If you use an M1 based Mac, you may see better performance with the native Apple Silicon version of CARTA available `here <https://github.com/CARTAvis/carta/releases/download/v3.0/ZZZZZZZZZZ.dmg>`__.
 
 
    
@@ -217,17 +215,16 @@ There are different ways of running CARTA in your working environment. Please id
 
 Please note that the CARTA GUI is run in the web browser environment. The supported browsers are:
 
-* Google Chrome (tested with v91)
-* Firefox (tested with v89)
-* Safari (tested with v14.1)
+* Google Chrome (tested with v104)
+* Firefox (tested with v103)
+* Safari (tested with v15.5)
 
-Other browsers might be supported but they are not tested. 
+Other browsers may work but they are not tested. 
 
-.. warning::
-   At the moment, there is a layout issue with the Safari browser, which affect usability and user experience significantly. macOS users should try to avoid using Safari to run CARTA. 
+
 
 .. note::
-   CARTA requires WebGL in order to render images properly. WebGL2 is also required to render catalog overlay properly. Please ensure WebGL and WebGL2 are enabled in your browser. 
+   CARTA requires WebGL2 in order to render images properly. Please ensure WebGL2 is supported in your browser. You can verify your browser with https://webglreport.com/?v=2. 
 
 
 .. _how_to_run_carta_sdm:
@@ -247,7 +244,7 @@ If your institute has CARTA deployed for multiple users, you should have a dedic
 
 After you provide your credentials, you should see the CARTA GUI directly and it is ready to use.
 
-When CARTA is deployed in the "Site Deployment Mode", a "Server" option is available in the "File" menu. With the "Server" menu, you can restart the "carta_backend" process, logout of the CARTA service, or visit the dashboard for more options.   
+When CARTA is deployed in the "Site Deployment Mode", a "**Server**" option is available in the "**File**" menu. With the "**Server**" menu, you can restart the "carta_backend" process, logout of the CARTA service, or visit the dashboard for more options.   
 
 .. raw:: html
 
@@ -284,24 +281,24 @@ After you have successfully installed CARTA on a *remote* server via a package m
    # CARTA installed via a package manager (yum, apt, or brew)
    carta --no_browser
    # CARTA installed by downloading the AppImage
-   ./carta-v2.0-ubuntu.AppImage --no_browser
+   ./carta-v3.0.AppImage --no_browser
 
 Please ensure that you have the :code:`--no_browser` flag set. Then you should see something like the following in your terminal:
 
 .. code-block:: text
 
    [2021-06-03 10:30:57.536] [info] Writing to the log file: /Users/spongebob/.carta/log/carta.log
-   [2021-06-03 10:30:57.537] [info] /usr/local/bin/carta_backend: Version 2.0.0
-   [2021-06-03 10:30:57.574] [info] Serving CARTA frontend from /usr/local/Cellar/carta-beta/2.0.0/share/carta/frontend
+   [2021-06-03 10:30:57.537] [info] /usr/local/bin/carta_backend: Version 3.0.0
+   [2021-06-03 10:30:57.574] [info] Serving CARTA frontend from /usr/local/Cellar/carta-beta/3.0.0/share/carta/frontend
    [2021-06-03 10:30:57.575] [info] Listening on port 3002 with top level folder /, starting folder /Users/spongebob. The number of OpenMP worker threads will be handled automatically.
    [2021-06-03 10:30:57.575] [info] CARTA is accessible at http://192.168.0.128:3002/?token=E1A26527-8226-4FD5-8369-2FCD00BACEE0
 
-The last line contains the unique URL (e.g., :code:`http://192.168.0.128:3002/?token=E1A26527-8226-4FD5-8369-2FCD00BACEE0`) for you to access the CARTA process that you have just started up. You will need to copy the URL and paste it to your *local* web browser to initialize the CARTA GUI. Please note that by "local", we mean the computer that you are using directly in front of you. Please do not use a web browser from the remote server to prevent potential failure due to lack of WebGL support.
+The last line contains the unique URL (e.g., :code:`http://192.168.0.128:3002/?token=E1A26527-8226-4FD5-8369-2FCD00BACEE0`) for you to access the CARTA process that you have just started up. You will need to copy the URL and paste it to your *local* web browser to initialize the CARTA GUI. Please note that by "local", we mean the computer that you are using directly in front of you. Please do not use a web browser from the remote server to prevent potential failure due to lack of WebGL2 support.
 
 More CARTA initialization flags are available in the section :ref:`carta_init_flag`.
 
 .. warning::
-   It is critical to have the :code:`--no_browser` flag set when you launch CARTA on a *remote* server. If the flag is not set, CARTA will launch the default web browser on the remote server. If you have enabled X11 tunneling when you access the remote server via the ssh protocol, the web browser will be displayed in your local computer via X11. Otherwise, you will not see any browser displayed in your screen. Even the web browser from the remote server is displayed successfully with CARTA initialized, we *do not recommend* using CARTA in this way because the rendering is much less efficient and possibly your image will not be rendered properly due to lack of WebGL support. 
+   It is critical to have the :code:`--no_browser` flag set when you launch CARTA on a *remote* server. If the flag is not set, CARTA will launch the default web browser on the remote server. If you have enabled X11 tunneling when you access the remote server via the ssh protocol, the web browser will be displayed in your local computer via X11. Otherwise, you will not see any browser displayed in your screen. Even the web browser from the remote server is displayed successfully with CARTA initialized, we *do not recommend* using CARTA in this way because the rendering is much less efficient and possibly your image will not be rendered properly due to lack of WebGL2 support. 
 
 
 If you would like to initialize CARTA with an image loaded in the image viewer or a folder loaded in the file browser, please try:
@@ -312,8 +309,8 @@ If you would like to initialize CARTA with an image loaded in the image viewer o
    carta M51.fits --no_browser
    carta /alma/data --no_browser
    # CARTA installed by downloading the AppImage
-   ./carta-v2.0-ubuntu.AppImage M51.fits --no_browser
-   ./carta-v2.0-ubuntu.AppImage /alma/data --no_browser
+   ./carta-v3.0.AppImage M51.fits --no_browser
+   ./carta-v3.0.AppImage /alma/data --no_browser
 
 
 
@@ -328,15 +325,15 @@ After you have successfully installed CARTA on your *local* computer via a packa
    # CARTA installed via a package manager (yum, apt, or brew)
    carta
    # CARTA installed by downloading the AppImage
-   ./carta-v2.0-ubuntu.AppImage
+   ./carta-v3.0.AppImage
 
 Then you should see something like the following in your terminal *and* the CARTA GUI initializing in your default web browser:
 
 .. code-block:: text
 
    [2021-06-03 11:03:41.279] [info] Writing to the log file: /Users/spongebob/.carta/log/carta.log
-   [2021-06-03 11:03:41.280] [info] /usr/local/bin/carta_backend: Version 2.0.0
-   [2021-06-03 11:03:41.289] [info] Serving CARTA frontend from /usr/local/Cellar/carta-beta/2.0.0/share/carta/frontend
+   [2021-06-03 11:03:41.280] [info] /usr/local/bin/carta_backend: Version 3.0.0
+   [2021-06-03 11:03:41.289] [info] Serving CARTA frontend from /usr/local/Cellar/carta-beta/3.0.0/share/carta/frontend
    [2021-06-03 11:03:41.289] [info] Listening on port 3002 with top level folder /, starting folder /Users/spongebob. The number of OpenMP worker threads will be handled automatically.
    [2021-06-03 11:03:41.446] [info] CARTA is accessible at http://192.168.0.128:3002/?token=C71D128D-3567-4EA1-B0F2-E703D63D8D0F
    [2021-06-03 11:03:45.209] [info] Session 1 [192.168.0.128] Connected. Num sessions: 1
@@ -348,7 +345,7 @@ Your web browser is automatically launched to access the URL on the second last 
 
    .. code-block:: bash
 
-      APPIMAGE_EXTRACT_AND_RUN=1 ./carta-v2.0-ubuntu.AppImage
+      APPIMAGE_EXTRACT_AND_RUN=1 ./carta-v3.0.AppImage
 
 
 If you would like to initialize CARTA with an image loaded in the image viewer or a folder loaded in the file browser, please try:
@@ -359,8 +356,8 @@ If you would like to initialize CARTA with an image loaded in the image viewer o
    carta M51.fits --no_browser
    carta /alma/data --no_browser
    # CARTA installed by downloading the AppImage
-   ./carta-v2.0-ubuntu.AppImage M51.fits --no_browser
-   ./carta-v2.0-ubuntu.AppImage /alma/data --no_browser
+   ./carta-v3.0.AppImage M51.fits --no_browser
+   ./carta-v3.0.AppImage /alma/data --no_browser
 
 
 
@@ -375,7 +372,7 @@ CARTA supports a set of commandline flags for initialization. Try the following 
    # CARTA installed via a package manager (yum, apt, or brew)
    carta --help
    # CARTA installed by downloading the AppImage
-   ./carta-v2.0-ubuntu.AppImage --help
+   ./carta-v3.0.AppImage --help
 
 Then you should see:
 
@@ -392,7 +389,8 @@ Then you should see:
          --no_log                  do not log output to a log file
          --log_performance         enable performance debug logs
          --log_protocol_messages   enable protocol message debug logs
-         --no_http                 disable frontend HTTP server
+         --no_frontend             disable built-in HTTP frontend interface
+         --no_database             disable built-in HTTP database interface
          --no_browser              don't open the frontend URL in a browser on
                                    startup
          --browser <browser>       custom browser command
@@ -400,7 +398,6 @@ Then you should see:
                                    address or hostname)
      -p, --port <port>             manually set the HTTP and WebSocket port
                                    (default: 3002 or nearest available port)
-     -g, --grpc_port <port>        set gRPC service port
      -t, --omp_threads <threads>   manually set OpenMP thread pool count
          --top_level_folder <dir>  set top-level folder for data files
          --frontend_folder <dir>   set folder from which frontend files are
@@ -411,6 +408,7 @@ Then you should see:
                                    no clients connect
          --idle_timeout <sec>      number of seconds to keep idle sessions alive
          --read_only_mode          disable write requests
+         --enable_scripting        enable HTTP scripting interface
          --no_user_config          ignore user configuration file
          --no_system_config        ignore system configuration file
 
@@ -421,24 +419,45 @@ Then you should see:
          --base <dir>         [deprecated] set starting folder for data files
                               (use the positional parameter instead)
          --root <dir>         [deprecated] use 'top_level_folder' instead
+         --no_http            [deprecated] disable built-in HTTP frontend and
+                              database interfaces (use 'no_frontend' and/or
+                              'no_database' instead)
 
    By default the CARTA backend uses the current directory as the starting data 
    folder, and uses the root of the filesystem (/) as the top-level data folder. If 
-   a custom top-level folder is set, the backend will be restricted from accessing 
-   files outside this directory.
+   a custom top-level folder is set with 'top_level_folder', the backend will be 
+   restricted from accessing files outside this directory. Positional parameters 
+   may be used to set a different starting directory or to open files on startup.
 
-   Frontend files are served from '../share/carta/frontend' (relative to the 
-   location of the backend executable). By default the backend listens for HTTP and 
-   WebSocket connections on all available interfaces, and automatically selects the 
-   first available port starting from 3002.  On startup the backend prints out a URL 
-   which can be used to launch the frontend, and tries to open this URL in the 
-   default browser.
+   A built-in HTTP server is enabled by default. It serves the CARTA frontend and 
+   provides an interface to the CARTA database. These features can be disabled with
+   'no_frontend' and 'no_database', for example if the CARTA backend is being 
+   invoked by the CARTA controller, which manages access to the frontend and 
+   database independently. The HTTP server also provides a scripting interface, but
+   this must be enabled explicitly with 'enable_scripting'.
 
-   The gRPC service is disabled unless a gRPC port is set. By default the number of 
-   OpenMP threads is automatically set to the detected number of logical cores.
+   Frontend files are served from '../share/carta/frontend' (relative to the location of the backend 
+   executable). A custom frontend location may be specified with 'frontend_folder'. 
+   By default the backend listens for HTTP and WebSocket connections on all 
+   available interfaces, and automatically selects the first available port 
+   starting from 3002. 'host' may be used to restrict the backend to a specific 
+   interface. 'port' may be used to set a specific port or to provide a range of 
+   allowed ports.
+
+   On startup the backend prints out a URL which can be used to launch the 
+   frontend, and tries to open this URL in the default browser. It's possible to 
+   disable this attempt completely with 'no_browser', or to provide a custom 
+   browser command with 'browser'. 'no_browser' takes precedence. The custom 
+   browser command may contain the placeholder CARTA_URL, which will be replaced by 
+   the frontend URL. If the placeholder is omitted, the URL will be appended to the 
+   end.
+
+   By default the number of OpenMP threads is automatically set to the detected 
+   number of logical cores. A fixed number may be set with 'omp_threads'.
 
    Logs are written both to the terminal and to a log file, '.carta/log/carta.log' 
-   in the user's home directory. Possible log levels are:
+   in the user's home directory. Logging to the file can be disabled with 'no_log'. 
+   The log level is set with 'verbosity'. Possible log levels are:
     0   off
     1   critical
     2   error
@@ -447,25 +466,27 @@ Then you should see:
     5   debug
 
    Performance and protocol message logging is disabled by default, but can be 
-   enabled with flags. The verbosity takes precedence: the additional log messages 
-   will only be visible if the level is set to 5 (debug). Performance logs are 
-   written to a separate log file, '.carta/log/performance.log'.
+   enabled with 'log_performance' and 'log_protocol_messages'. 'verbosity' takes 
+   precedence: the additional log messages will only be visible if the level is set
+   to 5 (debug). Performance logs are written to a separate log file, 
+   '.carta/log/performance.log'.
 
-   Options are provided to shut the backend down automatically if it is idle (if no 
-   clients are connected), and to kill frontend sessions that are idle (no longer 
-   sending messages to the backend).
+   The 'exit_timeout' and 'initial_timeout' options are provided to shut the 
+   backend down automatically if it is idle (if no clients are connected). 
+   'idle_timeout' allows the backend to kill frontend sessions that are idle (no 
+   longer sending messages to the backend).
+    
+   Enabling 'read_only_mode' prevents the backend from writing data (for example, 
+   saving regions or generated images).
+    
+   'no_user_config' and 'no_system_config' may be used to ignore the user and 
+   global configuration files, respectively.
 
-   Disabling the browser takes precedence over a custom browser command. The custom 
-   browser command may contain the placeholder CARTA_URL, which will be replaced by 
-   the frontend URL. If the placeholder is omitted, the URL will be appended to the 
-   end.
 
 
 If you have installed the macOS Electron Desktop version and set up an alias, a few commandline options are available:
 
 .. code-block:: text
-
-   carta --help
 
    CARTA Electron desktop version
    Usage:
@@ -475,7 +496,9 @@ If you have installed the macOS Electron Desktop version and set up an alias, a 
          [<image>]      CARTA will directly open the image named <image>    
                         e.g. carta aJ.fits or carta ~/CARTA/Images/aJ.fits  
          --help         View this help output.                              
-         --debug        Open the DevTools in the Electron window.            
+         --debug        Open the DevTools in the Electron window.           
+ 
+          
 
 
 .. _browser_options:
@@ -627,11 +650,7 @@ Then, rither :code:`source ~/.zshrc`` (or :code:`source ~/.bashrc`) or open a ne
 
 Troubleshooting
 ---------------
-In this section, we provide common issues users have experienced so far and provide solutions. If none of the solutions work, please do contact `CARTA Helpdesk <carta_helpdesk@asiaa.sinica.edu.tw>`_ for help.
-
-* **A spectral line query causes the RedHat AppImage version of CARTA to crash**  
-
-  CARTA uses "curl" to access the Splatalogue via "https". You may be running an outdated version of RedHat7 and need to update your Network Security Services (nss) package by doing :code:`sudo yum update nss`.
+In this section, we provide common issues users have experienced so far and provide solutions. If none of the solutions work, please do contact `CARTA Helpdesk <support@carta.freshdesk.com>`_ for help.
 
 * **The RedHat7 AppImage does not open and it prints a message suggesting to extract the AppImage using the** :code:`--appimage-extract` **flag.**
 
@@ -666,7 +685,7 @@ In this section, we provide common issues users have experienced so far and prov
 
 * **I see a blank page or image...**
 
-  Check your browser version. It needs to support "*wasm*" streaming and be enabled. More information about browser support of WebAssembly can be found at https://caniuse.com/#search=WebAssembly
+  Check your browser version. It needs to support "*wasm*" streaming and be enabled. More information about browser support of WebAssembly can be found at https://caniuse.com/#search=WebAssembly.
 
   Some outdated RedHat7 distributions may have Firefox 52 ESR which although having WebAssembly support, it is deactivated by default. We recommend updating to a newer version of Firefox "sudo yum update firefox" or installing Google Chrome. If you can not update Firefox, you can try activating WebAssembly as follows:
 
