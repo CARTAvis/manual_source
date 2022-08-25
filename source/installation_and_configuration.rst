@@ -657,6 +657,16 @@ Troubleshooting
 ---------------
 In this section, we provide common issues users have experienced so far and provide solutions. If none of the solutions work, please do contact `CARTA Helpdesk <support@carta.freshdesk.com>`_ for help.
 
+
+* **I see images are not rendered in the image viewer.**
+
+  CARTA utilizes GPU-accelerated rendering techniques at the client side for image rendering. "WebGL2" support is required for Google Chrome, Firefox, and Safari web browsers. You can visit https://webglreport.com/?v=2 to see if your browser supports WebGL2. If you do not see WebGL1 (https://webglreport.com/?v=1) and WebGL2 are supported, please check your browser type and version and see if you can switch to the abovementioned browsers as an alternative to use CARTA. 
+
+  If you see WebGL1 is supported but not WebGL2, please check your hardware to see if there is a discrete NVidia GPU. If so, please check the GPU driver version. There are open-source drivers and official NVidia proprietary drivers. If you are using the official NVIDIA proprietary drivers and experience the issue with WebGL2, there are open-source NVIDIA drivers available for 'Turing' or later NVIDIA GPUs (https://github.com/NVIDIA/open-gpu-kernel-modules)) that you could try instead, or vice versa.
+
+
+
+
 * **The RedHat7 AppImage does not open and it prints a message suggesting to extract the AppImage using the** :code:`--appimage-extract` **flag.**
 
   This error is due to lack of FUSE (File System in Userspace) support. FUSE support in RedHat7 systems may be disabled in some institute environments for security reasons. If that is the case, please prefix with the :code:`APPIMAGE_EXTRACT_AND_RUN=1` environment variable. i.e. :code:`APPIMAGE_EXTRACT_AND_RUN=1 ./carta-v3.0-x86_64.AppImage`
