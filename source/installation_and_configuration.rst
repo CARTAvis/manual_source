@@ -660,10 +660,23 @@ In this section, we provide common issues users have experienced so far and prov
 
 * **I see images are not rendered in the image viewer.**
 
-  CARTA utilizes GPU-accelerated rendering techniques at the client side for image rendering. "WebGL2" support is required for Google Chrome, Firefox, and Safari web browsers. You can visit https://webglreport.com/?v=2 to see if your browser supports WebGL2. If you do not see WebGL1 (https://webglreport.com/?v=1) and WebGL2 are supported, please check your browser type and version and see if you can switch to the abovementioned browsers as an alternative to use CARTA. 
+  1. (*common*) CARTA utilizes GPU-accelerated rendering techniques at the client side for image rendering. "WebGL2" support is required for Google Chrome, Firefox, and Safari web browsers. You can visit https://webglreport.com/?v=2 to see if your browser supports WebGL2. If WebGL1 (https://webglreport.com/?v=1) and WebGL2 are not supported by your browser, try one of the other ones listed above.
+  
+     If you see WebGL1 is supported but not WebGL2, please check your hardware to see if there is a discrete NVIDIA GPU. If so, please check the GPU driver version. There are open-source drivers and official NVIDIA proprietary drivers. If you are using the official NVIDIA proprietary drivers and experience the issue with WebGL2, there are open-source NVIDIA drivers available for 'Turing' or later NVIDIA GPUs (https://github.com/NVIDIA/open-gpu-kernel-modules)) that you could try instead, or vice versa.
 
-  If you see WebGL1 is supported but not WebGL2, please check your hardware to see if there is a discrete NVidia GPU. If so, please check the GPU driver version. There are open-source drivers and official NVidia proprietary drivers. If you are using the official NVIDIA proprietary drivers and experience the issue with WebGL2, there are open-source NVIDIA drivers available for 'Turing' or later NVIDIA GPUs (https://github.com/NVIDIA/open-gpu-kernel-modules)) that you could try instead, or vice versa.
+  2. (*common*) CARTA uses GPU to render the image in the image viewer. If you are running CARTA remotely through a VNC window, the image may fail to render correctly leading to a blank image. In this case we recommend to use :code:`--no_browser` flag to launch CARTA at the remote server and use your local web browser to access the URL shown in your terminal. Please refer to the section :ref:`how_to_run_carta_udm_remote`.
 
+  3. (*less common*) Check your browser version. It needs to support "*wasm*" streaming and be enabled. More information about browser support of WebAssembly can be found at https://caniuse.com/#search=WebAssembly.
+
+     Some outdated RedHat7 distributions may have Firefox 52 ESR which although having WebAssembly support, it is deactivated by default. We recommend updating to a newer version of Firefox "sudo yum update firefox" or installing Google Chrome. If you can not update Firefox, you can try activating WebAssembly as follows:
+
+     1) Open a new tab and enter "about:config" in the URL bar.
+     2) A warning message will appear. Click the button to continue.
+     3) In the search box enter "wasm" and the list will filter down to a few results.
+     4) Double click each line related to "javascript.options.wasm" so that the "Value" column shows them as "true".
+     5) Then simply close the "about:config" tab and the CARTA frontend should now load properly.
+
+     As for the Chrome browser, WebAssembly support was introduced in Chrome version 51, but versions 51 to 56 have it deactivated by default. To activate WebAssembly in Chrome 51 to 56 enter "chrome://flags" in the URL bar, type WebAssembly in the search box that appears, and change each WebAssembly option to "Enabled". If you have Chrome version 57 or newer, WebAssembly should be activated by default.
 
 
 
@@ -698,18 +711,3 @@ In this section, we provide common issues users have experienced so far and prov
      brew uninstall cartavis/tap/carta
      brew install cartavis/tap/carta
 
-* **I see a blank page or image...**
-
-  Check your browser version. It needs to support "*wasm*" streaming and be enabled. More information about browser support of WebAssembly can be found at https://caniuse.com/#search=WebAssembly.
-
-  Some outdated RedHat7 distributions may have Firefox 52 ESR which although having WebAssembly support, it is deactivated by default. We recommend updating to a newer version of Firefox "sudo yum update firefox" or installing Google Chrome. If you can not update Firefox, you can try activating WebAssembly as follows:
-
-  1) Open a new tab and enter "about:config" in the URL bar.
-  2) A warning message will appear. Click the button to continue.
-  3) In the search box enter "wasm" and the list will filter down to a few results.
-  4) Double click each line related to "javascript.options.wasm" so that the "Value" column shows them as "true".
-  5) Then simply close the "about:config" tab and the CARTA frontend should now load properly.
-
-  As for the Chrome browser, WebAssembly support was introduced in Chrome version 51, but versions 51 to 56 have it deactivated by default. To activate WebAssembly in Chrome 51 to 56 enter "chrome://flags" in the URL bar, type WebAssembly in the search box that appears, and change each WebAssembly option to "Enabled". If you have Chrome version 57 or newer, WebAssembly should be activated by default.
-
-  CARTA uses GPU to render the image in the image viewer. If you are running CARTA remotely through a VNC window, the image may fail to render correctly leading to a blank image even though X/Y profiles and contour still function correctly. In this case we recommend to use :code:`--no_browser` flag to launch CARTA at the remote server and use your local web browser to access the URL shown in your terminal. Please refer to the section :ref:`how_to_run_carta_udm_remote`.
