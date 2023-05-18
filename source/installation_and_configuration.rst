@@ -157,6 +157,7 @@ Please refer to the section :ref:`how_to_run_carta` for different single-user us
 
 .. note::
    If you have previously used our "packages.cartavis.org" RPM repository, we recommend uninstalling all CARTA releated RPMs and deleting the old repo file first e.g.
+
    .. code-block:: bash
 
       sudo yum -y remove carta
