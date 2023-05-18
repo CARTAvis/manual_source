@@ -87,48 +87,80 @@ Please refer to the section :ref:`how_to_run_carta` for different single-user us
 .. note::
    For the Windows 10 users, you can install CARTA on the Ubuntu subsystem.
 
-**CentOS 7 / AlmaLinux 8 / Rocky Linux 8**
+**CentOS 7**
 
-For CentOS 7 / AlmaLinux 8 / Rocky Linux 8 users, the “cartavis” and “EPEL” repositories must be added. Please note that root access is required, unless using a Docker container.
+For CentOS 7 users, the "`cartavis/carta Copr <https://copr.fedorainfracloud.org/coprs/cartavis/carta/>`_" and “EPEL” repositories must be added. Please note that root access is required, unless using a Docker container.
 
 
 .. code-block:: bash
 
-   sudo curl https://packages.cartavis.org/cartavis.repo --output /etc/yum.repos.d/cartavis.repo
+   sudo yum -y install yum-plugin-copr
+   sudo yum -y copr enable cartavis/carta
    sudo yum -y install epel-release
-   sudo yum remove carta carta-frontend carta-backend # if you have installed CARTA v2.0 before
    sudo yum -y install carta
+
+Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
+
+
+
+**AlmaLinux 8 / Rocky Linux 8**
+
+For AlmaLinux 8 / Rocky Linux 8 users, the "`cartavis/carta Copr <https://copr.fedorainfracloud.org/coprs/cartavis/carta/>`_" and “EPEL” repositories must be added. Please note that root access is required, unless using a Docker container.
+
+
+.. code-block:: bash
+
+   sudo dnf -y install 'dnf-command(copr)'
+   sudo dnf -y copr enable cartavis/carta
+   sudo dnf -y install epel-release
+   sudo dnf -y install carta
 
 Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
 
 
 **Red Hat Enterprise Linux 7**
 
-For Red Hat Enterprise Linux 7 users, the “cartavis” and “EPEL” repositories must be added. Please note that root access is required, unless using a Docker container.
+For Red Hat Enterprise Linux 7 users, the "`cartavis/carta Copr <https://copr.fedorainfracloud.org/coprs/cartavis/carta/>`_" and “EPEL” repositories must be added. Please note that root access is required, unless using a Docker container.
 
 .. code-block:: bash
 
-   sudo curl https://packages.cartavis.org/cartavis.repo --output /etc/yum.repos.d/cartavis.repo
+   sudo bash -c 'echo -e "\
+   [copr:copr.fedorainfracloud.org:cartavis:carta]\n\
+   name=Copr repo for carta owned by cartavis\n\
+   baseurl=https://download.copr.fedorainfracloud.org/results/cartavis/carta/epel-7-x86_64/\n\
+   type=rpm-md\n\
+   skip_if_unavailable=True\n\
+   gpgcheck=1\n\
+   gpgkey=https://download.copr.fedorainfracloud.org/results/cartavis/carta/pubkey.gpg\n\
+   repo_gpgcheck=0\n\
+   enabled=1\n\
+   enabled_metadata=1" > /etc/yum.repos.d/carta.repo'
    sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-   sudo yum remove carta carta-frontend carta-backend # if you have installed CARTA v2.0 before
    sudo yum -y install carta
 
 Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
-
 
 
 **Red Hat Enterprise Linux 8**
 
-For Red Hat Enterprise Linux 8 users, the “cartavis” and “EPEL” repositories must be added. Please note that root access is required, unless using a Docker container.
+For Red Hat Enterprise Linux 8 users, the "`cartavis/carta Copr <https://copr.fedorainfracloud.org/coprs/cartavis/carta/>`_" and “EPEL” repositories must be added. Please note that root access is required, unless using a Docker container.
 
 .. code-block:: bash
 
-   sudo curl https://packages.cartavis.org/cartavis.repo --output /etc/yum.repos.d/cartavis.repo
+   sudo dnf -y install 'dnf-command(copr)'
+   sudo dnf -y copr enable cartavis/carta
    sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-   sudo yum remove carta carta-frontend carta-backend # if you have installed CARTA v2.0 before
-   sudo yum -y install carta
+   sudo dnf -y install carta
 
 Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
+
+
+.. note::
+   If you have previously used our "packages.cartavis.org" RPM repository, we recommend uninstalling all CARTA releated RPMs and deleting the old repo file first e.g.
+   .. code-block:: bash
+
+      sudo yum -y remove carta
+      sudo rm /etc/yum.repos.d/cartavis.repo
 
 
 **macOS**
@@ -563,38 +595,61 @@ The Ubuntu 18.04, 20.04, and 22.04 packages are available from our `PPA <https:/
    sudo apt-get update
    sudo apt install fits2idia
 
+**CentOS 7**
 
-**CentOS 7 / AlmaLinux 8 / Rocky Linux 8**
-
-The "fits2idia" program requires packages from the epel repository.
+The "fits2idia" program is available from the "`cartavis/carta Copr <https://copr.fedorainfracloud.org/coprs/cartavis/carta/>`_" repository and requires packages from the "EPEL" repository.
 
 .. code-block:: bash
 
-   sudo curl https://packages.cartavis.org/cartavis.repo --output /etc/yum.repos.d/cartavis.repo
+   sudo yum -y install yum-plugin-copr
+   sudo yum -y copr enable cartavis/carta
    sudo yum -y install epel-release
    sudo yum -y install fits2idia
 
 
-**Red Hat Enterprise Linux 7**
+**AlmaLinux 8 / Rocky Linux 8**
 
-The "fits2idia" program requires packages from the epel repository.
+The "fits2idia" program is available from the "`cartavis/carta Copr <https://copr.fedorainfracloud.org/coprs/cartavis/carta/>`_" repository and requires packages from the "EPEL" repository.
 
 .. code-block:: bash
 
-   sudo curl https://packages.cartavis.org/cartavis.repo --output /etc/yum.repos.d/cartavis.repo
+   sudo dnf -y install 'dnf-command(copr)'
+   sudo dnf -y copr enable cartavis/carta
+   sudo dnf -y install epel-release
+   sudo dnf -y install fits2idia
+
+
+**Red Hat Enterprise Linux 7**
+
+The "fits2idia" program is available from the "`cartavis/carta Copr <https://copr.fedorainfracloud.org/coprs/cartavis/carta/>`_" repository and requires packages from the "EPEL" repository.
+
+.. code-block:: bash
+
+   sudo bash -c 'echo -e "\
+   [copr:copr.fedorainfracloud.org:cartavis:carta]\n\
+   name=Copr repo for carta owned by cartavis\n\
+   baseurl=https://download.copr.fedorainfracloud.org/results/cartavis/carta/epel-7-x86_64/\n\
+   type=rpm-md\n\
+   skip_if_unavailable=True\n\
+   gpgcheck=1\n\
+   gpgkey=https://download.copr.fedorainfracloud.org/results/cartavis/carta/pubkey.gpg\n\
+   repo_gpgcheck=0\n\
+   enabled=1\n\
+   enabled_metadata=1" > /etc/yum.repos.d/carta.repo'
    sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
    sudo yum -y install fits2idia
 
 
 **Red Hat Enterprise Linux 8**
 
-The "fits2idia" program requires packages from the epel repository.
+The "fits2idia" program is available from the "`cartavis/carta Copr <https://copr.fedorainfracloud.org/coprs/cartavis/carta/>`_" repository and requires packages from the "EPEL" repository.
 
 .. code-block:: bash
 
-   sudo curl https://packages.cartavis.org/cartavis.repo --output /etc/yum.repos.d/cartavis.repo
+   sudo dnf -y install 'dnf-command(copr)'
+   sudo dnf -y copr enable cartavis/carta
    sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-   sudo yum -y install fits2idia
+   sudo dnf -y install fits2idia
 
 
 **macOS**
