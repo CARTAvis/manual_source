@@ -212,7 +212,7 @@ Loading images with the Lattice Expression Language (LEL)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 CARTA supoorts loading images via the Lattice Expression Language (LEL) interface. To enable this feature, click the "**Filter**" dropdown menu in the file browser and switch to the "**Image arithmetic**" mode. Please refer to the `Lattice Expression Language`_ section of the CASA user manual for detailed usages.
 
-.. _Lattice Expression Language: https://casadocs.readthedocs.io/en/latest/notebooks/image_analysis.html#Lattice-Expression-Language
+.. _Lattice Expression Language: https://casacore.github.io/casacore-notes/223.html
 
 With the LEL interface, you can apply arithmetics on images and load the result as an image in CARTA. For example, with the expression
 
