@@ -322,6 +322,22 @@ Please ensure that you have the :code:`--no_browser` flag set. Then you should s
 
 The last line contains the unique URL (e.g., :code:`http://192.168.0.128:3002/?token=E1A26527-8226-4FD5-8369-2FCD00BACEE0`) for you to access the CARTA process that you have just started up. You will need to copy the URL and paste it to your *local* web browser to initialize the CARTA GUI. Please note that by "local", we mean the computer that you are using directly in front of you. Please do not use a web browser from the remote server to prevent potential failure due to lack of WebGL2 support.
 
+.. note::
+   If your remote server runs a Red Hat-based distribution, a default firewall may be active that blocks access all ports (e.g., :3002). If that is the case, you can establish an SSH tunnel to bypass it. To create the tunnel and start CARTA with just one line, please run the following command on your local machine:
+
+   .. code-block:: bash
+
+      PORT=3333 && ssh -L ${PORT}:localhost:${PORT} <user>@<server> carta --host=localhost --port=${PORT} --no_browser
+
+   In the command above, replace `<user>` with your username on the remote server and `<server>` with the DNS or IP address of the remote server. You may also need to replace `carta` with the exact command you usually use to start CARTA on the remote server (e.g., perhaps you may use an AppImage version of CARTA).
+   
+   `PORT` is the port number you wish to use for the connection. In this example we use port 3333, but you may specify any available port of your choice.
+
+   After running this command, CARTA should start on the remote server and the URL it provides should work as-is in the web browser on your local machine.
+
+   Also note, this method is intended for situations where your local machine has direct network access to the remote server (e.g., they are on the same network). It will not work if there is an intermediate gateway server. If that is the case, it is still possible SSH tunnel, but the command is more complex.
+
+
 More CARTA initialization flags are available in the section :ref:`carta_init_flag`.
 
 .. warning::
