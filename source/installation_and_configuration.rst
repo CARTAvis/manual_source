@@ -725,6 +725,61 @@ Then, rither :code:`source ~/.zshrc`` (or :code:`source ~/.bashrc`) or open a ne
 
 .. _troubleshooting:
 
+**Windows**
+
+While we do not provide official support for CARTA on Windows, you can still use it through the Windows Subsystem for Linux 2 (WSL2), with Ubuntu being the recommended Linux distribution. The following steps provide a simplified guide to installing it on Windows 11, although the method should be fairly similar for Windows 10 users:
+
+  1. Open the Microsoft store and search for "Ubuntu".
+
+     Click "Get".
+     
+     It will proceed to install Ubuntu through the Windows Subsystem for Linux.
+
+     Click "Open".
+
+     An Ubuntu terminal will appear.
+
+     An Ubuntu icon will also appear in the Start menu for easy access in future.
+
+  2. Install the Ubuntu version of CARTA into the terminal.
+
+     In the Ubuntu terminal type the following:
+
+     .. code-block:: bash
+
+        sudo add-apt-repository ppa:cartavis-team/carta
+
+     (password is your Windows login password)
+
+     Press ENTER
+
+     .. code-block:: bash
+
+        sudo apt-get update
+        sudo apt install carta
+
+     Press Y.
+
+     CARTA is now installed.
+
+  3. To run CARTA:
+     In the Ubuntu terminal type:
+
+     .. code-block:: bash
+
+        carta /mnt/c/Users/<USERNAME> -–no_browser
+
+     Where <USERNAME> is your windows username.
+
+     The --no_browser flag suppresses it from trying to open a web-browser in Ubuntu as we strongly recommend using your local Windows web browser for best performance.
+
+     CARTA will start up and will say “CARTA is accessible at” followed by a unique URL.
+
+     Copy that unique URL, and paste it into your local Windows web browser (such as Google Chrome, Firefox, or Edge).
+
+     The CARTA GUI should appear and the file browser will open in your Windows home directory so you can easily navigate to your images.
+
+
 Troubleshooting
 ---------------
 In this section, we provide common issues users have experienced so far and provide solutions. If none of the solutions work, please do contact `CARTA Helpdesk <support@carta.freshdesk.com>`_ for help.
