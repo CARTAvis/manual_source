@@ -157,6 +157,7 @@ Please refer to the section :ref:`how_to_run_carta` for different single-user us
 
 .. note::
    If you have previously used our "packages.cartavis.org" RPM repository, we recommend uninstalling all CARTA releated RPMs and deleting the old repo file first e.g.
+
    .. code-block:: bash
 
       sudo yum -y remove carta
@@ -320,6 +321,22 @@ Please ensure that you have the :code:`--no_browser` flag set. Then you should s
    [2021-06-03 10:30:57.575] [info] CARTA is accessible at http://192.168.0.128:3002/?token=E1A26527-8226-4FD5-8369-2FCD00BACEE0
 
 The last line contains the unique URL (e.g., :code:`http://192.168.0.128:3002/?token=E1A26527-8226-4FD5-8369-2FCD00BACEE0`) for you to access the CARTA process that you have just started up. You will need to copy the URL and paste it to your *local* web browser to initialize the CARTA GUI. Please note that by "local", we mean the computer that you are using directly in front of you. Please do not use a web browser from the remote server to prevent potential failure due to lack of WebGL2 support.
+
+.. note::
+   If your remote server runs a Red Hat-based distribution, a default firewall may be active that blocks access all ports (e.g., :3002). If that is the case, you can establish an SSH tunnel to bypass it. To create the tunnel and start CARTA with just one line, please run the following command on your local machine:
+
+   .. code-block:: bash
+
+      PORT=3333 && ssh -L ${PORT}:localhost:${PORT} <user>@<server> carta --host=localhost --port=${PORT} --no_browser
+
+   In the command above, replace `<user>` with your username on the remote server and `<server>` with the DNS or IP address of the remote server. You may also need to replace `carta` with the exact command you usually use to start CARTA on the remote server (e.g., perhaps you may use an AppImage version of CARTA).
+   
+   `PORT` is the port number you wish to use for the connection. In this example we use port 3333, but you may specify any available port of your choice.
+
+   After running this command, CARTA should start on the remote server and the URL it provides should work as-is in the web browser on your local machine.
+
+   Also note, this method is intended for situations where your local machine has direct network access to the remote server (e.g., they are on the same network). It will not work if there is an intermediate gateway server. If that is the case, it is still possible SSH tunnel, but the command is more complex.
+
 
 More CARTA initialization flags are available in the section :ref:`carta_init_flag`.
 
@@ -707,6 +724,61 @@ Assuming you already have the CARTA v3.0.0 Electron version installed in the def
 Then, rither :code:`source ~/.zshrc`` (or :code:`source ~/.bashrc`) or open a new tab or terminal window to use "fits2idia".
 
 .. _troubleshooting:
+
+**Windows**
+
+While we do not provide official support for CARTA on Windows, you can still use it through the Windows Subsystem for Linux 2 (WSL2), with Ubuntu being the recommended Linux distribution. The following steps provide a simplified guide to installing it on Windows 11, although the method should be fairly similar for Windows 10 users:
+
+  1. Open the Microsoft store and search for "Ubuntu".
+
+     Click "Get".
+     
+     It will proceed to install Ubuntu through the Windows Subsystem for Linux.
+
+     Click "Open".
+
+     An Ubuntu terminal will appear.
+
+     An Ubuntu icon will also appear in the Start menu for easy access in future.
+
+  2. Install the Ubuntu version of CARTA into the terminal.
+
+     In the Ubuntu terminal type the following:
+
+     .. code-block:: bash
+
+        sudo add-apt-repository ppa:cartavis-team/carta
+
+     (password is your Windows login password)
+
+     Press ENTER
+
+     .. code-block:: bash
+
+        sudo apt-get update
+        sudo apt install carta
+
+     Press Y.
+
+     CARTA is now installed.
+
+  3. To run CARTA:
+     In the Ubuntu terminal type:
+
+     .. code-block:: bash
+
+        carta /mnt/c/Users/<USERNAME> -–no_browser
+
+     Where <USERNAME> is your windows username.
+
+     The --no_browser flag suppresses it from trying to open a web-browser in Ubuntu as we strongly recommend using your local Windows web browser for best performance.
+
+     CARTA will start up and will say “CARTA is accessible at” followed by a unique URL.
+
+     Copy that unique URL, and paste it into your local Windows web browser (such as Google Chrome, Firefox, or Edge).
+
+     The CARTA GUI should appear and the file browser will open in your Windows home directory so you can easily navigate to your images.
+
 
 Troubleshooting
 ---------------
