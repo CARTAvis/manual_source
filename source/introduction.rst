@@ -1,13 +1,13 @@
 Introduction
 ============
 
-The mission of CARTA
---------------------
-CARTA is the *Cube Analysis and Rendering Tool for Astronomy*, a new image visualization and analysis tool designed for the ALMA, the VLA, and the SKA pathfinders - MeerKAT and ASKAP. As the image size increases dramatically with modern telescopes in recent years, viewing an image with a local CPU-based image viewer or with a remote CPU-based image viewer via the ssh protocol plus X11 tunneling or the VNC becomes much less efficient. The mission of CARTA is to provide usability and scalability for the future by utilizing modern web technologies and computing parallelization. 
+CARTA development scope
+-----------------------
+CARTA is the *Cube Analysis and Rendering Tool for Astronomy*, a new image visualization and analysis tool designed for the ALMA, the VLA, and the SKA pathfinders - MeerKAT and ASKAP. As the image size increases dramatically with modern telescopes in recent years, viewing an image with a local CPU-based image viewer or with a remote CPU-based image viewer via the SSH protocol plus X11 tunneling or the VNC becomes much less efficient. The mission of CARTA is to provide usability and scalability for the future by utilizing modern web technologies and computing parallelization. 
 
 Client-Server architecture
 --------------------------
-CARTA uses a client-server architecture which is suitable for visualizing images with large file sizes (GB to TB) easily obtained from ALMA, VLA, or SKA pathfinders (MeerKAT and ASKAP) observations. It is practically difficult to process such a huge file with a personal computer or a laptop. By using a client-server architecture, computation and data storage can be handled by remote enterprise-class servers or clusters with high computing power and high performance storage, while processed products are sent to clients only for visualization with modern web technologies, such as GPU-accelerated rendering. This architecture also enables users to visualize images from the ALMA and the VLA science archives by using CARTA as an interface. 
+CARTA uses a client-server architecture suitable for visualizing images with large file sizes (GB to TB) easily obtained from ALMA, VLA, or SKA pathfinders (MeerKAT and ASKAP) observations. Processing such a massive file with a personal computer or a laptop is difficult. Using a client-server architecture, computation and data storage can be handled by remote enterprise-class servers or clusters with high computing power and high-performance storage. At the same time, processed products are sent to clients only for visualization with modern web technologies, such as GPU-accelerated rendering. This architecture also enables users to visualize images from the ALMA and the VLA science archives using CARTA as an interface. 
 
 
 .. raw:: html
@@ -20,19 +20,19 @@ Codebase and releases
 ---------------------
 CARTA is an open-source project. Its source code is publicly available at https://github.com/CARTAvis. 
 
-CARTA has two deployment modes: "Site Deployment Mode" (SDM) and "User Deployment Mode" (UDM). The former is intended for hosting multiple users with an enterprise-class server, while the later is intended for single-user usage with a personal computer, a laptop, or a remote server. 
+CARTA has two deployment modes: "Site Deployment Mode" (SDM) and "User Deployment Mode" (UDM). The former is designed for hosting multiple users on an enterprise-class server, while the latter is designed for single-user usage on a personal computer, laptop, or remote server. 
 
 Installation guides for the "Site Deployment Mode" and the "User Deployment Mode" are provided in the section :ref:`installation_configuration`. Please contact the `CARTA Helpdesk <support@carta.freshdesk.com>`_ (support@carta.freshdesk.com) if there is a problem. 
 
-Beside the annual stable release (the current stable release is v3.0.0), there are beta releases within the one year development cycle. With the beta releases, you can try new features and provide your feedback to the development team for improving the next stable release. Please visit the CARTA homepage (https://cartavis.org) to obtain the latest beta and stable releases. 
+Besides the annual stable release (the current stable release is v4.0.0), there are one or two beta releases within the one-year development cycle. With the beta releases, you can try new features and provide feedback to the development team to improve the next stable release. Please visit the CARTA homepage (https://cartavis.org) for the latest beta and stable releases. 
 
 
 Getting help
 ------------
-The CARTA development team welcomes any suggestion, feature request, or bug report, to make CARTA better via 
+The CARTA development team welcomes any suggestion, feature request, or bug report to make CARTA better via 
 
 * `CARTA Helpdesk <support@carta.freshdesk.com>`_ (support@carta.freshdesk.com) 
-* `Github Issue <https://github.com/CARTAvis/carta/issues>`_ (https://github.com/CARTAvis/carta/issues)
+* `GitHub Issue <https://github.com/CARTAvis/carta/issues>`_ (https://github.com/CARTAvis/carta/issues)
 
 
 Contributors
@@ -65,17 +65,18 @@ The bibtex is
    @software{angus_comrie_2018_3377984,
    author       = {Angus Comrie and
                   Kuo-Song Wang and
-                  Shou-Chieh Hsu and
+                  Yu-Hsuan Hwang and
                   Anthony Moraghan and
                   Pamela Harris and
-                  Qi Pang and
                   Adrianna Pińska and
+                  Carli Raul-Omar and
                   Cheng-Chin Chiang and
-                  Rob Simmonds and
                   Tien-Hao Chang and
-                  Yu-Hsuan Hwang and
-                  Hengtai Jan and
-                  Ming-Yi Lin},
+                  Shou-Chieh Hsu and
+                  Qi Pang and
+                  Rob Simmonds and
+                  Ming-Yi Lin and
+                  Hengtai Jan},
    title        = {{CARTA: The Cube Analysis and Rendering Tool for 
                    Astronomy}},
    month        = dec,
@@ -87,17 +88,17 @@ The bibtex is
 
 You may also refer to https://ui.adsabs.harvard.edu/abs/2020zndo...3377984C/abstract.
 
-Acknowledgement
----------------
-ASIAA CASA Development Center (ACDC) acknowledges the grant from the Ministry of Science and Technology of Taiwan for the ALMA-NA collaboration.
+Acknowledgment
+--------------
+ASIAA CASA Development Center (ACDC) acknowledges the grant from the National Science and Technology Council of Taiwan for the ALMA-NA collaboration.
 
-The Inter-University Institute for Data Intensive Astronomy is a partnership of three South African universities: the University of Cape Town, the University of the Western Cape and the University of Pretoria.
+The Inter-University Institute for Data Intensive Astronomy is a partnership of three South African universities: the University of Cape Town, the University of the Western Cape, and the University of Pretoria.
 
-The National Radio Astronomy Observatory is a facility of the National Science Foundation operated under cooperative agreement by Associated Universities, Inc.
+The National Radio Astronomy Observatory is a facility of the National Science Foundation operated under a cooperative agreement by Associated Universities, Inc.
 
 The Department of Physics at the University of Alberta has contributed to the CARTA project thanks to support from the National Radio Astronomy Observatory under an ALMA Development Project and from the Canada Foundation for Innovation as part of the Canadian Initiative for Radio Astronomy Data Analysis (CIRADA).
 
-CARTA is mainly built in C++, TypeScript, and JavaScript, and with the following third-party libraries:
+CARTA is mainly built in C++, TypeScript, and JavaScript and with the following third-party libraries:
 
 * AST: http://starlink.eao.hawaii.edu/starlink/AST
 * Blueprint: https://blueprintjs.com
@@ -121,10 +122,10 @@ CARTA is mainly built in C++, TypeScript, and JavaScript, and with the following
 * WebAssembly: https://webassembly.org
 
 
-The source code of CARTA is hosted on `Github <https://github.com/CARTAvis>`_.
+The source code of CARTA is available on `GitHub <https://github.com/CARTAvis>`_.
 
-The CARTA development team is grateful to David Berry for consultation of the AST library and to Kumar Golap for consultation of the casacore library.
+The CARTA development team acknowledges David Berry for consulting on the AST library, Kumar Golap for the casacore library, and Anthony Remijan and Chris O'Brien for consulting on the Splatalogue SLAP API.
 
-Copyright and License
+Copyright and license
 ---------------------
-Copyright (C) 2018-2022 ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta. This program is free software; you can redistribute it and/or modify it under the terms of the `GNU General Public License version 3 <http://www.gnu.org/copyleft/gpl.html>`_ as published by the Free Software Foundation.
+Copyright (C) 2018-2023 ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta. This software is free to redistribute and modify under the `GNU General Public License version 3 <http://www.gnu.org/copyleft/gpl.html>`_, published by the Free Software Foundation.
