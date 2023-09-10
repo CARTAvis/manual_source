@@ -341,15 +341,6 @@ By default, a colorbar is displayed along with the raster image on the right-han
 
    When you change the field of view or the size of the Image Viewer, tile data of the *right* layer matching your screen resolution will be used. For example, if you are interested in the field of the blue box and the Image Viewer has a screen size of 512 pixels by 384 pixels, tiles of the 2nd layer will be used for rendering. In this case, nine tiles will be used. If you pan a little bit around the blue box, no new tile data are required. However, if you pan the view to the green box with the same viewer size, two additional tiles from the second layer are required, and four tiles will be *re-used* for rendering. With this tiled rendering approach, tiles will be re-used at different zoom levels and with different fields of view to minimize the amount of data transfer while keeping the image sharp on the screen. Effectively, you will see that the image becomes sharper and sharper at higher and higher zoom levels.
 
-   Below is a demonstration of the tiled rendering in action. Note that the video clip is made under a particular internet condition for you to see the process in action. Usually images are rendered quickly.
-
-   .. raw:: html
-
-      <video controls style="width:100%;height:auto;">
-         <source src="_static/carta_fn_tiledRendering_demo.mp4" type="video/mp4">
-      </video>
-
-
    The performance of the tiled rendering can be customized with the Preferences Dialog, "**File**" -> "**Preferences**" -> "**Performance**". The default values are chosen to ensure that raster images are displayed efficiently with sufficient accuracy. Advanced users may refine the setup if necessary. For example, when accessing a remote backend under poor internet conditions, the compression quality might be slightly lowered to make the tile data smaller. Note that a lower compression quality might introduce noticeable artifacts on the raster image. Please adjust with caution. 
    
    Alternatively, you may enable the low bandwidth mode, which will reduce required image resolutions by a factor of two (so that the image will look slightly blurry) and cursor responsiveness from 200 ms to 400 ms (HDF5 images: from 100 ms to 400 ms). Under good internet conditions, you may enable streaming image tiles while zooming to see progressive updates of image resolutions at different zoom levels. 
@@ -735,14 +726,13 @@ For image cubes, matching in the spectral domain is achieved by nearest interpol
 .. note::
    Projection effects of raster images
 
-   As raster images are matched spatially by applying translation, rotation, and scaling, projection effects between different images might be visible if images have a wide field of view and/or have very different projection schemes. In the following video, projection effects in raster images are demonstrated. However, the projection effects of contour images are properly handled in CARTA. Contours are reprojected with sufficient accuracy to the raster image, as seen in the Image Viewer.  
+   As raster images are matched spatially by applying translation, rotation, and scaling, projection effects between different images might be visible if images have a wide field of view and/or have very different projection schemes. In the following example, projection effects in raster images are demonstrated. However, the projection effects of contour images are properly handled in CARTA. Contours are reprojected with sufficient accuracy to the raster image, as seen in the Image Viewer.  
 
    .. raw:: html
 
-      <video controls style="width:100%;height:auto;" poster="_static/carta_fn_projectionEffect_poster.png" preload="none">
-        <source src="_static/carta_fn_projectionEffect.mp4" type="video/mp4">
-      </video>
-
+      <img src="_static/carta_fn_projectionEffect.png" 
+         style="width:100%;height:auto;">
+   
 
 .. note::
    If a spatial reference image or a spectral reference image is closed via the menu "**File**" -> "**Close image**", all matched images will be unmatched, and a new reference image will be automatically registered.
