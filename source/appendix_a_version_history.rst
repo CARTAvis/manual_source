@@ -29,7 +29,7 @@ Released 23rd August 2022
 * Distance measuring tool
 * Spatial profiler widget enhancement
 * Histogram and statistics widget enhancement
-* Cursor info widget
+* Cursor Info Widget
 * Code snippets (experimental feature)
 * Support gzipped FITS images (fits.gz and fz)
 * HDF5 mip map support

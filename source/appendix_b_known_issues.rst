@@ -6,26 +6,26 @@ The CARTA development team plans to address these issues in coming releases.
 
 
 
-Stability and performance
+Stability and Performance
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 * `CARTA crashes when using beam tables with 64-bit floats <https://github.com/CARTAvis/carta-backend/issues/1166>`_
 * `performance impact of AST grid tolerance to wide field images <https://github.com/CARTAvis/carta-frontend/issues/451>`_
 * `backend crash when enable multiple profile plot <https://github.com/CARTAvis/carta-backend/issues/825>`_
 
 
-Spectral profiler
+Spectral Profiler
 ^^^^^^^^^^^^^^^^^
 * `unable to convert Jy/beam to K if the spectral axis is VRAD but converting to FREQ is possible <https://github.com/CARTAvis/carta-frontend/issues/1907>`_
 * `cursor info of the spectral profiler widget when profile smoothing is enabled <https://github.com/CARTAvis/carta-frontend/issues/1880>`_
 
 
 
-Spectral line query
+Spectral Line Query
 ^^^^^^^^^^^^^^^^^^^
 * `spectral line label off by one channel? <https://github.com/CARTAvis/carta-frontend/issues/1327>`_
 
 
-Spatial profiler
+Spatial Profiler
 ^^^^^^^^^^^^^^^^
 * `backend crash related to spatial profiler <https://github.com/CARTAvis/carta-backend/issues/1102>`_
 * `corrupted spatial profile when cursor is moving <https://github.com/CARTAvis/carta-frontend/issues/1602>`_
@@ -34,12 +34,12 @@ Spatial profiler
 * `world coordinate offset in the spatial profiler <https://github.com/CARTAvis/carta-frontend/issues/1319>`_
 
 
-Vector overlay dialog
+Vector Overlay Dialog
 ^^^^^^^^^^^^^^^^^^^^^
 * `annoying text input fields in the vector rendering dialog <https://github.com/CARTAvis/carta-frontend/issues/1906>`_
 
 
-File browser
+File Browser
 ^^^^^^^^^^^^
 * `Cannot handle pixel values >~3e38 (v3.0.0-beta.2b) <https://github.com/CARTAvis/carta-backend/issues/1136>`_
 * `rock n roll file header box <https://github.com/CARTAvis/carta-frontend/issues/1684>`_
@@ -57,7 +57,7 @@ Animator
 * `Synchronise contour and raster data when animating <https://github.com/CARTAvis/carta-frontend/issues/569>`_
 
 
-Image viewer
+Image Viewer
 ^^^^^^^^^^^^
 * `weird 4x4 patterns in raster image due to zfp compression <https://github.com/CARTAvis/carta-frontend/issues/1223>`_
 * `Overlay's coordinate system should be independent between images <https://github.com/CARTAvis/carta-frontend/issues/1619>`_
@@ -75,7 +75,7 @@ Image viewer
 
 
 
-Region of interest
+Region of Interest
 ^^^^^^^^^^^^^^^^^^
 * `Error importing region files when extension missing <https://github.com/CARTAvis/carta-backend/issues/1182>`_
 * `raster image rendering precision at high(er) zoom level <https://github.com/CARTAvis/carta-frontend/issues/949>`_
@@ -88,7 +88,7 @@ Catalog
 * `only enable catalog selection button when there is a layer of catalog overlay <https://github.com/CARTAvis/carta-frontend/issues/1826>`
 * `better precision handling of xy tick values in the catalog scatter and histogram plots <https://github.com/CARTAvis/carta-frontend/issues/1884>`_
 
-Online catalog query
+Online Catalog Query
 ^^^^^^^^^^^^^^^^^^^^
 * `Simbad dist calculation has ~0.01-0.1 arcsec difference <https://github.com/CARTAvis/carta-frontend/issues/1669>`_
 
