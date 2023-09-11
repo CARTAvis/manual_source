@@ -1,6 +1,31 @@
 Appendix A: version history
 ===========================
 
+Version 4.0
+-----------
+Released 12th September 2023
+
+* Interactive PV preview
+* Enhanced PV generator
+* Initial support of workspace (save and restore)
+* Initial support of workspace sharing (carta-controller only; experimental)
+* Enhanced image fitting capabilities
+* Image annotation
+* Visualization of a rotated cube (no image analytics)
+* Support beam info for AIPS-generated cubes
+* Support animation playback with matched images in multi-panel view
+* A new dialog for angular distance measurement
+* Show/hide and lock all regions
+* Auto-scrolling the selected region into the region list view
+* Mirroring cursor markers on spatially matched images
+* Cursor info with dual spectral convention in the spectral profiler
+* Pan and zoom images with manual inputs
+* Switch directory path with manual input
+* Custom range and number of bins in the histogram calculation
+
+See `carta-frontend changelog <https://github.com/CARTAvis/carta-frontend/blob/release/4.0/CHANGELOG.md>`_ and `carta-backend changelog <https://github.com/CARTAvis/carta-backend/blob/release/4.0/CHANGELOG.md>`_ for other improvements.
+
+
 Version 3.0
 -----------
 Released 23rd August 2022
