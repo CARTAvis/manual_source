@@ -595,8 +595,8 @@ The preferences and layout files are in JSON format. The "preferences.json" file
 
 .. _fits2idia_installation:
 
-Installation of fits2idia
--------------------------
+Installation of fits2idia (converting FITS to HDF5-IDIA)
+--------------------------------------------------------
 CARTA provides a command-line tool “fits2idia” to convert a FITS image to the HDF5 (IDIA schema) format, which helps improve the user experience of image visualization and analysis, especially for large image cubes.
 
 Installation via package managers
