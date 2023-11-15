@@ -211,7 +211,7 @@ Please refer to :ref:`how_to_run_carta` for different single-user use cases.
 
 **macOS Electron Desktop**
 
-The Intel macOS Electron Desktop version can be downloaded via https://github.com/CARTAvis/carta/releases/download/v4.0.0/CARTA-v4.0-Intel.dmg and the native M1/M2-series macOS Electron Desktop version for new Apple Silicon Macs can be downloaded via https://github.com/CARTAvis/carta/releases/download/v4.0.0/CARTA-v4.0-arm64.dmg.
+The Intel macOS Electron Desktop version can be downloaded via https://github.com/CARTAvis/carta/releases/download/v4.0.0/CARTA-v4.0.0-x64.dmg and the native M1/M2/M3-series macOS Electron Desktop version for new Apple Silicon Macs can be downloaded via https://github.com/CARTAvis/carta/releases/download/v4.0.0/CARTA-v4.0.0-arm64.dmg.
 
 After downloading, open the DMG installer and drag-and-drop the CARTA icon to the Applications folder.
 
