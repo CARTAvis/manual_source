@@ -1,6 +1,6 @@
 Image cube visualization
 ========================
-With v4.0.0, CARTA provides the following widgets and dialogs for image cube visualization:
+With v4.1.0, CARTA provides the following widgets and dialogs for image cube visualization:
 
 * Widget
   
@@ -289,7 +289,7 @@ CARTA supports a swapped-axes image cube. When such a cube is selected in the fi
         style="width:100%;height:auto;">
 
 .. warning::
-   In v4.0.0, CARTA supports swapped-axes image cubes for *image visualization* only. Region analytics tools are not supported.
+   In v4.1.0, CARTA supports swapped-axes image cubes for *image visualization* only. Region analytics tools are not supported.
 
 Image viewer
 ------------

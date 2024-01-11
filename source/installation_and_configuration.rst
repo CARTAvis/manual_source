@@ -197,21 +197,21 @@ The Linux AppImage does not require *root* access. It can be run with:
 
 You can simply download, extract, and run it. 
 
-We now support x86_64 and aarch64 architectures. You can download the x86_64 version via https://github.com/CARTAvis/carta/releases/download/v4.0.0/carta.AppImage.x86_64.tgz or the aarch64 version via https://github.com/CARTAvis/carta/releases/download/v4.0.0/carta.AppImage.aarch64.tgz. Alternatively, you can use the command line. For example, to get the x86_64 version:
+We now support x86_64 and aarch64 architectures. You can download the x86_64 version via https://github.com/CARTAvis/carta/releases/download/v4.1.0/carta.AppImage.x86_64.tgz or the aarch64 version via https://github.com/CARTAvis/carta/releases/download/v4.1.0/carta.AppImage.aarch64.tgz. Alternatively, you can use the command line. For example, to get the x86_64 version:
 
 .. code-block:: bash
 
-   wget https://github.com/CARTAvis/carta/releases/download/v4.0.0/carta.AppImage.x86_64.tgz
+   wget https://github.com/CARTAvis/carta/releases/download/v4.1.0/carta.AppImage.x86_64.tgz
    tar -xzf carta.AppImage.x86_64.tgz
 
-Then, it will extract to :code:`carta-v4.0-x86_64.AppImage`.
+Then, it will extract to :code:`carta-v4.1-x86_64.AppImage`.
 
 Please refer to :ref:`how_to_run_carta` for different single-user use cases.
 
 
 **macOS Electron Desktop**
 
-The Intel macOS Electron Desktop version can be downloaded via https://github.com/CARTAvis/carta/releases/download/v4.0.0/CARTA-v4.0.0-x64.dmg and the native M1/M2/M3-series macOS Electron Desktop version for new Apple Silicon Macs can be downloaded via https://github.com/CARTAvis/carta/releases/download/v4.0.0/CARTA-v4.0.0-arm64.dmg.
+The Intel macOS Electron Desktop version can be downloaded via https://github.com/CARTAvis/carta/releases/download/v4.1.0/CARTA-v4.1.0-x64.dmg and the native M1/M2/M3-series macOS Electron Desktop version for new Apple Silicon Macs can be downloaded via https://github.com/CARTAvis/carta/releases/download/v4.1.0/CARTA-v4.1.0-arm64.dmg.
 
 After downloading, open the DMG installer and drag-and-drop the CARTA icon to the Applications folder.
 
@@ -222,7 +222,7 @@ After downloading, open the DMG installer and drag-and-drop the CARTA icon to th
 
       alias carta='/Applications/CARTA.app/Contents/MacOS/CARTA'
 
-   You may use a different alias rather than 'carta', e.g. 'carta-v4.0' or 'carta-electron'.
+   You may use a different alias rather than 'carta', e.g. 'carta-v4.1' or 'carta-electron'.
 
 Please refer to :ref:`how_to_run_carta` for different single-user use cases.
 
@@ -308,14 +308,14 @@ After you have successfully installed CARTA on a *remote* server via a package m
    # CARTA installed via a package manager (yum, dnf, or apt)
    carta --no_browser
    # CARTA installed by downloading the AppImage
-   ./carta-v4.0-x86_64.AppImage --no_browser
+   ./carta-v4.1-x86_64.AppImage --no_browser
 
 Please ensure that you have the :code:`--no_browser` flag set. Then you should see something like the following in your terminal:
 
 .. code-block:: text
 
    [2021-06-03 10:30:57.536] [info] Writing to the log file: /home/spongebob/.carta/log/carta.log
-   [2021-06-03 10:30:57.537] [info] /usr/bin/carta_backend: Version 4.0.0
+   [2021-06-03 10:30:57.537] [info] /usr/bin/carta_backend: Version 4.1.0
    [2021-06-03 10:30:57.574] [info] Serving CARTA frontend from /usr/share/carta/frontend
    [2021-06-03 10:30:57.575] [info] Listening on port 3002 with top level folder /, starting folder /home/spongebob. The number of OpenMP worker threads will be handled automatically.
    [2021-06-03 10:30:57.575] [info] CARTA is accessible at http://172.20.30.40:3002/?token=E1A26527-8226-4FD5-8369-2FCD00BACEE0
@@ -352,8 +352,8 @@ If you would like to initialize CARTA with an image loaded in the Image Viewer o
    carta M51.fits --no_browser
    carta /alma/data --no_browser
    # CARTA installed by downloading the AppImage
-   ./carta-v4.0-x86_64.AppImage M51.fits --no_browser
-   ./carta-v4.0-x86_64.AppImage /alma/data --no_browser
+   ./carta-v4.1-x86_64.AppImage M51.fits --no_browser
+   ./carta-v4.1-x86_64.AppImage /alma/data --no_browser
 
 
 
@@ -368,15 +368,15 @@ After you have successfully installed CARTA on your *local* computer via a packa
    # CARTA installed via a package manager (yum, dnf, apt, or brew)
    carta
    # CARTA installed by downloading the AppImage
-   ./carta-v4.0-x86_64.AppImage
+   ./carta-v4.1-x86_64.AppImage
 
 Then you should see something like the following in your terminal *and* the CARTA GUI initializing in your default web browser:
 
 .. code-block:: text
 
    [2021-06-03 11:03:41.279] [info] Writing to the log file: /Users/spongebob/.carta/log/carta.log
-   [2021-06-03 11:03:41.280] [info] /usr/local/bin/carta_backend: Version 4.0.0
-   [2021-06-03 11:03:41.289] [info] Serving CARTA frontend from /usr/local/Cellar/carta-beta/4.0.0/share/carta/frontend
+   [2021-06-03 11:03:41.280] [info] /usr/local/bin/carta_backend: Version 4.1.0
+   [2021-06-03 11:03:41.289] [info] Serving CARTA frontend from /usr/local/Cellar/carta/4.1.0/share/carta/frontend
    [2021-06-03 11:03:41.289] [info] Listening on port 3002 with top level folder /, starting folder /Users/spongebob. The number of OpenMP worker threads will be handled automatically.
    [2021-06-03 11:03:41.446] [info] CARTA is accessible at http://192.168.0.128:3002/?token=C71D128D-3567-4EA1-B0F2-E703D63D8D0F
    [2021-06-03 11:03:45.209] [info] Session 1 [192.168.0.128] Connected. Num sessions: 1
@@ -388,7 +388,7 @@ Your default web browser is launched automatically to access the URL on the seco
 
    .. code-block:: bash
 
-      APPIMAGE_EXTRACT_AND_RUN=1 ./carta-v4.0-x86_64.AppImage
+      APPIMAGE_EXTRACT_AND_RUN=1 ./carta-v4.1-x86_64.AppImage
 
 
 If you would like to initialize CARTA with an image loaded in the Image Viewer or a folder loaded in the File Browser, please try:
@@ -399,8 +399,8 @@ If you would like to initialize CARTA with an image loaded in the Image Viewer o
    carta M51.fits --no_browser
    carta /alma/data --no_browser
    # CARTA installed by downloading the AppImage
-   ./carta-v4.0-x86_64.AppImage M51.fits --no_browser
-   ./carta-v4.0-x86_64.AppImage /alma/data --no_browser
+   ./carta-v4.1-x86_64.AppImage M51.fits --no_browser
+   ./carta-v4.1-x86_64.AppImage /alma/data --no_browser
 
 
 
@@ -415,7 +415,7 @@ CARTA supports a set of command-line flags for initialization. Try the following
    # CARTA installed via a package manager (yum, dnf, apt, or brew)
    carta --help
    # CARTA installed by downloading the AppImage
-   ./carta-v4.0-x86_64.AppImage --help
+   ./carta-v4.1-x86_64.AppImage --help
 
 Then you should see:
 
@@ -713,9 +713,9 @@ For easier access, an 'alias' may be set up for running it.
 
 **macOS**
 
-For macOS users who do not wish to use Homebrew, we have bundled the "fits2idia" program with the CARTA v4.0.0 Electron version for convenience. We recommend setting up an alias to use it.
+For macOS users who do not wish to use Homebrew, we have bundled the "fits2idia" program with the CARTA v4.1.0 Electron version for convenience. We recommend setting up an alias to use it.
 
-Assuming you already have the CARTA v4.0.0 Electron version installed in the default location, you can create an alias to the "fit2idia" executable. In your macOS terminal, open your "~/.zshrc" file (or "~/.bashrc" if you use bash) in a text editor and add the following line:
+Assuming you already have the CARTA v4.1.0 Electron version installed in the default location, you can create an alias to the "fit2idia" executable. In your macOS terminal, open your "~/.zshrc" file (or "~/.bashrc" if you use bash) in a text editor and add the following line:
 
 .. code-block:: bash
 
@@ -810,7 +810,7 @@ In this section, we provide common issues users have experienced and solutions. 
 
 * **The RedHat7 AppImage does not open and it prints a message suggesting to extract the AppImage using the** :code:`--appimage-extract` **flag.**
 
-  This error is due to a lack of FUSE (File System in Userspace) support. FUSE support in RedHat7 systems may be disabled in some institute environments for security reasons. If that is the case, please prefix it with the :code:`APPIMAGE_EXTRACT_AND_RUN=1` environment variable. i.e. :code:`APPIMAGE_EXTRACT_AND_RUN=1 ./carta-v4.0-x86_64.AppImage`
+  This error is due to a lack of FUSE (File System in Userspace) support. FUSE support in RedHat7 systems may be disabled in some institute environments for security reasons. If that is the case, please prefix it with the :code:`APPIMAGE_EXTRACT_AND_RUN=1` environment variable. i.e. :code:`APPIMAGE_EXTRACT_AND_RUN=1 ./carta-v4.1-x86_64.AppImage`
 
 * **There are error messages when I try to install CARTA using Homebrew**
 

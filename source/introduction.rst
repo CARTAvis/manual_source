@@ -24,7 +24,7 @@ CARTA has two deployment modes: "Site Deployment Mode" (SDM) and "User Deploymen
 
 Installation guides for the "Site Deployment Mode" and the "User Deployment Mode" are provided in the section :ref:`installation_configuration`. Please contact the `CARTA Helpdesk <support@carta.freshdesk.com>`_ (support@carta.freshdesk.com) if there is a problem. 
 
-Besides the annual stable release (the current stable release is v4.0.0), there are one or two beta releases within the one-year development cycle. With the beta releases, you can try new features and provide feedback to the development team to improve the next stable release. Please visit the CARTA homepage (https://cartavis.org) for the latest beta and stable releases. 
+Besides the annual stable release (the current stable release is v4.1.0), there are one or two beta releases within the one-year development cycle. With the beta releases, you can try new features and provide feedback to the development team to improve the next stable release. Please visit the CARTA homepage (https://cartavis.org) for the latest beta and stable releases. 
 
 
 Getting help
