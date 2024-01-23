@@ -176,7 +176,7 @@ Now CARTA can be installed with:
 
 .. code-block:: bash
 
-   brew install cartavis/tap/carta
+   brew install --cask carta
 
    
 .. _installation_UDM_direct_download:
@@ -812,30 +812,4 @@ In this section, we provide common issues users have experienced and solutions. 
 
   This error is due to a lack of FUSE (File System in Userspace) support. FUSE support in RedHat7 systems may be disabled in some institute environments for security reasons. If that is the case, please prefix it with the :code:`APPIMAGE_EXTRACT_AND_RUN=1` environment variable. i.e. :code:`APPIMAGE_EXTRACT_AND_RUN=1 ./carta-v4.1-x86_64.AppImage`
 
-* **There are error messages when I try to install CARTA using Homebrew**
-
-  There could be various problems, such as "dyld: Library not loaded" due to "libgrpc++.1.37.dylib" or "libprotobuf.26.dylib", for example. If you encounter similar errors, please try the following:
-
-  .. code-block:: bash
-
-     brew update
-     brew remove cartavis/tap/carta
-     brew install cartavis/tap/carta
-
-  Or,
-
-  .. code-block:: bash
-
-     brew remove cartavis/tap/carta
-     brew --build-from-source cartavis/tap/carta
-
-  If the error mentions that "homebrew-core is a shallow clone". please try as it suggests:
-
-  .. code-block:: bash
-
-     git -C /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core fetch --unshallow
-     git -C /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask fetch --unshallow
-
-     brew uninstall cartavis/tap/carta
-     brew install cartavis/tap/carta
 
