@@ -11,10 +11,12 @@ CARTA - Cube Analysis and Rendering Tool for Astronomy
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3377984.svg
    :target: https://doi.org/10.5281/zenodo.3377984
 
+.. note::
+   v4.1 is a maintenance release to address core library update and critical bugs. No new feature or feature enhancement is included.
 
 .. toctree::
    :maxdepth: 3
-   :caption: CARTA User Manual for v4.0.0
+   :caption: CARTA User Manual for v4.1.0
 
    introduction.rst
    installation_and_configuration.rst

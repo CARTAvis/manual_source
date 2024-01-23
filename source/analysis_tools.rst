@@ -1,6 +1,6 @@
 Image cube analysis tools
 =========================
-With version 4.0.0, CARTA provides the following widgets and tools for image cube analysis:
+With version 4.1.0, CARTA provides the following widgets and tools for image cube analysis:
 
 * Widget
   
@@ -38,7 +38,7 @@ Using the File Header Dialog, you can view a summary or full header of an image 
 
 Region of interest
 ------------------
-As of v4.0.0, CARTA supports the following region types:
+As of v4.1.0, CARTA supports the following region types:
 
 * rectangle (rotatable)
 * ellipse (rotatable)
@@ -179,7 +179,7 @@ To export regions to a region file, use the menu "**File**"" -> "**Export Region
    <img src="_static/carta_fn_regionExport.png" 
         style="width:100%;height:auto;">
 
-As of v4.0.0, CASA region text format (:code:`.crtf`) and ds9 region text format (:code:`.reg`) are supported with some limitations. Currently, only the 2D region definition is supported. Other properties, such as spectral range or reference frame, will be supported in future releases.  
+As of v4.1.0, CASA region text format (:code:`.crtf`) and ds9 region text format (:code:`.reg`) are supported with some limitations. Currently, only the 2D region definition is supported. Other properties, such as spectral range or reference frame, will be supported in future releases.  
 
 The supported CRTF region syntax is summarized below:
 
@@ -306,7 +306,7 @@ An “offset” axis is constructed to compute a spatial profile for a line regi
 
    When the sampling process is made along a line region or a polyline region in a "non-flat" image, the solid angle of the sampling boxes is approximately conserved. In some cases, especially when the image is highly distorted, some computed boxes may cover no image pixel for profile calculations. Therefore, you may see NaN values in the final spatial profile. When this happens, you can consider increasing the averaging "width" with the "**Computation**" tab of the Spatial Profiler Settings Dialog.
    
-   In a future release, the averaging "height" (parallel to the trajectory) can be customized too. With the v4.0.0 release, the "height" is fixed to three (three pixels for flat image or three unit angular size for non-flat image). 
+   In a future release, the averaging "height" (parallel to the trajectory) can be customized too. With the v4.1.0 release, the "height" is fixed to three (three pixels for flat image or three unit angular size for non-flat image). 
 
 The interactions of the Spatial Profiler Widget are demonstrated in the section :ref:`mouse_interaction_with_charts`. The red vertical bar indicates the pixel where the cursor profile is taken. The bottom axis shows the image coordinate, while the optional world coordinate is displayed on the top axis. Extra options to configure the profile plot are available in the Spatial Profiler Settings Dialog, which is launched by clicking the "**cog**" button at the top-right corner. The option "**Show mean/RMS**" in the "**Styling**" tab will use the data in the current view to derive a mean value and an RMS value and visualize the results on the plot. Numerical values are also displayed at the bottom-left corner. Optionally, the profile can be smoothed with different methods in the "**Smoothing**" tab (see section :ref:`profile_smoothing`). The profile can be exported as a PNG image or a text file in TSV format via the buttons at the bottom-right corner when you hover over the plot.
 
@@ -478,7 +478,7 @@ Once generated, images will be appended, displayed, and spatially matched (optio
    In a resumed session after a broken connection to the backend, all in-memory images, such as those generated with the Moment Map Generator, are lost. Those images will not be accessible in the resumed session.
 
 .. note::
-   As of v4.0.0, the moment images are computed along the spectral axis only. In future release, calculations along other axes will be provided (e.g., R.A.). 
+   As of v4.1.0, the moment images are computed along the spectral axis only. In future release, calculations along other axes will be provided (e.g., R.A.). 
 
 
 .. _pv_generator:
@@ -492,7 +492,7 @@ The PV Generator has two operation modes:
 Production mode
 ^^^^^^^^^^^^^^^
 
-When studying source kinematics, it is common to utilize a position-velocity (PV) image. You can generate a PV image with the PV Generator Widget from the widget bar. As of v4.0.0, only a line region can be selected as the PV cut. In a future release, a polyline region will be supported.
+When studying source kinematics, it is common to utilize a position-velocity (PV) image. You can generate a PV image with the PV Generator Widget from the widget bar. As of v4.1.0, only a line region can be selected as the PV cut. In a future release, a polyline region will be supported.
 
 .. raw:: html
 
@@ -515,7 +515,7 @@ As a scalable approach for large image cubes, CARTA constructs a PV image from a
 
    When the sampling process is made along a line region in a "non-flat" image, the solid angle of the sampling boxes is approximately conserved. In some cases, especially when the image is highly distorted, some computed boxes may cover zero image pixels for spectral profile calculations. Therefore, you may see NaN stripes in the final PV image. When this happens, you can consider increasing the averaging "width" with the "**Averaging width**"  input and spinbox.
 
-   In a future release, the averaging "height" (parallel to the trajectory) can be customized too. With the v4.0.0 release, the "height" is fixed to *three* (three pixels for flat image or three unit angular size for non-flat image). 
+   In a future release, the averaging "height" (parallel to the trajectory) can be customized too. With the v4.1.0 release, the "height" is fixed to *three* (three pixels for flat image or three unit angular size for non-flat image). 
 
 
 Once a PV image is generated, it will be loaded and displayed in the Image Viewer. It is named with an additional :code:`_pv` string in the original input file name.  The generated PV image is kept in RAM per session, and if there is a new request for PV image generation, the old PV image will be deleted first. If you want to regenerate a PV image but keep the old one, you can enable the "**Keep previous PV image(s)**" toggle. Optionally, a calculated PV image can be exported in CASA or FITS format via "**File**" -> "**Save Image**".
@@ -584,7 +584,7 @@ Three different solvers ("Cholesky", "QR", "SVD") are provided in the "**Solver*
 
 Profile fitting
 ---------------
-As of v4.0.0, the profile fitting function can be applied to the Spectral Profiler Widget to estimate of the spectral line properties, such as amplitude, FWHM, center, and integrated area. The profile fitting function is available via the "**Fitting**" button in the top-right corner of the Spectral Profiler Widget. 
+As of v4.1.0, the profile fitting function can be applied to the Spectral Profiler Widget to estimate of the spectral line properties, such as amplitude, FWHM, center, and integrated area. The profile fitting function is available via the "**Fitting**" button in the top-right corner of the Spectral Profiler Widget. 
 
 
 .. raw:: html
@@ -595,7 +595,7 @@ As of v4.0.0, the profile fitting function can be applied to the Spectral Profil
 .. note::
    In a future release, the profile fitting function will be added to the Spatial Profiler Widget and the Histogram Widget.
 
-CARTA supports two model profile functions in v4.0.0 (more will be added in a future release):
+CARTA supports two model profile functions in v4.1.0 (more will be added in a future release):
 
 * Gaussian: thermal or random motion broadening
 * Lorentzian: pressure broadening
