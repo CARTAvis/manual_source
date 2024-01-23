@@ -176,7 +176,8 @@ Now CARTA can be installed with:
 
 .. code-block:: bash
 
-   brew install --cask carta
+   brew update
+   brew install --cask cartavis/tap/carta
 
    
 .. _installation_UDM_direct_download:
