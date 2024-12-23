@@ -12,8 +12,10 @@ CARTA uses a client-server architecture suitable for visualizing images with lar
 
 .. raw:: html
 
-   <img src="_static/carta_intro_serverClient.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_intro_serverClient.png" target="_blank">
+       <img src="_static/carta_intro_serverClient.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 
 Codebase and releases
