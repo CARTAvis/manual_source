@@ -42,6 +42,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.githubpages',
     'sphinx-jsonschema',
+    "sphinx_new_tab_link",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
