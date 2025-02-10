@@ -32,9 +32,11 @@ File Header
 Using the File Header Dialog, you can view a summary or full header of an image file. To search for a keyword, click the "**search**" button in the header tab. If you want to save the file header as a text file, use the "**export**" button.
 
 .. raw:: html
-
-   <img src="_static/carta_fn_fileHeader.png" 
-        style="width:80%;height:auto;">
+ 
+   <a href="_static/carta_fn_fileHeader.png" target="_blank">
+       <img src="_static/carta_fn_fileHeader.png" 
+           style="width:80%;height:auto;">
+   </a>
 
 Region of interest
 ------------------
@@ -98,8 +100,10 @@ The "**focus**" button is to show the corresponding region at the center of the 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_roi.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_roi.png" target="_blank">
+       <img src="_static/carta_fn_roi.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 CARTA checks if a polygon is *simple* or *complex*. If a polygon is detected as *complex* (i.e., polygon line segments intersect), its color will become pink as a warning. Spectral profile, statistics, or histogram of a complex polygon can still be requested. However, the outcome may be beyond your expectations. The enclosed pixels depend on *how* a complex polygon is constructed. Please use complex polygons with caution. 
 
@@ -115,8 +119,10 @@ In the following exaggerated example, two images with different coordinate syste
 
 .. raw:: html
 
-  <img src="_static/carta_fn_roi_sharedRegion.png" 
-      style="width:100%;height:auto;">
+   <a href="_static/carta_fn_roi_sharedRegion.png" target="_blank">
+       <img src="_static/carta_fn_roi_sharedRegion.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 
 Shared line/polyline region with conserved angular length
@@ -126,8 +132,10 @@ Like the polygon approximation of closed regions, the line and polyline regions 
 
 .. raw:: html
 
-  <img src="_static/carta_fn_roi_sharedRegion2.png" 
-      style="width:100%;height:auto;">
+   <a href="_static/carta_fn_roi_sharedRegion2.png" target="_blank">
+       <img src="_static/carta_fn_roi_sharedRegion2.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 When a spatial profile is derived from a line or a polyline region, a set of boxes with a "height" (parallel to the trajectory) of three unit steps and a custom "width" (perpendicular to the trajectory) in the number of unit steps are created along the trajectory. These *hidden* boxes are created on the reference image first. Then, similar to the polygon approximation of closed regions, these "boxes" are transformed into the spatially matched secondary image to derive a spatial profile. The unit step refers to an image pixel if the image is “flat” without noticeable distortion. However, if the image is considered "wide" with noticeable distortion, the unit step refers to the angular size of an image pixel as defined in the image header. In this case, the boxes retain approximately a fixed solid angle. All these approximations allow spatial profiles of the same trajectory among different spatially matched images to be compared directly. The same idea is applied to the position-velocity image generator with a line region.
 
@@ -138,8 +146,11 @@ When regions are created on one of the spatially matched images, they are *all* 
 
 .. raw:: html
 
-  <img src="_static/carta_fn_roi_sharedRegion_management.png" 
-      style="width:100%;height:auto;">
+   <a href="_static/carta_fn_roi_sharedRegion_management.png" target="_blank">
+       <img src="_static/carta_fn_roi_sharedRegion_management.png" 
+           style="width:100%;height:auto;">
+   </a>
+
 
 Analytics with shared regions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -158,9 +169,10 @@ As an example below, two image cubes representing 12CO 2-1 and 13CO 2-1 are matc
 
 .. raw:: html
 
-  <img src="_static/carta_fn_roi_sharedRegion_analytics.png" 
-      style="width:100%;height:auto;">
-
+   <a href="_static/carta_fn_roi_sharedRegion_analytics.png" target="_blank">
+       <img src="_static/carta_fn_roi_sharedRegion_analytics.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 
 Region import and export
@@ -169,15 +181,19 @@ CARTA supports region import and export capability. In world coordinates or imag
 
 .. raw:: html
 
-   <img src="_static/carta_fn_regionImport.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_regionImport.png" target="_blank">
+       <img src="_static/carta_fn_regionImport.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 To export regions to a region file, use the menu "**File**"" -> "**Export Regions**". A shortcut button can be found in the Region List Widget, too. You can use the dialog to select a subset of regions to be saved in a region text file. 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_regionExport.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_regionExport.png" target="_blank">
+       <img src="_static/carta_fn_regionExport.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 As of v4.1.0, CASA region text format (:code:`.crtf`) and ds9 region text format (:code:`.reg`) are supported with some limitations. Currently, only the 2D region definition is supported. Other properties, such as spectral range or reference frame, will be supported in future releases.  
 
@@ -265,9 +281,10 @@ In CARTA, the following image annotation objects are supported:
 
 .. raw:: html
 
-   <img src="_static/carta_fn_annotationObjects.png" 
-        style="width:100%;height:auto;">
-
+   <a href="_static/carta_fn_annotationObjects.png" target="_blank">
+       <img src="_static/carta_fn_annotationObjects.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 
 Image annotation objects created with the graphical user interface can be exported as a "region" text file in the CRTF or ds9 format.
@@ -282,15 +299,19 @@ When the "**Region**" dropdown menu is set to "cursor", or a point region, a hor
 
 .. raw:: html
 
-   <img src="_static/carta_fn_spatialProfiler_widget.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_spatialProfiler_widget.png" target="_blank">
+       <img src="_static/carta_fn_spatialProfiler_widget.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 When a spatial profile is derived from a line or a polyline region, a set of boxes with a “height” (parallel to the trajectory) of three unit steps and a custom “width” (perpendicular to the trajectory; set with the "**Computation**" tab of the Spatial Profiler Settings Dialog) in number of unit steps are created along the trajectory. These hidden boxes are created on the reference image first. Then, similar to the polygon approximation of closed regions, these “boxes” are transformed into the spatially matched secondary image to derive a spatial profile. If the image is considered “flat” without noticeable distortion, the unit step refers to an image pixel. However, if the image is considered “wide” with noticeable distortion, the unit step refers to the angular size of an image pixel as defined in the image header. In this case, the boxes retain approximately a fixed solid angle. All these approximations allow spatial profiles of the same trajectory among different spatially matched images to be compared directly.
 
 .. raw:: html
 
-   <img src="_static/carta_fn_spatialProfiler_widget2.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_spatialProfiler_widget2.png" target="_blank">
+       <img src="_static/carta_fn_spatialProfiler_widget2.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 
 An “offset” axis is constructed to compute a spatial profile for a line region. The origin is the middle point of the line region. A “distance” axis is constructed for a polyline region to compute a spatial profile along the trajectory. The origin is the first control point of the polyline. Note that sampling artifacts may be seen near the endpoints of a line region or each control point of a polyline due to the rounding effect of the sampling process.
@@ -298,8 +319,10 @@ An “offset” axis is constructed to compute a spatial profile for a line regi
 
 .. raw:: html
 
-   <img src="_static/carta_fn_linePolylineSampling.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_linePolylineSampling.png" target="_blank">
+       <img src="_static/carta_fn_linePolylineSampling.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 
 .. note::
@@ -344,9 +367,10 @@ Multiple Spectral Profiler Widgets can be configured to display different region
 
 .. raw:: html
 
-   <img src="_static/carta_fn_spectralProfiler_multiwidget.png" 
-        style="width:100%;height:auto;">
-
+   <a href="_static/carta_fn_spectralProfiler_multiwidget.png" target="_blank">
+       <img src="_static/carta_fn_spectralProfiler_multiwidget.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 **Multiple-profile mode**
 
@@ -356,30 +380,38 @@ When one of the "**Image**", "**Region**", "**Statistic**", and "**Polarization*
 
    .. raw:: html
 
-      <img src="_static/carta_fn_spectralProfiler_multiple_image.png" 
-        style="width:100%;height:auto;">
+      <a href="_static/carta_fn_spectralProfiler_multiple_image.png" target="_blank">
+          <img src="_static/carta_fn_spectralProfiler_multiple_image.png" 
+              style="width:100%;height:auto;">
+      </a>
 
 * **Comparing spectra from different regions**: When the "**Region**"" checkbox is selected, spectral profiles from different regions of an image cube can be displayed. The "**Region**" dropdown menu allows multiple selections of different regions. The region spectral profiles will be computed based on the selected image (single selection), statistic (single selection), and polarization (if applicable, single selection). The following example compares CO 2-1 mean spectra from different parts of the protoplanetary disk HD163296.
 
    .. raw:: html
 
-      <img src="_static/carta_fn_spectralProfiler_multiple_region.png" 
-         style="width:100%;height:auto;">
+      <a href="_static/carta_fn_spectralProfiler_multiple_region.png" target="_blank">
+          <img src="_static/carta_fn_spectralProfiler_multiple_region.png" 
+              style="width:100%;height:auto;">
+      </a>
 
 * **Comparing spectra with different statistical quantities**: When selecting the "**Statistic**" checkbox, region spectral profiles with different statistical quantities can be displayed. The "**Statistic**" dropdown menu allows multiple selections of different statistical quantities. The region spectral profiles will be computed based on the selected image (single selection), region (single selection), and polarization (if applicable, single selection). In the following example, CO 2-1 mean, standard deviation, and max spectra are compared. The profiles are derived from the ellipse region.
 
    .. raw:: html
 
-      <img src="_static/carta_fn_spectralProfiler_multiple_statistic.png" 
-         style="width:100%;height:auto;">
+      <a href="_static/carta_fn_spectralProfiler_multiple_statistic.png" target="_blank">
+          <img src="_static/carta_fn_spectralProfiler_multiple_statistic.png" 
+              style="width:100%;height:auto;">
+      </a>
 
 
 * **Comparing spectra with different Stokes parameters**: When the "**Polarization**" checkbox is selected, region spectral profiles with different polarization components can be displayed. The  "**Polarization**" dropdown menu allows multiple selections of polarization components, including computed components. The region spectral profiles will be computed based on the selected image (single selection), region (single selection), and statistic (single selection). The following example compares Stokes Q, U, and V region spectra from IRC+10216. 
 
    .. raw:: html
 
-      <img src="_static/carta_fn_spectralProfiler_multiple_stokes.png" 
-         style="width:100%;height:auto;">
+      <a href="_static/carta_fn_spectralProfiler_multiple_stokes.png" target="_blank">
+          <img src="_static/carta_fn_spectralProfiler_multiple_stokes.png" 
+              style="width:100%;height:auto;">
+      </a>
 
 
 
@@ -395,8 +427,10 @@ The interactions of the Spectral Profiler Widget are demonstrated in the section
 
 .. raw:: html
 
-      <img src="_static/carta_fn_spectralProfiler_channel_switching.png" 
-         style="width:100%;height:auto;">
+      <a href="_static/carta_fn_spectralProfiler_channel_switching.png" target="_blank">
+          <img src="_static/carta_fn_spectralProfiler_channel_switching.png" 
+              style="width:100%;height:auto;">
+      </a>
 
 
 
@@ -409,8 +443,10 @@ The displayed profile can be smoothed via the options in the "**Smoothing**" tab
 
 .. raw:: html
 
-   <img src="_static/carta_fn_spectralProfiler_widget.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_spectralProfiler_widget.png" target="_blank">
+       <img src="_static/carta_fn_spectralProfiler_widget.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 A custom reference rest frequency can be applied to an image cube to temporarily overwrite the :code:`RESTFRQ` header with the settings dialog of the Image List Widget. The velocity axis will be recomputed once a custom rest frequency is given. This feature allows you to compare different spectral line profiles in the velocity domain efficiently without changing the :code:`RESTFRQ` header repeatedly and permanently. Note that with the "**File**" -> "**Save image**" dialog, you can set a new rest frequency to the saved image (i.e., overwriting the :code:`RESTFRQ` header).
 
@@ -419,8 +455,10 @@ In the following example, a cube containing five major spectral lines is loaded 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_customRestFrequency.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_customRestFrequency.png" target="_blank">
+       <img src="_static/carta_fn_customRestFrequency.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 .. note::
    Rendering performance
@@ -437,8 +475,10 @@ Moment images (i.e., collapsed cube along the spectral axis) can be generated an
 
 .. raw:: html
 
-   <img src="_static/carta_fn_momentGenerator_tool.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_momentGenerator_tool.png" target="_blank">
+       <img src="_static/carta_fn_momentGenerator_tool.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 The "**Moments**" tab provides several control parameters to define how moment images are calculated, including:
                 
@@ -467,9 +507,10 @@ When all the parameters are defined, moment calculations will begin by clicking 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_momentGenerator_tool2.png" 
-        style="width:100%;height:auto;">
-
+   <a href="_static/carta_fn_momentGenerator_tool2.png" target="_blank">
+       <img src="_static/carta_fn_momentGenerator_tool2.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 Once generated, images will be appended, displayed, and spatially matched (optional if the original input image is the spatial reference) in the Image Viewer. They are named as :code:`$image_filename.moment.$keyword`. For example, if moment 0, 1, and 2 images are generated from the image :code:`M51.fits`, they will be named as :code:`M51.fits.moment.integrated`, :code:`M51.fits.moment.weighted_coord`, and :code:`M51.fits.moment.weighted_dispersion_coord`, respectively. These images are kept in RAM per session, and if there is a new request for moment calculations, these images will be deleted first. If you want to regenerate moment images but keep the previously generated moment images, you can enable the "**Keep previous moment image(s)**" toggle. Optionally, calculated moment images can be saved in CASA or FITS format via "**File**" -> "**Save Image**".
 
@@ -496,8 +537,10 @@ When studying source kinematics, it is common to utilize a position-velocity (PV
 
 .. raw:: html
 
-   <img src="_static/carta_fn_pvGenerator.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_pvGenerator.png" target="_blank">
+       <img src="_static/carta_fn_pvGenerator.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 A line region must be selected from the "**PV cut**" dropdown menu to generate a PV image. A spectral range (flexible in spectral convention) can be defined with the "**Range**" input fields to focus on the features in interest to save computation time. The axes' order (position vs. velocity or velocity vs. position) of the PV image can be configured as well. You can click the "**Generate**" button to start the PV image generation process. A progress bar will be displayed with a "**Cancel**" button during the PV image generation process. The process can be canceled at any time.
 
@@ -505,9 +548,10 @@ When a PV image is derived from a line region, a set of boxes with a “height�
 
 .. raw:: html
 
-   <img src="_static/carta_fn_pvGenerator2.png" 
-        style="width:100%;height:auto;">
-
+   <a href="_static/carta_fn_pvGenerator2.png" target="_blank">
+       <img src="_static/carta_fn_pvGenerator2.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 As a scalable approach for large image cubes, CARTA constructs a PV image from a series of *region spectral profiles* along the line region (PV cut) instead of re-gridding the input image cube first so that the PV cut becomes a horizontal one for the temporary cube. The final PV image is an ensemble of region spectral profiles at different sampled offset locations. 
 
@@ -535,8 +579,10 @@ The PV Generator supports a preview mode to explore the PV image interactively i
 
 .. raw:: html
 
-   <img src="_static/carta_fn_pvGenerator_preview.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_pvGenerator_preview.png" target="_blank">
+       <img src="_static/carta_fn_pvGenerator_preview.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 By clicking the "**Start preview**" button, the PV Generator will enter the preview mode and launch a PV Preview Viewer Widget with a preview PV image derived from the downsampled cube along the PV cut. If you reconfigure the PV cut in the Image Viewer with the mouse, such as move, rotate, and resize, new preview PV images will be streamed in real-time. You can utilize this feature to explore your image cube and identify a PV cut configuration to generate a full-resolution PV image with the "**Generate**" button.
 
@@ -559,9 +605,10 @@ The major FWHM axis is aligned to the North-South direction of the sky, while th
 
 .. raw:: html
 
-   <img src="_static/carta_fn_imageFitting.png" 
-        style="width:100%;height:auto;">
-
+   <a href="_static/carta_fn_imageFitting.png" target="_blank">
+       <img src="_static/carta_fn_imageFitting.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 
 Once the initial solutions of Gaussian components are set, you can click the "**Fit**" button to trigger the image fitting process. The fitting result is displayed in the "**Fitting Result**" tab. In the "**Full Log**" tab, more information about the fitting results is provided, including the best-fit solution in the image coordinate. Optionally, via the "**Create ellipse region**" button in the bottom-right corner of the "**Fitting Result**" tab, you can generate a set of ellipse regions to represent the FWHM of the best-fit Gaussians. You can export the fitting result or log as a text file by using the "**Export**" button in the bottom-right corner of the "**Fitting Result**" tab. The model and residual images will be generated in RAM and appended by default once the fitting process succeeds. You can use the toggles to turn off the feature if these are not required. If you want to keep the model and residual images, use the menu "**File**" -> "**Save Image**" to save them to disk.
@@ -589,8 +636,10 @@ As of v4.1.0, the profile fitting function can be applied to the Spectral Profil
 
 .. raw:: html
 
-   <img src="_static/carta_fn_profile_fitting.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_profile_fitting.png" target="_blank">
+       <img src="_static/carta_fn_profile_fitting.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 .. note::
    In a future release, the profile fitting function will be added to the Spatial Profiler Widget and the Histogram Widget.
@@ -607,17 +656,20 @@ In order to work correctly, a set of reasonable initial solutions needs to be pr
 
 .. raw:: html
 
-   <img src="_static/carta_fn_profile_fitting_manual.png" 
-        style="width:100%;height:auto;">
-
+   <a href="_static/carta_fn_profile_fitting_manual.png" target="_blank">
+       <img src="_static/carta_fn_profile_fitting_manual.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 Alternatively, the "**auto detect**" function (experimental) tries to analyze your spectral profile data and sets up the initial solutions *automatically*. If there is a prominent continuum emission or offset, please enable the "**w/ cont.**" toggle before clicking the "**auto detect**" button. If the "**auto fit**" toggle is enabled, the fitting engine will be triggered if the "**auto detect**" function finds a set of initial solutions. When the "**auto detect**" function is applied, you may edit the initial solutions manually afterward, such as adding a new component, deleting an existing component, refining a parameter, etc.
 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_profile_fitting_auto.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_profile_fitting_auto.png" target="_blank">
+       <img src="_static/carta_fn_profile_fitting_auto.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 
 The fitting results are visualized in the spectral profile plot, including the individual model profiles, the synthetic model profile, and the residual profile. The numeric values of the fitting results are displayed in the "**Fitting result**" box. The fitting log is available by clicking the "**View log**" button. When the "**Reset**" button is clicked, the profile fitting function will be reset.
@@ -625,15 +677,19 @@ The fitting results are visualized in the spectral profile plot, including the i
 
 .. raw:: html
 
-   <img src="_static/carta_fn_profile_fitting_log.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_profile_fitting_log.png" target="_blank">
+       <img src="_static/carta_fn_profile_fitting_log.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 In some cases, a given free parameter, such as the center of a Gaussian component, may need to be fixed to obtain a *sensible* fit. A parameter can be fixed by clicking its "**lock**" button. Note that there needs to be at least one free parameter to request a fit. 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_profile_fitting_lock.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_profile_fitting_lock.png" target="_blank">
+       <img src="_static/carta_fn_profile_fitting_lock.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 
 
@@ -653,8 +709,10 @@ Profile smoothing may be applied to profiles in the Spatial Profiler Widget, the
 
 .. raw:: html
 
-   <img src="_static/carta_fn_profileSmoothing.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_profileSmoothing.png" target="_blank">
+       <img src="_static/carta_fn_profileSmoothing.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 Optionally, the original profile can be overplotted with the smoothed profile. The appearance of the smoothed profile, including color, style, width, and size, can be customized.
 
@@ -669,8 +727,10 @@ CARTA provides the following smoothing methods:
 
 .. raw:: html
 
-   <img src="_static/carta_fn_profileSmoothing_examples.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_profileSmoothing_examples.png" target="_blank">
+       <img src="_static/carta_fn_profileSmoothing_examples.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 
 
@@ -692,8 +752,10 @@ CARTA supports an *initial* implementation of spectral line ID overlay on a Spec
 
 .. raw:: html
 
-   <img src="_static/carta_fn_linequery_widget.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_linequery_widget.png" target="_blank">
+       <img src="_static/carta_fn_linequery_widget.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 Once a query is successfully made, the line catalog will be displayed in the tables. The upper table shows the column information in the catalog with options to show or hide a specific column. The actual line catalog is displayed in the lower table. The line catalog table accepts sub-filters such as partial string match or value range. For numeric columns, supported operators are:
 
@@ -744,8 +806,10 @@ The profiles can be zoomed and panned with a mouse, similar to the Spatial Profi
 
 .. raw:: html
 
-   <img src="_static/carta_fn_Stokes_widget.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_Stokes_widget.png" target="_blank">
+       <img src="_static/carta_fn_Stokes_widget.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 
 
@@ -753,13 +817,17 @@ When profiles are zoomed in, the scatter plot will highlight those channels in t
 
 .. raw:: html
 
-   <img src="_static/carta_fn_Stokes_widget_linkView1.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_Stokes_widget_linkView1.png" target="_blank">
+       <img src="_static/carta_fn_Stokes_widget_linkView1.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 .. raw:: html
 
-   <img src="_static/carta_fn_Stokes_widget_linkView2.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_Stokes_widget_linkView2.png" target="_blank">
+       <img src="_static/carta_fn_Stokes_widget_linkView2.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 Additional options to customize the plots in the Stokes Analysis Widget are provided in the settings dialog, which can be launched by clicking the "**cog**" button at the top-right corner. With the options in the dialog, you can configure the appearance of the profile plots and the scatter plot. Optionally, profile smoothing can be applied with the "**Smoothing**" tab (see section :ref:`profile_smoothing`). A shortcut button to the "**Smoothing**" tab can be found in the top-right corner of the Stokes Analysis Widget.
 
@@ -785,8 +853,10 @@ The "**Region**" dropdown menu and the "**Image**" dropdown menu can be used to 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_statistics_widget.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_statistics_widget.png" target="_blank">
+       <img src="_static/carta_fn_statistics_widget.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 The statistics table can be exported as a text file with the "**export data**" button at the bottom-right corner when you hover over the widget. 
 
@@ -798,8 +868,10 @@ The Histogram Widget allows you to visualize image data as a histogram. The "**I
 
 .. raw:: html
 
-   <img src="_static/carta_fn_histogram_widget.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_histogram_widget.png" target="_blank">
+       <img src="_static/carta_fn_histogram_widget.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 The histogram plot can be zoomed and panned with a mouse, similar to the Spatial Profiler Widget or the Spectral Profiler Widget (:ref:`mouse_interaction_with_charts`).
 
@@ -822,9 +894,10 @@ You can have new measurements with pairs of clicks. Click the "**pan**" button i
 
 .. raw:: html
 
-   <img src="_static/carta_fn_distance_measure.png" 
-        style="width:100%;height:auto;">
-
+   <a href="_static/carta_fn_distance_measure.png" target="_blank">
+       <img src="_static/carta_fn_distance_measure.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 
 .. _cursor_info_widget:
@@ -841,8 +914,10 @@ When there are multiple matched images, comparing pixel quantities from the imag
 
 .. raw:: html
 
-   <img src="_static/carta_fn_cursor_info.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_cursor_info.png" target="_blank">
+       <img src="_static/carta_fn_cursor_info.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 You can press the "G" key to enable mirrored cursors on the matched images.
 
@@ -883,8 +958,9 @@ The Log Widget is a tool which provides important diagnostic information when so
 
 .. raw:: html
 
-   <img src="_static/carta_fn_log.png" 
-        style="width:50%;height:auto;">
-
+   <a href="_static/carta_fn_log.png" target="_blank">
+       <img src="_static/carta_fn_log.png" 
+           style="width:50%;height:auto;">
+   </a>
 
 If you encounter an error, we encourage you to reach out for assistance. You can contact our `HelpDesk <mailto:support@carta.freshdesk.com>`_ or visit our `GitHub <https://github.com/CARTAvis/carta/issues>`_ to file an issue.

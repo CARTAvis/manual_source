@@ -24,9 +24,10 @@ The CARTA GUI has different components:
 
 .. raw:: html
 
-   <img src="_static/carta_gui.png" 
-        style="width:100%;height:auto;">
-   
+   <a href="_static/carta_gui.png" target="_blank">
+       <img src="_static/carta_gui.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 The main browser window consists of a set of docked widgets. Multiple docked widgets can be stacked and share the same space. In this case, inactive widgets are displayed as tabs. For example, the above figure shows six docked widgets in the main browser window. Among them, two docked widgets share the same space as tabs in the bottom-left part of the GUI. A docked widget (i.e., a tab) may be detached to become a floating widget by clicking the "pin" button at the top-right corner of the widget. The GUI layout is highly configurable via mouse and is reusable. Please refer to the section :ref:`layoutConfiguration` for details.
 
@@ -150,8 +151,10 @@ A widget can be resized by applying drag-and-drop action to its borders. After a
 
 .. raw:: html
 
-   <img src="_static/carta_gui_resizing_panel.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_gui_resizing_panel.png" target="_blank">
+       <img src="_static/carta_gui_resizing_panel.png" 
+          style="width:100%;height:auto;">
+   </a>
 
 
 Relocating a tab as a new docked widget
@@ -161,9 +164,10 @@ A tab (docked widget) can be detached and relocated by dragging its title to a d
 
 .. raw:: html
 
-   <img src="_static/carta_gui_relocating_tab_as_panel.png" 
-        style="width:100%;height:auto;">
-
+   <a href="_static/carta_gui_relocating_tab_as_panel.png" target="_blank">
+       <img src="_static/carta_gui_relocating_tab_as_panel.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 Relocating a tab to share space with other docked widget
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -172,8 +176,10 @@ A tab (docked widget) can be moved to another existing docked widget to share sp
 
 .. raw:: html
 
-   <img src="_static/carta_gui_relocating_tab_as_tab.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_gui_relocating_tab_as_tab.png" target="_blank">
+       <img src="_static/carta_gui_relocating_tab_as_tab.png" 
+           style="width:100%;height:auto;">
+   </a>
 
 
 Maximizing and restoring a widget
@@ -182,17 +188,20 @@ By clicking the "**maximize**" button at the top-right corner of a docked widget
 
 .. raw:: html
 
-   <img src="_static/carta_gui_max_panel.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_gui_max_panel.png" target="_blank">
+       <img src="_static/carta_gui_max_panel.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 By clicking the "**restore**" button, the widget (and the other stacked widgets) will be restored to its original location.
 
 .. raw:: html
 
-   <img src="_static/carta_gui_min_panel.png" 
-        style="width:100%;height:auto;">
-
+   <a href="_static/carta_gui_min_panel.png" target="_blank">
+       <img src="_static/carta_gui_min_panel.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 
@@ -203,15 +212,19 @@ The active tab can be detached as a floating widget by clicking the "**detach**"
 
 .. raw:: html
 
-   <img src="_static/carta_gui_detach_panel.png" 
-        style="width:100%;height:auto;">
+  <a href="_static/carta_gui_detach_panel.png" target="_blank">
+       <img src="_static/carta_gui_detach_panel.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 By dragging the “attach” (pin) button, a floating widget can be stacked with an existing docked widget or positioned as a docked widget.
 
 .. raw:: html
 
-   <img src="_static/carta_gui_attach_panel.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_gui_attach_panel.png" target="_blank">
+       <img src="_static/carta_gui_attach_panel.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 Creating a widget as a floating widget or as a docked widget
@@ -221,8 +234,10 @@ A widget can be activated as a floating widget by clicking the desired widget bu
 
 .. raw:: html
 
-   <img src="_static/carta_gui_activating_widget.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_gui_activating_widget.png" target="_blank">
+       <img src="_static/carta_gui_activating_widget.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 Light and dark themes
@@ -231,8 +246,10 @@ CARTA supports light and dark themes. The default theme is determined automatica
 
 .. raw:: html
 
-   <img src="_static/carta_gui_theme.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_gui_theme.png" target="_blank">
+       <img src="_static/carta_gui_theme.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 Custom layout, save, and restore
@@ -246,8 +263,10 @@ A saved layout can be restored via the menu "**View**" -> "**Layouts**" -> "**Ex
 
 .. raw:: html
 
-   <img src="_static/carta_gui_custom_layout.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_gui_custom_layout.png" target="_blank">
+       <img src="_static/carta_gui_custom_layout.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 By default, CARTA will load the preset layout named “Default” when initialized. Which layout, including user-customized layouts, should be loaded can be further defined via the Preferences Dialog ("**File**" -> "**Preferences**"). The initial layout can be set via the "**Initial layout**" dropdown menu of the "**Global**" tab.
@@ -255,8 +274,10 @@ By default, CARTA will load the preset layout named “Default” when initializ
 
 .. raw:: html
 
-   <img src="_static/carta_gui_layout_preference.png" 
-        style="width:90%;height:auto;">
+   <a href="_static/carta_gui_layout_preference.png" target="_blank">
+       <img src="_static/carta_gui_layout_preference.png" 
+           style="width:90%;height:auto;">   
+   </a>
 
 
 .. note::
@@ -291,9 +312,10 @@ CARTA provides several preferences for you to customize the graphical user inter
 
   .. raw:: html
 
-   <img src="_static/carta_gui_preferences_global.png" 
-        style="width:100%;height:auto;">
-
+    <a href="_static/carta_gui_preferences_global.png" target="_blank">
+        <img src="_static/carta_gui_preferences_global.png" 
+            style="width:100%;height:auto;">   
+    </a>
 
 * Render Configuration
 
@@ -305,8 +327,10 @@ CARTA provides several preferences for you to customize the graphical user inter
   
   .. raw:: html
 
-   <img src="_static/carta_gui_preferences_renderConfig.png" 
-        style="width:100%;height:auto;">
+    <a href="_static/carta_gui_preferences_renderConfig.png" target="_blank">
+        <img src="_static/carta_gui_preferences_renderConfig.png" 
+            style="width:100%;height:auto;">   
+    </a>
 
 
 
@@ -323,8 +347,10 @@ CARTA provides several preferences for you to customize the graphical user inter
 
   .. raw:: html
 
-   <img src="_static/carta_gui_preferences_contourConfig.png" 
-        style="width:100%;height:auto;">
+    <a href="_static/carta_gui_preferences_contourConfig.png" target="_blank">
+        <img src="_static/carta_gui_preferences_contourConfig.png" 
+            style="width:100%;height:auto;">   
+    </a>
 
 
 
@@ -339,8 +365,10 @@ CARTA provides several preferences for you to customize the graphical user inter
 
   .. raw:: html
 
-   <img src="_static/carta_gui_preferences_vectorOverlayConfig.png" 
-        style="width:100%;height:auto;">
+    <a href="_static/carta_gui_preferences_vectorOverlayConfig.png" target="_blank">
+        <img src="_static/carta_gui_preferences_vectorOverlayConfig.png" 
+            style="width:100%;height:auto;">   
+    </a>
 
 
 * WCS and Image Overlay
@@ -363,8 +391,10 @@ CARTA provides several preferences for you to customize the graphical user inter
 
   .. raw:: html
 
-   <img src="_static/carta_gui_preferences_WCSImageOverlayConfig.png" 
-        style="width:100%;height:auto;">
+    <a href="_static/carta_gui_preferences_WCSImageOverlayConfig.png" target="_blank">
+        <img src="_static/carta_gui_preferences_WCSImageOverlayConfig.png" 
+            style="width:100%;height:auto;">   
+    </a>
 
 
 * Catalog        
@@ -373,8 +403,10 @@ CARTA provides several preferences for you to customize the graphical user inter
 
   .. raw:: html
 
-   <img src="_static/carta_gui_preferences_catalog.png" 
-        style="width:100%;height:auto;">
+    <a href="_static/carta_gui_preferences_catalog.png" target="_blank">
+        <img src="_static/carta_gui_preferences_catalog.png" 
+            style="width:100%;height:auto;">   
+    </a>
 
 * Region
 
@@ -387,8 +419,10 @@ CARTA provides several preferences for you to customize the graphical user inter
 
   .. raw:: html
 
-   <img src="_static/carta_gui_preferences_region.png" 
-        style="width:100%;height:auto;">
+    <a href="_static/carta_gui_preferences_region.png" target="_blank">
+        <img src="_static/carta_gui_preferences_region.png" 
+            style="width:100%;height:auto;">   
+    </a>
 
 * Annotation
 
@@ -400,8 +434,10 @@ CARTA provides several preferences for you to customize the graphical user inter
   
   .. raw:: html
 
-   <img src="_static/carta_gui_preferences_annotation.png" 
-        style="width:100%;height:auto;">
+    <a href="_static/carta_gui_preferences_annotation.png" target="_blank">
+        <img src="_static/carta_gui_preferences_annotation.png" 
+            style="width:100%;height:auto;">   
+    </a>
 
 
 * Performance
@@ -422,8 +458,10 @@ CARTA provides several preferences for you to customize the graphical user inter
 
   .. raw:: html
 
-   <img src="_static/carta_gui_preferences_performance.png" 
-        style="width:100%;height:auto;">
+    <a href="_static/carta_gui_preferences_performance.png" target="_blank">
+        <img src="_static/carta_gui_preferences_performance.png" 
+            style="width:100%;height:auto;">   
+    </a>
 
 
 * Telemetry
@@ -433,8 +471,10 @@ CARTA provides several preferences for you to customize the graphical user inter
 
   .. raw:: html
 
-   <img src="_static/carta_gui_preferences_telemetry.png" 
-        style="width:100%;height:auto;">
+    <a href="_static/carta_gui_preferences_telemetry.png" target="_blank">
+        <img src="_static/carta_gui_preferences_telemetry.png" 
+            style="width:100%;height:auto;">   
+    </a>
 
 
 * Compatibility
@@ -443,8 +483,10 @@ CARTA provides several preferences for you to customize the graphical user inter
 
   .. raw:: html
 
-   <img src="_static/carta_gui_preferences_compatibility.png" 
-        style="width:100%;height:auto;">
+    <a href="_static/carta_gui_preferences_compatibility.png" target="_blank">
+        <img src="_static/carta_gui_preferences_compatibility.png" 
+            style="width:100%;height:auto;">   
+    </a>
 
 
 * Log Events
@@ -453,8 +495,10 @@ CARTA provides several preferences for you to customize the graphical user inter
 
   .. raw:: html
 
-   <img src="_static/carta_gui_preferences_log.png" 
-        style="width:100%;height:auto;">
+    <a href="_static/carta_gui_preferences_log.png" target="_blank">
+        <img src="_static/carta_gui_preferences_log.png" 
+            style="width:100%;height:auto;">   
+    </a>
 
 
 
@@ -470,8 +514,10 @@ The image can be zoomed in by scrolling up and out by scrolling down.
 
 .. raw:: html
 
-   <img src="_static/carta_gui_mouse_images_zoom.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_gui_mouse_images_zoom.png" target="_blank">
+       <img src="_static/carta_gui_mouse_images_zoom.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 
@@ -481,8 +527,10 @@ The image can be panned by mouse drag-and-drop on the image. Alternatively, the 
 
 .. raw:: html
 
-   <img src="_static/carta_gui_mouse_images_pan.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_gui_mouse_images_pan.png" target="_blank">
+       <img src="_static/carta_gui_mouse_images_pan.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 
@@ -491,8 +539,10 @@ If you want to pan inside a region, hold the "**command/ctrl**" key (macOS) or "
 
 .. raw:: html
 
-   <img src="_static/carta_gui_mouse_images_pan_roi.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_gui_mouse_images_pan_roi.png" target="_blank">
+       <img src="_static/carta_gui_mouse_images_pan_roi.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 
@@ -511,8 +561,10 @@ To create a point region, a single click will do. The rectangle region, the elli
 
 .. raw:: html
 
-   <img src="_static/carta_fn_roi_creation1.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_roi_creation1.png" target="_blank">
+       <img src="_static/carta_fn_roi_creation1.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 
@@ -520,8 +572,10 @@ To create a polygon region or a polyline region, start with a click followed by 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_roi_creation2.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_roi_creation2.png" target="_blank">
+       <img src="_static/carta_fn_roi_creation2.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 Region selection and modification
@@ -531,8 +585,10 @@ Click on a region in the Image Viewer will change the region state to "active". 
 
 .. raw:: html
 
-   <img src="_static/carta_roi_selection.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_roi_selection.png" target="_blank">
+       <img src="_static/carta_roi_selection.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 Double-click on a region in the Image Viewer or a region in the Region List Widget will launch the Region Configuration Dialog. You can make changes to the region's name, location, shape, and style using the dialog. Pressing the "**delete**" or the "**backspace**" key will remove the active region. 
@@ -540,8 +596,10 @@ Double-click on a region in the Image Viewer or a region in the Region List Widg
 
 .. raw:: html
 
-   <img src="_static/carta_roi_modification.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_roi_modification.png" target="_blank">
+       <img src="_static/carta_roi_modification.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 
@@ -561,8 +619,10 @@ A new control point can be added by clicking on a line segment for a polygon or 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_roi_creation3.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_roi_creation3.png" target="_blank">
+       <img src="_static/carta_fn_roi_creation3.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 .. _mouse_interaction_with_charts:
@@ -576,9 +636,10 @@ A chart (profiles and histograms) can be zoomed in by scrolling up and zoomed ou
 
 .. raw:: html
 
-   <img src="_static/carta_gui_mouse_charts_zoom.png" 
-        style="width:100%;height:auto;">
-
+   <a href="_static/carta_gui_mouse_charts_zoom.png" target="_blank">
+       <img src="_static/carta_gui_mouse_charts_zoom.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 Panning a chart
 ^^^^^^^^^^^^^^^
@@ -587,8 +648,10 @@ A chart can be panned by holding the "**shift**" key and then applying drag-and-
 
 .. raw:: html
 
-   <img src="_static/carta_gui_mouse_charts_pan.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_gui_mouse_charts_pan.png" target="_blank">
+       <img src="_static/carta_gui_mouse_charts_pan.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 Resetting range
@@ -597,8 +660,10 @@ Double-clicking on the chart resets the plotting range.
 
 .. raw:: html
 
-   <img src="_static/carta_gui_mouse_charts_reset.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_gui_mouse_charts_reset.png" target="_blank">
+       <img src="_static/carta_gui_mouse_charts_reset.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 
@@ -609,16 +674,20 @@ The online user manual (the one you are reading!) can be accessed via the menu "
 
 .. raw:: html
 
-   <img src="_static/carta_gui_onlinehelp.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_gui_onlinehelp.png" target="_blank">
+       <img src="_static/carta_gui_onlinehelp.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 In addition, an in-app help manual (no internet is required) can be accessed via the "?" button at the top-right corner of a widget or a dialog. The help content will be displayed in a drawer.
 
 .. raw:: html
 
-   <img src="_static/carta_gui_inapphelp.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_gui_inapphelp.png" target="_blank">
+       <img src="_static/carta_gui_inapphelp.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 Controls and shortcuts
