@@ -14,8 +14,8 @@ work in progress...
 
 
 
-Channel map view
-----------------
+Channel map control
+-------------------
 
 work in progress...
 
