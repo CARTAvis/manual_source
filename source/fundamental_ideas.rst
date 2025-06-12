@@ -17,3 +17,9 @@ Region of interest
 ------------------
 
 work in progress...
+
+
+What "Active" means?
+--------------------
+
+work in progress...

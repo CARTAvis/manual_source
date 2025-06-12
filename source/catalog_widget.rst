@@ -57,8 +57,8 @@ For string columns, a partial match is adopted. For example, :code:`gal` (no quo
 The filters will be applied by clicking the "**Apply filter**" button or pressing the "enter" or "return" key. The filtered source catalog will be displayed up to the number of entries defined in the "**Max Rows** input field. Clicking the "**Reset filter**" button removes all filters and the image overlay (if present). The plot will be reset for the histogram plot or the 2D scatter plot, and only the first (up to) 50 entries will be rendered.
 
 
-Catalog image overlay
----------------------
+Catalog image overlay and settings
+----------------------------------
 CARTA supports flexible catalog image overlay rendering with variable marker size, color, and orientation. A catalog image overlay can be generated using the dropdown menus at the bottom of the Catalog Widget. When the rendering type is "image overlay", two data columns need to be identified as the world coordinates. Once configured correctly, you can click the "**Plot**" button to generate a catalog overlay on the image.
 
 A catalog is loaded and displayed in the Catalog Widget in the example below. The rendering type is "Image Overlay", and the "RA_d" and the "DEC_d" columns are identified as source world coordinates in the ICRS system. A filter is applied to the "ANG_DIST" column, resulting in 638 filtered sources. These sources are rendered on the image as cyan circles. 
@@ -92,7 +92,10 @@ The catalog overlay and the catalog table in the Catalog Widget are interlinked.
         style="width:100%;height:auto;">
 
 
-Catalog 2D Scatter Plot
+
+
+
+Catalog 2D scatter plot
 -------------------------
 The Catalog 2D Scatter Plot Widget shows a 2D scatter plot of two numeric columns of a catalog file. The available numeric columns are determined by the “Display” column of the upper table in the Catalog Widget. The lower table in the Catalog Widget determines the data used for plotting the 2D scatter. The table may not show all entries due to the dynamic loading feature. Thus, the 2D scatter plot may not include all entries (after filtering). The "**Plot**" button in the Catalog 2D Scatter Plot Widget will request a full download of all entries, and the scatter plot will then include all entries (after filtering).
 
@@ -108,7 +111,7 @@ By clicking on a point or using the selection tools from the top-right corner of
 The "**Linear Fit**" button allow you to fit a straight line to the data points in the current view. Data points outside the current view are not included in the linear fit process. The fitting results are summarized at the top-left corner of the scatter plot.
 
 
-Catalog Histogram Plot
+Catalog histogram plot
 ------------------------
 The Catalog Histogram Plot Widget shows a histogram of one numeric column of a catalog file. The available numeric columns are determined by the “Display” column of the upper table in the Catalog Widget. The lower table in the Catalog Widget determines the data used for plotting a histogram. The table may not show all entries due to the dynamic loading feature. Thus, the histogram plot may not include all entries (after filtering). The "**Plot**" button will request a full download of all entries, and the histogram plot will include all entries (after filtering). The number of bins and the y-axis scale can be customized with the "**Bins**" field and the "**Log scale**" toggle, respectively.
 
