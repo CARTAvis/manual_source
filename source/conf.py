@@ -20,13 +20,13 @@
 # -- Project information -----------------------------------------------------
 
 project = u'CARTA'
-copyright = u'2018-2023, ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta'
+copyright = u'2018-2025, ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta'
 author = u'the CARTA development team'
 
 # The short X.Y version
-version = u'4.1'
+version = u'5.0'
 # The full version, including alpha/beta/rc tags
-release = u'4.1.0'
+release = u'5.0.0'
 
 
 # -- General configuration ---------------------------------------------------
