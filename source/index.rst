@@ -27,7 +27,7 @@ CARTA - Cube Analysis and Rendering Tool for Astronomy
    contour_rendering.rst
    vector_field_rendering.rst
    multicolor_blending.rst
-   channel_map_view.rst
+   channel_map_control.rst
    animator.rst
    image_list_widget.rst
    file_info.rst
