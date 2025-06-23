@@ -47,8 +47,9 @@ CARTA - Cube Analysis and Rendering Tool for Astronomy
    spectral_line_query.rst
    online_data_query.rst
    catalog_widget.rst
-   workspace.rst
+   layout.rst
    preferences.rst
+   workspace.rst
    log_widget.rst
 
    image_visualization.rst
