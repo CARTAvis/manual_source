@@ -1,33 +1,27 @@
 Fundamental ideas
 =================
 
-work in progress...
-
 GPU-accelerated client-side rendering
 -------------------------------------
-
-.. note::
-   Tiled rendering techniques
-
-   CARTA utilizes an efficient approach, "tiled rendering", to display a raster image. In the Image Viewer, you see an ensemble of image tiles (default 256 pixels by 256 pixels) processed in parallel. 
+CARTA utilizes an efficient approach, "tiled rendering", to display a raster image. In the Image Viewer, you see an ensemble of image tiles (default 256 pixels by 256 pixels) processed in parallel. 
    
-   As shown in the figure below, if we have an image with 2048 pixels by 2048 pixels, tiles will be constructed in four layers with different downsample factors. The zeroth layer contains only one tile with a size of 256 pixels by 256 pixels. A downsample factor of 8 is applied to the original image to create this tile. The first layer contains four tiles, each with a size of 256 pixels by 256 pixels. The downsample factor of 4 is applied to the original image to create these four tiles. This process continues until no downsampling is required. In this case, the tiles of the third layer are not downsampled. 
+As shown in the figure below, if we have an image with 2048 pixels by 2048 pixels, tiles will be constructed in four layers with different downsample factors. The zeroth layer contains only one tile with a size of 256 pixels by 256 pixels. A downsample factor of 8 is applied to the original image to create this tile. The first layer contains four tiles, each with a size of 256 pixels by 256 pixels. The downsample factor of 4 is applied to the original image to create these four tiles. This process continues until no downsampling is required. In this case, the tiles of the third layer are not downsampled. 
    
-   .. raw:: html
+.. raw:: html
 
-      <img src="_static/carta_fn_tiledRendering.png" 
-           style="width:80%;height:auto;">
+   <img src="_static/carta_fn_tiledRendering.png" 
+         style="width:80%;height:auto;">
 
-   When you change the field of view or the size of the Image Viewer, tile data of the *right* layer matching your screen resolution will be used. For example, if you are interested in the field of the blue box and the Image Viewer has a screen size of 512 pixels by 384 pixels, tiles of the 2nd layer will be used for rendering. In this case, nine tiles will be used. If you pan a little bit around the blue box, no new tile data are required. However, if you pan the view to the green box with the same viewer size, two additional tiles from the second layer are required, and four tiles will be *re-used* for rendering. With this tiled rendering approach, tiles will be re-used at different zoom levels and with different fields of view to minimize the amount of data transfer while keeping the image sharp on the screen. Effectively, you will see that the image becomes sharper and sharper at higher and higher zoom levels.
+When you change the field of view or the size of the Image Viewer, tile data from the layer matching your screen resolution within a factor of two will be used. For example, if you are interested in the field of the blue box and the Image Viewer has a screen size of 512 pixels by 384 pixels, tiles from the 2nd layer will be used for rendering. In this case, nine tiles will be used. If you pan a little bit around the blue box, no new tile data are required. However, if you pan the view to the green box with the same viewer size, two additional tiles from the second layer are required, and four tiles will be *re-used* for rendering. With this tiled rendering approach, tiles will be re-used at different zoom levels and with different fields of view to minimize the amount of data transfer while keeping the image sharp on the screen. Effectively, you will see that the image becomes sharper and sharper at higher and higher zoom levels.
 
-   The performance of the tiled rendering can be customized with the Preferences Dialog, "**File**" -> "**Preferences**" -> "**Performance**". The default values are chosen to ensure that raster images are displayed efficiently with sufficient accuracy. Advanced users may refine the setup if necessary. For example, when accessing a remote backend under poor internet conditions, the compression quality might be slightly lowered to make the tile data smaller. Note that a lower compression quality might introduce noticeable artifacts on the raster image. Please adjust with caution. 
+The performance of the tiled rendering can be customized with the Preferences Dialog, "**File**" -> "**Preferences**" -> "**Performance**". The default values are chosen to ensure that raster images are displayed efficiently with sufficient accuracy. Advanced users may refine the setup if necessary. For example, when accessing a remote backend under poor internet conditions, the compression quality might be slightly lowered to make the tile data smaller. Note that a lower compression quality might introduce noticeable artifacts on the raster image. Please adjust with caution. 
    
-   Alternatively, you may enable the low bandwidth mode, which will reduce required image resolutions by a factor of two (so that the image will look slightly blurry) and cursor responsiveness from 200 ms to 400 ms (HDF5 images: from 100 ms to 400 ms). Under good internet conditions, you may enable streaming image tiles while zooming to see progressive updates of image resolutions at different zoom levels. 
+Alternatively, you may enable the low bandwidth mode, which will reduce required image resolutions by a factor of two (so that the image will look slightly blurry) and cursor responsiveness from 200 ms to 400 ms (HDF5 images: from 100 ms to 400 ms). Under good internet conditions, you may enable streaming image tiles while zooming to see progressive updates of image resolutions at different zoom levels. 
 
-   .. raw:: html
+.. raw:: html
 
-      <img src="_static/carta_fn_tiledRendering_preference.png" 
-           style="width:80%;height:auto;">
+   <img src="_static/carta_fn_tiledRendering_preference.png" 
+         style="width:80%;height:auto;">
 
 
 
@@ -50,30 +44,31 @@ or the tool button in the Image Viewer.
    <img src="_static/carta_fn_triggerMatch.png" 
         style="width:50%;height:auto;">
 
+
 The Image List Widget shows a list of all loaded images, including their:
 
-* file name
+* file name (active image is in boldface)
 * rendering type ("Layers" column): "**R**" means raster, "**C**" means contour, and "**V**" means vector overlay
 * image matching state ("Matching" column): 
    
   * "**XY**" means the spatial domain
   * "**Z**" means the spectral domain
-  * "**R**" means the color range for raster rendering
+  * "**R**" means the raster rendering configuration
 
 * channel index
 * polarization component 
 
-The first loaded image with valid spatial world coordinates serves as the default spatial reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.image.mom0 in the above example). Similarly, the first loaded image with valid spectral coordinates serves as the default spectral reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.fits in the above example). To match the world coordinates of other loaded images, you can click the "**XY**" button to match the spatial domain and click the "**Z**" button to match the spectral domain. If you would like to apply the same color range for different raster images, click the "**R**" button so that matched images will have the same color range as the reference image highlighted with an open black box (e.g., HD163296_CO_2_1.image.mom0 in the above example).
+The first loaded image with valid spatial world coordinates serves as the default spatial reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.image.mom0 in the above example). Similarly, the first loaded image with valid spectral coordinates serves as the default spectral reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.fits in the above example). To match the world coordinates of other loaded images, you can click the "**XY**" button to match the spatial domain and click the "**Z**" button to match the spectral domain. If you would like to apply the same rendering configuration for different raster images, click the "**R**" button so that matched images will be rendered in the same way as the reference image highlighted with an open black box (e.g., HD163296_CO_2_1.image.mom0 in the above example).
 
 
-You may change a spatial reference image, a spectral reference image, or a raster scaling reference by right-clicking an image in the Image List Widget and using the context menu.
+You may change a spatial reference image, a spectral reference image, or a raster scaling reference by right-clicking on an image in the Image List Widget and using the context menu.
 
 .. raw:: html
 
    <img src="_static/carta_fn_layerList2.png" 
       style="width:60%;height:auto;">
 
-For raster images, matching in the spatial domain is achieved by applying translation, rotation, and scaling to images with respect to the reference image. 
+For raster images, matching in the spatial domain is achieved by applying translation, rotation, and scaling to images with respect to the reference image. This is also known as the "affine transformation". 
 
 
 .. raw:: html
@@ -96,7 +91,7 @@ For contour images, matching in the spatial domain is achieved by reprojecting c
       style="width:100%;height:auto;">
 
 
-For image cubes, matching in the spectral domain is achieved by nearest interpolation with the target spectral convention. The default is "radio velocity". The reference convention of spectral matching is configurable with the settings dialog of the Image List Widget. When spectral matching is enabled by clicking the "**Z**" button, the matched channel indices are updated in the Image List Widget. Images and spectral profiles in the Image Viewer Widget and in the Spectral Profiler Widget are updated, respectively.
+For image cubes, matching in the spectral domain is achieved by nearest interpolation with the target spectral convention. The default is "radio velocity". The reference convention of spectral matching is configurable with the settings dialog of the Image List Widget. When spectral matching is enabled by clicking the "**Z**" button, the matched channel indices are updated in the Image List Widget. Images  in the Image Viewer Widget are then updated accordingly.
 
 
 
@@ -110,7 +105,7 @@ For image cubes, matching in the spectral domain is achieved by nearest interpol
 .. note::
    Projection effects of raster images
 
-   As raster images are matched spatially by applying translation, rotation, and scaling, projection effects between different images might be visible if images have a wide field of view and/or have very different projection schemes. In the following example, projection effects in raster images are demonstrated. However, the projection effects of contour images are properly handled in CARTA. Contours are reprojected with sufficient accuracy to the raster image, as seen in the Image Viewer.  
+   As raster images are matched spatially by applying translation, rotation, and scaling (affine transformation), the projection effects between different images might be visible if images have a wide field of view and/or have very different projection schemes. In the following example, projection effects in raster images are demonstrated. However, the projection effects of contour images are properly handled in CARTA. Contours are reprojected with sufficient accuracy to the raster image, as seen in the Image Viewer.  
 
    .. raw:: html
 
@@ -202,13 +197,13 @@ CARTA checks if a polygon is *simple* or *complex*. If a polygon is detected as 
 
 The coordinate reference system can be changed with the dropdown menu when editing region properties in the world coordinates. The default reference system is the one defined in the image header and is the same as the one defining the grid line overlay in the Image Viewer. When you switch to a different reference frame, the Image Viewer's grid line overlay is also changed. The coordinate is in sexagesimal format if the reference system is ICRS, FK5, or FK4. The coordinate is in decimal degrees if the reference system is GALACTIC or ECLIPTIC. The region size property can be defined in arcsecond with :code:`"`, in arcminute with :code:`'`, or in degrees with :code:`deg`.
 
-
+In case you would like to delete all regions at once, you can use the "**delete**" button at the bottom-right corner of the Region List Widget. A confirmation dialog will be shown to prevent accidental deletion.
 
 Shared region with conserved solid angle
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-When a region is created on one of the spatially matched images, effectively, the region is created on the image served as the spatial reference. Then, the region is *shared* and rendered to other spatially matched images considering projection effects and differences in coordinate reference systems. Under the scene, regions (except the point region) are approximated by polygons with many control points. Each control point is transformed from the spatial reference image to the spatially matched secondary image. In this way, the solid angles of the regions before and after polygonal approximation are nearly identical; thus, analytics of the *same* region among different spatially matched images can be compared directly. 
+When a region is created on one of the spatially matched images, effectively, the region is created on the image served as the spatial reference. Then, the region is *shared* and rendered to other spatially matched images considering projection effects and differences in coordinate reference systems. Behind the scene, regions (except the point region) are approximated by polygons with many control points. Each control point is transformed from the spatial reference image to the spatially-matched secondary images. In this way, the solid angles of the regions before and after polygonal approximation are nearly identical; thus, analytics of the *same* region among different spatially matched images can be compared directly with minimal errors.
 
-In the following exaggerated example, two images with different coordinate systems and projection schemes are spatially matched. Regions on the spatial reference image retain their shapes. Depending on the projection schemes, polygon-approximated regions on the spatially matched secondary image may have visible distortions. In most use cases, the region distortion effect should be much less noticeable if the field of view of the image is small.
+In the following exaggerated example, two images with different coordinate systems and projection schemes are spatially matched. Regions on the spatial reference image retain their shapes. Depending on the projection schemes, polygon-approximated regions on the spatially matched secondary images may have visible distortions. In most use cases, the region distortion effect should be much less noticeable if the field of view of the image is considerablely small.
 
 .. raw:: html
 
@@ -221,7 +216,7 @@ In the following exaggerated example, two images with different coordinate syste
 Shared line/polyline region with conserved angular length
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Like the polygon approximation of closed regions, the line and polyline regions are approximated as a polyline with many control points on the spatially matched secondary image. In this way, the angular length of the trajectory traced by the line or polyline region before and after polyline approximation is nearly identical. 
+Similar to the polygon approximation of closed regions, the line and polyline regions are approximated as a polyline with many control points on the spatially matched secondary images. In this way, the angular length of the trajectory traced by the line or polyline region before and after the polyline approximation is nearly identical. 
 
 .. raw:: html
 
@@ -230,7 +225,7 @@ Like the polygon approximation of closed regions, the line and polyline regions 
            style="width:100%;height:auto;">
    </a>
 
-When a spatial profile is derived from a line or a polyline region, a set of boxes with a "height" (parallel to the trajectory) of three unit steps and a custom "width" (perpendicular to the trajectory) in the number of unit steps are created along the trajectory. These *hidden* boxes are created on the reference image first. Then, similar to the polygon approximation of closed regions, these "boxes" are transformed into the spatially matched secondary image to derive a spatial profile. The unit step refers to an image pixel if the image is “flat” without noticeable distortion. However, if the image is considered "wide" with noticeable distortion, the unit step refers to the angular size of an image pixel as defined in the image header. In this case, the boxes retain approximately a fixed solid angle. All these approximations allow spatial profiles of the same trajectory among different spatially matched images to be compared directly. The same idea is applied to the position-velocity image generator with a line region.
+When a spatial profile is derived from a line or a polyline region, a set of boxes with a "height" (parallel to the trajectory) of three unit steps and a custom "width" (perpendicular to the trajectory) in the number of unit steps are created along the trajectory. These *hidden* boxes are created on the reference image first. Then, similar to the polygon approximation of closed regions, these "boxes" are transformed into the spatially matched secondary image to derive a spatial profile. The unit step refers to an image pixel if the image is “flat” without noticeable distortion. However, if the image is considered "wide" with noticeable distortion, the unit step refers to the angular size of an image pixel as defined in the image header (i.e. CDELT1/2). In this case, the boxes retain approximately a fixed solid angle. All these approximations allow spatial profiles of the same trajectory among different spatially matched images to be compared directly with minimal errors. The same idea is applied to the position-velocity image generator with a line region or a polyline region.
 
 
 Shared region management
@@ -258,7 +253,7 @@ Shared region of interest enables practical image cube analysis through
 
 These widgets contain an "**Image**" dropdown menu and a "**Region**" dropdown menu. The former allows you to select which loaded image cube to show its analytics. The latter allows you to select which region to show the region analytics. By combining the two menus, CARTA provides a flexible user interface to explore image data. When the selected image has the polarization axis, you can use the "**Polarization**" dropdown menu to select which polarization component to use for deriving image analytics. 
 
-As an example below, two image cubes representing 12CO 2-1 and 13CO 2-1 are matched spatially and spectrally. Three shared regions are created to highlight different features. Three Spectral Profiler Widgets are placed to show different profiles. The top one shows the square region profile from 12CO 2-1. The middle one shows the polygon region profile of 13CO 2-1. The bottom one shows 12CO 2-1 and 13CO 2-1 profiles from the square region. Please refer to the section :ref:`spectral_profiler` to learn how to plot *multiple* profiles in one Spectral Profiler Widget. In addition, one Statistics Widget is configured to show the statistics of 13CO 2-1 from the circle region.
+As an example below, two image cubes representing 12CO 2-1 and 13CO 2-1 are matched spatially and spectrally. Three shared regions are created to highlight different features. Three Spectral Profiler Widgets are placed to show different profiles. The top one shows the square region profile from 12CO 2-1. The middle one shows the polygon region profile of 13CO 2-1. The bottom one shows 12CO 2-1 and 13CO 2-1 profiles from the square region. Please refer to the section :ref:`spectral_profiler` to learn how to plot *multiple* profiles in one Spectral Profiler Widget. In addition, one Statistics Widget is configured to show the statistics of 12CO 2-1 from the circle region.
 
 .. raw:: html
 
@@ -279,7 +274,7 @@ CARTA supports region import and export capability. In world coordinates or imag
            style="width:100%;height:auto;">
    </a>
 
-To export regions to a region file, use the menu "**File**"" -> "**Export Regions**". A shortcut button can be found in the Region List Widget, too. You can use the dialog to select a subset of regions to be saved in a region text file. 
+To export regions to a region file, use the menu "**File**"" -> "**Export Regions**". A shortcut button can be found in the Region List Widget, as well. You can use the dialog to select a subset of regions to be saved in a region text file. 
 
 .. raw:: html
 
@@ -288,36 +283,36 @@ To export regions to a region file, use the menu "**File**"" -> "**Export Region
            style="width:100%;height:auto;">
    </a>
 
-As of v4.1.0, CASA region text format (:code:`.crtf`) and ds9 region text format (:code:`.reg`) are supported with some limitations. Currently, only the 2D region definition is supported. Other properties, such as spectral range or reference frame, will be supported in future releases.  
+As of v5.0.0, CASA region text format (:code:`.crtf`) and ds9 region text format (:code:`.reg`) are supported with some limitations. Currently, only the 2D region definition is supported. Other properties, such as spectral range or reference frame, will be supported in future releases.  
 
 The supported CRTF region syntax is summarized below:
 
 * Rectangle
 
-  * box[[x1, y1], [x2, y2]]
-  * centerbox[[x, y], [x_width, y_width]]
-  * rotbox[[x, y], [x_width, y_width], rotang]
+  * ``box[[x1, y1], [x2, y2]]``
+  * ``centerbox[[x, y], [x_width, y_width]]``
+  * ``rotbox[[x, y], [x_width, y_width], rotang]``
 
 * Ellipse
 
-  * circle[[x, y], r]
-  * ellipse[[x, y], [bmaj, bmin], pa]
+  * ``circle[[x, y], r]``
+  * ``ellipse[[x, y], [bmaj, bmin], pa]``
 
 * Polygon
 
-  * poly[[x1, y1], [x2, y2], [x3, y3], ...]
+  * ``poly[[x1, y1], [x2, y2], [x3, y3], ...]``
 
 * Polyline
 
-  * polyline[[x1, y1], [x2, y2], [x3, y3], ...]
+  * ``polyline[[x1, y1], [x2, y2], [x3, y3], ...]``
 
 * Line
 
-  * line[[x1, y1], [x2, y2]]
+  * ``line[[x1, y1], [x2, y2]]``
 
 * Point
 
-  * symbol[[x, y], .]
+  * ``symbol[[x, y], .]``
 
 Please refer to https://casadocs.readthedocs.io/en/latest/notebooks/image_analysis.html#Region-File-Format for more detailed descriptions of the CRTF syntax. 
 
@@ -326,35 +321,35 @@ The currently supported ds9 region syntax is summarized below:
 
 * Rectangle
 
-  * box x y width height angle
+  * ``box x y width height angle``
 
 * Ellipse
 
-  * ellipse x y radius radius angle
-  * circle x y radius
+  * ``ellipse x y radius radius angle``
+  * ``circle x y radius``
 
 * Polygon
 
-  * polygon x1 y1 x2 y2 x3 y3 ...
+  * ``polygon x1 y1 x2 y2 x3 y3 ...``
 
 * Polyline
 
-  * polyline x1 y1 x2 y2 x3 y3 ...
+  * ``polyline x1 y1 x2 y2 x3 y3 ...``
 
 * Line
 
-  * line x1 y1 x2 y2
+  * ``line x1 y1 x2 y2``
 
 * Point
 
-  * point x y
+  * ``point x y``
 
 Please refer to http://ds9.si.edu/doc/ref/region.html for more detailed descriptions of the ds9 region syntax. 
 
 
 Image annotation
 ^^^^^^^^^^^^^^^^
-Image annotation and region of interest share most attributes, except the ability to derive image analytics. Image annotation is for presentation purposes only.
+Image annotation and region of interest share most attributes, except the ability for deriving image analytics. Image annotation is for presentation purposes only.
 
 In CARTA, the following image annotation objects are supported:
 
@@ -386,9 +381,13 @@ Image annotation objects created with the graphical user interface can be export
 What "Active" means?
 --------------------
 
-work in progress...
+In CARTA, the term "active" is used to indicate the current focus of interaction. For example, an "active image" is the image (and a corresponding channel if it is an image cube) that is currently being viewed or analyzed in the Image Viewer as highlighted with a red box. 
 
+An "active region" is a region that has been selected and is ready for modification or analysis. The active state can be changed by clicking on the corresponding item in the GUI, such as an image in the Image Viewer / the Image List Widget or a region in the Image Viewer / the Region List Widget. When there is no region selected, the active region is defaulted to the "cursor" (a point) region.
 
+When the active region does not refer to a closed region type such as a point or a line and if you request image statistics using the Statistics Widget, the statistics will be derived from the entire image instead. If you request a spectral profile but the active region refers to a line or a polyline, no profile will be derived and displayed.
+
+A similar analogy applies to polarization dropdown menu (e.g., in the Spectral Profiler Widget) but the term is "current" which referes to the selection with the polarizarion slider in the Animator Widget.
 
 
 .. _about_gui:
@@ -421,11 +420,11 @@ The CARTA GUI has different components:
            style="width:100%;height:auto;">
    </a>
 
-The main browser window consists of a set of docked widgets. Multiple docked widgets can be stacked and share the same space. In this case, inactive widgets are displayed as tabs. For example, the above figure shows six docked widgets in the main browser window. Among them, two docked widgets share the same space as tabs in the bottom-left part of the GUI. A docked widget (i.e., a tab) may be detached to become a floating widget by clicking the "pin" button at the top-right corner of the widget. The GUI layout is highly configurable via mouse and is reusable. Please refer to the section :ref:`layoutConfiguration` for details.
+The main browser window consists of a set of docked widgets. Multiple docked widgets can be stacked and share the same space. In this case, inactive widgets are displayed as tabs. For example, the above figure shows five docked widgets in the main browser window. Among them, two docked widgets share the same space as tabs (render configuration and region list) in the bottom-left part of the GUI. A docked widget (i.e., a tab) may be detached to become a floating widget by clicking the "pin" button at the top-right corner of the widget. The GUI layout is highly configurable via mouse and is reusable. Please refer to the section :ref:`layoutConfiguration` for details.
 
 The menu bar provides control options, such as image input/output, launching widgets, getting help, etc. The widget bar provides widgets to view or analyze images. The dialog bar provides dialogs for configurations. The region bar provides shortcut buttons for creating regions of interest or image annotation objects in the Image Viewer. 
 
-The status bar includes indicators of the server (backend) status (as a green, orange, or red circle), data stream status (as a green cloud), new release notification (as an orange envelope), and share workspace button ("carta_controller" only). 
+The status bar includes indicators of the server (backend) status (as a green, orange, or red circle), data stream status (as a green cloud), new release notification (as an orange envelope), and share workspace button ("Site Deployment Mode (SDM)" only). 
 
 A widget provides a specific function to view or analyze image data, such as Image Viewer, Statistics, Spatial Profiler, etc. A toolbar provides tools for a widget, such as zoom buttons for the Image Viewer Widget or export options for the Spectral Profiler Widget. A dialog provides options for configurations, such as image view properties, region properties, contour properties, etc.
 
@@ -476,23 +475,6 @@ To zoom an image
 * Use the mouse wheel to scroll
 * Use the zoom buttons from the toolbar of the Image Viewer
 
-To pan an image
-
-* Use the mouse to drag-and-drop on the image (default) 
-* Hold the “**command**” (macOS) / “**ctrl**” (Linux) key, then mouse click
-* Mouse middle click
-
-To pan from *inside* a region
-
-* Hold the “**command**” (macOS) / “**ctrl**” (Linux) key, then mouse click
-* Mouse middle click
-
-
-**Zooming an image**
-
-The image can be zoomed in by scrolling up and out by scrolling down.
-
-
 .. raw:: html
 
    <a href="_static/carta_gui_mouse_images_zoom.png" target="_blank">
@@ -500,11 +482,11 @@ The image can be zoomed in by scrolling up and out by scrolling down.
            style="width:100%;height:auto;">   
    </a>
 
+To pan an image
 
-
-**Panning an image**
-
-The image can be panned by mouse drag-and-drop on the image. Alternatively, the image can be re-positioned by mouse middle-click or by holding the "**command/ctrl**" (macOS) key or "**ctrl**" (Linux) key with a click.
+* Use the mouse to drag-and-drop on the image (default) 
+* Hold the “**command**” (macOS) / “**ctrl**” (Linux) key, then mouse click
+* Mouse middle click
 
 .. raw:: html
 
@@ -514,8 +496,10 @@ The image can be panned by mouse drag-and-drop on the image. Alternatively, the 
    </a>
 
 
+To pan from *inside* a region
 
-If you want to pan inside a region, hold the "**command/ctrl**" key (macOS) or "**ctrl**" key (Linux) while clicking inside the region. Alternatively, you can use middle-click. Single-clicking on a region will change the region state to "active".
+* Hold the “**command**” (macOS) / “**ctrl**” (Linux) key, then mouse click
+* Mouse middle click
 
 
 .. raw:: html
@@ -527,20 +511,13 @@ If you want to pan inside a region, hold the "**command/ctrl**" key (macOS) or "
 
 
 
-
-
-
-
-
-
-
-
-
 .. _mouse_interaction_with_regions:
 
 Region of interest or image annotation object interactions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Regions of interest and image annotation objects share similar behaviors. In the following, we use "region" for short.
+
+**Summary**
 
 To enable region creation mode
 
@@ -670,6 +647,9 @@ To show/hide cursor marker rendering
 
 Chart interactions
 ^^^^^^^^^^^^^^^^^^
+
+**Summary**
+
 Focused zoom
 
 * Use the mouse wheel to scroll
@@ -853,7 +833,9 @@ CARTA supports light and dark themes. The default theme is determined automatica
    </a>
 
 
-
+Save and restore layout
+^^^^^^^^^^^^^^^^^^^^^^^
+CARTA allows you to save the current layout as a custom layout. The saved layout can be restored later. To save or restore a layout, use the menu "**View**" -> "**Layout**". For more information about layout management and dynamic layout, please refer to the section :ref:`layout_management`.
 
 
 
