@@ -1,3 +1,5 @@
+.. _multicolor_blending:
+
 Multi-color image blending
 ==========================
 

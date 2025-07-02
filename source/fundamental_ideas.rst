@@ -125,6 +125,8 @@ A raster image, contour image, or vector overlay image may be hidden in the Imag
    <img src="_static/carta_fn_hideLayer.png" 
       style="width:100%;height:auto;">
 
+.. _region_of_interest:
+
 Region of interest
 ------------------
 

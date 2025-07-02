@@ -1,12 +1,18 @@
 File browser
 ============
 
+.. note::
+   | To know more about loading a Stokes hypercube, see :ref:`forming_hypercube`.
+   | To know more about loading multiple images and form a multi-color blending image, see :ref:`forming_multicolor_image`.
+   | To know more about loading region files, see :ref:`loading_regions`.
+   | To know more about loading catalog files, see :ref:`loading_catalogs`.
+
 Image files
 -----------
 The File Browser, accessible via the menu "**File**" -> "**Open Image**" or the menu "**File**" -> "**Append Image**", provides a list of images and their information supported by CARTA. The supported image formats are:  
 
 * CASA format
-* HDF5 format (IDIA schema)
+* HDF5 format (IDIA schema, see :ref:`hdf5_idia_schema`)
 * FITS format
 * MIRIAD format 
 
@@ -35,7 +41,7 @@ You can search for files and sub-directories using the filter field located at t
 
 The File Browser remembers the last path where an image was opened within one CARTA session, and the path is displayed (as breadcrumbs) at the top of the File Browser. Therefore, when the File Browser is re-opened to load other images, a file list will be displayed at the path where the previous image was loaded. CARTA can also remember the last path for a *new* CARTA session via "**File**" -> "**Preferences**" -> "**Global**" -> "**Save last used directory**".
 
-You can use the breadcrumbs to navigate to one of the parent directories or click the home button to directly navigate to the base (i.e., initial) directory. Alternatively, you can use the pencil button and enter a path directly to switch directories. You can click the reload button to get an updated file list from the server side.
+You can use the breadcrumbs to navigate to one of the parent directories or click the home button to directly navigate to the base (i.e., initial) directory. Alternatively, you can use the pencil button and enter a path (with respect to the top level folder which is specified with the ``--top_level_folder`` flag when starting the carta_backend) directly to switch directories. You can click the reload button to get an updated file list from the server side.
 
 
 .. raw:: html
@@ -115,10 +121,11 @@ An image can be closed via "**File**" -> "**Close Image**". The active image (th
    +----------------------------------+----------------------------+
 
 
+.. _hdf5_idia_schema:
 
 HDF5 (IDIA schema) image support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Besides the CASA image format, the FITS format, and the MIRIAD format, CARTA also supports images in the HDF5 format under the IDIA schema.  The IDIA schema is designed to ensure efficient image visualization is retained even with huge image cubes (hundreds of GB to a few TB). The HDF5 image file contains extra data to skip or speed up expensive computations, such as per-cube histogram, spectral profile, etc. Below is a summary of the content included in an HDF5 image:
+Beside the CASA image format, the FITS format, and the MIRIAD format, CARTA also supports images in the HDF5 format following the IDIA schema.  The IDIA schema is designed to ensure efficient image visualization is retained even with huge image cubes (hundreds of GB to a few TB). The HDF5 image file contains extra data to skip or speed up expensive computations, such as per-cube histogram, spectral profile, etc. Below is a summary of the content included in an HDF5 image:
 
 * XYZW dataset (spatial-spatial-spectral-Stokes): similar to the FITS format
 * ZYXW dataset: rotated dataset
@@ -191,9 +198,9 @@ If you need to save the image computed via the LEL interface, go to the "**File*
 
 
 
-Loading a complex-valued image
+Loading a complex-value image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A complex-valued CASA image is supported in CARTA. When a CASA image is detected as complex-valued, the "**Load as**" button includes the following components:
+A complex-value CASA image is supported in CARTA. When a CASA image is detected as complex-value, the "**Load as**" button includes the following components:
 
 * Amplitude
 * Phase
@@ -213,7 +220,7 @@ If you want to save a component (e.g., Amplitude) as a new image file with the f
 
 Loading an axes-swapped image cube
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-CARTA supports a swapped-axes image cube. When such a cube is selected in the file list, the file information panel will show the labels of the axes in order. The first two axes will be used for rendering the XY plane in the Image Viewer. The Stokes axis (if there is any) will still be interpreted as a polarization axis. The third axis (excluding the Stokes axis, if there is any) will be interpreted as the Z axis for animation playback. In the following example, CARTA will render a FREQ-RA image in the Image Viewer. With the Animator Widget, you can trigger animation playback of the DEC axis (or the polarization axis, if there is any).
+CARTA supports a axes-swapped image cube. When such a cube is selected in the file list, the file information panel will show the labels of the axes in order. The first two axes will be used for rendering the XY plane in the Image Viewer. The Stokes axis (if there is any) will still be interpreted as a polarization axis. The third axis (excluding the Stokes axis, if there is any) will be interpreted as the Z axis for animation playback. In the following example, CARTA will render a FREQ-RA image in the Image Viewer. With the Animator Widget, you can trigger animation playback of the DEC axis (or the polarization axis, if there is any).
 
 .. raw:: html
 
@@ -221,7 +228,7 @@ CARTA supports a swapped-axes image cube. When such a cube is selected in the fi
         style="width:100%;height:auto;">
 
 .. warning::
-   In v4.1.0, CARTA supports swapped-axes image cubes for *image visualization* only. Region analytics tools are not supported.
+   In v5.0.0, CARTA supports axes-swapped image cubes for *image visualization* only. Region analytics tools are not supported.
 
 
 
@@ -245,13 +252,45 @@ If you need to save a Stokes hypercube as an image file, go to the "**File**" me
 
 
 
+.. _forming_multicolor_image:
+
+Multi-color image blending
+--------------------------
+CARTA supports a raster rendering mode by combining multiple images into one in the color space. This is an enhanced version of the traditional three-color (RGB) blending of astronomical images to create a pseudo-color image. In our implementation, multiple images with different image sizes and pixel sizes can be combined with various raster rendering configurations by taking advantage of the GPU power. This feature serves as a unique tool for making publication-quality images, for example.
+
+When multiple images are selected in the File Browser Dialog, a "Load with RGB blending" (two or three images) or a "Load with multi-color blending" (more than three images) will appear in the bottom-right corner. By clicking the button, the selected images will be loaded into CARTA with spatial matching enabled and a pre-defined raster rendering configuration for each image. Then the outcome raster image will be appended in the Image List widget and displayed in the Image Viewer. You can use the Raster Configuration Widget to perform detailed customization for each input image and for the multi-color blending image. See :ref:`multicolor_blending` for more information.
+
+**ADD A FIGURE**
+
+The multi-color blending image cannot be saved as an image file (e.g., FITS). Instead, you will need to use the workspace feature (see :ref:`workspace` for more information) to save the entire multi-color blending process as a snapshot for future useage. Use "**File**" -> "**Save workspace**" and use the popup dialog for saving. Use "**File**" -> "**Open workspace**" and the popup dialog to load a snapshot and restore the multi-color blending image.
+
+**ADD A FIGURE**
+
+
+.. _loading_regions:
+
+
 Region files
 ------------
 
-work in progress...
+A region file in the CASA CRTF format or the ds9 reg format can be imported via "**File** -> "**Import Regions**". When a region file is selected, its content is shown in the Region Information tab. All or a subset of regions can be exported as a region text file via "**File**" -> "**Export Regions**". CASA and ds9 region text file definitions in world or image coordinates are supported. Note that regions can only be exported if appropriate write permissions are configured on your file system.
+      
+You can load multiple region files at once by selecting multiple region files with "**ctrl/cmd+click**" or "**shift+click**" in the file list, and then clicking the "**Load region**" button.
+
+**ADD A FIGURE**
+
+See :ref:`region_of_interest` for more information.
+
+
+.. _loading_catalogs:
 
 Catalog files
 -------------
 
-work in progress...
+A catalog file in the FITS format or the VOTable format can be loaded and visualized as a table via "**File**" -> "**Import Catalog**". When a catalog file is selected, its basic catalog properties are summarized in the Catalog Information tab on the right-hand side. Full catalog column header is shown in the Catalog Header tab.
 
+You can load multiple catalog files at once by selecting multiple catalog files with "**ctrl/cmd+click**" or "**shift+click**" in the file list, and then clicking the Load catalog button.
+
+**ADD A FIGURE**
+
+See :ref:`catalog_widget` for more information.
