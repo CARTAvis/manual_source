@@ -3,7 +3,7 @@ File browser
 
 .. note::
    | To know more about loading a Stokes hypercube, see :ref:`forming_hypercube`.
-   | To know more about loading multiple images and form a multi-color blending image, see :ref:`forming_multicolor_image`.
+   | To know more about creating a multi-color blending image, see :ref:`forming_multicolor_image`.
    | To know more about loading region files, see :ref:`loading_regions`.
    | To know more about loading catalog files, see :ref:`loading_catalogs`.
 
@@ -256,15 +256,24 @@ If you need to save a Stokes hypercube as an image file, go to the "**File**" me
 
 Multi-color image blending
 --------------------------
-CARTA supports a raster rendering mode by combining multiple images into one in the color space. This is an enhanced version of the traditional three-color (RGB) blending of astronomical images to create a pseudo-color image. In our implementation, multiple images with different image sizes and pixel sizes can be combined with various raster rendering configurations by taking advantage of the GPU power. This feature serves as a unique tool for making publication-quality images, for example.
+CARTA supports a raster rendering mode by combining multiple images into one in the color space. This is an enhanced version of the traditional three-color (RGB) blending of astronomical images to create a pseudo-color image. In our implementation, multiple images with different image sizes and pixel sizes can be combined with various raster rendering configurations by taking advantage of the GPU power. The only requirement is selected images need to be matchable and do not have significant projection distortion in the image field. This feature serves as a unique tool for making publication-quality images, for example.
 
 When multiple images are selected in the File Browser Dialog, a "Load with RGB blending" (two or three images) or a "Load with multi-color blending" (more than three images) will appear in the bottom-right corner. By clicking the button, the selected images will be loaded into CARTA with spatial matching enabled and a pre-defined raster rendering configuration for each image. Then the outcome raster image will be appended in the Image List widget and displayed in the Image Viewer. You can use the Raster Configuration Widget to perform detailed customization for each input image and for the multi-color blending image. See :ref:`multicolor_blending` for more information.
 
-**ADD A FIGURE**
+.. raw:: html
+
+   <img src="_static/carta_fn_fileBrowser_multicolor_blending.png" 
+        style="width:100%;height:auto;">
+
 
 The multi-color blending image cannot be saved as an image file (e.g., FITS). Instead, you will need to use the workspace feature (see :ref:`workspace` for more information) to save the entire multi-color blending process as a snapshot for future useage. Use "**File**" -> "**Save workspace**" and use the popup dialog for saving. Use "**File**" -> "**Open workspace**" and the popup dialog to load a snapshot and restore the multi-color blending image.
 
-**ADD A FIGURE**
+.. raw:: html
+
+   <img src="_static/carta_fn_fileBrowser_multicolor_blending_save.png" 
+        style="width:100%;height:auto;">
+
+
 
 
 .. _loading_regions:
@@ -277,7 +286,12 @@ A region file in the CASA CRTF format or the ds9 reg format can be imported via 
       
 You can load multiple region files at once by selecting multiple region files with "**ctrl/cmd+click**" or "**shift+click**" in the file list, and then clicking the "**Load region**" button.
 
-**ADD A FIGURE**
+
+.. raw:: html
+
+   <img src="_static/carta_fn_fileBrowser_region.png" 
+        style="width:100%;height:auto;">
+
 
 See :ref:`region_of_interest` for more information.
 
@@ -291,6 +305,10 @@ A catalog file in the FITS format or the VOTable format can be loaded and visual
 
 You can load multiple catalog files at once by selecting multiple catalog files with "**ctrl/cmd+click**" or "**shift+click**" in the file list, and then clicking the Load catalog button.
 
-**ADD A FIGURE**
+.. raw:: html
+
+   <img src="_static/carta_fn_fileBrowser_catalog.png" 
+        style="width:100%;height:auto;">
+
 
 See :ref:`catalog_widget` for more information.
