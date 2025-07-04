@@ -1,4 +1,4 @@
-.. _contourrendering:
+.. _contour_rendering:
 
 Contour rendering
 =================
@@ -33,7 +33,7 @@ After defining a set of levels, click the "**Apply**"" button to view the contou
         style="width:100%;height:auto;">
 
 
-In the figure above, a contour image is rendered on top of the same raster image. Suppose you want to plot a contour image on top of another raster image (e.g., velocity field as contour, integrated intensity image as raster). In that case, you need to enable WCS matching of the two raster images first (see :ref:`wcsmatching`). Then, you can generate a contour image just like the example below. The contour images will be visible on *all* the images that are matched to the spatial reference image in world coordinates, including the spatial reference image itself.
+In the figure above, a contour image is rendered on top of the same raster image. Suppose you want to plot a contour image on top of another raster image (e.g., velocity field as contour, integrated intensity image as raster). In that case, you need to enable WCS matching of the two raster images first (see :ref:`wcs_matching`). Then, you can generate a contour image just like the example below. The contour images will be visible on *all* the images that are matched to the spatial reference image in world coordinates, including the spatial reference image itself.
 
 
 .. raw:: html

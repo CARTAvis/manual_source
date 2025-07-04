@@ -1,3 +1,5 @@
+.. _raster_rendering:
+
 Raster rendering
 ================
 

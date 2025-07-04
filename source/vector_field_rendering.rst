@@ -1,4 +1,4 @@
-.. _vectorrendering:
+.. _vector_rendering:
 
 Vector field rendering
 ======================

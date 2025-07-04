@@ -25,7 +25,7 @@ Alternatively, you may enable the low bandwidth mode, which will reduce required
 
 
 
-.. _wcsmatching:
+.. _wcs_matching:
 
 Image matching
 --------------
