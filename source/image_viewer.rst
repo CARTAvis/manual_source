@@ -274,3 +274,12 @@ The image can be exported as a PNG image by clicking the "**Export image**" butt
 Depending on the theme, a background layer in white or black will be added to the PNG file by default. If you prefer a transparent background, please go to "**File**" -> "**Preferences**" -> "**Global**" and set the "**Transparent image background**" toggle to false. 
 
 
+.. note::
+   Viewing a position-velocity image
+
+   CARTA switches to using *rectangular* pixels for rendering when a position-velocity image is loaded as a raster image. The pixel aspect ratio is dynamic based on the aspect ratio of the Image Viewer Widget. By default, the "spectral" axis is displayed in velocity, if possible, based on the image header. You may use the Image Viewer Settings Dialog to apply a conversion to other spectral conventions, such as frequency or wavelength. The frequency-to-velocity conversion requires a reference rest frequency. This reference rest frequency is derived from the image header. You may use the settings dialog of the Image List Widget to set a new reference rest frequency to recompute the velocity axis.
+
+   .. raw:: html
+
+      <img src="_static/carta_fn_imageviewer_pv_rendering.png" 
+           style="width:100%;height:auto;">
