@@ -12,6 +12,8 @@ Raster rendering is the default rendering mode in CARTA when an image is loaded 
 .. note::
    The Render Configuration Widget will display a different set of options when a multi-color blending image is set as the active image. See :ref:`multicolor_blending` for details.
 
+.. note::
+   The raster rendering layer in the Image Viewer Widget may be hidden by clicking the "R" button in the Layers column of the Image List widget.
 
 Histogram
 ---------
