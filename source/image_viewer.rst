@@ -69,6 +69,8 @@ Paired with the Image Viewer Widget, the Animator Widget provides a set of slide
       style="width:100%;height:auto;">
 
 
+.. _single_panel_view_multi_panel_view:
+   
 Single-panel view and multi-panel view
 --------------------------------------
 The Image Viewer provides two modes for viewing images: single-panel and multi-panel views. By default, a *dynamic* multi-panel view mode is enabled. You can use the "**viewer mode**" button at the Image Viewer Widget's top-right corner to switch between the two modes. The view mode is persistent in a new CARTA session (i.e., it is an implicit preference). Additional view mode configuration options are available in the settings dialog of the Image Viewer Widget. You can have a dynamic multi-panel view layout (with a configurable maximum n rows by m columns) based on the number of loaded images or have a fixed layout regardless of how many images are loaded. You can use the "**next page**" and "**previous page**" buttons at the top-right corner of the Image Viewer to view images if the current grid layout cannot show all loaded images at once.  
