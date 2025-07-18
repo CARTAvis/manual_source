@@ -1,5 +1,5 @@
-File header
-===========
+File info
+=========
 
 The File header dialog provides a way to view and export the header information of an image file. It is useful for checking the metadata of the image, such as WCS information, data type, and other relevant parameters. The same context is also embedded in the File Browser Dialog when you click on an image file.
 
