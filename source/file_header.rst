@@ -1,7 +1,7 @@
 File header
 ===========
 
-The File header dialog provides a way to view and export the header information of an image file. It is useful for checking the metadata of the image, such as WCS information, data type, and other relevant parameters.
+The File header dialog provides a way to view and export the header information of an image file. It is useful for checking the metadata of the image, such as WCS information, data type, and other relevant parameters. The same context is also embedded in the File Browser Dialog when you click on an image file.
 
 Using the File Header Dialog, you can view a summary using the "File information" tab or full header of an image file using the "Header" tab. To search for a keyword, click the "**search**" button in the header tab. If you want to save the file header as a text file, use the "**export**" button.
 
