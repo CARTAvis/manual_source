@@ -29,7 +29,7 @@ CARTA - Cube Analysis and Rendering Tool for Astronomy
    channel_map_control.rst
    animator.rst
    image_list_widget.rst
-   file_info.rst
+   file_header.rst
    region_list_widget.rst
    region_configuration.rst
    cursor_info.rst
