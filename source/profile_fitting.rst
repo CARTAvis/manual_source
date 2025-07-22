@@ -3,7 +3,7 @@
 Profile fitting
 ===============
 
-As of v4.1.0, the profile fitting function can be applied to the Spectral Profiler Widget to estimate of the spectral line properties, such as amplitude, FWHM, center, and integrated area. The profile fitting function is available via the "**Fitting**" button in the top-right corner of the Spectral Profiler Widget. 
+As of v5.0, the profile fitting function can be applied to the Spectral Profiler Widget to estimate of the spectral line properties, such as amplitude, FWHM, center, and integrated area. The profile fitting function is available via the "**Fitting**" button in the top-right corner of the Spectral Profiler Widget. 
 
 
 .. raw:: html
@@ -16,12 +16,26 @@ As of v4.1.0, the profile fitting function can be applied to the Spectral Profil
 .. note::
    In a future release, the profile fitting function will be added to the Spatial Profiler Widget and the Histogram Widget.
 
+.. note::
+   The profile fitting function is unavailable when multiple profiles are plotted in the Spectral Profiler Widget. Please ensure that there is only one profile in the plot to use the profile fitting function.
+
+.. note::
+   In a future release, the spectral profile fitting function will be enhanced by referencing the spectral line catalog so that the relative positions of the model components can be locked. Line width and relative amplitude can be constrained, too. 
+
+
+Profile models
+--------------
+
 CARTA supports two model profile functions in v4.1.0 (more will be added in a future release):
 
 * Gaussian: thermal or random motion broadening
 * Lorentzian: pressure broadening
 
 In addition, the profile fitting process can include a continuum emission as a constant distribution (0th-order polynomial) or a linear distribution (1st-order polynomial).
+
+
+Initial guesses
+---------------
 
 In order to work correctly, a set of reasonable initial solutions needs to be provided to the fitting engine. CARTA provides flexible ways of setting up the initial solutions. They can be set manually with the text fields or cursor by drawing a box (for the profile function) or a line (for the continuum function) on the spectral profile plot. An amplitude, a FWHM, and a center must be configured for each component. Up to 20 components are supported in one single fit. When more than one component is required in the fit, the "**components**" slider can be used to switch to different components. The "**delete**" button can be used to delete a selected component.
 
@@ -43,6 +57,8 @@ Alternatively, the "**auto detect**" function (experimental) tries to analyze yo
            style="width:100%;height:auto;">
    </a>
 
+Fitting results
+---------------
 
 The fitting results are visualized in the spectral profile plot, including the individual model profiles, the synthetic model profile, and the residual profile. The numeric values of the fitting results are displayed in the "**Fitting result**" box. The fitting log is available by clicking the "**View log**" button. When the "**Reset**" button is clicked, the profile fitting function will be reset.
 
@@ -53,6 +69,10 @@ The fitting results are visualized in the spectral profile plot, including the i
        <img src="_static/carta_fn_profile_fitting_log.png" 
            style="width:100%;height:auto;">
    </a>
+
+
+Fixing parameters
+-----------------
 
 In some cases, a given free parameter, such as the center of a Gaussian component, may need to be fixed to obtain a *sensible* fit. A parameter can be fixed by clicking its "**lock**" button. Note that there needs to be at least one free parameter to request a fit. 
 
@@ -65,8 +85,4 @@ In some cases, a given free parameter, such as the center of a Gaussian componen
 
 
 
-.. note::
-   The profile fitting function is unavailable when multiple profiles are plotted in the Spectral Profiler Widget. Please ensure that there is only one profile in the plot to use the profile fitting function.
 
-.. note::
-   In a future release, the spectral profile fitting function will be enhanced by referencing the spectral line catalog so that the relative positions of the model components can be locked. Line width and relative amplitude can be constrained, too. 
