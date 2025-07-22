@@ -14,6 +14,9 @@ Profile smoothing may be applied to profiles in the Spatial Profiler Widget, the
 
 Optionally, the original profile can be overplotted with the smoothed profile. The appearance of the smoothed profile, including color, style, width, and size, can be customized.
 
+Smoothing methods
+-----------------
+
 CARTA provides the following smoothing methods:
 
 * Boxcar: convolution with a boxcar function
