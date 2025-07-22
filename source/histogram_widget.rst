@@ -11,18 +11,52 @@ The Histogram Widget allows you to visualize image data as a histogram. The "**I
            style="width:100%;height:auto;">
    </a>
 
-The histogram plot can be zoomed and panned with a mouse, similar to the Spatial Profiler Widget or the Spectral Profiler Widget (:ref:`mouse_interaction_with_charts`).
-
-Additional options to customize the histogram plot are provided in the settings dialog which can be launched by clicking the "**cog**" icon at the top-right corner. In the "**Configuration**" tab, you can apply a custom range and the number of bins to compuate the histogram. 
-
-With the toolbar at the bottom-left of the histogram width, you can export the plot as a PNG file or as a TSV text file.
-
 .. note::
    Histogram fitting functions will be added in a future release.
 
+Interactivity
+-------------
+The histogram plot can be zoomed and panned with a mouse, similar to the Spatial Profiler Widget or the Spectral Profiler Widget (see :ref:`mouse_interaction_with_charts`).
+
+
+.. _histogram_computation:
+
+Computation
+-----------
+The paramters for the histogram computation can be configured with the "**Configuration**" tab in the Historgram Settings Dialog which is accessible with te "cog" button at the top-right corner of the Histogram Widget. By default, the lower and upper limits are computed automatically based on the image data (min and max within the region) and the number of bins is also computed automatically (geometric mean of the region size). You can also set the lower and upper limits manually, and set the number of bins to a fixed value by toggling off "Auto pixel bounds" and "Auto bins" and using the extra control elements that appear in the dialog. 
+
+
+.. raw:: html
+
+   <a href="_static/carta_fn_histogram_widget_configuration.png" target="_blank">
+       <img src="_static/carta_fn_histogram_widget_configuration.png" 
+           style="width:60%;height:auto;">
+   </a>
+
+.. _histogram_styling:
+
+Styling
+-------
+The appearance of the histogram plot can be customized with the "**Styling**" tab in the Histogram Settings Dialog. 
+
+.. raw:: html
+
+   <a href="_static/carta_fn_histogram_widget_styling.png" target="_blank">
+       <img src="_static/carta_fn_histogram_widget_styling.png" 
+           style="width:60%;height:auto;">
+   </a>
+
+Export
+------
+With the toolbar at the bottom-right of the Histogram Widget, you can export the plot as a PNG file or as a TSV text file.
+
+
+
 Settings
 --------
+The Settings Dialog contains the following tabs:
 
-work in progress...
+- Configuration: Configure the histogram computation parameters (see :ref:`histogram_computation`).
+- Styling: Configure the appearance of the histogram plot (see :ref:`histogram_styling`).
 
 
