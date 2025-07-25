@@ -128,6 +128,26 @@ The x axis shows the spectral coordinate and the y axis shows the pixel values. 
    </a>
 
 
+The spectral convention with equivalent units includes the following options:
+
+* Frequency
+* Radio velocity
+* Optical velocity
+* Vacuum wavelength
+* Air wavelength
+* Squared air wavelength
+* Squared vacuum wavelength
+* Channel
+
+The reference system includes the following options:
+
+* LSRK (Local Standard of Rest, Kinematic)
+* LSRD (Local Standard of Rest, Dynamical)
+* Barycentric
+* Topocentric
+
+
+
 Profile smoothing
 -----------------
 
