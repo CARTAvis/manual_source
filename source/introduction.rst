@@ -107,7 +107,7 @@ The National Radio Astronomy Observatory is a facility of the National Science F
 
 The Department of Physics at the University of Alberta has contributed to the CARTA project thanks to support from the National Radio Astronomy Observatory under an ALMA Development Project and from the Canada Foundation for Innovation as part of the Canadian Initiative for Radio Astronomy Data Analysis (CIRADA).
 
-CARTA is mainly built in C++, TypeScript, and JavaScript and with the following third-party libraries (**TO BE UPDATED**):
+CARTA is mainly built in C++, TypeScript, and JavaScript and with the following third-party libraries:
 
 * AST: http://starlink.eao.hawaii.edu/starlink/AST
 * Blueprint: https://blueprintjs.com
@@ -118,6 +118,7 @@ CARTA is mainly built in C++, TypeScript, and JavaScript and with the following 
 * GoldenLayout: https://golden-layout.com
 * GoogleTest: https://github.com/google/googletest
 * GSL: https://www.gnu.org/software/gsl/
+* json-schema-validator: https://github.com/pboettch/json-schema-validator
 * MobX: https://mobx.js.org
 * MongoDB: https://www.mongodb.com
 * node.js: https://nodejs.org
@@ -130,6 +131,12 @@ CARTA is mainly built in C++, TypeScript, and JavaScript and with the following 
 * uWebsockets: https://github.com/uNetworking/uWebSockets
 * WebAssembly: https://webassembly.org
 
+CARTA utilizes the following external data services:
+
+* The `SIMBAD <https://simbad.u-strasbg.fr>`_ database, operated at CDS, Strasbourg, France (2000,A&AS,143,9, "The SIMBAD astronomical database", Wenger et al.)
+* The `VizieR <https://vizier.cds.unistra.fr>`_ catalogue access tool, operated at CDS, Strasbourg Astronomical Observatory, France (2000, A&AS, 143, 23, "The VizieR database of astronomical catalogues.", Ochsenbein et al.)
+* `HiPS2FITS <https://alasky.cds.unistra.fr/hips-image-services/hips2fits>`_, a service provided by CDS
+* `Splatalogue <https://splatalogue.online>`_, a service provided by NRAO. See the FAQ page for the full set of catalog collection
 
 The source code of CARTA is available on `GitHub <https://github.com/CARTAvis>`_.
 

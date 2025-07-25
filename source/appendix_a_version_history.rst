@@ -1,14 +1,28 @@
 Appendix A: version history
 ===========================
+
+Version 5.0
+-----------
+Released 29 July 2025
+
+* Channel map view (raster only)
+* Multi-color image blending
+* HiPS2FITS online image query
+* Dynamic layout
+* Image coordinate and flexible offset coordinate
+* PV generator with a polyline region
+* New design of the in-app help and user manual
+
+**ADD MORE BASED ON CHANGELOGS**
+
+See `carta-frontend changelog <https://github.com/CARTAvis/carta-frontend/blob/release/5.0/CHANGELOG.md>`_ and `carta-backend changelog <https://github.com/CARTAvis/carta-backend/blob/release/5.0/CHANGELOG.md>`_ for other improvements.
+
+
 Version 4.1
 -----------
-Released ? January 2024
+Released 23 January 2024
 
 This is a maintenance release to address core library update and critical bugs. No new feature or feature enhancement is included.
-
-
-
-
 
 
 Version 4.0
