@@ -1,3 +1,5 @@
+.. _spectral_line_query:
+
 Spectral line query
 ===================
 

@@ -11,6 +11,8 @@ and image data query from
 
 You can retrieve a catalog for visualization via the Catalog Widget (see :ref:`catalog_widget` for details) or retrieve an image for visualization in the Image Viewer.
 
+The spectral line catalog query from the `Splatalogue <https://splatalogue.online>`_ is available in the Spectral Line Query Widget (see :ref:`spectral_line_query` for details).
+
 
 SIMBAD catalog query
 --------------------
