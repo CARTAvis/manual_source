@@ -149,6 +149,10 @@ By clicking on a point or using the selection tools from the top-right corner of
    <img src="_static/carta_fn_catalogue_widget_scatter.png" 
         style="width:100%;height:auto;">
 
+
+Linear fitting
+^^^^^^^^^^^^^^
+
 The "**Linear Fit**" button allow you to fit a straight line to the data points in the current view. Data points outside the current view are not included in the linear fit process. The fitting results are summarized at the top-left corner of the scatter plot.
 
 
