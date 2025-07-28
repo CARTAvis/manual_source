@@ -79,11 +79,13 @@ The bibtex is
                   Pamela Harris and
                   Adrianna Pińska and
                   Carli Raul-Omar and
+                  Kuan-Chou Hou and
                   Cheng-Chin Chiang and
                   Tien-Hao Chang and
                   Shou-Chieh Hsu and
                   Qi Pang and
                   Rob Simmonds and
+                  Po-Sheng Huang and
                   Ming-Yi Lin and
                   Hengtai Jan},
    title        = {{CARTA: The Cube Analysis and Rendering Tool for 
