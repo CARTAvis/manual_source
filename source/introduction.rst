@@ -60,7 +60,6 @@ The development team is composed of astronomers, software engineers, and compute
 
 Software citation
 -----------------
-**TO BE UPDATED**
 
 Please use the following DOI as a citation when using CARTA for publications.
 
