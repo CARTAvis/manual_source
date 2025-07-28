@@ -22,16 +22,19 @@ When an image is selected, a summary of image properties is provided on the righ
 
 .. raw:: html
 
-   <img src="_static/carta_fn_fileBrowser.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_fileBrowser.png" target="_blank">
+       <img src="_static/carta_fn_fileBrowser.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 If multiple images are required to perform joint visualization and analysis (e.g., CO 2-1, 13CO 2-1, and C18O 2-1), you can select *multiple* files in the file list with "**shift+click**"/"**command+click**" (macOS) or "**shift+click**"/"**ctrl+click**" (Linux) and load or append them all at once.  
 
 .. raw:: html
 
-   <img src="_static/carta_fn_fileBrowser_multiple_selection.png" 
-        style="width:100%;height:auto;">
-
+   <a href="_static/carta_fn_fileBrowser_multiple_selection.png" target="_blank">
+       <img src="_static/carta_fn_fileBrowser_multiple_selection.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 You can search for files and sub-directories using the filter field located at the bottom of the File Browser. Three different methods are supported:
 
@@ -46,8 +49,10 @@ You can use the breadcrumbs to navigate to one of the parent directories or clic
 
 .. raw:: html
 
-   <img src="_static/carta_fn_fileBrowser_filePath.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_fileBrowser_filePath.png" target="_blank">
+       <img src="_static/carta_fn_fileBrowser_filePath.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 .. note::
@@ -166,8 +171,10 @@ You can load a position-velocity (PV) image in CARTA. When the image header has 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_fileBrowser_pvImage.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_fileBrowser_pvImage.png" target="_blank">
+       <img src="_static/carta_fn_fileBrowser_pvImage.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 Loading images with the Lattice Expression Language (LEL)
@@ -179,8 +186,10 @@ CARTA supports loading images via the Lattice Expression Language (LEL) interfac
 
 .. raw:: html
 
-   <img src="_static/carta_fn_fileBrowser_LEL.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_fileBrowser_LEL.png" target="_blank">
+       <img src="_static/carta_fn_fileBrowser_LEL.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 With the LEL interface, you can apply arithmetic on images and load the result as an image in CARTA. For example, with the expression
@@ -211,8 +220,10 @@ as loading options. You can select a desired component to load or append.
 
 .. raw:: html
 
-   <img src="_static/carta_fn_fileBrowser_complexImage.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_fileBrowser_complexImage.png" target="_blank">
+       <img src="_static/carta_fn_fileBrowser_complexImage.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 If you want to save a component (e.g., Amplitude) as a new image file with the float data type, go to the "**File**" menu and select "**Save Image**".
 
@@ -224,8 +235,10 @@ CARTA supports a axes-swapped image cube. When such a cube is selected in the fi
 
 .. raw:: html
 
-   <img src="_static/carta_fn_fileBrowser_rotatedCube.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_fileBrowser_rotatedCube.png" target="_blank">
+       <img src="_static/carta_fn_fileBrowser_rotatedCube.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 .. warning::
    In v5.0.0, CARTA supports axes-swapped image cubes for *image visualization* only. Region analytics tools are not supported.
@@ -245,8 +258,10 @@ Suppose a set of individual Stokes images needs to be loaded into CARTA for data
 
 .. raw:: html
 
-   <img src="_static/carta_fn_fileBrowser_multiple_selection_hypercube.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_fileBrowser_multiple_selection_hypercube.png" target="_blank">
+       <img src="_static/carta_fn_fileBrowser_multiple_selection_hypercube.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 If you need to save a Stokes hypercube as an image file, go to the "**File**" menu and select "**Save Image**".
 
@@ -262,18 +277,20 @@ When multiple images are selected in the File Browser Dialog, a "Load with RGB b
 
 .. raw:: html
 
-   <img src="_static/carta_fn_fileBrowser_multicolor_blending.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_fileBrowser_multicolor_blending.png" target="_blank">
+       <img src="_static/carta_fn_fileBrowser_multicolor_blending.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 The multi-color blending image cannot be saved as an image file (e.g., FITS). Instead, you will need to use the workspace feature (see :ref:`workspace` for more information) to save the entire multi-color blending process as a snapshot for future useage. Use "**File**" -> "**Save workspace**" and use the popup dialog for saving. Use "**File**" -> "**Open workspace**" and the popup dialog to load a snapshot and restore the multi-color blending image.
 
 .. raw:: html
 
-   <img src="_static/carta_fn_fileBrowser_multicolor_blending_save.png" 
-        style="width:100%;height:auto;">
-
-
+   <a href="_static/carta_fn_fileBrowser_multicolor_blending_save.png" target="_blank">
+       <img src="_static/carta_fn_fileBrowser_multicolor_blending_save.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 .. _loading_regions:
@@ -289,8 +306,10 @@ You can load multiple region files at once by selecting multiple region files wi
 
 .. raw:: html
 
-   <img src="_static/carta_fn_fileBrowser_region.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_fileBrowser_region.png" target="_blank">
+       <img src="_static/carta_fn_fileBrowser_region.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 See :ref:`region_of_interest` for more information.
@@ -307,8 +326,10 @@ You can load multiple catalog files at once by selecting multiple catalog files 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_fileBrowser_catalog.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_fileBrowser_catalog.png" target="_blank">
+       <img src="_static/carta_fn_fileBrowser_catalog.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 See :ref:`catalog_widget` for more information.

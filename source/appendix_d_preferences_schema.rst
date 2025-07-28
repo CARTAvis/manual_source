@@ -7,7 +7,9 @@ The full preferences options are shown below. If you use an IDE to edit the "pre
 
 .. raw:: html
 
-   <img src="_static/carta_preferences_edit.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_preferences_edit.png" target="_blank">
+        <img src="_static/carta_preferences_edit.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 .. jsonschema:: https://cartavis.org/schemas/preferences_schema_2.json

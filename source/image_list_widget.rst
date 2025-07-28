@@ -14,9 +14,11 @@ The Image List Widget provides a list of loaded image files in the current CARTA
 
 .. raw:: html
 
-   <img src="_static/carta_fn_image_list.png" 
-        style="width:100%;height:auto;">
-
+   <a href="_static/carta_fn_image_list.png" target="_blank">
+        <img src="_static/carta_fn_image_list.png" 
+             style="width:100%;height:auto;">
+   </a>
+   
 
 Setting active image
 --------------------
@@ -30,8 +32,10 @@ By default, the images are ordered by the order they are loaded. You can change 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_image_list_reorder.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_image_list_reorder.png" target="_blank">
+       <img src="_static/carta_fn_image_list_reorder.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 Close images
@@ -45,8 +49,10 @@ The Image List Widget provides a set of shortcut options to close images. You ca
 
 .. raw:: html
 
-   <img src="_static/carta_fn_image_list_close_image.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_image_list_close_image.png" target="_blank">
+       <img src="_static/carta_fn_image_list_close_image.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 .. note::
     If the image is a multi-color blending image, closing it will not affect the original images used for blending. The original images will still be loaded in the Image Viewer Widget and can be used for further analysis or rendering.
@@ -77,8 +83,10 @@ The reference image can be changed by right-clicking on an image in the Image Li
 
 .. raw:: html
 
-   <img src="_static/carta_fn_image_list_matching_reference.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_image_list_matching_reference.png" target="_blank">
+       <img src="_static/carta_fn_image_list_matching_reference.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 .. _set_spectral_type_for_matching:
 
@@ -96,16 +104,20 @@ By default, spectral matching is performed using the "radio velocity" convention
 
 .. raw:: html
 
-   <img src="_static/carta_fn_image_list_matching_spectral_type.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_image_list_matching_spectral_type.png" target="_blank">
+       <img src="_static/carta_fn_image_list_matching_spectral_type.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 .. note::
     For a spectral scan project, it is recommended to use "frequency" or "wavelength" for matching adjacent spectral cubes. Once they are matched, you can use the Spectral Profiler Widget and use the multi-profile mode to visualize the full spectral coverage in frequency or wavelength at once.
 
     .. raw:: html
-        
-       <img src="_static/carta_fn_image_list_matching_spectral_scan.png" 
-            style="width:100%;height:auto;">
+
+       <a href="_static/carta_fn_image_list_matching_spectral_scan.png" target="_blank">
+           <img src="_static/carta_fn_image_list_matching_spectral_scan.png" 
+                style="width:100%;height:auto;">
+       </a>
 
 
 .. _set_new_rest_frequency_for_velocity_matching:
@@ -116,8 +128,10 @@ The spectral type "radio velocity" or "optical velocity" requires a reference re
 
 .. raw:: html
 
-   <img src="_static/carta_fn_image_list_matching_rest_frequency.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_image_list_matching_rest_frequency.png" target="_blank">
+       <img src="_static/carta_fn_image_list_matching_rest_frequency.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 The Rest frequency tab in the settings dialog is also accessible via the context menu when you right-click on an image in the Image List Widget and select "Set rest frequency". 
 

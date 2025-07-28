@@ -7,9 +7,11 @@ A channel map view is a powerful visualization tool used in radio astronomy to e
 
 .. raw:: html
 
-   <img src="_static/carta_fn_channel_map_view.png" 
-        style="width:100%;height:auto;">
-
+    <a href="_static/carta_fn_channel_map_view.png" target="_blank">
+        <img src="_static/carta_fn_channel_map_view.png" 
+            style="width:100%;height:auto;">
+    </a>
+   
 .. note::
     In v5.0, the channel map view only supports raster rendering of an image cube. Contour rendering, vector field rendering, and catalog overlay are not supported. In a future release, we will support the other rendering modes including the matching feature.
 
@@ -31,8 +33,10 @@ By default a 2x2 grid of panels will be displayed in the Image Viewer Widget to 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_channel_map_view_control.png" 
-        style="width:60%;height:auto;">
+   <a href="_static/carta_fn_channel_map_view_control.png" target="_blank">
+       <img src="_static/carta_fn_channel_map_view_control.png" 
+            style="width:60%;height:auto;">
+   </a>
 
 To switch to the next set of channels filling the configured channel map grid, you can click the "Next page" button. Likewise, to switch to the previous set of channels, you can click the "Previous page" button. 
 
@@ -48,8 +52,10 @@ The active channel in the channel map view is the one that is highlighted with a
 
 .. raw:: html
 
-   <img src="_static/carta_fn_channel_map_view_active_channel.png" 
-        style="width:100%;height:auto;">
+    <a href="_static/carta_fn_channel_map_view_active_channel.png" target="_blank">
+        <img src="_static/carta_fn_channel_map_view_active_channel.png" 
+            style="width:100%;height:auto;">
+    </a>
 
 Alternatively, you can use the Channel slider in the Animator Widget for switching active channels. If the selected channel is in the current channel map view, the corresponding channel panel will be highlighted with a red box and no re-rendering is required. However, if the selected channel is not in the current channel map view, the channel map view will be updated to have the selected channel as the new start channel in the grid and the subsequent channels will be rendered to fill up the grid.
 
@@ -74,5 +80,7 @@ The channel map view can be exported as a PNG image by clicking the "**Export im
 
 .. raw:: html
 
-   <img src="_static/carta_fn_channel_map_view_export.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_channel_map_view_export.png" target="_blank">
+       <img src="_static/carta_fn_channel_map_view_export.png" 
+            style="width:100%;height:auto;">
+   </a>

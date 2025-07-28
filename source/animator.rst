@@ -7,9 +7,10 @@ The Animator Widget provides controls for image frames, channels, and polarizati
 
 .. raw:: html
 
-   <img src="_static/carta_fn_animator_widget.png" 
-        style="width:80%;height:auto;">
-
+   <a href="_static/carta_fn_animator_widget.png" target="_blank">
+        <img src="_static/carta_fn_animator_widget.png" 
+                style="width:80%;height:auto;">
+   </a>
 
 
 Switching images and channels

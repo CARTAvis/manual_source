@@ -9,8 +9,10 @@ As shown in the figure below, if we have an image with 2048 pixels by 2048 pixel
    
 .. raw:: html
 
-   <img src="_static/carta_fn_tiledRendering.png" 
-         style="width:80%;height:auto;">
+   <a href="_static/carta_fn_tiledRendering.png" target="_blank">
+       <img src="_static/carta_fn_tiledRendering.png" 
+            style="width:80%;height:auto;">
+   </a>
 
 When you change the field of view or the size of the Image Viewer, tile data from the layer matching your screen resolution within a factor of two will be used. For example, if you are interested in the field of the blue box and the Image Viewer has a screen size of 512 pixels by 384 pixels, tiles from the 2nd layer will be used for rendering. In this case, nine tiles will be used. If you pan a little bit around the blue box, no new tile data are required. However, if you pan the view to the green box with the same viewer size, two additional tiles from the second layer are required, and four tiles will be *re-used* for rendering. With this tiled rendering approach, tiles will be re-used at different zoom levels and with different fields of view to minimize the amount of data transfer while keeping the image sharp on the screen. Effectively, you will see that the image becomes sharper and sharper at higher and higher zoom levels.
 
@@ -20,9 +22,10 @@ Alternatively, you may enable the low bandwidth mode, which will reduce required
 
 .. raw:: html
 
-   <img src="_static/carta_fn_tiledRendering_preference.png" 
-         style="width:80%;height:auto;">
-
+   <a href="_static/carta_fn_tiledRendering_preference.png" target="_blank">
+       <img src="_static/carta_fn_tiledRendering_preference.png" 
+            style="width:80%;height:auto;">
+   </a>
 
 
 .. _wcs_matching:
@@ -34,15 +37,19 @@ You may trigger image matching based on their world coordinates when multiple im
 
 .. raw:: html
 
-   <img src="_static/carta_fn_layerList.png" 
-        style="width:80%;height:auto;">
+   <a href="_static/carta_fn_layerList.png" target="_blank">
+       <img src="_static/carta_fn_layerList.png" 
+            style="width:80%;height:auto;">
+   </a>
 
 or the tool button in the Image Viewer.
 
 .. raw:: html
 
-   <img src="_static/carta_fn_triggerMatch.png" 
-        style="width:50%;height:auto;">
+   <a href="_static/carta_fn_triggerMatch.png" target="_blank">
+       <img src="_static/carta_fn_triggerMatch.png" 
+            style="width:50%;height:auto;">
+   </a>
 
 
 The Image List Widget shows a list of all loaded images, including their:
@@ -65,21 +72,27 @@ You may change a spatial reference image, a spectral reference image, or a raste
 
 .. raw:: html
 
-   <img src="_static/carta_fn_layerList2.png" 
-      style="width:60%;height:auto;">
+   <a href="_static/carta_fn_layerList2.png" target="_blank">
+       <img src="_static/carta_fn_layerList2.png" 
+            style="width:60%;height:auto;">
+   </a>
 
 For raster images, matching in the spatial domain is achieved by applying translation, rotation, and scaling to images with respect to the reference image. This is also known as the "affine transformation". 
 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_spatialMatching1.png" 
-      style="width:100%;height:auto;">
+   <a href="_static/carta_fn_spatialMatching1.png" target="_blank">
+       <img src="_static/carta_fn_spatialMatching1.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 .. raw:: html
 
-   <img src="_static/carta_fn_spatialMatching2.png" 
-      style="width:100%;height:auto;">
+   <a href="_static/carta_fn_spatialMatching2.png" target="_blank">
+       <img src="_static/carta_fn_spatialMatching2.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 For contour images, matching in the spatial domain is achieved by reprojecting contour vertices to the raster image in the view. Multiple contour images can be displayed on top of a raster image if spatial matching of the target contour image is enabled. 
@@ -87,8 +100,10 @@ For contour images, matching in the spatial domain is achieved by reprojecting c
 
 .. raw:: html
 
-   <img src="_static/carta_fn_contourMatching.png" 
-      style="width:100%;height:auto;">
+   <a href="_static/carta_fn_contourMatching.png" target="_blank">
+       <img src="_static/carta_fn_contourMatching.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 For image cubes, matching in the spectral domain is achieved by nearest interpolation with the target spectral convention. The default is "radio velocity". The reference convention of spectral matching is configurable with the settings dialog of the Image List Widget. When spectral matching is enabled by clicking the "**Z**" button, the matched channel indices are updated in the Image List Widget. Images  in the Image Viewer Widget are then updated accordingly.
@@ -97,9 +112,10 @@ For image cubes, matching in the spectral domain is achieved by nearest interpol
 
 .. raw:: html
 
-   <img src="_static/carta_fn_spectralMatching.png" 
-      style="width:100%;height:auto;">
-
+   <a href="_static/carta_fn_spectralMatching.png" target="_blank">
+       <img src="_static/carta_fn_spectralMatching.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 .. note::
@@ -109,9 +125,10 @@ For image cubes, matching in the spectral domain is achieved by nearest interpol
 
    .. raw:: html
 
-      <img src="_static/carta_fn_projectionEffect.png" 
-         style="width:100%;height:auto;">
-   
+      <a href="_static/carta_fn_projectionEffect.png" target="_blank">
+          <img src="_static/carta_fn_projectionEffect.png" 
+               style="width:100%;height:auto;">
+      </a>
 
 .. note::
    If a spatial reference image or a spectral reference image is closed via the menu "**File**" -> "**Close image**", all matched images will be unmatched, and a new reference image will be automatically registered.
@@ -122,8 +139,10 @@ A raster image, contour image, or vector overlay image may be hidden in the Imag
 
 .. raw:: html
 
-   <img src="_static/carta_fn_hideLayer.png" 
-      style="width:100%;height:auto;">
+   <a href="_static/carta_fn_hideLayer.png" target="_blank">
+       <img src="_static/carta_fn_hideLayer.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 .. _region_of_interest:
 
@@ -441,17 +460,22 @@ As CARTA is fundamentally a client-server application, it would be essential to 
 
 .. raw:: html
 
-   <img src="_static/carta_gui_server_status.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_gui_server_status.png" target="_blank">
+       <img src="_static/carta_gui_server_status.png" 
+            style="width:100%;height:auto;">
+   </a>
+   
 
 
 If CARTA behaves abnormally or stops responding, please check the server-side status icon and the connection latency. If it becomes red, the connection between the client and server sides is interrupted. At this point, CARTA is not functional. A prompt will be shown in the browser  to ask you whether or not to resume the previous CARTA session. By clicking the "**Retry**" button, CARTA will try to resume the previous session if possible. If you choose not to resume the previous session, please reload CARTA to establish a new session. 
    
 .. raw:: html
 
-   <img src="_static/carta_gui_session_resume.png" 
-        style="width:100%;height:auto;">
-   
+   <a href="_static/carta_gui_session_resume.png" target="_blank">
+       <img src="_static/carta_gui_session_resume.png" 
+            style="width:100%;height:auto;">
+   </a>
+
 If you are using the Site Deployment Mode (SDM) of CARTA and encountering the case that the backend is not accessible, you can go to the dashboard to restart a CARTA service. The dashboard can be also visited also via the menu "**File**" -> "**Server**" -> "**Dashboard**" in normal state. With the dashboard, you can 
 
 * Start a new CARTA session (using the same backend)
@@ -463,9 +487,10 @@ Note that the dashboard may look differently per site deployment.
 
 .. raw:: html
 
-   <img src="_static/carta_gui_dashboard.png" 
-        style="width:100%;height:auto;">
-
+   <a href="_static/carta_gui_dashboard.png" target="_blank">
+       <img src="_static/carta_gui_dashboard.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 .. _mouse_interaction_with_images:

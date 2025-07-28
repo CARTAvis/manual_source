@@ -8,8 +8,10 @@ In addition to raster rendering, CARTA supports contour rendering as well. A con
 
 .. raw:: html
 
-   <img src="_static/carta_fn_contourConfig.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_contourConfig.png" target="_blank">
+       <img src="_static/carta_fn_contourConfig.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 The Data source dropdown menu is used to select the input data for contour calculations. The lock button next to the dropdown menu is used to synchronize the displayed image in the Image Viewer with the selected data source. If the state is unlocked, changing the data source will not change the displayed image in the Image Viewer. 
 
@@ -44,9 +46,10 @@ After defining a set of levels, click the "**Apply**"" button to view the contou
 
 .. raw:: html
 
-   <img src="_static/carta_fn_contourRendering.png" 
-        style="width:100%;height:auto;">
-
+   <a href="_static/carta_fn_contourRendering.png" target="_blank">
+       <img src="_static/carta_fn_contourRendering.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 Matching contour images to raster images
 ----------------------------------------
@@ -55,8 +58,10 @@ In the figure above, a contour image is rendered on top of the same raster image
 
 .. raw:: html
 
-   <img src="_static/carta_fn_contourMatching2.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_contourMatching2.png" target="_blank">
+       <img src="_static/carta_fn_contourMatching2.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 If multiple images are loaded in the append mode, you may use the "**Data Source**" dropdown menu to select an image as the input data for contour calculations. If the state of the "**lock**" button is locked, the Image Viewer will show the selected image as a raster image, and the image slider in the Animator Widget will be updated to the selected image too. To turn off this synchronization, click the "**lock**" button to set the state to unlocked. 
@@ -110,8 +115,10 @@ CARTA provides three different contour smoothing methods, including "no smooth",
 
 .. raw:: html
 
-   <img src="_static/carta_fn_contourSmooth.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_contourSmooth.png" target="_blank">
+       <img src="_static/carta_fn_contourSmooth.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 Styling contours
@@ -121,7 +128,9 @@ The appearance of contours can be customized in the "**Styling**" tab. For examp
 
 .. raw:: html
 
-   <img src="_static/carta_fn_contourStyling.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_contourStyling.png" target="_blank">
+       <img src="_static/carta_fn_contourStyling.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 Changing the contour styling will not trigger a new contour calculation on the server side, which is the advantage of using WebGL2 for client-side contour rendering. You can change the contour styling anytime after the contours have been rendered and see the results immediately.

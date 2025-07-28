@@ -29,10 +29,11 @@ By default, only the first ten columns of an offline catalog file are enabled an
 
 
 .. raw:: html
-
-   <img src="_static/carta_fn_catalogue_widget.png" 
-        style="width:100%;height:auto;">
-
+   
+   <a href="_static/carta_fn_catalogue_widget.png" target="_blank">
+        <img src="_static/carta_fn_catalogue_widget.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 Multiple catalog files can be loaded, and you may use the "**File**" dropdown menu at the top of the widget to switch catalog files. Multiple Catalog Widgets may be launched to display different catalog files. The "**Close catalog**" button at the bottom of the widget will close the selected catalog file in the "**File**" dropdown menu. 
 
@@ -74,8 +75,10 @@ As an example, a catalog is loaded and displayed in the Catalog Widget in the sc
 
 .. raw:: html
 
-   <img src="_static/carta_fn_catalogue_widget_filter.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_catalogue_widget_filter.png" target="_blank">
+       <img src="_static/carta_fn_catalogue_widget_filter.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 Custom mode
@@ -84,8 +87,10 @@ By default, a catalog overlay is rendered with a fixed size in screen pixels and
 
 .. raw:: html
 
-   <img src="_static/carta_fn_catalogue_widget_custom_mode.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_catalogue_widget_custom_mode.png" target="_blank">
+       <img src="_static/carta_fn_catalogue_widget_custom_mode.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 The marker size, referring to the marker diameter or area, can be mapped to a data column with a scaling function and clip bounds so that the marker size becomes variable. If the selected marker has a major and a minor axis such as an ellipse, the major size and the minor size can be configured separately. 
@@ -96,8 +101,10 @@ The following example uses an ellipse marker to generate a catalog overlay. Its 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_catalogue_widget_marker_mapping.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_catalogue_widget_marker_mapping.png" target="_blank">
+       <img src="_static/carta_fn_catalogue_widget_marker_mapping.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 Angular size mode
@@ -106,10 +113,10 @@ If it is intended to interpret the data value of a data column as an angular siz
 
 .. raw:: html
 
-   <img src="_static/carta_fn_catalogue_widget_angular_size_mode.png" 
-        style="width:100%;height:auto;">
-
-
+   <a href="_static/carta_fn_catalogue_widget_angular_size_mode.png" target="_blank">
+       <img src="_static/carta_fn_catalogue_widget_angular_size_mode.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 Linked catalog overlay and catalog table
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -118,8 +125,10 @@ The catalog overlay in the Image Viewer Widget and the catalog table in the Cata
 
 .. raw:: html
 
-   <img src="_static/carta_fn_catalogue_widget_image_overlay_selection.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_catalogue_widget_image_overlay_selection.png" target="_blank">
+       <img src="_static/carta_fn_catalogue_widget_image_overlay_selection.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 Catalog overlay on spatially matched images   
@@ -130,8 +139,10 @@ If there are spatially matched images, a catalog overlay on the reference image 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_catalogue_matching.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_catalogue_matching.png" target="_blank">
+       <img src="_static/carta_fn_catalogue_matching.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 Catalog 2D scatter plot
@@ -146,8 +157,10 @@ By clicking on a point or using the selection tools from the top-right corner of
 
 .. raw:: html
 
-   <img src="_static/carta_fn_catalogue_widget_scatter.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_catalogue_widget_scatter.png" target="_blank">
+       <img src="_static/carta_fn_catalogue_widget_scatter.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 Linear fitting
@@ -167,9 +180,12 @@ By clicking on a specific histogram bin, source entries of that bin will be high
 
 
 .. raw:: html
-
-   <img src="_static/carta_fn_catalogue_widget_histogram.png" 
-        style="width:100%;height:auto;">
+   
+   <a href="_static/carta_fn_catalogue_widget_histogram.png" target="_blank">
+        <img src="_static/carta_fn_catalogue_widget_histogram.png" 
+            style="width:100%;height:auto;">
+   </a>
+   
 
 
 Linked catalog visualization
@@ -179,6 +195,8 @@ The source catalog table, the image overlay, the 2D scatter plot, and the histog
 
 .. raw:: html
 
-   <img src="_static/carta_fn_catalogLinkedVisualization.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_catalogLinkedVisualization.png" target="_blank">
+       <img src="_static/carta_fn_catalogLinkedVisualization.png" 
+           style="width:100%;height:auto;">
+   </a>
 
