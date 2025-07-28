@@ -7,8 +7,10 @@ For the rest of the context, the term "region" refers to both regions of interes
 
 .. raw:: html
 
-   <img src="_static/carta_fn_region_list.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_region_list.png" target="_blank">
+       <img src="_static/carta_fn_region_list.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 Cursor region

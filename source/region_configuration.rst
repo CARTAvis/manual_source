@@ -9,8 +9,10 @@ The actual context in the two tabs depends on the type of the region or annotati
 
 .. raw:: html
 
-   <img src="_static/carta_fn_region_config.png" 
-        style="width:80%;height:auto;">
+   <a href="_static/carta_fn_region_config.png" target="_blank">
+       <img src="_static/carta_fn_region_config.png" 
+            style="width:80%;height:auto;">
+   </a>
 
 
 Using the buttons at the bottom of the dialog, you can also lock/unlock a region, center the region in the image viewer, or delete the region.
@@ -55,7 +57,9 @@ The result is visualized on the image, including the iso-longitude and iso-latit
 
 .. raw:: html
 
-   <img src="_static/carta_fn_distance_measure.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_distance_measure.png" target="_blank">
+       <img src="_static/carta_fn_distance_measure.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 

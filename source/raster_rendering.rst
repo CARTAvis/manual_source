@@ -6,8 +6,10 @@ Raster rendering is the default rendering mode in CARTA when an image is loaded 
 
 .. raw:: html
 
-      <img src="_static/carta_fn_renderConfig_widget.png" 
-           style="width:100%;height:auto;">
+   <a href="_static/carta_fn_renderConfig_widget.png" target="_blank">
+       <img src="_static/carta_fn_renderConfig_widget.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 .. note::
    The Render Configuration Widget will display a different set of options when a multi-color blending image is set as the active image. See :ref:`multicolor_blending` for details.
@@ -56,8 +58,10 @@ CARTA provides a set of colormaps adopted from `matplotlib <https://matplotlib.o
 
 .. raw:: html
 
-   <img src="_static/carta_fn_renderConfig_colormaps.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_renderConfig_colormaps.png" target="_blank">
+       <img src="_static/carta_fn_renderConfig_colormaps.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 The "custom" colormap can be set by clicking the Color panel button to select any color and generate a custom monocolor colormap.
 
@@ -82,8 +86,10 @@ The settings dialog of the Render Configuration Widget can be accessed via the "
 
 .. raw:: html
 
-   <img src="_static/carta_fn_renderConfig_settings.png" 
-        style="width:50%;height:auto;">
+   <a href="_static/carta_fn_renderConfig_settings.png" target="_blank">
+       <img src="_static/carta_fn_renderConfig_settings.png" 
+            style="width:50%;height:auto;">
+   </a>
 
 
 

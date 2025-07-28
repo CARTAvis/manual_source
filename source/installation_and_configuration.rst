@@ -195,8 +195,10 @@ If your institute has CARTA deployed for multiple users, you should have a dedic
 
 .. raw:: html
 
-   <img src="_static/carta_sdm_login.png" 
-     style="width:70%;height:auto;">
+   <a href="_static/carta_sdm_login.png" target="_blank">
+       <img src="_static/carta_sdm_login.png" 
+            style="width:70%;height:auto;">
+   </a>
 
 
 .. note::
@@ -208,22 +210,28 @@ When CARTA is deployed in the "Site Deployment Mode", a "**Server**" option is a
 
 .. raw:: html
 
-   <img src="_static/carta_sdm_file_menu.png" 
-     style="width:50%;height:auto;">
+   <a href="_static/carta_sdm_file_menu.png" target="_blank">
+       <img src="_static/carta_sdm_file_menu.png" 
+            style="width:50%;height:auto;">
+   </a>
 
 The dashboard appears like the screenshot below. You can request a new CARTA session as a new browser tab. However, note that this new session shares the same "carta_backend" process as existing sessions.
 
 .. raw:: html
 
-   <img src="_static/carta_sdm_dashboard.png" 
-     style="width:70%;height:auto;">
+   <a href="_static/carta_sdm_dashboard.png" target="_blank">
+       <img src="_static/carta_sdm_dashboard.png" 
+            style="width:70%;height:auto;">
+   </a>
 
 For debugging purposes, you can access the program log through the dashboard.
 
 .. raw:: html
 
-   <img src="_static/carta_sdm_log.png" 
-     style="width:100%;height:auto;">
+   <a href="_static/carta_sdm_log.png" target="_blank">
+       <img src="_static/carta_sdm_log.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 

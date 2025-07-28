@@ -51,8 +51,10 @@ The development of the CARTA project is a joint effort from (in alphabetical ord
 
 .. raw:: html
 
-   <img src="_static/carta_wg_logo.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_wg_logo.png" target="_blank">
+       <img src="_static/carta_wg_logo.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 The development team is composed of astronomers, software engineers, and computer scientists who are passionate about astronomy and data visualization.
 

@@ -23,8 +23,10 @@ The Image Viewer Widget is the main widget in CARTA providing the capability to 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_imageViewer_examples.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_imageViewer_examples.png" target="_blank">
+       <img src="_static/carta_fn_imageViewer_examples.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 By default, CARTA displays images as raster images when they are loaded, like the first example in the figure above. Then you can generate contour images (see :ref:`contour_rendering`) and enable WCS matching between different images (see :ref:`wcs_matching`), such as the other three examples above.
 
@@ -32,15 +34,19 @@ In addition, a vector overlay from a vector field (e.g., a linear polarization f
 
 .. raw:: html
 
-   <img src="_static/carta_fn_imageViewer_examples2.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_imageViewer_examples2.png" target="_blank">
+       <img src="_static/carta_fn_imageViewer_examples2.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 CARTA also provides a multi-color blending mode to combine multiple images into one raster image in the color space. This mode is useful for visualizing multi-wavelength images, such as optical, infrared, and radio images, in a single view. See :ref:`multicolor_blending` for more information.
 
 .. raw:: html
 
-   <img src="_static/carta_fn_imageViewer_examples3.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_imageViewer_examples3.png" target="_blank">
+       <img src="_static/carta_fn_imageViewer_examples3.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 
@@ -51,8 +57,10 @@ You can configure the field of view of the image in the Image Viewer by using mo
 
 .. raw:: html
 
-   <img src="_static/carta_fn_changeFOV.png" 
-      style="width:100%;height:auto;">
+   <a href="_static/carta_fn_changeFOV.png" target="_blank">
+       <img src="_static/carta_fn_changeFOV.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 The widget geometry determines the aspect ratio of the image view. When the Image Viewer Widget is resized, a tooltip with a ratio in screen pixels will be displayed (c.f., :ref:`resizing_a_widget` ).
 
@@ -65,8 +73,10 @@ Paired with the Image Viewer Widget, the Animator Widget provides a set of slide
 
 .. raw:: html
 
-   <img src="_static/carta_fn_imageViewer_animator.png" 
-      style="width:100%;height:auto;">
+   <a href="_static/carta_fn_imageViewer_animator.png" target="_blank">
+       <img src="_static/carta_fn_imageViewer_animator.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 .. _single_panel_view_multi_panel_view:
@@ -77,8 +87,10 @@ The Image Viewer provides two modes for viewing images: single-panel and multi-p
 
 .. raw:: html
 
-   <img src="_static/carta_fn_imageViewer_panelMode.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_imageViewer_panelMode.png" target="_blank">
+       <img src="_static/carta_fn_imageViewer_panelMode.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 When the view mode is single-panel, the image in the view is the "active" image. The “active” image is highlighted with a red box when the view mode is multi-panel. In the above example, the image on the left-hand side is the "active" image. In the Image List Widget (the widget at the bottom-left corner in the above example), the "active" image is highlighted in boldface. There is always an "active" image, except when no image is loaded in CARTA. You can use the Animator Widget or the Image List Widget to select a new "active" image. 
 
@@ -90,16 +102,20 @@ In analytics widgets, such as the Statistics Widget or the Spectral Profiler Wid
 
    .. raw:: html
 
-      <img src="_static/carta_fn_imageViewer_mirrorCursor.png" 
-           style="width:100%;height:auto;">
+      <a href="_static/carta_fn_imageViewer_mirrorCursor.png" target="_blank">
+          <img src="_static/carta_fn_imageViewer_mirrorCursor.png" 
+               style="width:100%;height:auto;">
+      </a>
 
 
 When multiple images are loaded in the append mode, their loading order determines the order in the image slider of the Animator Widget and the rendering order in the multi-panel view (left-right, then top-down). You can change the order by dragging an entry to a desired place in the Image List Widget.
 
 .. raw:: html
 
-   <img src="_static/carta_fn_reorderFrame.png" 
-      style="width:100%;height:auto;">
+   <a href="_static/carta_fn_reorderFrame.png" target="_blank">
+       <img src="_static/carta_fn_reorderFrame.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 Channel map view
@@ -109,8 +125,10 @@ The channel map view is a special view mode of the Image Viewer that displays an
 
 .. raw:: html
 
-   <img src="_static/carta_fn_imageViewer_channelMap.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_imageViewer_channelMap.png" target="_blank">
+       <img src="_static/carta_fn_imageViewer_channelMap.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 .. note::
    With v5.0 release, the channel map view mode only supports raster rendering. Contour images and vector field overlay are not supported in the channel map view mode.
@@ -137,8 +155,10 @@ In the example below, the left panel is the FK5 coordinate system with the grid 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_imageViewer_wcs.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_imageViewer_wcs.png" target="_blank">
+       <img src="_static/carta_fn_imageViewer_wcs.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 Cursor information
@@ -148,8 +168,10 @@ In addition to displaying images, the Image Viewer displays cursor information a
 
 .. raw:: html
 
-   <img src="_static/carta_fn_imageViewer_intro.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_imageViewer_intro.png" target="_blank">
+       <img src="_static/carta_fn_imageViewer_intro.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 When the cursor is movning on the Image Viewer, the pixel information at the cursor position is shown at the top side of the image. The information includes:
 
@@ -161,8 +183,10 @@ When the cursor is movning on the Image Viewer, the pixel information at the cur
 
 .. raw:: html
 
-   <img src="_static/carta_fn_imageViewer_cursorInfo.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_imageViewer_cursorInfo.png" target="_blank">
+       <img src="_static/carta_fn_imageViewer_cursorInfo.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 When the coordinate system changes (e.g., ICRS to GALACTIC), the displayed world coordinate will be changed accordingly. By default, they are displayed in decimal degrees for GALACTIC and ECLIPTIC systems, while for FK5, FK4, and ICRS systems, they are displayed in sexagesimal format. The precision of both formats is determined dynamically based on the image header and the image zoom level. 
 
@@ -191,8 +215,10 @@ By default, a colorbar is displayed along with the raster image on the right-han
 
 .. raw:: html
 
-   <img src="_static/carta_fn_imageViewer_colorbar.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_imageViewer_colorbar.png" target="_blank">
+       <img src="_static/carta_fn_imageViewer_colorbar.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 
@@ -216,8 +242,10 @@ The toolbar of the Image Viewer Widget is located at the bottom-right corner of 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_imageViewer_toolButtons.png" 
-        style="width:70%;height:auto;">
+   <a href="_static/carta_fn_imageViewer_toolButtons.png" target="_blank">
+       <img src="_static/carta_fn_imageViewer_toolButtons.png" 
+            style="width:70%;height:auto;">
+   </a>
 
 
 Settings
@@ -244,23 +272,31 @@ The following screenshots highlight these options.
 
 .. raw:: html
 
-   <img src="_static/carta_fn_imageViewer_settingsDialog1.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_imageViewer_settingsDialog1.png" target="_blank">
+       <img src="_static/carta_fn_imageViewer_settingsDialog1.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 .. raw:: html
 
-   <img src="_static/carta_fn_imageViewer_settingsDialog2.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_imageViewer_settingsDialog2.png" target="_blank">
+       <img src="_static/carta_fn_imageViewer_settingsDialog2.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 .. raw:: html
 
-   <img src="_static/carta_fn_imageViewer_settingsDialog3.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_imageViewer_settingsDialog3.png" target="_blank">
+       <img src="_static/carta_fn_imageViewer_settingsDialog3.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 .. raw:: html
 
-   <img src="_static/carta_fn_imageViewer_settingsDialog4.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_imageViewer_settingsDialog4.png" target="_blank">
+       <img src="_static/carta_fn_imageViewer_settingsDialog4.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 Image export for presentation
 -----------------------------
@@ -269,8 +305,10 @@ The image can be exported as a PNG image by clicking the "**Export image**" butt
 
 .. raw:: html
 
-   <img src="_static/carta_fn_exportImagePNG.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_exportImagePNG.png" target="_blank">
+       <img src="_static/carta_fn_exportImagePNG.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 Depending on the theme, a background layer in white or black will be added to the PNG file by default. If you prefer a transparent background, please go to "**File**" -> "**Preferences**" -> "**Global**" and set the "**Transparent image background**" toggle to false. 
@@ -283,5 +321,7 @@ Depending on the theme, a background layer in white or black will be added to th
 
    .. raw:: html
 
-      <img src="_static/carta_fn_imageviewer_pv_rendering.png" 
-           style="width:100%;height:auto;">
+      <a href="_static/carta_fn_imageviewer_pv_rendering.png" target="_blank">
+          <img src="_static/carta_fn_imageviewer_pv_rendering.png" 
+               style="width:100%;height:auto;">
+      </a>

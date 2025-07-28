@@ -31,8 +31,10 @@ Once a PV image is generated, it will be loaded and displayed in the Image Viewe
 
    .. raw:: html
 
-      <img src="_static/carta_fn_imageviewer_pv_rendering.png" 
-           style="width:100%;height:auto;">
+      <a href="_static/carta_fn_imageviewer_pv_rendering.png" target="_blank">
+          <img src="_static/carta_fn_imageviewer_pv_rendering.png" 
+               style="width:100%;height:auto;">
+      </a>
 
 .. warning::
    In a resumed session after a broken connection to the backend, all in-memory images, such as those generated with the PV generator, are lost. Those images will not be accessible in the resumed session.

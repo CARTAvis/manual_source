@@ -7,8 +7,10 @@ You can add a vector overlay to the Image Viewer using the Vector Overlay Config
 
 .. raw:: html
 
-   <img src="_static/carta_fn_vectorOverlay.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_vectorOverlay.png" target="_blank">
+       <img src="_static/carta_fn_vectorOverlay.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 The Vector Overlay Configuration Dialog contains a Data source dropdown menu to select the image from which the vector elements are derived. The Configuration tab contains several options to configure how the vector elements are computed. The dialog also has a Styling tab to configure how the vector elements are rendered.
 
@@ -30,8 +32,10 @@ See the figure below for examples of the four vector overlay rendering modes.
 
 .. raw:: html
 
-   <img src="_static/carta_fn_vectorOverlay_examples.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_vectorOverlay_examples.png" target="_blank">
+       <img src="_static/carta_fn_vectorOverlay_examples.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 Smoothing
 ---------
@@ -58,8 +62,10 @@ Optionally, you may apply "debiasing" to the polarization intensity and angle ca
 
 .. raw:: html
 
-   <img src="_static/carta_fn_vectorOverlay_threshold.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_vectorOverlay_threshold.png" target="_blank">
+       <img src="_static/carta_fn_vectorOverlay_threshold.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 Adding and removing vector overlays
@@ -76,8 +82,10 @@ Suppose you want to plot a vector overlay image on top of another raster image (
 
 .. raw:: html
 
-   <img src="_static/carta_fn_vectorOverlayMatching.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_vectorOverlayMatching.png" target="_blank">
+       <img src="_static/carta_fn_vectorOverlayMatching.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 If multiple images are loaded in the append mode, you may use the "**Data Source**" dropdown menu to select an image as the input data for vector overlay calculations.
 
@@ -97,5 +105,7 @@ For example, you may use the options to plot a vector overlay like below. Vector
 
 .. raw:: html
 
-   <img src="_static/carta_fn_vectorOverlayStyling.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_vectorOverlayStyling.png" target="_blank">
+       <img src="_static/carta_fn_vectorOverlayStyling.png" 
+            style="width:100%;height:auto;">
+   </a>

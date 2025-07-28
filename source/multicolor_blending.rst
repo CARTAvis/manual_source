@@ -12,8 +12,10 @@ The following is an example of blending three X-ray images with different energi
 
 .. raw:: html
 
-   <img src="_static/carta_fn_multicolor_blending_example.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_multicolor_blending_example.png" target="_blank">
+       <img src="_static/carta_fn_multicolor_blending_example.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 .. note::
@@ -46,8 +48,10 @@ When the blended image is active, the Render Configuration Widget will display a
 
 .. raw:: html
 
-   <img src="_static/carta_fn_multicolor_blending_config.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_multicolor_blending_config.png" target="_blank">
+       <img src="_static/carta_fn_multicolor_blending_config.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 The "Apply color set" dropdown menu allows you to apply a predefined color set to the blended image. If the "rainbow" colormap is selected, the exact color assignment is calculated by interpolating the colormap based on the number of layers. The "RGB" and "CMY" color sets are primarily used for blending three images. 
@@ -60,8 +64,10 @@ As the multi-color blending image is also a spatially matched image to the spati
 
 .. raw:: html
 
-   <img src="_static/carta_fn_multicolor_blending_region_analytics.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_multicolor_blending_region_analytics.png" target="_blank">
+       <img src="_static/carta_fn_multicolor_blending_region_analytics.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 Exporting color-blended images
 ------------------------------
@@ -69,8 +75,10 @@ The multi-color blending image can be exported as a PNG file. To do this, you ca
 
 .. raw:: html
 
-   <img src="_static/carta_fn_multicolor_blending_export.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_multicolor_blending_export.png" target="_blank">
+       <img src="_static/carta_fn_multicolor_blending_export.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 Save the recipe
 ---------------
