@@ -1,3 +1,5 @@
+.. _online_data_query:
+
 Online data query
 =================
 The Online Data Query Dialog provies an interface to query and retrieve astronomical catalog data and image data from remote services. Currently it supports catalog query from
