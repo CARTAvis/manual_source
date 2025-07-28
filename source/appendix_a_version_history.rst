@@ -13,15 +13,14 @@ Released 29 July 2025
 * PV generator with a polyline region
 * New design of the in-app help and user manual
 * Enable the copy function in the cursor info widget
-* Supported flux density calculations with various pixel units in the statistics widget
-* Added support for generating initial values for multiple Gaussian image fitting
-* Added support for sorting the spectral line table
-* Added support for changing the depth order of floating widget and dialog on select
-* Added a button for deleting all regions
-* Supported the customized rest frequency for the moment maps
-* Supported plotting with unit wavelength ^ 2 in z profile and Stokes analysis widgets
-* Supported plotting catalog sources on image pixel size and angular size
-
+* Support flux density calculations with various pixel units in the statistics widget
+* Support automatic generation of initial values for multiple Gaussian image fitting
+* Support sorting the spectral line table
+* Support changing the depth order of floating widget and dialog on select
+* A button for deleting all regions
+* Support setting a custom rest frequency for the moment maps
+* Support wavelength^2 as a new spectral convention
+* Support plotting catalog sources with a size in image pixel and in angular units
 
 See `carta-frontend changelog <https://github.com/CARTAvis/carta-frontend/blob/release/5.0/CHANGELOG.md>`_ and `carta-backend changelog <https://github.com/CARTAvis/carta-backend/blob/release/5.0/CHANGELOG.md>`_ for other improvements.
 
