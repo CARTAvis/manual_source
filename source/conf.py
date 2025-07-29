@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = u'CARTA'
-copyright = u'2018-2025, ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta'
+copyright = u'2018-2025, ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta.  This documentation uses the Sphinx Book Theme, which is licensed under the BSD 3-Clause License.'
 author = u'the CARTA development team'
 
 # The short X.Y version
