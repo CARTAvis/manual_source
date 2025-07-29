@@ -10,13 +10,18 @@ With the snippet editor, you can write code, save it, and execute it. The saved 
 
 .. raw:: html
 
-   <img src="_static/carta_fn_snippets.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_snippets.png" target="_blank">
+        <img src="_static/carta_fn_snippets.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 .. tip::
    You may enable the browser's console to explore the syntax and objects interactively.
 
    .. raw:: html
 
-      <img src="_static/carta_fn_snippets2.png" 
-        style="width:100%;height:auto;">
+      <a href="_static/carta_fn_snippets2.png" target="_blank">
+        <img src="_static/carta_fn_snippets2.png" 
+            style="width:100%;height:auto;">
+      </a>
+      

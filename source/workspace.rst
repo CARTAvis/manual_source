@@ -1,8 +1,10 @@
+.. _workspace:
+
 Workspace
 =========
 
 .. note::
-   Full workspace features are under development. In this v4.1.0 release, workspace support is limited.
+   Full workspace features are under development. In the v5.0 release, workspace support is limited.
 
 
 Workspace saving and restoring
@@ -25,8 +27,10 @@ To save a workspace, use the menu "**File**" -> "**Save Workspace**". To restore
 
 .. raw:: html
 
-   <img src="_static/carta_fn_workspace.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_workspace.png" target="_blank">
+       <img src="_static/carta_fn_workspace.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 When a workspace is selected in the file list, basic workspace information is displayed in the panel on the right-hand side, including:
 
@@ -47,13 +51,17 @@ If you are using a site-deployment-mode version of CARTA with the CARTA `control
 
 .. raw:: html
 
-   <img src="_static/carta_fn_workspace_share1.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_workspace_share1.png" target="_blank">
+       <img src="_static/carta_fn_workspace_share1.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 .. raw:: html
 
-   <img src="_static/carta_fn_workspace_share2.png" 
-        style="width:100%;height:auto;">
+   <a href="_static/carta_fn_workspace_share2.png" target="_blank">
+       <img src="_static/carta_fn_workspace_share2.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 Please note that your collaborators need to have file read permissions for all the workspace images to restore it fully. If there are images that your collaborators do not have permission to read, those images will be skipped in the workspace restoration process, and a warning will be displayed.

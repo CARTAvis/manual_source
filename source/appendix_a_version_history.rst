@@ -1,14 +1,35 @@
 Appendix A: version history
 ===========================
+
+Version 5.0
+-----------
+Released 29 July 2025
+
+* Channel map view (raster only)
+* Multi-color image blending
+* HiPS2FITS online image query
+* Dynamic layout
+* Image coordinate and flexible offset coordinate
+* PV generator with a polyline region
+* New design of the in-app help and user manual
+* Enable the copy function in the cursor info widget
+* Support flux density calculations with various pixel units in the statistics widget
+* Support automatic generation of initial values for multiple Gaussian image fitting
+* Support sorting the spectral line table
+* Support changing the depth order of floating widget and dialog on select
+* A button for deleting all regions
+* Support setting a custom rest frequency for the moment maps
+* Support wavelength^2 as a new spectral convention
+* Support plotting catalog sources with a size in image pixel and in angular units
+
+See `carta-frontend changelog <https://github.com/CARTAvis/carta-frontend/blob/release/5.0/CHANGELOG.md>`_ and `carta-backend changelog <https://github.com/CARTAvis/carta-backend/blob/release/5.0/CHANGELOG.md>`_ for other improvements.
+
+
 Version 4.1
 -----------
-Released ? January 2024
+Released 23 January 2024
 
 This is a maintenance release to address core library update and critical bugs. No new feature or feature enhancement is included.
-
-
-
-
 
 
 Version 4.0

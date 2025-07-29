@@ -11,20 +11,47 @@ CARTA - Cube Analysis and Rendering Tool for Astronomy
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3377984.svg
    :target: https://doi.org/10.5281/zenodo.3377984
 
-.. note::
-   v4.1 is a maintenance release to address core library update and critical bugs. No new feature or feature enhancement is included.
-
 .. toctree::
    :maxdepth: 3
-   :caption: CARTA User Manual for v4.1.0
+   :caption: CARTA User Manual for v5.0
 
    introduction.rst
    installation_and_configuration.rst
-   about_gui.rst
-   image_visualization.rst
-   analysis_tools.rst
-   catalogue_visualization.rst
+
+   fundamental_ideas.rst
+
+   file_browser.rst
+   image_viewer.rst
+   raster_rendering.rst
+   contour_rendering.rst
+   vector_field_rendering.rst
+   multicolor_blending.rst
+   channel_map_control.rst
+   animator.rst
+   image_list_widget.rst
+   file_info.rst
+   region_list_widget.rst
+   region_configuration.rst
+   cursor_info.rst
+   statistics_widget.rst
+   histogram_widget.rst
+   spatial_profiler.rst
+   spectral_profiler.rst
+   profile_smoothing.rst
+   profile_fitting.rst
+   stokes_analysis_widget.rst
+   image_fitting.rst
+   moment_generator.rst
+   pv_generator.rst
+   spectral_line_query.rst
+   online_data_query.rst
+   catalog_widget.rst
+   layout.rst
+   preferences.rst
    workspace.rst
+   log_widget.rst
+
+   
    appendix_a_version_history.rst
    appendix_b_known_issues.rst
    appendix_c_dev_log.rst

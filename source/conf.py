@@ -20,13 +20,13 @@
 # -- Project information -----------------------------------------------------
 
 project = u'CARTA'
-copyright = u'2018-2023, ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta'
+copyright = u'2018-2025, ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta.  This documentation uses the Sphinx Book Theme, which is licensed under the BSD 3-Clause License.'
 author = u'the CARTA development team'
 
 # The short X.Y version
-version = u'4.1'
+version = u'5.0'
 # The full version, including alpha/beta/rc tags
-release = u'4.1.0'
+release = u'5.0.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -41,7 +41,8 @@ release = u'4.1.0'
 extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.githubpages',
-    'sphinx-jsonschema'
+    'sphinx-jsonschema',
+    "sphinx_new_tab_link",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -77,7 +78,8 @@ pygments_style = None
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'bizstyle'
+#html_theme = 'bizstyle'
+html_theme = 'sphinx_book_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -90,6 +92,8 @@ html_theme = 'bizstyle'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 html_logo = "./_static/carta_logo_v2.png"
+html_css_files = ["custom.css"]
+
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.

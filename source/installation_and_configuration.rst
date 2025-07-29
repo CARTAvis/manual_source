@@ -16,16 +16,14 @@ The supported operating systems of the two modes are summarized below.
 
 * Site Deployment Mode
   
-  * Ubuntu Linux: 20.04 LTS (Focal Fossa), and 22.04 LTS (Jammy Jellyfish)
-  * Red Hat Enterprise Linux / AlmaLinux / Rocky Linux: 8
+  * Ubuntu Linux: 22.04 LTS (Jammy Jellyfish) and 24.04 LTS (Noble Numbat)
+  * Red Hat Enterprise Linux / AlmaLinux / Rocky Linux: 8 and 9
 
 * User Deployment Mode
 
-  * Ubuntu Linux: 20.04 LTS (Focal Fossa), and 22.04 LTS (Jammy Jellyfish)
-  * Red Hat Enterprise Linux: 7, 8, 9
-  * CentOS: 7
-  * AlmaLinux/Rocky Linux: 8, 9
-  * macOS: 11 (Big Sur), 12 (Monterey), and 13 (Ventura)
+  * Ubuntu Linux: 22.04 LTS (Jammy Jellyfish) and 24.04 LTS (Noble Numbat)
+  * Red Hat Enterprise Linux / AlmaLinux / Rocky Linux: 8, 9
+  * macOS: 14 (Sonoma), and 15 (Sequoia). Earlier version of macOS may work but they are not tested.
 
 .. note::
    CARTA may function on other Linux distributions, such as Fedora and Debian, but the CARTA development team has not tested these.
@@ -38,10 +36,10 @@ Site Deployment Mode
 --------------------
 The Site Deployment Mode supports the following operating systems:
 
-* Ubuntu Linux: 20.04 LTS (Focal Fossa), and 22.04 LTS (Jammy Jellyfish)
-* Red Hat Enterprise Linux / AlmaLinux / Rocky Linux: 8
+* Ubuntu Linux: 22.04 LTS (Jammy Jellyfish) and 24.04 LTS (Noble Numbat)
+* Red Hat Enterprise Linux / AlmaLinux / Rocky Linux: 8, 9
 
-Please refer to the  `CARTA controller documentation <https://carta-controller.readthedocs.io/en/dev/>`_ to deploy CARTA at your institution as a web-based application for multiple users. Detailed instructions on installation and configuration of the "carta_backend", the "carta_frontend", and the "carta-controller" are provided. If there is a problem, please contact the `CARTA helpdesk <mailto:support@carta.freshdesk.com>`_.
+Please refer to the  `CARTA controller documentation <https://carta-controller.readthedocs.io>`_ to deploy CARTA at your institution as a web-based application for multiple users. Detailed instructions on installation and configuration of the "carta_backend", the "carta_frontend", and the "carta-controller" are provided. If there is a problem, please contact the `CARTA helpdesk <mailto:support@carta.freshdesk.com>`_.
 
 
 .. _installation_UDM:
@@ -50,12 +48,9 @@ User Deployment Mode
 --------------------
 The User Deployment Mode supports the following operating systems:
 
-* Ubuntu Linux: 20.04 LTS (Focal Fossa), and 22.04 LTS (Jammy Jellyfish)
-* Red Hat Enterprise Linux: 7, 8, 9
-* CentOS: 7
-* AlmaLinux 8, 9
-* Rocky Linux 8, 9
-* macOS: 11 (Big Sur), 12 (Monterey), and 13 (Ventura)
+* Ubuntu Linux: 22.04 LTS (Jammy Jellyfish) and 24.04 LTS (Noble Numbat)
+* Red Hat Enterprise Linux / AlmaLinux / Rocky Linux: 8, 9
+* macOS: 14 (Sonoma), and 15 (Sequoia). Earlier version of macOS may work but they are not tested.
 
 If you have *root* access and can use a package manager to install CARTA via the command line, please refer to the section :ref:`installation_UDM_package_managers`. Otherwise, please refer to the section :ref:`installation_UDM_direct_download`.
 
@@ -66,7 +61,7 @@ Installation via package managers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 CARTA can be installed via the command line with package managers such as:
 
-* :code:`yum` or :code:`dnf` on Red Hat Enterprise Linux, CentOS, AlmaLinux, and Rocky Linux
+* :code:`yum` or :code:`dnf` on Red Hat Enterprise Linux, AlmaLinux, and Rocky Linux
 * :code:`apt` on Ubuntu Linux
 * :code:`brew` on macOS
 
@@ -74,7 +69,7 @@ Please identify the operating system where you wish to run CARTA and follow the 
 
 **Ubuntu**
 
-Ubuntu 20.04 and 22.04 packages are available from our `PPA <https://launchpad.net/~cartavis-team/+archive/ubuntu/carta>`_. Please note that *root* access is required unless you install it in a Docker container.
+Ubuntu 22.04 and 24.04 packages are available from our `PPA <https://launchpad.net/~cartavis-team/+archive/ubuntu/carta>`_. Please note that *root* access is required unless you install it in a Docker container.
 
 .. code-block:: bash
 
@@ -87,25 +82,10 @@ Please refer to :ref:`how_to_run_carta` for different single-user use cases.
 .. note::
    Windows 10 or 11 users can install CARTA via the `Windows Subsystem for Linux (WSL) <https://learn.microsoft.com/en-us/windows/wsl/install>`_.
 
-**CentOS 7**
 
-For CentOS 7 users, the "`cartavis/carta Copr <https://copr.fedorainfracloud.org/coprs/cartavis/carta/>`_" and “EPEL” repositories must be added. Please note that root access is required unless using a Docker container.
+**Red Hat Enterprise Linux 8 and 9 / AlmaLinux 8 and 9 / Rocky Linux 8 and 9**
 
-
-.. code-block:: bash
-
-   sudo yum -y install yum-plugin-copr
-   sudo yum -y copr enable cartavis/carta
-   sudo yum -y install epel-release
-   sudo yum -y install carta
-
-Please refer to :ref:`how_to_run_carta` for different single-user use cases.
-
-
-
-**AlmaLinux 8 and 9 / Rocky Linux 8 and 9**
-
-For AlmaLinux 8 and 9 / Rocky Linux 8 and 9 users, the "`cartavis/carta Copr <https://copr.fedorainfracloud.org/coprs/cartavis/carta/>`_" and “EPEL” repositories must be added. Please note that root access is required, unless using a Docker container.
+For Red Hat Enterprise Linux 8 and 9 / AlmaLinux 8 and 9 / Rocky Linux 8 and 9 users, the "`cartavis/carta Copr <https://copr.fedorainfracloud.org/coprs/cartavis/carta/>`_" and “EPEL” repositories must be added. Please note that root access is required, unless using a Docker container.
 
 
 .. code-block:: bash
@@ -118,55 +98,10 @@ For AlmaLinux 8 and 9 / Rocky Linux 8 and 9 users, the "`cartavis/carta Copr <ht
 Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
 
 
-**Red Hat Enterprise Linux 7**
-
-For Red Hat Enterprise Linux 7 users, the "`cartavis/carta Copr <https://copr.fedorainfracloud.org/coprs/cartavis/carta/>`_" and “EPEL” repositories must be added. Please note that root access is required unless using a Docker container.
-
-.. code-block:: bash
-
-   sudo bash -c 'echo -e "\
-   [copr:copr.fedorainfracloud.org:cartavis:carta]\n\
-   name=Copr repo for carta owned by cartavis\n\
-   baseurl=https://download.copr.fedorainfracloud.org/results/cartavis/carta/epel-7-x86_64/\n\
-   type=rpm-md\n\
-   skip_if_unavailable=True\n\
-   gpgcheck=1\n\
-   gpgkey=https://download.copr.fedorainfracloud.org/results/cartavis/carta/pubkey.gpg\n\
-   repo_gpgcheck=0\n\
-   enabled=1\n\
-   enabled_metadata=1" > /etc/yum.repos.d/carta.repo'
-   sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-   sudo yum -y install carta
-
-Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
-
-
-**Red Hat Enterprise Linux 8 and 9**
-
-For Red Hat Enterprise Linux 8 and 9 users, the "`cartavis/carta Copr <https://copr.fedorainfracloud.org/coprs/cartavis/carta/>`_" and “EPEL” repositories must be added. Please note that root access is required unless using a Docker container.
-
-.. code-block:: bash
-
-   sudo dnf -y install 'dnf-command(copr)'
-   sudo dnf -y copr enable cartavis/carta
-   sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-$(rpm -E %{rhel}).noarch.rpm
-   sudo dnf -y install carta
-
-Please refer to :ref:`how_to_run_carta` for different single-user use cases.
-
-
-.. note::
-   If you have previously used our old "packages.cartavis.org" RPM repository, we recommend uninstalling all CARTA related RPMs and deleting the old repo file first, e.g.
-
-   .. code-block:: bash
-
-      sudo yum -y remove carta
-      sudo rm /etc/yum.repos.d/cartavis.repo
-
 
 **macOS**
 
-We officially support macOS 11 Big Sur, 12 Monterey, and 13 Ventura through `Homebrew <https://brew.sh/>`_. If you do not already have it, you may install Homebrew using the following command (*root* access is required):
+We officially support macOS 14 Sonoma and 15 Sequoia through `Homebrew <https://brew.sh/>`_. If you do not already have it, you may install Homebrew using the following command (*root* access is required):
 
 .. code-block:: bash
 
@@ -190,29 +125,26 @@ We provide alternative solutions if you do not have *root* access and cannot use
 
 The Linux AppImage does not require *root* access. It can be run with:
 
-* Ubuntu Linux: 20.04 (LTS) and 22.04 (LTS)
-* Red Hat Enterprise Linux: 7, 8, 9  
-* CentOS 7
-* AlmaLinux 8, 9
-* Rocky Linux 8, 9
+* Ubuntu Linux: 22.04 (LTS) and 24.04 (LTS)
+* Red Hat Enterprise Linux / AlmaLinux / Rocky Linux: 8, 9
 
 You can simply download, extract, and run it. 
 
-We now support x86_64 and aarch64 architectures. You can download the x86_64 version via https://github.com/CARTAvis/carta/releases/download/v4.1.0/carta.AppImage.x86_64.tgz or the aarch64 version via https://github.com/CARTAvis/carta/releases/download/v4.1.0/carta.AppImage.aarch64.tgz. Alternatively, you can use the command line. For example, to get the x86_64 version:
+We now support x86_64 and aarch64 architectures. You can download the x86_64 version via https://github.com/CARTAvis/carta/releases/download/v5.0.0/carta.AppImage.x86_64.tgz or the aarch64 version via https://github.com/CARTAvis/carta/releases/download/v5.0.0/carta.AppImage.aarch64.tgz. Alternatively, you can use the command line. For example, to get the x86_64 version:
 
 .. code-block:: bash
 
-   wget https://github.com/CARTAvis/carta/releases/download/v4.1.0/carta.AppImage.x86_64.tgz
+   wget https://github.com/CARTAvis/carta/releases/download/v5.0.0/carta.AppImage.x86_64.tgz
    tar -xzf carta.AppImage.x86_64.tgz
 
-Then, it will extract to :code:`carta-v4.1-x86_64.AppImage`.
+Then, it will extract to :code:`carta-v5.0-x86_64.AppImage`.
 
 Please refer to :ref:`how_to_run_carta` for different single-user use cases.
 
 
 **macOS Electron Desktop**
 
-The Intel macOS Electron Desktop version can be downloaded via https://github.com/CARTAvis/carta/releases/download/v4.1.0/CARTA-v4.1.0-x64.dmg and the native M1/M2/M3-series macOS Electron Desktop version for new Apple Silicon Macs can be downloaded via https://github.com/CARTAvis/carta/releases/download/v4.1.0/CARTA-v4.1.0-arm64.dmg.
+The Intel macOS Electron Desktop version can be downloaded via https://github.com/CARTAvis/carta/releases/download/v5.0.0/CARTA-v5.0.0-x64.dmg and the native M1/M2/M3-series macOS Electron Desktop version for new Apple Silicon Macs can be downloaded via https://github.com/CARTAvis/carta/releases/download/v5.0.0/CARTA-v5.0.0-arm64.dmg.
 
 After downloading, open the DMG installer and drag-and-drop the CARTA icon to the Applications folder.
 
@@ -223,7 +155,7 @@ After downloading, open the DMG installer and drag-and-drop the CARTA icon to th
 
       alias carta='/Applications/CARTA.app/Contents/MacOS/CARTA'
 
-   You may use a different alias rather than 'carta', e.g. 'carta-v4.1' or 'carta-electron'.
+   You may use a different alias rather than 'carta', e.g. 'carta-v5.0' or 'carta-electron'.
 
 Please refer to :ref:`how_to_run_carta` for different single-user use cases.
 
@@ -243,9 +175,9 @@ There are different ways of running CARTA in your working environment. Please id
 
 Please note that the CARTA GUI is run in the web browser environment. The supported browsers are:
 
-* Google Chrome (tested with v116)
-* Firefox (tested with v117)
-* Safari (tested with v16.5)
+* Google Chrome (with extensive testing)
+* Firefox 
+* Safari 
 
 While other browsers may be functional, we cannot guarantee their compatibility as they have not been tested.
 
@@ -263,8 +195,10 @@ If your institute has CARTA deployed for multiple users, you should have a dedic
 
 .. raw:: html
 
-   <img src="_static/carta_sdm_login.png" 
-     style="width:70%;height:auto;">
+   <a href="_static/carta_sdm_login.png" target="_blank">
+       <img src="_static/carta_sdm_login.png" 
+            style="width:70%;height:auto;">
+   </a>
 
 
 .. note::
@@ -276,22 +210,28 @@ When CARTA is deployed in the "Site Deployment Mode", a "**Server**" option is a
 
 .. raw:: html
 
-   <img src="_static/carta_sdm_file_menu.png" 
-     style="width:50%;height:auto;">
+   <a href="_static/carta_sdm_file_menu.png" target="_blank">
+       <img src="_static/carta_sdm_file_menu.png" 
+            style="width:50%;height:auto;">
+   </a>
 
 The dashboard appears like the screenshot below. You can request a new CARTA session as a new browser tab. However, note that this new session shares the same "carta_backend" process as existing sessions.
 
 .. raw:: html
 
-   <img src="_static/carta_sdm_dashboard.png" 
-     style="width:70%;height:auto;">
+   <a href="_static/carta_sdm_dashboard.png" target="_blank">
+       <img src="_static/carta_sdm_dashboard.png" 
+            style="width:70%;height:auto;">
+   </a>
 
 For debugging purposes, you can access the program log through the dashboard.
 
 .. raw:: html
 
-   <img src="_static/carta_sdm_log.png" 
-     style="width:100%;height:auto;">
+   <a href="_static/carta_sdm_log.png" target="_blank">
+       <img src="_static/carta_sdm_log.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 
@@ -309,14 +249,14 @@ After you have successfully installed CARTA on a *remote* server via a package m
    # CARTA installed via a package manager (yum, dnf, or apt)
    carta --no_browser
    # CARTA installed by downloading the AppImage
-   ./carta-v4.1-x86_64.AppImage --no_browser
+   ./carta-v5.0-x86_64.AppImage --no_browser
 
 Please ensure that you have the :code:`--no_browser` flag set. Then you should see something like the following in your terminal:
 
 .. code-block:: text
 
    [2021-06-03 10:30:57.536] [info] Writing to the log file: /home/spongebob/.carta/log/carta.log
-   [2021-06-03 10:30:57.537] [info] /usr/bin/carta_backend: Version 4.1.0
+   [2021-06-03 10:30:57.537] [info] /usr/bin/carta_backend: Version 5.0.0
    [2021-06-03 10:30:57.574] [info] Serving CARTA frontend from /usr/share/carta/frontend
    [2021-06-03 10:30:57.575] [info] Listening on port 3002 with top level folder /, starting folder /home/spongebob. The number of OpenMP worker threads will be handled automatically.
    [2021-06-03 10:30:57.575] [info] CARTA is accessible at http://172.20.30.40:3002/?token=E1A26527-8226-4FD5-8369-2FCD00BACEE0
@@ -353,8 +293,8 @@ If you would like to initialize CARTA with an image loaded in the Image Viewer o
    carta M51.fits --no_browser
    carta /alma/data --no_browser
    # CARTA installed by downloading the AppImage
-   ./carta-v4.1-x86_64.AppImage M51.fits --no_browser
-   ./carta-v4.1-x86_64.AppImage /alma/data --no_browser
+   ./carta-v5.0-x86_64.AppImage M51.fits --no_browser
+   ./carta-v5.0-x86_64.AppImage /alma/data --no_browser
 
 
 
@@ -369,15 +309,15 @@ After you have successfully installed CARTA on your *local* computer via a packa
    # CARTA installed via a package manager (yum, dnf, apt, or brew)
    carta
    # CARTA installed by downloading the AppImage
-   ./carta-v4.1-x86_64.AppImage
+   ./carta-v5.0-x86_64.AppImage
 
 Then you should see something like the following in your terminal *and* the CARTA GUI initializing in your default web browser:
 
 .. code-block:: text
 
    [2021-06-03 11:03:41.279] [info] Writing to the log file: /Users/spongebob/.carta/log/carta.log
-   [2021-06-03 11:03:41.280] [info] /usr/local/bin/carta_backend: Version 4.1.0
-   [2021-06-03 11:03:41.289] [info] Serving CARTA frontend from /usr/local/Cellar/carta/4.1.0/share/carta/frontend
+   [2021-06-03 11:03:41.280] [info] /usr/local/bin/carta_backend: Version 5.0.0
+   [2021-06-03 11:03:41.289] [info] Serving CARTA frontend from /usr/local/Cellar/carta/5.0.0/share/carta/frontend
    [2021-06-03 11:03:41.289] [info] Listening on port 3002 with top level folder /, starting folder /Users/spongebob. The number of OpenMP worker threads will be handled automatically.
    [2021-06-03 11:03:41.446] [info] CARTA is accessible at http://192.168.0.128:3002/?token=C71D128D-3567-4EA1-B0F2-E703D63D8D0F
    [2021-06-03 11:03:45.209] [info] Session 1 [192.168.0.128] Connected. Num sessions: 1
@@ -389,7 +329,7 @@ Your default web browser is launched automatically to access the URL on the seco
 
    .. code-block:: bash
 
-      APPIMAGE_EXTRACT_AND_RUN=1 ./carta-v4.1-x86_64.AppImage
+      APPIMAGE_EXTRACT_AND_RUN=1 ./carta-v5.0-x86_64.AppImage
 
 
 If you would like to initialize CARTA with an image loaded in the Image Viewer or a folder loaded in the File Browser, please try:
@@ -400,8 +340,8 @@ If you would like to initialize CARTA with an image loaded in the Image Viewer o
    carta M51.fits --no_browser
    carta /alma/data --no_browser
    # CARTA installed by downloading the AppImage
-   ./carta-v4.1-x86_64.AppImage M51.fits --no_browser
-   ./carta-v4.1-x86_64.AppImage /alma/data --no_browser
+   ./carta-v5.0-x86_64.AppImage M51.fits --no_browser
+   ./carta-v5.0-x86_64.AppImage /alma/data --no_browser
 
 
 
@@ -416,7 +356,7 @@ CARTA supports a set of command-line flags for initialization. Try the following
    # CARTA installed via a package manager (yum, dnf, apt, or brew)
    carta --help
    # CARTA installed by downloading the AppImage
-   ./carta-v4.1-x86_64.AppImage --help
+   ./carta-v5.0-x86_64.AppImage --help
 
 Then you should see:
 
@@ -605,7 +545,7 @@ Installation via package managers
 
 **Ubuntu**
 
-The Ubuntu 20.04, and 22.04 packages are available from our `PPA <https://launchpad.net/~cartavis-team/+archive/ubuntu/carta>`_. Please note that *root* access is required unless you install it in a Docker container.
+The Ubuntu 22.04, and 24.04 packages are available from our `PPA <https://launchpad.net/~cartavis-team/+archive/ubuntu/carta>`_. Please note that *root* access is required unless you install it in a Docker container.
 
 .. code-block:: bash
 
@@ -613,19 +553,9 @@ The Ubuntu 20.04, and 22.04 packages are available from our `PPA <https://launch
    sudo apt-get update
    sudo apt install fits2idia
 
-**CentOS 7**
-
-The "fits2idia" program is available from the "`cartavis/carta Copr <https://copr.fedorainfracloud.org/coprs/cartavis/carta/>`_" repository and requires packages from the "EPEL" repository.
-
-.. code-block:: bash
-
-   sudo yum -y install yum-plugin-copr
-   sudo yum -y copr enable cartavis/carta
-   sudo yum -y install epel-release
-   sudo yum -y install fits2idia
 
 
-**AlmaLinux 8 and 9 / Rocky Linux 8 and 9**
+**Red Hat Enterprise Linux 8 and 9 / AlmaLinux 8 and 9 / Rocky Linux 8 and 9**
 
 The "fits2idia" program is available from the "`cartavis/carta Copr <https://copr.fedorainfracloud.org/coprs/cartavis/carta/>`_" repository and requires packages from the "EPEL" repository.
 
@@ -637,42 +567,10 @@ The "fits2idia" program is available from the "`cartavis/carta Copr <https://cop
    sudo dnf -y install fits2idia
 
 
-**Red Hat Enterprise Linux 7**
-
-The "fits2idia" program is available from the "`cartavis/carta Copr <https://copr.fedorainfracloud.org/coprs/cartavis/carta/>`_" repository and requires packages from the "EPEL" repository.
-
-.. code-block:: bash
-
-   sudo bash -c 'echo -e "\
-   [copr:copr.fedorainfracloud.org:cartavis:carta]\n\
-   name=Copr repo for carta owned by cartavis\n\
-   baseurl=https://download.copr.fedorainfracloud.org/results/cartavis/carta/epel-7-x86_64/\n\
-   type=rpm-md\n\
-   skip_if_unavailable=True\n\
-   gpgcheck=1\n\
-   gpgkey=https://download.copr.fedorainfracloud.org/results/cartavis/carta/pubkey.gpg\n\
-   repo_gpgcheck=0\n\
-   enabled=1\n\
-   enabled_metadata=1" > /etc/yum.repos.d/carta.repo'
-   sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-   sudo yum -y install fits2idia
-
-
-**Red Hat Enterprise Linux 8 and 9**
-
-The "fits2idia" program is available from the "`cartavis/carta Copr <https://copr.fedorainfracloud.org/coprs/cartavis/carta/>`_" repository and requires packages from the "EPEL" repository.
-
-.. code-block:: bash
-
-   sudo dnf -y install 'dnf-command(copr)'
-   sudo dnf -y copr enable cartavis/carta
-   sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-$(rpm -E %{rhel}).noarch.rpm
-   sudo dnf -y install fits2idia
-
 
 **macOS**
 
-The "fits2idia" program can be installed via "homebrew" on macOS 11 (BigSur), macOS 12 (Monterey), and macOS 13 (Ventura). To install Homebrew, if not already installed:
+The "fits2idia" program can be installed via "homebrew" on macOS 14 (Sonoma), and macOS 15 (Sequoia). To install Homebrew, if not already installed:
 
 .. code-block:: bash
 
@@ -712,20 +610,9 @@ For aarch64 architectures:
 For easier access, an 'alias' may be set up for running it.
 
 
-**macOS**
 
-For macOS users who do not wish to use Homebrew, we have bundled the "fits2idia" program with the CARTA v4.1.0 Electron version for convenience. We recommend setting up an alias to use it.
-
-Assuming you already have the CARTA v4.1.0 Electron version installed in the default location, you can create an alias to the "fit2idia" executable. In your macOS terminal, open your "~/.zshrc" file (or "~/.bashrc" if you use bash) in a text editor and add the following line:
-
-.. code-block:: bash
-
-   alias fits2idia='/Applications/CARTA.app/Contents/Resources/app/carta-backend/bin/fits2idia'
-
-Then, either :code:`source ~/.zshrc`` (or :code:`source ~/.bashrc`) or open a new tab or terminal window to use "fits2idia".
-
-
-**Windows**
+Installation on Windows 
+-----------------------
 
 While we do not provide official support for CARTA on Windows, you can still use it through the Windows Subsystem for Linux 2 (WSL2), with Ubuntu being the recommended Linux distribution. The following steps provide a simplified guide to installing it on Windows 11, although the method should be pretty similar for Windows 10 users:
 
@@ -809,8 +696,8 @@ In this section, we provide common issues users have experienced and solutions. 
 
 
 
-* **The RedHat7 AppImage does not open and it prints a message suggesting to extract the AppImage using the** :code:`--appimage-extract` **flag.**
+* **The AppImage does not open and it prints a message suggesting to extract the AppImage using the** :code:`--appimage-extract` **flag.**
 
-  This error is due to a lack of FUSE (File System in Userspace) support. FUSE support in RedHat7 systems may be disabled in some institute environments for security reasons. If that is the case, please prefix it with the :code:`APPIMAGE_EXTRACT_AND_RUN=1` environment variable. i.e. :code:`APPIMAGE_EXTRACT_AND_RUN=1 ./carta-v4.1-x86_64.AppImage`
+  This error is due to a lack of FUSE (File System in Userspace) support. FUSE support may be disabled in some institute environments for security reasons. If that is the case, please prefix it with the :code:`APPIMAGE_EXTRACT_AND_RUN=1` environment variable. i.e. :code:`APPIMAGE_EXTRACT_AND_RUN=1 ./carta-v5.0-x86_64.AppImage`
 
 
