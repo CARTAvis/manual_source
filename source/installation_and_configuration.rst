@@ -130,21 +130,21 @@ The Linux AppImage does not require *root* access. It can be run with:
 
 You can simply download, extract, and run it. 
 
-We now support x86_64 and aarch64 architectures. You can download the x86_64 version via https://github.com/CARTAvis/carta/releases/download/v5.0.0/carta.AppImage.x86_64.tgz or the aarch64 version via https://github.com/CARTAvis/carta/releases/download/v5.0.0/carta.AppImage.aarch64.tgz. Alternatively, you can use the command line. For example, to get the x86_64 version:
+We now support x86_64 and aarch64 architectures. You can download the x86_64 version via https://github.com/CARTAvis/carta/releases/latest/download/carta.AppImage.x86_64.tgz or the aarch64 version via https://github.com/CARTAvis/carta/releases/latest/download/carta.AppImage.aarch64.tgz. Alternatively, you can use the command line. For example, to get the x86_64 version:
 
 .. code-block:: bash
 
-   wget https://github.com/CARTAvis/carta/releases/download/v5.0.0/carta.AppImage.x86_64.tgz
+   wget https://github.com/CARTAvis/carta/releases/latest/download/carta.AppImage.x86_64.tgz
    tar -xzf carta.AppImage.x86_64.tgz
 
-Then, it will extract to :code:`carta-v5.0-x86_64.AppImage`.
+Then, it will extract to :code:`carta-x86_64.AppImage`.
 
 Please refer to :ref:`how_to_run_carta` for different single-user use cases.
 
 
 **macOS Electron Desktop**
 
-The Intel macOS Electron Desktop version can be downloaded via https://github.com/CARTAvis/carta/releases/download/v5.0.0/CARTA-v5.0.0-x64.dmg and the native M1/M2/M3-series macOS Electron Desktop version for new Apple Silicon Macs can be downloaded via https://github.com/CARTAvis/carta/releases/download/v5.0.0/CARTA-v5.0.0-arm64.dmg.
+The Intel macOS Electron Desktop version can be downloaded via https://github.com/CARTAvis/carta/releases/latest/download/CARTA-x64.dmg and the native arm-based macOS Electron Desktop version for new Apple Silicon Macs can be downloaded via https://github.com/CARTAvis/carta/releases/latest/download/CARTA-arm64.dmg.
 
 After downloading, open the DMG installer and drag-and-drop the CARTA icon to the Applications folder.
 
