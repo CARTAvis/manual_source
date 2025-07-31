@@ -5,18 +5,18 @@ v4.1 -> v5.0
 ^^^^^^^^^^^^
 Frontend
 
-* `Closed issues <https://github.com/CARTAvis/carta-frontend/issues?q=is%3Aissue+closed%3A2024-01-23..2025-07-28>`__
-* `Merged pull requests <https://github.com/CARTAvis/carta-frontend/issues?q=merged%3A2024-01-23..2025-07-28+>`__
+* `Closed issues <https://github.com/CARTAvis/carta-frontend/issues?q=is%3Aissue+closed%3A2024-01-23..2025-07-31>`__
+* `Merged pull requests <https://github.com/CARTAvis/carta-frontend/issues?q=merged%3A2024-01-23..2025-07-31+>`__
 
 Backend
 
-* `Closed issues <https://github.com/CARTAvis/carta-backend/issues?q=is%3Aissue+closed%3A2024-01-23..2025-07-28+>`__
-* `Merged pull requests <https://github.com/CARTAvis/carta-backend/issues?q=merged%3A2024-01-23..2025-07-28+>`__
+* `Closed issues <https://github.com/CARTAvis/carta-backend/issues?q=is%3Aissue+closed%3A2024-01-23..2025-07-31+>`__
+* `Merged pull requests <https://github.com/CARTAvis/carta-backend/issues?q=merged%3A2024-01-23..2025-07-31+>`__
 
 Controller
 
-* `Closed issues <https://github.com/CARTAvis/carta-controller/issues?q=is%3Aissue+closed%3A2024-01-23..2025-07-28+>`__
-* `Merged pull requests <https://github.com/CARTAvis/carta-controller/issues?q=merged%3A2024-01-23..2025-07-28+>`__
+* `Closed issues <https://github.com/CARTAvis/carta-controller/issues?q=is%3Aissue+closed%3A2024-01-23..2025-07-31+>`__
+* `Merged pull requests <https://github.com/CARTAvis/carta-controller/issues?q=merged%3A2024-01-23..2025-07-31+>`__
 
 
 
