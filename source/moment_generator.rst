@@ -70,4 +70,4 @@ Once generated, images will be appended, displayed, and spatially matched (optio
    In a resumed session after a broken connection to the backend, all in-memory images, such as those generated with the Moment Map Generator, are lost. Those images will not be accessible in the resumed session.
 
 .. note::
-   As of v5.0.0, the moment images are computed along the spectral axis only. In future release, calculations along other axes will be provided (e.g., R.A.). 
+   As of v5.0, the moment images are computed along the spectral axis only. In future release, calculations along other axes will be provided (e.g., R.A.). 

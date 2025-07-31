@@ -241,7 +241,7 @@ CARTA supports a axes-swapped image cube. When such a cube is selected in the fi
    </a>
 
 .. warning::
-   In v5.0.0, CARTA supports axes-swapped image cubes for *image visualization* only. Region analytics tools are not supported.
+   In v5.0, CARTA supports axes-swapped image cubes for *image visualization* only. Region analytics tools are not supported.
 
 
 
