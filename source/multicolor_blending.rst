@@ -3,6 +3,10 @@
 Multi-color image blending
 ==========================
 
+`Enter the CARTA Image Competition! <https://carta-competition.idia.ac.za/>`_
+==================================
+.. a_ link: https://carta-competition.idia.ac.za/
+
 The multi-color image blending feature in CARTA allows users to visualize multiple images simultaneously by blending them together in the color space. This is particularly useful for comparing different datasets or visualizing multi-wavelength observations. The blending is done by assigning different colors to each image and then combining them to create a composite image. 
 
 Unlike the conventional RGB blending, which uses red, green, and blue channels, CARTA allows for more color channels (>= 2) and more flexible color assignments (monocolor maps or usual colormaps). In addition, the blending is done at the *screen pixel* level instead of the *image pixel* level. This approach removes the limitations of the conventional RGB blending, such as the requirement for images to have the same pixel size and image size. The only requirement is that the images need to be matchable to each others in world coordinates.
