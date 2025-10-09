@@ -2,6 +2,10 @@
 
 Multi-color image blending
 ==========================
+.. attention::
+   `Join the CARTA Image Competition! <https://carta-competition.idia.ac.za/>`_
+
+
 
 The multi-color image blending feature in CARTA allows users to visualize multiple images simultaneously by blending them together in the color space. This is particularly useful for comparing different datasets or visualizing multi-wavelength observations. The blending is done by assigning different colors to each image and then combining them to create a composite image. 
 

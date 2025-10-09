@@ -6,6 +6,10 @@
 CARTA - Cube Analysis and Rendering Tool for Astronomy
 ======================================================
 
+.. attention::
+   `Join the CARTA Image Competition! <https://carta-competition.idia.ac.za/>`_
+
+
 .. index:: Table of Contents
 
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3377984.svg
