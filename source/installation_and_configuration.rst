@@ -395,7 +395,6 @@ Then you should see:
          --enable_scripting        enable HTTP scripting interface
          --no_user_config          ignore user configuration file
          --no_system_config        ignore system configuration file
-         --no_system_config        ignore system configuration file
 
     Deprecated and debug options:
          --debug_no_auth           accept all incoming WebSocket connections on
@@ -483,6 +482,27 @@ If you have installed the macOS Electron Desktop version and set up an alias, ap
       --inspect      Open the DevTools in the Electron window.           
  
           
+.. backend_configuration_file:
+
+Backend configuration file
+--------------------------
+CARTA supports a backend configuration file named :code:`backend.json` in :code:`~/.carta/` folder. If the file exists, CARTA will read the configuration from the file during startup. The configuration options are the same as the command-line flags described in :ref:`carta_init_flag`. An example of the configuration is provided below:
+
+.. code-block:: json
+
+   {
+     "$schema": "https://cartavis.github.io/schemas/preference_backend_schema_2.json",
+     "verbosity": 5,
+     "host" : "localhost"
+   }
+
+
+.. note::
+   For users who installed CARTA in the "User Deployment Mode" (except the macOS Electron Desktop version):
+
+   CARTA backend by default looks for the host IP address to set up the http server. If you want to restrict the server to listen on a specific interface (IP address or hostname), you can set the :code:`host` option in the configuration file. This is particularly useful when you run CARTA on a laptop which would have different IP addresses when connecting to different networks (e.g. home vs. office). In this case, you may consider setting the :code:`host` option to :code:`localhost` to ensure that CARTA only listens on the loopback interface so that CARTA session resume can work properly.
+
+
 
 
 .. _browser_options:
