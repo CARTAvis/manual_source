@@ -57,7 +57,7 @@ An “offset” axis is constructed to compute a spatial profile for a line regi
 
    When the sampling process is made along a line region or a polyline region in a "non-flat" image, the solid angle of the sampling boxes is approximately conserved. In some cases, especially when the image is highly distorted, some computed boxes may cover no image pixel for profile calculations. Therefore, you may see NaN values in the final spatial profile. When this happens, you can consider increasing the averaging "width" with the "**Computation**" tab of the Spatial Profiler Settings Dialog.
    
-   In a future release, the averaging "height" (parallel to the trajectory) can be customized too. With the v5.0 release, the "height" is fixed to three (three pixels for flat image or three unit angular size for non-flat image). 
+   In a future release, the averaging "height" (parallel to the trajectory) can be customized too. With the v5.1 release, the "height" is fixed to three (three pixels for flat image or three unit angular size for non-flat image). 
 
 
 Interactivity

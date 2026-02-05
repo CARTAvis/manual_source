@@ -6,9 +6,8 @@
 CARTA - Cube Analysis and Rendering Tool for Astronomy
 ======================================================
 
-.. attention::
-   `Join the CARTA Image Competition! <https://carta-competition.idia.ac.za/>`_
-
+.. note::
+   This documentation corresponds to CARTA version 5.1, which is a maintenance release following version 5.0 to address a few critical bugs.
 
 .. index:: Table of Contents
 
@@ -17,8 +16,9 @@ CARTA - Cube Analysis and Rendering Tool for Astronomy
 
 .. toctree::
    :maxdepth: 3
-   :caption: CARTA User Manual for v5.0
+   :caption: CARTA User Manual for v5.1
 
+    
    introduction.rst
    installation_and_configuration.rst
 

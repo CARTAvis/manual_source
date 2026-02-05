@@ -155,7 +155,7 @@ After downloading, open the DMG installer and drag-and-drop the CARTA icon to th
 
       alias carta='/Applications/CARTA.app/Contents/MacOS/CARTA'
 
-   You may use a different alias rather than 'carta', e.g. 'carta-v5.0' or 'carta-electron'.
+   You may use a different alias rather than 'carta', e.g. 'carta-v5.1' or 'carta-electron'.
 
 Please refer to :ref:`how_to_run_carta` for different single-user use cases.
 
@@ -249,14 +249,14 @@ After you have successfully installed CARTA on a *remote* server via a package m
    # CARTA installed via a package manager (yum, dnf, or apt)
    carta --no_browser
    # CARTA installed by downloading the AppImage
-   ./carta-v5.0-x86_64.AppImage --no_browser
+   ./carta-v5.1-x86_64.AppImage --no_browser
 
 Please ensure that you have the :code:`--no_browser` flag set. Then you should see something like the following in your terminal:
 
 .. code-block:: text
 
    [2021-06-03 10:30:57.536] [info] Writing to the log file: /home/spongebob/.carta/log/carta.log
-   [2021-06-03 10:30:57.537] [info] /usr/bin/carta_backend: Version 5.0.0
+   [2021-06-03 10:30:57.537] [info] /usr/bin/carta_backend: Version 5.1.0
    [2021-06-03 10:30:57.574] [info] Serving CARTA frontend from /usr/share/carta/frontend
    [2021-06-03 10:30:57.575] [info] Listening on port 3002 with top level folder /, starting folder /home/spongebob. The number of OpenMP worker threads will be handled automatically.
    [2021-06-03 10:30:57.575] [info] CARTA is accessible at http://172.20.30.40:3002/?token=E1A26527-8226-4FD5-8369-2FCD00BACEE0
@@ -293,8 +293,8 @@ If you would like to initialize CARTA with an image loaded in the Image Viewer o
    carta M51.fits --no_browser
    carta /alma/data --no_browser
    # CARTA installed by downloading the AppImage
-   ./carta-v5.0-x86_64.AppImage M51.fits --no_browser
-   ./carta-v5.0-x86_64.AppImage /alma/data --no_browser
+   ./carta-v5.1-x86_64.AppImage M51.fits --no_browser
+   ./carta-v5.1-x86_64.AppImage /alma/data --no_browser
 
 
 
@@ -309,15 +309,15 @@ After you have successfully installed CARTA on your *local* computer via a packa
    # CARTA installed via a package manager (yum, dnf, apt, or brew)
    carta
    # CARTA installed by downloading the AppImage
-   ./carta-v5.0-x86_64.AppImage
+   ./carta-v5.1-x86_64.AppImage
 
 Then you should see something like the following in your terminal *and* the CARTA GUI initializing in your default web browser:
 
 .. code-block:: text
 
    [2021-06-03 11:03:41.279] [info] Writing to the log file: /Users/spongebob/.carta/log/carta.log
-   [2021-06-03 11:03:41.280] [info] /usr/local/bin/carta_backend: Version 5.0.0
-   [2021-06-03 11:03:41.289] [info] Serving CARTA frontend from /usr/local/Cellar/carta/5.0.0/share/carta/frontend
+   [2021-06-03 11:03:41.280] [info] /usr/local/bin/carta_backend: Version 5.1.0
+   [2021-06-03 11:03:41.289] [info] Serving CARTA frontend from /usr/local/Cellar/carta/5.1.0/share/carta/frontend
    [2021-06-03 11:03:41.289] [info] Listening on port 3002 with top level folder /, starting folder /Users/spongebob. The number of OpenMP worker threads will be handled automatically.
    [2021-06-03 11:03:41.446] [info] CARTA is accessible at http://192.168.0.128:3002/?token=C71D128D-3567-4EA1-B0F2-E703D63D8D0F
    [2021-06-03 11:03:45.209] [info] Session 1 [192.168.0.128] Connected. Num sessions: 1
@@ -329,7 +329,7 @@ Your default web browser is launched automatically to access the URL on the seco
 
    .. code-block:: bash
 
-      APPIMAGE_EXTRACT_AND_RUN=1 ./carta-v5.0-x86_64.AppImage
+      APPIMAGE_EXTRACT_AND_RUN=1 ./carta-v5.1-x86_64.AppImage
 
 
 If you would like to initialize CARTA with an image loaded in the Image Viewer or a folder loaded in the File Browser, please try:
@@ -340,8 +340,8 @@ If you would like to initialize CARTA with an image loaded in the Image Viewer o
    carta M51.fits --no_browser
    carta /alma/data --no_browser
    # CARTA installed by downloading the AppImage
-   ./carta-v5.0-x86_64.AppImage M51.fits --no_browser
-   ./carta-v5.0-x86_64.AppImage /alma/data --no_browser
+   ./carta-v5.1-x86_64.AppImage M51.fits --no_browser
+   ./carta-v5.1-x86_64.AppImage /alma/data --no_browser
 
 
 
@@ -356,7 +356,7 @@ CARTA supports a set of command-line flags for initialization. Try the following
    # CARTA installed via a package manager (yum, dnf, apt, or brew)
    carta --help
    # CARTA installed by downloading the AppImage
-   ./carta-v5.0-x86_64.AppImage --help
+   ./carta-v5.1-x86_64.AppImage --help
 
 Then you should see:
 
@@ -718,6 +718,6 @@ In this section, we provide common issues users have experienced and solutions. 
 
 * **The AppImage does not open and it prints a message suggesting to extract the AppImage using the** :code:`--appimage-extract` **flag.**
 
-  This error is due to a lack of FUSE (File System in Userspace) support. FUSE support may be disabled in some institute environments for security reasons. If that is the case, please prefix it with the :code:`APPIMAGE_EXTRACT_AND_RUN=1` environment variable. i.e. :code:`APPIMAGE_EXTRACT_AND_RUN=1 ./carta-v5.0-x86_64.AppImage`
+  This error is due to a lack of FUSE (File System in Userspace) support. FUSE support may be disabled in some institute environments for security reasons. If that is the case, please prefix it with the :code:`APPIMAGE_EXTRACT_AND_RUN=1` environment variable. i.e. :code:`APPIMAGE_EXTRACT_AND_RUN=1 ./carta-v5.1-x86_64.AppImage`
 
 

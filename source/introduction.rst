@@ -28,7 +28,7 @@ CARTA has two deployment modes: "Site Deployment Mode" (SDM) and "User Deploymen
 
 Installation guides for the "Site Deployment Mode" and the "User Deployment Mode" are provided in the section :ref:`installation_configuration`. Please contact the `CARTA Helpdesk <support@carta.freshdesk.com>`_ (support@carta.freshdesk.com) or file an `issue <https://github.com/CARTAvis/carta/issues>`_ if there is a problem. 
 
-Besides the annual stable release (the current stable release is v5.0), there are one or two beta releases within the one-year development cycle. With the beta releases, you can try new features and provide feedback to the development team to improve the next stable release. Please visit the CARTA homepage (https://cartavis.org) for the latest beta and stable releases. 
+Besides the annual stable release (the current stable release is v5.1), there are one or two beta releases within the one-year development cycle. With the beta releases, you can try new features and provide feedback to the development team to improve the next stable release. Please visit the CARTA homepage (https://cartavis.org) for the latest beta and stable releases. 
 
 
 Getting help
@@ -41,13 +41,13 @@ The CARTA development team welcomes any suggestion, feature request, or bug repo
 
 Contributors
 ------------
-The development of the CARTA project is a joint effort from (in alphabetical order):
+The development of the CARTA project is a joint effort from:
 
 * `Academia Sinica, Institute of Astronomy and Astrophysics (ASIAA) <https://www.asiaa.sinica.edu.tw>`_
 * `Inter-university Institute for Data Intensive Astronomy (IDIA) <https://idia.ac.za>`_
 * `National Radio Astronomy Observatory (NRAO) <https://science.nrao.edu>`_
 * `Department of Physics, University of Alberta <https://www.ualberta.ca/physics>`_
-
+* `Australian SKA Regional Centre (AusSRC) <https://aussrc.org>`_
 
 .. raw:: html
 
@@ -72,31 +72,30 @@ The bibtex is
 
 .. code-block:: bibtex
    
-   @software{angus_comrie_2018_3377984,
-   author       = {Angus Comrie and
-                  Kuo-Song Wang and
-                  Yu-Hsuan Hwang and
-                  Anthony Moraghan and
-                  Pamela Harris and
-                  Adrianna Pińska and
-                  Carli Raul-Omar and
-                  Kuan-Chou Hou and
-                  Cheng-Chin Chiang and
-                  Tien-Hao Chang and
-                  Shou-Chieh Hsu and
-                  Qi Pang and
-                  Rob Simmonds and
-                  Po-Sheng Huang and
-                  Ming-Yi Lin and
-                  Hengtai Jan},
-   title        = {{CARTA: The Cube Analysis and Rendering Tool for 
-                   Astronomy}},
-   month        = dec,
-   year         = 2018,
-   publisher    = {Zenodo},
-   doi          = {10.5281/zenodo.3377984},
-   url          = {https://doi.org/10.5281/zenodo.3377984}
-   }
+   @software{angus_comrie_2026_18477253,
+      author       = {Angus Comrie and
+                      Kuo-Song Wang and
+                      Yu-Hsuan Hwang and
+                      Adrianna Pińska and
+                      Pamela Harris and
+                      Carli Raul-Omar and
+                      Hou, Kuan-Chou and
+                      Aikema, David and
+                      Cheng-Chin Chiang and
+                      Lin, Ming-Yi and
+                      Huang, Po-Sheng and
+                      Gao, Zhen-Kai and
+                      Rob Simmonds},
+      title        = {CARTA: The Cube Analysis and Rendering Tool for
+                      Astronomy
+                  },
+      month        = feb,
+      year         = 2026,
+      publisher    = {Zenodo},
+      version      = {5.1},
+      doi          = {10.5281/zenodo.18477253},
+      url          = {https://doi.org/10.5281/zenodo.18477253},
+}
 
 You may also refer to https://ui.adsabs.harvard.edu/abs/2020zndo...3377984C/abstract.
 
@@ -147,4 +146,4 @@ The CARTA development team acknowledges David Berry for consulting on the AST li
 
 Copyright and license
 ---------------------
-Copyright (C) 2018-2025 ASIAA, IDIA, NRAO, and Department of Physics, University of Alberta. This software is free to redistribute and modify under the `GNU General Public License version 3 <http://www.gnu.org/copyleft/gpl.html>`_, published by the Free Software Foundation.
+Copyright (C) 2018-2026 ASIAA, IDIA, NRAO, Department of Physics, University of Alberta and AusSRC. This software is free to redistribute and modify under the `GNU General Public License version 3 <http://www.gnu.org/copyleft/gpl.html>`_, published by the Free Software Foundation.

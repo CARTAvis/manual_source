@@ -1,6 +1,18 @@
 Appendix A: version history
 ===========================
 
+Version 5.1
+-----------
+Released 3 February 2026
+
+As a maintenance release, this version addresses critical bug fixes. No new feature or feature enhancement is included.
+
+See `carta-frontend changelog <https://github.com/CARTAvis/carta-frontend/blob/release/5.0/CHANGELOG.md>`_ and `carta-backend changelog <https://github.com/CARTAvis/carta-backend/blob/release/5.0/CHANGELOG.md>`_ for details.
+
+
+
+
+
 Version 5.0
 -----------
 Released 29 July 2025
