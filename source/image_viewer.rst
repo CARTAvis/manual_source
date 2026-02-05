@@ -131,7 +131,7 @@ The channel map view is a special view mode of the Image Viewer that displays an
    </a>
 
 .. note::
-   With v5.0 release, the channel map view mode only supports raster rendering. Contour images and vector field overlay are not supported in the channel map view mode.
+   With v5.1 release, the channel map view mode only supports raster rendering. Contour images and vector field overlay are not supported in the channel map view mode.
 
 
 Coordinate system

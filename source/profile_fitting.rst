@@ -3,7 +3,7 @@
 Profile fitting
 ===============
 
-As of v5.0, the profile fitting function can be applied to the Spectral Profiler Widget to estimate of the spectral line properties, such as amplitude, FWHM, center, and integrated area. The profile fitting function is available via the "**Fitting**" button in the top-right corner of the Spectral Profiler Widget. 
+As of v5.1, the profile fitting function can be applied to the Spectral Profiler Widget to estimate of the spectral line properties, such as amplitude, FWHM, center, and integrated area. The profile fitting function is available via the "**Fitting**" button in the top-right corner of the Spectral Profiler Widget. 
 
 
 .. raw:: html

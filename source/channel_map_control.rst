@@ -13,7 +13,7 @@ A channel map view is a powerful visualization tool used in radio astronomy to e
     </a>
    
 .. note::
-    In v5.0, the channel map view only supports raster rendering of an image cube. Contour rendering, vector field rendering, and catalog overlay are not supported. In a future release, we will support the other rendering modes including the matching feature.
+    In v5.1, the channel map view only supports raster rendering of an image cube. Contour rendering, vector field rendering, and catalog overlay are not supported. In a future release, we will support the other rendering modes including the matching feature.
 
 To enable the channel map view mode, click the "Channel Map" button at the top-right corner of the Image Viewer Widget, or use the "Enable channel map mode" toggle in the Channel Map Control Widget which is accessible in the widget bar at the top of the GUI.
 
@@ -71,7 +71,7 @@ Region of interest and annotations
 In the channel map view mode, you can still create regions of interest for image analytics or annotation objects for decoration. Note that a region or annotation object created in the channel map view mode is rendered on all channels as the limitation of the current implementation of region of interest and annotation objects. 
 
 .. note::
-    In v5.0, the region of interest and annotation objects are implicitly applied to the entire spectral axis of an image cube. Having the ability to specify a range of the spectral axis and a set of Stokes will be available in a future release of CARTA. This is also know as 3D or 4D region of interest.
+    In v5.1, the region of interest and annotation objects are implicitly applied to the entire spectral axis of an image cube. Having the ability to specify a range of the spectral axis and a set of Stokes will be available in a future release of CARTA. This is also know as 3D or 4D region of interest.
 
 Export channel maps
 -------------------

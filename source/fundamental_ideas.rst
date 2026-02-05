@@ -304,7 +304,7 @@ To export regions to a region file, use the menu "**File**"" -> "**Export Region
            style="width:100%;height:auto;">
    </a>
 
-As of v5.0, CASA region text format (:code:`.crtf`) and ds9 region text format (:code:`.reg`) are supported with some limitations. Currently, only the 2D region definition is supported. Other properties, such as spectral range or reference frame, will be supported in future releases.  
+As of v5.1, CASA region text format (:code:`.crtf`) and ds9 region text format (:code:`.reg`) are supported with some limitations. Currently, only the 2D region definition is supported. Other properties, such as spectral range or reference frame, will be supported in future releases.  
 
 The supported CRTF region syntax is summarized below:
 

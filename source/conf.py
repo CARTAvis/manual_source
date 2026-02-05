@@ -24,9 +24,9 @@ copyright = u'2018-2025, ASIAA, IDIA, NRAO, and Department of Physics, Universit
 author = u'the CARTA development team'
 
 # The short X.Y version
-version = u'5.0'
+version = u'5.1'
 # The full version, including alpha/beta/rc tags
-release = u'5.0.3'
+release = u'5.1.0'
 
 
 # -- General configuration ---------------------------------------------------
