@@ -99,6 +99,29 @@ The bibtex is
 
 You may also refer to https://ui.adsabs.harvard.edu/abs/2020zndo...3377984C/abstract.
 
+An introductory paper describing the design, implementation, and features of CARTA is published in PASP (Wang et al. and CARTA collaboration 2026, https://ui.adsabs.harvard.edu/abs/2026PASP..138b4506W/abstract). Please cite this paper when using CARTA for publications.
+
+.. code-block:: bibtex
+
+   @ARTICLE{2026PASP..138b4506W,
+      author = {{Wang}, Kuo-Song and {Simmonds}, Robert and {Comrie}, Angus and {Hwang}, Yu-Hsuan and {Pi{\'n}ska}, Adrianna and {Harris}, Pamela and {Moraghan}, Anthony and {Pang}, Qi and {Raul-Omar}, Carli and {Hou}, Kuan-Chou and {Aikema}, David and {Chiang}, Cheng-Chin and {Chang}, Tien-Hao and {Hsu}, Shou-Chieh and {Lin}, Ming-Yi and {Gao}, Zhen-Kai and {Huang}, Po-Sheng and {Hibbard}, John and {Ott}, Juergen and {Collier}, Jordan and {Stoehr}, Felix and {Raba}, Ryan and {Kirkham}, Kechil and {Rosolowsky}, Erik and {Kern}, Jeff and {Lee}, Chin-Fei and {Taylor}, Russ and {CARTA Collaboration}},
+      title = "{CARTA{\textemdash}Cube Analysis and Rendering Tool for Astronomy: A Tool for Big Imaging Data}",
+      journal = {\pasp},
+      keywords = {Astronomy software, Astronomy data visualization, Astronomy data analysis, 1855, 1968, 1858},
+      year = 2026,
+      month = feb,
+      volume = {138},
+      number = {2},
+      eid = {024506},
+      pages = {024506},
+      doi = {10.1088/1538-3873/ae3eb4},
+      adsurl = {https://ui.adsabs.harvard.edu/abs/2026PASP..138b4506W},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+   }
+
+
+
+
 Acknowledgment
 --------------
 ASIAA CASA Development Center (ACDC) acknowledges the grant from the National Science and Technology Council of Taiwan for the ALMA-NA collaboration.
