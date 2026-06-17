@@ -353,7 +353,7 @@ CARTA supports a set of command-line flags for initialization. Try the following
 
 .. code-block:: bash
 
-   # CARTA installed via a package manager (yum, dnf, apt, or brew)
+   # CARTA installed via a package manager (yum, dnf, or apt)
    carta --help
    # CARTA installed by downloading the AppImage
    ./carta-v6.0-x86_64.AppImage --help
