@@ -140,7 +140,8 @@ CARTA is mainly built in C++, TypeScript, and JavaScript and with the following 
 * CASA source code: https://casa.nrao.edu/index.shtml
 * Chart.js: https://www.chartjs.org
 * Electron: https://electronjs.org
-* GoldenLayout: https://golden-layout.com
+* GoldenLayout: https://golden-layout.com (prior to v5.1)
+* FlexLayout: https://github.com/caplin/FlexLayout (since v6.0)
 * GoogleTest: https://github.com/google/googletest
 * GSL: https://www.gnu.org/software/gsl/
 * json-schema-validator: https://github.com/pboettch/json-schema-validator
