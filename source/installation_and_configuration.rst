@@ -23,7 +23,11 @@ The supported operating systems of the two modes are summarized below.
 
   * Ubuntu Linux: 22.04 LTS (Jammy Jellyfish) and 24.04 LTS (Noble Numbat)
   * Red Hat Enterprise Linux / AlmaLinux / Rocky Linux: 8, 9
-  * macOS: 14 (Sonoma), and 15 (Sequoia). Earlier version of macOS may work but they are not tested.
+  * macOS: 14 (Sonoma), 15 (Sequoia), and 26 (Tahoe). Earlier version of macOS may work but they are not tested.
+
+.. note::
+   Ubuntu Linux 26.04 LTS (Resolute Raccoon) will be supported starting v6.1. 22.04 LTS support will be deprecated in v6.1.
+
 
 .. note::
    CARTA may function on other Linux distributions, such as Fedora and Debian, but the CARTA development team has not tested these.
@@ -41,6 +45,9 @@ The Site Deployment Mode supports the following operating systems:
 
 Please refer to the  `CARTA controller documentation <https://carta-controller.readthedocs.io>`_ to deploy CARTA at your institution as a web-based application for multiple users. Detailed instructions on installation and configuration of the "carta_backend", the "carta_frontend", and the "carta-controller" are provided. If there is a problem, please contact the `CARTA helpdesk <mailto:support@carta.freshdesk.com>`_.
 
+.. note::
+   Ubuntu Linux 26.04 LTS (Resolute Raccoon) will be supported starting v6.1. 22.04 LTS support will be deprecated in v6.1.
+
 
 .. _installation_UDM:
 
@@ -50,7 +57,11 @@ The User Deployment Mode supports the following operating systems:
 
 * Ubuntu Linux: 22.04 LTS (Jammy Jellyfish) and 24.04 LTS (Noble Numbat)
 * Red Hat Enterprise Linux / AlmaLinux / Rocky Linux: 8, 9
-* macOS: 14 (Sonoma), and 15 (Sequoia). Earlier version of macOS may work but they are not tested.
+* macOS: 14 (Sonoma), 15 (Sequoia), and 26 (Tahoe). Earlier version of macOS may work but they are not tested.
+
+.. note::
+   Ubuntu Linux 26.04 LTS (Resolute Raccoon) will be supported starting v6.1. 22.04 LTS support will be deprecated in v6.1.
+
 
 If you have *root* access and can use a package manager to install CARTA via the command line, please refer to the section :ref:`installation_UDM_package_managers`. Otherwise, please refer to the section :ref:`installation_UDM_direct_download`.
 
@@ -63,7 +74,9 @@ CARTA can be installed via the command line with package managers such as:
 
 * :code:`yum` or :code:`dnf` on Red Hat Enterprise Linux, AlmaLinux, and Rocky Linux
 * :code:`apt` on Ubuntu Linux
-* :code:`brew` on macOS
+
+.. note::
+    The support of the homebrew package manager on macOS is deprecated starting v6.0. The homebrew package is actually the Electron Desktop version of CARTA installed following homebrew's convention. The Electron Desktop version is now equiped with a built-in auto-update feature. Therefore, the homebrew package is no longer maintained. Please refer to the section :ref:`installation_UDM_direct_download` for the installation of the Electron Desktop version of CARTA on macOS.
 
 Please identify the operating system where you wish to run CARTA and follow the instructions. If there is a problem, please contact the `CARTA helpdesk <mailto:support@carta.freshdesk.com>`_.
 
@@ -97,23 +110,6 @@ For Red Hat Enterprise Linux 8 and 9 / AlmaLinux 8 and 9 / Rocky Linux 8 and 9 u
 
 Please refer to the section :ref:`how_to_run_carta` for different single-user use cases.
 
-
-
-**macOS**
-
-We officially support macOS 14 Sonoma and 15 Sequoia through `Homebrew <https://brew.sh/>`_. If you do not already have it, you may install Homebrew using the following command (*root* access is required):
-
-.. code-block:: bash
-
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-Now CARTA can be installed with:   
-
-.. code-block:: bash
-
-   brew update
-   brew install --cask cartavis/tap/carta
-
    
 .. _installation_UDM_direct_download:
 
@@ -127,6 +123,10 @@ The Linux AppImage does not require *root* access. It can be run with:
 
 * Ubuntu Linux: 22.04 (LTS) and 24.04 (LTS)
 * Red Hat Enterprise Linux / AlmaLinux / Rocky Linux: 8, 9
+
+.. note::
+   Ubuntu Linux 26.04 LTS (Resolute Raccoon) will be supported starting v6.1. 22.04 LTS support will be deprecated in v6.1.
+
 
 You can simply download, extract, and run it. 
 
@@ -255,11 +255,11 @@ Please ensure that you have the :code:`--no_browser` flag set. Then you should s
 
 .. code-block:: text
 
-   [2021-06-03 10:30:57.536] [info] Writing to the log file: /home/spongebob/.carta/log/carta.log
-   [2021-06-03 10:30:57.537] [info] /usr/bin/carta_backend: Version 5.1.0
-   [2021-06-03 10:30:57.574] [info] Serving CARTA frontend from /usr/share/carta/frontend
-   [2021-06-03 10:30:57.575] [info] Listening on port 3002 with top level folder /, starting folder /home/spongebob. The number of OpenMP worker threads will be handled automatically.
-   [2021-06-03 10:30:57.575] [info] CARTA is accessible at http://172.20.30.40:3002/?token=E1A26527-8226-4FD5-8369-2FCD00BACEE0
+   [2026-06-03 10:30:57.536] [info] Writing to the log file: /home/spongebob/.carta/log/carta.log
+   [2026-06-03 10:30:57.537] [info] /usr/bin/carta_backend: Version 6.0.0
+   [2026-06-03 10:30:57.574] [info] Serving CARTA frontend from /usr/share/carta/frontend
+   [2026-06-03 10:30:57.575] [info] Listening on port 3002 with top level folder /, starting folder /home/spongebob. The number of OpenMP worker threads will be handled automatically.
+   [2026-06-03 10:30:57.575] [info] CARTA is accessible at http://172.20.30.40:3002/?token=E1A26527-8226-4FD5-8369-2FCD00BACEE0
 
 The last line contains the unique URL (e.g., :code:`http://172.20.30.40:3002/?token=E1A26527-8226-4FD5-8369-2FCD00BACEE0`) for you to access the CARTA process that you have just started up. You will need to copy the URL and paste it to your *local* web browser to initialize the CARTA GUI. Please note that "local" means the computer you are using directly in front of you. Please do not use a web browser from the remote server to prevent potential failure due to a lack of WebGL2 support.
 
@@ -306,7 +306,7 @@ After you have successfully installed CARTA on your *local* computer via a packa
 
 .. code-block:: bash
 
-   # CARTA installed via a package manager (yum, dnf, apt, or brew)
+   # CARTA installed via a package manager (yum, dnf, or apt)
    carta
    # CARTA installed by downloading the AppImage
    ./carta-v6.0-x86_64.AppImage
@@ -315,12 +315,12 @@ Then you should see something like the following in your terminal *and* the CART
 
 .. code-block:: text
 
-   [2021-06-03 11:03:41.279] [info] Writing to the log file: /Users/spongebob/.carta/log/carta.log
-   [2021-06-03 11:03:41.280] [info] /usr/local/bin/carta_backend: Version 5.1.0
-   [2021-06-03 11:03:41.289] [info] Serving CARTA frontend from /usr/local/Cellar/carta/5.1.0/share/carta/frontend
-   [2021-06-03 11:03:41.289] [info] Listening on port 3002 with top level folder /, starting folder /Users/spongebob. The number of OpenMP worker threads will be handled automatically.
-   [2021-06-03 11:03:41.446] [info] CARTA is accessible at http://192.168.0.128:3002/?token=C71D128D-3567-4EA1-B0F2-E703D63D8D0F
-   [2021-06-03 11:03:45.209] [info] Session 1 [192.168.0.128] Connected. Num sessions: 1
+   [2026-06-03 11:03:41.279] [info] Writing to the log file: /Users/spongebob/.carta/log/carta.log
+   [2026-06-03 11:03:41.280] [info] /usr/local/bin/carta_backend: Version 6.0.0
+   [2026-06-03 11:03:41.289] [info] Serving CARTA frontend from /usr/local/Cellar/carta/6.0.0/share/carta/frontend
+   [2026-06-03 11:03:41.289] [info] Listening on port 3002 with top level folder /, starting folder /Users/spongebob. The number of OpenMP worker threads will be handled automatically.
+   [2026-06-03 11:03:41.446] [info] CARTA is accessible at http://192.168.0.128:3002/?token=C71D128D-3567-4EA1-B0F2-E703D63D8D0F
+   [2026-06-03 11:03:45.209] [info] Session 1 [192.168.0.128] Connected. Num sessions: 1
 
 Your default web browser is launched automatically to access the URL on the second last line. If you want to turn this automation off, please add the :code:`--no_browser` flag when you launch CARTA with the command line. If you want this web browser automation with more control over browser type or properties, please refer to the section :ref:`browser_options`. More CARTA initialization flags are available in the section :ref:`carta_init_flag`.
 
@@ -336,7 +336,7 @@ If you would like to initialize CARTA with an image loaded in the Image Viewer o
 
 .. code-block:: bash
       
-   # CARTA installed via a package manager (yum, apt, or brew)
+   # CARTA installed via a package manager (yum, dnf, or apt)
    carta M51.fits --no_browser
    carta /alma/data --no_browser
    # CARTA installed by downloading the AppImage
@@ -590,7 +590,7 @@ The "fits2idia" program is available from the "`cartavis/carta Copr <https://cop
 
 **macOS**
 
-The "fits2idia" program can be installed via "homebrew" on macOS 14 (Sonoma), and macOS 15 (Sequoia). To install Homebrew, if not already installed:
+The "fits2idia" program can be installed via "homebrew" on macOS 14 (Sonoma), macOS 15 (Sequoia), and macOS 26 (Tahoe). To install Homebrew, if not already installed:
 
 .. code-block:: bash
 
