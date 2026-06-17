@@ -157,6 +157,9 @@ After downloading, open the DMG installer and drag-and-drop the CARTA icon to th
 
    You may use a different alias rather than 'carta', e.g. 'carta-v6.0' or 'carta-electron'.
 
+.. note::
+   Starting from v6.0, the macOS Electron Desktop version of CARTA is equipped with a built-in auto-update feature. When the next release v6.1 is available, you will receive a notification in the Electron Desktop and can choose to update to the latest version with a few clicks. 
+
 Please refer to :ref:`how_to_run_carta` for different single-user use cases.
 
 
