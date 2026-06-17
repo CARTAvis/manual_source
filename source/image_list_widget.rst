@@ -74,6 +74,8 @@ The Matching column in the Image List Widget shows the matching status of each i
 
 For a given image, to enable or disable matching to the refernece image, you can click on the "XY" button, the "Z" button, or the "R" button in the Matching column for spatial matching, spectral matching, and raster rendering configuration matching, respectively. The matching status will be updated accordingly in the Image List Widget.
 
+As a shortcut, you can also click on the "boxed" XY button in the Matching column to enable or disable spatial matching of all loaded images to the reference image. Similarly, you can click on the "boxed" Z button in the Matching column to enable or disable spectral matching of all loaded images to the reference image. You can also click on the "boxed" R button in the Matching column to enable or disable raster rendering configuration matching of all loaded images to the reference image.
+
 
 Matching reference images
 -------------------------
