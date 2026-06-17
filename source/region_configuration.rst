@@ -17,6 +17,8 @@ The actual context in the two tabs depends on the type of the region or annotati
 
 Using the buttons at the bottom of the dialog, you can also lock/unlock a region, center the region in the image viewer, or delete the region.
 
+When there are multiple regions selected, the Region Configuration Dialog will show the common properties of the selected regions. Modifying a common property will apply to all selected regions. For example, if you select two regions with different colors and then change the color in the Region Configuration Dialog, both regions will be updated to have the same new color.
+
 
 Coordinate systems
 ------------------
@@ -39,7 +41,7 @@ When the reference system is changed in the Region Configuration Dialog, the coo
 
 
 .. warning::
-    If an image has visible projection distortions, the displayed "size" or "length" property of a region or an annotation object may not be accuate. The displayed number is based on the angular size of the reference pixel as defined in the image header and assume it is *fixed* across the image. The only exception is the "ruler" annotation object which applies the geodesic calculation to measure the distance between two points on the image. 
+    If an image has visible projection distortions, the displayed "size" or "length" property of a region or an annotation object may not be accurate. The displayed number is based on the angular size of the reference pixel as defined in the image header and assumes it is *fixed* across the image. The only exception is the "ruler" annotation object which applies the geodesic calculation to measure the distance between two points on the image. 
     
     
     
@@ -48,7 +50,7 @@ When the reference system is changed in the Region Configuration Dialog, the coo
 
 Distance measurement tool
 -------------------------
-The "ruler" annotation object in CARTA is used to measure the geodesic distance between two points on an image. This is particularly useful for astronomical images where the distance between celestial objects needs to be measured accurately. A shortcut button is avaialbe in the toolbar of the Image Viewer Widget to activate a distance measurement, effectively creating a "ruler" annotation object.
+The "ruler" annotation object in CARTA is used to measure the geodesic distance between two points on an image. This is particularly useful for astronomical images where the distance between celestial objects needs to be measured accurately. A shortcut button is available in the toolbar of the Image Viewer Widget to activate a distance measurement, effectively creating a "ruler" annotation object.
 
 The two points are defined by a pair of clicks in the Image Viewer Widget. Alternatively, you can use the Region Configuration Dialog to define the two points by entering their coordinates in the "Configuration" tab. 
 
