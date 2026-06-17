@@ -58,15 +58,16 @@ The Image List Widget shows a list of all loaded images, including their:
 * rendering type ("Layers" column): "**R**" means raster, "**C**" means contour, and "**V**" means vector overlay
 * image matching state ("Matching" column): 
    
-  * "**XY**" means the spatial domain
-  * "**Z**" means the spectral domain
-  * "**R**" means the raster rendering configuration
+  * "**XY**" means the spatial domain. "Boxed" **XY** means the spatial reference.
+  * "**Z**" means the spectral domain, "Boxed" **Z** means the spectral reference.
+  * "**R**" means the raster rendering configuration. "Boxed" **R** means the raster rendering reference.
 
 * channel index
 * polarization component 
 
 The first loaded image with valid spatial world coordinates serves as the default spatial reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.image.mom0 in the above example). Similarly, the first loaded image with valid spectral coordinates serves as the default spectral reference and is highlighted with an open black box (e.g., HD163296_CO_2_1.fits in the above example). To match the world coordinates of other loaded images, you can click the "**XY**" button to match the spatial domain and click the "**Z**" button to match the spectral domain. If you would like to apply the same rendering configuration for different raster images, click the "**R**" button so that matched images will be rendered in the same way as the reference image highlighted with an open black box (e.g., HD163296_CO_2_1.image.mom0 in the above example).
 
+The "boxed" **XY**, **Z**, or **R** button indicates the reference image for spatial matching, spectral matching, or raster rendering configuration, respectively. Users can click the "boxed" button to trigger the matching process for *all* applicable images. For example, if you click the "boxed" **XY** button of the spatial reference image, all other images with valid and matchable spatial world coordinates will be matched in the spatial domain to the reference image. If you click the "boxed" **Z** button of the spectral reference image, all other images with valid and matchable spectral coordinates will be matched in the spectral domain to the reference image. If you click the "boxed" **R** button of the raster rendering reference image, all other raster images will be rendered in the same way as the reference image.
 
 You may change a spatial reference image, a spectral reference image, or a raster scaling reference by right-clicking on an image in the Image List Widget and using the context menu.
 
@@ -149,7 +150,7 @@ A raster image, contour image, or vector overlay image may be hidden in the Imag
 Region of interest
 ------------------
 
-As of v4.1.0, CARTA supports the following region types:
+As of v6.0, CARTA supports the following region types:
 
 * rectangle (rotatable)
 * ellipse (rotatable)
@@ -160,18 +161,18 @@ As of v4.1.0, CARTA supports the following region types:
 * line (rotatable)
 * polyline
 
-The creation and modification of regions are demonstrated in the section :ref:`mouse_interaction_with_regions`. To create a region, use the region button from the toolbar at the bottom-right corner of the Image Viewer or use the region buttons from the region bar at the top of the GUI, then use the cursor drag-and-drop action to draw a region. CARTA allows regions to be created even if the region is outside the image. Keyboard shortcuts associated with regions are listed below.
+The creation and modification of regions are demonstrated in the section :ref:`mouse_interaction_with_regions`. To create a region, use the region button from the toolbar at the bottom-right corner of the Image Viewer or use the region buttons from the region bar at the top of the GUI, then use the cursor drag-and-drop action to draw a region. CARTA allows regions to be created even if the region is outside the image. Keyboard controls associated with regions are listed below.
 
 +----------------------------------+----------------------------+-----------------------------+
 |                                  | macOS                      | Linux                       |
 +==================================+============================+=============================+
 | Region properties                | double-click               | double-click                | 
 +----------------------------------+----------------------------+-----------------------------+
-| Delete selected region           | del / backspace            | del / backspace             |
+| Delete selected region(s)        | del / backspace            | del / backspace             |
 +----------------------------------+----------------------------+-----------------------------+
 | Toggle region creation mode      | C                          | C                           |
 +----------------------------------+----------------------------+-----------------------------+
-| Deselect region                  | esc                        | esc                         |
+| Deselect region(s)               | esc                        | esc                         |
 +----------------------------------+----------------------------+-----------------------------+
 | Cancel region creation           | esc                        | esc                         |
 +----------------------------------+----------------------------+-----------------------------+
@@ -185,6 +186,33 @@ The creation and modification of regions are demonstrated in the section :ref:`m
 +----------------------------------+----------------------------+-----------------------------+
 | Pan image (inside region)        | cmd + click / middle-click | ctrl + click / middle-click |
 +----------------------------------+----------------------------+-----------------------------+
+| Move region (default step)       | arrow keys                 | arrow keys                  |
++----------------------------------+----------------------------+-----------------------------+
+| Move region (coarse step)        | shift + arrow keys         | shift + arrow keys          |
++----------------------------------+----------------------------+-----------------------------+
+| Move region (fine step)          | option + arrow keys        | alt + arrow keys            |
++----------------------------------+----------------------------+-----------------------------+
+| Copy and paste region            | cmd + C / cmd + V          | ctrl + C / ctrl + V         |
++----------------------------------+----------------------------+-----------------------------+
+| Multi-select regions             | cmd / ctrl + click         | ctrl + click                |
++----------------------------------+----------------------------+-----------------------------+
+| Multi-select regions             | shift + click-and-drag     | shift + click-and-drag      |
++----------------------------------+----------------------------+-----------------------------+
+| Toggle control point editing     | enter                      | enter                       |
++----------------------------------+----------------------------+-----------------------------+
+| Deselect control point           | esc                        | esc                         |
++----------------------------------+----------------------------+-----------------------------+
+| Cycle through control points     | tab or shift + tab         | tab or shift + tab          |
++----------------------------------+----------------------------+-----------------------------+
+| Modify control point             | arrow keys                 | arrow keys                  |
++----------------------------------+----------------------------+-----------------------------+
+| Modify control point (coarse)    | shift + arrow keys         | shift + arrow keys          |
++----------------------------------+----------------------------+-----------------------------+
+| Modify control point (fine)      | option + arrow keys        | alt + arrow keys            |
++----------------------------------+----------------------------+-----------------------------+
+
+
+
 
 .. tip::
   "**backspace**" does not delete a region...
@@ -197,11 +225,11 @@ The creation and modification of regions are demonstrated in the section :ref:`m
   4. It will likely have a value of 0. Double-click it, and then modify it to a value of "2".
   5. Close the about:config tab, and now backspace will no longer navigate back a page.
 
-All created regions are listed in the Region List Widget with basic region properties. To select a region (region state changes to "active"), click on the region in the Image Viewer or the region in the Region List Widget. 
+All created regions are listed in the Region List Widget with basic region properties. To select a region (region state changes to "active"), click on the region in the Image Viewer or the region in the Region List Widget. To multi-select regions, use the "**shift**" key and click on the regions in the Image Viewer or the Region List Widget. You can also multi-select regions by holding the "**shift**" key and clicking and dragging a box to enclose the regions in the Image Viewer. Alternatively, you can use the "**cmd**" key / "**shift**" key on macOS, or the "**ctrl**" key / "**shift**" key on Linux as the modifier key to multi-select regions by clicking the regions in the Region List Widget. When multiple regions are selected, you can modify their common properties simultaneously with the Region Configuration Dialog.
 
-To modify the properties of a selected region, double-click on a region in the Image Viewer or a region in the Region List Widget to bring up the Region Configuration Dialog. A region's color, line style, name, location, and shape are all configurable with the Region Configuration Dialog. The location and shape properties can be edited in the image coordinates or in the world coordinates with angular scales (default). 
+To modify the properties of a selected region, double-click on a region in the Image Viewer or a region in the Region List Widget to bring up the Region Configuration Dialog. A region's color, line style, name, location, and shape are all configurable with the Region Configuration Dialog. The location and shape properties can be edited in the image coordinates or in the world coordinates with angular scales (default). When mutiple regions are selected, only the common properties among the selected regions are shown in the Region Configuration Dialog. 
 
-To de-select a region or cancel a region creation process, press the "**esc**" key. Press the "**delete**" or "**backspace**" key to delete a selected region. 
+To de-select a region or a set of regions, or cancel a region creation process, press the "**esc**" key. Press the "**delete**" or "**backspace**" key to delete a selected region or selected regions. 
 
 An active region can be locked by pressing the "**L**" key or clicking the "**lock**" button in the Region List Widget or region property dialog. You may lock all regions at once by clicking the "**lock**" button in the top-left corner of the Image List Widget. When a region is locked, it cannot be modified (resize, move, or delete) with mouse actions and the "**delete**" or  "**backspace**" key. A locked region, however, can still be modified or deleted via the Region Configuration Dialog. Locking a region could help the situation when you want to modify overlapping regions or prevent accidentally modifying a region. 
 
@@ -556,6 +584,12 @@ To create a circle region via the ellipse region type or a square region via the
 
 * Hold the “**shift**” key, then drag-and-drop
 
+To multi-select regions
+
+* In the image viewer, hold the “**shift**” key, then click-and-drag a box to enclose the regions
+* In the image viewer, hold the "cmd / ctrl" key, then click on the regions
+* In the region list widget, hold the "cmd / ctrl / shift" key, then click on the regions
+
 To create or modify a region (rectangle, ellipse, or line) with the alternative mode (center-to-corner v.s. corner-to-corner)
 
 * Hold the “**command**” (macOS) / “**ctrl**” (Linux) key, then drag-and-drop
@@ -609,7 +643,9 @@ To create a polygon region or a polyline region, start with a click followed by 
 
 **Region selection and modification**
 
-Click on a region in the Image Viewer will change the region state to "active". The active region will be highlighted in the Region List Widget. Alternatively, a region can be selected by clicking a region entry in the Region List Widget. CARTA allows selecting a "region in region". The layer order of regions is adjusted automatically based on the region size. To deselect a region, click elsewhere in the Image Viewer or press the "**esc**" key.
+Click on a region in the Image Viewer will change the region state to "active". The active region will be highlighted in the Region List Widget. Alternatively, a region can be selected by clicking a region entry in the Region List Widget. Multi-selection of regions is also supported. In the Image Viewer, hold the "**shift**" key and click-and-drag a box to enclose the regions, or hold the "cmd / ctrl" key, then click on the regions. In the Region List Widget, hold the "cmd / ctrl / shift" key, then click on the regions.
+
+CARTA allows selecting a "region in region". The layer order of regions is adjusted automatically based on the region size. To deselect a region, click elsewhere in the Image Viewer or press the "**esc**" key.
 
 
 .. raw:: html
@@ -620,7 +656,7 @@ Click on a region in the Image Viewer will change the region state to "active". 
    </a>
 
 
-Double-click on a region in the Image Viewer or a region in the Region List Widget will launch the Region Configuration Dialog. You can make changes to the region's name, location, shape, and style using the dialog. Pressing the "**delete**" or the "**backspace**" key will remove the active region. 
+Double-click on a region in the Image Viewer or a region in the Region List Widget will launch the Region Configuration Dialog. You can make changes to the region's name, location, shape, and style using the dialog. When multiple regions are selected, the Region Configuration Dialog will display the common properties only. Pressing the "**delete**" or the "**backspace**" key will remove the active region or selected regions. 
 
 
 .. raw:: html
@@ -644,7 +680,7 @@ Double-click on a region in the Image Viewer or a region in the Region List Widg
   5. Close the about:config tab, and now backspace will no longer navigate back a page.
 
 
-A new control point can be added by clicking on a line segment for a polygon or polyline region. A control point can be deleted by double-clicking on the control point.
+A new control point can be added by double-clicking on a line segment for a polygon or polyline region. A control point can be deleted by double-clicking on the control point.
 
 .. raw:: html
 
@@ -653,9 +689,14 @@ A new control point can be added by clicking on a line segment for a polygon or 
            style="width:100%;height:auto;">   
    </a>
 
+**Move region with keyboard**
+
+To move a selected region with the keyboard, use the arrow keys for the default step (in screen pixel), hold the "**shift**" key and use the arrow keys for the coarse step (in screen pixel), or hold the "**option**" (macOS) / "**alt**" (Linux) key and use the arrow keys for the fine step (one image pixel).
 
 
+**Copy and paste a region or regions**
 
+To copy a region or regions, select the region or regions and press the "**cmd**" + "**C**" key (macOS) or the "**ctrl**" + "**C**" key (Linux). To paste a region or regions, press the "**cmd**" + "**V**" key (macOS) or the "**ctrl**" + "**V**" key (Linux). 
 
 
 
@@ -848,6 +889,35 @@ A widget can be activated as a floating widget by clicking the desired widget bu
    </a>
 
 
+Making the image viewer as a popout browser window
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This is a new feature introduced in CARTA v6.0. The Image Viewer can be popped out as a new browser window by clicking the "**popout**" button at the top-right corner of the Image Viewer. The popout window can be resized and moved freely just like a regular browser window. The popout window can be closed by clicking the "**close**" button of the browser window and the Image Viewer will be restored to the main browser window. 
+
+
+.. raw:: html
+
+   <a href="_static/carta_gui_popout_viewer_before.png" target="_blank">
+       <img src="_static/carta_gui_popout_viewer_before.png" 
+           style="width:100%;height:auto;">   
+   </a>
+
+
+.. raw:: html
+
+   <a href="_static/carta_gui_popout_viewer_after.png" target="_blank">
+       <img src="_static/carta_gui_popout_viewer_after.png" 
+           style="width:100%;height:auto;">   
+   </a>
+
+
+The best use case of this feature is to use a second monitor to display the Image Viewer while keeping the main browser window for other widgets, or vice verse. If you are using an extra-wide screen monitor or a regular monitor, it is still recommended to use a single browser window to display the Image Viewer and other widgets and utilize the layout management feature to configure the layout. This provides a seamless user experience when you switch focus between the Image Viewer and other widgets. When the Image Viewer is popped out as a new browser window, it is just like a regular browser window managed by the operating system. You will need to *activate* the browser window with an extra mouse click, with a keyboard shortcut, or enabling auto-focus on mouse hover before interacting with the content. 
+
+
+
+
+
+
+
 Light and dark themes
 ^^^^^^^^^^^^^^^^^^^^^
 CARTA supports light and dark themes. The default theme is determined automatically from the operating system (if applicable). The theme can be changed using the menu "**View**" -> "**Theme**", or the shortcut "**shift**" + "**D**".
@@ -906,6 +976,30 @@ CARTA supports keyboard shortcuts to enable specific actions without using a mou
 | Toggle current region lock       | L                               | L                               |
 +----------------------------------+---------------------------------+---------------------------------+
 | Unlock all regions               | shift + L                       | shift + L                       |
++----------------------------------+---------------------------------+---------------------------------+
+| Move region (default step)       | arrow keys                      | arrow keys                      |
++----------------------------------+---------------------------------+---------------------------------+
+| Move region (coarse step)        | shift + arrow keys              | shift + arrow keys              |
++----------------------------------+---------------------------------+---------------------------------+
+| Move region (fine step)          | option + arrow keys             | alt + arrow keys                |
++----------------------------------+---------------------------------+---------------------------------+
+| Copy and paste region            | cmd + C / cmd + V               | ctrl + C / ctrl + V             |
++----------------------------------+---------------------------------+---------------------------------+
+| Multi-select regions             | cmd / ctrl + click              | ctrl + click                    |
++----------------------------------+---------------------------------+---------------------------------+
+| Multi-select regions             | shift + click-and-drag          | shift + click-and-drag          |
++----------------------------------+---------------------------------+---------------------------------+
+| Toggle control point editing     | enter                           | enter                           |
++----------------------------------+---------------------------------+---------------------------------+
+| Deselect control point           | esc                             | esc                             |
++----------------------------------+---------------------------------+---------------------------------+
+| Cycle through control points     | tab or shift + tab              | tab or shift + tab              |
++----------------------------------+---------------------------------+---------------------------------+
+| Modify control point             | arrow keys                      | arrow keys                      |
++----------------------------------+---------------------------------+---------------------------------+
+| Modify control point (coarse)    | shift + arrow keys              | shift + arrow keys              |
++----------------------------------+---------------------------------+---------------------------------+
+| Modify control point (fine)      | option + arrow keys             | alt + arrow keys                |
 +----------------------------------+---------------------------------+---------------------------------+
 | **Appearance**                   |                                 |                                 |
 +----------------------------------+---------------------------------+---------------------------------+
