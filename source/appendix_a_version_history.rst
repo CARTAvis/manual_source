@@ -82,6 +82,10 @@ CARTA v6.0 deployed as a macOS Electron Desktop application provides two new enh
 2. FITS file association: The CARTA Electron app can now be associated with FITS files on macOS. This allows users to open FITS files directly with the CARTA app by double-clicking on the file or by using the "Open With" context menu. This provides a more convenient way for users to open FITS files with CARTA without having to manually launch the app and load the file. Users can also drag and drop a FITS image file or a set of FITS image files from Finder to the CARTA application icon in the Dock to open the image or images in CARTA. Users may also drag and drop a FITS image file or a set of FITS image files from Finder to the CARTA application window to open or append the image or images in the current session of CARTA.
 
 
+Homebrew installation method deprecation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+CARTA v6.0 deprecates the Homebrew installation method for the macOS platform. The Homebrew installation method will no longer be maintained and supported in this and future releases of CARTA. Users are encouraged to switch to the macOS Electron Desktop application. The main reason for this deprecation is that in fact previous installation via Homebrew is bascially installing the Electron app, but following Homebrew's installation protocal. In addtion, the new Electron Desktop application now provides an auto-update feature that allows users to get notified of new releases and easily update to the latest version without having to manually check for updates and download the dmg file. This provides a more seamless update experience for users, ensuring that they can easily stay up-to-date with the latest features and improvements in CARTA. 
+
 
 
 
