@@ -1,13 +1,118 @@
 Appendix A: version history
 ===========================
 
+What's new
+----------
+This section summarizes the new features and enhancements in the latest stable release of CARTA.
+
+Image Viewer as a popout browser window
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+For codebase dependency and security concerns, CARTA v6.0 adopts a new layout management library, FlexLayout, to replace the previous GoldenLayout library. The new library provides the same layout management features with a slightly different GUI appearance compared to the previous one, but with a more modern and secure codebase. In addition, the popout window feature is enabled to allow the Image Viewer to be popped out as a new browser window. This is particularly useful for users with multiple monitors, allowing them to view the Image Viewer in a separate window while keeping other widgets in the main browser window. The example below shows the Image Viewer popped out as a new browser window while the main browser window is used to display other widgets.
+
+.. raw:: html
+
+   <a href="_static/whats_new_v60_popout_viewer.png" target="_blank">
+       <img src="_static/whats_new_v60_popout_viewer.png" 
+            style="width:100%;height:auto;">
+   </a>
+
+
+
+Region of interest enhancements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+CARTA v6.0 provides a set of enhancements to the region of interest (ROI) feature, including:
+
+- Copy and paste region
+- Multiple region selection and batch configuration
+- Keyboard controls for region manipulation
+
+.. raw:: html
+
+   <a href="_static/whats_new_v60_region_enhancement.png" target="_blank">
+       <img src="_static/whats_new_v60_region_enhancement.png" 
+            style="width:100%;height:auto;">
+   </a>
+
+
+
+Matching enhancements
+^^^^^^^^^^^^^^^^^^^^^
+CARTA v6.0 provides a set of new shortcut buttons in the Image List Widget to enable or disable quick matching of all loaded images to the reference image in spatial coordinates (XY), spectral coordinates (Z), and raster rendering configuration (R). This allows users to quickly set up the matching status of all loaded images with a single click, which is particularly useful when there are many images loaded in the session. If there are images that cannot be spatially and/or spectrally matched, they will be ignored with a warning message.
+
+
+.. raw:: html
+
+   <a href="_static/whats_new_v60_quick_matching.png" target="_blank">
+       <img src="_static/whats_new_v60_quick_matching.png" 
+            style="width:70%;height:auto;">
+   </a>
+
+
+
+
+Offset coordinate grid enhancements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+CARTA v6.0 offsets a new mode - "Pole" - to the offset coordinate system. This allows users to set the pole of the offset coordinate system to a specific position on the image and render colongtidue  and colatitude grid lines based on the defined pole. The screenshot below provides a demostration of the new mode. The "rings" represent the equal-distance lines to the defined pole. This feature could be used for targets with symmetry around a specific point or used for planning observing proposals as a visualization of different sources with their relative positions to a specific target, such as a calibrator.
+
+.. raw:: html
+
+   <a href="_static/whats_new_v60_offset_pole.png" target="_blank">
+       <img src="_static/whats_new_v60_offset_pole.png" 
+            style="width:70%;height:auto;">
+   </a>
+
+
+Catalog widget enhancements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+CARTA v6.0 provides an enhancement to the Catalog Widget to automatically select the celestial coordinate columns in the catalog table. This allows users to quickly visualize the catalog sources on the image without having to manually select the coordinate columns, which is particularly useful when there are many columns in the catalog table. The screenshot below shows an example of the auto-selection of celestial coordinate columns in the Catalog Widget.
+
+.. raw:: html
+
+   <a href="_static/whats_new_v60_catalog_auto_selection.png" target="_blank">
+       <img src="_static/whats_new_v60_catalog_auto_selection.png" 
+            style="width:70%;height:auto;">
+   </a>
+
+
+macOS Electron Desktop application enhancements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+CARTA v6.0 deployed as a macOS Electron Desktop application provides two new enhancements:
+
+1. Auto-updater: The CARTA Electron app can now automatically check for updates and prompt the user to download and install the latest version. This provides a seamless update experience for users, ensuring that they are notified of new releases and can easily update to the latest version without having to manually check for updates and download the dmg file.
+2. FITS file association: The CARTA Electron app can now be associated with FITS files on macOS. This allows users to open FITS files directly with the CARTA app by double-clicking on the file or by using the "Open With" context menu. This provides a more convenient way for users to open FITS files with CARTA without having to manually launch the app and load the file. Users can also drag and drop a FITS image file or a set of FITS image files from Finder to the CARTA application icon in the Dock to open the image or images in CARTA. Users may also drag and drop a FITS image file or a set of FITS image files from Finder to the CARTA application window to open or append the image or images in the current session of CARTA.
+
+
+
+
+
+
+
+Version 6.0
+-----------
+Released XX June 2026
+
+v6.0 is primarily a maintenance release to address codebase refactoring, library updates, bug fixes, and other technical debt. However, a few new features and enhancements are included in this release:
+
+* Copy and paste region
+* Keyboard controls for region manipulation
+* Quick XY/Z/R matching of all loaded images to the reference image
+* Support pole mode to the offset coordinate system
+* Support Image Viewer as a popup browser window
+* Auto-select celestial coordinate columns in the catalog widget
+* macOS Electron app only: FITS file association with the CARTA app
+* macOS Electron app only: support auto-update of the CARTA app for future new releases
+
+See `carta-frontend changelog <https://github.com/CARTAvis/carta-frontend/blob/release/6.0/CHANGELOG.md>`_ and `carta-backend changelog <https://github.com/CARTAvis/carta-backend/blob/release/6.0/CHANGELOG.md>`_ for details.
+
+
+
 Version 5.1
 -----------
 Released 3 February 2026
 
 As a maintenance release, this version addresses critical bug fixes. No new feature or feature enhancement is included.
 
-See `carta-frontend changelog <https://github.com/CARTAvis/carta-frontend/blob/release/5.0/CHANGELOG.md>`_ and `carta-backend changelog <https://github.com/CARTAvis/carta-backend/blob/release/5.0/CHANGELOG.md>`_ for details.
+See `carta-frontend changelog <https://github.com/CARTAvis/carta-frontend/blob/release/5.1/CHANGELOG.md>`_ and `carta-backend changelog <https://github.com/CARTAvis/carta-backend/blob/release/5.1/CHANGELOG.md>`_ for details.
 
 
 
