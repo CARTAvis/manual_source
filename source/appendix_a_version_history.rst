@@ -3,7 +3,7 @@ Appendix A: version history
 
 What's new
 ----------
-This section summarizes the new features and enhancements in the latest stable release of CARTA.
+This section highlights the new features and enhancements in the latest stable release of CARTA.
 
 Image Viewer as a popout browser window
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
