@@ -75,7 +75,7 @@ You may change a spatial reference image, a spectral reference image, or a raste
 
    <a href="_static/carta_fn_layerList2.png" target="_blank">
        <img src="_static/carta_fn_layerList2.png" 
-            style="width:60%;height:auto;">
+            style="width:80%;height:auto;">
    </a>
 
 For raster images, matching in the spatial domain is achieved by applying translation, rotation, and scaling to images with respect to the reference image. This is also known as the "affine transformation". 
