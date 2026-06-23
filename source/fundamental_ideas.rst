@@ -302,7 +302,7 @@ Shared region of interest enables practical image cube analysis through
 
 These widgets contain an "**Image**" dropdown menu and a "**Region**" dropdown menu. The former allows you to select which loaded image cube to show its analytics. The latter allows you to select which region to show the region analytics. By combining the two menus, CARTA provides a flexible user interface to explore image data. When the selected image has the polarization axis, you can use the "**Polarization**" dropdown menu to select which polarization component to use for deriving image analytics. 
 
-As an example below, two image cubes representing 12CO 2-1 and 13CO 2-1 are matched spatially and spectrally. Three shared regions are created to highlight different features. Three Spectral Profiler Widgets are placed to show different profiles. The top one shows the square region profile from 12CO 2-1. The middle one shows the polygon region profile of 13CO 2-1. The bottom one shows 12CO 2-1 and 13CO 2-1 profiles from the square region. Please refer to the section :ref:`spectral_profiler` to learn how to plot *multiple* profiles in one Spectral Profiler Widget. In addition, one Statistics Widget is configured to show the statistics of 12CO 2-1 from the circle region.
+As an example below, two image cubes representing 12CO 2-1 and 13CO 2-1 are matched spatially and spectrally. Three shared regions are created to highlight different features. Three Spectral Profiler Widgets are placed to show different profiles. The top one shows the square region profile from 12CO 2-1. The middle one shows the polygon region profile of 13CO 2-1. The bottom one shows both 12CO 2-1 and 13CO 2-1 profiles from the square region. Please refer to the section :ref:`spectral_profiler` to learn how to plot *multiple* profiles in one Spectral Profiler Widget. In addition, one Statistics Widget is configured to show the statistics of 12CO 2-1 from the circle region.
 
 .. raw:: html
 
@@ -427,8 +427,8 @@ In CARTA, the following image annotation objects are supported:
 Image annotation objects created with the graphical user interface can be exported as a "region" text file in the CRTF or ds9 format.
 
 
-What "Active" means?
---------------------
+What does "Active" mean?
+------------------------
 
 In CARTA, the term "active" is used to indicate the current focus of interaction. For example, an "active image" is the image (and a corresponding channel if it is an image cube) that is currently being viewed or analyzed in the Image Viewer as highlighted with a red box. 
 
@@ -469,7 +469,7 @@ The CARTA GUI has different components:
            style="width:100%;height:auto;">
    </a>
 
-The main browser window consists of a set of docked widgets. Multiple docked widgets can be stacked and share the same space. In this case, inactive widgets are displayed as tabs. For example, the above figure shows five docked widgets in the main browser window. Among them, two docked widgets share the same space as tabs (render configuration and region list) in the bottom-left part of the GUI. A docked widget (i.e., a tab) may be detached to become a floating widget by clicking the "pin" button at the top-right corner of the widget. The GUI layout is highly configurable via mouse and is reusable. Please refer to the section :ref:`layoutConfiguration` for details.
+The main browser window consists of a set of docked widgets. Multiple docked widgets can be stacked and share the same space. In this case, inactive widgets are displayed as tabs. For example, the figure above shows five docked widgets in the main browser window. Among them, two docked widgets share the same space as tabs (render configuration and region list) in the bottom-left part of the GUI. A docked widget (i.e., a tab) may be detached to become a floating widget by clicking the "pin" button at the top-right corner of the widget (widget control buttons). The GUI layout is highly configurable via mouse and is reusable. Please refer to the section :ref:`layoutConfiguration` for details.
 
 The menu bar provides control options, such as image input/output, launching widgets, getting help, etc. The widget bar provides widgets to view or analyze images. The dialog bar provides dialogs for configurations. The region bar provides shortcut buttons for creating regions of interest or image annotation objects in the Image Viewer. 
 
