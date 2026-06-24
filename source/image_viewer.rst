@@ -104,7 +104,7 @@ In analytics widgets, such as the Statistics Widget or the Spectral Profiler Wid
 
       <a href="_static/carta_fn_imageViewer_mirrorCursor.png" target="_blank">
           <img src="_static/carta_fn_imageViewer_mirrorCursor.png" 
-               style="width:100%;height:auto;">
+               style="width:90%;height:auto;">
       </a>
 
 
@@ -173,7 +173,7 @@ In addition to displaying images, the Image Viewer displays cursor information a
             style="width:100%;height:auto;">
    </a>
 
-When the cursor is movning on the Image Viewer, the pixel information at the cursor position is shown at the top side of the image. The information includes:
+When the cursor is movning on the Image Viewer, the pixel information at the cursor position is shown at the top side of the image. If the Cursor Info Widget is enabled, same information is displayed in the widget, including matched images. The information includes:
 
 * World coordinate of the current coordinate system. 
 * Image coordinate in pixel (0-based).
@@ -323,5 +323,5 @@ Depending on the theme, a background layer in white or black will be added to th
 
       <a href="_static/carta_fn_imageviewer_pv_rendering.png" target="_blank">
           <img src="_static/carta_fn_imageviewer_pv_rendering.png" 
-               style="width:100%;height:auto;">
+               style="width:90%;height:auto;">
       </a>
