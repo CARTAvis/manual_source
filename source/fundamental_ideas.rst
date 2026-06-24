@@ -760,6 +760,14 @@ To show/hide cursor marker rendering
 
 * Press the “**G**” key
 
+.. raw:: html
+
+   <a href="_static/carta_fn_cursor_update.png" target="_blank">
+       <img src="_static/carta_fn_cursor_update.png" 
+           style="width:100%;height:auto;">   
+   </a>
+
+
 
 .. _mouse_interaction_with_charts:
 
@@ -984,7 +992,12 @@ Save and restore layout
 ^^^^^^^^^^^^^^^^^^^^^^^
 CARTA allows you to save the current layout as a custom layout. The saved layout can be restored later. To save or restore a layout, use the menu "**View**" -> "**Layout**". For more information about layout management and dynamic layout, please refer to the section :ref:`layout_management`.
 
+.. raw:: html
 
+   <a href="_static/carta_gui_layout_management.png" target="_blank">
+       <img src="_static/carta_gui_layout_management.png" 
+           style="width:100%;height:auto;">   
+   </a>
 
 
 Controls and shortcuts
