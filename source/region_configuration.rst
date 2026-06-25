@@ -15,7 +15,7 @@ The actual context in the two tabs depends on the type of the region or annotati
    </a>
 
 
-Using the buttons at the bottom of the dialog, you can also lock/unlock a region, center the region in the image viewer, or delete the region.
+Using the buttons at the bottom of the dialog, you can also lock/unlock the region, hide/show the region, center the region in the image viewer, export the region as a region file, or delete the region.
 
 When there are multiple regions selected, the Region Configuration Dialog will show the common properties of the selected regions. Modifying a common property will apply to all selected regions. For example, if you select two regions with different colors and then change the color in the Region Configuration Dialog, both regions will be updated to have the same new color.
 
