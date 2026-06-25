@@ -54,7 +54,7 @@ When the blended image is active, the Render Configuration Widget will display a
 
    <a href="_static/carta_fn_multicolor_blending_config.png" target="_blank">
        <img src="_static/carta_fn_multicolor_blending_config.png" 
-            style="width:100%;height:auto;">
+            style="width:80%;height:auto;">
    </a>
 
 
