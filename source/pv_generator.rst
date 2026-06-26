@@ -33,7 +33,7 @@ Once a PV image is generated, it will be loaded and displayed in the Image Viewe
 
       <a href="_static/carta_fn_imageviewer_pv_rendering.png" target="_blank">
           <img src="_static/carta_fn_imageviewer_pv_rendering.png" 
-               style="width:100%;height:auto;">
+               style="width:90%;height:auto;">
       </a>
 
 .. warning::
