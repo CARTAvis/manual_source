@@ -26,7 +26,7 @@ As of v6.0, the profile fitting function can be applied to the Spectral Profiler
 Profile models
 --------------
 
-CARTA supports two model profile functions in v4.1.0 (more will be added in a future release):
+CARTA supports two model profile functions in v6.0 (more will be added in a future release):
 
 * Gaussian: thermal or random motion broadening
 * Lorentzian: pressure broadening
