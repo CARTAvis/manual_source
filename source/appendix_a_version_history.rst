@@ -93,7 +93,7 @@ CARTA v6.0 deprecates the Homebrew installation method for the macOS platform. T
 
 Version 6.0
 -----------
-Released XX June 2026
+Released 30 June 2026
 
 v6.0 is primarily a maintenance release to address codebase refactoring, library updates, bug fixes, and other technical debt. However, a few new features and enhancements are included in this release:
 
