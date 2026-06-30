@@ -6,6 +6,9 @@
 CARTA - Cube Analysis and Rendering Tool for Astronomy
 ======================================================
 
+.. note::
+   This documentation corresponds to CARTA version 6.1-dev, which is a development release following version 6.0 to introduce new features and improvements.
+
 .. index:: Table of Contents
 
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3377984.svg
@@ -13,7 +16,7 @@ CARTA - Cube Analysis and Rendering Tool for Astronomy
 
 .. toctree::
    :maxdepth: 3
-   :caption: CARTA User Manual for v6.0
+   :caption: CARTA User Manual for 6.1-dev
 
     
    introduction.rst
