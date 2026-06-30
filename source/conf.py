@@ -27,9 +27,7 @@ author = u'the CARTA development team'
 version = u'6.1-dev'
 # The full version, including alpha/beta/rc tags
 release = u'6.1.0-dev'
-version = u'dev'
-# The full version, including alpha/beta/rc tags
-release = u'6.1-dev'
+
 
 
 # -- General configuration ---------------------------------------------------
