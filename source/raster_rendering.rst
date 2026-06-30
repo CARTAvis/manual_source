@@ -26,7 +26,7 @@ By default, the histogram is calculated per channel of the image, but it can als
 The mouse interaction with the histogram plot is summarized in the section :ref:`mouse_interaction_with_charts`.
 
 
-Clip Values
+Clip values
 -----------
 The Render Configuration Widget allows you to set clip values for the image rendering. By default, a "99.9%" clip level is applied to the per-channel histogram to determine the two clip values. You can apply a preset clip value using the clip buttons (e.g., "90%", "95%", "100%", etc.) or set custom clip Values by dragging the two vertical red bars in the histogram plot or by entering values in the Clip min and Clip max input fields. 
 

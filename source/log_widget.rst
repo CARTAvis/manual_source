@@ -12,7 +12,7 @@ The Log Widget is a tool which provides important diagnostic information when so
 
    <a href="_static/carta_fn_log.png" target="_blank">
        <img src="_static/carta_fn_log.png" 
-           style="width:50%;height:auto;">
+           style="width:80%;height:auto;">
    </a>
 
 If you encounter an error, we encourage you to reach out for assistance. You can contact our `HelpDesk <mailto:support@carta.freshdesk.com>`_ or visit our `GitHub <https://github.com/CARTAvis/carta/issues>`_ to file an issue.

@@ -7,7 +7,7 @@ CARTA - Cube Analysis and Rendering Tool for Astronomy
 ======================================================
 
 .. note::
-   This documentation corresponds to CARTA version 6.0-dev, which is a development release following version 5.1 to introduce new features and improvements.
+   This documentation corresponds to CARTA version 6.1-dev, which is a development release following version 6.0 to introduce new features and improvements.
 
 .. index:: Table of Contents
 
@@ -16,7 +16,7 @@ CARTA - Cube Analysis and Rendering Tool for Astronomy
 
 .. toctree::
    :maxdepth: 3
-   :caption: CARTA User Manual for 6.0-dev
+   :caption: CARTA User Manual for 6.1-dev
 
     
    introduction.rst

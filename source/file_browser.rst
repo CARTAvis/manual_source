@@ -241,11 +241,25 @@ CARTA supports a axes-swapped image cube. When such a cube is selected in the fi
    </a>
 
 .. warning::
-   In v5.1, CARTA supports axes-swapped image cubes for *image visualization* only. Region analytics tools are not supported.
+   In v6.0, CARTA supports axes-swapped image cubes for *image visualization* only. Region analytics tools are not supported.
+
+
+FITS image file association with the macOS Electron Desktop
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This is a new feature in the macOS Electron Desktop version of CARTA, starting from v6.0.
+
+For users who have installed the macOS Electron Desktop version of CARTA, you can associate the FITS image file extension with the CARTA application by using the macOS context menu. To do this, right-click on a FITS image file in Finder, select "**Get Info**", and then under the "**Open with**" section, choose CARTA from the dropdown menu. After that, click the "**Change All...**" button to apply this association to all FITS image files.  
+
+.. raw:: html
+
+   <a href="_static/macOS_FITS_association.png" target="_blank">
+       <img src="_static/macOS_FITS_association.png" 
+            style="width:50%;height:auto;">
+   </a>
 
 
 
-
+After the association is set up, you can double-click a FITS image file in Finder to open it in the CARTA Electron Desktop as a new session directly. You can also drag and drop a FITS image file or a set of FITS image files from Finder to the CARTA application icon in the Dock to open the image or images in CARTA. You may also drag and drop a FITS image file or a set of FITS image files from Finder to the CARTA application window to open or append the image or images in the current session of CARTA.
 
 
 

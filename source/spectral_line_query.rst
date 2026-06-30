@@ -5,7 +5,7 @@ Spectral line query
 
 CARTA supports an *initial* implementation of spectral line ID overlay on a Spectral Profiler Widget based on the data from the Splatalogue service (https://splatalogue.online). 
 
-Makeing a query
+Making a query
 ---------------
 A query can be made by defining a spectral range in frequency or wavelength and, optionally, a lower limit of CDMS/JPL line intensity (logarithmic). The spectral range can be defined as "from-to" or "center-width". Other filters, such as filtering by species name, energy range, etc., can be applied *after* the data are retrieved from the Splatalogue. By clicking the "**Query**" button, molecular data will be retrieved from the Splatalogue service. 
 

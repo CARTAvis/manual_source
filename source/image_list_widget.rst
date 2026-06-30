@@ -38,34 +38,17 @@ By default, the images are ordered by the order they are loaded. You can change 
    </a>
 
 
-Close images
-------------
-The Image List Widget provides a set of shortcut options to close images. You can right-click on an image in the list to open the context menu and use the options to
-
-- Close the selected image
-- Close all images except the selected one
-- Close all images
-
-
-.. raw:: html
-
-   <a href="_static/carta_fn_image_list_close_image.png" target="_blank">
-       <img src="_static/carta_fn_image_list_close_image.png" 
-            style="width:100%;height:auto;">
-   </a>
-
-.. note::
-    If the image is a multi-color blending image, closing it will not affect the original images used for blending. The original images will still be loaded in the Image Viewer Widget and can be used for further analysis or rendering.
-
-.. note::    
-   If the closed image servers as a reference image for matching, all other matched images will be automatically un-matched. The matching status of the images will be updated accordingly in the Image List Widget. A new reference image for matching will be set automatically based on the order of the images in the Image List Widget. The first image in the list will be set as the new reference image for matching.
-
 
 Visibility of rendered image layers
 -----------------------------------
 For a given image, if the contour rendering or vector field rendering is enabled, the Image List Widget will show a "C" or "V" button along with the raster rendering button "R" in the Layers column. You can click on these buttons to toggle the visibility of the corresponding rendered layers in the Image Viewer Widget. Layers are shared to all matched images. If a given layer is hidden, all matched images will not show the layer in the Image Viewer Widget.
 
+.. raw:: html
 
+   <a href="_static/carta_fn_image_list_layer_visibility.png" target="_blank">
+       <img src="_static/carta_fn_image_list_layer_visibility.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 
 Matching status of images
@@ -74,6 +57,14 @@ The Matching column in the Image List Widget shows the matching status of each i
 
 For a given image, to enable or disable matching to the refernece image, you can click on the "XY" button, the "Z" button, or the "R" button in the Matching column for spatial matching, spectral matching, and raster rendering configuration matching, respectively. The matching status will be updated accordingly in the Image List Widget.
 
+As a shortcut, you can also click on the "boxed" XY button in the Matching column to enable or disable spatial matching of all loaded images to the reference image. Similarly, you can click on the "boxed" Z button in the Matching column to enable or disable spectral matching of all loaded images to the reference image. You can also click on the "boxed" R button in the Matching column to enable or disable raster rendering configuration matching of all loaded images to the reference image.
+
+.. raw:: html
+
+   <a href="_static/carta_fn_image_list_matching_status.png" target="_blank">
+       <img src="_static/carta_fn_image_list_matching_status.png" 
+            style="width:100%;height:auto;">
+   </a>
 
 Matching reference images
 -------------------------
@@ -116,7 +107,7 @@ By default, spectral matching is performed using the "radio velocity" convention
 
        <a href="_static/carta_fn_image_list_matching_spectral_scan.png" target="_blank">
            <img src="_static/carta_fn_image_list_matching_spectral_scan.png" 
-                style="width:100%;height:auto;">
+                style="width:90%;height:auto;">
        </a>
 
 
@@ -138,7 +129,27 @@ The Rest frequency tab in the settings dialog is also accessible via the context
 This feature is useful when you want to compare spectral features at different rest frequencies in velocity frame without modifying the original image header. If the spectral features at different rest frequencies reside in the same cube, you will need to load the same cube multiple times and apply different rest frequencies to each loaded cube. 
 
 
+Close images
+------------
+The Image List Widget provides a set of shortcut options to close images. You can right-click on an image in the list to open the context menu and use the options to
 
+- Close the selected image
+- Close all images except the selected one
+- Close all images
+
+
+.. raw:: html
+
+   <a href="_static/carta_fn_image_list_close_image.png" target="_blank">
+       <img src="_static/carta_fn_image_list_close_image.png" 
+            style="width:100%;height:auto;">
+   </a>
+
+.. note::
+    If the image is a multi-color blending image, closing it will not affect the original images used for blending. The original images will still be loaded in the Image Viewer Widget and can be used for further analysis or rendering.
+
+.. note::    
+   If the closed image servers as a reference image for matching, all other matched images will be automatically un-matched. The matching status of the images will be updated accordingly in the Image List Widget. A new reference image for matching will be set automatically based on the order of the images in the Image List Widget. The first image in the list will be set as the new reference image for matching.
 
 
 Settings

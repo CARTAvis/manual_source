@@ -33,7 +33,7 @@ Once a PV image is generated, it will be loaded and displayed in the Image Viewe
 
       <a href="_static/carta_fn_imageviewer_pv_rendering.png" target="_blank">
           <img src="_static/carta_fn_imageviewer_pv_rendering.png" 
-               style="width:100%;height:auto;">
+               style="width:90%;height:auto;">
       </a>
 
 .. warning::
@@ -58,7 +58,7 @@ As a scalable approach for large image cubes, CARTA constructs a PV image from a
 
    When the sampling process is made along a line region in a "non-flat" image, the solid angle of the sampling boxes is approximately conserved. In some cases, especially when the image is highly distorted, some computed boxes may cover zero image pixels for spectral profile calculations. Therefore, you may see NaN stripes in the final PV image. When this happens, you can consider increasing the averaging "width" with the "**Averaging width**"  input and spinbox.
 
-   In a future release, the averaging "height" (parallel to the trajectory) can be customized too. With the v5.1 release, the "height" is fixed to *three* (three pixels for flat image or three unit angular size for non-flat image). 
+   In a future release, the averaging "height" (parallel to the trajectory) can be customized too. With the v6.0 release, the "height" is fixed to *three* (three pixels for flat image or three unit angular size for non-flat image). 
 
 
 
