@@ -22,6 +22,6 @@ With the snippet editor, you can write code, save it, and execute it. The saved 
 
       <a href="_static/carta_fn_snippets2.png" target="_blank">
         <img src="_static/carta_fn_snippets2.png" 
-            style="width:100%;height:auto;">
+            style="width:90%;height:auto;">
       </a>
       

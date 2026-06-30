@@ -104,7 +104,7 @@ In analytics widgets, such as the Statistics Widget or the Spectral Profiler Wid
 
       <a href="_static/carta_fn_imageViewer_mirrorCursor.png" target="_blank">
           <img src="_static/carta_fn_imageViewer_mirrorCursor.png" 
-               style="width:100%;height:auto;">
+               style="width:90%;height:auto;">
       </a>
 
 
@@ -131,7 +131,7 @@ The channel map view is a special view mode of the Image Viewer that displays an
    </a>
 
 .. note::
-   With v5.1 release, the channel map view mode only supports raster rendering. Contour images and vector field overlay are not supported in the channel map view mode.
+   With v6.0 release, the channel map view mode only supports raster rendering. Contour images and vector field overlay are not supported in the channel map view mode.
 
 
 Coordinate system
@@ -149,9 +149,9 @@ Once an image is rendered in the Image Viewer, a grid layer representing the the
 
 By default, the displayed coordinate system is the one defined in the image header. If the image header does not provide a valid world coordinate system, the image coordinate system is used by default. You can change the coordinate system by selecting a different one from the "**WCS**" menu. Optionally you can enable the grid line by clicking the "**Grid**" button in the toolbar of the Image Viewer Widget. 
 
-All the supported coordinate systems also have an addtional "offset" mode with a flexible origin of the offset reference. By clicking the re-center button from the "**WCS**" menu, a new origin is defined at the center of the image view. For detailed offset mode configuration options, see the "Pan and Zoom" tab in the Image Viewer Settings Dialog. 
+All the supported coordinate systems also have an addtional "offset" mode with a flexible origin of the offset reference. By clicking the re-center button from the "**WCS**" menu, a new origin is defined at the center of the image view. For detailed offset mode configuration options, see the "Pan and Zoom" tab in the Image Viewer Settings Dialog. The offset mode has two options, "offset-origin" and "offset-pole". The "offset-origin" mode shows orthgonal coordinate grid lines on the celestial sphere with a custom origin as the reference center of the grid. The "offset-pole" mode shows the polar coordinate grid lines converging at a custom origin. 
 
-In the example below, the left panel is the FK5 coordinate system with the grid line enabled, the center panel is the same coordinate system in the offset mode with a custom origin, and the right panel is the image coordinate system in the offset mode with a custom origin.
+In the example below, the left panel is the FK5 coordinate system with the grid line enabled, the center panel is the same coordinate system in the offset-origin mode with a custom origin, and the right panel is in the offset-pole mode with a custom  origin. 
 
 .. raw:: html
 
@@ -173,7 +173,7 @@ In addition to displaying images, the Image Viewer displays cursor information a
             style="width:100%;height:auto;">
    </a>
 
-When the cursor is movning on the Image Viewer, the pixel information at the cursor position is shown at the top side of the image. The information includes:
+When the cursor is movning on the Image Viewer, the pixel information at the cursor position is shown at the top side of the image. If the Cursor Info Widget is enabled, same information is displayed in the widget, including matched images. The information includes:
 
 * World coordinate of the current coordinate system. 
 * Image coordinate in pixel (0-based).
@@ -323,5 +323,5 @@ Depending on the theme, a background layer in white or black will be added to th
 
       <a href="_static/carta_fn_imageviewer_pv_rendering.png" target="_blank">
           <img src="_static/carta_fn_imageviewer_pv_rendering.png" 
-               style="width:100%;height:auto;">
+               style="width:90%;height:auto;">
       </a>

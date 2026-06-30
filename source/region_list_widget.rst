@@ -1,6 +1,10 @@
 Region list widget
 ==================
 
+.. note::
+   For more information about regions of interest and annotation objects, please refer to :ref:`region_of_interest` and :ref:`mouse_interaction_with_regions` sections.
+
+
 The Region List Widget provides a list of regions of interest (ROIs) and annotation objects that are registered to the active image. If the active image is not matched to the reference image, the list contains only the regions and annotations that are registered to the image itself. If the active image is matched to the reference image, the list contains all the shared regions and annotations that are registered to the reference image.
 
 For the rest of the context, the term "region" refers to both regions of interest and annotation objects. 
@@ -21,10 +25,22 @@ Active region
 -------------
 When a region is selected in the Image Viewer Widget or the Region List Widget, it becomes the active region. The active region entry is highlighted in the Region List Widget. When a region is selected as active in the Image Viewer Widget, the region list will be updated to show the active region in the view when the region list is long.
 
+When multiple regions are selected, there is still a region marked as active among the selected regions. The active region is highlighted with a different color in the Region List Widget and with white control points in the Image Viewer Widget (others are with control points in gray). 
+
 
 Region configuration
 --------------------
 To configure the properties of a region, you can double-click on the region entry in the Region List Widget. This will open the Region Configuration Dialog where you can modify the properties of the region such as name, gemetry, and styling. The Region Configuration Dialog also provides a way to delete the region or to lock/unlock the region.
+
+.. raw:: html
+
+   <a href="_static/carta_fn_region_list_config_selection.png" target="_blank">
+       <img src="_static/carta_fn_region_list_config_selection.png" 
+            style="width:100%;height:auto;">
+   </a>
+
+
+When multiple regions are selected, the Region Configuration Dialog will show the common properties of the selected regions. Modifying a common property will apply to all selected regions. For example, if you select two regions with different colors and then change the color in the Region Configuration Dialog, both regions will be updated to have the same new color.
 
 
 Center a region
@@ -34,12 +50,12 @@ For a given region you can center it in the Image Viewer Widget by clicking the 
 
 Delete regions
 --------------
-A region can be delected by selecting the region in the Region List Widget and then use the "Delete" key. Alternatively, you can double-click on the region entry and use the "Delete" button. All regions can be deleted at once by clicking the "Delete al regions" button at the bottom-right corner of the Region List Widget.
+A region can be deleted by selecting the region in the Region List Widget and then use the "Delete" key. Alternatively, you can double-click on the region entry and use the "Delete" button. All regions can be deleted at once by clicking the "Delete all regions" button at the bottom-right corner of the Region List Widget.
 
 
 Lock and unlock regions
 -----------------------
-To prevent accidiental modification of a region, you can lock the region by clicking the "Lock" button in the Region List Widget. When a region is locked, it cannot be modified using mouse or deleted with the delete key. However, it is still possible to modify the region properties including a deletion using the Region Configuration Dialog. To unlock a region, you can click the "Unlock" button in the Region List Widget. You may use lock/unlock all regions at once using the button at the top-left corner of the Region List Widget. This is useful when you want to prevent accidental modification of regions when you are working with a large number of regions in the image view.
+To prevent accidental modification of a region, you can lock the region by clicking the "Lock" button in the Region List Widget. When a region is locked, it cannot be modified using mouse or deleted with the delete key. However, it is still possible to modify the region properties including a deletion using the Region Configuration Dialog. To unlock a region, you can click the "Unlock" button in the Region List Widget. You may use lock/unlock all regions at once using the button at the top-left corner of the Region List Widget. This is useful when you want to prevent accidental modification of regions when you are working with a large number of regions in the image view.
 
 
 Hide regions

@@ -109,8 +109,6 @@ The interactions of the Spectral Profiler Widget are demonstrated in the section
               style="width:100%;height:auto;">
       </a>
 
-The option "**Show mean/RMS**" in the "**Styling**" tab will use the data in the current view to derive a mean value and an RMS value and visualize the results on the plot. Numerical values are also displayed in the bottom-left corner of the Spectral Profiler Widget. When the cursor is on the image in the Image Viewer, the pointed pixel value (frequency, velocity, or channel index, and pixel value) will be displayed in the bottom-left corner of the Spectral Profiler Widget. When the cursor is on the spectral profile plot, the pointed profile data will be displayed instead. 
-
 
 .. _spectral_convention_and_intensity_unit:
 
@@ -211,6 +209,8 @@ The Styling tab in the Spectral Profiler Settings Dialog allows you to configure
        <img src="_static/carta_fn_spectralProfiler_styling.png" 
            style="width:70%;height:auto;">
    </a>
+
+The option "**Show mean/RMS**" in the "**Styling**" tab will use the data in the current view to derive a mean value and an RMS value and visualize the results on the plot. Numerical values are also displayed in the bottom-left corner of the Spectral Profiler Widget. When the cursor is on the image in the Image Viewer, the pointed pixel value (frequency, velocity, or channel index, and pixel value) will be displayed in the bottom-left corner of the Spectral Profiler Widget. When the cursor is on the spectral profile plot, the pointed profile data will be displayed instead. 
 
 
 Export

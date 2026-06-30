@@ -28,7 +28,7 @@ CARTA has two deployment modes: "Site Deployment Mode" (SDM) and "User Deploymen
 
 Installation guides for the "Site Deployment Mode" and the "User Deployment Mode" are provided in the section :ref:`installation_configuration`. Please contact the `CARTA Helpdesk <support@carta.freshdesk.com>`_ (support@carta.freshdesk.com) or file an `issue <https://github.com/CARTAvis/carta/issues>`_ if there is a problem. 
 
-Besides the annual stable release (the current stable release is v5.1), there are one or two beta releases within the one-year development cycle. With the beta releases, you can try new features and provide feedback to the development team to improve the next stable release. Please visit the CARTA homepage (https://cartavis.org) for the latest beta and stable releases. 
+Besides the annual stable release (the current stable release is v6.0), there are one or two beta releases within the one-year development cycle. With the beta releases, you can try new features and provide feedback to the development team to improve the next stable release. Please visit the CARTA homepage (https://cartavis.org) for the latest beta and stable releases. 
 
 
 Getting help
@@ -72,29 +72,29 @@ The bibtex is
 
 .. code-block:: bibtex
    
-   @software{angus_comrie_2026_18477253,
-      author       = {Angus Comrie and
-                      Kuo-Song Wang and
-                      Yu-Hsuan Hwang and
-                      Adrianna Pińska and
-                      Pamela Harris and
-                      Carli Raul-Omar and
-                      Hou, Kuan-Chou and
-                      Aikema, David and
-                      Cheng-Chin Chiang and
-                      Lin, Ming-Yi and
-                      Huang, Po-Sheng and
-                      Gao, Zhen-Kai and
-                      Rob Simmonds},
-      title        = {CARTA: The Cube Analysis and Rendering Tool for
-                      Astronomy
-                  },
-      month        = feb,
-      year         = 2026,
-      publisher    = {Zenodo},
-      version      = {5.1},
-      doi          = {10.5281/zenodo.18477253},
-      url          = {https://doi.org/10.5281/zenodo.18477253},
+   @software{angus_comrie_2026_21024044,
+   author       = {Angus Comrie and
+                     Kuo-Song Wang and
+                     Yu-Hsuan Hwang and
+                     Adrianna Pińska and
+                     Pamela Harris and
+                     Hou, Kuan-Chou and
+                     Gao, Zhen-Kai and
+                     Aikema, David and
+                     Huang, Po-Sheng and
+                     Sokolowski, Marcin and
+                     van Zyl, Michaela and
+                     Rob Simmonds},
+   title        = {CARTA: The Cube Analysis and Rendering Tool for
+                     Astronomy
+                     },
+   month        = jun,
+   year         = 2026,
+   publisher    = {Zenodo},
+   version      = {6.0},
+   doi          = {10.5281/zenodo.21024044},
+   url          = {https://doi.org/10.5281/zenodo.21024044},
+   }
 }
 
 You may also refer to https://ui.adsabs.harvard.edu/abs/2020zndo...3377984C/abstract.
@@ -140,7 +140,8 @@ CARTA is mainly built in C++, TypeScript, and JavaScript and with the following 
 * CASA source code: https://casa.nrao.edu/index.shtml
 * Chart.js: https://www.chartjs.org
 * Electron: https://electronjs.org
-* GoldenLayout: https://golden-layout.com
+* GoldenLayout: https://golden-layout.com (prior to v5.1)
+* FlexLayout: https://github.com/caplin/FlexLayout (since v6.0)
 * GoogleTest: https://github.com/google/googletest
 * GSL: https://www.gnu.org/software/gsl/
 * json-schema-validator: https://github.com/pboettch/json-schema-validator

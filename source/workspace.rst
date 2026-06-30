@@ -4,7 +4,7 @@ Workspace
 =========
 
 .. note::
-   Full workspace features are under development. In the v5.1 release, workspace support is limited.
+   Full workspace features are under development. In the v6.0 release, workspace support is limited.
 
 
 Workspace saving and restoring

@@ -2,7 +2,7 @@
 
 Layout
 ======
-CARTA supports a flexible layout management system that allows users to customize the arrangement of image viewer and other widgets in the user interface. This feature is based on the `GoldenLayout <https://golden-layout.com>`_ library, which provides a powerful way to create and manage complex layouts in web applications.
+CARTA supports a flexible layout management system that allows users to customize the arrangement of image viewer and other widgets in the user interface. This feature is based on the `FlexLayout <https://github.com/caplin/FlexLayout>`_ library, which provides a powerful way to create and manage complex layouts in web applications.
 
 
 
@@ -78,3 +78,28 @@ When the dynamic layout feature is enabled, it is also possible to make the link
 
 .. note::
     The context of the "Dynamic Layout" tab in the Layout Dialog is also displayed in the Preferences Dialog ("**File**" -> "**Preferences**" -> "**Layout**"), allowing for easy access and modification of dynamic layout settings.
+
+
+
+Image Viewer as a popout browser window
+---------------------------------------
+
+This is a new feature introduced in CARTA v6.0. The Image Viewer can be popped out as a new browser window by clicking the "**popout**" button at the top-right corner of the Image Viewer. The popout window can be resized and moved freely just like a regular browser window. The popout window can be closed by clicking the "**close**" button of the browser window and the Image Viewer will be restored to the main browser window. 
+
+.. raw:: html
+
+   <a href="_static/carta_gui_popout_viewer_before.png" target="_blank">
+       <img src="_static/carta_gui_popout_viewer_before.png" 
+           style="width:100%;height:auto;">   
+   </a>
+
+
+.. raw:: html
+
+   <a href="_static/carta_gui_popout_viewer_after.png" target="_blank">
+       <img src="_static/carta_gui_popout_viewer_after.png" 
+           style="width:100%;height:auto;">   
+   </a>
+
+
+The best use case of this feature is to use a second monitor to display the Image Viewer while keeping the main browser window for other widgets, or vice verse. If you are using an extra-wide screen monitor or a regular monitor, it is still recommended to use a single browser window to display the Image Viewer and other widgets and utilize the layout management feature to configure the layout. This provides a seamless user experience when you switch focus between the Image Viewer and other widgets. When the Image Viewer is popped out as a new browser window, it is just like a regular browser window managed by the operating system. You will need to *activate* the browser window with an extra mouse click, with a keyboard shortcut, or enabling auto-focus on mouse hover before interacting with the content. 
