@@ -72,29 +72,29 @@ The bibtex is
 
 .. code-block:: bibtex
    
-   @software{angus_comrie_2026_18477253,
-      author       = {Angus Comrie and
-                      Kuo-Song Wang and
-                      Yu-Hsuan Hwang and
-                      Adrianna Pińska and
-                      Pamela Harris and
-                      Carli Raul-Omar and
-                      Hou, Kuan-Chou and
-                      Aikema, David and
-                      Cheng-Chin Chiang and
-                      Lin, Ming-Yi and
-                      Huang, Po-Sheng and
-                      Gao, Zhen-Kai and
-                      Rob Simmonds},
-      title        = {CARTA: The Cube Analysis and Rendering Tool for
-                      Astronomy
-                  },
-      month        = feb,
-      year         = 2026,
-      publisher    = {Zenodo},
-      version      = {5.1},
-      doi          = {10.5281/zenodo.18477253},
-      url          = {https://doi.org/10.5281/zenodo.18477253},
+   @software{angus_comrie_2026_21024044,
+   author       = {Angus Comrie and
+                     Kuo-Song Wang and
+                     Yu-Hsuan Hwang and
+                     Adrianna Pińska and
+                     Pamela Harris and
+                     Hou, Kuan-Chou and
+                     Gao, Zhen-Kai and
+                     Aikema, David and
+                     Huang, Po-Sheng and
+                     Sokolowski, Marcin and
+                     van Zyl, Michaela and
+                     Rob Simmonds},
+   title        = {CARTA: The Cube Analysis and Rendering Tool for
+                     Astronomy
+                     },
+   month        = jun,
+   year         = 2026,
+   publisher    = {Zenodo},
+   version      = {6.0},
+   doi          = {10.5281/zenodo.21024044},
+   url          = {https://doi.org/10.5281/zenodo.21024044},
+   }
 }
 
 You may also refer to https://ui.adsabs.harvard.edu/abs/2020zndo...3377984C/abstract.
