@@ -154,8 +154,15 @@ After downloading, open the DMG installer and drag-and-drop the CARTA icon to th
    .. code-block:: bash
 
       alias carta='/Applications/CARTA.app/Contents/MacOS/CARTA'
-
+   
    You may use a different alias rather than 'carta', e.g. 'carta-v6.0' or 'carta-electron'.
+
+   If you wish to use your default web browser instead of the built-in Electron browser, please add the following line to your "~/.zshrc" file (or "~/.bashrc" if you use bash):
+   
+   .. code-block:: bash
+
+      alias carta='/Applications/CARTA.app/Contents/Resources/app/carta-backend/bin/carta_backend --frontend_folder /Applications/CARTA.app/Contents/Resources/app/'      
+
 
 .. note::
    Starting from v6.0, the macOS Electron Desktop version of CARTA is equipped with a built-in auto-update feature. When the next release v6.1 is available, you will receive a notification in the Electron Desktop and can choose to update to the latest version with a few clicks. 
