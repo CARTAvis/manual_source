@@ -161,7 +161,7 @@ After downloading, open the DMG installer and drag-and-drop the CARTA icon to th
    
    .. code-block:: bash
 
-      alias carta='/Applications/CARTA.app/Contents/Resources/app/carta-backend/bin/carta_backend --frontend_folder /Applications/CARTA.app/Contents/Resources/app/'      
+      alias carta='/Applications/CARTA.app/Contents/Resources/app/carta-backend/bin/carta.sh'      
 
 
 .. note::
