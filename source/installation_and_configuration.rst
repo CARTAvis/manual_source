@@ -43,7 +43,7 @@ The Site Deployment Mode supports the following operating systems:
 * Ubuntu Linux: 22.04 LTS (Jammy Jellyfish) and 24.04 LTS (Noble Numbat)
 * Red Hat Enterprise Linux / AlmaLinux / Rocky Linux: 8, 9
 
-Please refer to the  `CARTA controller documentation <https://carta-controller.readthedocs.io>`_ to deploy CARTA at your institution as a web-based application for multiple users. Detailed instructions on installation and configuration of the "carta_backend", the "carta_frontend", and the "carta-controller" are provided. If there is a problem, please contact the `CARTA helpdesk <mailto:support@carta.freshdesk.com>`_.
+Please refer to the  `CARTA controller documentation <https://carta-controller.readthedocs.io>`_ to deploy CARTA at your institution as a web-based application for multiple users. Detailed instructions on installation and configuration of the "carta_backend", the "carta_frontend", and the "carta-controller" are provided. If there is a problem, please contact the `CARTA helpdesk <https://carta.asiaa.sinica.edu.tw/osTicket/>`_.
 
 .. note::
    Ubuntu Linux 26.04 LTS (Resolute Raccoon) will be supported starting v6.1. 22.04 LTS support will be deprecated in v6.1.
@@ -78,7 +78,7 @@ CARTA can be installed via the command line with package managers such as:
 .. note::
     The support of the homebrew package manager on macOS is deprecated starting v6.0. The homebrew package is actually the Electron Desktop version of CARTA installed following homebrew's convention. The Electron Desktop version is now equiped with a built-in auto-update feature. Therefore, the homebrew package is no longer maintained. Please refer to the section :ref:`installation_UDM_direct_download` for the installation of the Electron Desktop version of CARTA on macOS.
 
-Please identify the operating system where you wish to run CARTA and follow the instructions. If there is a problem, please contact the `CARTA helpdesk <mailto:support@carta.freshdesk.com>`_.
+Please identify the operating system where you wish to run CARTA and follow the instructions. If there is a problem, please contact the `CARTA helpdesk <https://carta.asiaa.sinica.edu.tw/osTicket/>`_.
 
 **Ubuntu**
 

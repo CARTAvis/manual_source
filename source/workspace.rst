@@ -42,7 +42,7 @@ When a workspace is selected in the file list, basic workspace information is di
 * File name of the raster scaling reference image
 * A list of all image files and their validation results
 
-If the image validation result is "invalid", please check if the image is still accessible on the file system. We encourage you to reach out for assistance if you encounter an error. You can contact our `Helpdesk <mailto:support@carta.freshdesk.com>`_ or visit our `GitHub <https://github.com/CARTAvis/carta/issues>`_ repository to file an issue.
+If the image validation result is "invalid", please check if the image is still accessible on the file system. We encourage you to reach out for assistance if you encounter an error. You can contact our `Helpdesk <https://carta.asiaa.sinica.edu.tw/osTicket/>`_ or visit our `GitHub <https://github.com/CARTAvis/carta/issues>`_ repository to file an issue.
 
 
 Workspace sharing (experimental; carta-controller-only feature)

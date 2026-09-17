@@ -15,4 +15,4 @@ The Log Widget is a tool which provides important diagnostic information when so
            style="width:80%;height:auto;">
    </a>
 
-If you encounter an error, we encourage you to reach out for assistance. You can contact our `HelpDesk <mailto:support@carta.freshdesk.com>`_ or visit our `GitHub <https://github.com/CARTAvis/carta/issues>`_ to file an issue.
+If you encounter an error, we encourage you to reach out for assistance. You can contact our `HelpDesk <https://carta.asiaa.sinica.edu.tw/osTicket/>`_ or visit our `GitHub <https://github.com/CARTAvis/carta/issues>`_ to file an issue.
